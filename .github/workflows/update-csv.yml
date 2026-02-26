@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Download CSV from Google Sheets
-      run: curl -o nba_stats.csv "https://docs.google.com/spreadsheets/d/e/2PACX-1vRYY3lCP1jiJ3x4cHr87LhcNraa7KGZRKFo1jOa9EoS5VuUEehS2faNZTTM0mhKutJ-t1CDeZF0leXh/pub?gid=807849522&single=true&output=csv"
+      run: curl -L -o nba_stats.csv "https://docs.google.com/spreadsheets/d/e/2PACX-1vRYY3lCP1jiJ3x4cHr87LhcNraa7KGZRKFo1jOa9EoS5VuUEehS2faNZTTM0mhKutJ-t1CDeZF0leXh/pub?gid=807849522&single=true&output=csv"
 
     - name: Commit and push if changed
       run: |

@@ -1,10 +1,360 @@
-<HTML>
-<HEAD>
-<TITLE>Temporary Redirect</TITLE>
-</HEAD>
-<BODY BGCOLOR="#FFFFFF" TEXT="#000000">
-<!-- GSE Default Error -->
-<H1>Temporary Redirect</H1>
-The document has moved <A HREF="https://doc-0s-c0-sheets.googleusercontent.com/pub/54bogvaave6cua4cdnls17ksc4/ga36aeeleao90qn0ka1lksv7pk/1772121140000/116742307838129859954/*/e@2PACX-1vRYY3lCP1jiJ3x4cHr87LhcNraa7KGZRKFo1jOa9EoS5VuUEehS2faNZTTM0mhKutJ-t1CDeZF0leXh?gid=807849522&amp;single=true&amp;output=csv">here</A>.
-</BODY>
-</HTML>
+Player,Position,Team,Opp,AST Avg,BLK Avg,DRB Avg,FG Avg,FGA Avg,FPTS Avg,MIN Avg,ORB Avg,PTS Avg,REB Avg,STL Avg,TO Avg,DraftKings,FanDuel,PrizePicks,Underdog,Fav,Spread,O/U,Match Title (Underdog),Game Short Title (Underdog),Venue Name (Underdog),Venue Type (Underdog),Broadcasts (Underdog),Player Salary,Player Image,Tournament,Game Start Time
+LaMelo Ball,PG,CHA,IND,6.5,0.5,4.2,7.3,17.8,39,29,0.9,19.5,4.5,1.5,2.9,37.425,37.75,37.75,37.75,Yes,-12.6,229.1,,,,,,8900,https://dkn.gs/sports/images/nba/players/50/527219.png, @ ,2/26/2026
+Isaiah Collier,PG,UTA,NOP,10,0.4,3.2,5.3,10.7,36.4,36,0.4,14.4,3.6,1.4,3.5,37.25,35.62,35.62,35.62,No,4.5,240.5,,,,,,7800,https://dkn.gs/sports/images/nba/players/50/800406.png, @ ,2/26/2026
+Andrew Nembhard,PG,IND,CHA,6.5,0.5,2.6,6.1,13.1,32.5,33,0.3,17.5,2.5,0.5,2.5,31.125,30.75,30.75,30.75,No,12.6,229.1,,,,,,7000,https://dkn.gs/sports/images/nba/players/50/36394.png, @ ,2/26/2026
+De`Aaron Fox,PG,SAS,BKN,5.3,0.3,3.2,6.8,14,32.2,31,0.5,18.3,3.7,1.4,2.2,33.175,33.59,33.59,33.59,Yes,-12.8,224.7,,,,,,,,,
+Collin Gillespie,PG,PHX,LAL,5.5,0.5,3.4,5.5,13.3,31.2,26,0.8,15.5,3.74,1.5,2.1,31.375,32.138,32.138,32.138,No,4.5,217.5,,,,,,6700,https://dkn.gs/sports/images/nba/players/50/649599.png, @ ,2/26/2026
+Russell Westbrook,PG,SAC,DAL,4.78,0.5,3.7,5.3,13.4,29.9,27,1.7,14.04,3.5,0,3.2,24.985,23.71,23.71,23.71,No,6.9,234,,,,,,7100,https://dkn.gs/sports/images/nba/players/50/33068.png, @ ,2/26/2026
+Dejounte Murray,PG,NOP,UTA,4.7,0.2,3.6,6.3,13,29.4,26,0.4,16.6,4.1,1.2,2.1,30.525,30.67,30.67,30.67,Yes,-4.5,240.5,,,,,,6100,https://dkn.gs/sports/images/nba/players/50/33362.png, @ ,2/26/2026
+Jrue Holiday,PG,POR,CHI,6.5,0.5,3.5,5.4,12.5,27.4,30,1.5,18.5,4.5,1.5,2.9,36.425,36.75,36.75,36.75,Yes,-4.1,235.6,,,,,,6600,https://dkn.gs/sports/images/nba/players/50/33210.png, @ ,2/26/2026
+Scoot Henderson,PG,POR,CHI,5.2,0.2,2.9,5.2,13.4,27.4,29,0.8,15.9,3.7,1,3.8,28.825,27.94,27.94,27.94,Yes,-4.1,235.6,,,,,,5500,https://dkn.gs/sports/images/nba/players/50/713756.png, @ ,2/26/2026
+Jalen Suggs,PG,ORL,HOU,5.5,0.5,3.3,4.8,11.2,27.3,30,0.5,11.5,3.5,1.5,2.3,26.975,27.65,27.65,27.65,No,2.5,216.1,,,,,,6500,https://dkn.gs/sports/images/nba/players/50/590988.png, @ ,2/26/2026
+Anthony Black,PG,ORL,HOU,4.21,0.5,3.2,5.1,11.6,26,33,0.5,15.5,3.5,1.5,2.1,29.14,29.915,29.915,29.915,No,2.5,216.1,,,,,,7200,https://dkn.gs/sports/images/nba/players/50/713759.png, @ ,2/26/2026
+Tre Jones,PG,CHI,POR,4.88,0.2,2.4,3.9,7.6,24.1,26,0.6,10.5,2.5,1.7,1.4,24.045,25.12,25.12,25.12,No,4.1,235.6,,,,,,4800,https://dkn.gs/sports/images/nba/players/50/527244.png, @ ,2/26/2026
+T.J. McConnell,PG,IND,CHA,4.8,0.2,2.2,5,9.6,23.2,19,0.3,11,2.4,1.2,1.1,23.45,24.18,24.18,24.18,No,12.6,229.1,,,,,,4100,https://dkn.gs/sports/images/nba/players/50/33090.png, @ ,2/26/2026
+Davion Mitchell,PG,MIA,PHI,6.5,0.5,2,3.5,7.5,22.9,30,0.4,7.5,2.5,0.5,1.5,21.625,21.75,21.75,21.75,No,2,240.5,,,,,,4500,https://dkn.gs/sports/images/nba/players/50/591009.png, @ ,2/26/2026
+Carlton Carrington,PG,WAS,ATL,4.5,0.5,3.5,3.9,9.8,22.8,28,0.3,10.5,3.5,0,2.4,21.425,20.55,20.55,20.55,No,11.5,234,,,,,,,,,
+Coby White,PG,CHA,IND,3.5,0.1,2.9,4.5,10.3,22.1,24,0.4,13.5,2.5,0.5,2.1,22.025,21.45,21.45,21.45,Yes,-12.6,229.1,,,,,,6000,https://dkn.gs/sports/images/nba/players/50/32975.png, @ ,2/26/2026
+Dylan Harper,PG,SAS,BKN,3.5,0.3,2.8,4.5,9,21.7,24,0.6,12.5,3.5,0.9,1.3,23.875,24.25,24.25,24.25,Yes,-12.8,224.7,,,,,,4600,https://dkn.gs/sports/images/nba/players/50/905517.png, @ ,2/26/2026
+Kris Dunn,PG,LAC,MIN,5.1,0.2,2.8,3,6.3,21.7,26,0.6,7.9,3.4,1.3,1.3,22.15,22.83,22.83,22.83,No,5.5,226.9,,,,,,5400,https://dkn.gs/sports/images/nba/players/50/32966.png, @ ,2/26/2026
+Nolan Traore,PG,BKN,SAS,4.88,0.5,1.6,3.7,9.3,20.9,27,0.4,11.06,2.5,0.5,2.1,22.455,22.28,22.28,22.28,No,12.8,224.7,,,,,,5000,https://dkn.gs/sports/images/nba/players/50/905568.png, @ ,2/26/2026
+Reed Sheppard,PG,HOU,ORL,2.9,0.5,2.3,4.4,10.5,20.7,24,0.4,11.5,2.7,1.2,1.6,21.825,22.59,22.59,22.59,Yes,-2.5,216.1,,,,,,5200,https://dkn.gs/sports/images/nba/players/50/800350.png, @ ,2/26/2026
+Jeremiah Fears,PG,NOP,UTA,2.9,0.3,2.7,4.6,10.2,20.6,22,0.6,11.9,3.3,1.2,1.8,22.475,22.91,22.91,22.91,Yes,-4.5,240.5,,,,,,4800,https://dkn.gs/sports/images/nba/players/50/905556.png, @ ,2/26/2026
+Egor Demin,PG,BKN,SAS,3.5,0.5,3,3.7,8.8,20.3,25,0.4,10.5,3.5,0.5,1.5,21.375,21.45,21.45,21.45,No,12.8,224.7,,,,,,5100,https://dkn.gs/sports/images/nba/players/50/905557.png, @ ,2/26/2026
+Collin Sexton,PG,CHI,POR,3,0.2,1.4,4.6,9.5,20.2,19,0.4,12.8,1.8,1.3,1.8,21.65,22.16,22.16,22.16,No,4.1,235.6,,,,,,4700,https://dkn.gs/sports/images/nba/players/50/32987.png, @ ,2/26/2026
+Kam Jones,PG,IND,CHA,3.5,0.5,1.9,3.9,8.1,19.2,26,0.3,9.5,3.5,0.5,1,20.625,20.95,20.95,20.95,No,12.6,229.1,,,,,,4300,https://dkn.gs/sports/images/nba/players/50/906343.png, @ ,2/26/2026
+Quenton Jackson,PG,IND,CHA,2.1,0.2,1.4,3.2,5.9,15.5,16,0.3,9.5,1.7,0.7,0.8,16.175,16.59,16.59,16.59,No,12.6,229.1,,,,,,4500,https://dkn.gs/sports/images/nba/players/50/651619.png, @ ,2/26/2026
+Tyus Jones,PG,DAL,SAC,3.2,0.1,1.4,2.2,4.9,13.8,18,0.2,5.6,1.6,0.6,0.6,13.5,13.82,13.82,13.82,Yes,-6.9,234,,,,,,3300,https://dkn.gs/sports/images/nba/players/50/33138.png, @ ,2/26/2026
+Amir Coffey,PG,PHX,LAL,1.1,0.1,1.6,2.4,5.7,11.3,16,0.4,7,2,0.6,0.5,12.3,12.65,12.65,12.65,No,4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/58925.png, @ ,2/26/2026
+Mike Conley,PG,MIN,LAC,2.5,0.2,1.2,1.4,3.6,11,17,0.3,4.2,1.5,0.5,0.5,10.975,11.35,11.35,11.35,Yes,-5.5,226.9,,,,,,3100,https://dkn.gs/sports/images/nba/players/50/33389.png, @ ,2/26/2026
+Vit Krejci,PG,POR,CHI,0.9,0.3,1.5,2.2,5.2,10.3,16,0.4,6.3,1.8,0.6,0.6,11.4,11.91,11.91,11.91,Yes,-4.1,235.6,,,,,,3700,https://dkn.gs/sports/images/nba/players/50/527255.png, @ ,2/26/2026
+Nah&#x27;Shon Hyland,PG,MIN,LAC,1.8,0.1,0.9,1.8,4,9.8,11,0.3,5.1,1.2,0.4,0.5,10.05,10.24,10.24,10.24,Yes,-5.5,226.9,,,,,,,,,
+Ben Saraf,PG,BKN,SAS,2.3,0.2,1.2,1.4,4.2,9.7,15,0.2,4.1,1.4,0.6,1.1,10.35,10.53,10.53,10.53,No,12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/905574.png, @ ,2/26/2026
+Rob Dillingham,PG,CHI,POR,2.1,0.1,1.3,1.7,4.9,9.6,12,0.3,4.3,1.5,0.8,1.4,10.425,10.55,10.55,10.55,No,4.1,235.6,,,,,,3900,https://dkn.gs/sports/images/nba/players/50/800355.png, @ ,2/26/2026
+Kasparas Jakucionis,PG,MIA,PHI,1.7,0.1,1.2,1.3,3,8.7,13,0.4,3.9,1.6,0.4,0.7,9.1,9.17,9.17,9.17,No,2,240.5,,,,,,3900,https://dkn.gs/sports/images/nba/players/50/905569.png, @ ,2/26/2026
+Gabe Vincent,PG,ATL,WAS,1.3,0.1,0.6,1.4,3.9,7.8,15,0.3,4,0.9,0.5,0.3,8.125,8.53,8.53,8.53,Yes,-11.5,234,,,,,,3400,https://dkn.gs/sports/images/nba/players/50/36560.png, @ ,2/26/2026
+Jevon Carter,PG,ORL,HOU,0.9,0.2,0.9,1.4,3.8,7.1,12,0.1,3.9,1,0.7,0.4,8.1,8.75,8.75,8.75,No,2.5,216.1,,,,,,3800,https://dkn.gs/sports/images/nba/players/50/33144.png, @ ,2/26/2026
+JD Davison,PG,HOU,ORL,1,0.1,0.8,0.7,1.8,4.4,6,0.1,1.7,0.9,0.2,0.4,4.725,4.78,4.78,4.78,Yes,-2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649591.png, @ ,2/26/2026
+Tyrese Maxey,SG,PHI,MIA,7.07,0.5,3.8,8.9,19.8,42.2,38,0.3,27.5,4.5,1.5,2.5,46.48,47.005,47.005,47.005,Yes,-2,240.5,,,,,,10000,https://dkn.gs/sports/images/nba/players/50/527230.png, @ ,2/26/2026
+Anthony Edwards,SG,MIN,LAC,4.2,0.6,4.3,9.5,20,39.9,36,0.6,27.4,4.9,1.1,2.4,42.025,42.28,42.28,42.28,Yes,-5.5,226.9,,,,,,9400,https://dkn.gs/sports/images/nba/players/50/509114.png, @ ,2/26/2026
+Jalen Green,SG,PHX,LAL,3.5,0.5,4.4,8.6,21.5,36.3,29,0.4,20.5,3.5,0,3.3,29.475,28.15,28.15,28.15,No,4.5,217.5,,,,,,6900,https://dkn.gs/sports/images/nba/players/50/590985.png, @ ,2/26/2026
+Keyonte George,SG,UTA,NOP,6.3,0.2,3.2,6.8,14.9,35.2,32,0.3,21.1,3.4,0.9,3.1,35.45,34.83,34.83,34.83,No,4.5,240.5,,,,,,7900,https://dkn.gs/sports/images/nba/players/50/713769.png, @ ,2/26/2026
+Amen Thompson,SG,HOU,ORL,4.5,0.5,5.4,6.6,12.4,35.2,37,2.7,14.78,6.5,1.5,2.9,32.205,32.43,32.43,32.43,Yes,-2.5,216.1,,,,,,8300,https://dkn.gs/sports/images/nba/players/50/713757.png, @ ,2/26/2026
+Austin Reaves,SG,LAL,PHX,3.5,0.5,4.2,6.3,13,33,33,0.7,20.5,4.5,0,2.8,30.975,29.85,29.85,29.85,Yes,-4.5,217.5,,,,,,7800,https://dkn.gs/sports/images/nba/players/50/591721.png, @ ,2/26/2026
+Stephon Castle,SG,SAS,BKN,6.5,0.5,3.6,5.9,12.4,32.9,32,1.1,15.5,4.5,1.5,2.8,33.475,33.85,33.85,33.85,Yes,-12.8,224.7,,,,,,7400,https://dkn.gs/sports/images/nba/players/50/800351.png, @ ,2/26/2026
+C.J. McCollum,SG,ATL,WAS,4,0.5,3.1,7.5,16.2,32.6,31,0.9,19.91,3.5,0,1.4,30.585,30.21,30.21,30.21,Yes,-11.5,234,,,,,,,,,
+Grayson Allen,SG,PHX,LAL,3.5,0,3.2,6.4,16.1,32.1,30,0.7,16.17,2.5,0,1.5,23.795,22.92,22.92,22.92,No,4.5,217.5,,,,,,7500,https://dkn.gs/sports/images/nba/players/50/33143.png, @ ,2/26/2026
+Nickeil Alexander-Walker,SG,ATL,WAS,4.5,0.5,3.1,6.6,15.1,31.7,34,0.8,18.88,3.5,1.5,1.7,33.155,34.13,34.13,34.13,Yes,-11.5,234,,,,,,7800,https://dkn.gs/sports/images/nba/players/50/33225.png, @ ,2/26/2026
+DeMar DeRozan,SG,SAC,DAL,3.5,0.5,2.8,6.4,13.8,30.3,32,0.6,16.5,2.5,0,1.1,25.325,25.15,25.15,25.15,No,6.9,234,,,,,,7200,https://dkn.gs/sports/images/nba/players/50/33357.png, @ ,2/26/2026
+Dyson Daniels,SG,ATL,WAS,6.5,0.5,4.2,5.1,10.2,30.3,31,2.4,11.8,6.5,1.5,1.4,32.975,33.95,33.95,33.95,Yes,-11.5,234,,,,,,6400,https://dkn.gs/sports/images/nba/players/50/649551.png, @ ,2/26/2026
+Tyler Herro,SG,MIA,PHI,3.5,0,3.9,6.6,14.5,29.2,31,0.4,18.12,3.5,0.5,2,27.745,27.07,27.07,27.07,No,2,240.5,,,,,,7200,https://dkn.gs/sports/images/nba/players/50/33164.png, @ ,2/26/2026
+Benedict Mathurin,SG,LAC,MIN,3,0.2,4.6,5.9,12.8,28.7,29,0.9,18.5,5.5,0.7,2.1,30.625,30.2,30.2,30.2,No,5.5,226.9,,,,,,,,,
+Brandon Williams,SG,DAL,SAC,4.5,0,2.8,5.6,11.1,27.1,25,0.4,16.25,3.19,0,2.5,25.7375,24.328,24.328,24.328,Yes,-6.9,234,,,,,,5200,https://dkn.gs/sports/images/nba/players/50/622849.png, @ ,2/26/2026
+VJ Edgecombe,SG,PHI,MIA,3.5,0.5,4.3,5,12.3,26.3,35,1.3,14.5,5.5,1.5,1.5,29.875,30.85,30.85,30.85,Yes,-2,240.5,,,,,,6700,https://dkn.gs/sports/images/nba/players/50/905552.png, @ ,2/26/2026
+Max Christie,SG,DAL,SAC,2.5,0.5,4,5.8,12.5,26,33,0.3,14.5,3.5,0,1.5,22.875,22.45,22.45,22.45,Yes,-6.9,234,,,,,,5000,https://dkn.gs/sports/images/nba/players/50/649581.png, @ ,2/26/2026
+Donte DiVincenzo,SG,MIN,LAC,3.8,0.4,2.9,4.2,10.2,23.6,30,0.7,12.2,3.6,1.1,1.3,24.75,25.42,25.42,25.42,Yes,-5.5,226.9,,,,,,5600,https://dkn.gs/sports/images/nba/players/50/33185.png, @ ,2/26/2026
+Jordan Poole,SG,NOP,UTA,3,0.2,1.8,4.9,11.1,22.4,22,0.3,14.9,2.1,0.8,1.5,23.275,23.42,23.42,23.42,Yes,-4.5,240.5,,,,,,4100,https://dkn.gs/sports/images/nba/players/50/33061.png, @ ,2/26/2026
+Tre Johnson,SG,WAS,ATL,2.5,0.5,2.4,5.5,12.6,22,26,0.4,12.25,2.5,0.5,1.5,20.375,20.5,20.5,20.5,No,11.5,234,,,,,,5300,https://dkn.gs/sports/images/nba/players/50/905555.png, @ ,2/26/2026
+Quentin Grimes,SG,PHI,MIA,2.89,0,3.2,3.9,9,21.3,30,0.5,10.88,3.5,0,1.6,18.79,17.815,17.815,17.815,Yes,-2,240.5,,,,,,4400,https://dkn.gs/sports/images/nba/players/50/591030.png, @ ,2/26/2026
+Pelle Larsson,SG,MIA,PHI,3.5,0.5,2.6,3.6,7.4,19.3,28,0.8,10.5,4.5,0.5,1.4,22.675,22.75,22.75,22.75,No,2,240.5,,,,,,5300,https://dkn.gs/sports/images/nba/players/50/800659.png, @ ,2/26/2026
+Malik Monk,SG,SAC,DAL,3.2,0.3,1.8,4,10.1,19,20,0.3,11.5,2.1,0.6,1.4,20.025,20.12,20.12,20.12,No,6.9,234,,,,,,4800,https://dkn.gs/sports/images/nba/players/50/32941.png, @ ,2/26/2026
+Ayo Dosunmu,SG,MIN,LAC,2.7,0.3,1.8,4.2,8.2,19,24,0.5,11.3,2.3,0.6,0.9,19.575,19.91,19.91,19.91,Yes,-5.5,226.9,,,,,,5300,https://dkn.gs/sports/images/nba/players/50/591043.png, @ ,2/26/2026
+Keldon Johnson,SG,SAS,BKN,1.4,0.2,3.4,4.3,8.2,18.5,22,1.2,11.2,4.6,0.5,0.8,20.05,20.12,20.12,20.12,Yes,-12.8,224.7,,,,,,4400,https://dkn.gs/sports/images/nba/players/50/33369.png, @ ,2/26/2026
+Alondes Williams,SG,WAS,ATL,2.2,0.6,3.9,3.2,5.7,18.4,20,1.1,9,5,0.4,1.1,20,20.2,20.2,20.2,No,11.5,234,,,,,,4700,https://dkn.gs/sports/images/nba/players/50/649603.png, @ ,2/26/2026
+Ben Sheppard,SG,IND,CHA,1.5,0.5,3.4,3.4,7.3,17.8,29,0.4,8.5,3.5,0,0.6,15.825,15.85,15.85,15.85,No,12.6,229.1,,,,,,4000,https://dkn.gs/sports/images/nba/players/50/713778.png, @ ,2/26/2026
+Klay Thompson,SG,DAL,SAC,1.4,0.3,2.3,4.3,10.4,17.4,22,0.3,11.5,2.6,0.5,1,17.95,18.12,18.12,18.12,Yes,-6.9,234,,,,,,4000,https://dkn.gs/sports/images/nba/players/50/33050.png, @ ,2/26/2026
+Julian Champagnie,SG,SAS,BKN,1.5,0.5,4,3.1,7.2,17.1,25,0.6,8.5,5.22,0.5,0.5,19.025,19.514,19.514,19.514,Yes,-12.8,224.7,,,,,,4800,https://dkn.gs/sports/images/nba/players/50/650222.png, @ ,2/26/2026
+Marcus Smart,SG,LAL,PHX,2.5,0.5,2,2.4,6,14.2,23,0.5,6.5,2.1,0,1.4,13.175,12.87,12.87,12.87,Yes,-4.5,217.5,,,,,,4600,https://dkn.gs/sports/images/nba/players/50/32870.png, @ ,2/26/2026
+Caleb Love,SG,POR,CHI,1.9,0.1,1.6,3.3,8.8,14.1,17,0.4,8.8,1.9,0.6,1.1,14.875,14.93,14.93,14.93,Yes,-4.1,235.6,,,,,,3300,https://dkn.gs/sports/images/nba/players/50/906404.png, @ ,2/26/2026
+Buddy Hield,SG,ATL,WAS,1.5,0.2,1.7,2.6,5.8,12.2,15,0.5,6.8,2.2,0.5,0.5,12.95,13.29,13.29,13.29,Yes,-11.5,234,,,,,,3300,https://dkn.gs/sports/images/nba/players/50/33341.png, @ ,2/26/2026
+Caleb Martin,SG,DAL,SAC,1.6,0.4,2.6,2.1,4.3,12,17,0.4,5.5,3.5,0.6,0.8,13.875,14.3,14.3,14.3,Yes,-6.9,234,,,,,,3800,https://dkn.gs/sports/images/nba/players/50/32956.png, @ ,2/26/2026
+Luke Kennard,SG,LAL,PHX,1.6,0.1,1.9,2.2,4.2,11.8,19,0.4,6.4,2.3,0.4,0.7,12.325,12.36,12.36,12.36,Yes,-4.5,217.5,,,,,,3700,https://dkn.gs/sports/images/nba/players/50/33042.png, @ ,2/26/2026
+Ziaire Williams,SG,BKN,SAS,0.9,0.3,2,2.4,5.8,11.4,17,0.5,7,2.5,0.7,0.7,13.125,13.65,13.65,13.65,No,12.8,224.7,,,,,,4400,https://dkn.gs/sports/images/nba/players/50/591011.png, @ ,2/26/2026
+Jaden Hardy,SG,WAS,ATL,1.2,0.1,1.3,2.7,6.8,11.1,14,0.2,7.8,1.6,0.3,1,11.9,11.72,11.72,11.72,No,11.5,234,,,,,,4100,https://dkn.gs/sports/images/nba/players/50/649607.png, @ ,2/26/2026
+Devin Carter,SG,SAC,DAL,1.6,0.2,1.4,1.7,4.6,10.1,11,0.6,4.8,2,0.6,0.7,10.95,11.3,11.3,11.3,No,6.9,234,,,,,,5000,https://dkn.gs/sports/images/nba/players/50/800357.png, @ ,2/26/2026
+Nicolas Batum,SG,LAC,MIN,1.4,0.3,2.3,1.4,3.1,9.7,16,0.4,4,2.7,0.5,0.4,10.875,11.34,11.34,11.34,No,5.5,226.9,,,,,,3300,https://dkn.gs/sports/images/nba/players/50/32930.png, @ ,2/26/2026
+Daeqwon Plowden,SG,SAC,DAL,1,0.2,1.4,1.9,5.2,9.6,16,1,5.2,2.4,0.3,0.4,10.5,10.68,10.68,10.68,No,6.9,234,,,,,,4700,https://dkn.gs/sports/images/nba/players/50/651656.png, @ ,2/26/2026
+Dru Smith,SG,MIA,PHI,1.7,0.2,1.1,1.3,3.2,9.4,13,0.5,3.8,1.6,0.9,0.5,10.3,11.07,11.07,11.07,No,2,240.5,,,,,,3800,https://dkn.gs/sports/images/nba/players/50/591849.png, @ ,2/26/2026
+Svi Mykhailiuk,SG,UTA,NOP,1.2,0,1.3,2.1,4.4,9.2,15,0.3,5.6,1.6,0.3,0.6,9.7,9.62,9.62,9.62,No,4.5,240.5,,,,,,3100,https://dkn.gs/sports/images/nba/players/50/33045.png, @ ,2/26/2026
+Sion James,SG,CHA,IND,2.5,0,2.3,1.1,3.1,9.1,17,0.5,4.5,3.5,0.5,0.5,13.375,13.45,13.45,13.45,Yes,-12.6,229.1,,,,,,3200,https://dkn.gs/sports/images/nba/players/50/906339.png, @ ,2/26/2026
+Josh Okogie,SG,HOU,ORL,0.8,0.2,1.5,1.5,3.6,8.7,16,1,4.4,2.4,0.8,0.6,10.3,10.88,10.88,10.88,Yes,-2.5,216.1,,,,,,4200,https://dkn.gs/sports/images/nba/players/50/33200.png, @ ,2/26/2026
+Sidy Cissoko,SG,POR,CHI,1,0.2,1.3,1.5,3.9,8.6,15,0.6,4.4,1.9,0.8,0.8,9.875,10.38,10.38,10.38,Yes,-4.1,235.6,,,,,,3600,https://dkn.gs/sports/images/nba/players/50/713796.png, @ ,2/26/2026
+Josh Green,SG,CHA,IND,1,0.1,1.2,1.6,3.4,8.5,16,0.7,4.6,1.9,0.5,0.5,9.425,9.68,9.68,9.68,Yes,-12.6,229.1,,,,,,3700,https://dkn.gs/sports/images/nba/players/50/527227.png, @ ,2/26/2026
+John Konchar,SG,UTA,NOP,1.2,0.3,1.9,0.9,2.1,7.8,13,0.5,2.4,2.4,0.7,0.4,9,9.68,9.68,9.68,No,4.5,240.5,,,,,,3700,https://dkn.gs/sports/images/nba/players/50/33149.png, @ ,2/26/2026
+Ochai Agbaji,SG,BKN,SAS,0.7,0.3,1.4,1.6,3.8,7.5,14,0.6,4.1,1.9,0.3,0.4,8.525,8.83,8.83,8.83,No,12.8,224.7,,,,,,3100,https://dkn.gs/sports/images/nba/players/50/649563.png, @ ,2/26/2026
+Blake Wesley,SG,POR,CHI,1.4,0.1,0.9,1.3,3.1,7.4,10,0.3,3.5,1.2,0.6,0.8,8.1,8.34,8.34,8.34,Yes,-4.1,235.6,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649573.png, @ ,2/26/2026
+Jett Howard,SG,ORL,HOU,0.6,0.2,0.8,1.4,3.3,6.4,10,0.2,4,1,0.2,0.3,6.8,7,7,7,No,2.5,216.1,,,,,,3200,https://dkn.gs/sports/images/nba/players/50/713764.png, @ ,2/26/2026
+Jase Richardson,SG,ORL,HOU,0.8,0,0.7,1.2,2.8,5.7,11,0.2,3.3,0.9,0.3,0.4,6.025,6.08,6.08,6.08,No,2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/905573.png, @ ,2/26/2026
+Jaylen Clark,SG,MIN,LAC,0.4,0.1,0.7,0.9,2.2,4.8,10,0.5,2.5,1.2,0.5,0.2,5.7,6.14,6.14,6.14,Yes,-5.5,226.9,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/709705.png, @ ,2/26/2026
+Bogdan Bogdanovic,SG,LAC,MIN,0.8,0,0.5,0.9,2.1,4.7,5,0.1,2.5,0.6,0.2,0.2,4.75,4.82,4.82,4.82,No,5.5,226.9,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33339.png, @ ,2/26/2026
+EJ Harkless,SG,UTA,NOP,0.9,0,0.6,0.5,1.4,4.5,8,0.2,1.7,0.8,0.4,0.3,4.7,4.91,4.91,4.91,No,4.5,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/803416.png, @ ,2/26/2026
+Jalen Johnson,SF,ATL,WAS,7.5,0.5,9.6,9.7,19.4,52.4,37,2,22.82,10.95,1.5,3.5,51.5075,49.71,49.71,49.71,Yes,-11.5,234,,,,,,10800,https://dkn.gs/sports/images/nba/players/50/591025.png, @ ,2/26/2026
+Luka Doncic,SF,LAL,PHX,7.5,0.5,8,9.6,20.4,52.1,36,0.7,30.77,7.71,1.5,3.5,53.9075,53.772,53.772,53.772,Yes,-4.5,217.5,,,,,,11400,https://dkn.gs/sports/images/nba/players/50/33005.png, @ ,2/26/2026
+Kawhi Leonard,SF,LAC,MIN,5.7,0.5,6,10.8,21.1,48.3,33,1,29.9,7,1.7,2.2,50.5,51.25,51.25,51.25,No,5.5,226.9,,,,,,9900,https://dkn.gs/sports/images/nba/players/50/33102.png, @ ,2/26/2026
+LeBron James,SF,LAL,PHX,6.02,0.5,6.1,8.1,15.9,40.5,34,0.8,18.78,5.5,0,2.5,34.435,33.41,33.41,33.41,Yes,-4.5,217.5,,,,,,8200,https://dkn.gs/sports/images/nba/players/50/33114.png, @ ,2/26/2026
+Kevin Durant,SF,HOU,ORL,4.5,0.5,5.1,8.6,16.9,36.7,35,0.5,25.5,5.5,0,3.3,38.475,37.05,37.05,37.05,Yes,-2.5,216.1,,,,,,8900,https://dkn.gs/sports/images/nba/players/50/32896.png, @ ,2/26/2026
+Josh Giddey,SF,CHI,POR,6.23,0.5,5.9,5.8,13.2,35.6,28,1.4,15.5,5.86,1.5,3.5,34.42,34.377,34.377,34.377,No,4.1,235.6,,,,,,7300,https://dkn.gs/sports/images/nba/players/50/590989.png, @ ,2/26/2026
+Michael Porter Jr.,SF,BKN,SAS,2.7,0.4,5.6,8.3,18.4,35.2,34,1.4,23.5,7,0.8,1.9,37.75,37.65,37.65,37.65,No,12.8,224.7,,,,,,8500,https://dkn.gs/sports/images/nba/players/50/33026.png, @ ,2/26/2026
+Kon Knueppel,SF,CHA,IND,3.5,0.5,4.5,6.7,13.5,30.9,32,1.3,18.13,5.5,0.5,2.1,31.205,30.88,30.88,30.88,Yes,-12.6,229.1,,,,,,7400,https://dkn.gs/sports/images/nba/players/50/905553.png, @ ,2/26/2026
+Brandon Miller,SF,CHA,IND,3.17,0.5,4,7,16.6,30.7,31,1.1,21.37,4.5,1.5,2.5,34.5,35.025,35.025,35.025,Yes,-12.6,229.1,,,,,,7900,https://dkn.gs/sports/images/nba/players/50/713755.png, @ ,2/26/2026
+Desmond Bane,SF,ORL,HOU,3.5,0.5,3.2,6.4,13.4,29.3,34,0.6,19.5,3.5,1.5,2,32.125,32.95,32.95,32.95,No,2.5,216.1,,,,,,7600,https://dkn.gs/sports/images/nba/players/50/527237.png, @ ,2/26/2026
+Matas Buzelis,SF,CHI,POR,1.75,1.5,5.3,6.5,14.1,29.2,33,1.2,18.74,6.5,0,2.5,31.24,31.165,31.165,31.165,No,4.1,235.6,,,,,,6300,https://dkn.gs/sports/images/nba/players/50/800380.png, @ ,2/26/2026
+Saddiq Bey,SF,NOP,UTA,2.3,0.1,4.3,6.2,13.3,28.8,31,1.6,18.1,5.9,0.9,0.9,30.475,30.73,30.73,30.73,Yes,-4.5,240.5,,,,,,6500,https://dkn.gs/sports/images/nba/players/50/527228.png, @ ,2/26/2026
+Norman Powell,SF,MIA,PHI,2.5,0.5,2.8,7.1,15.4,28.1,31,0.3,21.5,3.5,1.5,2,32.625,33.45,33.45,33.45,No,2,240.5,,,,,,6800,https://dkn.gs/sports/images/nba/players/50/33377.png, @ ,2/26/2026
+Kyshawn George,SF,WAS,ATL,2.5,0.5,4.1,4.9,11.8,26.6,28,0.7,11.24,3.5,0,2.4,19.165,18.29,18.29,18.29,No,11.5,234,,,,,,6500,https://dkn.gs/sports/images/nba/players/50/800401.png, @ ,2/26/2026
+Khris Middleton,SF,DAL,SAC,3.5,0.5,4.2,5.1,10.7,25.8,27,0.6,15.5,4.5,0,2,26.375,25.65,25.65,25.65,Yes,-6.9,234,,,,,,5300,https://dkn.gs/sports/images/nba/players/50/33177.png, @ ,2/26/2026
+Jaime Jaquez Jr,SF,MIA,PHI,3.86,0,3.5,5.2,11.1,24.8,30,1.3,11.5,4.5,0.5,2.2,22.815,21.99,21.99,21.99,No,2,240.5,,,,,,,,,
+Jerami Grant,SF,POR,CHI,2.19,0.5,2.7,5.4,12.8,23.7,27,0.6,20.5,3.5,0,1.9,28.21,27.585,27.585,27.585,Yes,-4.1,235.6,,,,,,6300,https://dkn.gs/sports/images/nba/players/50/33017.png, @ ,2/26/2026
+Andrew Wiggins,SF,MIA,PHI,2.5,0.5,3,5.3,11.7,23.5,30,1.4,14.5,5.5,1,1.5,27.375,27.85,27.85,27.85,No,2,240.5,,,,,,6100,https://dkn.gs/sports/images/nba/players/50/33191.png, @ ,2/26/2026
+Ace Bailey,SF,UTA,NOP,2.1,0.7,3.2,5.9,13,23.5,35,1.5,14.7,4.6,0.9,1.5,26.05,26.67,26.67,26.67,No,4.5,240.5,,,,,,6000,https://dkn.gs/sports/images/nba/players/50/905554.png, @ ,2/26/2026
+Kelly Oubre,SF,PHI,MIA,1.6,0.5,4,4.8,10.9,22.3,32,1,13.8,5,1.2,1.4,25.15,25.9,25.9,25.9,Yes,-2,240.5,,,,,,,,,
+Brice Sensabaugh,SF,UTA,NOP,1.9,0.1,3,5.2,11.2,21.5,28,0.6,14.9,3.5,0.7,1.5,22.975,22.85,22.85,22.85,No,4.5,240.5,,,,,,5700,https://dkn.gs/sports/images/nba/players/50/713780.png, @ ,2/26/2026
+Bilal Coulibaly,SF,WAS,ATL,2.5,0.5,3.6,3.8,9,21.2,28,0.9,10.5,3.5,1.5,1.6,21.825,22.85,22.85,22.85,No,11.5,234,,,,,,4600,https://dkn.gs/sports/images/nba/players/50/713760.png, @ ,2/26/2026
+Devin Vassell,SF,SAS,BKN,2.5,0.5,3,4.8,10.5,20.8,28,0.3,12.5,3.5,0.5,0.8,22.225,22.65,22.65,22.65,Yes,-12.8,224.7,,,,,,5400,https://dkn.gs/sports/images/nba/players/50/527223.png, @ ,2/26/2026
+Herbert Jones,SF,NOP,UTA,2.8,0.5,2.7,3.9,8.8,20.7,30,0.8,10.8,3.5,1.7,1.4,23.075,24.4,24.4,24.4,Yes,-4.5,240.5,,,,,,4500,https://dkn.gs/sports/images/nba/players/50/591040.png, @ ,2/26/2026
+Nique Clifford,SF,SAC,DAL,3.5,0.5,3.1,3.9,10.3,20.3,29,1.3,13.79,4.75,1.5,1.8,28.0775,28.94,28.94,28.94,No,6.9,234,,,,,,5600,https://dkn.gs/sports/images/nba/players/50/905575.png, @ ,2/26/2026
+Jonathan Kuminga,SF,ATL,WAS,1.9,0.3,3,4.6,8.8,19.1,19,1.2,11.6,4.1,0.4,1.1,20.425,20.37,20.37,20.37,Yes,-11.5,234,,,,,,5800,https://dkn.gs/sports/images/nba/players/50/590990.png, @ ,2/26/2026
+Patrick Williams,SF,CHI,POR,1.9,0.4,3,3.6,9.3,18,27,1,10,4,1.3,1.6,20.45,21.15,21.15,21.15,No,4.1,235.6,,,,,,3700,https://dkn.gs/sports/images/nba/players/50/527216.png, @ ,2/26/2026
+Derrick Jones Jr.,SF,LAC,MIN,1.6,0.7,2.4,4,7.8,17.9,25,0.9,10.7,3.3,0.8,0.9,19.775,20.66,20.66,20.66,No,5.5,226.9,,,,,,4900,https://dkn.gs/sports/images/nba/players/50/33160.png, @ ,2/26/2026
+Zaccharie Risacher,SF,ATL,WAS,1.3,0.4,2.9,4.2,9.4,17.8,24,1.2,10.7,4.1,0.8,0.8,19.775,20.37,20.37,20.37,Yes,-11.5,234,,,,,,4200,https://dkn.gs/sports/images/nba/players/50/800352.png, @ ,2/26/2026
+Isaac Okoro,SF,CHI,POR,1.5,0.5,1.8,3.7,8.2,17.2,28,1.2,10.94,3.5,0,0.9,18.115,17.99,17.99,17.99,No,4.1,235.6,,,,,,4400,https://dkn.gs/sports/images/nba/players/50/489504.png, @ ,2/26/2026
+Justin Champagnie,SF,WAS,ATL,1.1,0.6,3.8,3.2,6.5,16.7,20,1.6,8.5,5.4,0.8,0.7,19.35,20.13,20.13,20.13,No,11.5,234,,,,,,5100,https://dkn.gs/sports/images/nba/players/50/591152.png, @ ,2/26/2026
+Will Riley,SF,WAS,ATL,2.5,0.2,2.1,3.7,8.4,16.7,22,0.8,12.14,3.5,0.7,1.1,21.515,21.69,21.69,21.69,No,11.5,234,,,,,,5000,https://dkn.gs/sports/images/nba/players/50/905571.png, @ ,2/26/2026
+Ryan Dunn,SF,PHX,LAL,1.5,0.5,3.3,3.1,7.4,16.2,20,1.2,6.5,4.5,0,1.1,14.825,14.55,14.55,14.55,No,4.5,217.5,,,,,,3700,https://dkn.gs/sports/images/nba/players/50/800405.png, @ ,2/26/2026
+Jordan Miller,SF,LAC,MIN,2.4,0.2,2.1,3,6.2,16.1,18,0.7,8.6,2.9,0.6,1,16.925,17.08,17.08,17.08,No,5.5,226.9,,,,,,4400,https://dkn.gs/sports/images/nba/players/50/713800.png, @ ,2/26/2026
+Jamir Watkins,SF,WAS,ATL,1.1,0.6,3.1,2.7,6.5,14,21,0.9,7.1,4,0.8,0.6,16.25,17.15,17.15,17.15,No,11.5,234,,,,,,4300,https://dkn.gs/sports/images/nba/players/50/906350.png, @ ,2/26/2026
+Cody Williams,SF,UTA,NOP,1.4,0.7,2.2,3,6.6,13.4,28,0.9,7.2,3,0.8,1,15.55,16.4,16.4,16.4,No,4.5,240.5,,,,,,4200,https://dkn.gs/sports/images/nba/players/50/800356.png, @ ,2/26/2026
+Corey Kispert,SF,ATL,WAS,1.5,0.1,1.7,2.9,5.9,13.1,17,0.4,8,2.2,0.3,0.5,13.55,13.59,13.59,13.59,Yes,-11.5,234,,,,,,3900,https://dkn.gs/sports/images/nba/players/50/591016.png, @ ,2/26/2026
+Terance Mann,SF,BKN,SAS,1.9,0.2,1.5,2.1,4.5,11.8,18,0.8,5.7,2.4,0.4,0.6,12.45,12.63,12.63,12.63,No,12.8,224.7,,,,,,3900,https://dkn.gs/sports/images/nba/players/50/33113.png, @ ,2/26/2026
+Bryce McGowens,SF,NOP,UTA,1,0.1,1.2,2.1,4.1,10,15,0.3,6.3,1.4,0.5,0.3,10.6,10.98,10.98,10.98,Yes,-4.5,240.5,,,,,,3500,https://dkn.gs/sports/images/nba/players/50/649583.png, @ ,2/26/2026
+Dorian Finney-Smith,SF,HOU,ORL,1,0,2.1,1.7,4.5,9.9,20,1,5,2.5,0,0.7,9.275,8.8,8.8,8.8,Yes,-2.5,216.1,,,,,,4000,https://dkn.gs/sports/images/nba/players/50/33001.png, @ ,2/26/2026
+Simone Fontecchio,SF,MIA,PHI,0.9,0.1,1.6,1.9,4.6,9.6,14,0.5,5.7,2.2,0.4,0.5,10.55,10.69,10.69,10.69,No,2,240.5,,,,,,3600,https://dkn.gs/sports/images/nba/players/50/583104.png, @ ,2/26/2026
+Jarred Vanderbilt,SF,LAL,PHX,0.8,0.3,2.8,1.3,2.6,8.9,14,1.1,3.2,3.9,0.6,0.7,10.725,11.08,11.08,11.08,Yes,-4.5,217.5,,,,,,3400,https://dkn.gs/sports/images/nba/players/50/33027.png, @ ,2/26/2026
+Jonathan Isaac,SF,ORL,HOU,0.5,0.5,2,1.2,2.6,7.9,12,0.6,3.5,2.5,0,0.4,8.175,8.35,8.35,8.35,No,2.5,216.1,,,,,,3400,https://dkn.gs/sports/images/nba/players/50/33275.png, @ ,2/26/2026
+Nikola Jovic,SF,MIA,PHI,1.1,0.2,1.5,1.4,3.4,7.6,11,0.3,3.9,1.8,0.3,0.7,8.45,8.51,8.51,8.51,No,2,240.5,,,,,,3400,https://dkn.gs/sports/images/nba/players/50/649597.png, @ ,2/26/2026
+Drake Powell,SF,BKN,SAS,1,0.1,1.1,1.5,3.5,7.5,14,0.3,4.3,1.4,0.3,0.6,8.05,8.08,8.08,8.08,No,12.8,224.7,,,,,,3400,https://dkn.gs/sports/images/nba/players/50/905570.png, @ ,2/26/2026
+Jabari Walker,SF,PHI,MIA,0.4,0.2,2.1,1.2,2.8,7.1,11,0.7,3.4,2.8,0.4,0.4,8.5,8.76,8.76,8.76,Yes,-2,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649593.png, @ ,2/26/2026
+Justin Edwards,SF,PHI,MIA,0.7,0.2,1,1.3,3.3,6.7,12,0.4,3.6,1.4,0.5,0.4,7.6,8.03,8.03,8.03,Yes,-2,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800676.png, @ ,2/26/2026
+Myron Gardner,SF,MIA,PHI,0.7,0.1,1.4,1,2.2,6.5,8,0.5,2.8,2,0.4,0.2,7.25,7.55,7.55,7.55,No,2,240.5,,,,,,3300,https://dkn.gs/sports/images/nba/players/50/803244.png, @ ,2/26/2026
+Carter Bryant,SF,SAS,BKN,0.3,0.2,1.2,1,2.5,4.9,8,0.3,2.8,1.5,0.2,0.3,5.775,5.95,5.95,5.95,Yes,-12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/905560.png, @ ,2/26/2026
+Doug McDermott,SF,SAC,DAL,0.4,0,0.5,1,2.8,4.4,8,0.1,3.1,0.6,0.2,0.3,4.7,4.72,4.72,4.72,No,6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33087.png, @ ,2/26/2026
+Zion Williamson,PF,NOP,UTA,4.8,0.5,3.9,9.1,15.1,38.7,30,2.1,23.8,6,1.1,2.3,40.55,40.7,40.7,40.7,Yes,-4.5,240.5,,,,,,8000,https://dkn.gs/sports/images/nba/players/50/33223.png, @ ,2/26/2026
+Paolo Banchero,PF,ORL,HOU,5.5,0.5,6.6,7.1,15.7,37,35,0.7,21.73,7.5,0,2.5,39.105,37.98,37.98,37.98,No,2.5,216.1,,,,,,9200,https://dkn.gs/sports/images/nba/players/50/649544.png, @ ,2/26/2026
+Julius Randle,PF,MIN,LAC,5.1,0.2,4.6,7.4,15.2,35.8,33,1.6,20.6,6.3,0.7,2.2,36.825,36.31,36.31,36.31,Yes,-5.5,226.9,,,,,,8500,https://dkn.gs/sports/images/nba/players/50/33234.png, @ ,2/26/2026
+Lauri Markkanen,PF,UTA,NOP,2,0.4,4.7,8,16.6,33.5,33,1.4,23.4,6.1,0.9,1.4,35.925,36.22,36.22,36.22,No,4.5,240.5,,,,,,8200,https://dkn.gs/sports/images/nba/players/50/32970.png, @ ,2/26/2026
+Miles Bridges,PF,CHA,IND,2.5,0.5,6,6.9,15.2,32.9,33,1.2,15.5,5.5,0.5,1.7,27.275,27.15,27.15,27.15,Yes,-12.6,229.1,,,,,,6100,https://dkn.gs/sports/images/nba/players/50/32946.png, @ ,2/26/2026
+Bam Adebayo,PF,MIA,PHI,2.5,0.5,7,6.3,13.9,32.3,33,1.8,17.11,9.76,0.5,1.9,34.11,33.672,33.672,33.672,No,2,240.5,,,,,,8400,https://dkn.gs/sports/images/nba/players/50/33161.png, @ ,2/26/2026
+Naji Marshall,PF,DAL,SAC,3.5,0.5,5.1,6.6,12.6,30.2,35,0.8,19.24,5.5,1.5,1.9,34.415,35.19,35.19,35.19,Yes,-6.9,234,,,,,,6300,https://dkn.gs/sports/images/nba/players/50/535788.png, @ ,2/26/2026
+Jarace Walker,PF,IND,CHA,3.5,0.5,5.7,5.5,12.6,28.3,32,0.5,16.28,7.5,1.5,1.9,33.955,34.63,34.63,34.63,No,12.6,229.1,,,,,,6900,https://dkn.gs/sports/images/nba/players/50/713761.png, @ ,2/26/2026
+Derik Queen,PF,NOP,UTA,4,0.8,5.6,5.1,9.7,27.9,26,1.5,13.1,7.1,1,2.2,30.475,30.82,30.82,30.82,Yes,-4.5,240.5,,,,,,6000,https://dkn.gs/sports/images/nba/players/50/905562.png, @ ,2/26/2026
+Nicolas Claxton,PF,BKN,SAS,3.75,0.5,5.3,5,8.7,27.3,29,2.3,11.22,7.09,0.5,1.2,27.1075,27.153,27.153,27.153,No,12.8,224.7,,,,,,,,,
+John Collins,PF,LAC,MIN,1.8,0.7,5.1,6.7,11.5,27,28,1.4,16.9,6.6,0.7,1.4,29.95,30.32,30.32,30.32,No,5.5,226.9,,,,,,6200,https://dkn.gs/sports/images/nba/players/50/32848.png, @ ,2/26/2026
+Keegan Murray,PF,SAC,DAL,2,1,4.3,6.1,15.2,26.9,34,2,15.8,6.2,1,1.1,30,31.14,31.14,31.14,No,6.9,234,,,,,,6200,https://dkn.gs/sports/images/nba/players/50/649547.png, @ ,2/26/2026
+Kyle Filipowski,PF,UTA,NOP,2.8,0.6,6.4,4.8,9.2,26.2,29,1.7,12.9,8.1,1.2,2.1,29.775,30.12,30.12,30.12,No,4.5,240.5,,,,,,7600,https://dkn.gs/sports/images/nba/players/50/800651.png, @ ,2/26/2026
+Jabari Smith,PF,HOU,ORL,1.7,0.9,5.8,5.4,11.5,25.7,33,1.4,14.9,7.2,0.8,1.4,29.15,29.79,29.79,29.79,Yes,-2.5,216.1,,,,,,,,,
+Royce O`Neale,PF,PHX,LAL,3.4,0.4,4.9,4.4,11.1,25.1,28,0.8,12.6,5.7,1.4,1.8,27.525,28.14,28.14,28.14,No,4.5,217.5,,,,,,,,,
+Moussa Diabate,PF,CHA,IND,1.5,0.5,5.9,3.7,5.7,23.8,28,4.4,8.5,9.5,0.5,1.1,24.075,24.05,24.05,24.05,Yes,-12.6,229.1,,,,,,5800,https://dkn.gs/sports/images/nba/players/50/649586.png, @ ,2/26/2026
+Naz Reid,PF,MIN,LAC,2.2,0.8,4.3,5,10.7,23.4,26,1,13.4,5.3,0.7,1.2,25.725,26.36,26.36,26.36,Yes,-5.5,226.9,,,,,,6100,https://dkn.gs/sports/images/nba/players/50/33206.png, @ ,2/26/2026
+Toumani Camara,PF,POR,CHI,2.5,0.5,4.1,4.7,10.8,22.9,32,1.6,14.04,5.5,1.5,1.9,27.715,28.49,28.49,28.49,Yes,-4.1,235.6,,,,,,6100,https://dkn.gs/sports/images/nba/players/50/713804.png, @ ,2/26/2026
+Jaden McDaniels,PF,MIN,LAC,2.4,0.8,2.9,5.2,10.3,22.7,32,1.2,13.5,4.1,0.8,1.3,24.775,25.52,25.52,25.52,Yes,-5.5,226.9,,,,,,6300,https://dkn.gs/sports/images/nba/players/50/527235.png, @ ,2/26/2026
+Marvin Bagley III,PF,DAL,SAC,1.5,1.5,4.4,4.9,7.5,21.6,22,2,14.5,8.5,0,1.1,29.825,30.35,30.35,30.35,Yes,-6.9,234,,,,,,4900,https://dkn.gs/sports/images/nba/players/50/33347.png, @ ,2/26/2026
+Tari Eason,PF,HOU,ORL,1.5,0.5,4.5,4.5,9.8,21.4,26,1.8,12.5,6.5,1.5,1.6,26.075,26.95,26.95,26.95,Yes,-2.5,216.1,,,,,,6500,https://dkn.gs/sports/images/nba/players/50/649566.png, @ ,2/26/2026
+Noah Clowney,PF,BKN,SAS,1.5,0.5,3.6,4,10.2,21,29,1,11.5,4.5,0.5,1.4,20.675,20.75,20.75,20.75,No,12.8,224.7,,,,,,4800,https://dkn.gs/sports/images/nba/players/50/713774.png, @ ,2/26/2026
+Obi Toppin,PF,IND,CHA,1.7,0.4,4,4.8,9,21,25,0.5,12.6,4.6,0.7,0.9,22.65,23.07,23.07,23.07,No,12.6,229.1,,,,,,3900,https://dkn.gs/sports/images/nba/players/50/527221.png, @ ,2/26/2026
+Wendell Carter Jr.,PF,ORL,HOU,1.7,0.6,5.2,3.4,7.2,19.8,28,1.2,9.8,6.3,0.8,1.2,22.425,22.91,22.91,22.91,No,2.5,216.1,,,,,,5500,https://dkn.gs/sports/images/nba/players/50/32972.png, @ ,2/26/2026
+Precious Achiuwa,PF,SAC,DAL,1.5,0.5,4.1,3.7,7.6,18.8,23,2.7,10,6.75,0,0.9,21.2375,20.95,20.95,20.95,No,6.9,234,,,,,,4900,https://dkn.gs/sports/images/nba/players/50/527229.png, @ ,2/26/2026
+Pascal Siakam,PF,IND,CHA,1.8,0.2,2.6,4.5,8.8,18.2,17,0.4,11.6,3,0.6,0.8,19.25,19.5,19.5,19.5,No,12.6,229.1,,,,,,8700,https://dkn.gs/sports/images/nba/players/50/33379.png, @ ,2/26/2026
+Rui Hachimura,PF,LAL,PHX,0.9,0,3.2,4.5,8.6,17.6,29,0.8,7.5,2.5,0.5,0.7,12.625,12.65,12.65,12.65,Yes,-4.5,217.5,,,,,,4200,https://dkn.gs/sports/images/nba/players/50/32883.png, @ ,2/26/2026
+Danny Wolf,PF,BKN,SAS,2.5,0,3.6,3,7.2,16.6,19,0.9,8.5,4.5,0,1,17.375,16.65,16.65,16.65,No,12.8,224.7,,,,,,4900,https://dkn.gs/sports/images/nba/players/50/905576.png, @ ,2/26/2026
+Guerschon Yabusele,PF,CHI,POR,1.5,0.5,3.7,3.1,7,16.6,20,1.1,11.5,6.5,0,1.1,22.325,21.95,21.95,21.95,No,4.1,235.6,,,,,,4900,https://dkn.gs/sports/images/nba/players/50/58783.png, @ ,2/26/2026
+Micah Potter,PF,IND,CHA,1.4,0.6,3.3,2.6,5.1,14.7,19,0.5,7.8,3.8,0.5,0.7,16.5,17.06,17.06,17.06,No,12.6,229.1,,,,,,4400,https://dkn.gs/sports/images/nba/players/50/591848.png, @ ,2/26/2026
+Trendon Watford,PF,PHI,MIA,2.1,0.4,2.9,2.7,5.6,14.6,18,0.7,7.2,3.6,0.4,1.2,15.85,15.87,15.87,15.87,Yes,-2,240.5,,,,,,3500,https://dkn.gs/sports/images/nba/players/50/591097.png, @ ,2/26/2026
+Dom Barlow,PF,PHI,MIA,0.9,0.6,2.5,2.6,5,13.7,21,1.7,6.8,4.2,0.8,0.5,15.95,16.89,16.89,16.89,Yes,-2,240.5,,,,,,,,,
+Grant Williams,PF,CHA,IND,1.5,0,2.5,2.2,4.9,13.1,18,1.1,6.5,3.5,0.5,0.9,13.675,13.55,13.55,13.55,Yes,-12.6,229.1,,,,,,4400,https://dkn.gs/sports/images/nba/players/50/32886.png, @ ,2/26/2026
+Moritz Wagner,PF,ORL,HOU,0.8,0.2,2.4,2.8,5.3,12.8,14,0.7,8.1,3.1,0.6,0.8,14.375,14.62,14.62,14.62,No,2.5,216.1,,,,,,3700,https://dkn.gs/sports/images/nba/players/50/32880.png, @ ,2/26/2026
+Harrison Barnes,PF,SAS,BKN,1.3,0.1,1.7,2.7,5.6,12.6,21,0.6,7.7,2.3,0.5,0.5,13.475,13.71,13.71,13.71,Yes,-12.8,224.7,,,,,,3700,https://dkn.gs/sports/images/nba/players/50/33337.png, @ ,2/26/2026
+Tristan da Silva,PF,ORL,HOU,1.1,0.3,2.3,2.5,6,12.3,21,0.4,7,2.7,0.8,0.6,13.925,14.59,14.59,14.59,No,2.5,216.1,,,,,,4300,https://dkn.gs/sports/images/nba/players/50/800378.png, @ ,2/26/2026
+Jake LaRavia,PF,LAL,PHX,1.3,0.3,2.1,2.1,4.5,11.8,19,0.9,6,3,0.8,0.8,13.5,14.05,14.05,14.05,Yes,-4.5,217.5,,,,,,4000,https://dkn.gs/sports/images/nba/players/50/649568.png, @ ,2/26/2026
+Dwight Powell,PF,DAL,SAC,1.4,0.5,3.1,1.3,2,11.7,18,1.4,3.9,4.6,0.6,0.7,13.6,14.12,14.12,14.12,Yes,-6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/32997.png, @ ,2/26/2026
+Kris Murray,PF,POR,CHI,1.75,0.5,1.8,1.7,4,9.4,17,1,9.11,4.5,0,0.7,18.01,17.935,17.935,17.935,Yes,-4.1,235.6,,,,,,3800,https://dkn.gs/sports/images/nba/players/50/713775.png, @ ,2/26/2026
+Mouhamed Gueye,PF,ATL,WAS,0.7,0.4,2,1.4,3.1,9,12,1.3,3.6,3.2,0.6,0.3,10.5,11.19,11.19,11.19,Yes,-11.5,234,,,,,,3600,https://dkn.gs/sports/images/nba/players/50/713791.png, @ ,2/26/2026
+Anthony Gill,PF,WAS,ATL,0.9,0.4,1.7,1.6,3,8.3,12,0.7,3.9,2.4,0.4,0.5,9.6,10.03,10.03,10.03,No,11.5,234,,,,,,4400,https://dkn.gs/sports/images/nba/players/50/529622.png, @ ,2/26/2026
+Kevin Love,PF,UTA,NOP,0.9,0.1,2.3,1.2,2.9,8.1,8,0.6,3.6,2.8,0.2,0.4,8.85,8.81,8.81,8.81,No,4.5,240.5,,,,,,4000,https://dkn.gs/sports/images/nba/players/50/32978.png, @ ,2/26/2026
+Asa Newell,PF,ATL,WAS,0.4,0.3,1,1.5,2.9,6.7,9,1,3.8,2,0.3,0.4,7.9,8.2,8.2,8.2,Yes,-11.5,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/905572.png, @ ,2/26/2026
+Drew Timme,PF,LAL,PHX,0.6,0,1,1.3,2.4,5.7,8,0.5,3.1,1.5,0.2,0.4,6.075,6,6,6,Yes,-4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713826.png, @ ,2/26/2026
+Alperen Sengun,C,HOU,ORL,6.5,0.5,6.6,8.1,15.5,41.2,33,2.9,19.67,9.04,1.5,3.3,43.07,42.968,42.968,42.968,Yes,-2.5,216.1,,,,,,9400,https://dkn.gs/sports/images/nba/players/50/591017.png, @ ,2/26/2026
+Joel Embiid,C,PHI,MIA,4.5,0.5,6.2,8.6,18.1,40.6,32,1.9,27.5,8.02,0.5,3.3,44.625,43.574,43.574,43.574,Yes,-2,240.5,,,,,,9500,https://dkn.gs/sports/images/nba/players/50/33292.png, @ ,2/26/2026
+Victor Wembanyama,C,SAS,BKN,2.5,2.5,8.7,7.6,15.5,39.4,30,1.7,23.63,11.5,1.5,2.3,50.105,50.88,50.88,50.88,Yes,-12.8,224.7,,,,,,10900,https://dkn.gs/sports/images/nba/players/50/713754.png, @ ,2/26/2026
+Donovan Clingan,C,POR,CHI,2.5,1.83,8.5,5.3,10.3,31.5,30,4.3,15.5,13.5,0,1.5,40.535,39.44,39.44,39.44,Yes,-4.1,235.6,,,,,,7300,https://dkn.gs/sports/images/nba/players/50/800354.png, @ ,2/26/2026
+Onyeka Okongwu,C,ATL,WAS,2.5,0.5,5.9,5.8,11.1,29.8,30,2.8,15.8,8.5,0,1.3,30.525,29.95,29.95,29.95,Yes,-11.5,234,,,,,,7700,https://dkn.gs/sports/images/nba/players/50/481752.png, @ ,2/26/2026
+Maxime Raynaud,C,SAC,DAL,1.5,0.5,6.6,5.8,10.7,26.6,30,2.9,13.5,9.28,0.5,1.1,28.8,28.786,28.786,28.786,No,6.9,234,,,,,,6300,https://dkn.gs/sports/images/nba/players/50/906348.png, @ ,2/26/2026
+Rudy Gobert,C,MIN,LAC,1.5,1.4,6.8,4.6,6.8,25.8,32,3.5,11.5,10.3,0.6,1.1,31.575,31.01,31.01,31.01,Yes,-5.5,226.9,,,,,,6600,https://dkn.gs/sports/images/nba/players/50/33393.png, @ ,2/26/2026
+Mark Williams,C,PHX,LAL,0.5,0.5,5.9,5.5,9,25.8,22,2.4,11.19,7.5,0.5,1.3,22.665,22.64,22.64,22.64,No,4.5,217.5,,,,,,5700,https://dkn.gs/sports/images/nba/players/50/649564.png, @ ,2/26/2026
+Daniel Gafford,C,DAL,SAC,1.4,2.1,5.7,4.8,6.7,23.9,27,2.1,11.9,7.8,0.8,1.5,28.8,30.56,30.56,30.56,Yes,-6.9,234,,,,,,4400,https://dkn.gs/sports/images/nba/players/50/32976.png, @ ,2/26/2026
+Jalen Smith,C,CHI,POR,1.4,0.8,5.9,4.6,9.3,23.7,23,2.2,12.7,8,0.8,1.4,27.3,27.8,27.8,27.8,No,4.1,235.6,,,,,,5600,https://dkn.gs/sports/images/nba/players/50/527222.png, @ ,2/26/2026
+Brook Lopez,C,LAC,MIN,2.3,1.6,3.9,4.7,10,23.2,28,0.9,12.6,4.8,0.7,1.1,26.1,27.61,27.61,27.61,No,5.5,226.9,,,,,,5100,https://dkn.gs/sports/images/nba/players/50/33171.png, @ ,2/26/2026
+Jock Landale,C,ATL,WAS,2,0,3.4,4.8,8.7,23.1,25,3.6,8.5,5.5,0.5,0.7,19.025,18.9,18.9,18.9,Yes,-11.5,234,,,,,,4400,https://dkn.gs/sports/images/nba/players/50/36379.png, @ ,2/26/2026
+Deandre Ayton,C,LAL,PHX,0.5,0.5,6.4,5.2,7.9,22.5,26,2.3,9.94,8.28,0.5,1.3,22.39,22.326,22.326,22.326,Yes,-4.5,217.5,,,,,,5100,https://dkn.gs/sports/images/nba/players/50/33312.png, @ ,2/26/2026
+Jay Huff,C,IND,CHA,1.5,1.5,3.5,4.5,8.4,22.1,24,0.5,11.5,4.5,0.5,0.7,23.025,24.45,24.45,24.45,No,12.6,229.1,,,,,,5500,https://dkn.gs/sports/images/nba/players/50/591190.png, @ ,2/26/2026
+Tristan Vukcevic,C,WAS,ATL,1.5,0.5,3.8,4.7,9.9,21.2,19,0.9,12.05,5.5,0,1.8,21.275,20.6,20.6,20.6,No,11.5,234,,,,,,5100,https://dkn.gs/sports/images/nba/players/50/713794.png, @ ,2/26/2026
+Kel`El Ware,C,MIA,PHI,0.5,0.8,4.9,3.4,6.8,17.1,19,2.1,8.5,6.9,0.5,0.6,20.175,20.83,20.83,20.83,No,2,240.5,,,,,,,,,
+Oso Ighodaro,C,PHX,LAL,2.4,0.6,3.7,3.1,5,16.7,20,1.4,6.9,5,1.1,1.7,19.3,19.9,19.9,19.9,No,4.5,217.5,,,,,,3900,https://dkn.gs/sports/images/nba/players/50/800656.png, @ ,2/26/2026
+Yves Missi,C,NOP,UTA,1.2,1.1,3.3,2.7,4.8,15.5,20,2.7,6.4,6,0.4,0.7,18.35,19.2,19.2,19.2,Yes,-4.5,240.5,,,,,,3900,https://dkn.gs/sports/images/nba/players/50/800377.png, @ ,2/26/2026
+Nick Richards,C,CHI,POR,0.6,0.9,4.4,2.7,4.7,14.3,18,1.8,7.1,6.2,0.3,1.4,17.45,17.64,17.64,17.64,No,4.1,235.6,,,,,,4000,https://dkn.gs/sports/images/nba/players/50/527249.png, @ ,2/26/2026
+Day&#x27;Ron Sharpe,C,BKN,SAS,1.5,0.4,2.9,2.4,4.1,13.9,14,2,5.9,4.9,0.7,1,15.975,16.33,16.33,16.33,No,12.8,224.7,,,,,,,,,
+Ryan Kalkbrenner,C,CHA,IND,0.5,1.5,2.9,2.7,3.5,13.6,19,2.4,5.5,4.5,0,0.5,14.625,15.65,15.65,15.65,Yes,-12.6,229.1,,,,,,4500,https://dkn.gs/sports/images/nba/players/50/906340.png, @ ,2/26/2026
+Robert Williams,C,POR,CHI,0.8,1,3.8,2.2,3.2,12.5,12,1.3,5,5,0.6,0.6,15.35,16.4,16.4,16.4,Yes,-4.1,235.6,,,,,,4500,https://dkn.gs/sports/images/nba/players/50/32882.png, @ ,2/26/2026
+Andre Drummond,C,PHI,MIA,0.6,0.5,4,1.9,3.9,12.4,14,2.1,4.9,6.1,0.5,0.7,15.075,15.42,15.42,15.42,Yes,-2,240.5,,,,,,4500,https://dkn.gs/sports/images/nba/players/50/33035.png, @ ,2/26/2026
+Luke Kornet,C,SAS,BKN,1.2,0.6,2.2,1.9,2.8,11.7,15,1.7,4.6,4,0.4,0.3,13.25,13.9,13.9,13.9,Yes,-12.8,224.7,,,,,,3900,https://dkn.gs/sports/images/nba/players/50/32971.png, @ ,2/26/2026
+Jaxson Hayes,C,LAL,PHX,0.7,0.6,2.3,2.2,3,10.5,15,1.2,5.1,3.5,0.4,0.5,12.275,12.85,12.85,12.85,Yes,-4.5,217.5,,,,,,4300,https://dkn.gs/sports/images/nba/players/50/33224.png, @ ,2/26/2026
+Clint Capela,C,HOU,ORL,0.5,0,2.6,1.7,3,9.7,11,1.6,4,5.5,0,0.5,11.375,10.85,10.85,10.85,Yes,-2.5,216.1,,,,,,3400,https://dkn.gs/sports/images/nba/players/50/33076.png, @ ,2/26/2026
+Karlo Matkovic,C,NOP,UTA,0.6,0.5,2.2,2,3.1,9.7,12,0.8,5,3,0.4,0.4,11.25,11.8,11.8,11.8,Yes,-4.5,240.5,,,,,,3700,https://dkn.gs/sports/images/nba/players/50/649705.png, @ ,2/26/2026
+Yanic Konan Niederhauser,C,LAC,MIN,0.5,0.7,2.1,1.7,2.6,8.5,10,0.8,4.3,3,0.1,0.7,10.05,10.35,10.35,10.35,No,5.5,226.9,,,,,,3500,https://dkn.gs/sports/images/nba/players/50/905579.png, @ ,2/26/2026
+DeAndre Jordan,C,NOP,UTA,0.5,0.4,2.7,1.3,2,8.5,10,1.4,3.1,4.1,0.3,0.5,10.125,10.37,10.37,10.37,Yes,-4.5,240.5,,,,,,4000,https://dkn.gs/sports/images/nba/players/50/32899.png, @ ,2/26/2026
+Adem Bona,C,PHI,MIA,0.3,0,2,1.3,2.1,7.7,12,1.2,3.3,3.5,0,0.5,7.875,7.45,7.45,7.45,Yes,-2,240.5,,,,,,3600,https://dkn.gs/sports/images/nba/players/50/800658.png, @ ,2/26/2026
+Drew Eubanks,C,SAC,DAL,0.5,0.4,1.7,1.5,2.7,7.6,10,1.1,3.5,2.8,0.3,0.5,8.9,9.21,9.21,9.21,No,6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33367.png, @ ,2/26/2026
+Christian Koloko,C,ATL,WAS,0.5,0.5,1.4,1,2.2,6.4,10,1.2,2.1,2.6,0.4,0.3,7.75,8.37,8.37,8.37,Yes,-11.5,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649579.png, @ ,2/26/2026
+Joan Beringer,C,MIN,LAC,0.2,0.3,0.6,1,1.4,4.1,5,0.7,2.3,1.3,0.1,0.2,4.925,5.16,5.16,5.16,Yes,-5.5,226.9,,,,,,3400,https://dkn.gs/sports/images/nba/players/50/905564.png, @ ,2/26/2026
+Deni Avdija,SF/PF,POR,CHI,,,,,,,,,,,,,,,,,Yes,-4.1,235.6,,,,,,8700,https://dkn.gs/sports/images/nba/players/50/527254.png, @ ,2/26/2026
+Cooper Flagg,PG/SF,DAL,SAC,,,,,,,,,,,,,,,,,Yes,-6.9,234,,,,,,8700,https://dkn.gs/sports/images/nba/players/50/905515.png, @ ,2/26/2026
+Trae Young,PG,WAS,ATL,,,,,,,,,,,,,,,,,No,11.5,234,,,,,,8500,https://dkn.gs/sports/images/nba/players/50/32850.png, @ ,2/26/2026
+Devin Booker,PG/SG,PHX,LAL,,,,,,,,,,,,,,,,,No,4.5,217.5,,,,,,8400,https://dkn.gs/sports/images/nba/players/50/33309.png, @ ,2/26/2026
+Trey Murphy III,PG/SG,NOP,UTA,,,,,,,,,,,,,,,,,Yes,-4.5,240.5,,,,,,7900,https://dkn.gs/sports/images/nba/players/50/591022.png, @ ,2/26/2026
+Franz Wagner,SF,ORL,HOU,,,,,,,,,,,,,,,,,No,2.5,216.1,,,,,,7700,https://dkn.gs/sports/images/nba/players/50/591008.png, @ ,2/26/2026
+Alexandre Sarr,C,WAS,ATL,,,,,,,,,,,,,,,,,No,11.5,234,,,,,,7500,https://dkn.gs/sports/images/nba/players/50/800353.png, @ ,2/26/2026
+Shaedon Sharpe,SG,POR,CHI,,,,,,,,,,,,,,,,,Yes,-4.1,235.6,,,,,,7200,https://dkn.gs/sports/images/nba/players/50/649550.png, @ ,2/26/2026
+De'Aaron Fox,PG,SAS,BKN,5.5,0.5,,,,,,,16.31,3.5,1.5,,32.935,34.76,34.76,34.76,Yes,-12.8,224.7,,,,,,7100,https://dkn.gs/sports/images/nba/players/50/33343.png, @ ,2/26/2026
+CJ McCollum,PG/SG,ATL,WAS,,,,,,,,,,,,,,,,,Yes,-11.5,234,,,,,,6800,https://dkn.gs/sports/images/nba/players/50/33324.png, @ ,2/26/2026
+Dillon Brooks,PF,PHX,LAL,,,,,,,,,,,,,,,,,No,4.5,217.5,,,,,,6800,https://dkn.gs/sports/images/nba/players/50/33141.png, @ ,2/26/2026
+Ivica Zubac,C,IND,CHA,,,,,,,,,,,,,,,,,No,12.6,229.1,,,,,,6800,https://dkn.gs/sports/images/nba/players/50/33107.png, @ ,2/26/2026
+Nic Claxton,C,BKN,SAS,,,,,,,,,,,,,,,,,No,12.8,224.7,,,,,,6600,https://dkn.gs/sports/images/nba/players/50/32924.png, @ ,2/26/2026
+PJ Washington,PF,DAL,SAC,,,,,,,,,,,,,,,,,Yes,-6.9,234,,,,,,6500,https://dkn.gs/sports/images/nba/players/50/32950.png, @ ,2/26/2026
+Royce O'Neale,SF/PF,PHX,LAL,2.5,0.5,,,,,,,8.5,4.5,0,,18.875,19.15,19.15,19.15,No,4.5,217.5,,,,,,5900,https://dkn.gs/sports/images/nba/players/50/32840.png, @ ,2/26/2026
+Anfernee Simons,SG,CHI,POR,,,,,,,,,,,,,,,,,No,4.1,235.6,,,,,,5900,https://dkn.gs/sports/images/nba/players/50/33330.png, @ ,2/26/2026
+Aaron Nesmith,SG,IND,CHA,,,,,,,,,,,,,,,,,No,12.6,229.1,,,,,,5700,https://dkn.gs/sports/images/nba/players/50/502007.png, @ ,2/26/2026
+Day'Ron Sharpe,C,BKN,SAS,2.5,0,,,,,,,7.94,6.25,0,,19.5025,19.19,19.19,19.19,No,12.8,224.7,,,,,,5600,https://dkn.gs/sports/images/nba/players/50/591034.png, @ ,2/26/2026
+Jordan Goodwin,SG/SF,PHX,LAL,,,,,,,,,,,,,,,,,No,4.5,217.5,,,,,,5500,https://dkn.gs/sports/images/nba/players/50/591847.png, @ ,2/26/2026
+Dylan Cardwell,C,SAC,DAL,,,,,,,,,,,,,,,,,No,6.9,234,,,,,,5500,https://dkn.gs/sports/images/nba/players/50/906415.png, @ ,2/26/2026
+Bub Carrington,PG,WAS,ATL,,,,,,,,,,,,,,,,,No,11.5,234,,,,,,5400,https://dkn.gs/sports/images/nba/players/50/800372.png, @ ,2/26/2026
+Jaden Ivey,SG/SF,CHI,POR,,,,,,,,,,,,,,,,,No,4.1,235.6,,,,,,5400,https://dkn.gs/sports/images/nba/players/50/649548.png, @ ,2/26/2026
+Kel'el Ware,C,MIA,PHI,,0,,,,,,,9.5,7.5,0,,18.875,18.5,18.5,18.5,No,2,240.5,,,,,,5000,https://dkn.gs/sports/images/nba/players/50/800371.png, @ ,2/26/2026
+Kobe Brown,SF/PF,IND,CHA,,,,,,,,,,,,,,,,,No,12.6,229.1,,,,,,4600,https://dkn.gs/sports/images/nba/players/50/713782.png, @ ,2/26/2026
+Dominick Barlow,PF/C,PHI,MIA,0.5,0.5,,,,,,,8.2,5.5,0.5,0.5,17.575,18.05,18.05,18.05,Yes,-2,240.5,,,,,,4200,https://dkn.gs/sports/images/nba/players/50/678122.png, @ ,2/26/2026
+Sharife Cooper,PG,WAS,ATL,,,,,,,,,,,,,,,,,No,11.5,234,,,,,,4100,https://dkn.gs/sports/images/nba/players/50/591052.png, @ ,2/26/2026
+Cole Anthony,PG,PHX,LAL,,,,,,,,,,,,,,,,,No,4.5,217.5,,,,,,3800,https://dkn.gs/sports/images/nba/players/50/527225.png, @ ,2/26/2026
+Killian Hayes,PG,SAC,DAL,,,,,,,,,,,,,,,,,No,6.9,234,,,,,,3800,https://dkn.gs/sports/images/nba/players/50/527220.png, @ ,2/26/2026
+Tre Mann,PG/SG,CHA,IND,,,,,,,,,,,,,,,,,Yes,-12.6,229.1,,,,,,3400,https://dkn.gs/sports/images/nba/players/50/591023.png, @ ,2/26/2026
+Leaky Black,PF,WAS,ATL,,,,,,,,,,,,,,,,,No,11.5,234,,,,,,3400,https://dkn.gs/sports/images/nba/players/50/717406.png, @ ,2/26/2026
+Tidjane Salaun,PF,CHA,IND,,,,,,,,,,,,,,,,,Yes,-12.6,229.1,,,,,,3300,https://dkn.gs/sports/images/nba/players/50/800400.png, @ ,2/26/2026
+Jae'Sean Tate,SG/SF,HOU,ORL,,,,,,,,,,,,,,,,,Yes,-2.5,216.1,,,,,,3300,https://dkn.gs/sports/images/nba/players/50/58862.png, @ ,2/26/2026
+Blake Hinson,PF,UTA,NOP,,,,,,,,,,,,,,,,,No,4.5,240.5,,,,,,3300,https://dkn.gs/sports/images/nba/teams/50/32959.png, @ ,2/26/2026
+Aaron Holiday,PG,HOU,ORL,,,,,,,,,,,,,,,,,Yes,-2.5,216.1,,,,,,3200,https://dkn.gs/sports/images/nba/players/50/33095.png, @ ,2/26/2026
+Kevon Looney,C,NOP,UTA,,,,,,,,,,,,,,,,,Yes,-4.5,240.5,,,,,,3200,https://dkn.gs/sports/images/nba/players/50/33056.png, @ ,2/26/2026
+Matisse Thybulle,SF/PF,POR,CHI,,,,,,,,,,,,,,,,,Yes,-4.1,235.6,,,,,,3200,https://dkn.gs/sports/images/nba/players/50/33302.png, @ ,2/26/2026
+Cameron Payne,PG/SG,PHI,MIA,,,,,,,,,,,,,,,,,Yes,-2,240.5,,,,,,3200,https://dkn.gs/sports/images/nba/players/50/33375.png, @ ,2/26/2026
+Dalen Terry,SF,PHI,MIA,,,,,,,,,,,,,,,,,Yes,-2,240.5,,,,,,3100,https://dkn.gs/sports/images/nba/players/50/649567.png, @ ,2/26/2026
+Jamaree Bouyea,PG,PHX,LAL,,,,,,,,,,,,,,,,,No,4.5,217.5,,,,,,3100,https://dkn.gs/sports/images/nba/players/50/649595.png, @ ,2/26/2026
+Maxi Kleber,C,LAL,PHX,,,,,,,,,,,,,,,,,Yes,-4.5,217.5,,,,,,3100,https://dkn.gs/sports/images/nba/players/50/33003.png, @ ,2/26/2026
+Taelon Peter,SG/SF,IND,CHA,,,,,,,,,,,,,,,,,No,12.6,229.1,,,,,,3100,https://dkn.gs/sports/images/nba/players/50/906411.png, @ ,2/26/2026
+Pat Connaughton,SF/PF,CHA,IND,,,,,,,,,,,,,,,,,Yes,-12.6,229.1,,,,,,3100,https://dkn.gs/sports/images/nba/players/50/33180.png, @ ,2/26/2026
+Jaren Jackson Jr.,C,UTA,NOP,,,,,,,,,,,,,,,,,No,4.5,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33142.png, @ ,2/26/2026
+Dalton Knecht,SG/SF,LAL,PHX,,,,,,,,,,,,,,,,,Yes,-4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800374.png, @ ,2/26/2026
+Micah Peavy,SF/PF,NOP,UTA,,,,,,,,,,,,,,,,,Yes,-4.5,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906347.png, @ ,2/26/2026
+De'Andre Hunter,SF,SAC,DAL,,,,,,,,,,,,,,,,,No,6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/32855.png, @ ,2/26/2026
+Goga Bitadze,C,ORL,HOU,,,,,,,,,,,,,,,,,No,2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33097.png, @ ,2/26/2026
+Keaton Wallace,PG,ATL,WAS,,,,,,,,,,,,,,,,,Yes,-11.5,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/592424.png, @ ,2/26/2026
+Jusuf Nurkic,C,UTA,NOP,,,,,,,,,,,,,,,,,No,4.5,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33325.png, @ ,2/26/2026
+Vince Williams Jr.,PG,UTA,NOP,,,,,,,,,,,,,,,,,No,4.5,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649702.png, @ ,2/26/2026
+Noah Penda,SF/PF,ORL,HOU,,,,,,,,,,,,,,,,,No,2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906338.png, @ ,2/26/2026
+Tyrese Martin,PG/SG,PHI,MIA,,,,,,,,,,,,,,,,,Yes,-2,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649704.png, @ ,2/26/2026
+Zach LaVine,SG,SAC,DAL,,,,,,,,,,,,,,,,,No,6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/32963.png, @ ,2/26/2026
+Ryan Nembhard,PG,DAL,SAC,,,,,,,,,,,,,,,,,Yes,-6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906412.png, @ ,2/26/2026
+Jordan Hawkins,SG/SF,NOP,UTA,,,,,,,,,,,,,,,,,Yes,-4.5,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713767.png, @ ,2/26/2026
+Jalen Wilson,PF,BKN,SAS,,,,,,,,,,,,,,,,,No,12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713803.png, @ ,2/26/2026
+Johnny Furphy,SG/SF,IND,CHA,,,,,,,,,,,,,,,,,No,12.6,229.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/794875.png, @ ,2/26/2026
+Hansen Yang,C,POR,CHI,,,,,,,,,,,,,,,,,Yes,-4.1,235.6,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/905566.png, @ ,2/26/2026
+Rasheer Fleming,PF,PHX,LAL,,,,,,,,,,,,,,,,,No,4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906337.png, @ ,2/26/2026
+Josh Minott,SF/PF,BKN,SAS,,,,,,,,,,,,,,,,,No,12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649588.png, @ ,2/26/2026
+Kelly Olynyk,PF/C,SAS,BKN,,,,,,,,,,,,,,,,,Yes,-12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33158.png, @ ,2/26/2026
+Isaiah Livers,SF/PF,PHX,LAL,,,,,,,,,,,,,,,,,No,4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/588013.png, @ ,2/26/2026
+Steven Adams,C,HOU,ORL,,,,,,,,,,,,,,,,,Yes,-2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33250.png, @ ,2/26/2026
+AJ Johnson,PG/SG,DAL,SAC,,,,,,,,,,,,,,,,,Yes,-6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800411.png, @ ,2/26/2026
+Moussa Cisse,C,DAL,SAC,,,,,,,,,,,,,,,,,Yes,-6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/908768.png, @ ,2/26/2026
+Bronny James,PG/SG,LAL,PHX,,,,,,,,,,,,,,,,,Yes,-4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800667.png, @ ,2/26/2026
+Lindy Waters III,SG,SAS,BKN,,,,,,,,,,,,,,,,,Yes,-12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/627533.png, @ ,2/26/2026
+Liam McNeeley,SF/PF,CHA,IND,,,,,,,,,,,,,,,,,Yes,-12.6,229.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/905577.png, @ ,2/26/2026
+Khaman Maluach,C,PHX,LAL,,,,,,,,,,,,,,,,,No,4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/726621.png, @ ,2/26/2026
+Paul George,SF,PHI,MIA,,,,,,,,,,,,,,,,,Yes,-2,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33100.png, @ ,2/26/2026
+Jordan McLaughlin,PG,SAS,BKN,,,,,,,,,,,,,,,,,Yes,-12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33203.png, @ ,2/26/2026
+D'Angelo Russell,PG,WAS,ATL,,,,,,,,,,,,,,,,,No,11.5,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33054.png, @ ,2/26/2026
+Nick Smith Jr.,PG/SF,LAL,PHX,,,,,,,,,,,,,,,,,Yes,-4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713779.png, @ ,2/26/2026
+Leonard Miller,PF/C,CHI,POR,,,,,,,,,,,,,,,,,No,4.1,235.6,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713785.png, @ ,2/26/2026
+Ethan Thompson,PG/SG,IND,CHA,,,,,,,,,,,,,,,,,No,12.6,229.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/591821.png, @ ,2/26/2026
+Keshad Johnson,SF,MIA,PHI,,,,,,,,,,,,,,,,,No,2,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800672.png, @ ,2/26/2026
+Cam Whitmore,PF,WAS,ATL,,,,,,,,,,,,,,,,,No,11.5,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713773.png, @ ,2/26/2026
+Jamal Cain,SF/PF,ORL,HOU,,,,,,,,,,,,,,,,,No,2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/651642.png, @ ,2/26/2026
+Jeff Green,C,HOU,ORL,,,,,,,,,,,,,,,,,Yes,-2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33390.png, @ ,2/26/2026
+Anthony Davis,C,WAS,ATL,,,,,,,,,,,,,,,,,No,11.5,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33122.png, @ ,2/26/2026
+Domantas Sabonis,C,SAC,DAL,,,,,,,,,,,,,,,,,No,6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33091.png, @ ,2/26/2026
+PJ Hall,C,CHA,IND,,,,,,,,,,,,,,,,,Yes,-12.6,229.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800670.png, @ ,2/26/2026
+Xavier Tillman,C,CHA,IND,,,,,,,,,,,,,,,,,Yes,-12.6,229.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/527253.png, @ ,2/26/2026
+Lachlan Olbrich,C,CHI,POR,,,,,,,,,,,,,,,,,No,4.1,235.6,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906392.png, @ ,2/26/2026
+Adou Thiero,PF,LAL,PHX,,,,,,,,,,,,,,,,,Yes,-4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906341.png, @ ,2/26/2026
+Javonte Cooke,SG,POR,CHI,,,,,,,,,,,,,,,,,Yes,-4.1,235.6,,,,,,3000,https://dkn.gs/sports/images/nba/teams/50/32952.png, @ ,2/26/2026
+RayJ Dennis,PG,ATL,WAS,,,,,,,,,,,,,,,,,Yes,-11.5,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/803417.png, @ ,2/26/2026
+Bismack Biyombo,C,SAS,BKN,,,,,,,,,,,,,,,,,Yes,-12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/32932.png, @ ,2/26/2026
+Mason Plumlee,C,SAS,BKN,,,,,,,,,,,,,,,,,Yes,-12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33015.png, @ ,2/26/2026
+Miles Kelly,SG,DAL,SAC,,,,,,,,,,,,,,,,,Yes,-6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906408.png, @ ,2/26/2026
+Johni Broome,C,PHI,MIA,,,,,,,,,,,,,,,,,Yes,-2,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906342.png, @ ,2/26/2026
+David Jones-Garcia,PG,SAS,BKN,,,,,,,,,,,,,,,,,Yes,-12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800681.png, @ ,2/26/2026
+Zach Collins,C,CHI,POR,,,,,,,,,,,,,,,,,No,4.1,235.6,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33329.png, @ ,2/26/2026
+Caleb Houstan,SF/PF,ATL,WAS,,,,,,,,,,,,,,,,,Yes,-11.5,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649578.png, @ ,2/26/2026
+E.J. Liddell,C,BKN,SAS,,,,,,,,,,,,,,,,,No,12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649584.png, @ ,2/26/2026
+Antonio Reeves,SG,CHA,IND,,,,,,,,,,,,,,,,,Yes,-12.6,229.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800662.png, @ ,2/26/2026
+Jahmir Young,PG,MIA,PHI,,,,,,,,,,,,,,,,,No,2,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/803683.png, @ ,2/26/2026
+Tyson Etienne,PG,BKN,SAS,,,,,,,,,,,,,,,,,No,12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/651462.png, @ ,2/26/2026
+Dereck Lively II,C,DAL,SAC,,,,,,,,,,,,,,,,,Yes,-6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713765.png, @ ,2/26/2026
+Kyle Lowry,PG,PHI,MIA,,,,,,,,,,,,,,,,,Yes,-2,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33371.png, @ ,2/26/2026
+Isaiah Crawford,SF,HOU,ORL,,,,,,,,,,,,,,,,,Yes,-2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800673.png, @ ,2/26/2026
+Kobe Bufkin,PG,LAL,PHX,,,,,,,,,,,,,,,,,Yes,-4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713768.png, @ ,2/26/2026
+Koby Brea,SG,PHX,LAL,,,,,,,,,,,,,,,,,No,4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906346.png, @ ,2/26/2026
+Chris Manon,SF,LAL,PHX,,,,,,,,,,,,,,,,,Yes,-4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/909200.png, @ ,2/26/2026
+Tosan Evbuomwan,SF,CHA,IND,,,,,,,,,,,,,,,,,Yes,-12.6,229.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713827.png, @ ,2/26/2026
+Walker Kessler,C,UTA,NOP,,,,,,,,,,,,,,,,,No,4.5,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649571.png, @ ,2/26/2026
+Harrison Ingram,SF,SAS,BKN,,,,,,,,,,,,,,,,,Yes,-12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800663.png, @ ,2/26/2026
+Emanuel Miller,SF,SAS,BKN,,,,,,,,,,,,,,,,,Yes,-12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/803172.png, @ ,2/26/2026
+Trey Alexander,PG/SG,NOP,UTA,,,,,,,,,,,,,,,,,Yes,-4.5,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800671.png, @ ,2/26/2026
+Yuki Kawamura,PG,CHI,POR,,,,,,,,,,,,,,,,,No,4.1,235.6,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/726204.png, @ ,2/26/2026
+Mac McClung,SG,CHI,POR,,,,,,,,,,,,,,,,,No,4.1,235.6,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/591146.png, @ ,2/26/2026
+Oscar Tshiebwe,C,UTA,NOP,,,,,,,,,,,,,,,,,No,4.5,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713860.png, @ ,2/26/2026
+Patrick Baldwin Jr.,SF/PF,SAC,DAL,,,,,,,,,,,,,,,,,No,6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649574.png, @ ,2/26/2026
+Noa Essengue,SF,CHI,POR,,,,,,,,,,,,,,,,,No,4.1,235.6,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/905561.png, @ ,2/26/2026
+Isaiah Stevens,PG,SAC,DAL,,,,,,,,,,,,,,,,,No,6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/829280.png, @ ,2/26/2026
+Vladislav Goldin,C,MIA,PHI,,,,,,,,,,,,,,,,,No,2,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906405.png, @ ,2/26/2026
+Marjon Beauchamp,SG/SF,PHI,MIA,,,,,,,,,,,,,,,,,Yes,-2,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649592.png, @ ,2/26/2026
+Trevor Keels,SG/SF,MIA,PHI,,,,,,,,,,,,,,,,,No,2,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649585.png, @ ,2/26/2026
+Hunter Dickinson,C,NOP,UTA,,,,,,,,,,,,,,,,,Yes,-4.5,240.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906409.png, @ ,2/26/2026
+Kyrie Irving,PG/SG,DAL,SAC,,,,,,,,,,,,,,,,,Yes,-6.9,234,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/32901.png, @ ,2/26/2026
+Alex Morales,PG,ORL,HOU,,,,,,,,,,,,,,,,,No,2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/651618.png, @ ,2/26/2026
+Colin Castleton,C,ORL,HOU,,,,,,,,,,,,,,,,,No,2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713824.png, @ ,2/26/2026
+Haywood Highsmith,PF,PHX,LAL,,,,,,,,,,,,,,,,,No,4.5,217.5,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33301.png, @ ,2/26/2026
+Chaney Johnson,PF,BKN,SAS,,,,,,,,,,,,,,,,,No,12.8,224.7,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/907192.png, @ ,2/26/2026
+Tyrese Haliburton,PG,IND,CHA,,,,,,,,,,,,,,,,,No,12.6,229.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/488094.png, @ ,2/26/2026
+Tristen Newton,PG,HOU,ORL,,,,,,,,,,,,,,,,,Yes,-2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800664.png, @ ,2/26/2026
+Fred VanVleet,PG,HOU,ORL,,,,,,,,,,,,,,,,,Yes,-2.5,216.1,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33381.png, @ ,2/26/2026
+Damian Lillard,PG,POR,CHI,,,,,,,,,,,,,,,,,Yes,-4.1,235.6,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33322.png, @ ,2/26/2026
+Darius Garland,PG,LAC,MIN,,,,,,,,,,,,,,,,,No,5.5,226.9,,,,,,7300,https://dkn.gs/sports/images/nba/players/50/32989.png, @ ,2/26/2026
+Bennedict Mathurin,SG/SF,LAC,MIN,,,,,,,,,,,,,,,,,No,5.5,226.9,,,,,,6600,https://dkn.gs/sports/images/nba/players/50/649549.png, @ ,2/26/2026
+Bones Hyland,PG/SG,MIN,LAC,,,,,,,,,,,,,,,,,Yes,-5.5,226.9,,,,,,4000,https://dkn.gs/sports/images/nba/players/50/591031.png, @ ,2/26/2026
+Kobe Sanders,SG/SF,LAC,MIN,,,,,,,,,,,,,,,,,No,5.5,226.9,,,,,,3900,https://dkn.gs/sports/images/nba/players/50/906373.png, @ ,2/26/2026
+Isaiah Jackson,C,LAC,MIN,,,,,,,,,,,,,,,,,No,5.5,226.9,,,,,,3200,https://dkn.gs/sports/images/nba/players/50/591027.png, @ ,2/26/2026
+Terrence Shannon Jr.,SF,MIN,LAC,,,,,,,,,,,,,,,,,Yes,-5.5,226.9,,,,,,3200,https://dkn.gs/sports/images/nba/players/50/800404.png, @ ,2/26/2026
+Cam Christie,SG,LAC,MIN,,,,,,,,,,,,,,,,,No,5.5,226.9,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800660.png, @ ,2/26/2026
+Julian Phillips,PF,MIN,LAC,,,,,,,,,,,,,,,,,Yes,-5.5,226.9,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/713787.png, @ ,2/26/2026
+Joe Ingles,SG,MIN,LAC,,,,,,,,,,,,,,,,,Yes,-5.5,226.9,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/33395.png, @ ,2/26/2026
+Bradley Beal,SG,LAC,MIN,,,,,,,,,,,,,,,,,No,5.5,226.9,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/32871.png, @ ,2/26/2026
+TyTy Washington Jr.,PG,LAC,MIN,,,,,,,,,,,,,,,,,No,5.5,226.9,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/649576.png, @ ,2/26/2026
+Enrique Freeman,PF/C,MIN,LAC,,,,,,,,,,,,,,,,,Yes,-5.5,226.9,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/800665.png, @ ,2/26/2026
+Rocco Zikarsky,C,MIN,LAC,,,,,,,,,,,,,,,,,Yes,-5.5,226.9,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/906413.png, @ ,2/26/2026
+Norchad Omier,PF/C,LAC,MIN,,,,,,,,,,,,,,,,,No,5.5,226.9,,,,,,3000,https://dkn.gs/sports/images/nba/players/50/908763.png, @ ,2/26/2026
+Sean Pedulla,PG,LAC,MIN,,,,,,,,,,,,,,,,,No,5.5,226.9,,,,,,3000,https://dkn.gs/sports/images/nba/teams/50/32925.png, @ ,2/26/2026

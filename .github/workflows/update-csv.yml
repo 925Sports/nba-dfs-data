@@ -11,6 +11,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.REPO_TOKEN }}  # Use the secret for checkout
 
     - name: Download CSV from Google Sheets
       run: curl -o nba_stats.csv "https://docs.google.com/spreadsheets/d/e/2PACX-1vRYY3lCP1jiJ3x4cHr87LhcNraa7KGZRKFo1jOa9EoS5VuUEehS2faNZTTM0mhKutJ-t1CDeZF0leXh/pub?gid=807849522&single=true&output=csv"
@@ -19,6 +21,7 @@ jobs:
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
+        git remote set-url origin https://x:${{ secrets.REPO_TOKEN }}@github.com/925Sports/nba-dfs-data.git
         git add nba_stats.csv
         git commit -m "Auto-update NBA stats CSV" || echo "No changes to commit"
         git push

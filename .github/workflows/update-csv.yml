@@ -2,8 +2,8 @@ name: Update NBA Stats CSV
 
 on:
   schedule:
-    - cron: '*/15 * * * *'  # Runs every 15 minutes
-  workflow_dispatch:        # Allows manual trigger from GitHub UI
+    - cron: '*/15 * * * *'  # Every 15 minutes
+  workflow_dispatch:        # Manual trigger option
 
 permissions:
   contents: write
@@ -14,9 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download CSV from Google Sheets
+      - name: Download CSV from Combined Google Sheet
         run: |
-          curl -L -o nba_stats.csv "https://docs.google.com/spreadsheets/d/e/2PACX-1vRYY3lCP1jiJ3x4cHr87LhcNraa7KGZRKFo1jOa9EoS5VuUEehS2faNZTTM0mhKutJ-t1CDeZF0leXh/pub?gid=242480999&single=true&output=csv"
+          echo "Downloading from new combined sheet..."
+          curl -L -v -o nba_stats.csv "https://docs.google.com/spreadsheets/d/e/2PACX-1vRYY3lCP1jiJ3x4cHr87LhcNraa7KGZRKFo1jOa9EoS5VuUEehS2faNZTTM0mhKutJ-t1CDeZF0leXh/pub?gid=242480999&single=true&output=csv" || echo "Curl failed (exit code $?)"
+          echo "File size after download:"
+          ls -lh nba_stats.csv || echo "File not created"
+          echo "First 5 lines of downloaded file:"
+          head -n 5 nba_stats.csv || echo "File is empty"
 
       - name: Commit and push if changed
         run: |
@@ -24,5 +29,5 @@ jobs:
           git config --global user.email "action@github.com"
           git remote set-url origin https://x:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git add nba_stats.csv
-          git commit -m "Auto-update NBA stats CSV" || echo "No changes to commit"
-          git push origin HEAD:${{ github.ref_name }}
+          git commit -m "Auto-update NBA stats CSV from combined sheet" || echo "No changes to commit"
+          git push origin HEAD:${{ github.ref_name }} || echo "Push failed"

@@ -14,8 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         /* ────────────────────────────────────────────────
-           CRITICAL: FORCE NO INNER SCROLLBAR FOR WIX IFRAME
-           These rules prevent the embedded page from scrolling itself
+           CRITICAL WIX IFRAME FIX - NO INNER SCROLLBAR
+           These rules force the page to never scroll itself
            ──────────────────────────────────────────────── */
         html, body {
             overflow: hidden !important;
@@ -25,19 +25,17 @@
             padding: 0 !important;
         }
 
-        /* Give some breathing room at bottom so last content isn't cut off */
         .container-fluid {
-            padding-bottom: 200px !important;
+            padding-bottom: 300px !important; /* extra safety so last rows aren't cut off */
         }
 
-        /* Prevent tables and modals from creating their own scrollbars */
         .table-responsive, 
         .modal-dialog-scrollable .modal-content,
         .modal-body {
             overflow: visible !important;
         }
 
-        /* Optional: hide any phantom scrollbars that browsers sometimes add */
+        /* Hide any phantom scrollbars */
         ::-webkit-scrollbar {
             display: none !important;
             width: 0 !important;
@@ -45,9 +43,8 @@
         }
 
         /* ────────────────────────────────────────────────
-           Original styles continue below
+           Your original styles start here (unchanged)
            ──────────────────────────────────────────────── */
-
         :root {
             --primary-color: #00d4b8;
             --secondary-color: #0f1115;
@@ -446,6 +443,7 @@
             </div>
         </div>
         <button id="toggleView" class="btn btn-primary mb-3">Switch to Lineup View</button>
+
         <!-- HOW TO USE MODAL -->
         <div class="modal fade" id="howToUseModal" tabindex="-1" aria-labelledby="howToUseModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -500,6 +498,7 @@
                 </div>
             </div>
         </div>
+
         <div id="cheatSheetView">
             <div id="filters" class="row g-3 mb-4" style="display: none;">
                 <div class="col-md-3">
@@ -552,29 +551,1346 @@
                 <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#util" data-tab="util">UTIL</a></li>
             </ul>
             <div class="tab-content">
-                <!-- ... (all the tab panes for pg, sg, sf, pf, c, g, f, util remain unchanged) ... -->
                 <div id="pg" class="tab-pane fade show active">
                     <div class="table-responsive">
                         <table class="table table-striped table-hover table-bordered" id="pg-table">
-                            <!-- header and tbody unchanged -->
+                            <thead>
+                                <tr class="header-row" id="pg-header-row">
+                                    <th colspan="4"></th>
+                                    <th colspan="3">Fantasy</th>
+                                    <th colspan="6">Stats</th>
+                                </tr>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Team</th>
+                                    <th>Opp</th>
+                                    <th>Points</th>
+                                    <th>Salary</th>
+                                    <th>Value</th>
+                                    <th>PTS</th>
+                                    <th>REB</th>
+                                    <th>AST</th>
+                                    <th>STL</th>
+                                    <th>BLK</th>
+                                    <th>TO</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
                         </table>
                     </div>
                 </div>
-                <!-- ... remaining tab-panes unchanged ... -->
+                <div id="sg" class="tab-pane fade">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered" id="sg-table">
+                            <thead>
+                                <tr class="header-row">
+                                    <th colspan="4"></th>
+                                    <th colspan="3">Fantasy</th>
+                                    <th colspan="6">Stats</th>
+                                </tr>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Team</th>
+                                    <th>Opp</th>
+                                    <th>Points</th>
+                                    <th>Salary</th>
+                                    <th>Value</th>
+                                    <th>PTS</th>
+                                    <th>REB</th>
+                                    <th>AST</th>
+                                    <th>STL</th>
+                                    <th>BLK</th>
+                                    <th>TO</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="sf" class="tab-pane fade">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered" id="sf-table">
+                            <thead>
+                                <tr class="header-row">
+                                    <th colspan="4"></th>
+                                    <th colspan="3">Fantasy</th>
+                                    <th colspan="6">Stats</th>
+                                </tr>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Team</th>
+                                    <th>Opp</th>
+                                    <th>Points</th>
+                                    <th>Salary</th>
+                                    <th>Value</th>
+                                    <th>PTS</th>
+                                    <th>REB</th>
+                                    <th>AST</th>
+                                    <th>STL</th>
+                                    <th>BLK</th>
+                                    <th>TO</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="pf" class="tab-pane fade">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered" id="pf-table">
+                            <thead>
+                                <tr class="header-row">
+                                    <th colspan="4"></th>
+                                    <th colspan="3">Fantasy</th>
+                                    <th colspan="6">Stats</th>
+                                </tr>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Team</th>
+                                    <th>Opp</th>
+                                    <th>Points</th>
+                                    <th>Salary</th>
+                                    <th>Value</th>
+                                    <th>PTS</th>
+                                    <th>REB</th>
+                                    <th>AST</th>
+                                    <th>STL</th>
+                                    <th>BLK</th>
+                                    <th>TO</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="c" class="tab-pane fade">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered" id="c-table">
+                            <thead>
+                                <tr class="header-row">
+                                    <th colspan="4"></th>
+                                    <th colspan="3">Fantasy</th>
+                                    <th colspan="6">Stats</th>
+                                </tr>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Team</th>
+                                    <th>Opp</th>
+                                    <th>Points</th>
+                                    <th>Salary</th>
+                                    <th>Value</th>
+                                    <th>PTS</th>
+                                    <th>REB</th>
+                                    <th>AST</th>
+                                    <th>STL</th>
+                                    <th>BLK</th>
+                                    <th>TO</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="g" class="tab-pane fade">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered" id="g-table">
+                            <thead>
+                                <tr class="header-row" id="g-header-row">
+                                    <th colspan="5"></th>
+                                    <th colspan="3">Fantasy</th>
+                                    <th colspan="6">Stats</th>
+                                </tr>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Team</th>
+                                    <th>Opp</th>
+                                    <th>Points</th>
+                                    <th>Salary</th>
+                                    <th>Value</th>
+                                    <th>PTS</th>
+                                    <th>REB</th>
+                                    <th>AST</th>
+                                    <th>STL</th>
+                                    <th>BLK</th>
+                                    <th>TO</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="f" class="tab-pane fade">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered" id="f-table">
+                            <thead>
+                                <tr class="header-row" id="f-header-row">
+                                    <th colspan="5"></th>
+                                    <th colspan="3">Fantasy</th>
+                                    <th colspan="6">Stats</th>
+                                </tr>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Team</th>
+                                    <th>Opp</th>
+                                    <th>Points</th>
+                                    <th>Salary</th>
+                                    <th>Value</th>
+                                    <th>PTS</th>
+                                    <th>REB</th>
+                                    <th>AST</th>
+                                    <th>STL</th>
+                                    <th>BLK</th>
+                                    <th>TO</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="util" class="tab-pane fade">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered" id="util-table">
+                            <thead>
+                                <tr class="header-row" id="util-header-row">
+                                    <th colspan="5"></th>
+                                    <th colspan="3">Fantasy</th>
+                                    <th colspan="6">Stats</th>
+                                </tr>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Team</th>
+                                    <th>Opp</th>
+                                    <th>Points</th>
+                                    <th>Salary</th>
+                                    <th>Value</th>
+                                    <th>PTS</th>
+                                    <th>REB</th>
+                                    <th>AST</th>
+                                    <th>STL</th>
+                                    <th>BLK</th>
+                                    <th>TO</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div id="lineupView" style="display: none;">
-            <!-- ... entire lineup view section unchanged ... -->
+            <select id="slateSelectLineup" class="form-select mb-3">
+                <option value="">All Slates</option>
+            </select>
+            <select id="gameSelectLineup" class="form-select mb-3">
+                <option>All Games</option>
+            </select>
+            <input type="text" id="playerSearchLineup" class="form-control mb-3" placeholder="Player Search">
+            <ul class="nav nav-tabs mb-3">
+                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#pgLineup">PG</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#sgLineup">SG</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#sfLineup">SF</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#pfLineup">PF</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#cLineup">C</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#gLineup">G</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#fLineup">F</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#utilLineup">UTIL</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#allLineup">ALL</a></li>
+            </ul>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="tab-content">
+                        <div id="pgLineup" class="tab-pane active">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>PLAYER</th>
+                                            <th>OPP</th>
+                                            <th>FPPG</th>
+                                            <th>VALUE</th>
+                                            <th>SALARY</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="sgLineup" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>PLAYER</th>
+                                            <th>OPP</th>
+                                            <th>FPPG</th>
+                                            <th>VALUE</th>
+                                            <th>SALARY</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="sfLineup" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>PLAYER</th>
+                                            <th>OPP</th>
+                                            <th>FPPG</th>
+                                            <th>VALUE</th>
+                                            <th>SALARY</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="pfLineup" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>PLAYER</th>
+                                            <th>OPP</th>
+                                            <th>FPPG</th>
+                                            <th>VALUE</th>
+                                            <th>SALARY</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="cLineup" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>PLAYER</th>
+                                            <th>OPP</th>
+                                            <th>FPPG</th>
+                                            <th>VALUE</th>
+                                            <th>SALARY</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="gLineup" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>PLAYER</th>
+                                            <th>OPP</th>
+                                            <th>FPPG</th>
+                                            <th>VALUE</th>
+                                            <th>SALARY</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="fLineup" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>PLAYER</th>
+                                            <th>OPP</th>
+                                            <th>FPPG</th>
+                                            <th>VALUE</th>
+                                            <th>SALARY</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="utilLineup" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>PLAYER</th>
+                                            <th>OPP</th>
+                                            <th>FPPG</th>
+                                            <th>VALUE</th>
+                                            <th>SALARY</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="allLineup" class="tab-pane">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>PLAYER</th>
+                                            <th>OPP</th>
+                                            <th>FPPG</th>
+                                            <th>VALUE</th>
+                                            <th>SALARY</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header lineup-header">
+                            LINEUP <span id="totalFPPG" class="total-fppg"></span> <span id="avgRem" class="rem-info"></span> <span id="remSalary" class="rem-info">Rem. Salary $50,000</span>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>PLAYER</th>
+                                    <th>OPP</th>
+                                    <th>FPPG</th>
+                                    <th>VALUE</th>
+                                    <th>SALARY</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="lineupBody"></tbody>
+                        </table>
+                        <div class="card-footer d-flex justify-content-center gap-2">
+                            <button id="exportLineup" class="btn btn-secondary btn-sm">EXPORT</button>
+                            <button id="saveLineup" class="btn btn-success btn-sm">SAVE LINEUP</button>
+                            <button id="clearLineup" class="btn btn-secondary btn-sm">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" id="autoAdvance" checked>
+                <label class="form-check-label" for="autoAdvance">Auto Advance Positions</label>
+            </div>
+            <div class="mt-3">
+                <a href="#" class="me-2">Glossary</a>
+                <a href="#" class="me-2">Scoring</a>
+                <a href="#" class="me-2">Export to CSV</a>
+            </div>
         </div>
+
         <div class="modal fade" id="playerModal" tabindex="-1" aria-labelledby="playerModalLabel" aria-hidden="true">
-            <!-- ... player modal unchanged ... -->
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalPlayerName"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-top">
+                            <div class="modal-left">
+                                <img id="modalPlayerImage" src="" alt="Player Image">
+                                <div class="player-info">
+                                    <p id="modalPlayerInfo"></p>
+                                    <p id="modalSpreadOU"></p>
+                                    <p id="modalGameTime"></p>
+                                    <p id="modalSalary"></p>
+                                </div>
+                            </div>
+                            <div class="modal-stats" id="modalPlayerStats"></div>
+                        </div>
+                        <div class="modal-tabs" id="modalTabs"></div>
+                        <div class="modal-tab-content" id="modalTabContent"></div>
+                        <button class="draft-button">Draft Player</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- The rest of your <script> block remains completely unchanged -->
     <script>
-        // ... your entire original JavaScript code here (no changes needed) ...
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        function setTheme(theme) {
+            htmlElement.setAttribute('data-bs-theme', theme);
+            themeToggle.innerHTML = theme === 'dark' ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-stars-fill"></i>';
+        }
+        themeToggle.addEventListener('click', () => {
+            const current = htmlElement.getAttribute('data-bs-theme') || 'dark';
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+        setTheme('dark');
+        const statsCsvUrl = 'https://raw.githubusercontent.com/925sports/nba-dfs-data/main/nba_stats.csv';
+        const gameLogUrl = 'https://raw.githubusercontent.com/925sports/nba-dfs-data/main/nba_game_log.csv';
+        const fallbackImage = 'https://png.pngtree.com/png-vector/20220809/ourmid/pngtree-businessman-icon-from-commerce-set-administrator-clerk-male-vector-png-image_19450674.png';
+        let fullData = [];
+        let gameLogData = [];
+        let positionalMedians = {};
+        let lineup = Array(8).fill(null);
+        let totalSalary = 0;
+        const maxSalary = 50000;
+        const positionOrder = ['PG', 'SG', 'SF', 'PF', 'C', 'G', 'F', 'UTIL'];
+        const allowedPositions = {0:['PG'],1:['SG'],2:['SF'],3:['PF'],4:['C'],5:['PG','SG'],6:['SF','PF'],7:['PG','SG','SF','PF','C']};
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => { clearTimeout(timeout); func(...args); };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+        function calculateMedianValue(data, position) {
+            const values = data
+                .filter(d => d.Position.includes(position) && parseFloat(d['Projected FP']) > 0 && parseFloat(d['Salary']) > 0)
+                .map(d => parseFloat(d['Projected FP']) / (parseFloat(d['Salary']) / 1000))
+                .sort((a, b) => a - b);
+            if (values.length === 0) return 1;
+            const mid = Math.floor(values.length / 2);
+            return values.length % 2 !== 0 ? values[mid] : (values[mid - 1] + values[mid]) / 2;
+        }
+        function populateTable(tableId, filteredData, positionColumns) {
+            let data = [...filteredData];
+            const scoringSystem = 'Projected FP';
+            data.sort((a, b) => parseFloat(b[scoringSystem] || 0) - parseFloat(a[scoringSystem] || 0));
+            data.forEach((d, i) => d.rank = i + 1);
+            const tbody = document.querySelector(`#${tableId} tbody`);
+            let rowsHTML = '';
+            data.forEach(d => {
+                const sanitizedData = {};
+                Object.keys(d).forEach(key => {
+                    sanitizedData[key] = typeof d[key] === 'string' ? d[key].replace(/'/g, '&apos;').replace(/"/g, '&quot;') : d[key];
+                });
+                let row = '<tr>';
+                const points = parseFloat(d[scoringSystem] || 0).toFixed(1);
+                const salary = parseFloat(d['Salary'] || 0);
+                const value = salary > 0 ? (parseFloat(d['Projected FP']) / (salary / 1000)).toFixed(1) : '0.0';
+                const valueNum = parseFloat(value);
+                const valueClass = valueNum >= 7 ? 'high-value' : valueNum <= 4 ? 'low-value' : '';
+                positionColumns.forEach(col => {
+                    let cellClass = '';
+                    if (col === 'Value') cellClass = valueClass;
+                    row += `<td class="${cellClass}">`;
+                    if (col === 'Rank') row += d.rank;
+                    else if (col === 'Name') {
+                        const imageUrl = d['Headshot URL'] && d['Headshot URL'].trim() !== '' ? d['Headshot URL'] : fallbackImage;
+                        row += `<div class="player-cell"><img src="${imageUrl}" alt="${d['Player Name'] || 'Player'}"><a href="#" class="player-link text-primary" data-bs-toggle="modal" data-bs-target="#playerModal" data-player='${JSON.stringify(sanitizedData)}' data-columns='${JSON.stringify(positionColumns)}'>${d['Player Name']}</a></div>`;
+                    } else if (col === 'Points') row += points;
+                    else if (col === 'Salary') row += salary;
+                    else if (col === 'Value') row += value;
+                    else if (col === 'PTS') row += parseFloat(d['Points'] || 0).toFixed(1);
+                    else if (col === 'REB') row += parseFloat(d['Rebounds'] || 0).toFixed(1);
+                    else if (col === 'AST') row += parseFloat(d['Assists'] || 0).toFixed(1);
+                    else if (col === 'STL') row += parseFloat(d['Steals'] || 0).toFixed(1);
+                    else if (col === 'BLK') row += parseFloat(d['Blocks'] || 0).toFixed(1);
+                    else if (col === 'TO') row += parseFloat(d['Turnovers'] || 0).toFixed(1);
+                    else if (col === 'Position') row += d.Position || '';
+                    else row += d[col] || '';
+                    row += '</td>';
+                });
+                row += '</tr>';
+                rowsHTML += row;
+            });
+            tbody.innerHTML = rowsHTML;
+        }
+        function populateLineupTables(filteredData) {
+            const positionTabs = {
+                'pgLineup': d => d.Position.includes('PG'),
+                'sgLineup': d => d.Position.includes('SG'),
+                'sfLineup': d => d.Position.includes('SF'),
+                'pfLineup': d => d.Position.includes('PF'),
+                'cLineup': d => d.Position.includes('C'),
+                'gLineup': d => d.Position.includes('PG') || d.Position.includes('SG'),
+                'fLineup': d => d.Position.includes('SF') || d.Position.includes('PF'),
+                'utilLineup': true,
+                'allLineup': true
+            };
+            const columns = ['PLAYER','OPP','FPPG','VALUE','SALARY'];
+            Object.keys(positionTabs).forEach(tabId => {
+                let data = filteredData.filter(typeof positionTabs[tabId] === 'function' ? positionTabs[tabId] : () => positionTabs[tabId]);
+                data.sort((a, b) => parseFloat(b['Projected FP'] || 0) - parseFloat(a['Projected FP'] || 0));
+                const tbody = document.querySelector(`#${tabId} tbody`);
+                tbody.innerHTML = '';
+                data.forEach(d => {
+                    const salary = parseFloat(d['Salary'] || 0);
+                    const value = salary > 0 ? (parseFloat(d['Projected FP'] || 0) / (salary / 1000)).toFixed(1) : '0.0';
+                    const valueNum = parseFloat(value);
+                    const valueClass = valueNum >= 7 ? 'high-value' : valueNum <= 4 ? 'low-value' : '';
+                    const imageUrl = d['Headshot URL'] && d['Headshot URL'].trim() !== '' ? d['Headshot URL'] : fallbackImage;
+                    const row = document.createElement('tr');
+                    const sanitizedData = JSON.stringify(d);
+                    row.innerHTML = `
+                        <td>
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="${imageUrl}" style="width:36px;height:36px;border-radius:50%;border:2px solid var(--primary-color);" alt="">
+                                <a href="#" class="player-link text-primary" data-bs-toggle="modal" data-bs-target="#playerModal" data-player='${sanitizedData}' data-columns='${JSON.stringify(columns)}'>${d['Player Name']}</a>
+                                <span class="badge bg-secondary">${d.Position}</span>
+                            </div>
+                        </td>
+                        <td>${d.Opp}</td>
+                        <td>${parseFloat(d['Projected FP'] || 0).toFixed(1)}</td>
+                        <td class="${valueClass}">${value}</td>
+                        <td>$${salary}</td>
+                        <td><button class="add-player btn btn-sm" data-player='${sanitizedData}'>+</button></td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            });
+            attachLineupSortListeners();
+        }
+        function updateLineupTable() {
+            const tbody = document.getElementById('lineupBody');
+            const count = lineup.filter(p => p !== null).length;
+            const remPlayers = 8 - count;
+            const remSal = maxSalary - totalSalary;
+            const avgRem = remPlayers > 0 ? (remSal / remPlayers).toFixed(0) : 0;
+            let totalFPPG = 0;
+            lineup.forEach(player => { if (player) totalFPPG += parseFloat(player['Projected FP'] || 0); });
+            document.getElementById('totalFPPG').textContent = `Total Proj. FPPG: ${totalFPPG.toFixed(1)}`;
+            document.getElementById('avgRem').textContent = `Avg. Rem./Player $${avgRem}`;
+            document.getElementById('remSalary').textContent = `Rem. Salary $${remSal.toLocaleString()}`;
+            tbody.innerHTML = '';
+            lineup.forEach((player, i) => {
+                if (!player) {
+                    const row = document.createElement('tr');
+                    row.dataset.pos = positionOrder[i];
+                    row.innerHTML = `<td>${positionOrder[i]}</td><td></td><td></td><td></td><td></td><td></td>`;
+                    tbody.appendChild(row);
+                    return;
+                }
+                const imageUrl = player['Headshot URL'] && player['Headshot URL'].trim() !== '' ? player['Headshot URL'] : fallbackImage;
+                const salary = parseFloat(player['Salary']);
+                const value = salary > 0 ? (parseFloat(player['Projected FP']) / (salary / 1000)).toFixed(1) : '0.0';
+                const valueNum = parseFloat(value);
+                const valueClass = valueNum >= 7 ? 'high-value' : valueNum <= 4 ? 'low-value' : '';
+                const row = document.createElement('tr');
+                row.dataset.pos = positionOrder[i];
+                const sanitizedData = JSON.stringify(player);
+                row.innerHTML = `
+                    <td>
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="${imageUrl}" style="width:36px;height:36px;border-radius:50%;border:2px solid var(--primary-color);" alt="">
+                            <a href="#" class="player-link text-primary" data-bs-toggle="modal" data-bs-target="#playerModal" data-player='${sanitizedData}'>${player['Player Name']}</a>
+                            <span class="badge bg-secondary">${player.Position}</span>
+                        </div>
+                    </td>
+                    <td>${player.Opp}</td>
+                    <td>${parseFloat(player['Projected FP'] || 0).toFixed(1)}</td>
+                    <td class="${valueClass}">${value}</td>
+                    <td>$${salary}</td>
+                    <td><button class="remove-player btn btn-sm" data-index="${i}">-</button></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+        function attachSortListeners() {
+            const tableIds = ['pg-table','sg-table','sf-table','pf-table','c-table','g-table','f-table','util-table'];
+            tableIds.forEach(id => {
+                const table = document.getElementById(id);
+                if (!table) return;
+                const headers = table.querySelectorAll('thead tr:last-child th');
+                headers.forEach((th, index) => {
+                    th.onclick = () => sortTable(index, id);
+                });
+            });
+        }
+        function sortTable(n, tableId) {
+            const table = document.getElementById(tableId);
+            if (!table) return;
+            const tbody = table.tBodies[0];
+            const rows = Array.from(tbody.rows);
+            const headers = table.querySelectorAll('thead tr:last-child th');
+            const header = headers[n];
+            if (!header) return;
+            const isAsc = header.classList.contains('sort-asc');
+            const dir = isAsc ? 'desc' : 'asc';
+            const scoringSystem = 'Projected FP';
+            headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+            header.classList.add(`sort-${dir}`);
+            const col = headers[n].textContent.trim();
+            rows.sort((a, b) => {
+                let x = a.cells[n].textContent.trim();
+                let y = b.cells[n].textContent.trim();
+                let playerDataA, playerDataB;
+                try {
+                    playerDataA = JSON.parse(a.querySelector('.player-link').dataset.player);
+                    playerDataB = JSON.parse(b.querySelector('.player-link').dataset.player);
+                } catch (error) { return 0; }
+                if (col === 'Name') {
+                    x = playerDataA['Player Name'].toLowerCase();
+                    y = playerDataB['Player Name'].toLowerCase();
+                } else if (col === 'Value') {
+                    const pointsA = parseFloat(playerDataA[scoringSystem] || 0);
+                    const salaryA = parseFloat(playerDataA['Salary'] || 0);
+                    const pointsB = parseFloat(playerDataB[scoringSystem] || 0);
+                    const salaryB = parseFloat(playerDataB['Salary'] || 0);
+                    x = salaryA > 0 ? (pointsA / (salaryA / 1000)) : 0;
+                    y = salaryB > 0 ? (pointsB / (salaryB / 1000)) : 0;
+                } else {
+                    x = parseFloat(x.replace(/[^0-9.-]/g, '')) || x.toLowerCase();
+                    y = parseFloat(y.replace(/[^0-9.-]/g, '')) || y.toLowerCase();
+                }
+                if (typeof x === 'number' && typeof y === 'number') {
+                    return dir === 'asc' ? x - y : y - x;
+                } else {
+                    if (x < y) return dir === 'asc' ? -1 : 1;
+                    if (x > y) return dir === 'asc' ? 1 : -1;
+                    return 0;
+                }
+            });
+            tbody.innerHTML = '';
+            rows.forEach(row => tbody.appendChild(row));
+            rows.forEach((row, i) => {
+                row.cells[0].textContent = i + 1;
+                const playerLink = row.querySelector('.player-link');
+                if (playerLink) {
+                    try {
+                        const playerData = JSON.parse(playerLink.dataset.player);
+                        playerData.rank = i + 1;
+                        playerLink.dataset.player = JSON.stringify(playerData);
+                    } catch (error) {}
+                }
+            });
+        }
+        function attachLineupSortListeners() {
+            const tabIds = ['pgLineup','sgLineup','sfLineup','pfLineup','cLineup','gLineup','fLineup','utilLineup','allLineup'];
+            tabIds.forEach(tabId => {
+                const container = document.getElementById(tabId);
+                if (!container) return;
+                const table = container.querySelector('table');
+                if (!table) return;
+                const headers = table.querySelectorAll('thead th');
+                headers.forEach((th, index) => {
+                    th.onclick = () => sortLineupTable(index, tabId);
+                });
+            });
+        }
+        function sortLineupTable(n, tabId) {
+            const container = document.getElementById(tabId);
+            const table = container.querySelector('table');
+            if (!table) return;
+            const tbody = table.tBodies[0];
+            const rows = Array.from(tbody.rows);
+            const headers = table.querySelectorAll('thead th');
+            const header = headers[n];
+            if (!header) return;
+            const isAsc = header.classList.contains('sort-asc');
+            const dir = isAsc ? 'desc' : 'asc';
+            headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+            header.classList.add(`sort-${dir}`);
+            const col = headers[n].textContent.trim();
+            rows.sort((a, b) => {
+                let playerA, playerB;
+                try {
+                    const linkA = a.querySelector('.player-link');
+                    const linkB = b.querySelector('.player-link');
+                    playerA = JSON.parse(linkA.dataset.player);
+                    playerB = JSON.parse(linkB.dataset.player);
+                } catch (e) { return 0; }
+                let x, y;
+                if (col === 'PLAYER') {
+                    x = (playerA['Player Name'] || '').toLowerCase();
+                    y = (playerB['Player Name'] || '').toLowerCase();
+                } else if (col === 'OPP') {
+                    x = playerA.Opp || '';
+                    y = playerB.Opp || '';
+                } else if (col === 'FPPG') {
+                    x = parseFloat(playerA['Projected FP'] || 0);
+                    y = parseFloat(playerB['Projected FP'] || 0);
+                } else if (col === 'VALUE') {
+                    const salA = parseFloat(playerA['Salary'] || 0);
+                    const salB = parseFloat(playerB['Salary'] || 0);
+                    x = salA > 0 ? parseFloat(playerA['Projected FP'] || 0) / (salA / 1000) : 0;
+                    y = salB > 0 ? parseFloat(playerB['Projected FP'] || 0) / (salB / 1000) : 0;
+                } else if (col === 'SALARY') {
+                    x = parseFloat(playerA['Salary'] || 0);
+                    y = parseFloat(playerB['Salary'] || 0);
+                }
+                if (typeof x === 'number' && typeof y === 'number') {
+                    return dir === 'asc' ? x - y : y - x;
+                } else {
+                    if (x < y) return dir === 'asc' ? -1 : 1;
+                    if (x > y) return dir === 'asc' ? 1 : -1;
+                    return 0;
+                }
+            });
+            tbody.innerHTML = '';
+            rows.forEach(row => tbody.appendChild(row));
+        }
+        function showPlayerModal(playerData, columns) {
+            const modalPlayerName = document.getElementById('modalPlayerName');
+            const modalPlayerInfo = document.getElementById('modalPlayerInfo');
+            const modalSpreadOU = document.getElementById('modalSpreadOU');
+            const modalGameTime = document.getElementById('modalGameTime');
+            const modalSalary = document.getElementById('modalSalary');
+            const modalPlayerImage = document.getElementById('modalPlayerImage');
+            const modalPlayerStats = document.getElementById('modalPlayerStats');
+            const modalTabs = document.getElementById('modalTabs');
+            const modalTabContent = document.getElementById('modalTabContent');
+            const salary = parseFloat(playerData['Salary'] || 0);
+            modalPlayerName.textContent = `${playerData['Player Name'] || 'Unknown'} (${playerData.Position || ''}) ${playerData.Team || ''} - $${salary.toLocaleString()}`;
+            modalPlayerImage.src = playerData['Headshot URL'] && playerData['Headshot URL'].trim() !== '' ? playerData['Headshot URL'] : fallbackImage;
+            modalPlayerInfo.textContent = `Opp: ${playerData.Opp || 'N/A'} | DVP Rank: ${playerData['DVP Rank'] || 'N/A'}`;
+            modalSpreadOU.textContent = `Spread: ${playerData.Spread || 'N/A'} O/U: ${playerData['O/U'] || 'N/A'}`;
+            let displayDate = 'Date: N/A';
+            const dateStr = playerData['Date'];
+            if (dateStr) {
+                let dt = new Date(dateStr);
+                if (!isNaN(dt.getTime())) {
+                    if (dt.getHours() === 0 && dt.getMinutes() === 0) dt.setHours(18);
+                    const month = String(dt.getMonth() + 1).padStart(2, '0');
+                    const day = String(dt.getDate()).padStart(2, '0');
+                    const year = dt.getFullYear();
+                    let hours = dt.getHours();
+                    const hour12 = hours % 12 || 12;
+                    const ampm = hours >= 12 ? 'PM' : 'AM';
+                    displayDate = `${month}/${day}/${year} ${hour12}${ampm}`;
+                } else {
+                    displayDate = dateStr;
+                }
+            }
+            modalGameTime.textContent = displayDate;
+            modalSalary.textContent = `Salary: $${salary.toLocaleString()}`;
+            let statsHTML = '';
+            const stats = [
+                {label: 'Projected FP', value: parseFloat(playerData['Projected FP'] || 0).toFixed(1)},
+                {label: 'Points', value: parseFloat(playerData['Points'] || 0).toFixed(1)},
+                {label: 'Rebounds', value: parseFloat(playerData['Rebounds'] || 0).toFixed(1)},
+                {label: 'Assists', value: parseFloat(playerData['Assists'] || 0).toFixed(1)},
+                {label: 'MIN', value: parseFloat(playerData['MIN Avg'] || 36).toFixed(1)}
+            ];
+            stats.forEach(stat => {
+                statsHTML += `<div class="stat-box"><div class="stat-value">${stat.value}</div><div class="stat-label">${stat.label}</div></div>`;
+            });
+            modalPlayerStats.innerHTML = statsHTML;
+            modalTabs.innerHTML = '';
+            const tabNames = ['Overview', 'Game Log', 'Splits', 'News', 'Other Bets', 'Matchup'];
+            tabNames.forEach((tabName) => {
+                const btn = document.createElement('div');
+                btn.classList.add('modal-tab');
+                if (tabName === 'Overview') btn.classList.add('active');
+                btn.textContent = tabName;
+                btn.onclick = () => {
+                    document.querySelectorAll('#modalTabs .modal-tab').forEach(t => t.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderModalTabContent(tabName, playerData);
+                };
+                modalTabs.appendChild(btn);
+            });
+            renderModalTabContent('Overview', playerData);
+            const draftBtn = document.querySelector('.draft-button');
+            if (draftBtn) {
+                draftBtn.onclick = () => {
+                    const success = addPlayer(playerData);
+                    if (success) {
+                        alert(`${playerData['Player Name']} successfully added to lineup!`);
+                        const modalInstance = bootstrap.Modal.getInstance(document.getElementById('playerModal'));
+                        if (modalInstance) modalInstance.hide();
+                    }
+                };
+            }
+        }
+        function renderModalTabContent(tab, playerData) {
+            const content = document.getElementById('modalTabContent');
+            content.innerHTML = '';
+            if (tab === 'Overview') {
+                const overviewColumns = ['PROJ MIN', 'PROJ PTS', 'PROJ REB', 'PROJ AST', 'PROJ STL', 'PROJ BLK', 'PROJ TO', 'PROJ 3PM', 'PROJ FG%', 'PROJ FT%', 'PROJ FP'];
+                let tableHTML = '<input type="text" placeholder="Player projections for this game..." class="form-control mb-3">';
+                tableHTML += '<div class="table-responsive">';
+                tableHTML += '<table class="table table-striped table-sm overview-table"><thead><tr>';
+                overviewColumns.forEach(col => tableHTML += `<th>${col}</th>`);
+                tableHTML += '</tr></thead><tbody>';
+                const projRow = [
+                    parseFloat(playerData['MIN Avg'] || 0).toFixed(1),
+                    parseFloat(playerData['Points'] || 0).toFixed(1),
+                    parseFloat(playerData['Rebounds'] || 0).toFixed(1),
+                    parseFloat(playerData['Assists'] || 0).toFixed(1),
+                    '1.2','0.4','2.8','3.1','48.5%','82.0%',
+                    parseFloat(playerData['Projected FP'] || 0).toFixed(1)
+                ];
+                tableHTML += '<tr>' + projRow.map(val => `<td>${val}</td>`).join('') + '</tr>';
+                tableHTML += '</tbody></table></div>';
+                content.innerHTML = tableHTML;
+            } else if (tab === 'Game Log') {
+                const tableColumns = ['MATCHUP', 'GAME', 'W/L', 'MIN', 'PTS', 'FG', 'FG%', '3PM/A', '3P%', 'FT', 'FT%', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'PF', '+/-', 'FP'];
+                let tableHTML = '<input type="text" placeholder="Search by Match Up..." class="form-control mb-3">';
+                tableHTML += '<div class="table-responsive">';
+                tableHTML += '<table class="table table-striped table-sm game-log-table"><thead><tr>';
+                tableColumns.forEach(col => tableHTML += `<th>${col}</th>`);
+                tableHTML += '</tr></thead><tbody>';
+                const playerName = (playerData['Player Name'] || playerData.Player || '').trim();
+                const normalizedPlayer = playerName.toLowerCase().replace(/[^a-z\s]/gi, '').replace(/\s+/g, ' ').trim();
+                const playerLogs = gameLogData
+                    .filter(log => {
+                        if (!log || !log.PLAYER) return false;
+                        let logName = (log.PLAYER || '').trim().toLowerCase().replace(/[^a-z\s]/gi, '').replace(/\s+/g, ' ').trim();
+                        if (logName === normalizedPlayer) return true;
+                        const pParts = normalizedPlayer.split(' ');
+                        const lParts = logName.split(' ');
+                        if (pParts.length && lParts.length) {
+                            const pLast = pParts[pParts.length - 1];
+                            const lLast = lParts[lParts.length - 1];
+                            const pInit = pParts[0] ? pParts[0][0] : '';
+                            const lInit = lParts[0] ? lParts[0][0] : '';
+                            if (pLast === lLast && pInit === lInit) return true;
+                        }
+                        return logName.includes(normalizedPlayer) || normalizedPlayer.includes(logName);
+                    })
+                    .sort((a, b) => {
+                        const da = a['GAME DATE'] || a['Date'] || a['GAME_DATE'] || '01/01/1900';
+                        const db = b['GAME DATE'] || b['Date'] || b['GAME_DATE'] || '01/01/1900';
+                        return new Date(db) - new Date(da);
+                    });
+                if (playerLogs.length === 0) {
+                    tableHTML += `<tr><td colspan="${tableColumns.length}" class="text-center py-4 text-muted">No game log data available for this player yet.</td></tr>`;
+                } else {
+                    playerLogs.forEach(log => {
+                        tableHTML += '<tr>';
+                        tableColumns.forEach(col => {
+                            let value = '-';
+                            if (col === 'MATCHUP') value = log.MATCHUP || log['Opponent'] || log['MATCH UP'] || '-';
+                            else if (col === 'GAME') value = log['GAME DATE'] || log['Date'] || log['GAME_DATE'] || '-';
+                            else if (col === 'W/L') value = log.RESULT || log['W/L'] || log['Result'] || '-';
+                            else if (col === 'MIN') value = log.MIN || log['MIN'] || '-';
+                            else if (col === 'PTS') value = log.PTS || log['PTS'] || '-';
+                            else if (col === 'FG') {
+                                const fgm = parseInt(log.FGM || log['FGM'] || 0);
+                                const fga = parseInt(log.FGA || log['FGA'] || 0);
+                                value = fga ? `${fgm}/${fga}` : '-';
+                            }
+                            else if (col === 'FG%') {
+                                let pct = log['FG%'] || log['FG %'] || log.FG_PERCENT || '-';
+                                value = (pct !== '-' && !isNaN(parseFloat(pct))) ? parseFloat(pct).toFixed(1) + '%' : pct;
+                            }
+                            else if (col === '3PM/A') {
+                                const tpm = parseInt(log['3PM'] || log['3P Made'] || 0);
+                                const tpa = parseInt(log['3PA'] || log['3P Attempted'] || 0);
+                                value = tpa ? `${tpm}/${tpa}` : '-';
+                            }
+                            else if (col === '3P%') {
+                                let pct = log['3P%'] || log['3P %'] || log['3P_PERCENT'] || '-';
+                                value = (pct !== '-' && !isNaN(parseFloat(pct))) ? parseFloat(pct).toFixed(1) + '%' : pct;
+                            }
+                            else if (col === 'FT') {
+                                const ftm = parseInt(log.FTM || log['FTM'] || 0);
+                                const fta = parseInt(log.FTA || log['FTA'] || 0);
+                                value = fta ? `${ftm}/${fta}` : '-';
+                            }
+                            else if (col === 'FT%') {
+                                let pct = log['FT%'] || log['FT %'] || log['FT_PERCENT'] || '-';
+                                value = (pct !== '-' && !isNaN(parseFloat(pct))) ? parseFloat(pct).toFixed(1) + '%' : pct;
+                            }
+                            else if (col === 'OREB') value = log.OREB || log['OREB'] || log['OFF REB'] || '-';
+                            else if (col === 'DREB') value = log.DREB || log['DREB'] || log['DEF REB'] || '-';
+                            else if (col === 'REB') value = log.REB || log['REB'] || '-';
+                            else if (col === 'AST') value = log.AST || log['AST'] || '-';
+                            else if (col === 'STL') value = log.STL || log['STL'] || '-';
+                            else if (col === 'BLK') value = log.BLK || log['BLK'] || '-';
+                            else if (col === 'TOV') value = log.TOV || log['TOV'] || log.TO || log['TO'] || '-';
+                            else if (col === 'PF') value = log.PF || log['PF'] || '-';
+                            else if (col === '+/-') value = log['+/-'] || log['PLUS_MINUS'] || '-';
+                            else if (col === 'FP') {
+                                let fp = log.FP || log['FP'] || log.FPTS || log['FPTS'] || '-';
+                                value = (fp !== '-' && !isNaN(parseFloat(fp))) ? parseFloat(fp).toFixed(1) : fp;
+                            }
+                            tableHTML += `<td>${value}</td>`;
+                        });
+                        tableHTML += '</tr>';
+                    });
+                }
+                tableHTML += '</tbody></table></div>';
+                content.innerHTML = tableHTML;
+            } else if (tab === 'Splits') {
+                let html = `<div style="height:380px; padding:10px;"><canvas id="splitsChart"></canvas></div>`;
+                content.innerHTML = html;
+                setTimeout(() => {
+                    const ctx = document.getElementById('splitsChart').getContext('2d');
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['FPTS Avg','DraftKings','FanDuel','PrizePicks','Underdog','Average Projected','DVP Adjusted','Total Projection'],
+                            datasets: [{
+                                label: 'Value',
+                                data: [
+                                    parseFloat(playerData['FPTS Avg'] || 0),
+                                    parseFloat(playerData['DraftKings'] || 0),
+                                    parseFloat(playerData['FanDuel'] || 0),
+                                    parseFloat(playerData['PrizePicks'] || 0),
+                                    parseFloat(playerData['Underdog'] || 0),
+                                    parseFloat(playerData['Average Projected'] || 0),
+                                    parseFloat(playerData['DVP Adjusted'] || 0),
+                                    parseFloat(playerData['Total Projection'] || 0)
+                                ],
+                                backgroundColor: '#00d4b8',
+                                borderColor: '#00ffcc',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            indexAxis: 'y',
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false }, title: { display: true, text: 'Splits / Projections', color: '#e0f0ff' } },
+                            scales: {
+                                x: { grid: { color: '#2a3349' }, ticks: { color: '#b0d0ff' } },
+                                y: { grid: { color: '#2a3349' }, ticks: { color: '#b0d0ff' } }
+                            }
+                        }
+                    });
+                }, 150);
+            } else if (tab === 'News') {
+                let html = `
+                    <div style="padding:15px;">
+                        <h5 style="color:#00ffcc;margin-bottom:15px;">News & Injury Update</h5>
+                        <div style="background:#1f2a3d;padding:15px;border-radius:8px;line-height:1.6;">
+                            <strong>EST. Return Date:</strong> ${playerData['EST. Return Date'] || 'N/A'}<br>
+                            <strong>Injury Status:</strong> ${playerData['Injury Status'] || 'N/A'}<br>
+                            <strong>Comment:</strong> ${playerData['Comment'] || 'No comment available'}<br>
+                            <strong>Starter:</strong> ${playerData['Starter'] || 'N/A'}
+                        </div>
+                    </div>`;
+                content.innerHTML = html;
+            } else if (tab === 'Matchup') {
+                let spreadStr = playerData.Spread || 'N/A';
+                let spreadNum = parseFloat(spreadStr.replace(/[^0-9.-]/g, '')) || 0;
+                let spreadColor = '#00ff88';
+                if (spreadNum > 5) spreadColor = '#ff4444';
+                else if (spreadNum > -5) spreadColor = '#ffcc00';
+                let ouStr = playerData['O/U'] || 'N/A';
+                let ouNum = parseFloat(ouStr) || 0;
+                let ouColor = '#ff4444';
+                if (ouNum > 230) ouColor = '#00ff88';
+                else if (ouNum > 210) ouColor = '#ffcc00';
+                let html = `
+                    <div style="padding:15px;">
+                        <h5 style="color:#00ffcc;margin-bottom:15px;">Matchup Breakdown</h5>
+                        <div style="background:#1f2a3d;padding:15px;border-radius:8px;line-height:1.8;">
+                            <strong>Opp:</strong> ${playerData.Opp || 'N/A'}<br>
+                            <strong>DVP Rank:</strong> ${playerData['DVP Rank'] || 'N/A'}<br>
+                            <strong>Opp +/-:</strong> ${playerData['Opp +/-'] || 'N/A'}<br>
+                            <strong>DVP Adjusted:</strong> ${playerData['DVP Adjusted'] || 'N/A'}<br><br>
+                            <strong>Spread:</strong> <span style="color:${spreadColor}">${spreadStr}</span><br>
+                            <strong>O/U:</strong> <span style="color:${ouColor}">${ouStr}</span><br>
+                            <strong>Game Time:</strong> ${document.getElementById('modalGameTime').textContent}
+                        </div>
+                    </div>`;
+                content.innerHTML = html;
+            } else {
+                content.innerHTML = '<p>No data available for this tab.</p>';
+            }
+        }
+        function applyFilters() {
+            const selectedSlate = document.getElementById('slateSelect').value;
+            const playerSearch = document.getElementById('playerSearch').value.toLowerCase();
+            const selectedTeam = document.getElementById('teamSelect').value;
+            const selectedTime = document.getElementById('gameTimeSelect').value;
+            const salaryMin = parseFloat(document.getElementById('salaryMin').value) || 0;
+            const salaryMax = parseFloat(document.getElementById('salaryMax').value) || Infinity;
+            const pointsMin = parseFloat(document.getElementById('pointsMin').value) || 0;
+            const pointsMax = parseFloat(document.getElementById('pointsMax').value) || Infinity;
+            let filtered = fullData.filter(d => {
+                const matchesSlate = !selectedSlate || d.Role.includes(selectedSlate);
+                const matchesPlayer = !playerSearch || (d['Player Name'] && d['Player Name'].toLowerCase().includes(playerSearch));
+                const matchesTeam = !selectedTeam || d.Team === selectedTeam;
+                const matchesTime = !selectedTime || d['Game Start Time'] === selectedTime;
+                const salary = parseFloat(d['Salary'] || 0);
+                const points = parseFloat(d['Projected FP'] || 0);
+                const matchesSalary = salary >= salaryMin && salary <= salaryMax;
+                const matchesPoints = points >= pointsMin && points <= pointsMax;
+                return matchesSlate && matchesPlayer && matchesTeam && matchesTime && matchesSalary && matchesPoints;
+            });
+            const singleColumns = ['Rank', 'Name', 'Team', 'Opp', 'Points', 'Salary', 'Value', 'PTS', 'REB', 'AST', 'STL', 'BLK', 'TO'];
+            const multiColumns = ['Rank', 'Name', 'Position', 'Team', 'Opp', 'Points', 'Salary', 'Value', 'PTS', 'REB', 'AST', 'STL', 'BLK', 'TO'];
+            let pgs = filtered.filter(d => d.Position.includes('PG') && parseFloat(d['Projected FP']) > 0);
+            populateTable('pg-table', pgs, singleColumns);
+            let sgs = filtered.filter(d => d.Position.includes('SG') && parseFloat(d['Projected FP']) > 0);
+            populateTable('sg-table', sgs, singleColumns);
+            let sfs = filtered.filter(d => d.Position.includes('SF') && parseFloat(d['Projected FP']) > 0);
+            populateTable('sf-table', sfs, singleColumns);
+            let pfs = filtered.filter(d => d.Position.includes('PF') && parseFloat(d['Projected FP']) > 0);
+            populateTable('pf-table', pfs, singleColumns);
+            let cs = filtered.filter(d => d.Position.includes('C') && parseFloat(d['Projected FP']) > 0);
+            populateTable('c-table', cs, singleColumns);
+            let gs = filtered.filter(d => (d.Position.includes('PG') || d.Position.includes('SG')) && parseFloat(d['Projected FP']) > 0);
+            populateTable('g-table', gs, multiColumns);
+            let fs = filtered.filter(d => (d.Position.includes('SF') || d.Position.includes('PF')) && parseFloat(d['Projected FP']) > 0);
+            populateTable('f-table', fs, multiColumns);
+            let utils = filtered.filter(d => parseFloat(d['Projected FP']) > 0);
+            populateTable('util-table', utils, multiColumns);
+            attachSortListeners();
+        }
+        function applyLineupFilters() {
+            const selectedSlate = document.getElementById('slateSelectLineup').value;
+            const selectedGame = document.getElementById('gameSelectLineup').value;
+            const playerSearch = document.getElementById('playerSearchLineup').value.toLowerCase();
+            let filtered = fullData.filter(d => (!selectedSlate || d.Role.includes(selectedSlate)) && isInGame(d, selectedGame));
+            if (playerSearch) filtered = filtered.filter(d => d['Player Name'].toLowerCase().includes(playerSearch));
+            populateLineupTables(filtered);
+        }
+        function isInGame(player, game) {
+            if (game === 'All Games') return true;
+            const [away, home] = game.split(' @ ');
+            return (player.Team === home && player.Opp === away) || (player.Team === away && player.Opp === home);
+        }
+        function addPlayer(player) {
+            const playerPos = player.Position.split('/');
+            for (let i = 0; i < 8; i++) {
+                if (lineup[i] === null) {
+                    const allowed = allowedPositions[i];
+                    if (playerPos.some(p => allowed.includes(p))) {
+                        const playerSalary = parseFloat(player['Salary']);
+                        if (totalSalary + playerSalary <= maxSalary) {
+                            lineup[i] = player;
+                            totalSalary += playerSalary;
+                            updateLineupTable();
+                            return true;
+                        } else {
+                            alert('Salary cap exceeded');
+                            return false;
+                        }
+                    }
+                }
+            }
+            alert('No suitable position slot available');
+            return false;
+        }
+        function removePlayer(index) {
+            totalSalary -= parseFloat(lineup[index]['Salary']);
+            lineup[index] = null;
+            updateLineupTable();
+        }
+        function parseSlateTime(slate) {
+            const timeMatch = slate.match(/(\d+:\d{2})([AP]M)/i);
+            if (!timeMatch) return Infinity;
+            let [_, time, ampm] = timeMatch;
+            let [hours, minutes] = time.split(':').map(Number);
+            if (ampm.toUpperCase() === 'PM' && hours !== 12) hours += 12;
+            if (ampm.toUpperCase() === 'AM' && hours === 12) hours = 0;
+            return hours * 60 + minutes;
+        }
+        function exportLineupToCSV() {
+            if (lineup.every(p => p === null)) {
+                alert('No lineup to export');
+                return;
+            }
+            const headers = positionOrder;
+            const ids = lineup.map(p => p && p['Draftable ID'] ? p['Draftable ID'] : '');
+            const csvContent = headers.join(',') + '\n' + ids.join(',');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'draftkings_lineup.csv';
+            link.click();
+        }
+        const debouncedApplyFilters = debounce(applyFilters, 300);
+        const debouncedLineupFilters = debounce(applyLineupFilters, 300);
+        function initApp() {
+            applyFilters();
+            applyLineupFilters();
+            document.getElementById('loading-overlay').style.display = 'none';
+            document.getElementById('filters').style.display = 'flex';
+            document.querySelector('.tabs').style.display = 'flex';
+            document.getElementById('slateSelect').addEventListener('change', (e) => {
+                document.getElementById('slateSelectLineup').value = e.target.value;
+                debouncedApplyFilters();
+            });
+            document.getElementById('slateSelectLineup').addEventListener('change', (e) => {
+                document.getElementById('slateSelect').value = e.target.value;
+                debouncedLineupFilters();
+            });
+            document.getElementById('playerSearch').addEventListener('input', debouncedApplyFilters);
+            document.getElementById('teamSelect').addEventListener('change', debouncedApplyFilters);
+            document.getElementById('gameTimeSelect').addEventListener('change', debouncedApplyFilters);
+            document.getElementById('salaryMin').addEventListener('input', debouncedApplyFilters);
+            document.getElementById('salaryMax').addEventListener('input', debouncedApplyFilters);
+            document.getElementById('pointsMin').addEventListener('input', debouncedApplyFilters);
+            document.getElementById('pointsMax').addEventListener('input', debouncedApplyFilters);
+            document.getElementById('playerSearchLineup').addEventListener('input', debouncedLineupFilters);
+            document.getElementById('gameSelectLineup').addEventListener('change', debouncedLineupFilters);
+            document.addEventListener('show.bs.modal', event => {
+                if (event.target.id === 'playerModal') {
+                    const button = event.relatedTarget;
+                    try {
+                        const playerData = JSON.parse(button.dataset.player);
+                        const columns = JSON.parse(button.dataset.columns);
+                        showPlayerModal(playerData, columns);
+                    } catch (error) {
+                        console.error('Error parsing player data:', error);
+                    }
+                }
+            });
+            document.addEventListener('click', e => {
+                if (e.target.classList.contains('add-player')) {
+                    const player = JSON.parse(e.target.dataset.player);
+                    addPlayer(player);
+                } else if (e.target.classList.contains('remove-player')) {
+                    const index = parseInt(e.target.dataset.index);
+                    removePlayer(index);
+                }
+            });
+            document.getElementById('clearLineup').addEventListener('click', () => {
+                lineup = Array(8).fill(null);
+                totalSalary = 0;
+                updateLineupTable();
+            });
+            document.getElementById('saveLineup').addEventListener('click', () => console.log('Lineup saved:', lineup));
+            document.getElementById('exportLineup').addEventListener('click', exportLineupToCSV);
+            document.getElementById('toggleView').addEventListener('click', () => {
+                const cheatSheetView = document.getElementById('cheatSheetView');
+                const lineupView = document.getElementById('lineupView');
+                const button = document.getElementById('toggleView');
+                if (cheatSheetView.style.display !== 'none') {
+                    cheatSheetView.style.display = 'none';
+                    lineupView.style.display = 'block';
+                    button.textContent = 'Switch to Cheat Sheet View';
+                } else {
+                    cheatSheetView.style.display = 'block';
+                    lineupView.style.display = 'none';
+                    button.textContent = 'Switch to Lineup View';
+                }
+            });
+            document.getElementById('howToUseBtn').addEventListener('click', () => {
+                const modal = new bootstrap.Modal(document.getElementById('howToUseModal'));
+                modal.show();
+            });
+            updateLineupTable();
+        }
+        fetch(statsCsvUrl, {mode: 'cors'}).then(response => {
+            if (!response.ok) throw new Error('Network response was not ok: ' + response.statusText);
+            return response.text();
+        })
+        .then(statsCsv => {
+            Papa.parse(statsCsv, {
+                header: true,
+                skipEmptyLines: true,
+                complete: (statsResult) => {
+                    fullData = statsResult.data.map(row => {
+                        const sanitizedRow = {};
+                        Object.keys(row).forEach(key => {
+                            sanitizedRow[key.trim().replace(/"/g, '')] = row[key] ? row[key].replace(/"/g, '').replace(/\\/g, '') : '';
+                        });
+                        return sanitizedRow;
+                    });
+                    fullData.forEach(d => {
+                        if (d['Match Title (Underdog)']) {
+                            const match = d['Match Title (Underdog)'].split(' @ ');
+                            const away = match[0];
+                            const home = match[1];
+                            d.Opp = d.Team === away ? home : away;
+                        } else d.Opp = '';
+                    });
+                    positionalMedians.PG = calculateMedianValue(fullData, 'PG');
+                    positionalMedians.SG = calculateMedianValue(fullData, 'SG');
+                    positionalMedians.SF = calculateMedianValue(fullData, 'SF');
+                    positionalMedians.PF = calculateMedianValue(fullData, 'PF');
+                    positionalMedians.C = calculateMedianValue(fullData, 'C');
+                    const teams = [...new Set(fullData.map(d => d.Team).filter(t => t))].sort();
+                    const teamSelect = document.getElementById('teamSelect');
+                    teams.forEach(team => {
+                        const option = document.createElement('option');
+                        option.value = team;
+                        option.text = team;
+                        teamSelect.add(option);
+                    });
+                    const times = [...new Set(fullData.map(d => d['Game Start Time']?.trim()).filter(t => t))].sort();
+                    const gameTimeSelect = document.getElementById('gameTimeSelect');
+                    times.forEach(time => {
+                        const option = document.createElement('option');
+                        option.value = time;
+                        option.text = time;
+                        gameTimeSelect.add(option);
+                    });
+                    const slates = [...new Set(fullData.map(d => d.Role).filter(r => r))];
+                    slates.sort((a, b) => parseSlateTime(a) - parseSlateTime(b));
+                    const slateSelect = document.getElementById('slateSelect');
+                    const slateSelectLineup = document.getElementById('slateSelectLineup');
+                    slates.forEach(slate => {
+                        const option = document.createElement('option');
+                        option.value = slate;
+                        option.text = slate;
+                        slateSelect.add(option.cloneNode(true));
+                        slateSelectLineup.add(option);
+                    });
+                    if (slates.length > 0) {
+                        slateSelect.value = slates[0];
+                        slateSelectLineup.value = slates[0];
+                    }
+                    const gamesMap = {};
+                    fullData.forEach(d => {
+                        const team = d.Team;
+                        const opp = d.Opp;
+                        const sortedKey = [team, opp].sort().join('-');
+                        if (!gamesMap[sortedKey]) gamesMap[sortedKey] = `${opp} @ ${team}`;
+                    });
+                    const games = Object.values(gamesMap).sort();
+                    const gameSelectLineup = document.getElementById('gameSelectLineup');
+                    games.forEach(game => {
+                        const option = document.createElement('option');
+                        option.value = game;
+                        option.text = game;
+                        gameSelectLineup.add(option);
+                    });
+                    fetch(gameLogUrl, {mode: 'cors'})
+                        .then(r => {
+                            if (!r.ok) throw new Error(r.statusText);
+                            return r.text();
+                        })
+                        .then(gameLogCsv => {
+                            Papa.parse(gameLogCsv, {
+                                header: true,
+                                skipEmptyLines: true,
+                                complete: (gameLogResult) => {
+                                    gameLogData = gameLogResult.data.map(row => {
+                                        const sanitized = {};
+                                        Object.keys(row).forEach(key => {
+                                            sanitized[key.trim().replace(/"/g, '')] = row[key] ? row[key].replace(/"/g, '').replace(/\\/g, '') : '';
+                                        });
+                                        return sanitized;
+                                    });
+                                    initApp();
+                                }
+                            });
+                        })
+                        .catch(err => {
+                            console.warn('Game log CSV failed to load:', err);
+                            gameLogData = [];
+                            initApp();
+                        });
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching stats CSV:', error);
+            document.getElementById('loading-overlay').innerHTML = '<div>Error loading data: ' + error.message + '</div>';
+        });
+        ['sg-table', 'sf-table', 'pf-table', 'c-table'].forEach(id => {
+            if (!document.getElementById(id).querySelector('thead')) {
+                document.getElementById(id).innerHTML = document.getElementById('pg-table').innerHTML;
+            }
+        });
     </script>
 </body>
-</html>
 </html>

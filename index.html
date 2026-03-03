@@ -13,38 +13,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* ────────────────────────────────────────────────
-           CRITICAL WIX IFRAME FIX - NO INNER SCROLLBAR
-           These rules force the page to never scroll itself
-           ──────────────────────────────────────────────── */
-        html, body {
-            overflow: hidden !important;
-            height: auto !important;
-            min-height: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        .container-fluid {
-            padding-bottom: 300px !important; /* extra safety so last rows aren't cut off */
-        }
-
-        .table-responsive, 
-        .modal-dialog-scrollable .modal-content,
-        .modal-body {
-            overflow: visible !important;
-        }
-
-        /* Hide any phantom scrollbars */
-        ::-webkit-scrollbar {
-            display: none !important;
-            width: 0 !important;
-            height: 0 !important;
-        }
-
-        /* ────────────────────────────────────────────────
-           Your original styles start here (unchanged)
-           ──────────────────────────────────────────────── */
         :root {
             --primary-color: #00d4b8;
             --secondary-color: #0f1115;
@@ -55,6 +23,7 @@
             --shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
             --gradient-bg: linear-gradient(135deg, #0f1115, #1a1f2e);
         }
+
         /* LIGHT MODE IMPROVEMENTS */
         [data-bs-theme="light"] {
             --primary-color: #00b894;
@@ -66,48 +35,60 @@
             --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             --gradient-bg: linear-gradient(135deg, #f8f9fa, #e9ecef);
         }
+
         [data-bs-theme="light"] body {
             background: var(--gradient-bg);
             color: var(--text-color);
         }
+
         [data-bs-theme="light"] .table {
             --bs-table-bg: var(--card-bg);
             --bs-table-color: var(--text-color);
             --bs-table-border-color: #dee2e6;
         }
+
         [data-bs-theme="light"] .table th {
             background: #f1f3f5;
             color: #495057;
         }
+
         [data-bs-theme="light"] .table .player-cell img {
             border-color: var(--primary-color);
         }
+
         [data-bs-theme="light"] .modal-content {
             background: var(--card-bg);
             color: var(--text-color);
         }
+
         [data-bs-theme="light"] .high-value {
             color: #00b894 !important;
             text-shadow: 0 0 8px rgba(0, 184, 148, 0.6);
         }
+
         [data-bs-theme="light"] .low-value {
             color: #e74c3c !important;
         }
+
         [data-bs-theme="light"] .card {
             background: var(--card-bg);
             border: 1px solid #dee2e6;
         }
+
         [data-bs-theme="light"] .lineup-header {
             background: linear-gradient(90deg, #00b894, #00d4b8);
             color: #000;
         }
+
         [data-bs-theme="light"] .modal-header {
             background: linear-gradient(90deg, #f1f3f5, #e9ecef);
             color: #212529;
         }
+
         [data-bs-theme="light"] #howToUseModal .modal-body h6 {
             color: #00b894;
         }
+
         body {
             font-family: 'Roboto', sans-serif;
             background: var(--gradient-bg);
@@ -381,9 +362,9 @@
             font-weight: 700;
             border-radius: 1.25rem 1.25rem 0 0;
         }
-        .high-value {
-            color: #00ffcc !important;
-            font-weight: 700;
+        .high-value { 
+            color: #00ffcc !important; 
+            font-weight: 700; 
             text-shadow: 0 0 8px rgba(0, 255, 204, 0.8);
         }
         .low-value { color: #ff6b6b !important; font-weight: 600; }
@@ -1044,9 +1025,11 @@
             setTheme(current === 'dark' ? 'light' : 'dark');
         });
         setTheme('dark');
+
         const statsCsvUrl = 'https://raw.githubusercontent.com/925sports/nba-dfs-data/main/nba_stats.csv';
         const gameLogUrl = 'https://raw.githubusercontent.com/925sports/nba-dfs-data/main/nba_game_log.csv';
         const fallbackImage = 'https://png.pngtree.com/png-vector/20220809/ourmid/pngtree-businessman-icon-from-commerce-set-administrator-clerk-male-vector-png-image_19450674.png';
+
         let fullData = [];
         let gameLogData = [];
         let positionalMedians = {};
@@ -1055,6 +1038,7 @@
         const maxSalary = 50000;
         const positionOrder = ['PG', 'SG', 'SF', 'PF', 'C', 'G', 'F', 'UTIL'];
         const allowedPositions = {0:['PG'],1:['SG'],2:['SF'],3:['PF'],4:['C'],5:['PG','SG'],6:['SF','PF'],7:['PG','SG','SF','PF','C']};
+
         function debounce(func, wait) {
             let timeout;
             return function executedFunction(...args) {
@@ -1063,6 +1047,7 @@
                 timeout = setTimeout(later, wait);
             };
         }
+
         function calculateMedianValue(data, position) {
             const values = data
                 .filter(d => d.Position.includes(position) && parseFloat(d['Projected FP']) > 0 && parseFloat(d['Salary']) > 0)
@@ -1072,6 +1057,7 @@
             const mid = Math.floor(values.length / 2);
             return values.length % 2 !== 0 ? values[mid] : (values[mid - 1] + values[mid]) / 2;
         }
+
         function populateTable(tableId, filteredData, positionColumns) {
             let data = [...filteredData];
             const scoringSystem = 'Projected FP';
@@ -1116,6 +1102,7 @@
             });
             tbody.innerHTML = rowsHTML;
         }
+
         function populateLineupTables(filteredData) {
             const positionTabs = {
                 'pgLineup': d => d.Position.includes('PG'),
@@ -1161,6 +1148,7 @@
             });
             attachLineupSortListeners();
         }
+
         function updateLineupTable() {
             const tbody = document.getElementById('lineupBody');
             const count = lineup.filter(p => p !== null).length;
@@ -1206,6 +1194,7 @@
                 tbody.appendChild(row);
             });
         }
+
         function attachSortListeners() {
             const tableIds = ['pg-table','sg-table','sf-table','pf-table','c-table','g-table','f-table','util-table'];
             tableIds.forEach(id => {
@@ -1217,6 +1206,7 @@
                 });
             });
         }
+
         function sortTable(n, tableId) {
             const table = document.getElementById(tableId);
             if (!table) return;
@@ -1275,6 +1265,7 @@
                 }
             });
         }
+
         function attachLineupSortListeners() {
             const tabIds = ['pgLineup','sgLineup','sfLineup','pfLineup','cLineup','gLineup','fLineup','utilLineup','allLineup'];
             tabIds.forEach(tabId => {
@@ -1288,6 +1279,7 @@
                 });
             });
         }
+
         function sortLineupTable(n, tabId) {
             const container = document.getElementById(tabId);
             const table = container.querySelector('table');
@@ -1340,6 +1332,7 @@
             tbody.innerHTML = '';
             rows.forEach(row => tbody.appendChild(row));
         }
+
         function showPlayerModal(playerData, columns) {
             const modalPlayerName = document.getElementById('modalPlayerName');
             const modalPlayerInfo = document.getElementById('modalPlayerInfo');
@@ -1350,11 +1343,13 @@
             const modalPlayerStats = document.getElementById('modalPlayerStats');
             const modalTabs = document.getElementById('modalTabs');
             const modalTabContent = document.getElementById('modalTabContent');
+
             const salary = parseFloat(playerData['Salary'] || 0);
             modalPlayerName.textContent = `${playerData['Player Name'] || 'Unknown'} (${playerData.Position || ''}) ${playerData.Team || ''} - $${salary.toLocaleString()}`;
             modalPlayerImage.src = playerData['Headshot URL'] && playerData['Headshot URL'].trim() !== '' ? playerData['Headshot URL'] : fallbackImage;
             modalPlayerInfo.textContent = `Opp: ${playerData.Opp || 'N/A'} | DVP Rank: ${playerData['DVP Rank'] || 'N/A'}`;
             modalSpreadOU.textContent = `Spread: ${playerData.Spread || 'N/A'} O/U: ${playerData['O/U'] || 'N/A'}`;
+
             let displayDate = 'Date: N/A';
             const dateStr = playerData['Date'];
             if (dateStr) {
@@ -1374,6 +1369,7 @@
             }
             modalGameTime.textContent = displayDate;
             modalSalary.textContent = `Salary: $${salary.toLocaleString()}`;
+
             let statsHTML = '';
             const stats = [
                 {label: 'Projected FP', value: parseFloat(playerData['Projected FP'] || 0).toFixed(1)},
@@ -1386,6 +1382,7 @@
                 statsHTML += `<div class="stat-box"><div class="stat-value">${stat.value}</div><div class="stat-label">${stat.label}</div></div>`;
             });
             modalPlayerStats.innerHTML = statsHTML;
+
             modalTabs.innerHTML = '';
             const tabNames = ['Overview', 'Game Log', 'Splits', 'News', 'Other Bets', 'Matchup'];
             tabNames.forEach((tabName) => {
@@ -1401,6 +1398,7 @@
                 modalTabs.appendChild(btn);
             });
             renderModalTabContent('Overview', playerData);
+
             const draftBtn = document.querySelector('.draft-button');
             if (draftBtn) {
                 draftBtn.onclick = () => {
@@ -1413,6 +1411,7 @@
                 };
             }
         }
+
         function renderModalTabContent(tab, playerData) {
             const content = document.getElementById('modalTabContent');
             content.innerHTML = '';
@@ -1441,8 +1440,10 @@
                 tableHTML += '<table class="table table-striped table-sm game-log-table"><thead><tr>';
                 tableColumns.forEach(col => tableHTML += `<th>${col}</th>`);
                 tableHTML += '</tr></thead><tbody>';
+
                 const playerName = (playerData['Player Name'] || playerData.Player || '').trim();
                 const normalizedPlayer = playerName.toLowerCase().replace(/[^a-z\s]/gi, '').replace(/\s+/g, ' ').trim();
+
                 const playerLogs = gameLogData
                     .filter(log => {
                         if (!log || !log.PLAYER) return false;
@@ -1464,6 +1465,7 @@
                         const db = b['GAME DATE'] || b['Date'] || b['GAME_DATE'] || '01/01/1900';
                         return new Date(db) - new Date(da);
                     });
+
                 if (playerLogs.length === 0) {
                     tableHTML += `<tr><td colspan="${tableColumns.length}" class="text-center py-4 text-muted">No game log data available for this player yet.</td></tr>`;
                 } else {
@@ -1602,6 +1604,7 @@
                 content.innerHTML = '<p>No data available for this tab.</p>';
             }
         }
+
         function applyFilters() {
             const selectedSlate = document.getElementById('slateSelect').value;
             const playerSearch = document.getElementById('playerSearch').value.toLowerCase();
@@ -1642,6 +1645,7 @@
             populateTable('util-table', utils, multiColumns);
             attachSortListeners();
         }
+
         function applyLineupFilters() {
             const selectedSlate = document.getElementById('slateSelectLineup').value;
             const selectedGame = document.getElementById('gameSelectLineup').value;
@@ -1650,11 +1654,13 @@
             if (playerSearch) filtered = filtered.filter(d => d['Player Name'].toLowerCase().includes(playerSearch));
             populateLineupTables(filtered);
         }
+
         function isInGame(player, game) {
             if (game === 'All Games') return true;
             const [away, home] = game.split(' @ ');
             return (player.Team === home && player.Opp === away) || (player.Team === away && player.Opp === home);
         }
+
         function addPlayer(player) {
             const playerPos = player.Position.split('/');
             for (let i = 0; i < 8; i++) {
@@ -1677,11 +1683,13 @@
             alert('No suitable position slot available');
             return false;
         }
+
         function removePlayer(index) {
             totalSalary -= parseFloat(lineup[index]['Salary']);
             lineup[index] = null;
             updateLineupTable();
         }
+
         function parseSlateTime(slate) {
             const timeMatch = slate.match(/(\d+:\d{2})([AP]M)/i);
             if (!timeMatch) return Infinity;
@@ -1691,6 +1699,7 @@
             if (ampm.toUpperCase() === 'AM' && hours === 12) hours = 0;
             return hours * 60 + minutes;
         }
+
         function exportLineupToCSV() {
             if (lineup.every(p => p === null)) {
                 alert('No lineup to export');
@@ -1705,14 +1714,17 @@
             link.download = 'draftkings_lineup.csv';
             link.click();
         }
+
         const debouncedApplyFilters = debounce(applyFilters, 300);
         const debouncedLineupFilters = debounce(applyLineupFilters, 300);
+
         function initApp() {
             applyFilters();
             applyLineupFilters();
             document.getElementById('loading-overlay').style.display = 'none';
             document.getElementById('filters').style.display = 'flex';
             document.querySelector('.tabs').style.display = 'flex';
+
             document.getElementById('slateSelect').addEventListener('change', (e) => {
                 document.getElementById('slateSelectLineup').value = e.target.value;
                 debouncedApplyFilters();
@@ -1730,6 +1742,7 @@
             document.getElementById('pointsMax').addEventListener('input', debouncedApplyFilters);
             document.getElementById('playerSearchLineup').addEventListener('input', debouncedLineupFilters);
             document.getElementById('gameSelectLineup').addEventListener('change', debouncedLineupFilters);
+
             document.addEventListener('show.bs.modal', event => {
                 if (event.target.id === 'playerModal') {
                     const button = event.relatedTarget;
@@ -1742,6 +1755,7 @@
                     }
                 }
             });
+
             document.addEventListener('click', e => {
                 if (e.target.classList.contains('add-player')) {
                     const player = JSON.parse(e.target.dataset.player);
@@ -1751,6 +1765,7 @@
                     removePlayer(index);
                 }
             });
+
             document.getElementById('clearLineup').addEventListener('click', () => {
                 lineup = Array(8).fill(null);
                 totalSalary = 0;
@@ -1772,12 +1787,15 @@
                     button.textContent = 'Switch to Lineup View';
                 }
             });
+
             document.getElementById('howToUseBtn').addEventListener('click', () => {
                 const modal = new bootstrap.Modal(document.getElementById('howToUseModal'));
                 modal.show();
             });
+
             updateLineupTable();
         }
+
         fetch(statsCsvUrl, {mode: 'cors'}).then(response => {
             if (!response.ok) throw new Error('Network response was not ok: ' + response.statusText);
             return response.text();
@@ -1794,6 +1812,7 @@
                         });
                         return sanitizedRow;
                     });
+
                     fullData.forEach(d => {
                         if (d['Match Title (Underdog)']) {
                             const match = d['Match Title (Underdog)'].split(' @ ');
@@ -1802,11 +1821,13 @@
                             d.Opp = d.Team === away ? home : away;
                         } else d.Opp = '';
                     });
+
                     positionalMedians.PG = calculateMedianValue(fullData, 'PG');
                     positionalMedians.SG = calculateMedianValue(fullData, 'SG');
                     positionalMedians.SF = calculateMedianValue(fullData, 'SF');
                     positionalMedians.PF = calculateMedianValue(fullData, 'PF');
                     positionalMedians.C = calculateMedianValue(fullData, 'C');
+
                     const teams = [...new Set(fullData.map(d => d.Team).filter(t => t))].sort();
                     const teamSelect = document.getElementById('teamSelect');
                     teams.forEach(team => {
@@ -1815,6 +1836,7 @@
                         option.text = team;
                         teamSelect.add(option);
                     });
+
                     const times = [...new Set(fullData.map(d => d['Game Start Time']?.trim()).filter(t => t))].sort();
                     const gameTimeSelect = document.getElementById('gameTimeSelect');
                     times.forEach(time => {
@@ -1823,6 +1845,7 @@
                         option.text = time;
                         gameTimeSelect.add(option);
                     });
+
                     const slates = [...new Set(fullData.map(d => d.Role).filter(r => r))];
                     slates.sort((a, b) => parseSlateTime(a) - parseSlateTime(b));
                     const slateSelect = document.getElementById('slateSelect');
@@ -1838,6 +1861,7 @@
                         slateSelect.value = slates[0];
                         slateSelectLineup.value = slates[0];
                     }
+
                     const gamesMap = {};
                     fullData.forEach(d => {
                         const team = d.Team;
@@ -1853,6 +1877,7 @@
                         option.text = game;
                         gameSelectLineup.add(option);
                     });
+
                     fetch(gameLogUrl, {mode: 'cors'})
                         .then(r => {
                             if (!r.ok) throw new Error(r.statusText);
@@ -1886,6 +1911,7 @@
             console.error('Error fetching stats CSV:', error);
             document.getElementById('loading-overlay').innerHTML = '<div>Error loading data: ' + error.message + '</div>';
         });
+
         ['sg-table', 'sf-table', 'pf-table', 'c-table'].forEach(id => {
             if (!document.getElementById(id).querySelector('thead')) {
                 document.getElementById(id).innerHTML = document.getElementById('pg-table').innerHTML;

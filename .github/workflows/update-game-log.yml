@@ -2,32 +2,32 @@ name: Update NBA Game Log Every Hour
 
 on:
   schedule:
-    - cron: '0 * * * *'      # Runs at the top of every hour
-  workflow_dispatch:         # Allows manual trigger
+    - cron: '0 * * * *' # Runs at the top of every hour
+  workflow_dispatch: # Allows manual trigger
+
+permissions:
+  contents: write
 
 jobs:
   update-game-log:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0                    # Required for accurate change detection
-
+          fetch-depth: 0 # Required for accurate change detection
       - name: Download latest Game Log from Google Sheet
         run: |
           curl -L "https://docs.google.com/spreadsheets/d/e/2PACX-1vR-ZvShRlEWJen3PKivCQF79zYZJkW04F00THnwUrD_xUPvq609FWXZaD6sf4SPJ9rBvTzzrusA8a3N/pub?gid=0&single=true&output=csv" \
             -o nba_game_log.csv
-
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
+         
           git add nba_game_log.csv
-          
+         
           if git diff --staged --quiet; then
             echo "No changes detected in game log."
           else

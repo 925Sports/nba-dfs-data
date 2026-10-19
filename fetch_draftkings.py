@@ -285,9 +285,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-Close
-Essential cookies keep the site working and stay on. Optional cookies help with performance and advertising — accept, reject, or manage them. Learn more in our Cookie Policy, Privacy Policy, and Terms of Service.
-
-Cookies Settings
-Reject All
-Accept All Cookies

@@ -6,13 +6,9 @@ Uses public salary CSV (draftables JSON 403s from GitHub Actions).
 """
 
 import csv
-import json
-import os
 import re
 import sys
 from collections import defaultdict
-from datetime import datetime
-from urllib.parse import urlparse
 
 import requests
 
@@ -28,14 +24,16 @@ HEADERS = {
 KEEP_GAME_TYPE_IDS = {70: "Classic", 81: "Showdown Captain Mode"}
 
 SKIP_KEYWORDS = re.compile(
-    r"best.?ball|snake|tiers|single.?stat|in.?game|stat.?only|qualifier|satellite",
+    r"best.?ball|snake|tiers|single.?stat|in.?game|stat.?only|qualifier|satellite|wnba",
     re.I,
 )
+
 
 def fetch_lobby():
     r = requests.get(LOBBY_URL, headers=HEADERS, timeout=30)
     r.raise_for_status()
     return r.json()
+
 
 def parse_game_info(game_info):
     """Parse 'OKC@SAS 10/20/2026 09:30PM ET' into components."""
@@ -53,6 +51,7 @@ def parse_game_info(game_info):
     start = f"{date_str} {time_str}".strip()
     return matchup, date_str, time_str, start
 
+
 def get_opponent(team, matchup):
     if not matchup or "@" not in matchup:
         return ""
@@ -64,6 +63,7 @@ def get_opponent(team, matchup):
         return away.upper()
     return ""
 
+
 def fetch_csv(dg_id):
     url = f"https://www.draftkings.com/lineup/getavailableplayerscsv?draftGroupId={dg_id}"
     r = requests.get(url, headers=HEADERS, timeout=30)
@@ -74,16 +74,33 @@ def fetch_csv(dg_id):
     rows = list(reader)
     return rows if rows else None
 
+
+def fetch_available_players(dg_id):
+    """Secondary endpoint that still returns 200 and has images + news code."""
+    url = f"https://www.draftkings.com/lineup/getavailableplayers?draftGroupId={dg_id}"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=30)
+        if r.status_code != 200:
+            return {}
+        data = r.json()
+        by_name = {}
+        for p in data.get("playerList", []):
+            name = f"{p.get('fn', '')} {p.get('ln', '')}".strip()
+            if name:
+                by_name[name] = {
+                    "image": p.get("imgSm") or p.get("imgLg") or "",
+                    "news": str(p.get("news", "")),
+                }
+        return by_name
+    except Exception:
+        return {}
+
+
 def build_role(slate_type, start_str, game_count, matchup):
     """Role is the slate label.
     Classic: Classic 10/18 7:00PM, 6 Games
     Showdown: Showdown Captain Mode LAL@BOS 10/18 7:30PM
     """
-    # Normalize time display (drop leading zero on hour if present, keep ET implied)
-    display_time = start_str
-    if display_time:
-        # Convert 09:30PM -> 9:30PM for readability
-        display_time = re.sub(r"^0(\d:)", r"\1", display_time)
     date_part = ""
     time_part = ""
     m = re.search(r"(\d{2}/\d{2}/\d{4})\s+(\d{1,2}:\d{2}[AP]M)", start_str or "", re.I)
@@ -96,13 +113,14 @@ def build_role(slate_type, start_str, game_count, matchup):
     else:
         return f"Showdown Captain Mode {matchup} {date_part} {time_part}".strip()
 
+
 def main():
     print("Fetching NBA lobby...")
     data = fetch_lobby()
     contests = data.get("Contests", [])
     draft_groups = {dg["DraftGroupId"]: dg for dg in data.get("DraftGroups", [])}
 
-    # On every run print GameTypeIds (user asked for first run, but useful always)
+    # Print GameTypeIds (useful on first run and for debugging)
     print("\n=== GameTypeId / Contest Name (sample) ===")
     seen = set()
     for c in contests:
@@ -112,7 +130,7 @@ def main():
         if key not in seen:
             print(f"  {gtid}: {name}")
             seen.add(key)
-            if len(seen) > 40:  # keep log reasonable
+            if len(seen) > 40:
                 break
     print("==========================================\n")
 
@@ -159,11 +177,13 @@ def main():
 
         rows = fetch_csv(dg_id)
         if not rows:
-            print(f"  CSV returned 0 player rows for {dg_id}. Skipping overwrite.")
-            # Do not overwrite; continue so other slates can succeed, but track failure
+            print(f"  CSV returned 0 player rows for {dg_id}. Skipping.")
             continue
 
-        # Determine start time / matchup from first player or meta
+        # Enrich with images + news status from the secondary endpoint
+        extra = fetch_available_players(dg_id)
+
+        # Determine start time / matchup from first player
         sample_game = rows[0].get("Game Info", "")
         matchup, date_str, time_str, start_raw = parse_game_info(sample_game)
         role = build_role(slate_type, start_raw, game_count, matchup)
@@ -185,27 +205,27 @@ def main():
             team = (row.get("TeamAbbrev") or "").upper()
             game_info = row.get("Game Info", "")
             status = (row.get("Status") or "").strip()
-            image = ""  # CSV does not provide image URL
+            extra_info = extra.get(name, {})
+            image = extra_info.get("image", "")
+            news_status = extra_info.get("news", "")
+            injury_desc = ""  # not available without blocked API or external source
 
             matchup_p, _, _, start_p = parse_game_info(game_info)
             opponent = get_opponent(team, matchup_p)
             game = matchup_p.replace("@", " @ ") if matchup_p else ""
             start_time = start_p
 
-            # Player ID style
             player_id = f"{name}|{team}"
 
-            # Split name
             name_parts = name.split()
             first = name_parts[0] if name_parts else ""
             last = " ".join(name_parts[1:]) if len(name_parts) > 1 else ""
 
             # For Showdown, Roster Position is CPT or UTIL
-            pos_out = roster if roster in ("CPT", "UTIL") else position
-            if slate_type.startswith("Showdown") and roster == "CPT":
-                pos_out = "CPT"
-            elif slate_type.startswith("Showdown"):
-                pos_out = "UTIL"
+            if slate_type.startswith("Showdown"):
+                pos_out = "CPT" if roster == "CPT" else "UTIL"
+            else:
+                pos_out = position
 
             player_name_slate = f"{name} - {slate_type}"
 
@@ -223,24 +243,26 @@ def main():
                 game,
                 start_time,
                 image,
-                game,  # Tournament
+                game,
                 slate_type,
                 "NBA",
                 date_str[:5] if date_str else "",
-                role,  # Role = slate label
+                role,
                 contest_names_short,
                 contest_ids_full,
-                role,  # Slate Header = same as Role for simplicity
+                role,          # Slate Header
+                status,
+                news_status,
+                injury_desc,
             ]
             all_drafttable.append(draft_row)
 
-            # players.csv row (one per unique player-slate; for Showdown both CPT and UTIL rows exist)
             player_row = [
                 name,
                 pos_out,
                 team,
                 opponent,
-                role,          # Slate
+                role,
                 slate_type,
                 salary,
                 draftable_id,
@@ -262,7 +284,8 @@ def main():
         "Player Name - Slate Type", "Contest IDs", "Player ID", "Draftable ID",
         "Player Name", "First Name", "Last Name", "Salary", "Position", "Team",
         "Game", "Game Start Time", "Player Image", "Tournament", "Slate Type",
-        "Game Type", "Date", "Role", "Contest Names", "Contest IDs (Full)", "Slate Header"
+        "Game Type", "Date", "Role", "Contest Names", "Contest IDs (Full)", "Slate Header",
+        "Status", "News Status", "Injury Description"
     ]
     with open("drafttable.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
@@ -283,5 +306,7 @@ def main():
 
     print("Done.")
 
+
 if __name__ == "__main__":
     main()
+Grok finished responding

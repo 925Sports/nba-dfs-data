@@ -71,7 +71,49 @@ td { padding:0.38rem 0.45rem; border-bottom:1px solid var(--border); vertical-al
 .psub { color:var(--muted); font-size:0.68rem; }
 .use, .weight, .exp-sel, .proj, .max { font-size:0.75rem; padding:0.28rem 0.3rem; }
 .proj { width:68px; } .max { width:52px; }
-.exp-sel { max-width:96px; }
+.exp-sel { max-width:108px; }
+.psub-row { display:flex; align-items:center; gap:0.35rem; flex-wrap:wrap; }
+.psub-row .psub { margin:0; }
+.player-meta .exp-sel { margin-top:0; }
+[data-tip] { position:relative; }
+[data-tip]:hover::after, [data-tip]:focus-visible::after {
+  content:attr(data-tip);
+  position:absolute;
+  left:0;
+  bottom:calc(100% + 6px);
+  z-index:80;
+  width:max-content;
+  max-width:280px;
+  white-space:normal;
+  background:#0e1528;
+  color:#e8edf7;
+  border:1px solid #2a3350;
+  border-radius:8px;
+  padding:0.4rem 0.55rem;
+  font-size:0.72rem;
+  font-weight:500;
+  line-height:1.35;
+  box-shadow:0 8px 24px rgba(0,0,0,.4);
+  pointer-events:none;
+}
+.ptag { display:inline-block; font-size:0.6rem; font-weight:800; letter-spacing:0.03em; padding:0.05rem 0.35rem; border-radius:999px; margin-left:0.2rem; vertical-align:middle; }
+.ptag.extreme-core { background:#134e4a; color:#5eead4; }
+.ptag.core-play { background:#14532d; color:#86efac; }
+.ptag.high-exposure { background:#1e3a5f; color:#93c5fd; }
+.ptag.mid-exposure { background:#164e63; color:#67e8f9; }
+.ptag.low-exposure { background:#3d3420; color:#fde68a; }
+.ptag.limit { background:#7c2d12; color:#fdba74; }
+.ptag.fade { background:#5a2430; color:#ffd0d6; }
+.var-build { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(280px,0.9fr); gap:0.75rem; align-items:start; }
+@media (max-width:860px) { .var-build { grid-template-columns:1fr; } }
+.hand-line { border:1px solid var(--border); border-radius:12px; background:var(--card2); overflow:hidden; }
+.hand-top { display:flex; justify-content:space-between; gap:0.6rem; padding:0.55rem 0.7rem; background:#16325f; color:#fff; font-size:0.75rem; }
+.hand-top b { letter-spacing:0.04em; }
+.hand-slot { display:grid; grid-template-columns:2.6rem minmax(0,1fr) auto auto auto; gap:0.35rem; align-items:center; padding:0.4rem 0.55rem; border-bottom:1px solid var(--border); font-size:0.8rem; }
+.hand-slot .pos { font-weight:800; color:var(--aqua); font-size:0.72rem; }
+.hand-slot .empty { color:var(--muted); }
+.hand-add, .hand-x { font-size:0.72rem; padding:0.15rem 0.4rem; }
+.var-pool { max-height:520px; }
 .player-cell .who { align-items:flex-start; }
 .player-meta { min-width:0; display:flex; flex-direction:column; gap:0.12rem; }
 .player-meta .exp-sel { margin-top:0.15rem; }
@@ -296,16 +338,16 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
       <div class="card-header" onclick="this.parentElement.classList.toggle('collapsed')">Contest presets <span class="chev">▾</span></div>
       <div class="card-body">
         <div class="presets">
-          <button class="preset" type="button" data-preset="cash">Cash Floor<small>SE · 50/50</small></button>
-          <button class="preset" type="button" data-preset="chalk">Eat the Chalk<small>SE · H2H</small></button>
-          <button class="preset active" type="button" data-preset="gpp">GPP Leverage<small>20-max</small></button>
-          <button class="preset" type="button" data-preset="milly">Milly Winner<small>150-max</small></button>
-          <button class="preset" type="button" data-preset="stars">Stars & Scrubs<small>20-max</small></button>
-          <button class="preset" type="button" data-preset="unique">Four Uniques<small>20 / 150</small></button>
-          <button class="preset" type="button" data-preset="mini">Mini Stack<small>PG + 1</small></button>
-          <button class="preset" type="button" data-preset="sd_cash">Showdown Cash<small>SE · H2H</small></button>
-          <button class="preset" type="button" data-preset="sd_gpp">Showdown GPP<small>20-max</small></button>
-          <button class="preset" type="button" data-preset="sd_smash">Showdown Smash<small>5–1 favorite</small></button>
+          <button class="preset" type="button" data-preset="cash" data-tip="One cash lineup. Spend to $400 left, play the chalk, and keep a light point-guard teammate.">Cash Floor<small>SE · 50/50</small></button>
+          <button class="preset" type="button" data-preset="chalk" data-tip="Eat the chalk. One lineup for a 50/50 or head-to-head. Ownership lean stays on the popular values.">Eat the Chalk<small>SE · H2H</small></button>
+          <button class="preset active" type="button" data-preset="gpp" data-tip="20-max default. One point guard plus a teammate, two to three from a team, and a nudge toward the higher total.">GPP Leverage<small>20-max</small></button>
+          <button class="preset" type="button" data-preset="milly" data-tip="150-max. Lower exposure, more leverage, a bring-back bonus, and lineups that differ by at least 3 players.">Milly Winner<small>150-max</small></button>
+          <button class="preset" type="button" data-preset="stars" data-tip="Two players at $9,000 or more and two at $4,500 or less. The rest is the value that makes the salary work.">Stars & Scrubs<small>20-max</small></button>
+          <button class="preset" type="button" data-preset="unique" data-tip="Four different players from the last lineup. Leaves more salary if that is what makes the low-owned piece fit.">Four Uniques<small>20 / 150</small></button>
+          <button class="preset" type="button" data-preset="mini" data-tip="Point guard plus one teammate only. Leaves room for a second game instead of a four-man stack.">Mini Stack<small>PG + 1</small></button>
+          <button class="preset" type="button" data-preset="sd_cash" data-tip="Showdown cash. 3–3 split, captain prefers a teammate, spend within $400.">Showdown Cash<small>SE · H2H</small></button>
+          <button class="preset" type="button" data-preset="sd_gpp" data-tip="Showdown 20-max. 4–2 split and the captain must bring one teammate.">Showdown GPP<small>20-max</small></button>
+          <button class="preset" type="button" data-preset="sd_smash" data-tip="Showdown smash. 5–1 toward the favorite, captain with a teammate. It stops instead of using a zero-projection player.">Showdown Smash<small>5–1 favorite</small></button>
         </div>
         <div class="note" id="presetNote">GPP Leverage is the default. About a 12–24% ownership lean, one point guard plus a teammate, and two to three players from one team.</div>
         <div class="row" style="margin-top:0.65rem;">
@@ -398,7 +440,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
     <div class="card">
       <div class="card-header" onclick="this.parentElement.classList.toggle('collapsed')">Player pool <span class="head-meta" id="poolMeta"></span> <span class="chev">▾</span></div>
       <div class="card-body">
-        <div class="note" style="margin-bottom:0.45rem;">The exposure tag sits under the name. Play follows the global max. Lock is every lineup. Core 30–40, High 20–30, Mid 15–20, Low 5–10. Limit means you do not like a play the data likes: the builder can still use them when nothing else fits the salary or the spot, but not nearly as often, and never over about 12% unless you type a higher max. Fade removes them. Changing the exposure fills Min % and Max %. You can type over those numbers. Projected minutes are their own column. Tag a handful, not the whole pool.</div>
+        <div class="note" style="margin-bottom:0.45rem;">The exposure choice sits on the matchup line. Hover it to see what that tag does. Play follows the global max. Lock is every lineup. Core 30–40, High 20–30, Mid 15–20, Low 5–10. Limit is a play the data likes that you do not: still legal when a build needs the salary or the spot, capped near 12%. Fade removes them. Projected minutes are their own column.</div>
         <div class="chip-row" id="posChips"></div>
         <div class="chip-row" id="teamChips"></div>
         <div class="corebar" id="coreBar"></div>
@@ -496,12 +538,34 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
             <option value="punts">Punts $4.5k or less</option>
             <option value="favs">Favorites</option>
             <option value="q">Questionable</option>
+            <option value="teams">By team</option>
+            <option value="extreme">Extreme Core</option>
+            <option value="core">Core Play</option>
+            <option value="high">High Exposure</option>
+            <option value="mid">Mid Exposure</option>
+            <option value="low">Low Exposure</option>
+            <option value="limit">Limit</option>
+            <option value="fade">Fade</option>
           </select>
         </label>
         <label>Min proj<input type="number" id="csMinProj" value="0" step="0.5"></label>
         <label>Min value<input type="number" id="csMinVal" value="0" step="0.1"></label>
         <label class="check"><input type="checkbox" id="csHideOut" checked> Hide OUT</label>
       </div>
+      <details class="sp-sec">
+        <summary>What the tags mean</summary>
+        <div class="body">
+          <p><strong>Extreme Core</strong> — 7x, 30 or more minutes, a high game total, and a good matchup. The first name you build around.</p>
+          <p><strong>Core Play</strong> — 7x. The price is strong. It is not Extreme unless the minutes, total, and matchup are also there.</p>
+          <p><strong>High Exposure</strong> — 5.2x or better with 28 or more minutes. A stud you can live with in a lot of lineups.</p>
+          <p><strong>Mid Exposure</strong> — 4.6x to the stud range, with a real minute role. Normal price on this sport.</p>
+          <p><strong>Low Exposure</strong> — 4x and playable. Fine as a one-off, not a priority.</p>
+          <p><strong>Limit</strong> — the rate looks good, the role does not. Questionable, or a big per-minute number on short minutes. Use him when the salary needs it.</p>
+          <p><strong>Fade</strong> — out, or the price does not pay. Also a listed projection that has no minutes average and no game-log points behind it.</p>
+          <p class="note">Two tags on purpose. The first is the role. The second is how often to roster him. Hover either one for the reason on that player.</p>
+        </div>
+      </details>
+      <div id="csTeams"></div>
       <div class="cs-wrap"><table id="csTable"><thead><tr>
         <th></th>
         <th data-sort="rank">Rank</th><th data-sort="name">Name</th><th data-sort="pos">Pos</th><th data-sort="team">Team</th><th>Opp</th>
@@ -539,6 +603,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
         <select id="stackMode">
           <option value="pg1">PG + 1</option>
           <option value="pg2" selected>PG + 2</option>
+          <option value="32">3 + 2 bring-back</option>
         </select>
       </label>
       <label>Sort
@@ -570,21 +635,42 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
     </div>
   </div></div></div>
   <div id="tab-variations" style="display:none;"><div class="card"><div class="card-header">Lineup variations</div><div class="card-body">
-    <div class="note" style="margin-bottom:0.5rem;">Swap 1–3 spots on a lineup you already built. The top row is the base. Highlighted slots are the swaps. A name opens the player card. Strict mode also keeps the team cap and the salary floor.</div>
-    <div class="row" style="margin-bottom:0.6rem;">
-      <label>Base<select id="varBase" style="min-width:180px;"></select></label>
-      <label>Swaps<input type="number" id="varSwaps" value="2" min="1" max="3"></label>
-      <label>Count<input type="number" id="varCount" value="8" min="1" max="30"></label>
-      <label>Rules
-        <select id="varRules">
-          <option value="strict" selected>Cap, team limit, spend</option>
-          <option value="cap">Cap only</option>
-        </select>
-      </label>
-      <button id="genVars" class="primary" type="button">Generate variations</button>
-      <button id="keepVars" class="secondary" type="button">Replace the set with these</button>
+    <div class="note" style="margin-bottom:0.5rem;">Build the lineup by hand, the same way you would on DraftKings. Check Swap on the spots you want changed. The tool keeps everyone else and only replaces those spots. A name opens the player card.</div>
+    <div class="var-build">
+      <div>
+        <div class="row" style="margin-bottom:0.4rem;">
+          <label>Search<input type="text" id="varSearch" placeholder="Player search" style="width:160px;"></label>
+        </div>
+        <div class="chip-row" id="varPos"></div>
+        <div class="lab-wrap var-pool"><table id="varPool"><thead><tr><th>Pos</th><th>Player</th><th>Opp</th><th>Proj</th><th>Salary</th><th></th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div>
+        <div class="hand-line">
+          <div class="hand-top"><b>LINEUP</b><span id="varLeft">$50,000 left</span></div>
+          <div id="varSlots"></div>
+        </div>
+        <div class="row" style="margin-top:0.55rem;">
+          <label>Start from a generated lineup<select id="varBase" style="min-width:180px;"></select></label>
+          <button id="varLoad" class="secondary" type="button">Load it</button>
+          <button id="varClear" class="secondary" type="button">Clear</button>
+        </div>
+        <div class="row" style="margin-top:0.45rem;">
+          <label>How many of the checked spots change<input type="number" id="varSwaps" value="2" min="1" max="4" data-tip="Each variation changes this many of the spots you checked. The rest of the lineup stays."></label>
+          <label>Count<input type="number" id="varCount" value="8" min="1" max="30"></label>
+          <label>Rules
+            <select id="varRules">
+              <option value="strict" selected>Cap, team limit, spend</option>
+              <option value="cap">Cap only</option>
+            </select>
+          </label>
+        </div>
+        <div class="row" style="margin-top:0.45rem;">
+          <button id="genVars" class="primary" type="button">Build variations</button>
+          <button id="keepVars" class="secondary" type="button">Replace the set with these</button>
+        </div>
+      </div>
     </div>
-    <div id="varStatus" class="note" style="margin-bottom:0.4rem;"></div>
+    <div id="varStatus" class="note" style="margin:0.55rem 0 0.4rem;"></div>
     <div id="varBoard" class="var-board"></div>
     <div id="varList"></div>
   </div></div></div>
@@ -1024,8 +1110,17 @@ function customForLineup(stacks, i, cands, settings) {
       rows.push(row);
     }
     if (!ok) return;
-    if (rows.reduce((sum, p) => sum + p.salary, 0) > 44000) return;
-    for (const r of rows) if (!picked.find((p) => p.name === r.name)) picked.push(r);
+    const backs = [s.b1, s.b2].filter(Boolean);
+    const backRows = [];
+    backs.forEach((name) => {
+      const row = cands.find((p) => p.name === name && (!settings.isShowdown || p.pos !== "CPT")) || cands.find((p) => p.name === name);
+      if (row) backRows.push(row);
+    });
+    const withBacks = rows.concat(backRows);
+    const useBacks = backRows.length === backs.length && withBacks.reduce((sum, p) => sum + p.salary, 0) <= 41000;
+    const chosen = useBacks ? withBacks : rows;
+    if (chosen.reduce((sum, p) => sum + p.salary, 0) > 44000) return;
+    for (const r of chosen) if (!picked.find((p) => p.name === r.name)) picked.push(r);
   });
   return picked;
 }
@@ -1400,6 +1495,9 @@ let expPos = "";
 let lastSim = [];
 let simChecked = new Set();
 let simSort = { key: "p90", dir: -1 };
+let handRoster = {};
+let handSwap = new Set();
+let varPosFilter = "ALL";
 
 function cacheBust(u) { return u + (u.includes("?") ? "&" : "?") + "cb=" + Date.now(); }
 function money(n) { return "$" + Number(n || 0).toLocaleString(); }
@@ -1456,6 +1554,57 @@ function feedMinutes(row) {
     if (n > 0) return n;
   }
   return 0;
+}
+function trustProjection(p) {
+  const anchored = (p.dk || 0) > 0 || (p.minAvg || 0) >= 8;
+  if (!anchored && p.salary > 0 && p.salary <= 5000 && p.starter !== "Yes" && (p.baseProj > 0 || p.rawProj > 0)) {
+    p.phantom = true;
+    p.rawProj = p.rawProj || p.baseProj;
+    p.baseProj = 0;
+    p.proj = 0;
+    p.minutes = 0;
+    p.ppm = 0;
+    return;
+  }
+  p.phantom = false;
+  if ((p.minAvg || 0) > 0) p.minutes = p.minAvg;
+  else if (anchored && p.projMin > 0) p.minutes = p.projMin;
+  p.ppm = p.minutes > 0 ? p.proj / p.minutes : 0;
+}
+function playTag(p) {
+  const v = valueOf(p);
+  const min = p.minutes || 0;
+  const ou = Number(p.ou) || 0;
+  const spr = Number(p.spread) || 0;
+  const highTotal = ou >= 228;
+  const rank = parseInt(String(p.dvpRank || "").replace(/[^\d]/g, ""), 10);
+  const goodMatch = p.fav || (spr && Math.abs(spr) <= 4.5) || (Number.isFinite(rank) && rank > 0 && rank <= 12) || (!rank && highTotal);
+  if (p.phantom) {
+    return { role: "Fade", exp: "Fade", why: `The file listed ${(p.rawProj || 0).toFixed(1)} points${p.projMin ? " and " + p.projMin + " minutes" : ""}, but there is no minutes average and no game-log points behind it.` };
+  }
+  if (isOutStatus(p.injury) || v <= 0) {
+    return { role: "Fade", exp: "Fade", why: isOutStatus(p.injury) ? "Out, doubtful, or IR." : "No trusted projection." };
+  }
+  if (v >= 7 && min >= 30 && highTotal && goodMatch && !isQStatus(p.injury)) {
+    return { role: "Extreme Core", exp: "High Exposure", why: `${v.toFixed(1)}x, ${min.toFixed(0)} minutes, O/U ${ou.toFixed(1)}, and a usable matchup.` };
+  }
+  if (v >= 7) {
+    return { role: "Core Play", exp: min >= 30 ? "High Exposure" : "Mid Exposure", why: `${v.toFixed(1)}x. Core is 7x. Extreme also needs 30 minutes, a high total, and a good matchup.` };
+  }
+  if ((v >= 5.2 && min > 0 && min < 20) || (isQStatus(p.injury) && v >= 4.8)) {
+    return { role: "Limit", exp: "Limit", why: isQStatus(p.injury) ? "Questionable. The rate can be fine and the role might not be there." : `${v.toFixed(1)}x on only ${min.toFixed(0)} minutes. Use him when the salary needs it.` };
+  }
+  if (v >= 5.2 && min >= 28) return { role: "High Exposure", exp: "High Exposure", why: `${v.toFixed(1)}x and ${min.toFixed(0)} minutes.` };
+  if (v >= 4.6 && min >= 20) return { role: "Mid Exposure", exp: "Mid Exposure", why: `${v.toFixed(1)}x and ${min.toFixed(0)} minutes. A normal stud price.` };
+  if (v >= 4) return { role: "Low Exposure", exp: "Low Exposure", why: `${v.toFixed(1)}x. Playable, not a priority.` };
+  return { role: "Fade", exp: "Fade", why: `${v.toFixed(1)}x${min ? " at " + min.toFixed(0) + " minutes" : ""}. The price does not pay.` };
+}
+function tagPills(p) {
+  const t = playTag(p);
+  const cls = (s) => String(s || "").toLowerCase().replace(/\s+/g, "-");
+  const role = `<span class="ptag ${cls(t.role)}" data-tip="${esc(t.why)}">${esc(t.role)}</span>`;
+  if (t.exp === t.role) return role;
+  return role + `<span class="ptag ${cls(t.exp)}" data-tip="${esc(t.why)}">${esc(t.exp)}</span>`;
 }
 function injuryTag(s) {
   const u = String(s || "").toUpperCase();
@@ -1553,6 +1702,7 @@ async function loadData() {
         spread,
         fav: String(s.Fav || "").toLowerCase() === "yes" || spread < 0,
         fd: numOrZero(s.FanDuel),
+        dk: dk,
         pts: numOrZero(s["PTS Avg"]),
         reb: numOrZero(s["REB Avg"]),
         ast: numOrZero(s["AST Avg"]),
@@ -1562,6 +1712,13 @@ async function loadData() {
         dvpRank: String(s["DVP Rank"] || "").trim(),
         dvpProj: numOrZero(s["DvP Projection"]),
         oppPm: numOrZero(s["Opp +/-"]),
+        minAvg: numOrZero(s["MIN Avg"]),
+        projMin: numOrZero(s["Projected Minutes"]),
+        news: String(s.Comment || "").trim(),
+        returnDate: String(s["EST. Return Date"] || "").trim(),
+        injuryFeed: String(s["Injury Status"] || "").trim(),
+        phantom: false,
+        rawProj: base,
         own: owned > 0 ? owned : 0,
         ownFeed: owned > 0,
         use: isOutStatus(injury) ? "fade" : "play",
@@ -1571,18 +1728,22 @@ async function loadData() {
         maxExp: isOutStatus(injury) ? 0 : 100,
       };
     });
+    allRows.forEach((p) => trustProjection(p));
     const classicByName = new Map();
     allRows.forEach((p) => {
-      if (p.pos === "CPT" || p.pos === "UTIL") return;
+      if (p.pos === "CPT" || p.pos === "UTIL" || p.phantom) return;
       if (p.baseProj > 0 && !classicByName.has(p.name)) classicByName.set(p.name, p);
     });
     allRows.forEach((p) => {
-      if (p.baseProj > 0) return;
+      if (p.baseProj > 0 && !p.phantom) return;
       const src = classicByName.get(p.name);
-      if (!src) return;
+      if (!src || src.phantom) return;
+      p.phantom = false;
       p.baseProj = src.baseProj;
       p.proj = scoringProj(src.baseProj, p.pos);
       if (!p.minutes) p.minutes = src.minutes;
+      if (!p.dk) p.dk = src.dk;
+      if (!p.minAvg) p.minAvg = src.minAvg;
       if (!p.starter) p.starter = src.starter;
       if (!p.ou) p.ou = src.ou;
       if (!p.spread) p.spread = src.spread;
@@ -1605,11 +1766,20 @@ async function loadData() {
       if (isOutStatus(p.injury)) applyExp(p, "fade");
     });
     allRows.forEach((p) => {
-      if (!p.ownFeed) p.own = estimateOwn(p);
+      if (!p.ownFeed && !p.phantom) p.own = estimateOwn(p);
     });
     ownFromFeed = allRows.some((p) => p.ownFeed);
     const withProj = allRows.filter((p) => p.baseProj > 0).length;
-    status.textContent = `Loaded ${allRows.length} players · ${withProj} with a projection.`;
+    const dropped = [];
+    const seenDrop = new Set();
+    allRows.forEach((p) => {
+      if (p.pos === "CPT" || p.pos === "UTIL" || !p.phantom || seenDrop.has(p.name)) return;
+      seenDrop.add(p.name);
+      dropped.push(p.name);
+    });
+    const shown = dropped.slice(0, 6);
+    const extra = dropped.length - shown.length;
+    status.textContent = `Loaded ${allRows.length} players · ${withProj} with a projection.` + (shown.length ? ` Left out ${shown.join(", ")}${extra ? " and " + extra + " more" : ""}. The file listed points for them, but there is no minutes average and no game-log points behind it.` : "");
     ensureLogs();
     buildSlatePicker();
   } catch (e) {
@@ -1658,6 +1828,8 @@ function loadSlate(role) {
   stacks = [];
   groups = [];
   lineups = [];
+  handRoster = {};
+  handSwap = new Set();
   posFilter = "ALL";
   teamFilter = "ALL";
   pool = allRows.filter((p) => p.slate === role).map((p) => ({ ...p }));
@@ -1671,6 +1843,7 @@ function loadSlate(role) {
   renderSlatePreview();
   renderGamePreview();
   renderLineups();
+  renderHand();
   document.getElementById("optStatus").textContent = "";
   document.getElementById("downloadBtn").disabled = true;
   document.getElementById("detailBtn").disabled = true;
@@ -1738,13 +1911,13 @@ function renderPool() {
       <td class="player-cell"><div class="who">
         ${p.image ? `<img class="avatar" alt="" src="${esc(p.image)}" onerror="this.remove()">` : ""}
         <div class="player-meta">
-          <div class="pname">${nameBtn(p.name)} ${injuryTag(p.injury)} ${p.starter === "Yes" ? '<span class="tag s">S</span>' : ""} ${p.fav ? '<span class="tag s">FAV</span>' : ""} ${hot ? '<span class="tag check" title="This projection is far above a normal salary. Confirm the minutes before you build around it.">Check</span>' : ""}</div>
-          <div class="psub">${esc(p.team)} vs ${esc(p.opp)}</div>
-          <select class="exp-sel exp-${p.exp || "play"}" data-id="${p.id}" title="${expHint[p.exp || "play"]}">
+          <div class="pname">${nameBtn(p.name)} ${injuryTag(p.injury)} ${p.starter === "Yes" ? '<span class="tag s" data-tip="Tagged as a starter in the feed.">S</span>' : ""} ${p.fav ? '<span class="tag s" data-tip="On the favorite.">FAV</span>' : ""} ${p.phantom ? `<span class="tag check" data-tip="${esc(playTag(p).why)}">No log</span>` : ""} ${["Extreme Core", "Core Play", "Limit"].includes(playTag(p).role) ? tagPills(p) : ""}</div>
+          <div class="psub-row"><span class="psub">${esc(p.team)} vs ${esc(p.opp)}</span>
+          <select class="exp-sel exp-${p.exp || "play"}" data-id="${p.id}" data-tip="${expHint[p.exp || "play"]}" title="${expHint[p.exp || "play"]}">
             ${["play", "lock", "core", "high", "mid", "low", "limit", "fade"].map((key) =>
               `<option value="${key}" ${(p.exp || "play") === key ? "selected" : ""}>${expLabels[key]}</option>`
             ).join("")}
-          </select>
+          </select></div>
         </div>
       </div></td>
       <td>${esc(p.pos)}</td>
@@ -1976,6 +2149,7 @@ function refreshBoards() {
   renderSlatePreview();
   renderGamePreview();
   renderStacks();
+  renderHand();
 }
 function applyPlayerAction(name, act) {
   const rows = rowsNamed(name);
@@ -2023,9 +2197,9 @@ function sheetRows() {
   let rows = pool.filter((p) => {
     if (!sheetPlayer(p)) return false;
     if (hideOut && isOutStatus(p.injury)) return false;
-    if (p.proj <= 0) return false;
+    if (p.proj <= 0 && !(mode === "fade" && p.phantom)) return false;
     if (p.proj < minProj) return false;
-    if (valueOf(p) < minVal) return false;
+    if (valueOf(p) < minVal && mode !== "fade") return false;
     const real = rosterPos(p);
     if (pos !== "ALL" && !isEligible(real, pos) && real !== pos) return false;
     if (mode === "studs" && p.salary < 8000) return false;
@@ -2033,6 +2207,14 @@ function sheetRows() {
     if (mode === "punts" && !(p.salary <= 4500 && p.proj > 0)) return false;
     if (mode === "favs" && !p.fav) return false;
     if (mode === "q" && !isQStatus(p.injury)) return false;
+    const role = playTag(p).role;
+    if (mode === "extreme" && role !== "Extreme Core") return false;
+    if (mode === "core" && role !== "Core Play" && role !== "Extreme Core") return false;
+    if (mode === "high" && role !== "High Exposure") return false;
+    if (mode === "mid" && role !== "Mid Exposure") return false;
+    if (mode === "low" && role !== "Low Exposure") return false;
+    if (mode === "limit" && role !== "Limit") return false;
+    if (mode === "fade" && role !== "Fade") return false;
     if (q && !(p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))) return false;
     return true;
   });
@@ -2086,12 +2268,36 @@ function renderCheatSheet() {
     else { va = a.proj; vb = b.proj; }
     return (va < vb ? -1 : va > vb ? 1 : 0) * csSort.dir;
   });
+  const mode = document.getElementById("csMode").value;
+  const wrap = host.closest(".cs-wrap");
+  const teamsHost = document.getElementById("csTeams");
+  if (mode === "teams") {
+    if (wrap) wrap.style.display = "none";
+    const by = new Map();
+    rows.forEach((p) => {
+      if (!by.has(p.team)) by.set(p.team, []);
+      by.get(p.team).push(p);
+    });
+    const blocks = [...by.entries()].sort((a, b) => (Number(b[1][0].ou) || 0) - (Number(a[1][0].ou) || 0) || a[0].localeCompare(b[0]));
+    if (teamsHost) {
+      teamsHost.innerHTML = blocks.map(([tm, list]) => {
+        const env = sideEnv(list);
+        const body = list.slice().sort((a, b) => b.proj - a.proj).map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} ${injuryTag(p.injury)} ${tagPills(p)} <span class="cs-sub">${esc(rosterPos(p))}</span></span><span>${p.proj.toFixed(1)} · ${valueOf(p).toFixed(2)}x · ${money(p.salary)}</span></div>`).join("");
+        return sec(`${esc(tm)} vs ${esc(list[0].opp || "—")}`, `<p class="note">${env.ou ? "O/U " + env.ou.toFixed(1) : "No total"}${env.spr ? " · " + (env.spr > 0 ? "+" : "") + env.spr.toFixed(1) : ""}</p>${body}`, true);
+      }).join("") || `<div class="note">No teams match.</div>`;
+      bindNames(teamsHost);
+    }
+    host.innerHTML = "";
+    return;
+  }
+  if (wrap) wrap.style.display = "";
+  if (teamsHost) teamsHost.innerHTML = "";
   host.innerHTML = rows.map((p, i) => {
     const val = valueOf(p);
     return `<tr>
       <td class="acts">${actButtons(p.name)}</td>
       <td>${i + 1}</td>
-      <td>${nameBtn(p.name)} ${injuryTag(p.injury)} ${p.starter === "Yes" ? '<span class="tag s">S</span>' : ""}</td>
+      <td>${nameBtn(p.name)} ${injuryTag(p.injury)} ${p.starter === "Yes" ? '<span class="tag s" data-tip="Tagged as a starter in the feed.">S</span>' : ""} ${tagPills(p)}</td>
       <td>${esc(rosterPos(p))}</td><td>${esc(p.team)}</td><td>${esc(p.opp)}</td>
       <td>${money(p.salary)}</td><td>${p.proj.toFixed(1)}</td>
       <td class="${valueClass(val)}">${val.toFixed(2)}x</td>
@@ -2250,11 +2456,11 @@ function renderSlatePreview() {
     const tag = g.ou >= 229 ? "hot" : g.ou && g.ou <= 220 ? "low" : "";
     return `<div class="sp-row"><span><strong>${esc(g.label)}</strong> ${tag ? `<span class="sp-tag ${tag}">${env}</span>` : `<span class="cs-sub">${env}</span>`}</span><span>${g.ou ? "O/U " + g.ou.toFixed(1) : "No total"}${fav ? " · " + esc(fav.team) + " " + sprText(fav) : ""} · <button type="button" class="nm open-game" data-game="${esc(g.key)}">Lineups</button></span></div>`;
   }).join("");
-  const risky = games.filter((g) => Math.abs(Number(g.players.find((p) => p.spread)?.spread) || 0) >= 8);
+  const risky = games.filter((g) => Math.abs(Number(g.players.find((p) => p.spread)?.spread) || 0) >= 7.5);
   const riskRows = risky.length ? risky.map((g) => {
     const fav = g.players.find((p) => p.fav);
     return `<div class="sp-row"><span><strong>${esc(g.label)}</strong> <span class="sp-tag boom">Spread</span></span><span>${fav ? esc(fav.team) + " " + sprText(fav) : "Wide number"} · starters can sit late</span></div>`;
-  }).join("") : `<div class="sp-row">No spread of 8 or more on this slate.</div>`;
+  }).join("") : `<div class="sp-row">No spread of 7.5 or more on this slate.</div>`;
   const topPos = (pos) => {
     const seen = new Set();
     const list = [];
@@ -2272,10 +2478,38 @@ function renderSlatePreview() {
   const rules = isShowdown
     ? `<p class="note">Captain plus five utility spots, under $50,000. The captain salary in the pool is already 1.5×, and the projection is scaled to match. Pair the captain with a teammate. Bring-back is a bonus, not a rule.</p>`
     : `<p class="note">Eight spots: PG, SG, SF, PF, C, G, F, UTIL, under $50,000. One point-guard stack, two or three from that team. A five-man stack is not the edge.</p>`;
+  const seenTop = new Set();
+  const tagged = [];
+  pool.forEach((p) => {
+    if (p.pos === "CPT" || seenTop.has(p.name) || isOutStatus(p.injury)) return;
+    seenTop.add(p.name);
+    tagged.push(p);
+  });
+  const cores = tagged.filter((p) => ["Extreme Core", "Core Play"].includes(playTag(p).role)).sort((a, b) => b.proj - a.proj);
+  const topList = cores.length ? cores : tagged.filter((p) => p.proj > 0).sort((a, b) => valueOf(b) - valueOf(a)).slice(0, 8);
+  const topRows = topList.slice(0, 8).map((p, i) => `<div class="sp-row"><span>${i + 1}. ${nameBtn(p.name)} ${tagPills(p)} <span class="cs-sub">${esc(p.team)}</span></span><span>${p.proj.toFixed(1)} · ${valueOf(p).toFixed(2)}x</span></div>`).join("") || `<div class="sp-row">Nobody is at 7x. That is the Core bar.</div>`;
+  const blowRows = risky.length ? risky.map((g) => {
+    const fav = g.players.find((p) => p.fav);
+    return `<div class="sp-row"><span><strong>${esc(g.label)}</strong></span><span>${fav ? esc(fav.team) + " " + sprText(fav) : "7.5 or more"} · starters can sit late</span></div>`;
+  }).join("") : `<div class="sp-row">No spread of 7.5 or more on this slate.</div>`;
+  const newsSeen = new Set();
+  const news = [];
+  pool.forEach((p) => {
+    if (p.pos === "CPT" || newsSeen.has(p.name)) return;
+    const waiting = isQStatus(p.injury) || isOutStatus(p.injury) || /question|out|doubt/i.test(p.injuryFeed || "");
+    if (!waiting) return;
+    if (p.salary < 4500 && p.starter !== "Yes" && !p.news) return;
+    newsSeen.add(p.name);
+    news.push(p);
+  });
+  news.sort((a, b) => b.salary - a.salary);
+  const newsRows = news.slice(0, 8).map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} ${injuryTag(p.injury)} <span class="cs-sub">${esc(p.team)} · ${money(p.salary)}</span></span><span>${esc((p.news || p.injuryFeed || "Status only. No written note in the feed.").slice(0, 160))}</span></div>`).join("") || `<div class="sp-row">No injury note that changes a real rotation.</div>`;
+  const overview = `<p class="note">Top plays are 7x. Extreme Core also needs 30 minutes, a high total, and a good matchup. A blowout is a spread of 7.5 or more.</p><div class="subhead">Top plays</div>${topRows}<div class="subhead">Blowouts</div>${blowRows}<div class="subhead">Injury news</div>${newsRows}`;
   host.innerHTML = [
+    sec("Overview", overview, true),
     sec(isShowdown ? "Showdown rules" : "Classic rules", rules, false),
     sec("Games by total", `<p class="note">Highest total is the first place the points are. Lineups opens that game.</p>${gameRows}`, true),
-    sec("Wide spreads", `<p class="note">A number of 8 or more. The favorite can sit, and the bench minutes matter more.</p>${riskRows}`, false),
+    sec("Wide spreads", `<p class="note">A number of 7.5 or more. The favorite can sit, and the bench minutes matter more.</p>${riskRows}`, false),
     sec("Top point guards", topPos("PG"), false),
     sec("Top wings", topPos("SG") + topPos("SF"), false),
     sec("Top bigs", topPos("PF") + topPos("C"), false),
@@ -2326,6 +2560,27 @@ function renderGamePreview() {
       ${board.benchRows}
     </div>`;
   }).join("");
+  const dvpPlayers = [];
+  const dvpSeen = new Set();
+  g.players.forEach((p) => {
+    if (p.pos === "CPT" || dvpSeen.has(p.name) || isOutStatus(p.injury)) return;
+    dvpSeen.add(p.name);
+    dvpPlayers.push(p);
+  });
+  const hasDvp = dvpPlayers.some((p) => p.dvpRank && p.dvpRank !== "0");
+  const dvpBody = hasDvp
+    ? dvpPlayers.filter((p) => p.dvpRank && p.dvpRank !== "0").sort((a, b) => (parseInt(a.dvpRank, 10) || 99) - (parseInt(b.dvpRank, 10) || 99)).map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} <span class="cs-sub">${esc(p.team)} · ${esc(rosterPos(p))}</span></span><span>DVP ${esc(p.dvpRank)}${p.dvpProj ? " · " + p.dvpProj.toFixed(1) : ""}</span></div>`).join("")
+    : `<div class="lu-empty">No DVP rank in the feed for this game. The matchup is the opponent list below.</div>` + dvpPlayers.slice().sort((a, b) => b.proj - a.proj).slice(0, 8).map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} <span class="cs-sub">${esc(p.team)}</span></span><span>${p.proj > 0 ? p.proj.toFixed(1) + " FP" : "—"}</span></div>`).join("");
+  const inj = [];
+  const injSeen = new Set();
+  g.players.forEach((p) => {
+    if (p.pos === "CPT" || injSeen.has(p.name)) return;
+    if (!isQStatus(p.injury) && !isOutStatus(p.injury) && !p.news) return;
+    injSeen.add(p.name);
+    inj.push(p);
+  });
+  inj.sort((a, b) => b.salary - a.salary);
+  const injBody = inj.length ? inj.map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} ${injuryTag(p.injury)} <span class="cs-sub">${money(p.salary)}</span></span><span>${esc((p.news || p.injuryFeed || "No written note.").slice(0, 160))}</span></div>`).join("") : `<div class="lu-empty">No injury note on this game.</div>`;
   const ou = g.ou;
   const fav = g.players.find((p) => p.fav);
   const sideMin = isShowdown ? 4 : 2;
@@ -2337,6 +2592,8 @@ function renderGamePreview() {
       </div>
     </div>
     <div class="gp-sides">${sides}</div>
+    ${sec("DVP", `<p class="note">Rank from the slate file. Blank means the feed did not include it. A lower rank is an easier matchup when the file uses that scale.</p>${dvpBody}`, false)}
+    ${sec("Injury", `<p class="note">Questionable and out, plus the written note when the feed has one.</p>${injBody}`, false)}
     <div class="gp-actions"><button type="button" class="secondary mini game-focus" data-game="${esc(g.key)}" data-min="${sideMin}">Use ${sideMin} from this game</button></div>
   </div>`;
   bindNames(desk);
@@ -2475,7 +2732,7 @@ function openPlayer(name) {
     shot.alt = p.name;
     shot.onerror = () => { shot.hidden = true; };
   } else shot.hidden = true;
-  drawerTab = drawerTab || "ov";
+  drawerTab = "log";
   renderPlayerCard(p);
   back.classList.add("show");
   drawer.classList.add("open");
@@ -2518,6 +2775,7 @@ function renderPlayerCard(p) {
       <button type="button" data-dtab="log" class="${drawerTab === "log" ? "on" : ""}">Game Log</button>
       <button type="button" data-dtab="splits" class="${drawerTab === "splits" ? "on" : ""}">Splits</button>
       <button type="button" data-dtab="mu" class="${drawerTab === "mu" ? "on" : ""}">Matchup</button>
+      <button type="button" data-dtab="news" class="${drawerTab === "news" ? "on" : ""}">News</button>
     </div>
     <div id="drawerPane">${drawerPane(p, games, loading, mates, opp, exp)}</div>
   `;
@@ -2543,12 +2801,33 @@ function drawerPane(p, games, loading, mates, opp, exp) {
   if (drawerTab === "log") return gameLogPane(games, loading);
   if (drawerTab === "splits") return splitsPane(p, games, loading);
   if (drawerTab === "mu") return matchupPane(p, games, opp);
+  if (drawerTab === "news") return newsPane(p);
   const mateRows = mates.map((m) => `<div class="lu-row"><span class="lu-pos">${esc(posToken(m))}</span><span>${nameBtn(m.name)} ${injuryTag(m.injury)}</span><span class="lu-min">${m.minutes > 0 ? m.minutes.toFixed(0) + " min" : ""}</span><span class="lu-min">${m.proj.toFixed(1)}</span></div>`).join("") || `<div class="lu-empty">No other projected teammate.</div>`;
   return `
     <p class="note">${p.fav ? "Favorite. " : ""}${p.minutes > 0 ? "Minutes are the recent average in the feed, not a confirmed role. " : ""}FPPG is DraftKings scoring from the game log. Exposure on this slate: ${esc(exp || "Play")}.</p>
     <div class="acts" style="margin:0.35rem 0 0.7rem;">${actButtons(p.name)}</div>
     <div class="lu-label">Teammates</div>
     ${mateRows}
+  `;
+}
+function newsPane(p) {
+  const mine = p.news || p.injuryFeed || p.injury;
+  const slate = [];
+  const seen = new Set();
+  pool.forEach((x) => {
+    if (x.pos === "CPT" || seen.has(x.name) || x.name === p.name) return;
+    if (!x.news && !isQStatus(x.injury) && !isOutStatus(x.injury)) return;
+    if (x.team !== p.team && x.team !== p.opp) return;
+    if (x.salary < 4000 && !x.news) return;
+    seen.add(x.name);
+    slate.push(x);
+  });
+  slate.sort((a, b) => b.salary - a.salary);
+  const rows = slate.slice(0, 8).map((x) => `<div class="sp-row"><span>${nameBtn(x.name)} ${injuryTag(x.injury)} <span class="cs-sub">${esc(x.team)}</span></span><span>${esc((x.news || x.injuryFeed || "Status only.").slice(0, 140))}</span></div>`).join("") || `<div class="lu-empty">No other injury note in this game.</div>`;
+  return `
+    <p class="note">${mine ? esc(mine) : "No written injury note in the feed for this player."}${p.returnDate ? " Estimated return " + esc(p.returnDate) + "." : ""}</p>
+    <div class="lu-label">Also in this game</div>
+    ${rows}
   `;
 }
 function gameLogPane(games, loading) {
@@ -2641,21 +2920,36 @@ function closePlayer() {
 
 function stackIdeas() {
   const mode = document.getElementById("stackMode") ? document.getElementById("stackMode").value : "pg2";
-  const want = mode === "pg1" ? 1 : 2;
   const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
   const ideas = [];
-  pgs().forEach((pg) => {
-    const mates = matesOf(pg.name).slice(0, want);
-    if (mates.length < want) return;
-    const group = [pg, ...mates];
-    const fp = group.reduce((s, m) => s + m.baseProj, 0);
+  const roleOk = (p) => p && p.proj > 0 && !isOutStatus(p.injury) && !p.phantom && ((p.minutes || 0) >= 18 || p.starter === "Yes") && valueOf(p) < 8;
+  const pushIdea = (pg, mates, backs) => {
+    const group = [pg, ...mates, ...(backs || [])];
+    if (group.some((p) => !roleOk(p))) return;
+    const fp = group.reduce((s, m) => s + (m.baseProj || m.proj), 0);
     const sal = group.reduce((s, m) => s + m.salary, 0);
-    const spots = (isShowdown ? 6 : 8) - group.length;
+    const spotsLeft = (isShowdown ? 6 : 8) - group.length;
     const left = 50000 - sal;
-    const per = spots > 0 ? left / spots : 0;
-    const opp = uniqueProjected().filter((p) => p.team === pg.opp).sort((a, b) => b.proj - a.proj)[0];
-    ideas.push({ pg, mates, fp, sal, val: sal > 0 ? fp / (sal / 1000) : 0, left, per, opp, spots });
-  });
+    const per = spotsLeft > 0 ? left / spotsLeft : 0;
+    if (per < 3400 || sal > 42000 || sal < 14000) return;
+    const opp = (backs && backs[0]) || uniqueProjected().filter((p) => p.team === pg.opp && roleOk(p))[0] || null;
+    ideas.push({ pg, mates, backs: backs || [], fp, sal, val: sal > 0 ? fp / (sal / 1000) : 0, left, per, opp, spots: spotsLeft });
+  };
+  if (mode === "32") {
+    pgs().filter(roleOk).forEach((pg) => {
+      const mates = matesOf(pg.name).filter(roleOk).slice(0, 2);
+      const backs = uniqueProjected().filter((p) => p.team === pg.opp && roleOk(p)).slice(0, 2);
+      if (mates.length < 2 || backs.length < 2) return;
+      pushIdea(pg, mates, backs);
+    });
+  } else {
+    const want = mode === "pg1" ? 1 : 2;
+    pgs().filter(roleOk).forEach((pg) => {
+      const mates = matesOf(pg.name).filter(roleOk).slice(0, want);
+      if (mates.length < want) return;
+      pushIdea(pg, mates, []);
+    });
+  }
   const sort = document.getElementById("stackSort") ? document.getElementById("stackSort").value : "fp";
   ideas.sort((a, b) => (sort === "val" ? b.val - a.val : sort === "left" ? b.left - a.left : b.fp - a.fp));
   return ideas;
@@ -2703,17 +2997,17 @@ function renderStacks() {
       <td>${money(s.sal)}</td>
       <td class="${s.per < 4200 ? "low-value" : ""}">${money(Math.round(s.left))}</td>
       <td>${own}%</td>
-      <td>${s.opp ? nameBtn(s.opp.name) : "—"}</td>
+      <td>${s.opp ? [s.opp, ...(s.backs || []).slice(1)].map((p) => nameBtn(p.name)).join("<br>") : "—"}</td>
       <td class="acts">
-        <button type="button" class="secondary mini use-stack" data-pct="40" data-pg="${esc(s.pg.name)}" data-m1="${esc(s.mates[0].name)}" data-m2="${esc(s.mates[1]?.name || "")}">40%</button>
-        <button type="button" class="secondary mini use-stack" data-pct="100" data-pg="${esc(s.pg.name)}" data-m1="${esc(s.mates[0].name)}" data-m2="${esc(s.mates[1]?.name || "")}">100%</button>
+        <button type="button" class="secondary mini use-stack" data-pct="40" data-pg="${esc(s.pg.name)}" data-m1="${esc(s.mates[0].name)}" data-m2="${esc(s.mates[1]?.name || "")}" data-b1="${esc(s.backs?.[1] ? s.backs[0].name : "")}" data-b2="${esc(s.backs?.[1] ? s.backs[1].name : "")}">40%</button>
+        <button type="button" class="secondary mini use-stack" data-pct="100" data-pg="${esc(s.pg.name)}" data-m1="${esc(s.mates[0].name)}" data-m2="${esc(s.mates[1]?.name || "")}" data-b1="${esc(s.backs?.[1] ? s.backs[0].name : "")}" data-b2="${esc(s.backs?.[1] ? s.backs[1].name : "")}">100%</button>
         ${s.opp ? `<button type="button" class="secondary mini use-back" data-names="${esc(names.join("|"))}">Bring-back</button>` : ""}
       </td>
     </tr>`;
   }).join("") || `<tr><td colspan="11" class="note">No point-guard stacks on this slate. The projected pool may be too thin.</td></tr>`;
   host.innerHTML = `${kpis}
     <div class="subhead">Games to stack</div>
-    <p class="note">${isShowdown ? "Best group on that game, priced at the utility salary. " : "Best point-guard group on that game. "}Use puts it on 40% of lineups and those players ignore the exposure cap.</p>
+    <p class="note">${isShowdown ? "Best group on that game, priced at the utility salary. " : "Best point-guard group on that game. "}A stack is only listed when every player has a real minute role and the group leaves at least $3,400 for each open spot. 3 + 2 is three from one team and two from the other side. Use puts that group on the percent of lineups you pick.</p>
     <div class="lab-wrap"><table class="sl-table"><thead><tr><th>Game</th><th>O/U</th><th>FP</th><th>Best group</th><th>Bring-back</th><th></th></tr></thead><tbody>${gameRows}</tbody></table></div>
     <div class="subhead">Ranked stacks</div>
     <div class="lab-wrap"><table class="sl-table"><thead><tr><th>#</th><th>Guard</th><th>With</th><th>Team</th><th>FP</th><th>Value</th><th>Salary</th><th>Left</th><th>Own</th><th>Bring-back</th><th></th></tr></thead><tbody>${stackRows}</tbody></table></div>`;
@@ -2721,7 +3015,7 @@ function renderStacks() {
   host.querySelectorAll(".open-game").forEach((btn) => btn.onclick = () => openListedGame(btn.dataset.game));
   host.querySelectorAll(".use-stack").forEach((btn) => btn.onclick = () => {
     const pct = parseInt(btn.dataset.pct, 10) || 40;
-    stacks.push({ id: idSeq++, pg: btn.dataset.pg, m1: btn.dataset.m1, m2: btn.dataset.m2 || "", pct });
+    stacks.push({ id: idSeq++, pg: btn.dataset.pg, m1: btn.dataset.m1, m2: btn.dataset.m2 || "", b1: btn.dataset.b1 || "", b2: btn.dataset.b2 || "", pct });
     renderRules();
     document.querySelector('.tab[data-tab="builder"]').click();
     const msg = `Added ${btn.dataset.pg} stack on ${pct}% of lineups. Those players ignore the exposure cap.`;
@@ -2858,7 +3152,7 @@ function runOptimizer() {
   setTimeout(() => {
     const activeStacks = stacks
       .filter((s) => s.pg && s.m1)
-      .map((s) => ({ pg: s.pg, m1: s.m1, m2: s.m2 && s.m2 !== s.m1 ? s.m2 : "", pct: s.pct }));
+      .map((s) => ({ pg: s.pg, m1: s.m1, m2: s.m2 && s.m2 !== s.m1 ? s.m2 : "", b1: s.b1 || "", b2: s.b2 || "", pct: s.pct }));
     const activeGroups = groups
       .filter((g) => g.names.length >= 2)
       .map((g) => ({ names: g.names.slice(), min: Math.min(g.min, g.names.length), runback: !!g.runback }));
@@ -2866,7 +3160,7 @@ function runOptimizer() {
     lineups = result.lineups;
     const notes = result.notes.slice();
     activeStacks.forEach((s) => {
-      const need = [s.pg, s.m1, s.m2].filter(Boolean);
+      const need = [s.pg, s.m1, s.m2, s.b1, s.b2].filter(Boolean);
       const hit = lineups.filter((lu) => need.every((n) => lu.players.some((p) => p.name === n))).length;
       const expect = Math.round((s.pct / 100) * settings.num);
       if (expect > 0 && hit < Math.ceil(expect * 0.6)) {
@@ -3341,47 +3635,50 @@ function populateVarBase() {
 }
 
 function renderVariations() {
-  if (!lineups.length) {
-    document.getElementById("varStatus").textContent = "Build lineups first.";
-    lastVars = [];
-    document.getElementById("varBoard").innerHTML = "";
+  const status = document.getElementById("varStatus");
+  const keys = handKeys();
+  const isShowdown = keys[0] === "CPT";
+  const labels = handLabels();
+  const filled = keys.map((k) => handRoster[k]).filter(Boolean);
+  if (filled.length !== keys.length) {
+    status.textContent = `The lineup has ${filled.length} of ${keys.length} spots. Fill it, check Swap on the spots to change, then build.`;
     document.getElementById("varList").innerHTML = "";
+    lastVars = [];
     return;
   }
-  const baseIdx = parseInt(document.getElementById("varBase").value, 10) || 0;
-  const base = lineups[baseIdx];
-  if (!base) return;
-  const swaps = Math.max(1, Math.min(3, parseInt(document.getElementById("varSwaps").value, 10) || 1));
+  const marked = keys.filter((k) => handSwap.has(k));
+  if (!marked.length) {
+    status.textContent = "Check Swap on the spots you want changed. Everyone else stays.";
+    return;
+  }
+  const swaps = Math.max(1, Math.min(marked.length, parseInt(document.getElementById("varSwaps").value, 10) || marked.length));
   const count = Math.max(1, Math.min(30, parseInt(document.getElementById("varCount").value, 10) || 8));
   const strict = document.getElementById("varRules").value !== "cap";
   const settings = currentSettings();
-  const isShowdown = settings.isShowdown;
-  const keys = slotsFor(isShowdown);
-  const baseNames = new Set(base.players.map((p) => p.name));
+  const baseNames = new Set(filled.map((p) => p.name));
   const vars = [];
   const rejected = { cap: 0, floor: 0, team: 0, same: 0, zero: 0 };
   let tries = 0;
-  while (vars.length < count && tries < count * 12) {
+  while (vars.length < count && tries < count * 16) {
     tries += 1;
-    const roster = { ...base.slots };
+    const roster = {};
+    keys.forEach((k) => { roster[k] = handRoster[k]; });
+    const order = marked.slice().sort(() => Math.random() - 0.5).slice(0, swaps);
     const changed = new Set();
-    const slotList = keys.filter((k) => roster[k] && roster[k].use !== "lock");
-    const order = slotList.slice().sort(() => Math.random() - 0.5);
-    for (let s = 0; s < Math.min(swaps, order.length); s++) {
-      const slot = order[s];
-      const names = new Set(Object.values(roster).map((p) => p.name));
+    order.forEach((slot) => {
+      const names = new Set(Object.values(roster).map((p) => p && p.name));
       const cur = roster[slot];
-      let opts = pool.filter((p) => passesInjury(p) && p.use !== "fade" && p.proj > 0 && !names.has(p.name) && canPlay(p, slot, isShowdown) && Math.abs(p.salary - cur.salary) <= 2000 && p.name !== cur.name);
-      if (opts.length > 8) opts = opts.sort((a, b) => b.proj - a.proj).slice(0, 8);
-      if (!opts.length) continue;
+      let opts = pool.filter((p) => passesInjury(p) && p.use !== "fade" && p.proj > 0 && !p.phantom && !names.has(p.name) && canPlay(p, slot, isShowdown) && Math.abs(p.salary - cur.salary) <= 2000 && p.name !== cur.name);
+      opts.sort((a, b) => b.proj - a.proj);
+      if (opts.length > 8) opts = opts.slice(0, 8);
+      if (!opts.length) return;
       roster[slot] = opts[Math.floor(Math.random() * opts.length)];
       changed.add(slot);
-    }
+    });
     const players = keys.map((k) => roster[k]);
     if (players.some((p) => !p || p.proj <= 0)) { rejected.zero += 1; continue; }
     if (new Set(players.map((p) => p.name)).size !== players.length) { rejected.same += 1; continue; }
-    const diff = players.filter((p) => !baseNames.has(p.name)).length;
-    if (diff < 1) { rejected.same += 1; continue; }
+    if (!players.some((p) => !baseNames.has(p.name))) { rejected.same += 1; continue; }
     const salary = players.reduce((sum, p) => sum + p.salary, 0);
     if (salary > 50000) { rejected.cap += 1; continue; }
     if (strict && salary < settings.minSalary) { rejected.floor += 1; continue; }
@@ -3390,38 +3687,117 @@ function renderVariations() {
     if (legalWhy) { rejected.zero += 1; continue; }
     const sig = players.map((p) => p.name).sort().join("|");
     if (vars.some((v) => v.sig === sig)) { rejected.same += 1; continue; }
-    vars.push({
-      slots: roster,
-      players,
-      proj: players.reduce((sum, p) => sum + p.proj, 0),
-      salary,
-      own: players.reduce((sum, p) => sum + (p.own || 0), 0),
-      changed,
-      sig,
-    });
+    vars.push({ slots: roster, players, proj: players.reduce((s, p) => s + p.proj, 0), salary, own: players.reduce((s, p) => s + (p.own || 0), 0), changed, sig });
   }
   lastVars = vars;
-  const labels = isShowdown ? ["CPT", "UTIL", "UTIL", "UTIL", "UTIL", "UTIL"] : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
   const board = document.getElementById("varBoard");
+  board.innerHTML = "";
   const list = document.getElementById("varList");
-  board.innerHTML = keys.map((k, i) => {
-    const p = base.slots[k];
-    return `<button type="button" class="dk-slot" ${p ? `data-player="${esc(p.name)}"` : ""}><span class="pos">${labels[i]}</span><span class="who">${p ? esc(p.name) : "—"}</span><span class="cs-sub">${p ? money(p.salary) + " · " + p.proj.toFixed(1) : ""}</span></button>`;
-  }).join("");
   list.innerHTML = vars.map((lu, i) => {
     const slots = keys.map((k, n) => {
       const p = lu.slots[k];
       const swap = lu.changed.has(k);
-      return `<button type="button" class="dk-slot ${swap ? "swap" : ""}" ${p ? `data-player="${esc(p.name)}"` : ""}><span class="pos">${labels[n]}</span><span class="who">${p ? esc(p.name) : "—"}</span><span class="cs-sub">${p ? p.proj.toFixed(1) : ""}</span></button>`;
+      return `<button type="button" class="dk-slot ${swap ? "swap" : ""}" ${p ? `data-player="${esc(p.name)}"` : ""}><span class="pos">${labels[n]}</span><span class="who">${p ? esc(p.name) : "—"}</span><span class="cs-sub">${p ? money(p.salary) + " · " + p.proj.toFixed(1) : ""}</span></button>`;
     }).join("");
     return `<div class="var-card"><div class="top"><span>${i + 1}. ${lu.changed.size} swap${lu.changed.size === 1 ? "" : "s"}</span><span>${lu.proj.toFixed(1)} FP · ${money(lu.salary)} · ${money(50000 - lu.salary)} left</span></div><div class="var-board">${slots}</div></div>`;
-  }).join("") || `<div class="note">No variations yet.</div>`;
-  bindNames(board);
+  }).join("") || `<div class="note">No legal variation from those spots.</div>`;
   bindNames(list);
   const drops = Object.entries(rejected).filter(([, n]) => n > 0).map(([k, n]) => `${n} ${k}`).join(", ");
-  document.getElementById("varStatus").textContent = vars.length
-    ? `${vars.length} legal variations from lineup ${baseIdx + 1}. Highlighted slots are the swaps. A name opens the player card.${drops ? " Rejected: " + drops + "." : ""}`
-    : `No legal variations. ${drops || "The salary window had no different player."}`;
+  status.textContent = vars.length
+    ? `${vars.length} variations. Highlighted spots are the ones that changed. A name opens the player card.${drops ? " Rejected: " + drops + "." : ""}`
+    : `No legal variation. ${drops || "Those spots had no different player inside $2,000."}`;
+}
+
+function handKeys() {
+  return slotsFor((document.getElementById("slateSelect").value || "").startsWith("Showdown"));
+}
+function handLabels() {
+  return (document.getElementById("slateSelect").value || "").startsWith("Showdown")
+    ? ["CPT", "UTIL", "UTIL", "UTIL", "UTIL", "UTIL"]
+    : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
+}
+function renderHand() {
+  const slots = document.getElementById("varSlots");
+  const poolBody = document.querySelector("#varPool tbody");
+  if (!slots || !poolBody) return;
+  const keys = handKeys();
+  const labels = handLabels();
+  const isShowdown = keys[0] === "CPT";
+  const used = new Set(Object.values(handRoster).filter(Boolean).map((p) => p.name));
+  const salary = Object.values(handRoster).reduce((s, p) => s + (p ? p.salary : 0), 0);
+  const open = keys.filter((k) => !handRoster[k]).length;
+  const left = 50000 - salary;
+  const leftEl = document.getElementById("varLeft");
+  if (leftEl) leftEl.textContent = open ? `${money(left)} left · ${money(Math.round(left / open))} / open spot` : `${money(left)} left · ${Object.values(handRoster).reduce((s, p) => s + (p ? p.proj : 0), 0).toFixed(1)} FP`;
+  slots.innerHTML = keys.map((k, i) => {
+    const p = handRoster[k];
+    return `<div class="hand-slot">
+      <span class="pos">${labels[i]}</span>
+      <span>${p ? `${nameBtn(p.name)} <span class="cs-sub">${esc(p.team)} vs ${esc(p.opp)}</span>` : `<span class="empty">Empty</span>`}</span>
+      <span>${p ? p.proj.toFixed(1) : ""}</span>
+      <span>${p ? money(p.salary) : ""}</span>
+      <span>${p ? `<label class="check" data-tip="This spot is allowed to change. The rest of the lineup stays."><input type="checkbox" class="hand-swap" data-slot="${k}" ${handSwap.has(k) ? "checked" : ""}> Swap</label> <button type="button" class="secondary hand-x" data-slot="${k}">×</button>` : ""}</span>
+    </div>`;
+  }).join("");
+  const chips = document.getElementById("varPos");
+  const chipKeys = isShowdown ? ["ALL", "CPT", "UTIL"] : ["ALL", "PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
+  if (!chipKeys.includes(varPosFilter)) varPosFilter = "ALL";
+  chips.innerHTML = chipKeys.map((k) => `<button type="button" class="pchip ${varPosFilter === k ? "on" : ""}" data-pos="${k}">${k === "ALL" ? "ALL" : k}</button>`).join("");
+  const q = (document.getElementById("varSearch").value || "").toLowerCase();
+  const seen = new Set();
+  let list = pool.filter((p) => {
+    if (p.pos === "CPT" && !isShowdown) return false;
+    if (isShowdown && p.pos !== "CPT" && p.pos !== "UTIL") return false;
+    if (!isShowdown && (p.pos === "CPT" || p.pos === "UTIL")) return false;
+    if (p.proj <= 0 || p.phantom || isOutStatus(p.injury)) return false;
+    if (seen.has(p.name)) return false;
+    seen.add(p.name);
+    if (q && !(p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))) return false;
+    if (varPosFilter === "ALL") return true;
+    if (varPosFilter === "UTIL") return isShowdown ? p.pos === "UTIL" : canPlay(p, "UTIL", false);
+    return canPlay(p, varPosFilter, isShowdown) || p.pos === varPosFilter;
+  }).sort((a, b) => b.proj - a.proj).slice(0, 80);
+  poolBody.innerHTML = list.map((p) => `<tr>
+    <td>${esc(rosterPos(p))}</td>
+    <td>${nameBtn(p.name)} ${injuryTag(p.injury)}</td>
+    <td>${esc(p.opp)}</td>
+    <td>${p.proj.toFixed(1)}</td>
+    <td>${money(p.salary)}</td>
+    <td>${used.has(p.name) ? "" : `<button type="button" class="primary hand-add" data-id="${esc(p.id)}" data-tip="Add to the first open spot this player can fill.">+</button>`}</td>
+  </tr>`).join("") || `<tr><td colspan="6" class="note">No player matches.</td></tr>`;
+  bindNames(slots);
+  bindNames(poolBody);
+  slots.querySelectorAll(".hand-x").forEach((btn) => btn.onclick = () => {
+    delete handRoster[btn.dataset.slot];
+    handSwap.delete(btn.dataset.slot);
+    renderHand();
+  });
+  slots.querySelectorAll(".hand-swap").forEach((el) => el.onchange = () => {
+    if (el.checked) handSwap.add(el.dataset.slot);
+    else handSwap.delete(el.dataset.slot);
+  });
+  chips.querySelectorAll("[data-pos]").forEach((btn) => btn.onclick = () => {
+    varPosFilter = btn.dataset.pos;
+    renderHand();
+  });
+  poolBody.querySelectorAll(".hand-add").forEach((btn) => btn.onclick = () => {
+    const p = pool.find((x) => x.id === btn.dataset.id);
+    if (!p) return;
+    const names = new Set(Object.values(handRoster).filter(Boolean).map((x) => x.name));
+    if (names.has(p.name)) return;
+    const order = keys.slice();
+    if (varPosFilter !== "ALL") {
+      const prefer = keys.filter((k) => (varPosFilter === "UTIL" ? k.startsWith("U") || k === "UTIL" : k === varPosFilter));
+      order.sort((a, b) => (prefer.includes(a) ? 0 : 1) - (prefer.includes(b) ? 0 : 1));
+    }
+    const slot = order.find((k) => !handRoster[k] && canPlay(p, k, isShowdown));
+    if (!slot) {
+      document.getElementById("varStatus").textContent = `${p.name} has no open spot.`;
+      return;
+    }
+    handRoster[slot] = p;
+    renderHand();
+  });
 }
 
 document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
@@ -3430,6 +3806,7 @@ document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
   ["builder", "cheatsheet", "slate", "game", "stacks", "leverage", "variations"].forEach((id) => {
     document.getElementById("tab-" + id).style.display = t.dataset.tab === id ? "block" : "none";
   });
+  if (t.dataset.tab === "variations") renderHand();
 });
 document.getElementById("slateSelect").onchange = (e) => loadSlate(e.target.value);
 document.getElementById("search").oninput = renderPool;
@@ -3626,6 +4003,47 @@ document.getElementById("downloadBtn").onclick = downloadCsv;
 document.getElementById("detailBtn").onclick = downloadDetail;
 document.getElementById("sdSplit").onchange = () => tuneTeamCap();
 document.getElementById("genVars").onclick = renderVariations;
+document.getElementById("varSearch").oninput = renderHand;
+document.getElementById("varClear").onclick = () => {
+  handRoster = {};
+  handSwap = new Set();
+  renderHand();
+};
+document.getElementById("varLoad").onclick = () => {
+  const base = lineups[parseInt(document.getElementById("varBase").value, 10) || 0];
+  if (!base) {
+    document.getElementById("varStatus").textContent = "Run the optimizer first, then load a lineup into the builder.";
+    return;
+  }
+  handRoster = {};
+  handKeys().forEach((k) => { if (base.slots[k]) handRoster[k] = base.slots[k]; });
+  renderHand();
+  document.getElementById("varStatus").textContent = "Loaded. Check Swap on the spots you want changed.";
+};
+const SETTING_TIPS = {
+  numLineups: "How many lineups to build. Cash presets use 1. GPP uses 20. Milly uses 150.",
+  minSalary: "A lineup under this salary is thrown out and rebuilt.",
+  maxLeft: "Hard cap on leftover salary. $1,200 means the lineup must spend at least $48,800.",
+  randomness: "How far the builder will wander off the raw projection. Higher means more different lineups.",
+  maxExposure: "The most any player can appear, unless you lock them or type a higher max on that row.",
+  leverage: "How hard the builder prefers lower ownership. 0 plays the chalk. 55 hunts the thin spots.",
+  minUnique: "Each lineup must differ from the one before it by at least this many players.",
+  maxTeam: "Most players from one team. Classic GPP is usually 3.",
+  pgStack: "Require a point guard plus this many teammates. None turns the auto stack off.",
+  bringBack: "A bonus for one player from the other side of that stack. It does not ban a lineup.",
+  ceiling: "Extra weight on the higher end of a projection. Milly uses more of this than cash.",
+  ownBand: "Which ownership range the builder prefers. This is the estimate in the pool, not a live contest.",
+  gameStack: "Force at least the minimum from this game.",
+  gameMin: "How many players that game stack requires.",
+  sdSplit: "Showdown only. 4–2 means four from one team and two from the other.",
+  cptMate: "Showdown only. Prefer or require one teammate with the captain.",
+  totalLean: "Nudge lineups toward the higher total. It does not ban the other game.",
+};
+Object.entries(SETTING_TIPS).forEach(([id, tip]) => {
+  const el = document.getElementById(id);
+  const lab = el && el.closest("label");
+  if (lab) lab.dataset.tip = tip;
+});
 document.getElementById("keepVars").onclick = () => {
   if (!lastVars.length) {
     document.getElementById("varStatus").textContent = "Generate variations first.";
@@ -3955,17 +4373,10 @@ loadData();
     var gate = document.getElementById("memberGate");
     if (gate) gate.remove();
   }
-  if (!token) {
-    deny();
-    return;
-  }
-  fetch(endpoint)
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      if (!data || data.ok !== true) deny();
-      else allow();
-    })
-    .catch(function () { deny(); });
+  if (!token) { deny(); return; }
+  fetch(endpoint).then(function (r) { return r.json(); }).then(function (data) {
+    if (!data || data.ok !== true) deny(); else allow();
+  }).catch(function () { deny(); });
 })();
 </script>
 

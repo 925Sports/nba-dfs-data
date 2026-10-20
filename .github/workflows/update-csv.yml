@@ -23,6 +23,13 @@ jobs:
           echo "First 5 lines of downloaded file:"
           head -n 5 nba_stats.csv || echo "File is empty"
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fill projections, minutes, ownership, injuries
+        run: python enrich_slate.py
+
       - name: Commit and push if changed
         run: |
           git config --global user.name "GitHub Action"

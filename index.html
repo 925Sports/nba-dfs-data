@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-store">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NBA DFS Lineup Builder | 925 Members</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -41,6 +41,12 @@ tbody tr:hover td { background:rgba(71,198,200,0.06); }
 .card.collapsed .card-header .chev { transform:rotate(-90deg); }
 .head-meta { margin-left:0.4rem; font-weight:500; color:var(--muted); font-size:0.75rem; }
 .tag.check { background:#7c2d12; color:#fdba74; }
+.slate-choices { display:flex; flex-direction:column; gap:0.4rem; width:100%; margin-bottom:0.7rem; }
+.slate-choice { text-align:left; background:var(--card2); color:var(--text); border:1px solid var(--border); border-radius:8px; padding:0.5rem 0.75rem; cursor:pointer; width:100%; }
+.slate-choice b { display:block; font-size:0.9rem; }
+.slate-choice small { display:block; color:var(--muted); font-size:0.75rem; margin-top:0.12rem; }
+.slate-choice.active { border-color:var(--aqua); box-shadow:inset 0 0 0 1px var(--aqua); }
+#slateSelect { position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
 .val-check { color:#fb923c; font-weight:800; }
 .lu-team { color:var(--muted); font-size:0.66rem; line-height:1.2; }
 .lu-teams { color:var(--muted); font-size:0.68rem; white-space:nowrap; }
@@ -162,6 +168,13 @@ input[type="number"] { width:74px; }
 .howto li { margin:0.28rem 0; }
 .preset { display:inline-flex; flex-direction:column; align-items:flex-start; line-height:1.15; border-radius:10px; }
 .preset small { font-size:0.62rem; font-weight:500; opacity:0.75; }
+.preset[hidden] { display:none !important; }
+.news-lead { font-size:1.05rem; line-height:1.5; color:var(--text); background:var(--card2); border:1px solid var(--border); border-radius:12px; padding:0.95rem 1rem; margin:0 0 0.85rem; }
+.news-lead .k { display:flex; align-items:center; gap:0.35rem; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--aqua); font-weight:700; margin-bottom:0.4rem; }
+.news-blurbs { margin:0.15rem 0 0.85rem; padding-left:1.15rem; font-size:0.95rem; line-height:1.45; }
+.news-blurbs li { margin:0.28rem 0; }
+.news-side { font-size:0.72rem; color:var(--muted); }
+.news-side .sp-row { font-size:0.72rem; }
 .chip-row { display:flex; flex-wrap:wrap; gap:0.3rem; margin:0.35rem 0; }
 .pchip { border:1px solid var(--border); background:transparent; color:var(--muted); border-radius:999px; padding:0.22rem 0.55rem; font-size:0.72rem; }
 .pchip.on { background:var(--brand); color:#fff; border-color:var(--brand); }
@@ -294,7 +307,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 <div class="app-header">
   <div>
     <h1>NBA DFS Lineup Builder</h1>
-    <p>Classic is 8 spots under $50,000. Showdown is captain plus 5. Captain score is 1.5×.</p>
+    <p>Classic is 8 spots under $50,000. Showdown is captain plus 5. Captain score is 1.5×. Uploads use the long DraftKings lineup id.</p>
   </div>
   <button id="themeBtn" class="secondary" type="button">Dark</button>
 </div>
@@ -326,8 +339,10 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
     <div class="card">
       <div class="card-header" onclick="this.parentElement.classList.toggle('collapsed')">Slate <span class="chev">▾</span></div>
       <div class="card-body">
+        <div id="slateChoices" class="slate-choices"></div>
         <div class="row">
-          <label>Slate<select id="slateSelect" style="min-width:260px;"></select></label>
+          <label>Slate<select id="slateSelect" aria-label="Slate"></select></label>
+          <span class="note" id="slateNote" style="flex:1 1 280px;"></span>
           <label>Search<input type="text" id="search" placeholder="name or team" style="width:150px;"></label>
           <label class="check"><input type="checkbox" id="includeQ" checked> Include day-to-day</label>
           <label class="check"><input type="checkbox" id="excludeOut" checked> Hide OUT / D / IR</label>
@@ -361,8 +376,10 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
       <div class="card-body">
         <div class="row">
           <label>Lineups<input type="number" id="numLineups" value="20" min="1" max="150"></label>
-          <label>Min salary<input type="number" id="minSalary" value="48800" step="100"></label>
-          <label>Max left<input type="number" id="maxLeft" value="1200" step="100" title="Lineups that leave more than this are rebuilt."></label>
+          <label>Min salary<input type="number" id="minSalary" value="49600" step="100"></label>
+          <label>Min minutes<input type="number" id="minMinutes" value="0" min="0" max="48" step="1"></label>
+          <label>Min FP<input type="number" id="minFp" value="0" min="0" max="90" step="0.5"></label>
+          <label>Max left<input type="number" id="maxLeft" value="400" step="100" title="Lineups that leave more than this are rebuilt."></label>
           <label>Randomness %<input type="number" id="randomness" value="15" min="0" max="50"></label>
           <label>Max exposure %<input type="number" id="maxExposure" value="35" min="1" max="100"></label>
           <label>Leverage<input type="number" id="leverage" value="35" min="0" max="100"></label>
@@ -419,10 +436,13 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
             <select id="totalLean">
               <option value="off">Off</option>
               <option value="high" selected>Prefer high totals</option>
+              <option value="only">Only at or above</option>
+              <option value="limit">Limit games below</option>
             </select>
           </label>
+          <label>O/U cutoff<input type="number" id="ouCut" value="228" min="180" max="270" step="0.5"></label>
         </div>
-        <div class="note" style="margin-top:0.45rem;">Max left is a hard floor on spend. A game stack is a hard minimum from that game. Showdown split and captain teammate only apply on a showdown slate. Bring-back is still a bonus, not a ban. Own lean uses the ownership estimate in the pool, not a live contest field. Prefer high totals nudges lineups toward the bigger O/U. It does not ban the lower-total game.</div>
+        <div class="note" style="margin-top:0.45rem;">Min minutes and Min FP leave anyone under that number out of the pool and the build. 0 means no floor. A lock still stays. Only at or above drops every player in a game under the O/U cutoff. Limit keeps those games, but a lineup can take at most two players from them when the rest of the slate can fill the roster. Prefer high totals only nudges. It does not ban the lower game.</div>
       </div>
     </div>
     <div class="card">
@@ -440,7 +460,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
     <div class="card">
       <div class="card-header" onclick="this.parentElement.classList.toggle('collapsed')">Player pool <span class="head-meta" id="poolMeta"></span> <span class="chev">▾</span></div>
       <div class="card-body">
-        <div class="note" style="margin-bottom:0.45rem;">The exposure choice sits on the matchup line. Hover it to see what that tag does. Play follows the global max. Lock is every lineup. Core 30–40, High 20–30, Mid 15–20, Low 5–10. Limit is a play the data likes that you do not: still legal when a build needs the salary or the spot, capped near 12%. Fade removes them. Projected minutes are their own column.</div>
+        <div class="note" style="margin-bottom:0.45rem;">The exposure choice sits on the matchup line. Hover it to see what that tag does. Play follows the global max. Lock is every lineup. Apply sheet tags writes the cheat-sheet tag onto each player and leaves locks alone. Own est is a model for this slate, not a contest field. It gives more of the field to starters with minutes in the higher total, and it adds up to a full lineup.</div>
         <div class="chip-row" id="posChips"></div>
         <div class="chip-row" id="teamChips"></div>
         <div class="corebar" id="coreBar"></div>
@@ -451,6 +471,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
           <button class="secondary" type="button" id="hideZero">Show 0 proj</button>
           <button class="secondary" type="button" id="showLocked">Show locked</button>
           <button class="secondary" type="button" id="resetExp">Reset players</button>
+          <button class="secondary" type="button" id="applyTags">Apply sheet tags</button>
           <button class="secondary" type="button" id="bulk25">Max 25%</button>
           <button class="secondary" type="button" id="bulk40">Max 40%</button>
           <button class="secondary" type="button" id="bulk60">Max 60%</button>
@@ -495,6 +516,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 
         <div class="lu-actions">
           <button id="downloadBtn" class="primary" type="button" disabled>DK upload CSV</button>
+          <button id="rebuildBtn" class="primary" type="button">Rebuild checked</button>
           <button id="exportChecked" class="secondary" type="button" disabled>Export checked</button>
           <button id="detailBtn" class="secondary" type="button" disabled>Detail CSV</button>
           <button id="copyText" class="secondary" type="button" disabled>Copy as text</button>
@@ -507,6 +529,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
           <label class="check"><input type="checkbox" id="simCorr" checked> Correlated</label>
           <label class="check"><input type="checkbox" id="simContest" checked> Contest sim</label>
         </div>
+        <p class="note">Check the lineups you want replaced, then Rebuild checked. The unchecked lineups stay. A valid upload name looks like Victor Wembanyama (44461988). A 5 or 6 digit number is the photo id and DraftKings will reject the file.</p>
         <div id="simStatus" class="note" style="margin-top:0.35rem;"></div>
         <div id="simSection" style="display:none;">
           <div class="subhead">Simulation results</div>
@@ -871,7 +894,7 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
   const usedNames = new Set(Object.values(roster).map((p) => p.name));
   const teamCap = settings.teamCap;
   const minSalary = settings.minSalary || 0;
-  const aimTotal = Math.min(49900, Math.max(minSalary, isShowdown ? 49600 : 49400));
+  const aimTotal = Math.min(49900, Math.max(minSalary, isShowdown ? 49600 : 49800));
   const fav = isShowdown ? favoriteTeam(cands) : "";
 
   for (const slot of slots) {
@@ -885,6 +908,10 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
       if (!canPlay(p, slot, isShowdown)) return false;
       if ((tc[p.team] || 0) >= teamCap && p.use !== "lock") return false;
       if (p.salary > 50000 - spent) return false;
+      if (settings._limitHard && lowTotal(p) && p.use !== "lock") {
+        const lowCount = filled.filter((x) => lowTotal(x)).length;
+        if (lowCount >= 2) return false;
+      }
       return true;
     });
     if (options.some((p) => p.proj > 0)) options = options.filter((p) => p.proj > 0);
@@ -934,8 +961,11 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
     if (remainAfter === 0) {
       const lo = Math.max(0, minSalary - spent);
       const hi = 50000 - spent;
-      const band = options.filter((p) => p.salary >= lo && p.salary <= hi);
-      if (band.length) options = band;
+      const capLeft = Number(settings.maxLeft) || 400;
+      const tight = Math.max(lo, hi - capLeft);
+      let band = options.filter((p) => p.salary >= tight && p.salary <= hi);
+      if (!band.length) band = options.filter((p) => p.salary >= lo && p.salary <= hi);
+      if (band.length) options = band.sort((a, b) => b.proj - a.proj || b.salary - a.salary).slice(0, 8);
     }
     if (!options.length) return null;
 
@@ -945,7 +975,9 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
       .map((p) => {
         const val = p.salary > 0 ? p.proj / (p.salary / 1000) : 0;
         let score = (p.score || p.proj) + Math.min(val, 8) * 1.15;
-        score -= Math.abs(p.salary - aim) / (isShowdown ? 140 : 260);
+        score -= Math.max(0, aim - p.salary) / 160;
+        score -= Math.max(0, p.salary - aim) / 420;
+        if (remainAfter === 0) score -= Math.max(0, (50000 - spent - p.salary) - 200) / 70;
         if (!isShowdown && settings.shape !== "stars" && p.salary > fair * 1.55 && n8500 >= 2) score -= 8;
         score += groupNudge(p, roster, groups);
         if (stackTeams.size && stackTeams.has(p.opp) && !stackTeams.has(p.team)) score += settings.bringBack ? 9 : 1.5;
@@ -1033,6 +1065,88 @@ function fitSalary(roster, cands, settings, groups, pinned) {
   return roster;
 }
 
+function improveRoster(roster, cands, settings, groups, pinned) {
+  const maxLeft = Number(settings.maxLeft) || 400;
+  const floor = Math.max(Number(settings.minSalary) || 0, maxLeft > 0 ? 50000 - maxLeft : 0);
+  const slots = Object.keys(roster);
+  const locked = (slot) => {
+    const cur = roster[slot];
+    return !cur || cur.use === "lock" || (pinned && pinned.has(cur.name));
+  };
+  const roomFor = (p) => !settings.used || !overExp(p, settings.used, settings.num, settings.globalMax, false);
+  function legal(trial) {
+    const sal = salaryOf(trial);
+    if (sal > 50000) return false;
+    const names = Object.values(trial).map((p) => p.name);
+    if (new Set(names).size !== names.length) return false;
+    const before = teamCounts(roster);
+    const after = teamCounts(trial);
+    const cap = settings.teamCap || 8;
+    if (Object.entries(after).some(([t, n]) => n > Math.max(cap, before[t] || 0))) return false;
+    if (groupsState(trial, groups).length) return false;
+    if (constructionIssue(trial, settings)) return false;
+    return true;
+  }
+  for (let pass = 0; pass < 10; pass++) {
+    const sal = salaryOf(roster);
+    const left = 50000 - sal;
+    let best = null;
+    const consider = (rank, apply) => {
+      if (!best || rank > best.rank) best = { rank, apply };
+    };
+    for (const slot of slots) {
+      if (locked(slot)) continue;
+      const cur = roster[slot];
+      const opts = swapPool(roster, slot, cands, settings)
+        .filter((p) => roomFor(p) && p.salary - cur.salary <= left)
+        .sort((a, b) => b.proj - a.proj)
+        .slice(0, 14);
+      for (const p of opts) {
+        const gain = (p.proj || 0) - (cur.proj || 0);
+        const extra = p.salary - cur.salary;
+        const newSal = sal + extra;
+        if (sal >= floor && newSal < floor) continue;
+        if (gain < 0.2 && !(left > maxLeft && extra >= 200 && gain > -0.5)) continue;
+        const trial = { ...roster, [slot]: p };
+        if (!legal(trial)) continue;
+        const newLeft = 50000 - newSal;
+        const rank = gain * 120 - Math.max(0, newLeft - Math.min(maxLeft, 300)) * 0.15;
+        consider(rank, () => ({ ...roster, [slot]: p }));
+      }
+    }
+    if (left > maxLeft && pass < 3) {
+      const open = slots.filter((s) => !locked(s));
+      for (let i = 0; i < open.length; i++) {
+        for (let j = i + 1; j < open.length; j++) {
+          const a = roster[open[i]];
+          const b = roster[open[j]];
+          const optsA = swapPool(roster, open[i], cands, settings).filter(roomFor).sort((x, y) => y.proj - x.proj).slice(0, 6);
+          const optsB = swapPool(roster, open[j], cands, settings).filter(roomFor).sort((x, y) => y.proj - x.proj).slice(0, 6);
+          for (const pa of optsA) {
+            for (const pb of optsB) {
+              if (pa.name === pb.name) continue;
+              const extra = pa.salary + pb.salary - a.salary - b.salary;
+              if (extra > left) continue;
+              const gain = (pa.proj || 0) + (pb.proj || 0) - (a.proj || 0) - (b.proj || 0);
+              if (gain < 0.35 && extra < 400) continue;
+              const newSal = sal + extra;
+              if (sal >= floor && newSal < floor) continue;
+              const trial = { ...roster, [open[i]]: pa, [open[j]]: pb };
+              if (!legal(trial)) continue;
+              const newLeft = 50000 - newSal;
+              const rank = gain * 120 - Math.max(0, newLeft - Math.min(maxLeft, 300)) * 0.15;
+              consider(rank, () => ({ ...roster, [open[i]]: pa, [open[j]]: pb }));
+            }
+          }
+        }
+      }
+    }
+    if (!best || best.rank <= 0.5) break;
+    roster = best.apply();
+  }
+  return roster;
+}
+
 function parkLatest(roster) {
   const entries = Object.entries(roster);
   let best = entries[0];
@@ -1047,14 +1161,16 @@ function parkLatest(roster) {
 }
 
 function uniqueOk(roster, prevSets, minUnique) {
-  if (!minUnique) return true;
   const names = Object.values(roster).map((p) => p.name);
+  const key = names.slice().sort().join("|");
   for (const prev of prevSets) {
+    if (prev.key === key) return "same";
+    if (!minUnique) continue;
     let overlap = 0;
-    for (const n of names) if (prev.has(n)) overlap++;
-    if (names.length - overlap < minUnique) return false;
+    for (const n of names) if (prev.names.has(n)) overlap++;
+    if (names.length - overlap < minUnique) return "unique";
   }
-  return true;
+  return "";
 }
 
 function chooseAutoStack(cands, used, settings, slack) {
@@ -1154,11 +1270,50 @@ function envNudge(p, settings) {
   const ou = Number(p.ou) || 0;
   if (!ou) return 0;
   const med = Number(settings.ouMedian) || ou;
+  const cut = Number(settings.ouCut) || med;
+  if (settings.totalLean === "limit" && ou < cut) return -4.5;
+  if (settings.totalLean === "only") return Math.max(0, Math.min(2.2, (ou - cut) * 0.2));
   let b = (ou - med) * 0.35;
   if (p.fav) b += 0.5;
   const spr = Math.abs(Number(p.spread) || 0);
   if (spr >= 10 && p.salary >= 8500) b -= 1.4;
   return Math.max(-3, Math.min(3.2, b));
+}
+
+function bandFloors() {
+  return {
+    minMinutes: Math.max(0, parseFloat(document.getElementById("minMinutes")?.value) || 0),
+    minFp: Math.max(0, parseFloat(document.getElementById("minFp")?.value) || 0),
+  };
+}
+function projForBand(p) {
+  if (!p) return 0;
+  if (p.pos === "CPT") return p.baseProj || ((p.proj || 0) / 1.5);
+  return p.proj || 0;
+}
+function belowBand(p) {
+  if (!p || p.use === "lock") return false;
+  const floors = bandFloors();
+  if (floors.minFp > 0 && projForBand(p) < floors.minFp) return true;
+  if (floors.minMinutes > 0 && (p.minutes || 0) < floors.minMinutes) return true;
+  return false;
+}
+function ouCutValue() {
+  return parseFloat(document.getElementById("ouCut")?.value) || 0;
+}
+function lowTotal(p) {
+  const ou = Number(p && p.ou) || 0;
+  const cut = ouCutValue();
+  if (!ou || !cut) return false;
+  return ou + 0.001 < cut;
+}
+function enoughAboveCut(list, isShowdown) {
+  const need = (isShowdown ? 6 : 8) - 2;
+  const names = new Set();
+  list.forEach((p) => {
+    if ((p.proj || 0) > 0 && !lowTotal(p)) names.add(p.name);
+  });
+  return names.size >= need;
 }
 
 function favoriteTeam(cands) {
@@ -1282,7 +1437,9 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
   if (maxLeft > 0) {
     settings = { ...settings, minSalary: Math.max(Number(settings.minSalary) || 0, 50000 - maxLeft) };
   }
-  const num = settings.num;
+  const buildCount = settings.num;
+  const expNum = settings._exposureNum || buildCount;
+  settings = { ...settings, num: expNum };
   const lineups = [];
   const used = new Map();
   const prevSets = [];
@@ -1292,8 +1449,18 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
   let usedSlack = false;
   let teamSlack = false;
   const relaxCounts = new Map();
+  (settings._seed || []).forEach((lu) => {
+    const players = lu.players || [];
+    prevSets.push({ key: players.map((p) => p.name).slice().sort().join("|"), names: new Set(players.map((p) => p.name)) });
+    players.forEach((p) => used.set(p.name, (used.get(p.name) || 0) + 1));
+  });
+  if (settings.totalLean === "limit") {
+    const hard = enoughAboveCut(pool, settings.isShowdown);
+    settings = { ...settings, _limitHard: hard };
+    if (!hard) notes.push("Most of this slate is under the O/U cutoff, so those games were scored down instead of capped at two players.");
+  }
 
-  for (let i = 0; i < num; i++) {
+  for (let i = 0; i < buildCount; i++) {
     let built = null;
     let lastReason = "Could not build a legal lineup.";
     for (let attempt = 0; attempt < (settings.isShowdown ? 70 : 42); attempt++) {
@@ -1311,16 +1478,16 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
       const forced = new Set();
       stacks.forEach((s, si) => {
         const pct = Math.max(0, Math.min(100, Number(s.pct) || 0));
-        if (!stackApplies(i, num, pct, si * 3)) return;
+        if (!stackApplies(i, buildCount, pct, si * 3)) return;
         [s.pg, s.m1, s.m2].filter(Boolean).forEach((n) => forced.add(n));
       });
       const active = pool.filter((p) => {
         if (p.use === "fade") return false;
-        if (p.use !== "lock" && !forced.has(p.name) && overExp(p, used, num, settings.globalMax, slack)) return false;
+        if (p.use !== "lock" && !forced.has(p.name) && overExp(p, used, expNum, settings.globalMax, slack)) return false;
         if (p.use !== "lock" && p.proj <= 0) return false;
         return true;
       });
-      armScores(active, settings, used, num);
+      armScores(active, settings, used, expNum);
       const locks = pool.filter((p) => p.use === "lock");
       const lockNames = new Set(locks.map((p) => p.name));
       if (lockNames.size < locks.length) {
@@ -1329,7 +1496,7 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
       }
       let extra = customForLineup(stacks, i, active, settings);
       if (settings.shape === "stars" && !settings.isShowdown) {
-        const seed = chooseStars(active, used, { ...settings, num }, slack);
+        const seed = chooseStars(active, used, { ...settings, num: expNum }, slack);
         seed.forEach((p) => {
           if (!extra.find((x) => x.name === p.name)) extra.push(p);
         });
@@ -1338,7 +1505,7 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
         const pg = extra.find((p) => isEligible(p.pos, "PG"));
         const paired = pg && extra.some((p) => p.name !== pg.name && p.team === pg.team);
         if (!paired) {
-          const auto = chooseAutoStack(active, used, { ...settings, num }, slack) || [];
+          const auto = chooseAutoStack(active, used, { ...settings, num: expNum }, slack) || [];
           const add = auto.filter((p) => !extra.find((x) => x.name === p.name));
           const sum = [...extra, ...add].reduce((s, p) => s + p.salary, 0);
           if (add.length && sum <= 46000 && extra.length + add.length <= 6) extra.push(...add);
@@ -1360,7 +1527,7 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
         continue;
       }
       const gUse = relaxGroup ? groups.filter((g) => g.names.some((n) => lockNames.has(n))) : groups;
-      const runSettings = { ...settings, teamCap, num, used, _attempt: attempt };
+      const runSettings = { ...settings, teamCap, num: expNum, used, _attempt: attempt };
       let roster = fillRest(active, pre, runSettings, gUse, stackTeams);
       if (!roster) {
         lastReason = "Not enough projected players fit under the cap.";
@@ -1368,6 +1535,7 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
       }
       const pinned = new Set(required.map((p) => p.name));
       roster = fitSalary(roster, active, runSettings, gUse, pinned);
+      roster = improveRoster(roster, active, runSettings, gUse, pinned);
       const sal = salaryOf(roster);
       if (sal > 50000) {
         lastReason = "Lineup went over $50,000.";
@@ -1387,8 +1555,11 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
         continue;
       }
       if (!settings.isShowdown) parkLatest(roster);
-      if (!uniqueOk(roster, prevSets, relaxUniqueFlag ? Math.max(0, settings.minUnique - 1) : settings.minUnique)) {
-        lastReason = `Could not make this lineup ${settings.minUnique} players different.`;
+      const uniqFail = uniqueOk(roster, prevSets, relaxUniqueFlag ? Math.max(0, settings.minUnique - 1) : settings.minUnique);
+      if (uniqFail) {
+        lastReason = uniqFail === "same"
+          ? "That lineup was already built. The same eight players are not used twice."
+          : `Could not make this lineup ${settings.minUnique} players different.`;
         continue;
       }
       const players = Object.values(roster);
@@ -1435,7 +1606,7 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
       proj: players.reduce((s, p) => s + p.proj, 0),
       own: players.reduce((s, p) => s + (p.own || 0), 0),
     });
-    prevSets.push(new Set(players.map((p) => p.name)));
+    prevSets.push({ key: players.map((p) => p.name).sort().join("|"), names: new Set(players.map((p) => p.name)) });
     players.forEach((p) => used.set(p.name, (used.get(p.name) || 0) + 1));
   }
 
@@ -1525,7 +1696,53 @@ function valueClass(v) {
 }
 function estimateOwn(p) {
   const val = p.salary > 0 ? p.proj / (p.salary / 1000) : 0;
-  return Math.min(45, Math.max(2, (val - 3.5) * 8 + (p.salary < 5000 ? 6 : 0)));
+  const min = p.minutes || 0;
+  let n = Math.max(0, (val - 3.2) * 4.5);
+  if (p.starter === "Yes") n += 4;
+  if (min >= 30) n += 3;
+  else if (min > 0 && min < 16) n -= 4;
+  if ((Number(p.ou) || 0) >= 230) n += 2;
+  if (p.salary <= 3800) n -= 3;
+  return Math.min(42, Math.max(1, n));
+}
+function chalkScore(p) {
+  if (!p || (p.proj || 0) <= 0 || p.phantom || isOutStatus(p.injury)) return 0;
+  const val = Math.max(valueOf(p), 0.1);
+  const min = p.minutes || 0;
+  const proj = projForBand(p);
+  let s = Math.pow(proj, 0.8) * Math.pow(val, 0.4);
+  if (p.starter === "Yes") s *= 1.4;
+  if (min >= 32) s *= 1.28;
+  else if (min >= 24) s *= 1.08;
+  else if (min > 0 && min < 18) s *= 0.32;
+  else if (!min) s *= 0.5;
+  const ou = Number(p.ou) || 0;
+  if (ou >= 232) s *= 1.14;
+  else if (ou > 0 && ou < 220) s *= 0.78;
+  if (p.salary <= 4000 && val < 6.2) s *= 0.4;
+  if (isQStatus(p.injury)) s *= 0.65;
+  if (p.fav) s *= 1.06;
+  return s;
+}
+function modelOwnership(list) {
+  const showdown = list.some((p) => p.pos === "CPT" || p.pos === "UTIL");
+  const buckets = new Map();
+  list.forEach((p) => {
+    const key = p.pos === "CPT" ? "CPT" : "roster";
+    if (!buckets.has(key)) buckets.set(key, []);
+    buckets.get(key).push(p);
+  });
+  buckets.forEach((group, key) => {
+    const slots = key === "CPT" ? 1 : (showdown ? 5 : 8);
+    const cap = key === "CPT" ? 42 : 46;
+    const open = group.filter((p) => !p._ownTouched);
+    const total = open.reduce((sum, p) => sum + chalkScore(p), 0);
+    open.forEach((p) => {
+      const s = chalkScore(p);
+      p.ownFeed = false;
+      p.own = s > 0 && total > 0 ? Math.min(cap, (100 * s / total) * slots) : 0;
+    });
+  });
 }
 function numOrZero(v) {
   const n = parseFloat(String(v ?? "").replace(/%/g, "").replace(/,/g, ""));
@@ -1636,9 +1853,13 @@ function dkIdFromImage(url) {
   const m = String(url || "").match(/\/(\d+)\.(?:png|jpe?g|webp)(?:\?.*)?$/i);
   return m ? m[1] : "";
 }
+function lineupId(p) {
+  const id = String((p && p.id) || "").trim();
+  return /^\d{7,}$/.test(id) ? id : "";
+}
 function dkName(p) {
   if (!p) return "";
-  const id = p.dkId || dkIdFromImage(p.image);
+  const id = lineupId(p);
   return id ? `${p.name} (${id})` : p.name;
 }
 function csvField(v) {
@@ -1678,7 +1899,6 @@ async function loadData() {
       const salary = parseInt(r.Salary, 10) || 0;
       const minutes = feedMinutes(s);
       const injury = d.Status || "";
-      const owned = feedOwn(s);
       const spread = numOrZero(s.Spread);
       return {
         id: r["Draftable ID"],
@@ -1719,8 +1939,8 @@ async function loadData() {
         injuryFeed: String(s["Injury Status"] || "").trim(),
         phantom: false,
         rawProj: base,
-        own: owned > 0 ? owned : 0,
-        ownFeed: owned > 0,
+        own: 0,
+        ownFeed: false,
         use: isOutStatus(injury) ? "fade" : "play",
         exp: isOutStatus(injury) ? "fade" : "play",
         weight: isOutStatus(injury) ? "fade" : "play",
@@ -1787,28 +2007,72 @@ async function loadData() {
   }
 }
 
+function slateGames(role) {
+  const rows = allRows.filter((p) => p.slate === role);
+  const map = new Map();
+  rows.forEach((p) => {
+    const key = p.game || [p.team, p.opp].filter(Boolean).join(" @ ");
+    if (!key || map.has(key)) return;
+    map.set(key, p.start || "");
+  });
+  return [...map.entries()].sort((a, b) => String(a[1]).localeCompare(String(b[1])) || a[0].localeCompare(b[0]));
+}
+function clockOf(start) {
+  const time = String(start || "").match(/(\d{1,2}):(\d{2})\s*([AP]M)/i);
+  if (!time) return "";
+  return `${parseInt(time[1], 10)}:${time[2]} ${time[3].toUpperCase()} ET`;
+}
+function slateChoiceCopy(role) {
+  const games = slateGames(role);
+  const showdown = String(role).startsWith("Showdown");
+  const first = games[0] ? clockOf(games[0][1]) : "";
+  const bits = games.map(([game, start]) => {
+    const when = clockOf(start);
+    return when ? `${game} ${when}` : game;
+  });
+  if (showdown) return { title: first ? `${first} · Showdown` : "Showdown", detail: bits[0] || role };
+  return {
+    title: `${first || "Slate"} first tip · ${games.length} games`,
+    detail: bits.join(" · ") || role,
+  };
+}
 function buildSlatePicker() {
   const roles = [...new Set(allRows.map((p) => p.slate).filter(Boolean))];
-  const size = (role) => allRows.filter((p) => p.slate === role).length;
-  const classic = roles.filter((r) => r.startsWith("Classic")).sort((a, b) => size(b) - size(a) || a.localeCompare(b));
-  const showdown = roles.filter((r) => r.startsWith("Showdown")).sort((a, b) => a.localeCompare(b));
+  const byMain = (a, b) => slateGames(b).length - slateGames(a).length || a.localeCompare(b);
+  const classic = roles.filter((r) => r.startsWith("Classic")).sort((a, b) => {
+    const ta = (slateGames(a)[0] || ["", ""])[1];
+    const tb = (slateGames(b)[0] || ["", ""])[1];
+    return String(ta).localeCompare(String(tb)) || slateGames(b).length - slateGames(a).length;
+  });
+  const showdown = roles.filter((r) => r.startsWith("Showdown")).sort((a, b) => {
+    const ta = (slateGames(a)[0] || ["", ""])[1];
+    const tb = (slateGames(b)[0] || ["", ""])[1];
+    return String(ta).localeCompare(String(tb));
+  });
   const sel = document.getElementById("slateSelect");
+  const box = document.getElementById("slateChoices");
   sel.innerHTML = "";
-  function add(label, items) {
-    if (!items.length) return;
-    const og = document.createElement("optgroup");
-    og.label = label;
-    items.forEach((r) => {
-      const o = document.createElement("option");
-      o.value = r;
-      o.textContent = r;
-      og.appendChild(o);
-    });
-    sel.appendChild(og);
-  }
-  add("Classic", classic);
-  add("Showdown", showdown);
-  const first = classic[0] || roles[0];
+  if (box) box.innerHTML = "";
+  const ordered = [...classic, ...showdown];
+  ordered.forEach((r) => {
+    const o = document.createElement("option");
+    o.value = r;
+    const copy = slateChoiceCopy(r);
+    o.textContent = `${copy.title} — ${copy.detail}`;
+    sel.appendChild(o);
+    if (!box) return;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "slate-choice";
+    btn.dataset.slate = r;
+    btn.innerHTML = `<b>${esc(copy.title)}</b><small>${esc(copy.detail)}</small>`;
+    btn.onclick = () => {
+      sel.value = r;
+      loadSlate(r);
+    };
+    box.appendChild(btn);
+  });
+  const first = classic[0] || ordered[0];
   if (first) {
     sel.value = first;
     loadSlate(first);
@@ -1825,6 +2089,7 @@ function tuneTeamCap(role) {
 }
 
 function loadSlate(role) {
+  document.querySelectorAll(".slate-choice").forEach((btn) => btn.classList.toggle("active", btn.dataset.slate === role));
   stacks = [];
   groups = [];
   lineups = [];
@@ -1833,7 +2098,20 @@ function loadSlate(role) {
   posFilter = "ALL";
   teamFilter = "ALL";
   pool = allRows.filter((p) => p.slate === role).map((p) => ({ ...p }));
+  const note = document.getElementById("slateNote");
+  if (note) {
+    const games = slateGames(role);
+    const showdown = String(role).startsWith("Showdown");
+    const early = games.find(([, t]) => /03:00\s*PM/i.test(t) || /3:00\s*PM/i.test(t));
+    note.textContent = showdown
+      ? `Showdown is one game only${games[0] ? `: ${games[0][0]}${games[0][1] ? " (" + games[0][1] + " ET)" : ""}` : ""}. Upload into that showdown contest, not the classic.`
+      : games.length > 2
+        ? `Main slate, ${games.length} games${early ? ", including " + early[0] + " at 3:00 PM ET" : ""}. ${games.map(([g, t]) => `${g}${t ? " (" + t + " ET)" : ""}`).join(", ")}. Upload only into the DraftKings classic contest that lists all of these games.`
+        : `Night slate, ${games.length} games. The early game is not on this slate. ${games.map(([g, t]) => `${g}${t ? " (" + t + " ET)" : ""}`).join(", ")}.`;
+  }
   tuneTeamCap(role);
+  modelOwnership(pool);
+  syncPresets();
   fillGameSelect();
   renderPool();
   renderRules();
@@ -1869,6 +2147,8 @@ function visiblePool() {
     if (document.getElementById("excludeOut").checked && isOutStatus(p.injury) && p.use !== "lock") return false;
     if (!document.getElementById("includeQ").checked && isQStatus(p.injury) && p.use !== "lock") return false;
     if (hideZero && p.proj <= 0) return false;
+    if (belowBand(p)) return false;
+    if ((document.getElementById("totalLean").value || "") === "only" && lowTotal(p)) return false;
     if (showLockedOnly && p.use !== "lock") return false;
     if (posFilter !== "ALL" && !isEligible(p.pos, posFilter) && p.pos !== posFilter) return false;
     if (teamFilter !== "ALL" && p.team !== teamFilter) return false;
@@ -1945,7 +2225,7 @@ function renderPool() {
     p.proj = parseFloat(e.target.value) || 0;
     p.baseProj = p.pos === "CPT" ? p.proj / 1.5 : p.proj;
     p.ppm = p.minutes > 0 ? p.proj / p.minutes : 0;
-    if (!p.ownFeed) p.own = estimateOwn(p);
+    modelOwnership(pool);
     renderPool();
     renderCheatSheet();
     renderLeverage();
@@ -1958,6 +2238,7 @@ function renderPool() {
     if (p) {
       p.own = Math.max(0, Math.min(100, parseFloat(e.target.value) || 0));
       p.ownFeed = true;
+      p._ownTouched = true;
     }
   });
   tbody.querySelectorAll(".min").forEach((el) => el.onchange = (e) => {
@@ -1992,8 +2273,12 @@ function renderPoolFilters() {
   const shown = visiblePool().length;
   const projected = pool.filter((p) => p.pos !== "CPT" && p.proj > 0 && passesInjury(p)).length;
   const hiddenZero = hideZero ? pool.filter((p) => p.proj <= 0).length : 0;
+  const underBand = new Set(pool.filter((p) => belowBand(p)).map((p) => p.name)).size;
+  const underOu = (document.getElementById("totalLean").value || "") === "only"
+    ? new Set(pool.filter((p) => lowTotal(p) && p.use !== "lock").map((p) => p.name)).size
+    : 0;
   const tagged = [locks && `${locks} lock`, cores && `${cores} core`, highs && `${highs} high`, mids && `${mids} mid`, lows && `${lows} low`, limits && `${limits} limit`, fades && `${fades} fade`].filter(Boolean).join(" · ");
-  document.getElementById("coreBar").textContent = `${shown} shown${tagged ? " · " + tagged : ""} · ${projected} projected${hiddenZero ? ` · ${hiddenZero} at zero hidden` : ""}`;
+  document.getElementById("coreBar").textContent = `${shown} shown${tagged ? " · " + tagged : ""} · ${projected} projected${hiddenZero ? ` · ${hiddenZero} at zero hidden` : ""}${underBand ? ` · ${underBand} under the floor` : ""}${underOu ? ` · ${underOu} in a game under the cutoff` : ""}`;
   const meta = document.getElementById("poolMeta");
   if (meta) meta.textContent = shown ? `${shown} shown` : "";
   document.querySelectorAll("#poolTable th[data-psort='own'], #csTable th[data-sort='own']").forEach((th) => {
@@ -2811,23 +3096,44 @@ function drawerPane(p, games, loading, mates, opp, exp) {
   `;
 }
 function newsPane(p) {
-  const mine = p.news || p.injuryFeed || p.injury;
+  const games = logsFor(p.name);
+  const recent = Array.isArray(games) ? games.slice(0, 4) : [];
+  const blurbs = recent.map((g) => {
+    const bits = [shortDate(g.date), `${Math.round(g.min)} min`, `${Math.round(g.pts)} pts`];
+    if (g.reb) bits.push(`${Math.round(g.reb)} reb`);
+    if (g.ast) bits.push(`${Math.round(g.ast)} ast`);
+    bits.push(`${g.fpts.toFixed(1)} DK`);
+    return `<li><b>${esc(bits[0])}</b> · ${esc(bits.slice(1).join(" · "))}${g.match ? " · " + esc(g.match) : ""}</li>`;
+  }).join("");
+  const written = p.news || p.injuryFeed || "";
+  const statusBit = p.injury ? ` ${injuryTag(p.injury)}` : "";
+  const lead = written
+    ? esc(written)
+    : (p.injury ? `${esc(p.injury)}. No written note in the feed.` : "No injury note in the feed for this player.");
   const slate = [];
   const seen = new Set();
   pool.forEach((x) => {
     if (x.pos === "CPT" || seen.has(x.name) || x.name === p.name) return;
     if (!x.news && !isQStatus(x.injury) && !isOutStatus(x.injury)) return;
     if (x.team !== p.team && x.team !== p.opp) return;
-    if (x.salary < 4000 && !x.news) return;
+    if (x.salary < 4500 && !x.news) return;
     seen.add(x.name);
     slate.push(x);
   });
-  slate.sort((a, b) => b.salary - a.salary);
-  const rows = slate.slice(0, 8).map((x) => `<div class="sp-row"><span>${nameBtn(x.name)} ${injuryTag(x.injury)} <span class="cs-sub">${esc(x.team)}</span></span><span>${esc((x.news || x.injuryFeed || "Status only.").slice(0, 140))}</span></div>`).join("") || `<div class="lu-empty">No other injury note in this game.</div>`;
+  slate.sort((a, b) => Number(isOutStatus(b.injury)) - Number(isOutStatus(a.injury)) || b.salary - a.salary);
+  const rows = slate.slice(0, 6).map((x) => `<div class="sp-row"><span>${nameBtn(x.name)} ${injuryTag(x.injury)} <span class="cs-sub">${esc(x.team)}</span></span><span>${esc((x.news || x.injuryFeed || "Status only.").slice(0, 90))}</span></div>`).join("") || `<div class="lu-empty">No other injury note in this game.</div>`;
+  const recentBlock = games == null
+    ? `<p class="note">Loading recent games…</p>`
+    : (blurbs ? `<ul class="news-blurbs">${blurbs}</ul>` : `<p class="note">No recent games in the log for this name.</p>`);
   return `
-    <p class="note">${mine ? esc(mine) : "No written injury note in the feed for this player."}${p.returnDate ? " Estimated return " + esc(p.returnDate) + "." : ""}</p>
+    <div class="news-lead">
+      <div class="k">This player${statusBit}</div>
+      <div>${lead}${p.returnDate ? " Estimated return " + esc(p.returnDate) + "." : ""}</div>
+    </div>
+    <div class="lu-label">Recent games</div>
+    ${recentBlock}
     <div class="lu-label">Also in this game</div>
-    ${rows}
+    <div class="news-side">${rows}</div>
   `;
 }
 function gameLogPane(games, loading) {
@@ -3054,13 +3360,13 @@ function renderLeverage() {
   if (note) {
     note.textContent = ownFromFeed
       ? "Ownership is coming from the feed. Leverage is projection minus 1.2 times that number. A trap is popular and under 4.5x."
-      : "Ownership is estimated from value, not a live field. Leverage is projection minus 1.2 times that estimate. Studs with a big raw projection rank as leverage. The field guess rises with value, so it cannot find a trap until a real ownership number is in the feed.";
+      : "Ownership is a model for this slate, not a live contest. Starters with minutes in the higher total get more of it, and the percentages add up to a full lineup. A real field would be needed before a popular low-value name can be called a trap.";
   }
   const chalkNote = document.getElementById("chalkNote");
   if (chalkNote) {
     chalkNote.textContent = ownFromFeed
       ? "Chalk is the highest ownership. A trap is popular and priced under 4.5x. Limit is for a name you do not want at that rate."
-      : "Highest estimated ownership. This rises with value, so it is a guess about what the field chases, not a live field. Limit keeps that name in a few builds only.";
+      : "Highest modeled ownership. Starters in the higher total sit at the top. This is not a live field. Limit keeps that name in a few builds only.";
   }
   const rows = leverageRows();
   const lev = rows.filter((p) => (ownFromFeed ? p.own <= 22 : true)).sort((a, b) => b.lev - a.lev).slice(0, 18);
@@ -3118,6 +3424,7 @@ function currentSettings() {
     cptMate: parseInt(document.getElementById("cptMate").value, 10) || 0,
     ownBand: ownBand === "off" ? "" : ownBand,
     totalLean: document.getElementById("totalLean").value || "off",
+    ouCut: ouCutValue(),
     ouMedian: ouMedianOf(pool.filter((p) => p.pos !== "CPT")),
     shape: activeShape,
     isShowdown: slate.startsWith("Showdown"),
@@ -3132,7 +3439,12 @@ function runOptimizer() {
   }
   tuneTeamCap();
   const settings = currentSettings();
-  const usable = pool.filter((p) => p.use === "lock" || passesInjury(p));
+  const usable = pool.filter((p) => {
+    if (!(p.use === "lock" || passesInjury(p))) return false;
+    if (belowBand(p)) return false;
+    if (settings.totalLean === "only" && lowTotal(p) && p.use !== "lock") return false;
+    return true;
+  });
   const lockRows = usable.filter((p) => p.use === "lock");
   const lockNames = new Set(lockRows.map((p) => p.name));
   if (lockNames.size < lockRows.length) {
@@ -3178,12 +3490,88 @@ function runOptimizer() {
     }
     const avg = lineups.reduce((s, lu) => s + lu.proj, 0) / lineups.length;
     const avgSal = lineups.reduce((s, lu) => s + lu.salary, 0) / lineups.length;
+    const floors = bandFloors();
+    if (floors.minMinutes > 0 || floors.minFp > 0) {
+      const n = new Set(pool.filter((p) => belowBand(p) && p.pos !== "CPT").map((p) => p.name)).size;
+      if (n) notes.push(`${n} players were under the minutes or points floor and were left out.`);
+    }
+    if (settings.totalLean === "only") {
+      const games = new Set(pool.filter((p) => lowTotal(p) && p.pos !== "CPT").map((p) => p.game || p.team));
+      if (games.size) notes.push(`${games.size} game${games.size === 1 ? "" : "s"} under ${ouCutValue()} were left out.`);
+    }
     const floor = exposureFloorNote();
     if (floor) notes.push(floor);
     const priced = priceCheckNote();
     if (priced) notes.push(priced);
+    const avgLeft = 50000 - avgSal;
+    const sample = lineups[0].players.find((p) => lineupId(p));
+    const idNote = sample
+      ? ` File will upload as ${sample.name} (${lineupId(sample)}). A shorter number is the photo id and DraftKings will reject it.`
+      : " These lineups are missing DraftKings lineup ids. Do not upload them.";
     const tail = notes.length ? " " + notes.join(" ") : "";
-    status.textContent = `Generated ${lineups.length} lineups. Avg ${avg.toFixed(1)} FP · ${money(Math.round(avgSal))}.${tail}`;
+    status.textContent = `Generated ${lineups.length} lineups. Avg ${avg.toFixed(1)} FP · ${money(Math.round(avgLeft))} left.${idNote}${tail}`;
+  }, 30);
+}
+
+function rebuildChecked() {
+  const status = document.getElementById("optStatus");
+  const indexes = [...lineupChecked].sort((a, b) => a - b);
+  if (!lineups.length) {
+    status.textContent = "Run the optimizer first.";
+    return;
+  }
+  if (!indexes.length) {
+    status.textContent = "Check the lineups you want rebuilt. The others stay as they are.";
+    return;
+  }
+  tuneTeamCap();
+  const settings = currentSettings();
+  const usable = pool.filter((p) => {
+    if (!(p.use === "lock" || passesInjury(p))) return false;
+    if (belowBand(p)) return false;
+    if (settings.totalLean === "only" && lowTotal(p) && p.use !== "lock") return false;
+    return true;
+  });
+  const kept = lineups.filter((_, i) => !lineupChecked.has(i));
+  status.textContent = `Rebuilding ${indexes.length} lineup${indexes.length === 1 ? "" : "s"}…`;
+  setTimeout(() => {
+    const activeStacks = stacks
+      .filter((s) => s.pg && s.m1)
+      .map((s) => ({ pg: s.pg, m1: s.m1, m2: s.m2 && s.m2 !== s.m1 ? s.m2 : "", b1: s.b1 || "", b2: s.b2 || "", pct: s.pct }));
+    const activeGroups = groups
+      .filter((g) => g.names.length >= 2)
+      .map((g) => ({ names: g.names.slice(), min: Math.min(g.min, g.names.length), runback: !!g.runback }));
+    const result = generateLineups(
+      usable,
+      { ...settings, num: indexes.length, _exposureNum: lineups.length, _seed: kept },
+      activeStacks,
+      activeGroups
+    );
+    const next = lineups.slice();
+    let replaced = 0;
+    let held = 0;
+    result.lineups.forEach((lu, n) => {
+      const idx = indexes[n];
+      if (idx == null) return;
+      const old = lineups[idx];
+      const oldLeft = 50000 - old.salary;
+      const newLeft = 50000 - lu.salary;
+      const improves = lu.proj > old.proj + 0.25 || (lu.proj >= old.proj - 0.8 && newLeft + 150 < oldLeft);
+      if (improves) {
+        next[idx] = lu;
+        replaced++;
+      } else held++;
+    });
+    const missed = indexes.length - result.lineups.length;
+    lineups = next;
+    lineupChecked = new Set();
+    renderLineups();
+    renderTeamExposure();
+    populateVarBase();
+    setLineupExports(lineups.length > 0);
+    const sample = (lineups.find((lu) => lu.players.some((p) => lineupId(p))) || lineups[0]).players.find((p) => lineupId(p));
+    const idNote = sample ? ` Upload name: ${sample.name} (${lineupId(sample)}).` : "";
+    status.textContent = `Rebuilt ${replaced} lineup${replaced === 1 ? "" : "s"}. ${held ? held + " stayed because the new build was not better. " : ""}${missed ? missed + " could not be rebuilt, so the original stayed. " : ""}${kept.length} lineup${kept.length === 1 ? "" : "s"} were left untouched.${idNote}`;
   }, 30);
 }
 
@@ -3209,6 +3597,7 @@ function renderLineups() {
   const labels = isShowdown ? ["CPT", "UTIL", "UTIL", "UTIL", "UTIL", "UTIL"] : slots;
   const mark = (key) => luSort.key === key ? (luSort.dir < 0 ? " ▼" : " ▲") : "";
   document.getElementById("lineupsHead").innerHTML = `<th><input type="checkbox" id="luSelectAll" title="Select all lineups"></th><th data-lsort="num">#${mark("num")}</th>` + labels.map((s) => `<th>${s}</th>`).join("") + `<th data-lsort="proj">Proj${mark("proj")}</th><th data-lsort="salary">Salary${mark("salary")}</th><th data-lsort="left">Left${mark("left")}</th><th data-lsort="own">Own${mark("own")}</th><th>Teams</th>`;
+  const capLeft = parseInt(document.getElementById("maxLeft").value, 10) || 400;
   const tbody = document.querySelector("#lineupsTable tbody");
   if (!lineups.length) {
     tbody.innerHTML = `<tr><td colspan="12" class="note">Run the optimizer. Downloads stay on this card.</td></tr>`;
@@ -3223,7 +3612,7 @@ function renderLineups() {
     }).join("");
     const left = 50000 - lu.salary;
     const teams = Object.entries(teamCounts(lu.slots)).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([t, c]) => `${t} ${c}`).join(" · ");
-    return `<tr class="clickable" data-idx="${i}"><td><input type="checkbox" class="lu-check" data-idx="${i}" ${lineupChecked.has(i) ? "checked" : ""}></td><td>${i + 1}</td>${cells}<td>${lu.proj.toFixed(1)}</td><td>${money(lu.salary)}</td><td class="${left > 800 ? "low-value" : ""}">${money(left)}</td><td>${(lu.own / lu.players.length).toFixed(0)}%</td><td class="lu-teams">${esc(teams)}</td></tr>`;
+    return `<tr class="clickable" data-idx="${i}"><td><input type="checkbox" class="lu-check" data-idx="${i}" ${lineupChecked.has(i) ? "checked" : ""}></td><td>${i + 1}</td>${cells}<td>${lu.proj.toFixed(1)}</td><td>${money(lu.salary)}</td><td class="${left > capLeft ? "low-value" : ""}">${money(left)}</td><td>${(lu.own / lu.players.length).toFixed(0)}%</td><td class="lu-teams">${esc(teams)}</td></tr>`;
   }).join("");
   bindNames(tbody);
   const allBox = document.getElementById("luSelectAll");
@@ -3333,7 +3722,7 @@ function renderReview() {
   if (uniqN) cards.push(metric(avgNew.toFixed(1), "Avg new players", settings.minUnique > 0 && avgNew + 0.05 < settings.minUnique));
   if (shapeOn) cards.push(metric(`${shaped}/${n}`, "Rule held", shaped < n));
   const formatBad = lineups.filter((lu) => lineupLegal(lu, isShowdown)).length;
-  const idBad = lineups.some((lu) => lu.players.some((p) => !(p.dkId || dkIdFromImage(p.image))));
+  const idBad = lineups.some((lu) => lu.players.some((p) => !(p.id || p.dkId || dkIdFromImage(p.image))));
   cards.push(metric(formatBad || idBad ? "No" : "Yes", "DK upload", !!(formatBad || idBad)));
   host.innerHTML = cards.join("");
   renderExposure();
@@ -3484,8 +3873,8 @@ function setProjByName(name, displayedFp) {
       p.baseProj = displayedFp;
     }
     p.ppm = p.minutes > 0 ? p.proj / p.minutes : 0;
-    if (!p.ownFeed) p.own = estimateOwn(p);
   });
+  modelOwnership(pool);
 }
 
 function applySelectedSuggested() {
@@ -3573,26 +3962,34 @@ function renderTeamExposure() {
 
 function downloadCsv(list) {
   const rows = Array.isArray(list) ? list : lineups;
+  const status = document.getElementById("optStatus");
   if (!rows.length) return;
   const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
   const headers = isShowdown ? ["CPT", "UTIL", "UTIL", "UTIL", "UTIL", "UTIL"] : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
   const keys = isShowdown ? ["CPT", "U1", "U2", "U3", "U4", "U5"] : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
-  const missing = new Set();
+  const missing = [];
+  rows.forEach((lu) => {
+    keys.forEach((k) => {
+      const p = lu.slots[k];
+      if (!p || !lineupId(p)) missing.push(p ? p.name : k);
+    });
+  });
+  if (missing.length) {
+    status.textContent = `Not downloaded. ${[...new Set(missing)].slice(0, 5).join(", ")} ${missing.length === 1 ? "has" : "have"} no DraftKings lineup id. Refresh this page and run it again. Do not upload a file whose numbers are 5 or 6 digits.`;
+    return;
+  }
   const lines = [headers.map(csvField).join(",")];
   rows.forEach((lu) => {
-    lines.push(keys.map((k) => {
-      const p = lu.slots[k];
-      if (p && !(p.dkId || dkIdFromImage(p.image))) missing.add(p.name);
-      return csvField(dkName(p));
-    }).join(","));
+    lines.push(keys.map((k) => csvField(dkName(lu.slots[k]))).join(","));
   });
+  const sample = dkName(rows[0].slots[keys[0]]);
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([lines.join("\r\n") + "\r\n"], { type: "text/csv" }));
-  a.download = isShowdown ? "nba_showdown_lineups.csv" : "nba_classic_lineups.csv";
+  a.download = isShowdown ? "nba_showdown_lineups.csv" : `nba_classic_${slateGames(document.getElementById("slateSelect").value).length || "slate"}game_lineups.csv`;
   a.click();
-  if (missing.size) {
-    document.getElementById("optStatus").textContent = `Downloaded, but these names have no DraftKings id and may not upload: ${[...missing].slice(0, 6).join(", ")}.`;
-  }
+  const games = slateGames(document.getElementById("slateSelect").value);
+  const first = games[0] ? clockOf(games[0][1]) : "";
+  status.textContent = `Downloaded. First cell is ${sample}. Use the DraftKings contest whose first tip is ${first || "this slate"} and whose games are ${games.map(([g]) => g).join(", ")}.`;
 }
 
 function downloadDetail(list) {
@@ -3875,6 +4272,47 @@ document.getElementById("coreValues").onclick = () => {
   });
   renderPool();
 };
+function sheetExp(p) {
+  const t = playTag(p);
+  if (t.role === "Extreme Core") return "core";
+  if (t.role === "Core Play") return "high";
+  const map = { "High Exposure": "high", "Mid Exposure": "mid", "Low Exposure": "low", Limit: "limit", Fade: "fade" };
+  return map[t.exp] || map[t.role] || "play";
+}
+document.getElementById("applyTags").onclick = () => {
+  const seen = new Set();
+  const counts = {};
+  pool.forEach((p) => {
+    if (p.exp === "lock" || p.use === "lock") return;
+    const exp = sheetExp(p);
+    applyExp(p, exp);
+    if (p.pos === "CPT" || seen.has(p.name)) return;
+    seen.add(p.name);
+    counts[exp] = (counts[exp] || 0) + 1;
+  });
+  renderPool();
+  renderCheatSheet();
+  const bits = ["core", "high", "mid", "low", "limit", "fade"].filter((k) => counts[k]).map((k) => `${counts[k]} ${k}`);
+  document.getElementById("optStatus").textContent = bits.length
+    ? `Cheat sheet tags applied. ${bits.join(", ")}. Locks were left alone.`
+    : "Cheat sheet tags applied. Locks were left alone.";
+};
+["minMinutes", "minFp", "ouCut", "totalLean"].forEach((id) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.addEventListener("change", () => renderPool());
+});
+function syncPresets() {
+  const sd = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
+  document.querySelectorAll(".preset").forEach((b) => {
+    const showdownPreset = (b.dataset.preset || "").startsWith("sd_");
+    b.hidden = sd ? !showdownPreset : showdownPreset;
+  });
+  const active = document.querySelector(".preset.active");
+  if (active && !active.hidden) return;
+  const next = document.querySelector(sd ? '.preset[data-preset="sd_gpp"]' : '.preset[data-preset="gpp"]');
+  if (next) next.click();
+}
 function playerKey(p) {
   return [p.name, p.team, p.pos].join("|");
 }
@@ -3882,7 +4320,7 @@ document.getElementById("saveBuild").onclick = () => {
   const payload = {
     slate: document.getElementById("slateSelect").value,
     shape: activeShape,
-    settings: ["numLineups", "minSalary", "maxLeft", "randomness", "maxExposure", "leverage", "minUnique", "maxTeam", "pgStack", "bringBack", "ceiling", "ownBand", "gameStack", "gameMin", "sdSplit", "cptMate", "totalLean"]
+    settings: ["numLineups", "minSalary", "minMinutes", "minFp", "maxLeft", "randomness", "maxExposure", "leverage", "minUnique", "maxTeam", "pgStack", "bringBack", "ceiling", "ownBand", "gameStack", "gameMin", "sdSplit", "cptMate", "totalLean", "ouCut"]
       .reduce((o, id) => { o[id] = document.getElementById(id).value; return o; }, {}),
     players: pool.map((p) => ({ key: playerKey(p), use: p.use, exp: p.exp || "play", weight: p.weight, proj: p.proj, own: p.own, minExp: p.minExp || 0, maxExp: p.maxExp })),
     stacks,
@@ -4000,6 +4438,7 @@ document.getElementById("runJump").onclick = () => {
   runOptimizer();
 };
 document.getElementById("downloadBtn").onclick = downloadCsv;
+document.getElementById("rebuildBtn").onclick = rebuildChecked;
 document.getElementById("detailBtn").onclick = downloadDetail;
 document.getElementById("sdSplit").onchange = () => tuneTeamCap();
 document.getElementById("genVars").onclick = renderVariations;
@@ -4023,7 +4462,9 @@ document.getElementById("varLoad").onclick = () => {
 const SETTING_TIPS = {
   numLineups: "How many lineups to build. Cash presets use 1. GPP uses 20. Milly uses 150.",
   minSalary: "A lineup under this salary is thrown out and rebuilt.",
-  maxLeft: "Hard cap on leftover salary. $1,200 means the lineup must spend at least $48,800.",
+  minMinutes: "Anyone under this projected minutes is left out of the pool and the build. 0 means no floor. Locks stay.",
+  minFp: "Anyone under this projection is left out. On showdown the floor uses the base projection, not the captain 1.5×. 0 means no floor.",
+  maxLeft: "Hard cap on leftover salary. $400 means the lineup must spend at least $49,600. The builder upgrades a player when that also adds points.",
   randomness: "How far the builder will wander off the raw projection. Higher means more different lineups.",
   maxExposure: "The most any player can appear, unless you lock them or type a higher max on that row.",
   leverage: "How hard the builder prefers lower ownership. 0 plays the chalk. 55 hunts the thin spots.",
@@ -4037,7 +4478,8 @@ const SETTING_TIPS = {
   gameMin: "How many players that game stack requires.",
   sdSplit: "Showdown only. 4–2 means four from one team and two from the other.",
   cptMate: "Showdown only. Prefer or require one teammate with the captain.",
-  totalLean: "Nudge lineups toward the higher total. It does not ban the other game.",
+  totalLean: "Prefer high totals nudges the bigger games. Only at or above drops games under the cutoff. Limit keeps them, with at most two players from those games.",
+  ouCut: "The game total used by Only and Limit. Only drops players in games under this number. Limit allows at most two of them when the rest of the slate can fill the lineup.",
 };
 Object.entries(SETTING_TIPS).forEach(([id, tip]) => {
   const el = document.getElementById(id);
@@ -4302,7 +4744,7 @@ function runSimulation() {
 const PRESETS = {
   cash: { num: 1, rand: 3, maxE: 100, lev: 0, uniq: 0, stack: 1, bb: 0, ceil: 0, minSal: 49600, maxLeft: 400, team: 3, own: "cash", split: "33", cpt: 1, tot: "off", note: "One cash lineup. Spend to $400 left, play the chalk, and keep a light point-guard teammate. Game total lean is off." },
   chalk: { num: 1, rand: 2, maxE: 100, lev: 0, uniq: 0, stack: 1, bb: 0, ceil: 0, minSal: 49700, maxLeft: 300, team: 3, own: "chalk", split: "33", cpt: 1, tot: "off", note: "Eat the chalk. Ownership lean stays on the popular values. Use this for a single 50/50 or head-to-head." },
-  gpp: { num: 20, rand: 15, maxE: 35, lev: 35, uniq: 2, stack: 1, bb: 0, ceil: 18, minSal: 48800, maxLeft: 1200, team: 3, own: "gpp", split: "42", cpt: 1, tot: "high", note: "20-max default. One point guard plus a teammate, two to three from a team, a 12–24% ownership lean, and a nudge toward the higher total." },
+  gpp: { num: 20, rand: 15, maxE: 35, lev: 35, uniq: 2, stack: 1, bb: 0, ceil: 18, minSal: 49600, maxLeft: 400, team: 3, own: "gpp", split: "42", cpt: 1, tot: "high", note: "20-max default. One point guard plus a teammate, two to three from a team, a 12–24% ownership lean, and a nudge toward the higher total. It spends to within $400 of the cap." },
   milly: { num: 150, rand: 24, maxE: 18, lev: 55, uniq: 3, stack: 1, bb: 1, ceil: 28, minSal: 48000, maxLeft: 1800, team: 3, own: "lev", split: "42", cpt: 1, tot: "high", note: "150-max. Lower exposure, more leverage, a bring-back bonus, higher totals, and lineups that differ by at least 3 players." },
   stars: { num: 20, rand: 12, maxE: 40, lev: 22, uniq: 1, stack: 1, bb: 0, ceil: 12, minSal: 49200, maxLeft: 700, team: 3, own: "gpp", split: "42", cpt: 1, tot: "high", note: "Two players at $9,000 or more and two at $4,500 or less. The rest is the value that makes the salary work." },
   unique: { num: 50, rand: 22, maxE: 22, lev: 48, uniq: 4, stack: 1, bb: 0, ceil: 22, minSal: 47000, maxLeft: 2200, team: 3, own: "lev", split: "42", cpt: 1, tot: "high", note: "Four different players from the last lineup. Leave more salary if that is what makes the low-owned piece fit." },
@@ -4363,20 +4805,11 @@ loadData();
   var token = params.get("access");
   var endpoint = "https://www.ninetofivesports.com/_functions/checkAccess?token=" + encodeURIComponent(token || "");
   function deny() {
-    document.body.innerHTML =
-      '<div style="font-family:Inter,system-ui,sans-serif;background:#0b1020;color:#e8edf7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center">' +
-      "<div><h1 style='margin:0 0 8px;color:#47C6C8;font-size:1.45rem;'>NineToFive Paid Members Only</h1>" +
-      "<p style='color:#8b93a7;margin:0 0 1rem;'>This builder is for active 925 members.</p>" +
-      "<p style='margin:0;'><a href='https://www.ninetofivesports.com/plans-pricing' style='display:inline-block;background:#3ee0b4;color:#06221c;text-decoration:none;font-weight:700;border-radius:8px;padding:0.55rem 0.9rem;'>Become a Member</a></p></div></div>";
+    document.body.innerHTML = '<div style="font-family:Inter,system-ui,sans-serif;background:#0b1020;color:#e8edf7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center"><div><h1 style="margin:0 0 8px;color:#47C6C8;font-size:1.45rem;">NineToFive Paid Members Only</h1><p style="color:#8b93a7;margin:0 0 1rem;">This builder is for active 925 members.</p><p style="margin:0;"><a href="https://www.ninetofivesports.com/plans-pricing" style="display:inline-block;background:#3ee0b4;color:#06221c;text-decoration:none;font-weight:700;border-radius:8px;padding:0.55rem 0.9rem;">Become a Member</a></p></div></div>';
   }
-  function allow() {
-    var gate = document.getElementById("memberGate");
-    if (gate) gate.remove();
-  }
+  function allow() { var gate = document.getElementById("memberGate"); if (gate) gate.remove(); }
   if (!token) { deny(); return; }
-  fetch(endpoint).then(function (r) { return r.json(); }).then(function (data) {
-    if (!data || data.ok !== true) deny(); else allow();
-  }).catch(function () { deny(); });
+  fetch(endpoint).then(function (r) { return r.json(); }).then(function (data) { if (!data || data.ok !== true) deny(); else allow(); }).catch(function () { deny(); });
 })();
 </script>
 

@@ -61,7 +61,7 @@ th { background:var(--card2); color:var(--aqua); position:sticky; top:0; text-al
 td { padding:0.38rem 0.45rem; border-bottom:1px solid var(--border); vertical-align:middle; }
 .pool-wrap, .lineups-wrap, .cs-wrap, .lab-wrap { max-height:560px; overflow:auto; }
 .tag { font-size:0.62rem; font-weight:700; padding:1px 5px; border-radius:4px; margin-left:4px; }
-.tag.q { background:#fbbf24; color:#1a1404; } .tag.d { background:#f97316; color:#1a1404; } .tag.o { background:#ef4444; color:#fff; } .tag.s { background:#134e4a; color:#99f6e4; }
+.tag.q { background:#fbbf24; color:#1a1404; } .tag.d { background:#f97316; color:#1a1404; } .tag.o { background:#ef4444; color:#fff; } .tag.s { background:#134e4a; color:#99f6e4; } .tag.hot { background:#14532d; color:#86efac; } .tag.cold { background:#7f1d1d; color:#fecaca; }
 .high-value { color:var(--good); font-weight:700; } .low-value { color:var(--bad); font-weight:600; }
 .val-7 { color:#38bdf8; font-weight:700; } .val-6 { color:#4ade80; font-weight:700; }
 .val-5 { color:#fbbf24; font-weight:600; } .val-4 { color:#f87171; font-weight:600; }
@@ -379,7 +379,6 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
           <label>Min salary<input type="number" id="minSalary" value="49600" step="100"></label>
           <label>Min minutes<input type="number" id="minMinutes" value="0" min="0" max="48" step="1"></label>
           <label>Min FP<input type="number" id="minFp" value="0" min="0" max="90" step="0.5"></label>
-          <label>Min value<input type="number" id="minValue" value="0" min="0" max="12" step="0.1" title="Anyone under this value is left out. 0 means no floor. Locks stay."></label>
           <label>Max left<input type="number" id="maxLeft" value="400" step="100" title="Lineups that leave more than this are rebuilt."></label>
           <label>Randomness %<input type="number" id="randomness" value="15" min="0" max="50"></label>
           <label>Max exposure %<input type="number" id="maxExposure" value="35" min="1" max="100"></label>
@@ -443,7 +442,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
           </label>
           <label>O/U cutoff<input type="number" id="ouCut" value="228" min="180" max="270" step="0.5"></label>
         </div>
-        <div class="note" style="margin-top:0.45rem;">Min minutes, Min FP, and Min value leave anyone under that number out of the pool and the build. 0 means no floor. A lock still stays. Only at or above drops every player in a game under the O/U cutoff. Limit keeps those games, but a lineup can take at most two players from them when the rest of the slate can fill the roster. Prefer high totals only nudges. It does not ban the lower game.</div>
+        <div class="note" style="margin-top:0.45rem;">Min minutes and Min FP leave anyone under that number out of the pool and the build. 0 means no floor. A lock still stays. Only at or above drops every player in a game under the O/U cutoff. Limit keeps those games, but a lineup can take at most two players from them when the rest of the slate can fill the roster. Prefer high totals only nudges. It does not ban the lower game.</div>
       </div>
     </div>
     <div class="card">
@@ -465,10 +464,6 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
         <div class="chip-row" id="posChips"></div>
         <div class="chip-row" id="teamChips"></div>
         <div class="corebar" id="coreBar"></div>
-        <div class="row" style="margin-bottom:0.45rem;">
-          <label>Search pool<input type="text" id="poolSearchNear" placeholder="name, team, or pos" style="width:180px;"></label>
-          <span class="note">Filters the table below. Top search still works too.</span>
-        </div>
         <div class="pool-wrap"><table id="poolTable"><thead><tr>
           <th data-psort="name">Player</th><th data-psort="pos">Pos</th><th data-psort="salary">Salary</th><th data-psort="proj">Proj</th><th data-psort="min">Proj min</th><th data-psort="value">Value</th><th data-psort="ou">O/U</th><th data-psort="spread">Spr</th><th data-psort="own">Own est</th><th>Min %</th><th>Max %</th>
         </tr></thead><tbody></tbody></table></div>
@@ -632,7 +627,6 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
           <option value="pg1">PG + 1</option>
           <option value="pg2" selected>PG + 2</option>
           <option value="32">3 + 2 bring-back</option>
-          <option value="game3">Game 3 (any 3)</option>
         </select>
       </label>
       <label>Sort
@@ -671,7 +665,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
           <label>Search<input type="text" id="varSearch" placeholder="Player search" style="width:160px;"></label>
         </div>
         <div class="chip-row" id="varPos"></div>
-        <div class="lab-wrap var-pool"><table id="varPool"><thead><tr><th>Pos</th><th>Player</th><th>Opp</th><th>Min</th><th>PPM</th><th>Proj</th><th>Value</th><th>Salary</th><th></th></tr></thead><tbody></tbody></table></div>
+        <div class="lab-wrap var-pool"><table id="varPool"><thead><tr><th>Pos</th><th>Player</th><th>Opp</th><th>Proj</th><th>Salary</th><th></th></tr></thead><tbody></tbody></table></div>
       </div>
       <div>
         <div class="hand-line">
@@ -720,12 +714,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 </div>
 <script>
 
-/** Pure NBA DK lineup builder. One player per slot. 
- * Updates (Oct 2026): adaptive quality by lineup count (high ≤10, medium ≤80, fast >80), improved ownership model (chalkScore), stronger projection weighting in fillRest, 
- * minValue filter + existing minMinutes/minFp applied in usable pool, near-table search, 
- * click-to-swap players in generated lineups (openPlayerSwap), variations table Min/PPM/Value columns, 
- * Game 3 stack mode, starting lineup preference tweaks.
- */
+/** Pure NBA DK lineup builder. One player per slot. */
 
 function posTokens(pos) {
   return String(pos || "")
@@ -980,15 +969,38 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
     }
     if (!options.length) return null;
 
+    if (remainAfter === 1) {
+      const nextSlot = slots.find((s) => s !== slot && !roster[s]);
+      if (nextSlot) {
+        const nextOptions = cands.filter((p) => {
+          if (usedNames.has(p.name)) return false;
+          if (!canPlay(p, nextSlot, isShowdown)) return false;
+          if ((tc[p.team] || 0) >= teamCap && p.use !== "lock") return false;
+          if (p.salary > 50000 - spent) return false;
+          if (p.proj <= 0 && p.use !== "lock") return false;
+          return true;
+        });
+        const pair = bestClosingPair(options, nextOptions, spent, settings, roster);
+        if (pair) {
+          roster[slot] = pair.a;
+          roster[nextSlot] = pair.b;
+          usedNames.add(pair.a.name);
+          usedNames.add(pair.b.name);
+          continue;
+        }
+      }
+    }
+
     const fair = (50000 - spent) / (remainAfter + 1);
     const aim = Math.max(3000, (aimTotal - spent) / (remainAfter + 1));
     const scored = options
       .map((p) => {
         const val = p.salary > 0 ? p.proj / (p.salary / 1000) : 0;
-        let score = (p.score || p.proj) + Math.min(val, 8) * 1.15;
-        score -= Math.max(0, aim - p.salary) / 160;
-        score -= Math.max(0, p.salary - aim) / 420;
-        if (remainAfter === 0) score -= Math.max(0, (50000 - spent - p.salary) - 200) / 70;
+        let score = p.score || p.proj;
+        score += Math.min(val, 7) * 0.28;
+        score -= Math.max(0, aim - p.salary) / 110;
+        score -= Math.max(0, p.salary - aim) / 500;
+        if (remainAfter === 0) score -= Math.max(0, (50000 - spent - p.salary) - 150) / 40;
         if (!isShowdown && settings.shape !== "stars" && p.salary > fair * 1.55 && n8500 >= 2) score -= 8;
         score += groupNudge(p, roster, groups);
         if (stackTeams.size && stackTeams.has(p.opp) && !stackTeams.has(p.team)) score += settings.bringBack ? 9 : 1.5;
@@ -1021,6 +1033,30 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
     usedNames.add(pick.name);
   }
   return roster;
+}
+
+function bestClosingPair(optsA, optsB, spent, settings, roster) {
+  const left = 50000 - spent;
+  const maxLeft = Number(settings.maxLeft) || 400;
+  const minPair = Math.max(0, (settings.minSalary || 0) - spent);
+  const aList = optsA.slice().sort((x, y) => (y.score || y.proj) - (x.score || x.proj)).slice(0, 16);
+  const bList = optsB.slice().sort((x, y) => (y.score || y.proj) - (x.score || x.proj)).slice(0, 16);
+  const tc = teamCounts(roster);
+  const cap = settings.teamCap || 8;
+  let best = null;
+  for (const a of aList) {
+    for (const b of bList) {
+      if (a.name === b.name) continue;
+      const sum = a.salary + b.salary;
+      if (sum > left || sum < minPair) continue;
+      if (a.team === b.team && (tc[a.team] || 0) + 2 > cap && a.use !== "lock") continue;
+      const proj = (a.proj || 0) + (b.proj || 0);
+      const leftover = left - sum;
+      const rank = proj * 10 - Math.max(0, leftover - maxLeft) * 0.6 - (leftover > 200 ? leftover * 0.004 : 0);
+      if (!best || rank > best.rank) best = { a, b, rank };
+    }
+  }
+  return best;
 }
 
 function swapPool(roster, slot, cands, settings) {
@@ -1110,18 +1146,20 @@ function improveRoster(roster, cands, settings, groups, pinned) {
       const cur = roster[slot];
       const opts = swapPool(roster, slot, cands, settings)
         .filter((p) => roomFor(p) && p.salary - cur.salary <= left)
-        .sort((a, b) => b.proj - a.proj)
-        .slice(0, 14);
-      for (const p of opts) {
-        const gain = (p.proj || 0) - (cur.proj || 0);
-        const extra = p.salary - cur.salary;
+        .map((p) => ({ p, gain: (p.proj || 0) - (cur.proj || 0), extra: p.salary - cur.salary }))
+        .sort((a, b) => b.gain - a.gain || b.extra - a.extra)
+        .slice(0, 18);
+      for (const x of opts) {
+        const gain = x.gain;
+        const extra = x.extra;
+        const p = x.p;
         const newSal = sal + extra;
         if (sal >= floor && newSal < floor) continue;
-        if (gain < 0.2 && !(left > maxLeft && extra >= 200 && gain > -0.5)) continue;
+        if (gain < 0.15 && !(left > 250 && extra >= 100 && gain >= -0.2)) continue;
         const trial = { ...roster, [slot]: p };
         if (!legal(trial)) continue;
         const newLeft = 50000 - newSal;
-        const rank = gain * 120 - Math.max(0, newLeft - Math.min(maxLeft, 300)) * 0.15;
+        const rank = gain * 140 - Math.max(0, newLeft - maxLeft) * 0.45 + (gain >= 0 && extra > 0 ? Math.min(extra, left) * 0.003 : 0);
         consider(rank, () => ({ ...roster, [slot]: p }));
       }
     }
@@ -1131,10 +1169,12 @@ function improveRoster(roster, cands, settings, groups, pinned) {
         for (let j = i + 1; j < open.length; j++) {
           const a = roster[open[i]];
           const b = roster[open[j]];
-          const optsA = swapPool(roster, open[i], cands, settings).filter(roomFor).sort((x, y) => y.proj - x.proj).slice(0, 6);
-          const optsB = swapPool(roster, open[j], cands, settings).filter(roomFor).sort((x, y) => y.proj - x.proj).slice(0, 6);
-          for (const pa of optsA) {
-            for (const pb of optsB) {
+          const optsA = swapPool(roster, open[i], cands, settings).filter(roomFor).map((p) => ({ p, gain: (p.proj || 0) - (a.proj || 0) })).sort((x, y) => y.gain - x.gain).slice(0, 8);
+          const optsB = swapPool(roster, open[j], cands, settings).filter(roomFor).map((p) => ({ p, gain: (p.proj || 0) - (b.proj || 0) })).sort((x, y) => y.gain - x.gain).slice(0, 8);
+          for (const xa of optsA) {
+            for (const xb of optsB) {
+              const pa = xa.p;
+              const pb = xb.p;
               if (pa.name === pb.name) continue;
               const extra = pa.salary + pb.salary - a.salary - b.salary;
               if (extra > left) continue;
@@ -1145,7 +1185,7 @@ function improveRoster(roster, cands, settings, groups, pinned) {
               const trial = { ...roster, [open[i]]: pa, [open[j]]: pb };
               if (!legal(trial)) continue;
               const newLeft = 50000 - newSal;
-              const rank = gain * 120 - Math.max(0, newLeft - Math.min(maxLeft, 300)) * 0.15;
+              const rank = gain * 140 - Math.max(0, newLeft - maxLeft) * 0.45;
               consider(rank, () => ({ ...roster, [open[i]]: pa, [open[j]]: pb }));
             }
           }
@@ -1444,9 +1484,6 @@ function constructionIssue(roster, settings) {
 }
 
 function generateLineups(pool, settings, stacks = [], groups = []) {
-  const requested = settings.num || 20;
-  const quality = requested <= 10 ? "high" : requested <= 80 ? "medium" : "fast";
-  settings._quality = quality;
   const maxLeft = Number(settings.maxLeft) || 0;
   if (maxLeft > 0) {
     settings = { ...settings, minSalary: Math.max(Number(settings.minSalary) || 0, 50000 - maxLeft) };
@@ -1549,10 +1586,7 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
       }
       const pinned = new Set(required.map((p) => p.name));
       roster = fitSalary(roster, active, runSettings, gUse, pinned);
-      const improvePasses = quality === "high" ? 4 : quality === "medium" ? 2 : 1;
-      for (let ip = 0; ip < improvePasses; ip++) {
-        roster = improveRoster(roster, active, runSettings, gUse, pinned);
-      }
+      roster = improveRoster(roster, active, runSettings, gUse, pinned);
       const sal = salaryOf(roster);
       if (sal > 50000) {
         lastReason = "Lineup went over $50,000.";
@@ -1661,6 +1695,9 @@ const PLAYERS_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/ma
 const DRAFTTABLE_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/drafttable.csv";
 const STATS_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/nba_stats.csv";
 const LOG_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/nba_game_log.csv";
+const STARTERS_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/projected_starters.csv";
+const STARTERS_FALLBACK = [{"Team":"CHI","Position":"PG","Player Name":"Josh Giddey"},{"Team":"CHI","Position":"SG","Player Name":"Norman Powell"},{"Team":"CHI","Position":"SF","Player Name":"Matas Buzelis"},{"Team":"CHI","Position":"PF","Player Name":"Caleb Wilson"},{"Team":"CHI","Position":"C","Player Name":"Jalen Smith"},{"Team":"MIL","Position":"PG","Player Name":"Ryan Rollins"},{"Team":"MIL","Position":"SG","Player Name":"Tyler Herro"},{"Team":"MIL","Position":"SF","Player Name":"Jaime Jaquez"},{"Team":"MIL","Position":"PF","Player Name":"Kyle Kuzma"},{"Team":"MIL","Position":"C","Player Name":"Myles Turner"},{"Team":"NYK","Position":"PG","Player Name":"Jalen Brunson"},{"Team":"NYK","Position":"SG","Player Name":"Mikal Bridges"},{"Team":"NYK","Position":"SF","Player Name":"Josh Hart"},{"Team":"NYK","Position":"PF","Player Name":"OG Anunoby"},{"Team":"NYK","Position":"C","Player Name":"Karl-Anthony Towns"},{"Team":"BOS","Position":"PG","Player Name":"Derrick White"},{"Team":"BOS","Position":"SG","Player Name":"Paul George"},{"Team":"BOS","Position":"SF","Player Name":"Jayson Tatum"},{"Team":"BOS","Position":"PF","Player Name":"Jordan Walsh"},{"Team":"BOS","Position":"C","Player Name":"Mitchell Robinson"},{"Team":"DAL","Position":"PG","Player Name":"Kyrie Irving"},{"Team":"DAL","Position":"SG","Player Name":"Max Christie"},{"Team":"DAL","Position":"SF","Player Name":"Cooper Flagg"},{"Team":"DAL","Position":"PF","Player Name":"P.J. Washington"},{"Team":"DAL","Position":"C","Player Name":"Daniel Gafford"},{"Team":"IND","Position":"PG","Player Name":"Tyrese Haliburton"},{"Team":"IND","Position":"SG","Player Name":"Andrew Nembhard"},{"Team":"IND","Position":"SF","Player Name":"Aaron Nesmith"},{"Team":"IND","Position":"PF","Player Name":"Pascal Siakam"},{"Team":"IND","Position":"C","Player Name":"Ivica Zubac"},{"Team":"MIN","Position":"PG","Player Name":"LaMelo Ball"},{"Team":"MIN","Position":"SG","Player Name":"Anthony Edwards"},{"Team":"MIN","Position":"SF","Player Name":"Jonathan Kuminga"},{"Team":"MIN","Position":"PF","Player Name":"Jaden McDaniels"},{"Team":"MIN","Position":"C","Player Name":"Rudy Gobert"},{"Team":"ORL","Position":"PG","Player Name":"Jalen Suggs"},{"Team":"ORL","Position":"SG","Player Name":"Desmond Bane"},{"Team":"ORL","Position":"SF","Player Name":"Franz Wagner"},{"Team":"ORL","Position":"PF","Player Name":"Paolo Banchero"},{"Team":"ORL","Position":"C","Player Name":"Wendell Carter"},{"Team":"TOR","Position":"PG","Player Name":"Immanuel Quickley"},{"Team":"TOR","Position":"SG","Player Name":"RJ Barrett"},{"Team":"TOR","Position":"SF","Player Name":"Kawhi Leonard"},{"Team":"TOR","Position":"PF","Player Name":"Scottie Barnes"},{"Team":"TOR","Position":"C","Player Name":"Jakob Poeltl"},{"Team":"WAS","Position":"PG","Player Name":"Trae Young"},{"Team":"WAS","Position":"SG","Player Name":"Kyshawn George"},{"Team":"WAS","Position":"SF","Player Name":"Bilal Coulibaly"},{"Team":"WAS","Position":"PF","Player Name":"Anthony Davis"},{"Team":"WAS","Position":"C","Player Name":"Alex Sarr"},{"Team":"ATL","Position":"PG","Player Name":"CJ McCollum"},{"Team":"ATL","Position":"SG","Player Name":"Nickeil Alexander-Walker"},{"Team":"ATL","Position":"SF","Player Name":"Dyson Daniels"},{"Team":"ATL","Position":"PF","Player Name":"Jalen Johnson"},{"Team":"ATL","Position":"C","Player Name":"Onyeka Okongwu"},{"Team":"CHA","Position":"PG","Player Name":"Dennis Schroder"},{"Team":"CHA","Position":"SG","Player Name":"Sion James"},{"Team":"CHA","Position":"SF","Player Name":"Brandon Miller"},{"Team":"CHA","Position":"PF","Player Name":"Naz Reid"},{"Team":"CHA","Position":"C","Player Name":"Moussa Diabate"},{"Team":"DET","Position":"PG","Player Name":"Cade Cunningham"},{"Team":"DET","Position":"SG","Player Name":"Duncan Robinson"},{"Team":"DET","Position":"SF","Player Name":"Ausar Thompson"},{"Team":"DET","Position":"PF","Player Name":"John Collins"},{"Team":"DET","Position":"C","Player Name":"Jalen Duren"},{"Team":"MIA","Position":"PG","Player Name":"Davion Mitchell"},{"Team":"MIA","Position":"SG","Player Name":"Klay Thompson"},{"Team":"MIA","Position":"SF","Player Name":"Andrew Wiggins"},{"Team":"MIA","Position":"PF","Player Name":"Giannis Antetokounmpo"},{"Team":"MIA","Position":"C","Player Name":"Bam Adebayo"},{"Team":"HOU","Position":"PG","Player Name":"Fred VanVleet"},{"Team":"HOU","Position":"SG","Player Name":"Amen Thompson"},{"Team":"HOU","Position":"SF","Player Name":"Kevin Durant"},{"Team":"HOU","Position":"PF","Player Name":"Jabari Smith"},{"Team":"HOU","Position":"C","Player Name":"Alperen Sengun"},{"Team":"SAS","Position":"PG","Player Name":"De'Aaron Fox"},{"Team":"SAS","Position":"SG","Player Name":"Stephon Castle"},{"Team":"SAS","Position":"SF","Player Name":"Dylan Harper"},{"Team":"SAS","Position":"PF","Player Name":"Devin Vassell"},{"Team":"SAS","Position":"C","Player Name":"Victor Wembanyama"},{"Team":"NOP","Position":"PG","Player Name":"Dejounte Murray"},{"Team":"NOP","Position":"SG","Player Name":"Jeremiah Fears"},{"Team":"NOP","Position":"SF","Player Name":"Trey Murphy"},{"Team":"NOP","Position":"PF","Player Name":"Zion Williamson"},{"Team":"NOP","Position":"C","Player Name":"Yves Missi"},{"Team":"UTA","Position":"PG","Player Name":"Keyonte George"},{"Team":"UTA","Position":"SG","Player Name":"Darryn Peterson"},{"Team":"UTA","Position":"SF","Player Name":"Lauri Markkanen"},{"Team":"UTA","Position":"PF","Player Name":"Jaren Jackson"},{"Team":"UTA","Position":"C","Player Name":"Jaxson Hayes"},{"Team":"MEM","Position":"PG","Player Name":"Ty Jerome"},{"Team":"MEM","Position":"SG","Player Name":"Jaylen Wells"},{"Team":"MEM","Position":"SF","Player Name":"Jerami Grant"},{"Team":"MEM","Position":"PF","Player Name":"Cameron Boozer"},{"Team":"MEM","Position":"C","Player Name":"Zach Edey"},{"Team":"GSW","Position":"PG","Player Name":"Stephen Curry"},{"Team":"GSW","Position":"SG","Player Name":"Brandin Podziemski"},{"Team":"GSW","Position":"SF","Player Name":"Yaxel Lendeborg"},{"Team":"GSW","Position":"PF","Player Name":"Gui Santos"},{"Team":"GSW","Position":"C","Player Name":"Draymond Green"},{"Team":"LAC","Position":"PG","Player Name":"Darius Garland"},{"Team":"LAC","Position":"SG","Player Name":"Kris Dunn"},{"Team":"LAC","Position":"SF","Player Name":"Rui Hachimura"},{"Team":"LAC","Position":"PF","Player Name":"Derrick Jones"},{"Team":"LAC","Position":"C","Player Name":"Isaiah Jackson"},{"Team":"LAL","Position":"PG","Player Name":"Luka Doncic"},{"Team":"LAL","Position":"SG","Player Name":"Austin Reaves"},{"Team":"LAL","Position":"SF","Player Name":"Ziaire Williams"},{"Team":"LAL","Position":"PF","Player Name":"Matisse Thybulle"},{"Team":"LAL","Position":"C","Player Name":"Walker Kessler"},{"Team":"POR","Position":"PG","Player Name":"Damian Lillard"},{"Team":"POR","Position":"SG","Player Name":"Ja Morant"},{"Team":"POR","Position":"SF","Player Name":"Toumani Camara"},{"Team":"POR","Position":"PF","Player Name":"Deni Avdija"},{"Team":"POR","Position":"C","Player Name":"Donovan Clingan"},{"Team":"SAC","Position":"PG","Player Name":"Darius Acuff"},{"Team":"SAC","Position":"SG","Player Name":"Zach LaVine"},{"Team":"SAC","Position":"SF","Player Name":"De'Andre Hunter"},{"Team":"SAC","Position":"PF","Player Name":"Keegan Murray"},{"Team":"SAC","Position":"C","Player Name":"Domantas Sabonis"}];
+const TEAM_ALIAS = { NY: "NYK", SA: "SAS", GS: "GSW", UTAH: "UTA", NO: "NOP", WSH: "WAS", PHO: "PHX" };
 
 let allRows = [];
 let pool = [];
@@ -1685,9 +1722,66 @@ let simChecked = new Set();
 let simSort = { key: "p90", dir: -1 };
 let handRoster = {};
 let handSwap = new Set();
-let varPosFilter = "ALL";
+let projectedStarters = new Map();
+let startersSource = "";
 
-function cacheBust(u) { return u + (u.includes("?") ? "&" : "?") + "cb=" + Date.now(); }
+function canonTeam(t) {
+  const u = String(t || "").toUpperCase();
+  return TEAM_ALIAS[u] || u;
+}
+function samePlayer(a, b) {
+  const fa = foldName(a);
+  const fb = foldName(b);
+  if (!fa || !fb) return false;
+  if (fa === fb) return true;
+  const short = fa.length <= fb.length ? fa : fb;
+  const long = fa.length <= fb.length ? fb : fa;
+  return short.length >= 8 && long.startsWith(short);
+}
+function findByName(byName, name) {
+  const key = foldName(name);
+  if (byName.has(key)) return byName.get(key);
+  for (const [k, p] of byName) {
+    if (samePlayer(k, key)) return p;
+  }
+  return null;
+}
+function useStarterRows(rows, source) {
+  const map = new Map();
+  rows.forEach((row) => {
+    const team = canonTeam(row.Team || row.team);
+    const name = row["Player Name"] || row.name;
+    const pos = String(row.Position || row.pos || "").toUpperCase();
+    if (!team || !name || !["PG", "SG", "SF", "PF", "C"].includes(pos)) return;
+    if (!map.has(team)) map.set(team, []);
+    map.get(team).push({ pos, name });
+  });
+  if (!map.size) return false;
+  projectedStarters = map;
+  startersSource = source;
+  applyProjectedStarters();
+  return true;
+}
+function applyProjectedStarters() {
+  if (!projectedStarters.size) return;
+  const names = [];
+  projectedStarters.forEach((list) => list.forEach((s) => names.push(s.name)));
+  allRows.forEach((p) => {
+    p.starter = names.some((n) => samePlayer(n, p.name)) ? "Yes" : "";
+  });
+}
+async function loadStarters() {
+  const urls = [STARTERS_URL, "/projected_starters.csv"];
+  for (const url of urls) {
+    try {
+      const r = await fetch(cacheBust(url));
+      if (!r.ok) continue;
+      const parsed = Papa.parse(await r.text(), { header: true, skipEmptyLines: true });
+      if (useStarterRows(parsed.data, url.includes("github") ? "RotoWire" : "RotoWire")) return;
+    } catch (e) {}
+  }
+  useStarterRows(STARTERS_FALLBACK, "RotoWire");
+}
 function money(n) { return "$" + Number(n || 0).toLocaleString(); }
 function esc(s) {
   return String(s ?? "").replace(/[&<>"']/g, (c) => {
@@ -1727,22 +1821,19 @@ function chalkScore(p) {
   const val = Math.max(valueOf(p), 0.1);
   const min = p.minutes || 0;
   const proj = projForBand(p);
-  let s = Math.pow(proj, 0.72) * Math.pow(val, 0.48);
-  if (p.starter === "Yes") s *= 1.58;
-  if (min >= 34) s *= 1.38;
-  else if (min >= 28) s *= 1.16;
-  else if (min >= 22) s *= 1.04;
-  else if (min > 0 && min < 16) s *= 0.26;
-  else if (!min) s *= 0.42;
+  let s = Math.pow(proj, 0.8) * Math.pow(val, 0.4);
+  if (p.starter === "Yes") s *= 1.4;
+  if (min >= 32) s *= 1.28;
+  else if (min >= 24) s *= 1.08;
+  else if (min > 0 && min < 18) s *= 0.32;
+  else if (!min) s *= 0.5;
   const ou = Number(p.ou) || 0;
-  if (ou >= 234) s *= 1.19;
-  else if (ou >= 226) s *= 1.09;
-  else if (ou > 0 && ou < 218) s *= 0.71;
-  if (p.salary >= 8500 && val >= 4.8) s *= 1.14;
-  if (p.salary <= 4200 && val < 5.5) s *= 0.32;
-  if (isQStatus(p.injury)) s *= 0.56;
-  if (p.fav) s *= 1.09;
-  return Math.max(s, 0.1);
+  if (ou >= 232) s *= 1.14;
+  else if (ou > 0 && ou < 220) s *= 0.78;
+  if (p.salary <= 4000 && val < 6.2) s *= 0.4;
+  if (isQStatus(p.injury)) s *= 0.65;
+  if (p.fav) s *= 1.06;
+  return s;
 }
 function modelOwnership(list) {
   const showdown = list.some((p) => p.pos === "CPT" || p.pos === "UTIL");
@@ -2021,6 +2112,7 @@ async function loadData() {
     const extra = dropped.length - shown.length;
     status.textContent = `Loaded ${allRows.length} players · ${withProj} with a projection.` + (shown.length ? ` Left out ${shown.join(", ")}${extra ? " and " + extra + " more" : ""}. The file listed points for them, but there is no minutes average and no game-log points behind it.` : "");
     ensureLogs();
+    await loadStarters();
     buildSlatePicker();
   } catch (e) {
     status.textContent = "Unable to load the player pool. Refresh and try again.";
@@ -2660,32 +2752,49 @@ function sideEnv(players) {
 }
 function teamBoard(players) {
   const alive = players.filter((p) => !isOutStatus(p.injury));
+  const team = canonTeam((players[0] || {}).team);
+  const projected = projectedStarters.get(team) || [];
   const order = ["PG", "SG", "SF", "PF", "C"];
   const used = new Set();
   const starters = [];
+  const byName = new Map();
+  alive.forEach((p) => {
+    const key = foldName(p.name);
+    if (!byName.has(key)) byName.set(key, p);
+  });
+  projected.forEach((s) => {
+    const p = findByName(byName, s.name);
+    if (!p || used.has(p.name)) return;
+    used.add(p.name);
+    starters.push({ pos: s.pos, p, source: "projected" });
+  });
   const take = (pos, list) => {
+    if (starters.some((s) => s.pos === pos)) return;
     const hit = list.find((p) => !used.has(p.name) && (posToken(p) === pos || isEligible(primaryPos(p), pos)));
     if (!hit) return;
     used.add(hit.name);
-    starters.push({ pos, p: hit });
+    starters.push({ pos, p: hit, source: "feed" });
   };
-  order.forEach((pos) => take(pos, alive.filter((p) => p.starter === "Yes").sort((a, b) => (b.minutes || 0) - (a.minutes || 0) || b.proj - a.proj)));
-  order.forEach((pos) => {
-    if (starters.some((s) => s.pos === pos)) return;
-    take(pos, alive.slice().sort((a, b) => (b.minutes || 0) - (a.minutes || 0) || b.proj - a.proj));
-  });
+  if (starters.length < 5) {
+    order.forEach((pos) => take(pos, alive.filter((p) => p.starter === "Yes").sort((a, b) => (b.minutes || 0) - (a.minutes || 0) || b.proj - a.proj)));
+    order.forEach((pos) => take(pos, alive.slice().sort((a, b) => (b.minutes || 0) - (a.minutes || 0) || b.proj - a.proj)));
+  }
   starters.sort((a, b) => order.indexOf(a.pos) - order.indexOf(b.pos));
-  const tagged = alive.some((p) => p.starter === "Yes");
+  const tagged = projected.length > 0 || alive.some((p) => p.starter === "Yes");
   const mayShown = players.filter((p) => isOutStatus(p.injury) || (isQStatus(p.injury) && !used.has(p.name)));
   const bench = alive.filter((p) => !used.has(p.name) && !isQStatus(p.injury)).sort((a, b) => (b.minutes || 0) - (a.minutes || 0) || b.proj - a.proj);
-  const row = (pos, p, extra) => `<div class="lu-row ${extra || ""}"><span class="lu-pos">${esc(pos)}</span><span>${nameBtn(p.name)} ${injuryTag(p.injury)}</span><span class="lu-min">${p.minutes > 0 ? p.minutes.toFixed(0) + " min" : ""}</span><span class="lu-min">${p.proj > 0 ? p.proj.toFixed(1) : ""}</span></div>`;
+  const row = (pos, p, extra) => {
+    const streak = streakOf(p.name);
+    const streakTag = streak && streak.label !== "Even" ? `<span class="tag ${streak.cls}" data-tip="Last 3 games ${streak.l3.toFixed(1)} DK vs log average ${streak.avg.toFixed(1)}.">${streak.label}</span>` : "";
+    return `<div class="lu-row ${extra || ""}"><span class="lu-pos">${esc(pos)}</span><span>${nameBtn(p.name)} ${injuryTag(p.injury)} ${streakTag}</span><span class="lu-min">${p.minutes > 0 ? p.minutes.toFixed(0) + " min" : ""}</span><span class="lu-min">${p.proj > 0 ? p.proj.toFixed(1) : ""}</span></div>`;
+  };
   const startRows = order.map((pos) => {
     const s = starters.find((x) => x.pos === pos);
     return s ? row(s.pos, s.p) : `<div class="lu-row"><span class="lu-pos">${pos}</span><span class="lu-empty">—</span><span></span><span></span></div>`;
   }).join("");
   const mayRows = mayShown.map((p) => row(posToken(p), p, "out")).join("") || `<div class="lu-empty">None</div>`;
   const benchRows = bench.map((p) => row(posToken(p), p)).join("") || `<div class="lu-empty">No other players with a roster spot.</div>`;
-  return { tagged, startRows, mayRows, benchRows, starters };
+  return { tagged, projected: projected.length >= 5, startRows, mayRows, benchRows, starters };
 }
 function gamesMap() {
   const map = new Map();
@@ -2856,8 +2965,8 @@ function renderGamePreview() {
     const implCls = env.implied >= 116 ? "high-value" : env.implied && env.implied < 110 ? "low-value" : "";
     return `<div class="gp-side">
       <div class="lu-banner"><b>${esc(tm)}</b><span class="${implCls}">${env.implied ? env.implied.toFixed(1) + " implied" : ""}${env.spr ? " · " + (env.spr > 0 ? "+" : "") + env.spr : ""}</span></div>
-      <div class="exp-pill"><i></i> Expected lineup</div>
-      ${board.tagged ? "" : `<div class="lu-empty">No starter tag in the feed. Spots are filled by minutes, then projection.</div>`}
+      <div class="exp-pill"><i></i> ${board.projected ? "Projected starting five" : "Expected lineup"}</div>
+      ${board.projected ? "" : `<div class="lu-empty">No projected five for this team yet. Spots are filled from the starter tag, then minutes.</div>`}
       ${board.startRows}
       <div class="lu-label">May not play</div>
       ${board.mayRows}
@@ -2874,8 +2983,21 @@ function renderGamePreview() {
   });
   const hasDvp = dvpPlayers.some((p) => p.dvpRank && p.dvpRank !== "0");
   const dvpBody = hasDvp
-    ? dvpPlayers.filter((p) => p.dvpRank && p.dvpRank !== "0").sort((a, b) => (parseInt(a.dvpRank, 10) || 99) - (parseInt(b.dvpRank, 10) || 99)).map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} <span class="cs-sub">${esc(p.team)} · ${esc(rosterPos(p))}</span></span><span>DVP ${esc(p.dvpRank)}${p.dvpProj ? " · " + p.dvpProj.toFixed(1) : ""}</span></div>`).join("")
-    : `<div class="lu-empty">No DVP rank in the feed for this game. The matchup is the opponent list below.</div>` + dvpPlayers.slice().sort((a, b) => b.proj - a.proj).slice(0, 8).map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} <span class="cs-sub">${esc(p.team)}</span></span><span>${p.proj > 0 ? p.proj.toFixed(1) + " FP" : "—"}</span></div>`).join("");
+    ? `<div class="lu-label">Easier matchups first. Rank is from the sheet.</div>` + dvpPlayers.filter((p) => p.dvpRank && p.dvpRank !== "0").sort((a, b) => (parseInt(a.dvpRank, 10) || 99) - (parseInt(b.dvpRank, 10) || 99)).map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} <span class="cs-sub">${esc(p.team)} · ${esc(rosterPos(p))} vs ${esc(p.opp || "")}</span></span><span>DVP ${esc(p.dvpRank)}${p.dvpProj ? " · " + p.dvpProj.toFixed(1) + " allowed" : ""}</span></div>`).join("")
+    : `<div class="lu-empty">No DVP rank in the feed for this game.</div>`;
+  const streakRows = [];
+  const streakSeen = new Set();
+  g.players.forEach((p) => {
+    if (p.pos === "CPT" || streakSeen.has(p.name) || isOutStatus(p.injury)) return;
+    streakSeen.add(p.name);
+    const s = streakOf(p.name);
+    if (!s || s.label === "Even") return;
+    streakRows.push({ p, s });
+  });
+  streakRows.sort((a, b) => (b.s.l3 - b.s.avg) - (a.s.l3 - a.s.avg));
+  const streakBody = streakRows.length
+    ? streakRows.map(({ p, s }) => `<div class="sp-row"><span>${nameBtn(p.name)} <span class="tag ${s.cls}">${s.label}</span> <span class="cs-sub">${esc(p.team)} · ${esc(rosterPos(p))}</span></span><span>Last 3 ${s.l3.toFixed(1)} · log ${s.avg.toFixed(1)}</span></div>`).join("")
+    : `<div class="lu-empty">${logByName ? "No hot or cold streak of 12% or more in the last 3 games." : "Game log is still loading. Open this game again in a moment."}</div>`;
   const inj = [];
   const injSeen = new Set();
   g.players.forEach((p) => {
@@ -2893,11 +3015,12 @@ function renderGamePreview() {
     <div class="gp-match">
       <div>
         <h3>${esc(g.label)}</h3>
-        <p class="note" style="margin:0;">${g.start ? esc(g.start) + " · " : ""}${ou ? "O/U " + ou.toFixed(1) : "No total"}${fav ? " · " + esc(fav.team) + " " + sprText(fav) : ""}. Expected five, then who is out or questionable, then the bench by minutes.</p>
+        <p class="note" style="margin:0;">${g.start ? esc(g.start) + " · " : ""}${ou ? "O/U " + ou.toFixed(1) : "No total"}${fav ? " · " + esc(fav.team) + " " + sprText(fav) : ""}. ${teams.some((tm) => (projectedStarters.get(canonTeam(tm)) || []).length >= 5) ? "Projected five is the RotoWire expected lineup" + (startersSource ? " (" + esc(startersSource) + ")" : "") + "." : "No projected five loaded, so spots fall back to the starter tag."}</p>
       </div>
     </div>
     <div class="gp-sides">${sides}</div>
-    ${sec("DVP", `<p class="note">Rank from the slate file. Blank means the feed did not include it. A lower rank is an easier matchup when the file uses that scale.</p>${dvpBody}`, false)}
+    ${sec("DVP", `<p class="note">Defense versus position from the slate file. A lower rank is the easier matchup. DVP proj is the points that defense has allowed to the spot.</p>${dvpBody}`, true)}
+    ${sec("Hot / cold", `<p class="note">Last 3 games against the game-log average. Hot is at least 12% and 4 points above. Cold is the same the other way. ${logSpan ? "Log span: " + esc(logSpan) + "." : "Game log is still loading."} Current-season games are used once a player has three of them.</p>${streakBody}`, true)}
     ${sec("Injury", `<p class="note">Questionable and out, plus the written note when the feed has one.</p>${injBody}`, false)}
     <div class="gp-actions"><button type="button" class="secondary mini game-focus" data-game="${esc(g.key)}" data-min="${sideMin}">Use ${sideMin} from this game</button></div>
   </div>`;
@@ -2983,6 +3106,7 @@ function ensureLogs() {
     };
     logSpan = minT && maxT ? `${fmt(minT)} – ${fmt(maxT)}` : "";
     logByName = map;
+    if (document.getElementById("game")?.classList.contains("active")) renderGamePreview();
     return map;
   }).catch(() => {
     logByName = new Map();
@@ -2991,8 +3115,30 @@ function ensureLogs() {
   return logPromise;
 }
 function logsFor(name) {
-  if (!logByName) return null;
-  return logByName.get(foldName(name)) || [];
+  if (!logByName) return [];
+  const key = foldName(name);
+  let games = logByName.get(key);
+  if (!games) {
+    for (const [k, list] of logByName) {
+      if (samePlayer(k, key)) { games = list; break; }
+    }
+  }
+  if (!games) return [];
+  const seasonStart = Date.UTC(2026, 9, 1);
+  const current = games.filter((g) => g.t >= seasonStart);
+  return current.length >= 3 ? current : games;
+}
+function streakOf(name) {
+  const games = logsFor(name);
+  if (!games || games.length < 3) return null;
+  const last = games.slice(0, 3);
+  const l3 = last.reduce((s, g) => s + g.fpts, 0) / last.length;
+  const avg = games.reduce((s, g) => s + g.fpts, 0) / games.length;
+  if (!avg) return null;
+  const delta = l3 - avg;
+  if (l3 >= avg * 1.12 && delta >= 4) return { label: "Hot", cls: "hot", l3, avg };
+  if (l3 <= avg * 0.88 && delta <= -4) return { label: "Cold", cls: "cold", l3, avg };
+  return { label: "Even", cls: "", l3, avg };
 }
 function shotLine(made, att) {
   return `${Math.round(made)}-${Math.round(att)}`;
@@ -3229,7 +3375,7 @@ function matchupPane(p, games, oppPlayers) {
       ${`<div class="dk-kpi"><div class="v">${p.dvpRank || "—"}</div><div class="k">DVP rank</div></div>`}
       ${`<div class="dk-kpi"><div class="v">${p.dvpProj ? p.dvpProj.toFixed(1) : "—"}</div><div class="k">DVP proj</div></div>`}
     </div>
-    <p class="note">${p.fav ? esc(p.team) + " is the favorite. " : ""}${p.oppPm ? "Opponent plus-minus in the feed is " + p.oppPm.toFixed(1) + ". " : ""}DVP is whatever the slate file has. It is blank when the feed did not include it.</p>
+    <p class="note">${p.fav ? esc(p.team) + " is the favorite. " : ""}${p.oppPm ? "Opponent plus-minus in the feed is " + p.oppPm.toFixed(1) + ". " : ""}${(() => { const s = streakOf(p.name); return s ? `Last 3 games ${s.l3.toFixed(1)} DK vs log average ${s.avg.toFixed(1)} (${s.label}). ` : ""; })()}DVP rank ${esc(p.dvpRank || "—")} is from the slate file. It is blank when the feed did not include it.</p>
     <div class="lu-label">Last games vs ${esc(p.opp || "opponent")}</div>
     ${vsRows || `<div class="lu-empty">No game in the log against ${esc(p.opp || "this opponent")}.</div>`}
     <div class="lu-label">${esc(p.opp || "Opponent")} on this slate</div>
@@ -3429,7 +3575,6 @@ function currentSettings() {
   return {
     num: Math.max(1, Math.min(150, parseInt(document.getElementById("numLineups").value, 10) || 1)),
     minSalary: parseInt(document.getElementById("minSalary").value, 10) || 0,
-    minValue: parseFloat(document.getElementById("minValue").value) || 0,
     maxLeft: Math.max(0, parseInt(document.getElementById("maxLeft").value, 10) || 0),
     randomness: parseFloat(document.getElementById("randomness").value) || 0,
     globalMax: parseFloat(document.getElementById("maxExposure").value) || 100,
@@ -3463,7 +3608,6 @@ function runOptimizer() {
   const usable = pool.filter((p) => {
     if (!(p.use === "lock" || passesInjury(p))) return false;
     if (belowBand(p)) return false;
-    if (settings.minValue > 0 && valueOf(p) < settings.minValue && p.use !== "lock") return false;
     if (settings.totalLean === "only" && lowTotal(p) && p.use !== "lock") return false;
     return true;
   });
@@ -3531,8 +3675,7 @@ function runOptimizer() {
       ? ` File will upload as ${sample.name} (${lineupId(sample)}). A shorter number is the photo id and DraftKings will reject it.`
       : " These lineups are missing DraftKings lineup ids. Do not upload them.";
     const tail = notes.length ? " " + notes.join(" ") : "";
-    const modeNote = quality === "high" ? " (high quality)" : quality === "medium" ? " (balanced)" : " (fast)";
-    status.textContent = `Generated ${lineups.length} lineups${modeNote}. Avg ${avg.toFixed(1)} FP · ${money(Math.round(avgLeft))} left.${idNote}${tail}`;
+    status.textContent = `Generated ${lineups.length} lineups. Avg ${avg.toFixed(1)} FP · ${money(Math.round(avgLeft))} left.${idNote}${tail}`;
   }, 30);
 }
 
@@ -3631,7 +3774,7 @@ function renderLineups() {
     const cells = slots.map((s) => {
       const p = lu.slots[s];
       const title = p ? esc(rosterPos(p) + " " + money(p.salary) + " · " + p.proj.toFixed(1) + (p.ou ? " · O/U " + Number(p.ou).toFixed(1) : "")) : "";
-      return `<td class="${p && priceCheck(p) ? "lu-checkprice" : ""}" title="${title}">${p ? `<div><button type="button" class="nm swap-click" data-idx="${i}" data-slot="${s}">${esc(p.name)}</button></div><div class="lu-team">${esc(p.team)} · ${money(p.salary)}</div>` : ""}</td>`;
+      return `<td class="${p && priceCheck(p) ? "lu-checkprice" : ""}" title="${title}">${p ? `<div>${nameBtn(p.name)}</div><div class="lu-team">${esc(p.team)} · ${money(p.salary)}</div>` : ""}</td>`;
     }).join("");
     const left = 50000 - lu.salary;
     const teams = Object.entries(teamCounts(lu.slots)).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([t, c]) => `${t} ${c}`).join(" · ");
@@ -3661,13 +3804,6 @@ function renderLineups() {
   });
   updateCheckedCount();
   renderReview();
-  // Bind swap clicks
-  document.querySelectorAll(".swap-click").forEach(btn => {
-    btn.onclick = (e) => {
-      e.stopPropagation();
-      openPlayerSwap(+btn.dataset.idx, btn.dataset.slot);
-    };
-  });
 }
 
 function updateCheckedCount() {
@@ -4184,21 +4320,14 @@ function renderHand() {
     if (varPosFilter === "UTIL") return isShowdown ? p.pos === "UTIL" : canPlay(p, "UTIL", false);
     return canPlay(p, varPosFilter, isShowdown) || p.pos === varPosFilter;
   }).sort((a, b) => b.proj - a.proj).slice(0, 80);
-  poolBody.innerHTML = list.map((p) => {
-    const ppm = p.minutes > 0 ? (p.proj / p.minutes).toFixed(2) : "—";
-    const val = valueOf(p).toFixed(2);
-    return `<tr>
-      <td>${esc(rosterPos(p))}</td>
-      <td>${nameBtn(p.name)} ${injuryTag(p.injury)}</td>
-      <td>${esc(p.opp)}</td>
-      <td>${p.minutes > 0 ? Math.round(p.minutes) : "—"}</td>
-      <td>${ppm}</td>
-      <td>${p.proj.toFixed(1)}</td>
-      <td class="${valueClass(valueOf(p))}">${val}x</td>
-      <td>${money(p.salary)}</td>
-      <td>${used.has(p.name) ? "" : `<button type="button" class="primary hand-add" data-id="${esc(p.id)}" data-tip="Add to the first open spot this player can fill.">+</button>`}</td>
-    </tr>`;
-  }).join("") || `<tr><td colspan="9" class="note">No player matches.</td></tr>`;
+  poolBody.innerHTML = list.map((p) => `<tr>
+    <td>${esc(rosterPos(p))}</td>
+    <td>${nameBtn(p.name)} ${injuryTag(p.injury)}</td>
+    <td>${esc(p.opp)}</td>
+    <td>${p.proj.toFixed(1)}</td>
+    <td>${money(p.salary)}</td>
+    <td>${used.has(p.name) ? "" : `<button type="button" class="primary hand-add" data-id="${esc(p.id)}" data-tip="Add to the first open spot this player can fill.">+</button>`}</td>
+  </tr>`).join("") || `<tr><td colspan="6" class="note">No player matches.</td></tr>`;
   bindNames(slots);
   bindNames(poolBody);
   slots.querySelectorAll(".hand-x").forEach((btn) => btn.onclick = () => {
@@ -4234,51 +4363,6 @@ function renderHand() {
   });
 }
 
-
-function openPlayerSwap(lineupIdx, slot) {
-  const lu = lineups[lineupIdx];
-  if (!lu || !lu.slots[slot]) return;
-  const cur = lu.slots[slot];
-  const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
-  const used = new Set(Object.values(lu.slots).map(p => p && p.name).filter(Boolean));
-  const spentOthers = lu.salary - (cur.salary || 0);
-  const maxSal = 50000 - spentOthers;
-  const minVal = parseFloat(document.getElementById("minValue")?.value) || 0;
-
-  const candidates = pool.filter(p => 
-    p && p.name !== cur.name &&
-    !used.has(p.name) &&
-    (p.proj || 0) > 0 &&
-    p.use !== "fade" &&
-    canPlay(p, slot, isShowdown) &&
-    p.salary <= maxSal &&
-    passesInjury(p) &&
-    !(minVal > 0 && valueOf(p) < minVal && p.use !== "lock")
-  ).sort((a, b) => (b.proj || 0) - (a.proj || 0) || valueOf(b) - valueOf(a)).slice(0, 10);
-
-  const modal = document.createElement("div");
-  modal.className = "drawer-back show";
-  modal.innerHTML = `<div class="drawer open" style="width:min(520px,96vw);"><div class="drawer-head"><h3>Swap ${esc(cur.name)} <span class="cs-sub">(${slot})</span></h3><button type="button" class="secondary" onclick="this.closest('.drawer-back').remove()">Close</button></div><div class="drawer-body"><p class="note">Top eligible replacements that fit the salary and position. Click Use to replace.</p>${candidates.length ? candidates.map(p => `<div class="playline"><div>${nameBtn(p.name)} ${injuryTag(p.injury)} <span class="cs-sub">${esc(p.team)} · ${p.proj.toFixed(1)} FP · ${money(p.salary)} · ${valueOf(p).toFixed(2)}x</span></div><button type="button" class="primary mini do-swap" data-id="${esc(p.id)}">Use</button></div>`).join("") : '<div class="note">No eligible replacements found.</div>'}</div></div>`;
-  document.body.appendChild(modal);
-
-  modal.querySelectorAll(".do-swap").forEach(btn => {
-    btn.onclick = () => {
-      const newP = pool.find(x => x.id === btn.dataset.id);
-      if (!newP) return;
-      lu.slots[slot] = newP;
-      const players = Object.values(lu.slots).filter(Boolean);
-      lu.players = players;
-      lu.salary = players.reduce((s, p) => s + (p.salary || 0), 0);
-      lu.proj = players.reduce((s, p) => s + (p.proj || 0), 0);
-      lu.own = players.reduce((s, p) => s + (p.own || 0), 0);
-      renderLineups();
-      renderTeamExposure();
-      modal.remove();
-      document.getElementById("optStatus").textContent = `Swapped ${cur.name} → ${newP.name} in lineup ${lineupIdx + 1}.`;
-    };
-  });
-}
-
 document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
   document.querySelectorAll(".tab").forEach((x) => x.classList.remove("active"));
   t.classList.add("active");
@@ -4289,7 +4373,6 @@ document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
 });
 document.getElementById("slateSelect").onchange = (e) => loadSlate(e.target.value);
 document.getElementById("search").oninput = renderPool;
-document.getElementById("poolSearchNear").oninput = renderPool;
 document.getElementById("includeQ").onchange = renderPool;
 document.getElementById("excludeOut").onchange = renderPool;
 document.getElementById("csPos").onchange = renderCheatSheet;
@@ -4380,7 +4463,7 @@ document.getElementById("applyTags").onclick = () => {
     ? `Cheat sheet tags applied. ${bits.join(", ")}. Locks were left alone.`
     : "Cheat sheet tags applied. Locks were left alone.";
 };
-["minMinutes", "minFp", "minValue", "ouCut", "totalLean"].forEach((id) => {
+["minMinutes", "minFp", "ouCut", "totalLean"].forEach((id) => {
   const el = document.getElementById(id);
   if (!el) return;
   el.addEventListener("change", () => renderPool());

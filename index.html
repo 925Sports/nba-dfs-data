@@ -55,6 +55,10 @@ td.lu-checkprice { box-shadow:inset 3px 0 0 #fb923c; }
 th.sorted { color:#fff; }
 button.mini { font-size:0.75rem; margin-top:0.35rem; }
 .presets { display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.55rem; }
+.global-max { display:flex; justify-content:space-between; align-items:center; gap:1rem; border:1px solid var(--aqua); background:rgba(71,198,200,0.1); border-radius:12px; padding:0.75rem 0.9rem; margin-bottom:0.8rem; }
+.global-max b { display:block; font-size:1rem; color:var(--text); }
+.global-max p { margin:0.2rem 0 0; color:var(--muted); font-size:0.75rem; max-width:680px; }
+.global-max input { width:92px; font-size:1.25rem; font-weight:750; padding:0.35rem 0.45rem; }
 .preset, .sug { padding:0.4rem 0.75rem; border-radius:999px; font-size:0.75rem; border:1px solid var(--border); background:transparent; color:var(--muted); }
 .preset.active { background:var(--brand); color:#fff; border-color:var(--brand); }
 table { width:100%; border-collapse:collapse; font-size:0.8rem; }
@@ -368,6 +372,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
       <div class="card-header" onclick="this.parentElement.classList.toggle('collapsed')">Contest presets <span class="chev">▾</span></div>
       <div class="card-body">
         <div class="presets">
+          <button class="preset" type="button" data-preset="open" data-tip="No contest lean. Best projection under the salary cap. No stack, no ownership target, and the global max starts at 100%.">Normal<small>No lean</small></button>
           <button class="preset" type="button" data-preset="cash" data-tip="One cash lineup. Spend to $400 left, play the chalk, and keep a light point-guard teammate.">Cash Floor<small>SE · 50/50</small></button>
           <button class="preset" type="button" data-preset="chalk" data-tip="Eat the chalk. One lineup for a 50/50 or head-to-head. Ownership lean stays on the popular values.">Eat the Chalk<small>SE · H2H</small></button>
           <button class="preset active" type="button" data-preset="gpp" data-tip="20-max default. One point guard plus a teammate, two to three from a team, and a nudge toward the higher total.">GPP Leverage<small>20-max</small></button>
@@ -389,6 +394,13 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
     <div class="card">
       <div class="card-header" onclick="this.parentElement.classList.toggle('collapsed')">Optimizer settings <span class="chev">▾</span></div>
       <div class="card-body">
+        <div class="global-max">
+          <div>
+            <b>Global max exposure</b>
+            <p id="globalMaxNote">Caps every player except locks. Core, high, mid, low, and a max typed on one player can only go lower than this.</p>
+          </div>
+          <label>%<input type="number" id="maxExposure" value="35" min="1" max="100"></label>
+        </div>
         <div class="row">
           <label>Lineups<input type="number" id="numLineups" value="20" min="1" max="150"></label>
           <label>Min salary<input type="number" id="minSalary" value="49600" step="100"></label>
@@ -396,7 +408,6 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
           <label>Min FP<input type="number" id="minFp" value="0" min="0" max="90" step="0.5"></label>
           <label>Max left<input type="number" id="maxLeft" value="400" step="100" title="Lineups that leave more than this are rebuilt."></label>
           <label>Randomness %<input type="number" id="randomness" value="15" min="0" max="50"></label>
-          <label>Max exposure %<input type="number" id="maxExposure" value="35" min="1" max="100"></label>
           <label>Leverage<input type="number" id="leverage" value="35" min="0" max="100"></label>
           <label>Min unique<input type="number" id="minUnique" value="2" min="0" max="6"></label>
           <label>Max from one team<input type="number" id="maxTeam" value="3" min="2" max="6"></label>
@@ -946,6 +957,9 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
       }
       if (n10000 >= 2 && p.salary >= 10000) return false;
       if (n8500 >= 3 && p.salary >= 8500) return false;
+      if (["gpp", "milly", "unique", "mini", "cash", "chalk"].includes(settings.shape)) {
+        if (n9000 >= 2 && p.salary >= 8000) return false;
+      }
       return true;
     });
     if (studFiltered.length) options = studFiltered;
@@ -975,6 +989,11 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
     const maxThis = 50000 - spent - remainAfter * floorEach;
     const underMax = options.filter((p) => p.salary <= maxThis);
     if (underMax.length) options = underMax;
+
+    if (!isShowdown && settings.shape !== "stars") {
+      const playable = options.filter((p) => (p.proj || 0) >= 16 || p.use === "lock");
+      if (playable.length) options = playable;
+    }
 
     if (remainAfter === 0) {
       const lo = Math.max(0, minSalary - spent);
@@ -1041,6 +1060,7 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
           if (next < band[0]) score -= (band[0] - next) * 0.12;
         }
         if (p.exp === "limit") score -= 7;
+        if (!isShowdown && settings.shape !== "stars" && (p.proj || 0) < 18) score -= (18 - p.proj) * 1.1;
         return { p, score };
       })
       .sort((a, b) => b.score - a.score);
@@ -1070,7 +1090,8 @@ function bestClosingPair(optsA, optsB, spent, settings, roster) {
       if (a.team === b.team && (tc[a.team] || 0) + 2 > cap && a.use !== "lock") continue;
       const proj = (a.proj || 0) + (b.proj || 0);
       const leftover = left - sum;
-      const rank = proj * 10 - Math.max(0, leftover - maxLeft) * 0.6 - (leftover > 200 ? leftover * 0.004 : 0);
+      const thin = (p) => Math.max(0, 16 - (p.proj || 0)) * 6;
+      const rank = proj * 10 - thin(a) - thin(b) - Math.max(0, leftover - maxLeft) * 0.6 - (leftover > 200 ? leftover * 0.004 : 0);
       if (!best || rank > best.rank) best = { a, b, rank };
     }
   }
@@ -1212,6 +1233,57 @@ function improveRoster(roster, cands, settings, groups, pinned) {
     }
     if (!best || best.rank <= 0.5) break;
     roster = best.apply();
+  }
+  return roster;
+}
+
+function rebalancePunts(roster, cands, settings, groups, pinned) {
+  if (settings.isShowdown || settings.shape === "stars") return roster;
+  const locked = (slot) => {
+    const cur = roster[slot];
+    return !cur || cur.use === "lock" || (pinned && pinned.has(cur.name));
+  };
+  const roomFor = (p) => !settings.used || !overExp(p, settings.used, settings.num, settings.globalMax, false);
+  const legal = (trial) => {
+    const sal = salaryOf(trial);
+    if (sal > 50000 || sal < (Number(settings.minSalary) || 0)) return false;
+    const names = Object.values(trial).map((p) => p.name);
+    if (new Set(names).size !== names.length) return false;
+    const before = teamCounts(roster);
+    const after = teamCounts(trial);
+    const cap = settings.teamCap || 8;
+    if (Object.entries(after).some(([t, n]) => n > Math.max(cap, before[t] || 0))) return false;
+    if (groupsState(trial, groups).length) return false;
+    if (constructionIssue(trial, settings)) return false;
+    return true;
+  };
+  const slots = Object.keys(roster);
+  for (let pass = 0; pass < 3; pass++) {
+    const weak = slots.filter((s) => roster[s] && roster[s].proj < 16 && !locked(s));
+    if (!weak.length) break;
+    const donors = slots.filter((s) => !locked(s) && roster[s].salary >= 7000);
+    let best = null;
+    for (const w of weak) {
+      for (const d of donors) {
+        if (w === d) continue;
+        const up = swapPool(roster, w, cands, settings).filter((p) => roomFor(p) && p.proj >= roster[w].proj + 4).sort((a, b) => b.proj - a.proj).slice(0, 8);
+        const down = swapPool(roster, d, cands, settings).filter((p) => roomFor(p) && p.proj >= roster[d].proj - 7).sort((a, b) => b.proj - a.proj).slice(0, 8);
+        for (const pa of up) {
+          for (const pb of down) {
+            if (pa.name === pb.name || pa.name === roster[d].name) continue;
+            const extra = pa.salary + pb.salary - roster[w].salary - roster[d].salary;
+            if (salaryOf(roster) + extra > 50000) continue;
+            const gain = pa.proj + pb.proj - roster[w].proj - roster[d].proj;
+            if (gain < 2) continue;
+            const trial = { ...roster, [w]: pa, [d]: pb };
+            if (!legal(trial)) continue;
+            if (!best || gain > best.gain) best = { trial, gain };
+          }
+        }
+      }
+    }
+    if (!best) break;
+    roster = best.trial;
   }
   return roster;
 }
@@ -1605,6 +1677,7 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
       const pinned = new Set(required.map((p) => p.name));
       roster = fitSalary(roster, active, runSettings, gUse, pinned);
       roster = improveRoster(roster, active, runSettings, gUse, pinned);
+      roster = rebalancePunts(roster, active, runSettings, gUse, pinned);
       const sal = salaryOf(roster);
       if (sal > 50000) {
         lastReason = "Lineup went over $50,000.";
@@ -1635,6 +1708,14 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
       if (players.some((p) => p.proj <= 0 && p.use !== "lock")) {
         lastReason = "Refusing to fill a spot with a zero-projection player.";
         continue;
+      }
+      if (!settings.isShowdown && settings.shape !== "stars" && attempt < 30) {
+        const lows = players.filter((p) => p.use !== "lock" && p.proj < 16);
+        const awful = players.some((p) => p.use !== "lock" && p.proj < 12);
+        if (awful || lows.length >= 2) {
+          lastReason = "That build needed two players under 16 projected points. Rebuilding around fewer stars.";
+          continue;
+        }
       }
       // Re-check team cap on the strict setting. Allow +1 only as a noted fallback.
       const tc = teamCounts(roster);
@@ -4538,8 +4619,9 @@ document.getElementById("applyTags").onclick = () => {
 function syncPresets() {
   const sd = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
   document.querySelectorAll(".preset").forEach((b) => {
+    const either = b.dataset.preset === "open";
     const showdownPreset = (b.dataset.preset || "").startsWith("sd_");
-    b.hidden = sd ? !showdownPreset : showdownPreset;
+    b.hidden = either ? false : (sd ? !showdownPreset : showdownPreset);
   });
   const active = document.querySelector(".preset.active");
   if (active && !active.hidden) return;
@@ -4975,6 +5057,7 @@ function runSimulation() {
 }
 
 const PRESETS = {
+  open: { num: 20, rand: 5, maxE: 100, lev: 0, uniq: 1, stack: 0, bb: 0, ceil: 0, minSal: 49600, maxLeft: 400, team: 4, own: "off", split: "any", cpt: 0, tot: "off", note: "No contest lean. Spends to $400 left, no point-guard stack, no ownership target, and no game-total nudge. Locks, fades, and each player's max still apply. Global max starts at 100%." },
   cash: { num: 1, rand: 3, maxE: 100, lev: 0, uniq: 0, stack: 1, bb: 0, ceil: 0, minSal: 49600, maxLeft: 400, team: 3, own: "cash", split: "33", cpt: 1, tot: "off", note: "One cash lineup. Spend to $400 left, play the chalk, and keep a light point-guard teammate. Game total lean is off." },
   chalk: { num: 1, rand: 2, maxE: 100, lev: 0, uniq: 0, stack: 1, bb: 0, ceil: 0, minSal: 49700, maxLeft: 300, team: 3, own: "chalk", split: "33", cpt: 1, tot: "off", note: "Eat the chalk. Ownership lean stays on the popular values. Use this for a single 50/50 or head-to-head." },
   gpp: { num: 20, rand: 15, maxE: 35, lev: 35, uniq: 2, stack: 1, bb: 0, ceil: 18, minSal: 49600, maxLeft: 400, team: 3, own: "gpp", split: "42", cpt: 1, tot: "high", note: "20-max default. One point guard plus a teammate, two to three from a team, a 12–24% ownership lean, and a nudge toward the higher total. It spends to within $400 of the cap." },
@@ -5018,7 +5101,21 @@ document.querySelectorAll(".preset").forEach((b) => b.onclick = () => {
     note += " Switch to a showdown slate. The split stays off on Classic.";
   }
   document.getElementById("presetNote").textContent = note;
+  paintGlobalMax();
 });
+function paintGlobalMax() {
+  const note = document.getElementById("globalMaxNote");
+  const box = document.getElementById("maxExposure");
+  const num = document.getElementById("numLineups");
+  if (!note || !box || !num) return;
+  const n = parseInt(num.value, 10) || 0;
+  const pct = parseFloat(box.value);
+  const uses = n > 0 && pct > 0 && pct < 100 ? ` That is about ${Math.max(1, Math.ceil((pct / 100) * n))} of ${n} lineups.` : pct >= 100 ? " At 100% the cap is off." : "";
+  note.textContent = "Caps every player except locks. Core, high, mid, low, and a max typed on one player can only go lower than this." + uses;
+}
+document.getElementById("maxExposure").oninput = paintGlobalMax;
+document.getElementById("numLineups").oninput = paintGlobalMax;
+paintGlobalMax();
 
 document.getElementById("themeBtn").onclick = () => {
   const html = document.documentElement;

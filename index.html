@@ -231,9 +231,24 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 .gp-sides { display:grid; grid-template-columns:1fr 1fr; gap:0.65rem; }
 @media (max-width:720px) { .gp-sides { grid-template-columns:1fr; } }
 .gp-side { border:1px solid var(--border); border-radius:12px; padding:0.55rem 0.6rem 0.7rem; background:var(--card2); }
-.lu-banner { display:flex; justify-content:space-between; align-items:center; background:#16325f; color:#fff; border-radius:8px; padding:0.5rem 0.65rem; margin-bottom:0.35rem; }
+.lu-banner { display:flex; justify-content:space-between; align-items:center; background:#16325f; color:#fff; border-radius:8px; padding:0.55rem 0.7rem; margin-bottom:0.35rem; }
 .lu-banner b { font-size:1.05rem; letter-spacing:0.04em; }
-.lu-banner span { font-size:0.72rem; color:#c9d4ee; }
+.lu-banner .lu-sub { font-size:0.72rem; color:#c9d4ee; margin-top:0.12rem; }
+.gp-impl { text-align:right; font-size:1.7rem; font-weight:800; line-height:1; color:#fff; }
+.gp-impl span { display:block; font-size:0.62rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#c9d4ee; margin-top:0.16rem; }
+.gp-impl.impl-hot { color:#7dd3fc; }
+.gp-impl.impl-ok { color:#6ee7b7; }
+.gp-impl.impl-low { color:#fcd34d; }
+.gp-callouts { margin:0 0 0.75rem; }
+.gp-dvp-board { display:grid; grid-template-columns:1fr 1fr; gap:0.65rem; margin-top:0.45rem; }
+@media (max-width:720px) { .gp-dvp-board { grid-template-columns:1fr; } }
+.gp-dvp-table { width:100%; border-collapse:collapse; font-size:0.78rem; }
+.gp-dvp-table th { text-align:left; color:var(--muted); font-size:0.65rem; letter-spacing:0.05em; text-transform:uppercase; padding:0.28rem 0.3rem; }
+.gp-dvp-table td { padding:0.3rem; border-bottom:1px solid var(--border); }
+.dvp-pill { display:inline-block; min-width:2.1rem; text-align:center; font-weight:800; font-size:0.72rem; border-radius:999px; padding:0.08rem 0.38rem; }
+.dvp-pill.soft { background:#14532d; color:#86efac; }
+.dvp-pill.mid { background:#3d3420; color:#fde68a; }
+.dvp-pill.tough { background:#7f1d1d; color:#fecaca; }
 .exp-pill { display:flex; align-items:center; gap:0.35rem; font-size:0.72rem; font-weight:700; color:#fbbf24; margin:0.35rem 0 0.15rem; }
 .exp-pill i { width:8px; height:8px; border-radius:50%; background:#fbbf24; display:inline-block; }
 .lu-label { font-size:0.66rem; letter-spacing:0.07em; text-transform:uppercase; font-weight:700; color:var(--muted); margin:0.6rem 0 0.15rem; }
@@ -343,7 +358,6 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
         <div class="row">
           <label>Slate<select id="slateSelect" aria-label="Slate"></select></label>
           <span class="note" id="slateNote" style="flex:1 1 280px;"></span>
-          <label>Search<input type="text" id="search" placeholder="name or team" style="width:150px;"></label>
           <label class="check"><input type="checkbox" id="includeQ" checked> Include day-to-day</label>
           <label class="check"><input type="checkbox" id="excludeOut" checked> Hide OUT / D / IR</label>
         </div>
@@ -463,6 +477,9 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
         <div class="note" style="margin-bottom:0.45rem;">The exposure choice sits on the matchup line. Hover it to see what that tag does. Play follows the global max. Lock is every lineup. Apply sheet tags writes the cheat-sheet tag onto each player and leaves locks alone. Own est is a model for this slate, not a contest field. It gives more of the field to starters with minutes in the higher total, and it adds up to a full lineup.</div>
         <div class="chip-row" id="posChips"></div>
         <div class="chip-row" id="teamChips"></div>
+        <div class="row" style="margin:0.15rem 0 0.4rem;">
+          <label>Search<input type="text" id="search" placeholder="name or team" style="width:200px;"></label>
+        </div>
         <div class="corebar" id="coreBar"></div>
         <div class="pool-wrap"><table id="poolTable"><thead><tr>
           <th data-psort="name">Player</th><th data-psort="pos">Pos</th><th data-psort="salary">Salary</th><th data-psort="proj">Proj</th><th data-psort="min">Proj min</th><th data-psort="value">Value</th><th data-psort="ou">O/U</th><th data-psort="spread">Spr</th><th data-psort="own">Own est</th><th>Min %</th><th>Max %</th>
@@ -1717,6 +1734,7 @@ let teamFilter = "ALL";
 let poolSort = { key: "proj", dir: -1 };
 let luSort = { key: "proj", dir: -1 };
 let lastVars = [];
+let varPosFilter = "ALL";
 let ownFromFeed = false;
 let lineupChecked = new Set();
 let expPos = "";
@@ -2965,9 +2983,14 @@ function renderGamePreview() {
     const side = g.players.filter((p) => p.team === tm);
     const env = sideEnv(side);
     const board = teamBoard(side);
-    const implCls = env.implied >= 116 ? "high-value" : env.implied && env.implied < 110 ? "low-value" : "";
+    const implN = Number(env.implied) || 0;
+    const implCls = implN >= 118 ? "impl-hot" : implN >= 112 ? "impl-ok" : implN ? "impl-low" : "";
+    const sprTxt = env.spr ? (env.spr > 0 ? "+" : "") + env.spr : "";
     return `<div class="gp-side">
-      <div class="lu-banner"><b>${esc(tm)}</b><span class="${implCls}">${env.implied ? env.implied.toFixed(1) + " implied" : ""}${env.spr ? " · " + (env.spr > 0 ? "+" : "") + env.spr : ""}</span></div>
+      <div class="lu-banner">
+        <div><b>${esc(tm)}</b><div class="lu-sub">${sprTxt}</div></div>
+        <div class="gp-impl ${implCls}">${implN ? implN.toFixed(1) : "—"}<span>implied</span></div>
+      </div>
       <div class="exp-pill"><i></i> ${board.projected ? "Projected starting five" : "Expected lineup"}</div>
       ${board.projected ? "" : `<div class="lu-empty">No projected five for this team yet. Spots are filled from the starter tag, then minutes.</div>`}
       ${board.startRows}
@@ -2984,9 +3007,46 @@ function renderGamePreview() {
     dvpSeen.add(p.name);
     dvpPlayers.push(p);
   });
-  const hasDvp = dvpPlayers.some((p) => p.dvpRank && p.dvpRank !== "0");
+  const rankOf = (p) => {
+    const n = parseInt(String(p.dvpRank || "").replace(/[^\d]/g, ""), 10);
+    return Number.isFinite(n) && n > 0 ? n : 0;
+  };
+  const pill = (rank) => {
+    if (!rank) return `<span class="cs-sub">—</span>`;
+    const cls = rank <= 10 ? "soft" : rank >= 21 ? "tough" : "mid";
+    return `<span class="dvp-pill ${cls}">#${rank}</span>`;
+  };
+  const minutesOk = (p) => (p.minutes || 0) >= 18 || p.starter === "Yes";
+  const named = (list) => list.length
+    ? list.map((p) => `${nameBtn(p.name)} ${esc(rosterPos(p))} #${rankOf(p)}`).join(" · ")
+    : `<span class="cs-sub">None with 18+ minutes.</span>`;
+  const good = dvpPlayers.filter((p) => minutesOk(p) && rankOf(p) && rankOf(p) <= 10).sort((a, b) => rankOf(a) - rankOf(b));
+  const tough = dvpPlayers.filter((p) => minutesOk(p) && rankOf(p) >= 21).sort((a, b) => rankOf(b) - rankOf(a));
+  const posOrder = ["PG", "SG", "SF", "PF", "C"];
+  const dvpCards = teams.map((tm) => {
+    const opp = teams.find((t) => t !== tm) || "";
+    const side = dvpPlayers.filter((p) => p.team === tm);
+    const rows = posOrder.map((pos) => {
+      const atPos = side.filter((p) => posToken(p) === pos || primaryPos(p) === pos);
+      const ranked = atPos.filter((p) => rankOf(p)).sort((a, b) => (b.minutes || 0) - (a.minutes || 0));
+      const lead = ranked[0];
+      const rank = lead ? rankOf(lead) : 0;
+      const fp = lead && lead.dvpProj ? lead.dvpProj.toFixed(1) : "—";
+      const who = atPos.filter(minutesOk).sort((a, b) => (b.minutes || 0) - (a.minutes || 0)).slice(0, 3).map((p) => p.name.split(" ").slice(-1)[0]).join(", ");
+      return `<tr><td>${pos}</td><td>${pill(rank)}</td><td>${fp}</td><td class="cs-sub">${esc(who || "—")}</td></tr>`;
+    }).join("");
+    return `<div>
+      <div class="lu-label">${esc(tm)} offense vs ${esc(opp)} DVP</div>
+      <p class="note" style="margin:0 0 0.3rem;">What ${esc(opp)} allow to the spot. Rank 1 is the most fantasy points allowed.</p>
+      <table class="gp-dvp-table"><thead><tr><th>Pos</th><th>Rank</th><th>FP allowed</th><th>18+ min</th></tr></thead><tbody>${rows}</tbody></table>
+    </div>`;
+  }).join("");
+  const hasDvp = dvpPlayers.some((p) => rankOf(p));
   const dvpBody = hasDvp
-    ? `<div class="lu-label">Easier matchups first. Rank is from the sheet.</div>` + dvpPlayers.filter((p) => p.dvpRank && p.dvpRank !== "0").sort((a, b) => (parseInt(a.dvpRank, 10) || 99) - (parseInt(b.dvpRank, 10) || 99)).map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} <span class="cs-sub">${esc(p.team)} · ${esc(rosterPos(p))} vs ${esc(p.opp || "")}</span></span><span>DVP ${esc(p.dvpRank)}${p.dvpProj ? " · " + p.dvpProj.toFixed(1) + " allowed" : ""}</span></div>`).join("")
+    ? `<p class="note">Good is rank 1–10. Tough is 21–30. The names are only players at 18 minutes or a projected starter.</p>
+       <p style="margin:0.2rem 0;"><strong>Good matchup</strong> — ${named(good)}</p>
+       <p style="margin:0.2rem 0 0.45rem;"><strong>Tough matchup</strong> — ${named(tough)}</p>
+       <div class="gp-dvp-board">${dvpCards}</div>`
     : `<div class="lu-empty">No DVP rank in the feed for this game.</div>`;
   const streakRows = [];
   const streakSeen = new Set();
@@ -3021,10 +3081,12 @@ function renderGamePreview() {
         <p class="note" style="margin:0;">${g.start ? esc(g.start) + " · " : ""}${ou ? "O/U " + ou.toFixed(1) : "No total"}${fav ? " · " + esc(fav.team) + " " + sprText(fav) : ""}. ${teams.some((tm) => (projectedStarters.get(canonTeam(tm)) || []).length >= 5) ? "Projected five is the RotoWire expected lineup" + (startersSource ? " (" + esc(startersSource) + ")" : "") + "." : "No projected five loaded, so spots fall back to the starter tag."}</p>
       </div>
     </div>
-    <div class="gp-sides">${sides}</div>
-    ${sec("DVP", `<p class="note">Defense versus position from the slate file. A lower rank is the easier matchup. DVP proj is the points that defense has allowed to the spot.</p>${dvpBody}`, true)}
-    ${sec("Hot / cold", `<p class="note">Last 3 games against the game-log average. Hot is at least 12% and 4 points above. Cold is the same the other way. ${logSpan ? "Log span: " + esc(logSpan) + "." : "Game log is still loading."} Current-season games are used once a player has three of them.</p>${streakBody}`, true)}
+    <div class="gp-callouts">
+    ${sec("DVP", dvpBody, false)}
+    ${sec("Hot / cold", `<p class="note">Last 3 games against the game-log average. Hot is at least 12% and 4 points above. Cold is the same the other way. ${logSpan ? "Log span: " + esc(logSpan) + "." : "Game log is still loading."} Current-season games are used once a player has three of them.</p>${streakBody}`, false)}
     ${sec("Injury", `<p class="note">Questionable and out, plus the written note when the feed has one.</p>${injBody}`, false)}
+    </div>
+    <div class="gp-sides">${sides}</div>
     <div class="gp-actions"><button type="button" class="secondary mini game-focus" data-game="${esc(g.key)}" data-min="${sideMin}">Use ${sideMin} from this game</button></div>
   </div>`;
   bindNames(desk);
@@ -4984,3 +5046,4 @@ loadData();
 
 </body>
 </html>
+Grok finished responding

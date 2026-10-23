@@ -2889,7 +2889,7 @@ function teamBoard(players) {
   const row = (pos, p, extra) => {
     const streak = streakOf(p.name);
     const streakTag = streak && streak.label !== "Even" ? `<span class="tag ${streak.cls}" data-tip="Last 3 games ${streak.l3.toFixed(1)} DK vs log average ${streak.avg.toFixed(1)}.">${streak.label}</span>` : "";
-    return `<div class="lu-row ${extra || ""}"><span class="lu-pos">${esc(pos)}</span><span>${nameBtn(p.name)} ${injuryTag(p.injury)} ${streakTag}</span><span class="lu-min">${p.minutes > 0 ? p.minutes.toFixed(0) + " min" : ""}</span><span class="lu-min">${p.proj > 0 ? p.proj.toFixed(1) : ""}</span></div>`;
+    return `<div class="lu-row ${extra || ""}"><span class="lu-pos">${esc(pos)}</span><span>${nameBtn(p.name)} <span class="cs-sub">(${money(p.salary)})</span> ${injuryTag(p.injury)} ${streakTag}</span><span class="lu-min">${p.minutes > 0 ? p.minutes.toFixed(0) + " min" : ""}</span><span class="lu-min">${p.proj > 0 ? p.proj.toFixed(1) : ""}</span></div>`;
   };
   const startRows = order.map((pos) => {
     const s = starters.find((x) => x.pos === pos);
@@ -3108,24 +3108,34 @@ function renderGamePreview() {
   const dvpCards = teams.map((tm) => {
     const opp = teams.find((t) => t !== tm) || "";
     const side = dvpPlayers.filter((p) => p.team === tm);
+    const slotOf = (p) => {
+      const hit = (projectedStarters.get(canonTeam(tm)) || []).find((s) => samePlayer(s.name, p.name));
+      if (hit) return hit.pos;
+      const first = String(primaryPos(p) || "").split(/[/,]/)[0].trim().toUpperCase();
+      return ["PG", "SG", "SF", "PF", "C"].includes(first) ? first : posToken(p);
+    };
     const rows = posOrder.map((pos) => {
-      const atPos = side.filter((p) => posToken(p) === pos || primaryPos(p) === pos);
+      const atPos = side.filter((p) => slotOf(p) === pos);
       const ranked = atPos.filter((p) => rankOf(p)).sort((a, b) => (b.minutes || 0) - (a.minutes || 0));
-      const lead = ranked[0];
+      const starter = (projectedStarters.get(canonTeam(tm)) || []).find((s) => s.pos === pos);
+      const starterRow = starter && atPos.find((p) => samePlayer(p.name, starter.name));
+      const lead = starterRow || ranked[0];
       const rank = lead ? rankOf(lead) : 0;
       const fp = lead && lead.dvpProj ? lead.dvpProj.toFixed(1) : "—";
+      const fpts = lead && lead.proj > 0 ? lead.proj.toFixed(1) : "—";
+      const ppm = lead && lead.minutes > 0 && lead.proj > 0 ? (lead.proj / lead.minutes).toFixed(2) : "—";
       const who = atPos.filter(minutesOk).sort((a, b) => (b.minutes || 0) - (a.minutes || 0)).slice(0, 3).map((p) => p.name.split(" ").slice(-1)[0]).join(", ");
-      return `<tr><td>${pos}</td><td>${pill(rank)}</td><td>${fp}</td><td class="cs-sub">${esc(who || "—")}</td></tr>`;
+      return `<tr><td>${pos}</td><td>${pill(rank)}</td><td>${fp}</td><td>${fpts}</td><td>${ppm}</td><td class="cs-sub">${esc(who || "—")}</td></tr>`;
     }).join("");
     return `<div>
       <div class="lu-label">${esc(tm)} offense vs ${esc(opp)} DVP</div>
       <p class="note" style="margin:0 0 0.3rem;">What ${esc(opp)} allow to the spot. Rank 1 is the most fantasy points allowed.</p>
-      <table class="gp-dvp-table"><thead><tr><th>Pos</th><th>Rank</th><th>FP allowed</th><th>18+ min</th></tr></thead><tbody>${rows}</tbody></table>
+      <table class="gp-dvp-table"><thead><tr><th>Pos</th><th>Rank</th><th>FP allowed</th><th>FPTS</th><th>PPM</th><th>18+ min</th></tr></thead><tbody>${rows}</tbody></table>
     </div>`;
   }).join("");
   const hasDvp = dvpPlayers.some((p) => rankOf(p));
   const dvpBody = hasDvp
-    ? `<p class="note">Good is rank 1–10. Tough is 21–30. The names are only players at 18 minutes or a projected starter.</p>
+    ? `<p class="note">Good is rank 1–10. Tough is 21–30. The names are only players at 18 minutes or a projected starter. FPTS is that spot's projected points. PPM is those points per minute.</p>
        <p style="margin:0.2rem 0;"><strong>Good matchup</strong> — ${named(good)}</p>
        <p style="margin:0.2rem 0 0.45rem;"><strong>Tough matchup</strong> — ${named(tough)}</p>
        <div class="gp-dvp-board">${dvpCards}</div>`
@@ -3152,7 +3162,15 @@ function renderGamePreview() {
     inj.push(p);
   });
   inj.sort((a, b) => b.salary - a.salary);
-  const injBody = inj.length ? inj.map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} ${injuryTag(p.injury)} <span class="cs-sub">${money(p.salary)}</span></span><span>${esc((p.news || p.injuryFeed || "No written note.").slice(0, 160))}</span></div>`).join("") : `<div class="lu-empty">No injury note on this game.</div>`;
+  const injNote = (p) => esc((p.news || p.injuryFeed || "No written note.").slice(0, 160));
+  const injSide = (tm) => {
+    const side = inj.filter((p) => p.team === tm);
+    const rows = side.length
+      ? side.map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} ${injuryTag(p.injury)} <span class="cs-sub">${money(p.salary)}</span></span><span>${injNote(p)}</span></div>`).join("")
+      : `<div class="lu-empty">No injury note.</div>`;
+    return `<div><div class="lu-label">${esc(tm)}</div>${rows}</div>`;
+  };
+  const injBody = inj.length ? `<div class="gp-dvp-board">${teams.map(injSide).join("")}</div>` : `<div class="lu-empty">No injury note on this game.</div>`;
   const ou = g.ou;
   const fav = g.players.find((p) => p.fav);
   const sideMin = isShowdown ? 4 : 2;

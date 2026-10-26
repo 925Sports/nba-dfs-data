@@ -125,6 +125,22 @@ td { padding:0.38rem 0.45rem; border-bottom:1px solid var(--border); vertical-al
 .hand-slot .empty { color:var(--muted); }
 .hand-add, .hand-x { font-size:0.72rem; padding:0.15rem 0.4rem; }
 .var-pool { max-height:520px; }
+.var-pool-list { max-height:520px; overflow:auto; border:1px solid var(--border); border-radius:10px; background:var(--card2); }
+.var-item { display:flex; justify-content:space-between; gap:0.5rem; align-items:center; padding:0.45rem 0.6rem; border-bottom:1px solid var(--border); font-size:0.78rem; cursor:pointer; }
+.var-item:hover { background:rgba(71,198,200,0.1); }
+.var-item.in-base { opacity:0.45; pointer-events:none; }
+.var-item.over { color:#f87171; cursor:not-allowed; background:rgba(239,68,68,0.06); }
+.var-item .meta { color:var(--muted); font-size:0.7rem; }
+.var-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:0.4rem; margin:0.5rem 0; }
+.var-stats div { background:var(--card2); border:1px solid var(--border); border-radius:8px; padding:0.4rem 0.55rem; font-size:0.72rem; color:var(--muted); }
+.var-stats b { display:block; color:var(--text); font-size:0.95rem; }
+.pivot-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:0.4rem; margin:0.4rem 0; }
+.pivot-card { text-align:left; border:1px solid var(--border); background:var(--card2); border-radius:8px; padding:0.4rem 0.55rem; font-size:0.75rem; }
+.pivot-card.on { border-color:var(--aqua); box-shadow:inset 0 0 0 1px var(--aqua); }
+.pivot-list { max-height:220px; overflow:auto; border:1px solid var(--border); border-radius:10px; padding:0.35rem; background:var(--card2); margin:0.4rem 0; }
+.pivot-list label { display:flex; gap:0.4rem; align-items:center; padding:0.28rem 0.35rem; font-size:0.76rem; }
+.var-table td.swapped { background:rgba(71,198,200,0.16); font-weight:700; }
+.var-table { font-size:0.74rem; }
 .player-cell .who { align-items:flex-start; }
 .player-meta { min-width:0; display:flex; flex-direction:column; gap:0.12rem; }
 .player-meta .exp-sel { margin-top:0.15rem; }
@@ -705,43 +721,61 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
     </div>
   </div></div></div>
   <div id="tab-variations" style="display:none;"><div class="card"><div class="card-header">Lineup variations</div><div class="card-body">
-    <div class="note" style="margin-bottom:0.5rem;">Build the lineup by hand, the same way you would on DraftKings. Check Swap on the spots you want changed. The tool keeps everyone else and only replaces those spots. A name opens the player card.</div>
+    <div class="note" style="margin-bottom:0.5rem;">Build the base the way you would on DraftKings. Click a player on the left to fill the next open spot. Check Swap on the spots that can change, then give each of those spots its own pivot list. A spot with no list uses the salary tolerance. A name opens the player card.</div>
     <div class="var-build">
       <div>
+        <div class="subhead">Available players</div>
         <div class="row" style="margin-bottom:0.4rem;">
-          <label>Search<input type="text" id="varSearch" placeholder="Player search" style="width:160px;"></label>
-        </div>
-        <div class="chip-row" id="varPos"></div>
-        <div class="lab-wrap var-pool"><table id="varPool"><thead><tr><th>Pos</th><th>Player</th><th>Opp</th><th>Proj</th><th>Salary</th><th></th></tr></thead><tbody></tbody></table></div>
-      </div>
-      <div>
-        <div class="hand-line">
-          <div class="hand-top"><b>LINEUP</b><span id="varLeft">$50,000 left</span></div>
-          <div id="varSlots"></div>
-        </div>
-        <div class="row" style="margin-top:0.55rem;">
-          <label>Start from a generated lineup<select id="varBase" style="min-width:180px;"></select></label>
-          <button id="varLoad" class="secondary" type="button">Load it</button>
-          <button id="varClear" class="secondary" type="button">Clear</button>
-        </div>
-        <div class="row" style="margin-top:0.45rem;">
-          <label>How many of the checked spots change<input type="number" id="varSwaps" value="2" min="1" max="4" data-tip="Each variation changes this many of the spots you checked. The rest of the lineup stays."></label>
-          <label>Count<input type="number" id="varCount" value="8" min="1" max="30"></label>
-          <label>Rules
-            <select id="varRules">
-              <option value="strict" selected>Cap, team limit, spend</option>
-              <option value="cap">Cap only</option>
+          <label>Search<input type="text" id="varSearch" placeholder="Player search" style="width:150px;"></label>
+          <label>Sort
+            <select id="varSort">
+              <option value="fp">FP high–low</option>
+              <option value="salary">Salary high–low</option>
+              <option value="own">Own high–low</option>
             </select>
           </label>
         </div>
+        <div class="chip-row" id="varPos"></div>
+        <div id="varPoolList" class="var-pool-list"></div>
+      </div>
+      <div>
+        <div class="hand-line">
+          <div class="hand-top"><b>BASE LINEUP</b><span id="varCountBadge">0/8</span><span id="varLeft">$50,000 left</span></div>
+          <div id="varSlots"></div>
+        </div>
+        <div class="var-stats" id="varStats"></div>
         <div class="row" style="margin-top:0.45rem;">
-          <button id="genVars" class="primary" type="button">Build variations</button>
-          <button id="keepVars" class="secondary" type="button">Replace the set with these</button>
+          <label>Start from a generated lineup<select id="varBase" style="min-width:170px;"></select></label>
+          <button id="varLoad" class="secondary" type="button">Load it</button>
+          <button id="varClear" class="secondary" type="button">Clear</button>
+          <button id="varRandom" class="secondary" type="button">Random fill</button>
         </div>
       </div>
     </div>
+    <div class="subhead" style="margin-top:0.8rem;">Swap-eligible pivots</div>
+    <div class="note" style="margin-bottom:0.4rem;">Click a base player, then check who that spot can become. Brunson can go to Maxey and Garland. Siakam can go to his own list. A spot with no checks falls back to the salary tolerance.</div>
+    <div id="pivotCards" class="pivot-cards"></div>
+    <label class="check"><input type="checkbox" id="pivotOnly" checked> Only use configured pivots when a spot has them</label>
+    <div id="pivotList" class="pivot-list" style="display:none;"></div>
+    <div id="pivotSummary" class="note"></div>
+    <div class="row" style="margin-top:0.55rem;">
+      <label>Variations<input type="number" id="varCount" value="12" min="1" max="80"></label>
+      <label>Swaps per variation<input type="number" id="varSwaps" value="2" min="1" max="4" data-tip="Each variation changes this many of the spots you checked. The rest of the lineup stays."></label>
+      <label>Salary tolerance ±<input type="number" id="varTol" value="2000" min="0" max="8000" step="100" style="width:88px;"></label>
+      <label>Rules
+        <select id="varRules">
+          <option value="strict" selected>Cap, team limit, spend</option>
+          <option value="cap">Cap only</option>
+        </select>
+      </label>
+    </div>
+    <div class="row" style="margin-top:0.45rem;">
+      <button id="genVars" class="primary" type="button">Build variations</button>
+      <button id="keepVars" class="secondary" type="button">Replace the set with these</button>
+      <button id="varCsv" class="secondary" type="button">Download these</button>
+    </div>
     <div id="varStatus" class="note" style="margin:0.55rem 0 0.4rem;"></div>
-    <div id="varBoard" class="var-board"></div>
+    <div id="varBoard"></div>
     <div id="varList"></div>
   </div></div></div>
 </div>
@@ -1853,6 +1887,8 @@ let simChecked = new Set();
 let simSort = { key: "p90", dir: -1 };
 let handRoster = {};
 let handSwap = new Set();
+let handPivots = {};
+let pivotSlot = "";
 let projectedStarters = new Map();
 let startersSource = "";
 let posByName = new Map();
@@ -2365,6 +2401,8 @@ function loadSlate(role) {
   lineups = [];
   handRoster = {};
   handSwap = new Set();
+  handPivots = {};
+  pivotSlot = "";
   posFilter = "ALL";
   teamFilter = "ALL";
   pool = allRows.filter((p) => p.slate === role).map((p) => ({ ...p }));
@@ -4626,10 +4664,14 @@ function renderVariations() {
     return;
   }
   const swaps = Math.max(1, Math.min(marked.length, parseInt(document.getElementById("varSwaps").value, 10) || marked.length));
-  const count = Math.max(1, Math.min(30, parseInt(document.getElementById("varCount").value, 10) || 8));
+  const count = Math.max(1, Math.min(80, parseInt(document.getElementById("varCount").value, 10) || 12));
   const strict = document.getElementById("varRules").value !== "cap";
   const settings = currentSettings();
   const baseNames = new Set(filled.map((p) => p.name));
+  const baseBySlot = {};
+  keys.forEach((k) => { baseBySlot[k] = handRoster[k]; });
+  const tol = Math.max(0, parseInt(document.getElementById("varTol").value, 10) || 2000);
+  const pivotOnly = document.getElementById("pivotOnly").checked;
   const vars = [];
   const rejected = { cap: 0, floor: 0, team: 0, same: 0, zero: 0 };
   let tries = 0;
@@ -4642,9 +4684,15 @@ function renderVariations() {
     order.forEach((slot) => {
       const names = new Set(Object.values(roster).map((p) => p && p.name));
       const cur = roster[slot];
-      let opts = pool.filter((p) => passesInjury(p) && p.use !== "fade" && p.proj > 0 && !p.phantom && !names.has(p.name) && canPlay(p, slot, isShowdown) && Math.abs(p.salary - cur.salary) <= 2000 && p.name !== cur.name);
+      const pivots = handPivots[slot] || new Set();
+      let opts = pool.filter((p) => {
+        if (!passesInjury(p) || p.use === "fade" || p.proj <= 0 || p.phantom || names.has(p.name) || p.name === cur.name) return false;
+        if (!canPlay(p, slot, isShowdown)) return false;
+        if (pivotOnly && pivots.size) return pivots.has(p.id);
+        return Math.abs(p.salary - cur.salary) <= tol;
+      });
       opts.sort((a, b) => b.proj - a.proj);
-      if (opts.length > 8) opts = opts.slice(0, 8);
+      if (!(pivotOnly && pivots.size) && opts.length > 10) opts = opts.slice(0, 10);
       if (!opts.length) return;
       roster[slot] = opts[Math.floor(Math.random() * opts.length)];
       changed.add(slot);
@@ -4661,25 +4709,28 @@ function renderVariations() {
     if (legalWhy) { rejected.zero += 1; continue; }
     const sig = players.map((p) => p.name).sort().join("|");
     if (vars.some((v) => v.sig === sig)) { rejected.same += 1; continue; }
-    vars.push({ slots: roster, players, proj: players.reduce((s, p) => s + p.proj, 0), salary, own: players.reduce((s, p) => s + (p.own || 0), 0), changed, sig });
+    vars.push({ slots: roster, players, proj: players.reduce((s, p) => s + p.proj, 0), salary, own: players.reduce((s, p) => s + (p.own || 0), 0), changed, sig, from: baseBySlot });
   }
   lastVars = vars;
-  const board = document.getElementById("varBoard");
-  board.innerHTML = "";
-  const list = document.getElementById("varList");
-  list.innerHTML = vars.map((lu, i) => {
-    const slots = keys.map((k, n) => {
+  document.getElementById("varBoard").innerHTML = "";
+  const head = labels.map((lab) => `<th>${esc(lab)}</th>`).join("");
+  const body = vars.map((lu, i) => {
+    const cells = keys.map((k) => {
       const p = lu.slots[k];
       const swap = lu.changed.has(k);
-      return `<button type="button" class="dk-slot ${swap ? "swap" : ""}" ${p ? `data-player="${esc(p.name)}"` : ""}><span class="pos">${labels[n]}</span><span class="who">${p ? esc(p.name) : "—"}</span><span class="cs-sub">${p ? money(p.salary) + " · " + p.proj.toFixed(1) : ""}</span></button>`;
+      const was = lu.from[k];
+      return `<td class="${swap ? "swapped" : ""}">${p ? nameBtn(p.name) : "—"}${swap && was ? `<div class="cs-sub">was ${esc(was.name)}</div>` : ""}</td>`;
     }).join("");
-    return `<div class="var-card"><div class="top"><span>${i + 1}. ${lu.changed.size} swap${lu.changed.size === 1 ? "" : "s"}</span><span>${lu.proj.toFixed(1)} FP · ${money(lu.salary)} · ${money(50000 - lu.salary)} left</span></div><div class="var-board">${slots}</div></div>`;
-  }).join("") || `<div class="note">No legal variation from those spots.</div>`;
-  bindNames(list);
+    return `<tr><td>${i + 1}</td>${cells}<td>${money(lu.salary)}</td><td><b>${lu.proj.toFixed(1)}</b></td><td>${Math.round(lu.own)}%</td><td>${money(50000 - lu.salary)}</td></tr>`;
+  }).join("");
+  document.getElementById("varList").innerHTML = vars.length
+    ? `<div class="lab-wrap"><table class="var-table"><thead><tr><th>#</th>${head}<th>Salary</th><th>FP</th><th>Own</th><th>Left</th></tr></thead><tbody>${body}</tbody></table></div>`
+    : "";
+  bindNames(document.getElementById("varList"));
   const drops = Object.entries(rejected).filter(([, n]) => n > 0).map(([k, n]) => `${n} ${k}`).join(", ");
   status.textContent = vars.length
     ? `${vars.length} variations. Highlighted spots are the ones that changed. A name opens the player card.${drops ? " Rejected: " + drops + "." : ""}`
-    : `No legal variation. ${drops || "Those spots had no different player inside $2,000."}`;
+    : `No legal variation. ${drops || "Those spots had no different player inside the tolerance, or no pivot was checked."}`;
 }
 
 function handKeys() {
@@ -4690,27 +4741,86 @@ function handLabels() {
     ? ["CPT", "UTIL", "UTIL", "UTIL", "UTIL", "UTIL"]
     : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
 }
+function varCandidates(isShowdown) {
+  const seen = new Set();
+  return pool.filter((p) => {
+    if (p.pos === "CPT" && !isShowdown) return false;
+    if (isShowdown && p.pos !== "CPT" && p.pos !== "UTIL") return false;
+    if (!isShowdown && (p.pos === "CPT" || p.pos === "UTIL")) return false;
+    if (p.proj <= 0 || p.phantom || isOutStatus(p.injury)) return false;
+    if (seen.has(p.name)) return false;
+    seen.add(p.name);
+    return true;
+  });
+}
+function addToHand(p, keys, isShowdown) {
+  const names = new Set(Object.values(handRoster).filter(Boolean).map((x) => x.name));
+  if (names.has(p.name)) return;
+  const salary = Object.values(handRoster).reduce((s, x) => s + (x ? x.salary : 0), 0);
+  if (p.salary > 50000 - salary) {
+    document.getElementById("varStatus").textContent = `${p.name} is over the remaining salary.`;
+    return;
+  }
+  const order = keys.slice();
+  if (varPosFilter !== "ALL") {
+    const prefer = keys.filter((k) => (varPosFilter === "UTIL" ? k.startsWith("U") || k === "UTIL" : k === varPosFilter));
+    order.sort((a, b) => (prefer.includes(a) ? 0 : 1) - (prefer.includes(b) ? 0 : 1));
+  }
+  const slot = order.find((k) => !handRoster[k] && canPlay(p, k, isShowdown));
+  if (!slot) {
+    document.getElementById("varStatus").textContent = `${p.name} has no open spot.`;
+    return;
+  }
+  handRoster[slot] = p;
+  document.getElementById("varStatus").textContent = "";
+  renderHand();
+}
+function randomFillHand() {
+  const keys = handKeys();
+  const isShowdown = keys[0] === "CPT";
+  keys.forEach((k) => {
+    if (handRoster[k]) return;
+    const names = new Set(Object.values(handRoster).filter(Boolean).map((p) => p.name));
+    const salary = Object.values(handRoster).reduce((s, p) => s + (p ? p.salary : 0), 0);
+    const open = keys.filter((x) => !handRoster[x]).length;
+    const room = 50000 - salary;
+    const budget = open > 1 ? room - 3200 * (open - 1) : room;
+    const cands = varCandidates(isShowdown).filter((p) => !names.has(p.name) && canPlay(p, k, isShowdown) && p.salary <= room && p.salary <= Math.max(budget, 3500));
+    cands.sort((a, b) => b.proj - a.proj);
+    if (!cands.length) return;
+    handRoster[k] = cands[Math.floor(Math.random() * Math.min(6, cands.length))];
+  });
+  renderHand();
+}
 function renderHand() {
   const slots = document.getElementById("varSlots");
-  const poolBody = document.querySelector("#varPool tbody");
-  if (!slots || !poolBody) return;
+  const listEl = document.getElementById("varPoolList");
+  if (!slots || !listEl) return;
   const keys = handKeys();
   const labels = handLabels();
   const isShowdown = keys[0] === "CPT";
   const used = new Set(Object.values(handRoster).filter(Boolean).map((p) => p.name));
   const salary = Object.values(handRoster).reduce((s, p) => s + (p ? p.salary : 0), 0);
+  const proj = Object.values(handRoster).reduce((s, p) => s + (p ? p.proj : 0), 0);
   const open = keys.filter((k) => !handRoster[k]).length;
   const left = 50000 - salary;
+  const badge = document.getElementById("varCountBadge");
+  if (badge) badge.textContent = `${keys.length - open}/${keys.length}`;
   const leftEl = document.getElementById("varLeft");
-  if (leftEl) leftEl.textContent = open ? `${money(left)} left · ${money(Math.round(left / open))} / open spot` : `${money(left)} left · ${Object.values(handRoster).reduce((s, p) => s + (p ? p.proj : 0), 0).toFixed(1)} FP`;
+  if (leftEl) leftEl.textContent = open ? `${money(left)} left` : `${money(left)} left`;
+  const stats = document.getElementById("varStats");
+  if (stats) {
+    stats.innerHTML = `<div>Salary<b>${money(salary)}</b></div><div>Avg left / open<b>${open ? money(Math.round(left / open)) : money(left)}</b></div><div>Proj FP<b>${proj.toFixed(1)}</b></div>`;
+  }
   slots.innerHTML = keys.map((k, i) => {
     const p = handRoster[k];
+    const pivots = (handPivots[k] || new Set()).size;
     return `<div class="hand-slot">
       <span class="pos">${labels[i]}</span>
       <span>${p ? `${nameBtn(p.name)} <span class="cs-sub">${esc(p.team)} vs ${esc(p.opp)}</span>` : `<span class="empty">Empty</span>`}</span>
       <span>${p ? p.proj.toFixed(1) : ""}</span>
       <span>${p ? money(p.salary) : ""}</span>
-      <span>${p ? `<label class="check" data-tip="This spot is allowed to change. The rest of the lineup stays."><input type="checkbox" class="hand-swap" data-slot="${k}" ${handSwap.has(k) ? "checked" : ""}> Swap</label> <button type="button" class="secondary hand-x" data-slot="${k}">×</button>` : ""}</span>
+      <span>${p ? `<label class="check" data-tip="This spot is allowed to change. The rest of the lineup stays."><input type="checkbox" class="hand-swap" data-slot="${k}" ${handSwap.has(k) ? "checked" : ""}> Swap</label>${pivots ? ` <span class="cs-sub">${pivots} pivots</span>` : ""} <button type="button" class="secondary hand-x" data-slot="${k}">×</button>` : ""}</span>
     </div>`;
   }).join("");
   const chips = document.getElementById("varPos");
@@ -4718,32 +4828,59 @@ function renderHand() {
   if (!chipKeys.includes(varPosFilter)) varPosFilter = "ALL";
   chips.innerHTML = chipKeys.map((k) => `<button type="button" class="pchip ${varPosFilter === k ? "on" : ""}" data-pos="${k}">${k === "ALL" ? "ALL" : k}</button>`).join("");
   const q = (document.getElementById("varSearch").value || "").toLowerCase();
-  const seen = new Set();
-  let list = pool.filter((p) => {
-    if (p.pos === "CPT" && !isShowdown) return false;
-    if (isShowdown && p.pos !== "CPT" && p.pos !== "UTIL") return false;
-    if (!isShowdown && (p.pos === "CPT" || p.pos === "UTIL")) return false;
-    if (p.proj <= 0 || p.phantom || isOutStatus(p.injury)) return false;
-    if (seen.has(p.name)) return false;
-    seen.add(p.name);
+  const sort = (document.getElementById("varSort") || {}).value || "fp";
+  let list = varCandidates(isShowdown).filter((p) => {
     if (q && !(p.name.toLowerCase().includes(q) || p.team.toLowerCase().includes(q))) return false;
     if (varPosFilter === "ALL") return true;
     if (varPosFilter === "UTIL") return isShowdown ? p.pos === "UTIL" : canPlay(p, "UTIL", false);
     return canPlay(p, varPosFilter, isShowdown) || p.pos === varPosFilter;
-  }).sort((a, b) => b.proj - a.proj).slice(0, 80);
-  poolBody.innerHTML = list.map((p) => `<tr>
-    <td>${esc(rosterPos(p))}</td>
-    <td>${nameBtn(p.name)} ${injuryTag(p.injury)}</td>
-    <td>${esc(p.opp)}</td>
-    <td>${p.proj.toFixed(1)}</td>
-    <td>${money(p.salary)}</td>
-    <td>${used.has(p.name) ? "" : `<button type="button" class="primary hand-add" data-id="${esc(p.id)}" data-tip="Add to the first open spot this player can fill.">+</button>`}</td>
-  </tr>`).join("") || `<tr><td colspan="6" class="note">No player matches.</td></tr>`;
+  });
+  if (open === 1) list = list.filter((p) => used.has(p.name) || p.salary <= left);
+  list.sort((a, b) => sort === "salary" ? b.salary - a.salary : sort === "own" ? (b.own || 0) - (a.own || 0) : b.proj - a.proj);
+  list = list.slice(0, 90);
+  const hint = open === 1 ? `<div class="note" style="padding:0.4rem 0.6rem;">Last spot. Showing players at or under ${money(left)}.</div>` : "";
+  listEl.innerHTML = hint + (list.map((p) => {
+    const inBase = used.has(p.name);
+    const over = !inBase && open > 0 && p.salary > left;
+    const tag = inBase ? `<span style="color:#3ee0b4;">In base</span>` : over ? `<span>Over</span>` : open ? `<span style="color:#93c5fd;">+ Add</span>` : `<span class="meta">Full</span>`;
+    return `<div class="var-item ${inBase ? "in-base" : ""} ${over ? "over" : ""}" data-id="${esc(p.id)}"><span>${nameBtn(p.name)} ${injuryTag(p.injury)}<div class="meta">${esc(rosterPos(p))} · ${esc(p.team)} · ${money(p.salary)} · ${p.proj.toFixed(1)} FP · ${(p.own || 0).toFixed(0)}%</div></span>${tag}</div>`;
+  }).join("") || `<div class="note" style="padding:0.5rem;">No player matches.</div>`);
+  const cards = document.getElementById("pivotCards");
+  const filled = keys.filter((k) => handRoster[k]);
+  if (cards) {
+    if (!filled.includes(pivotSlot)) pivotSlot = filled[0] || "";
+    cards.innerHTML = filled.length
+      ? filled.map((k) => {
+          const p = handRoster[k];
+          const n = (handPivots[k] || new Set()).size;
+          return `<button type="button" class="pivot-card ${pivotSlot === k ? "on" : ""}" data-slot="${k}"><b>${esc(labels[keys.indexOf(k)])} ${esc(p.name)}</b><div class="meta">${n ? n + " pivot" + (n === 1 ? "" : "s") : "No pivots yet"}</div></button>`;
+        }).join("")
+      : `<div class="note">Add players to the base, then set who each one can swap to.</div>`;
+  }
+  const box = document.getElementById("pivotList");
+  const summary = document.getElementById("pivotSummary");
+  if (box && pivotSlot && handRoster[pivotSlot]) {
+    const cur = handRoster[pivotSlot];
+    const set = handPivots[pivotSlot] || new Set();
+    const opts = varCandidates(isShowdown).filter((p) => p.name !== cur.name && !used.has(p.name) && canPlay(p, pivotSlot, isShowdown)).sort((a, b) => b.proj - a.proj).slice(0, 40);
+    box.style.display = "block";
+    box.innerHTML = `<div class="note" style="padding:0.25rem 0.35rem 0.4rem;">Pivots for ${esc(cur.name)}. Checked names are the only swaps for this spot when the toggle is on.</div>` + opts.map((p) => `<label><input type="checkbox" class="pivot-cb" data-id="${esc(p.id)}" ${set.has(p.id) ? "checked" : ""}> ${esc(p.name)} <span class="meta">${money(p.salary)} · ${p.proj.toFixed(1)}</span></label>`).join("");
+    if (summary) summary.textContent = filled.map((k) => {
+      const names = [...(handPivots[k] || [])].map((id) => (pool.find((p) => p.id === id) || {}).name).filter(Boolean);
+      return names.length ? `${handRoster[k].name} → ${names.join(", ")}` : "";
+    }).filter(Boolean).join(" · ") || "No pivot lists yet. Checked Swap spots will use the salary tolerance.";
+  } else if (box) {
+    box.style.display = "none";
+    box.innerHTML = "";
+    if (summary) summary.textContent = "";
+  }
   bindNames(slots);
-  bindNames(poolBody);
+  bindNames(listEl);
   slots.querySelectorAll(".hand-x").forEach((btn) => btn.onclick = () => {
     delete handRoster[btn.dataset.slot];
     handSwap.delete(btn.dataset.slot);
+    delete handPivots[btn.dataset.slot];
+    if (pivotSlot === btn.dataset.slot) pivotSlot = "";
     renderHand();
   });
   slots.querySelectorAll(".hand-swap").forEach((el) => el.onchange = () => {
@@ -4754,22 +4891,22 @@ function renderHand() {
     varPosFilter = btn.dataset.pos;
     renderHand();
   });
-  poolBody.querySelectorAll(".hand-add").forEach((btn) => btn.onclick = () => {
-    const p = pool.find((x) => x.id === btn.dataset.id);
-    if (!p) return;
-    const names = new Set(Object.values(handRoster).filter(Boolean).map((x) => x.name));
-    if (names.has(p.name)) return;
-    const order = keys.slice();
-    if (varPosFilter !== "ALL") {
-      const prefer = keys.filter((k) => (varPosFilter === "UTIL" ? k.startsWith("U") || k === "UTIL" : k === varPosFilter));
-      order.sort((a, b) => (prefer.includes(a) ? 0 : 1) - (prefer.includes(b) ? 0 : 1));
-    }
-    const slot = order.find((k) => !handRoster[k] && canPlay(p, k, isShowdown));
-    if (!slot) {
-      document.getElementById("varStatus").textContent = `${p.name} has no open spot.`;
-      return;
-    }
-    handRoster[slot] = p;
+  listEl.querySelectorAll(".var-item").forEach((row) => {
+    if (row.classList.contains("in-base") || row.classList.contains("over")) return;
+    row.onclick = (e) => {
+      if (e.target.closest("[data-player]")) return;
+      const p = pool.find((x) => x.id === row.dataset.id);
+      if (p) addToHand(p, keys, isShowdown);
+    };
+  });
+  if (cards) cards.querySelectorAll(".pivot-card").forEach((btn) => btn.onclick = () => {
+    pivotSlot = btn.dataset.slot;
+    renderHand();
+  });
+  if (box) box.querySelectorAll(".pivot-cb").forEach((el) => el.onchange = () => {
+    if (!handPivots[pivotSlot]) handPivots[pivotSlot] = new Set();
+    if (el.checked) handPivots[pivotSlot].add(el.dataset.id);
+    else handPivots[pivotSlot].delete(el.dataset.id);
     renderHand();
   });
 }
@@ -5027,6 +5164,8 @@ document.getElementById("varSearch").oninput = renderHand;
 document.getElementById("varClear").onclick = () => {
   handRoster = {};
   handSwap = new Set();
+  handPivots = {};
+  pivotSlot = "";
   renderHand();
 };
 document.getElementById("varLoad").onclick = () => {
@@ -5036,9 +5175,23 @@ document.getElementById("varLoad").onclick = () => {
     return;
   }
   handRoster = {};
+  handSwap = new Set();
+  handPivots = {};
+  pivotSlot = "";
   handKeys().forEach((k) => { if (base.slots[k]) handRoster[k] = base.slots[k]; });
   renderHand();
-  document.getElementById("varStatus").textContent = "Loaded. Check Swap on the spots you want changed.";
+  document.getElementById("varStatus").textContent = "Loaded. Check Swap on the spots you want changed, then set pivots.";
+};
+document.getElementById("varSort").onchange = renderHand;
+document.getElementById("pivotOnly").onchange = renderHand;
+document.getElementById("varRandom").onclick = randomFillHand;
+document.getElementById("varCsv").onclick = () => {
+  if (!lastVars.length) {
+    document.getElementById("varStatus").textContent = "Generate variations first.";
+    return;
+  }
+  downloadCsv(lastVars);
+  document.getElementById("varStatus").textContent = "Downloaded these variations in DraftKings format.";
 };
 const SETTING_TIPS = {
   numLineups: "How many lineups to build. Cash presets use 1. GPP uses 20. Milly uses 150.",

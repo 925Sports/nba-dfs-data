@@ -296,6 +296,9 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 .log-wrap table { font-size:0.72rem; }
 .log-wrap th { font-size:0.6rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); }
 .log-wrap td { white-space:nowrap; font-variant-numeric:tabular-nums; }
+.dvp-wrap { max-height:72vh; }
+.dvp-wrap td.team, .dvp-wrap th.team { position:sticky; left:0; background:var(--card); z-index:1; }
+.dvp-wrap th { cursor:pointer; }
 .wl-w { color:#4ade80; font-weight:800; }
 .wl-l { color:#f87171; font-weight:800; }
 [data-theme="light"] .drawer-head { background:linear-gradient(180deg,#e7f7f7,var(--card)); }
@@ -336,6 +339,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
   <button class="tab" type="button" data-tab="cheatsheet">Cheat Sheet</button>
   <button class="tab" type="button" data-tab="slate">Slate Preview</button>
   <button class="tab" type="button" data-tab="game">Game Preview</button>
+  <button class="tab" type="button" data-tab="dvp">DVP</button>
   <button class="tab" type="button" data-tab="stacks">Stacks Lab</button>
   <button class="tab" type="button" data-tab="leverage">Ownership Leverage</button>
   <button class="tab" type="button" data-tab="variations">Lineup Variations</button>
@@ -647,6 +651,20 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
       <aside class="gp-rail" id="gpRail"></aside>
       <div id="gamePreview"></div>
     </div>
+  </div></div></div>
+  <div id="tab-dvp" style="display:none;"><div class="card"><div class="card-header">Defense vs position</div><div class="card-body">
+    <div class="note" id="dvpNote" style="margin-bottom:0.45rem;">What each defense has allowed to that position this season, from the game log.</div>
+    <div class="row" style="align-items:center;">
+      <div class="chip-row" id="dvpPos" style="margin:0;"></div>
+      <label>View
+        <select id="dvpMode">
+          <option value="avg">Average</option>
+          <option value="min">Per minute</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="dvpSlate"> This slate only</label>
+    </div>
+    <div class="log-wrap dvp-wrap"><table id="dvpTable"></table></div>
   </div></div></div>
   <div id="tab-stacks" style="display:none;"><div class="card"><div class="card-header">Stacks lab</div><div class="card-body">
     <div class="note" id="stackBlurb" style="margin-bottom:0.5rem;">Point guard plus one or two teammates. Two or three from a team is the build. A five-man stack is not the edge. Bring-back stays off until you require it. A name opens the player card.</div>
@@ -1798,8 +1816,18 @@ const STARTERS_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/m
 function cacheBust(url) {
   return url + (url.includes("?") ? "&" : "?") + "t=" + Date.now();
 }
-const STARTERS_FALLBACK = [{"Team":"CHI","Position":"PG","Player Name":"Josh Giddey"},{"Team":"CHI","Position":"SG","Player Name":"Norman Powell"},{"Team":"CHI","Position":"SF","Player Name":"Matas Buzelis"},{"Team":"CHI","Position":"PF","Player Name":"Caleb Wilson"},{"Team":"CHI","Position":"C","Player Name":"Jalen Smith"},{"Team":"MIL","Position":"PG","Player Name":"Ryan Rollins"},{"Team":"MIL","Position":"SG","Player Name":"Tyler Herro"},{"Team":"MIL","Position":"SF","Player Name":"Jaime Jaquez"},{"Team":"MIL","Position":"PF","Player Name":"Kyle Kuzma"},{"Team":"MIL","Position":"C","Player Name":"Myles Turner"},{"Team":"NYK","Position":"PG","Player Name":"Jalen Brunson"},{"Team":"NYK","Position":"SG","Player Name":"Mikal Bridges"},{"Team":"NYK","Position":"SF","Player Name":"Josh Hart"},{"Team":"NYK","Position":"PF","Player Name":"OG Anunoby"},{"Team":"NYK","Position":"C","Player Name":"Karl-Anthony Towns"},{"Team":"BOS","Position":"PG","Player Name":"Derrick White"},{"Team":"BOS","Position":"SG","Player Name":"Paul George"},{"Team":"BOS","Position":"SF","Player Name":"Jayson Tatum"},{"Team":"BOS","Position":"PF","Player Name":"Jordan Walsh"},{"Team":"BOS","Position":"C","Player Name":"Mitchell Robinson"},{"Team":"DAL","Position":"PG","Player Name":"Kyrie Irving"},{"Team":"DAL","Position":"SG","Player Name":"Max Christie"},{"Team":"DAL","Position":"SF","Player Name":"Cooper Flagg"},{"Team":"DAL","Position":"PF","Player Name":"P.J. Washington"},{"Team":"DAL","Position":"C","Player Name":"Daniel Gafford"},{"Team":"IND","Position":"PG","Player Name":"Tyrese Haliburton"},{"Team":"IND","Position":"SG","Player Name":"Andrew Nembhard"},{"Team":"IND","Position":"SF","Player Name":"Aaron Nesmith"},{"Team":"IND","Position":"PF","Player Name":"Pascal Siakam"},{"Team":"IND","Position":"C","Player Name":"Ivica Zubac"},{"Team":"MIN","Position":"PG","Player Name":"LaMelo Ball"},{"Team":"MIN","Position":"SG","Player Name":"Anthony Edwards"},{"Team":"MIN","Position":"SF","Player Name":"Jonathan Kuminga"},{"Team":"MIN","Position":"PF","Player Name":"Jaden McDaniels"},{"Team":"MIN","Position":"C","Player Name":"Rudy Gobert"},{"Team":"ORL","Position":"PG","Player Name":"Jalen Suggs"},{"Team":"ORL","Position":"SG","Player Name":"Desmond Bane"},{"Team":"ORL","Position":"SF","Player Name":"Franz Wagner"},{"Team":"ORL","Position":"PF","Player Name":"Paolo Banchero"},{"Team":"ORL","Position":"C","Player Name":"Wendell Carter"},{"Team":"TOR","Position":"PG","Player Name":"Immanuel Quickley"},{"Team":"TOR","Position":"SG","Player Name":"RJ Barrett"},{"Team":"TOR","Position":"SF","Player Name":"Kawhi Leonard"},{"Team":"TOR","Position":"PF","Player Name":"Scottie Barnes"},{"Team":"TOR","Position":"C","Player Name":"Jakob Poeltl"},{"Team":"WAS","Position":"PG","Player Name":"Trae Young"},{"Team":"WAS","Position":"SG","Player Name":"Kyshawn George"},{"Team":"WAS","Position":"SF","Player Name":"Bilal Coulibaly"},{"Team":"WAS","Position":"PF","Player Name":"Anthony Davis"},{"Team":"WAS","Position":"C","Player Name":"Alex Sarr"},{"Team":"ATL","Position":"PG","Player Name":"CJ McCollum"},{"Team":"ATL","Position":"SG","Player Name":"Nickeil Alexander-Walker"},{"Team":"ATL","Position":"SF","Player Name":"Dyson Daniels"},{"Team":"ATL","Position":"PF","Player Name":"Jalen Johnson"},{"Team":"ATL","Position":"C","Player Name":"Onyeka Okongwu"},{"Team":"CHA","Position":"PG","Player Name":"Dennis Schroder"},{"Team":"CHA","Position":"SG","Player Name":"Sion James"},{"Team":"CHA","Position":"SF","Player Name":"Brandon Miller"},{"Team":"CHA","Position":"PF","Player Name":"Naz Reid"},{"Team":"CHA","Position":"C","Player Name":"Moussa Diabate"},{"Team":"DET","Position":"PG","Player Name":"Cade Cunningham"},{"Team":"DET","Position":"SG","Player Name":"Duncan Robinson"},{"Team":"DET","Position":"SF","Player Name":"Ausar Thompson"},{"Team":"DET","Position":"PF","Player Name":"John Collins"},{"Team":"DET","Position":"C","Player Name":"Jalen Duren"},{"Team":"MIA","Position":"PG","Player Name":"Davion Mitchell"},{"Team":"MIA","Position":"SG","Player Name":"Klay Thompson"},{"Team":"MIA","Position":"SF","Player Name":"Andrew Wiggins"},{"Team":"MIA","Position":"PF","Player Name":"Giannis Antetokounmpo"},{"Team":"MIA","Position":"C","Player Name":"Bam Adebayo"},{"Team":"HOU","Position":"PG","Player Name":"Fred VanVleet"},{"Team":"HOU","Position":"SG","Player Name":"Amen Thompson"},{"Team":"HOU","Position":"SF","Player Name":"Kevin Durant"},{"Team":"HOU","Position":"PF","Player Name":"Jabari Smith"},{"Team":"HOU","Position":"C","Player Name":"Alperen Sengun"},{"Team":"SAS","Position":"PG","Player Name":"De'Aaron Fox"},{"Team":"SAS","Position":"SG","Player Name":"Stephon Castle"},{"Team":"SAS","Position":"SF","Player Name":"Dylan Harper"},{"Team":"SAS","Position":"PF","Player Name":"Devin Vassell"},{"Team":"SAS","Position":"C","Player Name":"Victor Wembanyama"},{"Team":"NOP","Position":"PG","Player Name":"Dejounte Murray"},{"Team":"NOP","Position":"SG","Player Name":"Jeremiah Fears"},{"Team":"NOP","Position":"SF","Player Name":"Trey Murphy"},{"Team":"NOP","Position":"PF","Player Name":"Zion Williamson"},{"Team":"NOP","Position":"C","Player Name":"Yves Missi"},{"Team":"UTA","Position":"PG","Player Name":"Keyonte George"},{"Team":"UTA","Position":"SG","Player Name":"Darryn Peterson"},{"Team":"UTA","Position":"SF","Player Name":"Lauri Markkanen"},{"Team":"UTA","Position":"PF","Player Name":"Jaren Jackson"},{"Team":"UTA","Position":"C","Player Name":"Jaxson Hayes"},{"Team":"MEM","Position":"PG","Player Name":"Ty Jerome"},{"Team":"MEM","Position":"SG","Player Name":"Jaylen Wells"},{"Team":"MEM","Position":"SF","Player Name":"Jerami Grant"},{"Team":"MEM","Position":"PF","Player Name":"Cameron Boozer"},{"Team":"MEM","Position":"C","Player Name":"Zach Edey"},{"Team":"GSW","Position":"PG","Player Name":"Stephen Curry"},{"Team":"GSW","Position":"SG","Player Name":"Brandin Podziemski"},{"Team":"GSW","Position":"SF","Player Name":"Yaxel Lendeborg"},{"Team":"GSW","Position":"PF","Player Name":"Gui Santos"},{"Team":"GSW","Position":"C","Player Name":"Draymond Green"},{"Team":"LAC","Position":"PG","Player Name":"Darius Garland"},{"Team":"LAC","Position":"SG","Player Name":"Kris Dunn"},{"Team":"LAC","Position":"SF","Player Name":"Rui Hachimura"},{"Team":"LAC","Position":"PF","Player Name":"Derrick Jones"},{"Team":"LAC","Position":"C","Player Name":"Isaiah Jackson"},{"Team":"LAL","Position":"PG","Player Name":"Luka Doncic"},{"Team":"LAL","Position":"SG","Player Name":"Austin Reaves"},{"Team":"LAL","Position":"SF","Player Name":"Ziaire Williams"},{"Team":"LAL","Position":"PF","Player Name":"Matisse Thybulle"},{"Team":"LAL","Position":"C","Player Name":"Walker Kessler"},{"Team":"POR","Position":"PG","Player Name":"Damian Lillard"},{"Team":"POR","Position":"SG","Player Name":"Ja Morant"},{"Team":"POR","Position":"SF","Player Name":"Toumani Camara"},{"Team":"POR","Position":"PF","Player Name":"Deni Avdija"},{"Team":"POR","Position":"C","Player Name":"Donovan Clingan"},{"Team":"SAC","Position":"PG","Player Name":"Darius Acuff"},{"Team":"SAC","Position":"SG","Player Name":"Zach LaVine"},{"Team":"SAC","Position":"SF","Player Name":"De'Andre Hunter"},{"Team":"SAC","Position":"PF","Player Name":"Keegan Murray"},{"Team":"SAC","Position":"C","Player Name":"Domantas Sabonis"}];
-const TEAM_ALIAS = { NY: "NYK", SA: "SAS", GS: "GSW", UTAH: "UTA", NO: "NOP", WSH: "WAS", PHO: "PHX" };
+const STARTERS_FALLBACK = [{"Team":"ATL","Position":"PG","Player Name":"CJ McCollum"},{"Team":"ATL","Position":"SG","Player Name":"Nickeil Alexander-Walker"},{"Team":"ATL","Position":"SF","Player Name":"Dyson Daniels"},{"Team":"ATL","Position":"PF","Player Name":"Jalen Johnson"},{"Team":"ATL","Position":"C","Player Name":"Onyeka Okongwu"},{"Team":"BOS","Position":"PG","Player Name":"Derrick White"},{"Team":"BOS","Position":"SG","Player Name":"Paul George"},{"Team":"BOS","Position":"SF","Player Name":"Jayson Tatum"},{"Team":"BOS","Position":"PF","Player Name":"Jordan Walsh"},{"Team":"BOS","Position":"C","Player Name":"Mitchell Robinson"},{"Team":"CHA","Position":"PG","Player Name":"Dennis Schroder"},{"Team":"CHA","Position":"SG","Player Name":"Sion James"},{"Team":"CHA","Position":"SF","Player Name":"Brandon Miller"},{"Team":"CHA","Position":"PF","Player Name":"Naz Reid"},{"Team":"CHA","Position":"C","Player Name":"Moussa Diabate"},{"Team":"CHI","Position":"PG","Player Name":"Josh Giddey"},{"Team":"CHI","Position":"SG","Player Name":"Norman Powell"},{"Team":"CHI","Position":"SF","Player Name":"Matas Buzelis"},{"Team":"CHI","Position":"PF","Player Name":"Caleb Wilson"},{"Team":"CHI","Position":"C","Player Name":"Jalen Smith"},{"Team":"CLE","Position":"PG","Player Name":"James Harden"},{"Team":"CLE","Position":"SG","Player Name":"Donovan Mitchell"},{"Team":"CLE","Position":"SF","Player Name":"Peyton Watson"},{"Team":"CLE","Position":"PF","Player Name":"Evan Mobley"},{"Team":"CLE","Position":"C","Player Name":"Jarrett Allen"},{"Team":"DAL","Position":"PG","Player Name":"Kyrie Irving"},{"Team":"DAL","Position":"SG","Player Name":"Max Christie"},{"Team":"DAL","Position":"SF","Player Name":"Cooper Flagg"},{"Team":"DAL","Position":"PF","Player Name":"P.J. Washington"},{"Team":"DAL","Position":"C","Player Name":"Daniel Gafford"},{"Team":"DEN","Position":"PG","Player Name":"Jamal Murray"},{"Team":"DEN","Position":"SG","Player Name":"Christian Braun"},{"Team":"DEN","Position":"SF","Player Name":"Bryce Hopkins"},{"Team":"DEN","Position":"PF","Player Name":"Aaron Gordon"},{"Team":"DEN","Position":"C","Player Name":"Nikola Jokic"},{"Team":"DET","Position":"PG","Player Name":"Cade Cunningham"},{"Team":"DET","Position":"SG","Player Name":"Duncan Robinson"},{"Team":"DET","Position":"SF","Player Name":"Ausar Thompson"},{"Team":"DET","Position":"PF","Player Name":"John Collins"},{"Team":"DET","Position":"C","Player Name":"Jalen Duren"},{"Team":"GSW","Position":"PG","Player Name":"Stephen Curry"},{"Team":"GSW","Position":"SG","Player Name":"Brandin Podziemski"},{"Team":"GSW","Position":"SF","Player Name":"Yaxel Lendeborg"},{"Team":"GSW","Position":"PF","Player Name":"Gui Santos"},{"Team":"GSW","Position":"C","Player Name":"Draymond Green"},{"Team":"HOU","Position":"PG","Player Name":"Fred VanVleet"},{"Team":"HOU","Position":"SG","Player Name":"Amen Thompson"},{"Team":"HOU","Position":"SF","Player Name":"Kevin Durant"},{"Team":"HOU","Position":"PF","Player Name":"Jabari Smith"},{"Team":"HOU","Position":"C","Player Name":"Alperen Sengun"},{"Team":"IND","Position":"PG","Player Name":"Tyrese Haliburton"},{"Team":"IND","Position":"SG","Player Name":"Andrew Nembhard"},{"Team":"IND","Position":"SF","Player Name":"Aaron Nesmith"},{"Team":"IND","Position":"PF","Player Name":"Pascal Siakam"},{"Team":"IND","Position":"C","Player Name":"Jay Huff"},{"Team":"LAC","Position":"PG","Player Name":"Darius Garland"},{"Team":"LAC","Position":"SG","Player Name":"Kris Dunn"},{"Team":"LAC","Position":"SF","Player Name":"Rui Hachimura"},{"Team":"LAC","Position":"PF","Player Name":"Derrick Jones"},{"Team":"LAC","Position":"C","Player Name":"Isaiah Jackson"},{"Team":"LAL","Position":"PG","Player Name":"Luka Doncic"},{"Team":"LAL","Position":"SG","Player Name":"Austin Reaves"},{"Team":"LAL","Position":"SF","Player Name":"Ziaire Williams"},{"Team":"LAL","Position":"PF","Player Name":"Matisse Thybulle"},{"Team":"LAL","Position":"C","Player Name":"Walker Kessler"},{"Team":"MEM","Position":"PG","Player Name":"Ty Jerome"},{"Team":"MEM","Position":"SG","Player Name":"Cedric Coward"},{"Team":"MEM","Position":"SF","Player Name":"Jaylen Wells"},{"Team":"MEM","Position":"PF","Player Name":"Cameron Boozer"},{"Team":"MEM","Position":"C","Player Name":"Zach Edey"},{"Team":"MIA","Position":"PG","Player Name":"Davion Mitchell"},{"Team":"MIA","Position":"SG","Player Name":"Klay Thompson"},{"Team":"MIA","Position":"SF","Player Name":"Andrew Wiggins"},{"Team":"MIA","Position":"PF","Player Name":"Giannis Antetokounmpo"},{"Team":"MIA","Position":"C","Player Name":"Bam Adebayo"},{"Team":"MIL","Position":"PG","Player Name":"Ryan Rollins"},{"Team":"MIL","Position":"SG","Player Name":"Tyler Herro"},{"Team":"MIL","Position":"SF","Player Name":"Jaime Jaquez"},{"Team":"MIL","Position":"PF","Player Name":"Kyle Kuzma"},{"Team":"MIL","Position":"C","Player Name":"Myles Turner"},{"Team":"MIN","Position":"PG","Player Name":"LaMelo Ball"},{"Team":"MIN","Position":"SG","Player Name":"Anthony Edwards"},{"Team":"MIN","Position":"SF","Player Name":"Jonathan Kuminga"},{"Team":"MIN","Position":"PF","Player Name":"Jaden McDaniels"},{"Team":"MIN","Position":"C","Player Name":"Rudy Gobert"},{"Team":"NOP","Position":"PG","Player Name":"Dejounte Murray"},{"Team":"NOP","Position":"SG","Player Name":"Jeremiah Fears"},{"Team":"NOP","Position":"SF","Player Name":"Trey Murphy"},{"Team":"NOP","Position":"PF","Player Name":"Zion Williamson"},{"Team":"NOP","Position":"C","Player Name":"Yves Missi"},{"Team":"NYK","Position":"PG","Player Name":"Jalen Brunson"},{"Team":"NYK","Position":"SG","Player Name":"Mikal Bridges"},{"Team":"NYK","Position":"SF","Player Name":"Josh Hart"},{"Team":"NYK","Position":"PF","Player Name":"OG Anunoby"},{"Team":"NYK","Position":"C","Player Name":"Karl-Anthony Towns"},{"Team":"OKC","Position":"PG","Player Name":"Shai Gilgeous-Alexander"},{"Team":"OKC","Position":"SG","Player Name":"Jared McCain"},{"Team":"OKC","Position":"SF","Player Name":"Alex Caruso"},{"Team":"OKC","Position":"PF","Player Name":"Kenrich Williams"},{"Team":"OKC","Position":"C","Player Name":"Isaiah Hartenstein"},{"Team":"ORL","Position":"PG","Player Name":"Jalen Suggs"},{"Team":"ORL","Position":"SG","Player Name":"Desmond Bane"},{"Team":"ORL","Position":"SF","Player Name":"Franz Wagner"},{"Team":"ORL","Position":"PF","Player Name":"Paolo Banchero"},{"Team":"ORL","Position":"C","Player Name":"Wendell Carter"},{"Team":"PHX","Position":"PG","Player Name":"Devin Booker"},{"Team":"PHX","Position":"SG","Player Name":"Jalen Green"},{"Team":"PHX","Position":"SF","Player Name":"Dillon Brooks"},{"Team":"PHX","Position":"PF","Player Name":"Miles Bridges"},{"Team":"PHX","Position":"C","Player Name":"Khaman Maluach"},{"Team":"POR","Position":"PG","Player Name":"Damian Lillard"},{"Team":"POR","Position":"SG","Player Name":"Ja Morant"},{"Team":"POR","Position":"SF","Player Name":"Toumani Camara"},{"Team":"POR","Position":"PF","Player Name":"Deni Avdija"},{"Team":"POR","Position":"C","Player Name":"Donovan Clingan"},{"Team":"SAC","Position":"PG","Player Name":"Darius Acuff"},{"Team":"SAC","Position":"SG","Player Name":"Zach LaVine"},{"Team":"SAC","Position":"SF","Player Name":"De'Andre Hunter"},{"Team":"SAC","Position":"PF","Player Name":"Keegan Murray"},{"Team":"SAC","Position":"C","Player Name":"Domantas Sabonis"},{"Team":"SAS","Position":"PG","Player Name":"De'Aaron Fox"},{"Team":"SAS","Position":"SG","Player Name":"Stephon Castle"},{"Team":"SAS","Position":"SF","Player Name":"Dylan Harper"},{"Team":"SAS","Position":"PF","Player Name":"Devin Vassell"},{"Team":"SAS","Position":"C","Player Name":"Victor Wembanyama"},{"Team":"TOR","Position":"PG","Player Name":"Immanuel Quickley"},{"Team":"TOR","Position":"SG","Player Name":"RJ Barrett"},{"Team":"TOR","Position":"SF","Player Name":"Kawhi Leonard"},{"Team":"TOR","Position":"PF","Player Name":"Scottie Barnes"},{"Team":"TOR","Position":"C","Player Name":"Jakob Poeltl"},{"Team":"UTA","Position":"PG","Player Name":"Keyonte George"},{"Team":"UTA","Position":"SG","Player Name":"Darryn Peterson"},{"Team":"UTA","Position":"SF","Player Name":"Ace Bailey"},{"Team":"UTA","Position":"PF","Player Name":"Lauri Markkanen"},{"Team":"UTA","Position":"C","Player Name":"Jaren Jackson"},{"Team":"WAS","Position":"PG","Player Name":"Trae Young"},{"Team":"WAS","Position":"SG","Player Name":"Kyshawn George"},{"Team":"WAS","Position":"SF","Player Name":"Bilal Coulibaly"},{"Team":"WAS","Position":"PF","Player Name":"Anthony Davis"},{"Team":"WAS","Position":"C","Player Name":"Alex Sarr"}];
+const TEAM_ALIAS = {
+  NY: "NYK", NYK: "NYK",
+  SA: "SAS", SAS: "SAS", SAN: "SAS",
+  GS: "GSW", GSW: "GSW", GOS: "GSW",
+  UTAH: "UTA", UTA: "UTA",
+  NO: "NOP", NOR: "NOP", NOP: "NOP",
+  WSH: "WAS", WAS: "WAS",
+  PHO: "PHX", PHX: "PHX",
+  CHO: "CHA", CHA: "CHA",
+  BRK: "BKN", BK: "BKN", BKN: "BKN",
+};
 
 let allRows = [];
 let pool = [];
@@ -1827,19 +1855,45 @@ let handRoster = {};
 let handSwap = new Set();
 let projectedStarters = new Map();
 let startersSource = "";
+let posByName = new Map();
+let posBook = [];
+let dvpPos = "PG";
+let dvpSort = { key: "fpts", dir: -1 };
+let dvpCache = null;
 
 function canonTeam(t) {
   const u = String(t || "").toUpperCase();
   return TEAM_ALIAS[u] || u;
 }
+function rememberPos(name, pos, team) {
+  const first = String(pos || "").toUpperCase().split(/[/,]/)[0].trim();
+  if (!name || !["PG", "SG", "SF", "PF", "C"].includes(first)) return;
+  const key = foldName(name);
+  if (!posByName.has(key)) posByName.set(key, first);
+  posBook.push({ name, pos: first, team: canonTeam(team || "") });
+}
+function foldName(s) {
+  return String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z]/g, "");
+}
+function nameParts(s) {
+  const raw = String(s || "").replace(/\b(jr|sr|ii|iii|iv|v)\b/ig, " ");
+  const bits = raw.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().split(/[^a-z]+/).filter(Boolean);
+  if (!bits.length) return { first: "", last: "", full: "" };
+  const alias = { nic: "nicolas", nicolas: "nicolas", cam: "cameron", cameron: "cameron", herb: "herbert", rob: "robert", robert: "robert", moe: "moritz", moritz: "moritz", mike: "michael", michael: "michael", matt: "matthew", matthew: "matthew", nick: "nicholas", nicholas: "nicholas", pat: "patrick", patrick: "patrick", gui: "guilherme", guilherme: "guilherme", nate: "nathaniel", nathaniel: "nathaniel" };
+  return { first: alias[bits[0]] || bits[0], last: bits[bits.length - 1], full: bits.join("") };
+}
 function samePlayer(a, b) {
-  const fa = foldName(a);
-  const fb = foldName(b);
-  if (!fa || !fb) return false;
-  if (fa === fb) return true;
-  const short = fa.length <= fb.length ? fa : fb;
-  const long = fa.length <= fb.length ? fb : fa;
-  return short.length >= 8 && long.startsWith(short);
+  const A = nameParts(a);
+  const B = nameParts(b);
+  if (!A.full || !B.full) return false;
+  if (A.full === B.full) return true;
+  if (A.last !== B.last || A.last.length < 3) return false;
+  const short = A.first.length <= B.first.length ? A.first : B.first;
+  const long = A.first.length <= B.first.length ? B.first : A.first;
+  if (!short) return false;
+  if (short.length >= 3 && long.startsWith(short)) return true;
+  if (short.length <= 2 && long.startsWith(short) && long.length <= short.length + 1) return true;
+  return false;
 }
 function findByName(byName, name) {
   const key = foldName(name);
@@ -2092,6 +2146,7 @@ async function loadData() {
     const statsById = new Map();
     sParsed.data.forEach((r) => {
       if (r["Draftable ID"]) statsById.set(r["Draftable ID"], r);
+      rememberPos(r["Player Name"] || r.Player, r.Position, r.Team);
     });
     let draftById = new Map();
     try {
@@ -2162,7 +2217,7 @@ async function loadData() {
         maxExp: isOutStatus(injury) ? 0 : 100,
       };
     });
-    allRows.forEach((p) => trustProjection(p));
+    allRows.forEach((p) => { trustProjection(p); rememberPos(p.name, p.pos, p.team); });
     const classicByName = new Map();
     allRows.forEach((p) => {
       if (p.pos === "CPT" || p.pos === "UTIL" || p.phantom) return;
@@ -3121,21 +3176,21 @@ function renderGamePreview() {
       const starterRow = starter && atPos.find((p) => samePlayer(p.name, starter.name));
       const lead = starterRow || ranked[0];
       const rank = lead ? rankOf(lead) : 0;
-      const fp = lead && lead.dvpProj ? lead.dvpProj.toFixed(1) : "—";
-      const fpts = lead && lead.proj > 0 ? lead.proj.toFixed(1) : "—";
-      const ppm = lead && lead.minutes > 0 && lead.proj > 0 ? (lead.proj / lead.minutes).toFixed(2) : "—";
+      const allowed = lead && lead.dvpProj ? lead.dvpProj : 0;
+      const fp = allowed ? allowed.toFixed(1) : "—";
+      const ppm = allowed ? (allowed / 48).toFixed(2) : "—";
       const who = atPos.filter(minutesOk).sort((a, b) => (b.minutes || 0) - (a.minutes || 0)).slice(0, 3).map((p) => p.name.split(" ").slice(-1)[0]).join(", ");
-      return `<tr><td>${pos}</td><td>${pill(rank)}</td><td>${fp}</td><td>${fpts}</td><td>${ppm}</td><td class="cs-sub">${esc(who || "—")}</td></tr>`;
+      return `<tr><td>${pos}</td><td>${pill(rank)}</td><td>${fp}</td><td>${ppm}</td><td class="cs-sub">${esc(who || "—")}</td></tr>`;
     }).join("");
     return `<div>
       <div class="lu-label">${esc(tm)} offense vs ${esc(opp)} DVP</div>
       <p class="note" style="margin:0 0 0.3rem;">What ${esc(opp)} allow to the spot. Rank 1 is the most fantasy points allowed.</p>
-      <table class="gp-dvp-table"><thead><tr><th>Pos</th><th>Rank</th><th>FP allowed</th><th>FPTS</th><th>PPM</th><th>18+ min</th></tr></thead><tbody>${rows}</tbody></table>
+      <table class="gp-dvp-table"><thead><tr><th>Pos</th><th>Rank</th><th>FP allowed</th><th title="Fantasy points per minute this defense allows to the position. FP allowed divided by 48.">FPPM</th><th>18+ min</th></tr></thead><tbody>${rows}</tbody></table>
     </div>`;
   }).join("");
   const hasDvp = dvpPlayers.some((p) => rankOf(p));
   const dvpBody = hasDvp
-    ? `<p class="note">Good is rank 1–10. Tough is 21–30. The names are only players at 18 minutes or a projected starter. FPTS is that spot's projected points. PPM is those points per minute.</p>
+    ? `<p class="note">Good is rank 1–10. Tough is 21–30. The names are only players at 18 minutes or a projected starter. FPPM is fantasy points per minute that defense allows to the position, FP allowed divided by 48.</p>
        <p style="margin:0.2rem 0;"><strong>Good matchup</strong> — ${named(good)}</p>
        <p style="margin:0.2rem 0 0.45rem;"><strong>Tough matchup</strong> — ${named(tough)}</p>
        <div class="gp-dvp-board">${dvpCards}</div>`
@@ -3152,7 +3207,7 @@ function renderGamePreview() {
   streakRows.sort((a, b) => (b.s.l3 - b.s.avg) - (a.s.l3 - a.s.avg));
   const streakBody = streakRows.length
     ? streakRows.map(({ p, s }) => `<div class="sp-row"><span>${nameBtn(p.name)} <span class="tag ${s.cls}">${s.label}</span> <span class="cs-sub">${esc(p.team)} · ${esc(rosterPos(p))}</span></span><span>Last 3 ${s.l3.toFixed(1)} · log ${s.avg.toFixed(1)}</span></div>`).join("")
-    : `<div class="lu-empty">${logByName ? "No hot or cold streak of 12% or more in the last 3 games." : "Game log is still loading. Open this game again in a moment."}</div>`;
+    : `<div class="lu-empty">${logByName ? "No hot or cold streak. The last 3 games have to be inside the last 3 weeks, and the player needs three games this season." : "Game log is still loading. Open this game again in a moment."}</div>`;
   const inj = [];
   const injSeen = new Set();
   g.players.forEach((p) => {
@@ -3183,7 +3238,7 @@ function renderGamePreview() {
     </div>
     <div class="gp-callouts">
     ${sec("DVP", dvpBody, false)}
-    ${sec("Hot / cold", `<p class="note">Last 3 games against the game-log average. Hot is at least 12% and 4 points above. Cold is the same the other way. ${logSpan ? "Log span: " + esc(logSpan) + "." : "Game log is still loading."} Current-season games are used once a player has three of them.</p>${streakBody}`, false)}
+    ${sec("Hot / cold", `<p class="note">Last 3 games against this season's average. All 3 have to be inside the last 3 weeks, so a player who has not played yet this year is left off. Hot is at least 12% and 4 points above. Cold is the same the other way.</p>${streakBody}`, false)}
     ${sec("Injury", `<p class="note">Questionable and out, plus the written note when the feed has one.</p>${injBody}`, false)}
     </div>
     <div class="gp-sides">${sides}</div>
@@ -3237,11 +3292,15 @@ function ensureLogs() {
         t,
         date: row["GAME DATE"],
         team: row.TEAM || "",
+        player: row.PLAYER || "",
         match: row["MATCH UP"] || "",
         wl: row["W/L"] || "",
+        score: row.SCORE || row.Score || "",
         min,
         pts: numLog(row.PTS),
         reb: numLog(row.REB),
+        oreb: numLog(row.OREB),
+        dreb: numLog(row.DREB),
         ast: numLog(row.AST),
         stl: numLog(row.STL),
         blk: numLog(row.BLK),
@@ -3271,7 +3330,11 @@ function ensureLogs() {
     };
     logSpan = minT && maxT ? `${fmt(minT)} – ${fmt(maxT)}` : "";
     logByName = map;
-    if (document.getElementById("game")?.classList.contains("active")) renderGamePreview();
+    dvpCache = null;
+    const gameTab = document.getElementById("tab-game");
+    if (gameTab && gameTab.style.display !== "none") renderGamePreview();
+    const dvpTab = document.getElementById("tab-dvp");
+    if (dvpTab && dvpTab.style.display !== "none") renderDvp();
     return map;
   }).catch(() => {
     logByName = new Map();
@@ -3279,7 +3342,7 @@ function ensureLogs() {
   });
   return logPromise;
 }
-function logsFor(name) {
+function allLogs(name) {
   if (!logByName) return [];
   const key = foldName(name);
   let games = logByName.get(key);
@@ -3288,15 +3351,22 @@ function logsFor(name) {
       if (samePlayer(k, key)) { games = list; break; }
     }
   }
-  if (!games) return [];
+  return games || [];
+}
+function logsFor(name) {
+  const games = allLogs(name);
+  if (!games.length) return [];
   const seasonStart = Date.UTC(2026, 9, 1);
   const current = games.filter((g) => g.t >= seasonStart);
   return current.length >= 3 ? current : games;
 }
 function streakOf(name) {
-  const games = logsFor(name);
-  if (!games || games.length < 3) return null;
+  const seasonStart = Date.UTC(2026, 9, 1);
+  const games = allLogs(name).filter((g) => g.t >= seasonStart);
+  if (games.length < 3) return null;
   const last = games.slice(0, 3);
+  const cutoff = Date.now() - 21 * 24 * 60 * 60 * 1000;
+  if (last[last.length - 1].t < cutoff) return null;
   const l3 = last.reduce((s, g) => s + g.fpts, 0) / last.length;
   const avg = games.reduce((s, g) => s + g.fpts, 0) / games.length;
   if (!avg) return null;
@@ -3305,6 +3375,174 @@ function streakOf(name) {
   if (l3 <= avg * 0.88 && delta <= -4) return { label: "Cold", cls: "cold", l3, avg };
   return { label: "Even", cls: "", l3, avg };
 }
+const DVP_COLS = [
+  { key: "team", label: "Team" },
+  { key: "rank", label: "Rank" },
+  { key: "gp", label: "GP" },
+  { key: "min", label: "MIN" },
+  { key: "fpts", label: "FPTS" },
+  { key: "pts", label: "PTS" },
+  { key: "reb", label: "REB" },
+  { key: "oreb", label: "OREB" },
+  { key: "dreb", label: "DREB" },
+  { key: "ast", label: "AST" },
+  { key: "stl", label: "STL" },
+  { key: "blk", label: "BLK" },
+  { key: "tov", label: "TOV" },
+  { key: "pf", label: "PF" },
+  { key: "fgm", label: "FGM" },
+  { key: "fga", label: "FGA" },
+  { key: "fg", label: "FG%" },
+  { key: "fg3m", label: "3PM" },
+  { key: "fg3a", label: "3PA" },
+  { key: "fg3", label: "3P%" },
+  { key: "ftm", label: "FTM" },
+  { key: "fta", label: "FTA" },
+  { key: "ft", label: "FT%" },
+  { key: "pm", label: "+/-" },
+];
+function logOpponent(g) {
+  const hit = String(g.match || "").toUpperCase().match(/([A-Z]{2,4})\s*(?:@|VS\.?)\s*([A-Z]{2,4})/);
+  if (!hit) return "";
+  const homeAway = [canonTeam(hit[1]), canonTeam(hit[2])];
+  const team = canonTeam(g.team);
+  if (team === homeAway[0]) return homeAway[1];
+  if (team === homeAway[1]) return homeAway[0];
+  return "";
+}
+function posForLog(name, team) {
+  const key = foldName(name);
+  if (posByName.has(key)) return posByName.get(key);
+  const want = canonTeam(team || "");
+  let fallback = "";
+  for (const row of posBook) {
+    if (!samePlayer(row.name, name)) continue;
+    if (want && row.team && row.team === want) return row.pos;
+    if (!fallback) fallback = row.pos;
+  }
+  return fallback;
+}
+function dvpRows() {
+  if (dvpCache) return dvpCache;
+  const seasonStart = Date.UTC(2026, 9, 1);
+  const buckets = new Map();
+  let used = 0;
+  let skipped = 0;
+  let minT = 0;
+  let maxT = 0;
+  if (logByName) {
+    logByName.forEach((games, key) => {
+      const pos = posForLog(games[0] && games[0].player ? games[0].player : key, games[0] && games[0].team);
+      games.forEach((g) => {
+        if (g.t < seasonStart || !(g.min > 0)) return;
+        if (!pos) { skipped += 1; return; }
+        const opp = logOpponent(g);
+        if (!opp) { skipped += 1; return; }
+        const id = opp + "|" + pos;
+        let row = buckets.get(id);
+        if (!row) {
+          row = { team: opp, pos, gp: 0, min: 0, pts: 0, oreb: 0, dreb: 0, reb: 0, ast: 0, stl: 0, blk: 0, tov: 0, pf: 0, fgm: 0, fga: 0, fg3m: 0, fg3a: 0, ftm: 0, fta: 0, pm: 0, fpts: 0 };
+          buckets.set(id, row);
+        }
+        row.gp += 1;
+        row.min += g.min;
+        row.pts += g.pts;
+        row.oreb += g.oreb || 0;
+        row.dreb += g.dreb || 0;
+        row.reb += g.reb;
+        row.ast += g.ast;
+        row.stl += g.stl;
+        row.blk += g.blk;
+        row.tov += g.tov;
+        row.pf += g.pf || 0;
+        row.fgm += g.fgm;
+        row.fga += g.fga;
+        row.fg3m += g.fg3m;
+        row.fg3a += g.fg3a;
+        row.ftm += g.ftm;
+        row.fta += g.fta;
+        row.pm += g.pm || 0;
+        row.fpts += g.fpts;
+        used += 1;
+        if (!minT || g.t < minT) minT = g.t;
+        if (g.t > maxT) maxT = g.t;
+      });
+    });
+  }
+  dvpCache = { rows: [...buckets.values()], used, skipped, minT, maxT };
+  return dvpCache;
+}
+function dvpValue(row, key, mode) {
+  if (key === "gp") return row.gp;
+  if (key === "fg") return row.fga ? (100 * row.fgm) / row.fga : 0;
+  if (key === "fg3") return row.fg3a ? (100 * row.fg3m) / row.fg3a : 0;
+  if (key === "ft") return row.fta ? (100 * row.ftm) / row.fta : 0;
+  if (key === "min") return row.gp ? row.min / row.gp : 0;
+  const sum = row[key] || 0;
+  if (mode === "min") return row.min ? sum / row.min : 0;
+  return row.gp ? sum / row.gp : 0;
+}
+function renderDvp() {
+  const host = document.getElementById("dvpTable");
+  const note = document.getElementById("dvpNote");
+  const chips = document.getElementById("dvpPos");
+  if (!host || !chips) return;
+  chips.innerHTML = ["PG", "SG", "SF", "PF", "C"].map((pos) => `<button type="button" class="pchip ${dvpPos === pos ? "on" : ""}" data-pos="${pos}">${pos}</button>`).join("");
+  chips.querySelectorAll("[data-pos]").forEach((b) => b.onclick = () => { dvpPos = b.dataset.pos; renderDvp(); });
+  if (!logByName) {
+    note.textContent = "Game log is still loading.";
+    host.innerHTML = "";
+    return;
+  }
+  const mode = document.getElementById("dvpMode").value;
+  const slateOnly = document.getElementById("dvpSlate").checked;
+  const pack = dvpRows();
+  const rows = pack.rows.filter((r) => r.pos === dvpPos);
+  const order = rows.slice().sort((a, b) => dvpValue(b, "fpts", mode) - dvpValue(a, "fpts", mode));
+  const rankOfTeam = new Map(order.map((r, i) => [r.team, i + 1]));
+  const onSlate = new Set(pool.map((p) => canonTeam(p.team)).filter(Boolean));
+  let shown = rows.filter((r) => !slateOnly || onSlate.has(r.team));
+  shown.sort((a, b) => {
+    if (dvpSort.key === "team") return a.team < b.team ? -dvpSort.dir : a.team > b.team ? dvpSort.dir : 0;
+    if (dvpSort.key === "rank") return (rankOfTeam.get(a.team) - rankOfTeam.get(b.team)) * dvpSort.dir;
+    return (dvpValue(a, dvpSort.key, mode) - dvpValue(b, dvpSort.key, mode)) * dvpSort.dir;
+  });
+  const fmtDate = (t) => {
+    if (!t) return "";
+    const d = new Date(t);
+    return `${d.getUTCMonth() + 1}/${d.getUTCDate()}`;
+  };
+  const viewName = mode === "min" ? "per minute" : "per game";
+  note.textContent = shown.length
+    ? `${dvpPos} stats allowed, ${viewName}. Rank 1 allows the most fantasy points in the league${slateOnly ? ", and this table is only the teams on the slate" : ""}. ${pack.minT ? fmtDate(pack.minT) + "–" + fmtDate(pack.maxT) + ". " : ""}Shooting percentages are makes divided by attempts in both views. Minutes stay a per-game average.`
+    : "No games at this position yet this season.";
+  const digits = (key) => {
+    if (key === "gp" || key === "rank") return 0;
+    if (mode === "min" && !["min", "fg", "fg3", "ft"].includes(key)) return 2;
+    return 1;
+  };
+  const head = DVP_COLS.map((c) => `<th class="${c.key === "team" ? "team" : ""} ${dvpSort.key === c.key ? "sorted" : ""}" data-sort="${c.key}">${c.label}</th>`).join("");
+  const body = shown.map((r) => {
+    const rank = rankOfTeam.get(r.team) || 0;
+    const cells = DVP_COLS.map((c) => {
+      if (c.key === "team") return `<td class="team"><b>${esc(r.team)}</b>${onSlate.has(r.team) ? ' <span class="tag s">Slate</span>' : ""}</td>`;
+      if (c.key === "rank") {
+        const cls = rank <= 10 ? "soft" : rank >= 21 ? "tough" : "mid";
+        return `<td><span class="dvp-pill ${cls}">#${rank}</span></td>`;
+      }
+      const n = dvpValue(r, c.key, mode);
+      const text = n.toFixed(digits(c.key));
+      return `<td>${text}</td>`;
+    }).join("");
+    return `<tr>${cells}</tr>`;
+  }).join("");
+  host.innerHTML = `<thead><tr>${head}</tr></thead><tbody>${body || `<tr><td class="lu-empty" colspan="${DVP_COLS.length}">Nothing for this filter.</td></tr>`}</tbody>`;
+  host.querySelectorAll("th[data-sort]").forEach((th) => th.onclick = () => {
+    const key = th.dataset.sort;
+    dvpSort = { key, dir: dvpSort.key === key ? -dvpSort.dir : (key === "team" || key === "rank" ? 1 : -1) };
+    renderDvp();
+  });
+}
 function shotLine(made, att) {
   return `${Math.round(made)}-${Math.round(att)}`;
 }
@@ -3312,6 +3550,12 @@ function shortDate(s) {
   const m = String(s || "").match(/(\d{1,2})\/(\d{1,2})/);
   if (!m) return s || "";
   return `${m[1].padStart(2, "0")}/${m[2].padStart(2, "0")}`;
+}
+function facedOpp(match, opp) {
+  const hit = String(match || "").toUpperCase().match(/([A-Z]{2,4})\s*(?:@|VS\.?)\s*([A-Z]{2,4})/);
+  if (!hit || !opp) return false;
+  const want = canonTeam(opp);
+  return canonTeam(hit[1]) === want || canonTeam(hit[2]) === want;
 }
 function tipTime(s) {
   const m = String(s || "").match(/(\d{1,2}:\d{2})\s*([AP]M)/i);
@@ -3478,6 +3722,7 @@ function gameLogPane(games, loading) {
       <td>${esc(short)}</td>
       <td><b>${g.fpts.toFixed(1)}</b></td>
       <td>${esc(g.match)}</td>
+      <td>${esc(g.score || "—")}</td>
       <td class="${wl}">${esc(g.wl || "—")}</td>
       <td>${Math.round(g.min)}</td>
       <td>${Math.round(g.pts)}</td>
@@ -3497,10 +3742,10 @@ function gameLogPane(games, loading) {
     </tr>`;
   }).join("");
   return `
-    <p class="note" style="margin:0 0 0.4rem;">DraftKings scoring. ${games.length} games${logSpan ? " · " + logSpan : ""}. That night's salary is not in the log, so it is not shown.</p>
+    <p class="note" style="margin:0 0 0.4rem;">DraftKings scoring. ${games.length} games${logSpan ? " · " + logSpan : ""}. Score is this player's team first. That night's salary is not in the log, so it is not shown. Older rows stay blank until the log is fetched again.</p>
     <div class="log-wrap"><table>
       <thead><tr>
-        <th>Date</th><th>FPTS</th><th>Matchup</th><th>W/L</th><th>Min</th><th>Pts</th><th>Reb</th><th>Ast</th><th>Blk</th><th>Stl</th><th>PF</th><th>TO</th><th>FGM-FGA</th><th>FG%</th><th>3PM-3PA</th><th>3P%</th><th>FTM-FTA</th><th>FT%</th><th>+/-</th>
+        <th>Date</th><th>FPTS</th><th>Matchup</th><th>Score</th><th>W/L</th><th>Min</th><th>Pts</th><th>Reb</th><th>Ast</th><th>Blk</th><th>Stl</th><th>PF</th><th>TO</th><th>FGM-FGA</th><th>FG%</th><th>3PM-3PA</th><th>3P%</th><th>FTM-FTA</th><th>FT%</th><th>+/-</th>
       </tr></thead>
       <tbody>${rows}</tbody>
     </table></div>
@@ -3511,7 +3756,7 @@ function splitsPane(p, games, loading) {
   if (!games.length) return `<p class="note">No games to split for this name.</p>`;
   const home = games.filter((g) => / vs\.? /i.test(g.match));
   const away = games.filter((g) => / @ /.test(g.match));
-  const opp = games.filter((g) => p.opp && new RegExp("(?:vs\\.?|@)\\s*" + p.opp + "\\b", "i").test(g.match));
+  const opp = games.filter((g) => facedOpp(g.match, p.opp));
   return `
     <p class="note" style="margin:0 0 0.4rem;">Averages from the game log. FPTS is DraftKings.</p>
     <div class="log-wrap"><table>
@@ -3530,7 +3775,7 @@ function splitsPane(p, games, loading) {
 function matchupPane(p, games, oppPlayers) {
   const spr = Number(p.spread) || 0;
   const sprTxt = spr ? `${spr > 0 ? "+" : ""}${spr}` : "—";
-  const vs = (games || []).filter((g) => p.opp && new RegExp("(?:vs\\.?|@)\\s*" + p.opp + "\\b", "i").test(g.match)).slice(0, 8);
+  const vs = (games || []).filter((g) => facedOpp(g.match, p.opp)).slice(0, 8);
   const vsRows = vs.map((g) => `<div class="lu-row"><span class="lu-pos">${esc(shortDate(g.date))}</span><span>${esc(g.match)} <span class="${g.wl === "W" ? "wl-w" : "wl-l"}">${esc(g.wl)}</span></span><span class="lu-min">${Math.round(g.min)} min</span><span class="lu-min">${g.fpts.toFixed(1)} DK</span></div>`).join("");
   const oppRows = oppPlayers.map((m) => `<div class="lu-row"><span class="lu-pos">${esc(posToken(m))}</span><span>${nameBtn(m.name)} ${injuryTag(m.injury)}</span><span class="lu-min">${m.minutes > 0 ? m.minutes.toFixed(0) + " min" : ""}</span><span class="lu-min">${m.proj.toFixed(1)}</span></div>`).join("") || `<div class="lu-empty">No projected opponent on this slate.</div>`;
   return `
@@ -4532,11 +4777,14 @@ function renderHand() {
 document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
   document.querySelectorAll(".tab").forEach((x) => x.classList.remove("active"));
   t.classList.add("active");
-  ["builder", "cheatsheet", "slate", "game", "stacks", "leverage", "variations"].forEach((id) => {
+  ["builder", "cheatsheet", "slate", "game", "dvp", "stacks", "leverage", "variations"].forEach((id) => {
     document.getElementById("tab-" + id).style.display = t.dataset.tab === id ? "block" : "none";
   });
   if (t.dataset.tab === "variations") renderHand();
+  if (t.dataset.tab === "dvp") ensureLogs().then(() => renderDvp());
 });
+document.getElementById("dvpMode").onchange = renderDvp;
+document.getElementById("dvpSlate").onchange = renderDvp;
 document.getElementById("slateSelect").onchange = (e) => loadSlate(e.target.value);
 document.getElementById("search").oninput = renderPool;
 document.getElementById("includeQ").onchange = renderPool;

@@ -134,11 +134,13 @@ td { padding:0.38rem 0.45rem; border-bottom:1px solid var(--border); vertical-al
 .var-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:0.4rem; margin:0.5rem 0; }
 .var-stats div { background:var(--card2); border:1px solid var(--border); border-radius:8px; padding:0.4rem 0.55rem; font-size:0.72rem; color:var(--muted); }
 .var-stats b { display:block; color:var(--text); font-size:0.95rem; }
-.pivot-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:0.4rem; margin:0.4rem 0; }
-.pivot-card { text-align:left; border:1px solid var(--border); background:var(--card2); border-radius:8px; padding:0.4rem 0.55rem; font-size:0.75rem; }
-.pivot-card.on { border-color:var(--aqua); box-shadow:inset 0 0 0 1px var(--aqua); }
-.pivot-list { max-height:220px; overflow:auto; border:1px solid var(--border); border-radius:10px; padding:0.35rem; background:var(--card2); margin:0.4rem 0; }
-.pivot-list label { display:flex; gap:0.4rem; align-items:center; padding:0.28rem 0.35rem; font-size:0.76rem; }
+.pivot-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:0.4rem; margin:0.4rem 0 0.55rem; }
+.pivot-card { text-align:left; border:1px solid var(--border); background:var(--card2); border-radius:8px; padding:0.45rem 0.55rem; font-size:0.75rem; cursor:pointer; }
+.pivot-card.on { border-color:var(--aqua); box-shadow:inset 0 0 0 1px var(--aqua); background:#13283f; }
+.pivot-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:0.25rem; max-height:280px; overflow:auto; border:1px solid var(--border); border-radius:10px; padding:0.45rem; background:var(--card2); margin:0.35rem 0; }
+.pivot-list label { display:flex; flex-direction:row; align-items:center; justify-content:flex-start; gap:0.45rem; padding:0.32rem 0.4rem; font-size:0.76rem; border-radius:6px; cursor:pointer; }
+.pivot-list label:hover { background:rgba(71,198,200,0.1); }
+.pivot-list input { width:16px; height:16px; margin:0; flex:0 0 auto; }
 .var-table td.swapped { background:rgba(71,198,200,0.16); font-weight:700; }
 .var-table { font-size:0.74rem; }
 .player-cell .who { align-items:flex-start; }
@@ -4650,7 +4652,6 @@ function renderVariations() {
   const status = document.getElementById("varStatus");
   const keys = handKeys();
   const isShowdown = keys[0] === "CPT";
-  const labels = handLabels();
   const filled = keys.map((k) => handRoster[k]).filter(Boolean);
   if (filled.length !== keys.length) {
     status.textContent = `The lineup has ${filled.length} of ${keys.length} spots. Fill it, check Swap on the spots to change, then build.`;
@@ -4713,7 +4714,7 @@ function renderVariations() {
   }
   lastVars = vars;
   document.getElementById("varBoard").innerHTML = "";
-  const head = labels.map((lab) => `<th>${esc(lab)}</th>`).join("");
+  const head = keys.map((k) => `<th>${slotLabel(k)}</th>`).join("");
   const body = vars.map((lu, i) => {
     const cells = keys.map((k) => {
       const p = lu.slots[k];
@@ -4734,11 +4735,8 @@ function renderVariations() {
 }
 
 function handKeys() {
-  return slotsFor((document.getElementById("slateSelect").value || "").startsWith("Showdown"));
-}
-function handLabels() {
   return (document.getElementById("slateSelect").value || "").startsWith("Showdown")
-    ? ["CPT", "UTIL", "UTIL", "UTIL", "UTIL", "UTIL"]
+    ? SHOWDOWN
     : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
 }
 function varCandidates(isShowdown) {
@@ -4753,6 +4751,21 @@ function varCandidates(isShowdown) {
     return true;
   });
 }
+function slotLabel(k) {
+  return /^U\d+$/.test(k) ? "UTIL" : k;
+}
+function bestHandSlot(p, keys, isShowdown) {
+  const open = keys.filter((k) => !handRoster[k] && canPlay(p, k, isShowdown));
+  if (!open.length) return null;
+  if (varPosFilter !== "ALL" && open.includes(varPosFilter)) return varPosFilter;
+  const tokens = posTokens(p.pos);
+  const primary = ["PG", "SG", "SF", "PF", "C"].find((s) => tokens.includes(s) && open.includes(s));
+  if (primary) return primary;
+  if ((tokens.includes("PG") || tokens.includes("SG")) && open.includes("G")) return "G";
+  if ((tokens.includes("SF") || tokens.includes("PF")) && open.includes("F")) return "F";
+  if (open.includes("UTIL")) return "UTIL";
+  return open[0];
+}
 function addToHand(p, keys, isShowdown) {
   const names = new Set(Object.values(handRoster).filter(Boolean).map((x) => x.name));
   if (names.has(p.name)) return;
@@ -4761,18 +4774,13 @@ function addToHand(p, keys, isShowdown) {
     document.getElementById("varStatus").textContent = `${p.name} is over the remaining salary.`;
     return;
   }
-  const order = keys.slice();
-  if (varPosFilter !== "ALL") {
-    const prefer = keys.filter((k) => (varPosFilter === "UTIL" ? k.startsWith("U") || k === "UTIL" : k === varPosFilter));
-    order.sort((a, b) => (prefer.includes(a) ? 0 : 1) - (prefer.includes(b) ? 0 : 1));
-  }
-  const slot = order.find((k) => !handRoster[k] && canPlay(p, k, isShowdown));
+  const slot = bestHandSlot(p, keys, isShowdown);
   if (!slot) {
-    document.getElementById("varStatus").textContent = `${p.name} has no open spot.`;
+    document.getElementById("varStatus").textContent = `${p.name} (${rosterPos(p)}) has no open spot he can play.`;
     return;
   }
   handRoster[slot] = p;
-  document.getElementById("varStatus").textContent = "";
+  document.getElementById("varStatus").textContent = `${p.name} added at ${slotLabel(slot)}.`;
   renderHand();
 }
 function randomFillHand() {
@@ -4797,7 +4805,6 @@ function renderHand() {
   const listEl = document.getElementById("varPoolList");
   if (!slots || !listEl) return;
   const keys = handKeys();
-  const labels = handLabels();
   const isShowdown = keys[0] === "CPT";
   const used = new Set(Object.values(handRoster).filter(Boolean).map((p) => p.name));
   const salary = Object.values(handRoster).reduce((s, p) => s + (p ? p.salary : 0), 0);
@@ -4812,12 +4819,12 @@ function renderHand() {
   if (stats) {
     stats.innerHTML = `<div>Salary<b>${money(salary)}</b></div><div>Avg left / open<b>${open ? money(Math.round(left / open)) : money(left)}</b></div><div>Proj FP<b>${proj.toFixed(1)}</b></div>`;
   }
-  slots.innerHTML = keys.map((k, i) => {
+  slots.innerHTML = keys.map((k) => {
     const p = handRoster[k];
     const pivots = (handPivots[k] || new Set()).size;
     return `<div class="hand-slot">
-      <span class="pos">${labels[i]}</span>
-      <span>${p ? `${nameBtn(p.name)} <span class="cs-sub">${esc(p.team)} vs ${esc(p.opp)}</span>` : `<span class="empty">Empty</span>`}</span>
+      <span class="pos">${slotLabel(k)}</span>
+      <span>${p ? `${nameBtn(p.name)} <span class="cs-sub">${esc(rosterPos(p))} · ${esc(p.team)} vs ${esc(p.opp)}</span>` : `<span class="empty">Empty</span>`}</span>
       <span>${p ? p.proj.toFixed(1) : ""}</span>
       <span>${p ? money(p.salary) : ""}</span>
       <span>${p ? `<label class="check" data-tip="This spot is allowed to change. The rest of the lineup stays."><input type="checkbox" class="hand-swap" data-slot="${k}" ${handSwap.has(k) ? "checked" : ""}> Swap</label>${pivots ? ` <span class="cs-sub">${pivots} pivots</span>` : ""} <button type="button" class="secondary hand-x" data-slot="${k}">×</button>` : ""}</span>
@@ -4853,7 +4860,7 @@ function renderHand() {
       ? filled.map((k) => {
           const p = handRoster[k];
           const n = (handPivots[k] || new Set()).size;
-          return `<button type="button" class="pivot-card ${pivotSlot === k ? "on" : ""}" data-slot="${k}"><b>${esc(labels[keys.indexOf(k)])} ${esc(p.name)}</b><div class="meta">${n ? n + " pivot" + (n === 1 ? "" : "s") : "No pivots yet"}</div></button>`;
+          return `<button type="button" class="pivot-card ${pivotSlot === k ? "on" : ""}" data-slot="${k}"><b>${slotLabel(k)} ${esc(p.name)}</b><div class="meta">${esc(rosterPos(p))} · ${n ? n + " pivot" + (n === 1 ? "" : "s") : "No pivots yet"}</div></button>`;
         }).join("")
       : `<div class="note">Add players to the base, then set who each one can swap to.</div>`;
   }
@@ -4862,9 +4869,13 @@ function renderHand() {
   if (box && pivotSlot && handRoster[pivotSlot]) {
     const cur = handRoster[pivotSlot];
     const set = handPivots[pivotSlot] || new Set();
-    const opts = varCandidates(isShowdown).filter((p) => p.name !== cur.name && !used.has(p.name) && canPlay(p, pivotSlot, isShowdown)).sort((a, b) => b.proj - a.proj).slice(0, 40);
+    const opts = varCandidates(isShowdown).filter((p) => p.name !== cur.name && !used.has(p.name) && canPlay(p, pivotSlot, isShowdown));
+    opts.sort((a, b) => pivotSlot === "UTIL" || pivotSlot.startsWith("U")
+      ? Math.abs(a.salary - cur.salary) - Math.abs(b.salary - cur.salary)
+      : b.proj - a.proj);
+    const shown = opts.slice(0, 36);
     box.style.display = "block";
-    box.innerHTML = `<div class="note" style="padding:0.25rem 0.35rem 0.4rem;">Pivots for ${esc(cur.name)}. Checked names are the only swaps for this spot when the toggle is on.</div>` + opts.map((p) => `<label><input type="checkbox" class="pivot-cb" data-id="${esc(p.id)}" ${set.has(p.id) ? "checked" : ""}> ${esc(p.name)} <span class="meta">${money(p.salary)} · ${p.proj.toFixed(1)}</span></label>`).join("");
+    box.innerHTML = `<div class="note" style="grid-column:1/-1;padding:0.15rem 0.35rem 0.35rem;">Who can ${esc(cur.name)} become? Check the names. With the toggle on, this spot only swaps to those names.</div>` + shown.map((p) => `<label><input type="checkbox" class="pivot-cb" data-id="${esc(p.id)}" ${set.has(p.id) ? "checked" : ""}><span>${esc(p.name)} <span class="meta">${esc(rosterPos(p))} · ${money(p.salary)} · ${p.proj.toFixed(1)}</span></span></label>`).join("");
     if (summary) summary.textContent = filled.map((k) => {
       const names = [...(handPivots[k] || [])].map((id) => (pool.find((p) => p.id === id) || {}).name).filter(Boolean);
       return names.length ? `${handRoster[k].name} → ${names.join(", ")}` : "";

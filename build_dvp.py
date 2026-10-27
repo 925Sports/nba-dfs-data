@@ -49,7 +49,7 @@ ALIAS = {
 }
 PRIMARY = ("PG", "SG", "SF", "PF", "C")
 FIELDS = [
-    "TEAM", "POS", "WINDOW", "GP", "MIN", "FPTS", "PTS", "OREB", "DREB", "REB",
+    "TEAM", "POS", "WINDOW", "GP", "APP", "MIN", "FPTS", "PTS", "OREB", "DREB", "REB",
     "AST", "STL", "BLK", "TOV", "PF", "FGM", "FGA", "FG3M", "FG3A", "FTM", "FTA", "PM",
 ]
 STAT_KEYS = ["MIN", "FPTS", "PTS", "OREB", "DREB", "REB", "AST", "STL", "BLK", "TOV", "PF", "FGM", "FGA", "FG3M", "FG3A", "FTM", "FTA", "PM"]
@@ -153,10 +153,13 @@ def positions_from_players(path, found):
 
 
 def blank():
-    return {key: 0.0 for key in STAT_KEYS}
+    row = {key: 0.0 for key in STAT_KEYS}
+    row["APP"] = 0
+    return row
 
 
 def add(bucket, row):
+    bucket["APP"] += 1
     bucket["MIN"] += num(row.get("MIN"))
     bucket["FPTS"] += num(row.get("FP"))
     bucket["PTS"] += num(row.get("PTS"))
@@ -232,6 +235,7 @@ def main():
                 "POS": slot,
                 "WINDOW": window,
                 "GP": len(picked),
+                "APP": int(total["APP"]),
             }
             for key in STAT_KEYS:
                 out[key] = round(total[key], 2)

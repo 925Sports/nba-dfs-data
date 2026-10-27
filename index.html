@@ -140,8 +140,10 @@ td { padding:0.38rem 0.45rem; border-bottom:1px solid var(--border); vertical-al
 .pivot-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:0.25rem; max-height:280px; overflow:auto; border:1px solid var(--border); border-radius:10px; padding:0.45rem; background:var(--card2); margin:0.35rem 0; }
 .pivot-list label { display:flex; flex-direction:row; align-items:center; justify-content:flex-start; gap:0.45rem; padding:0.32rem 0.4rem; font-size:0.76rem; border-radius:6px; cursor:pointer; }
 .pivot-list label.good { background:rgba(62,224,180,0.16); }
+.pivot-list label.close { background:rgba(250,204,21,0.18); }
 .pivot-list label.bad { background:rgba(239,68,68,0.16); }
 .pivot-list label.good:hover { background:rgba(62,224,180,0.28); }
+.pivot-list label.close:hover { background:rgba(250,204,21,0.30); }
 .pivot-list label.bad:hover { background:rgba(239,68,68,0.26); }
 .pivot-list input { width:16px; height:16px; margin:0; flex:0 0 auto; }
 .var-table td.swapped { background:rgba(71,198,200,0.16); font-weight:700; }
@@ -4676,7 +4678,7 @@ function loadHandFromLineup(base, note) {
 function pivotTone(cur, p) {
   const dProj = p.proj - cur.proj;
   const dSal = p.salary - cur.salary;
-  if (Math.abs(dProj) <= 2.5 && Math.abs(dSal) <= 800) return "good";
+  if (Math.abs(dProj) <= 3 && Math.abs(dSal) <= 1000) return "close";
   if (dProj >= 1.5 && dSal <= 800) return "good";
   if (dSal <= -500 && dProj >= -1.5) return "good";
   if (dProj <= -4) return "bad";
@@ -4911,11 +4913,11 @@ function renderHand() {
       ? Math.abs(a.salary - cur.salary) - Math.abs(b.salary - cur.salary)
       : b.proj - a.proj);
     const shown = opts.slice().sort((a, b) => {
-      const rank = (p) => pivotTone(cur, p) === "good" ? 0 : pivotTone(cur, p) === "bad" ? 2 : 1;
+      const rank = (p) => { const t = pivotTone(cur, p); return t === "good" ? 0 : t === "close" ? 1 : t === "bad" ? 3 : 2; };
       return rank(a) - rank(b) || b.proj - a.proj;
     }).slice(0, 36);
     box.style.display = "block";
-    box.innerHTML = `<div class="note" style="grid-column:1/-1;padding:0.15rem 0.35rem 0.35rem;">Who can ${esc(cur.name)} become? Green is a similar or better price and projection. Red gives up points or costs more for less.</div>` + shown.map((p) => {
+    box.innerHTML = `<div class="note" style="grid-column:1/-1;padding:0.15rem 0.35rem 0.35rem;">Who can ${esc(cur.name)} become? Green is a better price or projection. Yellow is close. Red gives up points or costs more for less.</div>` + shown.map((p) => {
       const tone = pivotTone(cur, p);
       const dProj = p.proj - cur.proj;
       const dSal = p.salary - cur.salary;

@@ -680,9 +680,15 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
     </div>
   </div></div></div>
   <div id="tab-dvp" style="display:none;"><div class="card"><div class="card-header">Defense vs position</div><div class="card-body">
-    <div class="note" id="dvpNote" style="margin-bottom:0.45rem;">What each defense has allowed to that position this season, from the game log.</div>
+    <div class="note" id="dvpNote" style="margin-bottom:0.45rem;">What each defense has allowed. The sheet is built with the game log, so this page does not add it up itself.</div>
     <div class="row" style="align-items:center;">
       <div class="chip-row" id="dvpPos" style="margin:0;"></div>
+      <label>Sample
+        <select id="dvpWindow">
+          <option value="season">Season</option>
+          <option value="l10">Last 10</option>
+        </select>
+      </label>
       <label>View
         <select id="dvpMode">
           <option value="avg">Average</option>
@@ -1857,6 +1863,7 @@ const PLAYERS_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/ma
 const DRAFTTABLE_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/drafttable.csv";
 const STATS_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/nba_stats.csv";
 const LOG_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/nba_game_log.csv";
+const DVP_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/nba_dvp.csv";
 const STARTERS_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/projected_starters.csv";
 function cacheBust(url) {
   return url + (url.includes("?") ? "&" : "?") + "t=" + Date.now();
@@ -1908,6 +1915,7 @@ let dvpPos = "PG";
 let dvpSort = { key: "fpts", dir: -1 };
 let dvpCache = null;
 let dvpIndexCache = null;
+let dvpSheet = null;
 
 function canonTeam(t) {
   const u = String(t || "").toUpperCase();
@@ -2186,6 +2194,7 @@ function csvField(v) {
 
 async function loadData() {
   const status = document.getElementById("status");
+  loadDvpSheet();
   try {
     const [pRes, sRes] = await Promise.all([fetch(cacheBust(PLAYERS_URL)), fetch(cacheBust(STATS_URL))]);
     if (!pRes.ok) throw new Error("players");
@@ -3288,7 +3297,7 @@ function renderGamePreview() {
     const first = String(primaryPos(p) || "").split(/[/,]/)[0].trim().toUpperCase();
     const pos = ["PG", "SG", "SF", "PF", "C"].includes(first) ? first : posToken(p);
     const cell = dvpFor(p.opp, pos);
-    return cell ? cell.rank : rankOf(p);
+    return cell && cell.rank <= 30 ? cell.rank : 0;
   };
   const named = (list) => list.length
     ? list.map((p) => `${nameBtn(p.name)} ${esc(rosterPos(p))} #${matchupRank(p)}`).join(" · ")
@@ -3308,14 +3317,12 @@ function renderGamePreview() {
     const rows = posOrder.map((pos) => {
       const atPos = side.filter((p) => slotOf(p) === pos);
       const cell = dvpFor(opp, pos);
-      const ranked = atPos.filter((p) => rankOf(p)).sort((a, b) => (b.minutes || 0) - (a.minutes || 0));
       const starter = (projectedStarters.get(canonTeam(tm)) || []).find((s) => s.pos === pos);
       const starterRow = starter && atPos.find((p) => samePlayer(p.name, starter.name));
-      const lead = starterRow || ranked[0];
-      const rank = cell ? cell.rank : (lead ? rankOf(lead) : 0);
-      const allowed = cell ? cell.fpts : (lead && lead.dvpProj ? lead.dvpProj : 0);
+      const rank = cell && cell.rank <= 30 ? cell.rank : 0;
+      const allowed = cell ? cell.fpts : 0;
       const fp = allowed ? allowed.toFixed(1) : "—";
-      const ppm = cell ? cell.fppm.toFixed(2) : (allowed ? (allowed / 48).toFixed(2) : "—");
+      const ppm = cell ? cell.fppm.toFixed(2) : "—";
       const who = atPos.filter(minutesOk).sort((a, b) => (b.minutes || 0) - (a.minutes || 0)).slice(0, 3).map((p) => p.name.split(" ").slice(-1)[0]).join(", ");
       return `<tr><td>${pos}</td><td>${pill(rank)}</td><td>${fp}</td><td>${ppm}</td><td class="cs-sub">${esc(who || "—")}</td></tr>`;
     }).join("");
@@ -3325,15 +3332,15 @@ function renderGamePreview() {
       <table class="gp-dvp-table"><thead><tr><th>Pos</th><th>Rank</th><th>FP allowed</th><th title="Fantasy points per minute this defense allows to the position. FP allowed divided by 48.">FPPM</th><th>18+ min</th></tr></thead><tbody>${rows}</tbody></table>
     </div>`;
   }).join("");
-  const hasDvp = logByName ? teams.some((tm) => ["PG", "SG", "SF", "PF", "C"].some((pos) => dvpFor(teams.find((t) => t !== tm), pos))) : dvpPlayers.some((p) => rankOf(p));
-  const dvpBody = !logByName
-    ? `<div class="lu-empty">Game log is still loading. The matchup ranks fill in when it does.</div>`
+  const hasDvp = dvpReady() && teams.some((tm) => ["PG", "SG", "SF", "PF", "C"].some((pos) => dvpFor(teams.find((t) => t !== tm), pos)));
+  const dvpBody = !dvpReady()
+    ? `<div class="lu-empty">DVP sheet is still loading.</div>`
     : hasDvp
-    ? `<p class="note">Good is rank 1–10. Tough is 21–30. These ranks come from this season's game log, not the sheet, so both sides of the game have a number. The names are only players at 18 minutes or a projected starter. FPPM is fantasy points allowed per game, divided by 48.</p>
+    ? `<p class="note">Good is rank 1–10. Tough is 21–30. Rank 1 allows the most to that spot. The number is what one player at the spot has averaged, not the whole group added up. The chips on the team header are the same ranks. FPPM is that average divided by 48.</p>
        <p style="margin:0.2rem 0;"><strong>Good matchup</strong> — ${named(good)}</p>
        <p style="margin:0.2rem 0 0.45rem;"><strong>Tough matchup</strong> — ${named(tough)}</p>
        <div class="gp-dvp-board">${dvpCards}</div>`
-    : `<div class="lu-empty">No DVP yet. The game log does not have enough games against these defenses.</div>`;
+    : `<div class="lu-empty">No DVP yet for this game.</div>`;
   const streakRows = [];
   const streakSeen = new Set();
   g.players.forEach((p) => {
@@ -3572,7 +3579,18 @@ function posForLog(name, team) {
   return fallback;
 }
 function dvpRows() {
-  if (dvpCache) return dvpCache;
+  const windowId = dvpWindowId();
+  if (dvpCache && dvpCache.window === windowId) return dvpCache;
+  dvpIndexCache = null;
+  if (dvpSheet && dvpSheet.length) {
+    const rows = dvpSheet.filter((r) => r.window === windowId);
+    dvpCache = { rows, used: rows.length, skipped: 0, minT: 0, maxT: 0, window: windowId, source: "sheet" };
+    return dvpCache;
+  }
+  if (windowId === "l10") {
+    dvpCache = { rows: [], used: 0, skipped: 0, minT: 0, maxT: 0, window: windowId, source: "log" };
+    return dvpCache;
+  }
   const seasonStart = Date.UTC(2026, 9, 1);
   const buckets = new Map();
   let used = 0;
@@ -3618,11 +3636,82 @@ function dvpRows() {
       });
     });
   }
-  dvpCache = { rows: [...buckets.values()], used, skipped, minT, maxT };
+  dvpCache = { rows: [...buckets.values()], used, skipped, minT, maxT, window: "season", source: "log" };
   return dvpCache;
 }
+function dvpWindowId() {
+  const el = document.getElementById("dvpWindow");
+  return el && el.value ? el.value : "season";
+}
+function dvpPosList() {
+  return ["PG", "SG", "SF", "PF", "C", "G", "F", "GF", "CF"];
+}
+function dvpPosLabel(pos) {
+  return {
+    PG: "Point guard",
+    SG: "Shooting guard",
+    SF: "Small forward",
+    PF: "Power forward",
+    C: "Center",
+    G: "Guard. Point guards and shooting guards added together.",
+    F: "Forward. Small forwards and power forwards added together.",
+    GF: "Guard forward. Shooting guards and small forwards added together.",
+    CF: "Center forward. Power forwards and centers added together.",
+  }[pos] || pos;
+}
+function dvpReady() {
+  return !!((dvpSheet && dvpSheet.length) || logByName);
+}
+function loadDvpSheet() {
+  return fetch(cacheBust(DVP_URL)).then((r) => {
+    if (!r.ok) throw new Error("dvp");
+    return r.text();
+  }).then((text) => {
+    const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
+    const rows = [];
+    parsed.data.forEach((r) => {
+      const team = canonTeam(r.TEAM);
+      const pos = String(r.POS || "").toUpperCase();
+      const gp = numOrZero(r.GP);
+      if (!team || !pos || gp <= 0) return;
+      rows.push({
+        team,
+        pos,
+        window: r.WINDOW || "season",
+        gp,
+        app: numOrZero(r.APP),
+        min: numOrZero(r.MIN),
+        fpts: numOrZero(r.FPTS),
+        pts: numOrZero(r.PTS),
+        oreb: numOrZero(r.OREB),
+        dreb: numOrZero(r.DREB),
+        reb: numOrZero(r.REB),
+        ast: numOrZero(r.AST),
+        stl: numOrZero(r.STL),
+        blk: numOrZero(r.BLK),
+        tov: numOrZero(r.TOV),
+        pf: numOrZero(r.PF),
+        fgm: numOrZero(r.FGM),
+        fga: numOrZero(r.FGA),
+        fg3m: numOrZero(r.FG3M),
+        fg3a: numOrZero(r.FG3A),
+        ftm: numOrZero(r.FTM),
+        fta: numOrZero(r.FTA),
+        pm: numOrZero(r.PM),
+      });
+    });
+    if (rows.length < 40) throw new Error("thin");
+    dvpSheet = rows;
+    dvpCache = null;
+    dvpIndexCache = null;
+    const gameTab = document.getElementById("tab-game");
+    if (gameTab && gameTab.style.display !== "none") renderGamePreview();
+    const dvpTab = document.getElementById("tab-dvp");
+    if (dvpTab && dvpTab.style.display !== "none") renderDvp();
+  }).catch(() => {});
+}
 function dvpFor(team, pos) {
-  if (!logByName || !team || !pos) return null;
+  if (!dvpReady() || !team || !pos) return null;
   if (!dvpIndexCache) {
     const byPos = new Map();
     dvpRows().rows.forEach((r) => {
@@ -3631,10 +3720,14 @@ function dvpFor(team, pos) {
     });
     const map = new Map();
     byPos.forEach((list, slot) => {
-      const order = list.slice().sort((a, b) => (b.gp ? b.fpts / b.gp : 0) - (a.gp ? a.fpts / a.gp : 0));
+      const order = list.slice().sort((a, b) => {
+        const ag = a.app || a.gp, bg = b.app || b.gp;
+        return (bg ? b.fpts / bg : 0) - (ag ? a.fpts / ag : 0);
+      });
       order.forEach((r, i) => {
-        const fpts = r.gp ? r.fpts / r.gp : 0;
-        map.set(canonTeam(r.team) + "|" + slot, { rank: i + 1, fpts, fppm: fpts / 48, gp: r.gp });
+        const games = r.app || r.gp;
+        const fpts = games ? r.fpts / games : 0;
+        map.set(canonTeam(r.team) + "|" + slot, { rank: i + 1, fpts, fppm: fpts / 48, gp: r.gp, of: order.length });
       });
     });
     dvpIndexCache = map;
@@ -3643,12 +3736,12 @@ function dvpFor(team, pos) {
 }
 function dvpStrip(opp) {
   const slots = ["PG", "SG", "SF", "PF", "C"];
-  if (!logByName) return `<div class="dvp-strip"><span class="cs-sub">DVP loads with the game log.</span></div>`;
+  if (!dvpReady()) return `<div class="dvp-strip"><span class="cs-sub">DVP sheet is still loading.</span></div>`;
   return `<div class="dvp-strip">${slots.map((pos) => {
     const cell = dvpFor(opp, pos);
     if (!cell) return `<span class="dvp-chip"><b>${pos}</b><span>—</span></span>`;
     const cls = cell.rank <= 10 ? "soft" : cell.rank >= 21 ? "tough" : "mid";
-    return `<span class="dvp-chip" data-tip="What ${esc(opp)} allow to ${pos}. Rank ${cell.rank} of 30. ${cell.fpts.toFixed(1)} fantasy points per game. Rank 1 allows the most."><b>${pos}</b><span class="dvp-pill ${cls}">#${cell.rank}</span><span>${cell.fpts.toFixed(1)}</span></span>`;
+    return `<span class="dvp-chip" data-tip="What ${esc(opp)} allow to ${pos}. Rank ${cell.rank} of ${cell.of}. ${cell.fpts.toFixed(1)} fantasy points per game. Rank 1 allows the most."><b>${pos}</b><span class="dvp-pill ${cls}">#${cell.rank}</span><span>${cell.fpts.toFixed(1)}</span></span>`;
   }).join("")}</div>`;
 }
 function dvpValue(row, key, mode) {
@@ -3666,10 +3759,12 @@ function renderDvp() {
   const note = document.getElementById("dvpNote");
   const chips = document.getElementById("dvpPos");
   if (!host || !chips) return;
-  chips.innerHTML = ["PG", "SG", "SF", "PF", "C"].map((pos) => `<button type="button" class="pchip ${dvpPos === pos ? "on" : ""}" data-pos="${pos}">${pos}</button>`).join("");
+  const list = dvpPosList();
+  if (!list.includes(dvpPos)) dvpPos = list[0];
+  chips.innerHTML = list.map((pos) => `<button type="button" class="pchip ${dvpPos === pos ? "on" : ""}" data-pos="${pos}" data-tip="${esc(dvpPosLabel(pos))}">${pos}</button>`).join("");
   chips.querySelectorAll("[data-pos]").forEach((b) => b.onclick = () => { dvpPos = b.dataset.pos; renderDvp(); });
-  if (!logByName) {
-    note.textContent = "Game log is still loading.";
+  if (!dvpReady()) {
+    note.textContent = "DVP sheet is still loading.";
     host.innerHTML = "";
     return;
   }
@@ -3692,9 +3787,13 @@ function renderDvp() {
     return `${d.getUTCMonth() + 1}/${d.getUTCDate()}`;
   };
   const viewName = mode === "min" ? "per minute" : "per game";
+  const sample = dvpWindowId() === "l10" ? "last 10 games" : "this season";
+  const splitNote = ["G", "F", "GF", "CF"].includes(dvpPos)
+    ? dvpPosLabel(dvpPos) + " The total is bigger because it is two spots."
+    : "Each row is one primary position.";
   note.textContent = shown.length
-    ? `${dvpPos} stats allowed, ${viewName}. Rank 1 allows the most fantasy points in the league${slateOnly ? ", and this table is only the teams on the slate" : ""}. ${pack.minT ? fmtDate(pack.minT) + "–" + fmtDate(pack.maxT) + ". " : ""}Shooting percentages are makes divided by attempts in both views. Minutes stay a per-game average.`
-    : "No games at this position yet this season.";
+    ? `${dvpPos} allowed, ${viewName}, ${sample}. ${splitNote} Rank 1 allows the most fantasy points${slateOnly ? ". This table is only the teams on the slate" : ""}. ${pack.source === "sheet" ? "Loaded from the GitHub sheet." : "The sheet is not on GitHub yet, so this season is added up in the browser."}`
+    : (dvpWindowId() === "l10" && pack.source !== "sheet" ? "Last 10 needs the DVP sheet on GitHub." : "No games at this spot yet.");
   const digits = (key) => {
     if (key === "gp" || key === "rank") return 0;
     if (mode === "min" && !["min", "fg", "fg3", "ft"].includes(key)) return 2;
@@ -5111,9 +5210,17 @@ document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
     document.getElementById("tab-" + id).style.display = t.dataset.tab === id ? "block" : "none";
   });
   if (t.dataset.tab === "variations") renderHand();
-  if (t.dataset.tab === "dvp") ensureLogs().then(() => renderDvp());
+  if (t.dataset.tab === "dvp") { renderDvp(); ensureLogs().then(() => renderDvp()); }
 });
+function refreshDvp() {
+  dvpCache = null;
+  dvpIndexCache = null;
+  renderDvp();
+  const gameTab = document.getElementById("tab-game");
+  if (gameTab && gameTab.style.display !== "none") renderGamePreview();
+}
 document.getElementById("dvpMode").onchange = renderDvp;
+document.getElementById("dvpWindow").onchange = refreshDvp;
 document.getElementById("dvpSlate").onchange = renderDvp;
 document.getElementById("slateSelect").onchange = (e) => loadSlate(e.target.value);
 document.getElementById("search").oninput = renderPool;

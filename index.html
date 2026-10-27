@@ -266,7 +266,8 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 .gp-impl span { display:block; font-size:0.62rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#c9d4ee; margin-top:0.16rem; }
 .gp-impl.impl-hot { color:#7dd3fc; }
 .gp-impl.impl-ok { color:#6ee7b7; }
-.gp-impl.impl-low { color:#fcd34d; }
+.b2b { display:inline-flex; align-items:center; justify-content:center; margin-left:0.35rem; min-width:1.15rem; height:1.15rem; padding:0 0.22rem; border-radius:999px; font-size:0.68rem; font-weight:800; vertical-align:1px; background:rgba(252,211,77,0.18); color:#fcd34d; cursor:help; }
+.b2b.front { background:rgba(125,211,252,0.16); color:#7dd3fc; }
 .gp-callouts { margin:0 0 0.75rem; }
 .gp-dvp-board { display:grid; grid-template-columns:1fr 1fr; gap:0.65rem; margin-top:0.45rem; }
 @media (max-width:720px) { .gp-dvp-board { grid-template-columns:1fr; } }
@@ -2942,10 +2943,22 @@ function posToken(p) {
   return hit || raw || "—";
 }
 function sideEnv(players) {
-  const sample = players.find((p) => p.ou) || players[0] || {};
-  const ou = Number(sample.ou) || 0;
-  const raw = Number(sample.spread) || 0;
-  const fav = players.some((p) => p.fav);
+  const team = (players[0] || {}).team;
+  const oppTeam = (players.find((p) => p.opp) || {}).opp;
+  const same = pool.filter((p) => p.team === team && p.pos !== "CPT");
+  const rest = pool.filter((p) => p.pos !== "CPT" && oppTeam && p.team === oppTeam);
+  const ownOu = same.find((p) => Number(p.ou)) || players.find((p) => Number(p.ou));
+  const oppOu = rest.find((p) => Number(p.ou));
+  const ou = Number((ownOu || oppOu || {}).ou) || 0;
+  const ownSpr = same.find((p) => Number(p.spread)) || players.find((p) => Number(p.spread));
+  const oppSpr = rest.find((p) => Number(p.spread));
+  let raw = ownSpr ? Number(ownSpr.spread) : 0;
+  let fav = same.some((p) => p.fav) || players.some((p) => p.fav);
+  if (!ownSpr && oppSpr) {
+    const oppFav = rest.some((p) => p.fav) || Number(oppSpr.spread) < 0;
+    fav = !oppFav;
+    raw = oppFav ? Math.abs(Number(oppSpr.spread)) : -Math.abs(Number(oppSpr.spread));
+  }
   let spr = raw;
   if (fav && raw > 0) spr = -Math.abs(raw);
   if (!fav && raw < 0) spr = Math.abs(raw);
@@ -3138,6 +3151,64 @@ function renderSlatePreview() {
   });
 }
 
+const scheduleByDay = new Map();
+const schedulePending = new Set();
+function slateDay(start) {
+  const m = String(start || "").match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if (!m) return "";
+  return `${m[3]}-${String(m[1]).padStart(2, "0")}-${String(m[2]).padStart(2, "0")}`;
+}
+function shiftDay(iso, n) {
+  const [y, m, d] = iso.split("-").map(Number);
+  const dt = new Date(Date.UTC(y, m - 1, d + n));
+  return dt.toISOString().slice(0, 10);
+}
+function teamPlayedOn(team, isoDay) {
+  const t = canonTeam(team);
+  const sched = scheduleByDay.get(isoDay);
+  if (sched) return sched.has(t);
+  const logged = logTeamDays.get(t);
+  return logged ? logged.has(isoDay) : false;
+}
+function b2bBits(team, start) {
+  const day = slateDay(start);
+  if (!day) return { icon: "", note: "" };
+  const back = teamPlayedOn(team, shiftDay(day, -1));
+  const front = teamPlayedOn(team, shiftDay(day, 1));
+  if (back && front) return { icon: `<span class="b2b" data-tip="Played yesterday and plays again tomorrow. A starter can sit.">◀▶</span>`, note: "Both ends" };
+  if (back) return { icon: `<span class="b2b back" data-tip="Back end of a back-to-back. They played yesterday, so a starter can sit.">◀</span>`, note: "Back of B2B" };
+  if (front) return { icon: `<span class="b2b front" data-tip="Front end of a back-to-back. They play again tomorrow, so a starter can sit.">▶</span>`, note: "Front of B2B" };
+  return { icon: "", note: "" };
+}
+function loadScheduleDays(days) {
+  const need = [...new Set(days.filter((d) => d && !scheduleByDay.has(d) && !schedulePending.has(d)))];
+  if (!need.length) return;
+  need.forEach((d) => schedulePending.add(d));
+  Promise.all(need.map(async (d) => {
+    try {
+      const r = await fetch(`https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=${d.replace(/-/g, "")}`);
+      if (!r.ok) throw new Error("schedule");
+      const data = await r.json();
+      const set = new Set();
+      (data.events || []).forEach((ev) => {
+        const comp = (ev.competitions || [])[0] || {};
+        (comp.competitors || []).forEach((c) => {
+          const abbr = c.team && c.team.abbreviation;
+          if (abbr) set.add(canonTeam(abbr));
+        });
+      });
+      scheduleByDay.set(d, set);
+    } catch (e) {
+      scheduleByDay.set(d, null);
+    } finally {
+      schedulePending.delete(d);
+    }
+  })).then(() => {
+    const gameTab = document.getElementById("tab-game");
+    if (gameTab && gameTab.style.display !== "none") renderGamePreview();
+  });
+}
+
 function renderGamePreview() {
   const rail = document.getElementById("gpRail");
   const desk = document.getElementById("gamePreview");
@@ -3151,6 +3222,13 @@ function renderGamePreview() {
     return;
   }
   if (!gpKey || !games.some((g) => g.key === gpKey)) gpKey = games[0].key;
+  const schedDays = [];
+  games.forEach((gm) => {
+    const d = slateDay(gm.start);
+    if (!d) return;
+    schedDays.push(shiftDay(d, -1), d, shiftDay(d, 1));
+  });
+  loadScheduleDays(schedDays);
   rail.innerHTML = games.map((g) => {
     const fav = g.players.find((p) => p.fav);
     return `<button type="button" class="${g.key === gpKey ? "active" : ""}" data-game="${esc(g.key)}"><div class="g-name">${esc(g.label)}</div><div class="g-meta">${g.ou ? "O/U " + g.ou.toFixed(1) : "No total"}${fav ? " · " + esc(fav.team) + " " + sprText(fav) : ""}</div></button>`;
@@ -3168,9 +3246,10 @@ function renderGamePreview() {
     const implN = Number(env.implied) || 0;
     const implCls = implN >= 118 ? "impl-hot" : implN >= 112 ? "impl-ok" : implN ? "impl-low" : "";
     const sprTxt = env.spr ? (env.spr > 0 ? "+" : "") + env.spr : "";
+    const b2b = b2bBits(tm, g.start);
     return `<div class="gp-side">
       <div class="lu-banner">
-        <div><b>${esc(tm)}</b><div class="lu-sub">${sprTxt}</div></div>
+        <div><b>${esc(tm)}</b>${b2b.icon}<div class="lu-sub">${[sprTxt, b2b.note].filter(Boolean).join(" · ")}</div></div>
         <div class="gp-impl ${implCls}">${implN ? implN.toFixed(1) : "—"}<span>implied</span></div>
       </div>
       <div class="exp-pill"><i></i> ${board.projected ? "Projected starting five" : "Expected lineup"}</div>
@@ -3297,6 +3376,7 @@ function renderGamePreview() {
 
 let drawerTab = "ov";
 let logByName = null;
+let logTeamDays = new Map();
 let logPromise = null;
 let logSpan = "";
 
@@ -3326,6 +3406,7 @@ function ensureLogs() {
   }).then((text) => {
     const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
     const map = new Map();
+    const days = new Map();
     let minT = 0;
     let maxT = 0;
     parsed.data.forEach((row) => {
@@ -3365,6 +3446,12 @@ function ensureLogs() {
       g.fpts = dkFpts(g);
       if (!map.has(key)) map.set(key, []);
       map.get(key).push(g);
+      const teamKey = canonTeam(row.TEAM || "");
+      if (teamKey) {
+        const iso = new Date(t).toISOString().slice(0, 10);
+        if (!days.has(teamKey)) days.set(teamKey, new Set());
+        days.get(teamKey).add(iso);
+      }
       if (!minT || t < minT) minT = t;
       if (t > maxT) maxT = t;
     });
@@ -3375,6 +3462,7 @@ function ensureLogs() {
     };
     logSpan = minT && maxT ? `${fmt(minT)} – ${fmt(maxT)}` : "";
     logByName = map;
+    logTeamDays = days;
     dvpCache = null;
     const gameTab = document.getElementById("tab-game");
     if (gameTab && gameTab.style.display !== "none") renderGamePreview();

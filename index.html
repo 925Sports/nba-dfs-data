@@ -259,7 +259,10 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 .gp-sides { display:grid; grid-template-columns:1fr 1fr; gap:0.65rem; }
 @media (max-width:720px) { .gp-sides { grid-template-columns:1fr; } }
 .gp-side { border:1px solid var(--border); border-radius:12px; padding:0.55rem 0.6rem 0.7rem; background:var(--card2); }
-.lu-banner { display:flex; justify-content:space-between; align-items:center; background:#16325f; color:#fff; border-radius:8px; padding:0.55rem 0.7rem; margin-bottom:0.35rem; }
+.lu-banner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; background:#16325f; color:#fff; border-radius:8px; padding:0.55rem 0.7rem; margin-bottom:0.35rem; }
+.dvp-strip { display:flex; flex-wrap:wrap; gap:0.28rem; width:100%; margin-top:0.42rem; }
+.dvp-chip { display:inline-flex; align-items:center; gap:0.22rem; background:rgba(8,16,32,0.35); border:1px solid rgba(255,255,255,0.14); border-radius:999px; padding:0.08rem 0.38rem 0.08rem 0.42rem; font-size:0.68rem; color:#dbe4f5; }
+.dvp-chip b { color:#fff; letter-spacing:0.03em; }
 .lu-banner b { font-size:1.05rem; letter-spacing:0.04em; }
 .lu-banner .lu-sub { font-size:0.72rem; color:#c9d4ee; margin-top:0.12rem; }
 .gp-impl { text-align:right; font-size:1.7rem; font-weight:800; line-height:1; color:#fff; }
@@ -1904,6 +1907,7 @@ let posBook = [];
 let dvpPos = "PG";
 let dvpSort = { key: "fpts", dir: -1 };
 let dvpCache = null;
+let dvpIndexCache = null;
 
 function canonTeam(t) {
   const u = String(t || "").toUpperCase();
@@ -3247,10 +3251,12 @@ function renderGamePreview() {
     const implCls = implN >= 118 ? "impl-hot" : implN >= 112 ? "impl-ok" : implN ? "impl-low" : "";
     const sprTxt = env.spr ? (env.spr > 0 ? "+" : "") + env.spr : "";
     const b2b = b2bBits(tm, g.start);
+    const opp = teams.find((t) => t !== tm) || "";
     return `<div class="gp-side">
       <div class="lu-banner">
         <div><b>${esc(tm)}</b>${b2b.icon}<div class="lu-sub">${[sprTxt, b2b.note].filter(Boolean).join(" · ")}</div></div>
         <div class="gp-impl ${implCls}">${implN ? implN.toFixed(1) : "—"}<span>implied</span></div>
+        ${dvpStrip(opp)}
       </div>
       <div class="exp-pill"><i></i> ${board.projected ? "Projected starting five" : "Expected lineup"}</div>
       ${board.projected ? "" : `<div class="lu-empty">No projected five for this team yet. Spots are filled from the starter tag, then minutes.</div>`}
@@ -3278,11 +3284,17 @@ function renderGamePreview() {
     return `<span class="dvp-pill ${cls}">#${rank}</span>`;
   };
   const minutesOk = (p) => (p.minutes || 0) >= 18 || p.starter === "Yes";
+  const matchupRank = (p) => {
+    const first = String(primaryPos(p) || "").split(/[/,]/)[0].trim().toUpperCase();
+    const pos = ["PG", "SG", "SF", "PF", "C"].includes(first) ? first : posToken(p);
+    const cell = dvpFor(p.opp, pos);
+    return cell ? cell.rank : rankOf(p);
+  };
   const named = (list) => list.length
-    ? list.map((p) => `${nameBtn(p.name)} ${esc(rosterPos(p))} #${rankOf(p)}`).join(" · ")
+    ? list.map((p) => `${nameBtn(p.name)} ${esc(rosterPos(p))} #${matchupRank(p)}`).join(" · ")
     : `<span class="cs-sub">None with 18+ minutes.</span>`;
-  const good = dvpPlayers.filter((p) => minutesOk(p) && rankOf(p) && rankOf(p) <= 10).sort((a, b) => rankOf(a) - rankOf(b));
-  const tough = dvpPlayers.filter((p) => minutesOk(p) && rankOf(p) >= 21).sort((a, b) => rankOf(b) - rankOf(a));
+  const good = dvpPlayers.filter((p) => minutesOk(p) && matchupRank(p) && matchupRank(p) <= 10).sort((a, b) => matchupRank(a) - matchupRank(b));
+  const tough = dvpPlayers.filter((p) => minutesOk(p) && matchupRank(p) >= 21).sort((a, b) => matchupRank(b) - matchupRank(a));
   const posOrder = ["PG", "SG", "SF", "PF", "C"];
   const dvpCards = teams.map((tm) => {
     const opp = teams.find((t) => t !== tm) || "";
@@ -3295,14 +3307,15 @@ function renderGamePreview() {
     };
     const rows = posOrder.map((pos) => {
       const atPos = side.filter((p) => slotOf(p) === pos);
+      const cell = dvpFor(opp, pos);
       const ranked = atPos.filter((p) => rankOf(p)).sort((a, b) => (b.minutes || 0) - (a.minutes || 0));
       const starter = (projectedStarters.get(canonTeam(tm)) || []).find((s) => s.pos === pos);
       const starterRow = starter && atPos.find((p) => samePlayer(p.name, starter.name));
       const lead = starterRow || ranked[0];
-      const rank = lead ? rankOf(lead) : 0;
-      const allowed = lead && lead.dvpProj ? lead.dvpProj : 0;
+      const rank = cell ? cell.rank : (lead ? rankOf(lead) : 0);
+      const allowed = cell ? cell.fpts : (lead && lead.dvpProj ? lead.dvpProj : 0);
       const fp = allowed ? allowed.toFixed(1) : "—";
-      const ppm = allowed ? (allowed / 48).toFixed(2) : "—";
+      const ppm = cell ? cell.fppm.toFixed(2) : (allowed ? (allowed / 48).toFixed(2) : "—");
       const who = atPos.filter(minutesOk).sort((a, b) => (b.minutes || 0) - (a.minutes || 0)).slice(0, 3).map((p) => p.name.split(" ").slice(-1)[0]).join(", ");
       return `<tr><td>${pos}</td><td>${pill(rank)}</td><td>${fp}</td><td>${ppm}</td><td class="cs-sub">${esc(who || "—")}</td></tr>`;
     }).join("");
@@ -3312,13 +3325,15 @@ function renderGamePreview() {
       <table class="gp-dvp-table"><thead><tr><th>Pos</th><th>Rank</th><th>FP allowed</th><th title="Fantasy points per minute this defense allows to the position. FP allowed divided by 48.">FPPM</th><th>18+ min</th></tr></thead><tbody>${rows}</tbody></table>
     </div>`;
   }).join("");
-  const hasDvp = dvpPlayers.some((p) => rankOf(p));
-  const dvpBody = hasDvp
-    ? `<p class="note">Good is rank 1–10. Tough is 21–30. The names are only players at 18 minutes or a projected starter. FPPM is fantasy points per minute that defense allows to the position, FP allowed divided by 48.</p>
+  const hasDvp = logByName ? teams.some((tm) => ["PG", "SG", "SF", "PF", "C"].some((pos) => dvpFor(teams.find((t) => t !== tm), pos))) : dvpPlayers.some((p) => rankOf(p));
+  const dvpBody = !logByName
+    ? `<div class="lu-empty">Game log is still loading. The matchup ranks fill in when it does.</div>`
+    : hasDvp
+    ? `<p class="note">Good is rank 1–10. Tough is 21–30. These ranks come from this season's game log, not the sheet, so both sides of the game have a number. The names are only players at 18 minutes or a projected starter. FPPM is fantasy points allowed per game, divided by 48.</p>
        <p style="margin:0.2rem 0;"><strong>Good matchup</strong> — ${named(good)}</p>
        <p style="margin:0.2rem 0 0.45rem;"><strong>Tough matchup</strong> — ${named(tough)}</p>
        <div class="gp-dvp-board">${dvpCards}</div>`
-    : `<div class="lu-empty">No DVP rank in the feed for this game.</div>`;
+    : `<div class="lu-empty">No DVP yet. The game log does not have enough games against these defenses.</div>`;
   const streakRows = [];
   const streakSeen = new Set();
   g.players.forEach((p) => {
@@ -3464,6 +3479,7 @@ function ensureLogs() {
     logByName = map;
     logTeamDays = days;
     dvpCache = null;
+    dvpIndexCache = null;
     const gameTab = document.getElementById("tab-game");
     if (gameTab && gameTab.style.display !== "none") renderGamePreview();
     const dvpTab = document.getElementById("tab-dvp");
@@ -3604,6 +3620,36 @@ function dvpRows() {
   }
   dvpCache = { rows: [...buckets.values()], used, skipped, minT, maxT };
   return dvpCache;
+}
+function dvpFor(team, pos) {
+  if (!logByName || !team || !pos) return null;
+  if (!dvpIndexCache) {
+    const byPos = new Map();
+    dvpRows().rows.forEach((r) => {
+      if (!byPos.has(r.pos)) byPos.set(r.pos, []);
+      byPos.get(r.pos).push(r);
+    });
+    const map = new Map();
+    byPos.forEach((list, slot) => {
+      const order = list.slice().sort((a, b) => (b.gp ? b.fpts / b.gp : 0) - (a.gp ? a.fpts / a.gp : 0));
+      order.forEach((r, i) => {
+        const fpts = r.gp ? r.fpts / r.gp : 0;
+        map.set(canonTeam(r.team) + "|" + slot, { rank: i + 1, fpts, fppm: fpts / 48, gp: r.gp });
+      });
+    });
+    dvpIndexCache = map;
+  }
+  return dvpIndexCache.get(canonTeam(team) + "|" + pos) || null;
+}
+function dvpStrip(opp) {
+  const slots = ["PG", "SG", "SF", "PF", "C"];
+  if (!logByName) return `<div class="dvp-strip"><span class="cs-sub">DVP loads with the game log.</span></div>`;
+  return `<div class="dvp-strip">${slots.map((pos) => {
+    const cell = dvpFor(opp, pos);
+    if (!cell) return `<span class="dvp-chip"><b>${pos}</b><span>—</span></span>`;
+    const cls = cell.rank <= 10 ? "soft" : cell.rank >= 21 ? "tough" : "mid";
+    return `<span class="dvp-chip" data-tip="What ${esc(opp)} allow to ${pos}. Rank ${cell.rank} of 30. ${cell.fpts.toFixed(1)} fantasy points per game. Rank 1 allows the most."><b>${pos}</b><span class="dvp-pill ${cls}">#${cell.rank}</span><span>${cell.fpts.toFixed(1)}</span></span>`;
+  }).join("")}</div>`;
 }
 function dvpValue(row, key, mode) {
   if (key === "gp") return row.gp;

@@ -139,7 +139,10 @@ td { padding:0.38rem 0.45rem; border-bottom:1px solid var(--border); vertical-al
 .pivot-card.on { border-color:var(--aqua); box-shadow:inset 0 0 0 1px var(--aqua); background:#13283f; }
 .pivot-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:0.25rem; max-height:280px; overflow:auto; border:1px solid var(--border); border-radius:10px; padding:0.45rem; background:var(--card2); margin:0.35rem 0; }
 .pivot-list label { display:flex; flex-direction:row; align-items:center; justify-content:flex-start; gap:0.45rem; padding:0.32rem 0.4rem; font-size:0.76rem; border-radius:6px; cursor:pointer; }
-.pivot-list label:hover { background:rgba(71,198,200,0.1); }
+.pivot-list label.good { background:rgba(62,224,180,0.16); }
+.pivot-list label.bad { background:rgba(239,68,68,0.16); }
+.pivot-list label.good:hover { background:rgba(62,224,180,0.28); }
+.pivot-list label.bad:hover { background:rgba(239,68,68,0.26); }
 .pivot-list input { width:16px; height:16px; margin:0; flex:0 0 auto; }
 .var-table td.swapped { background:rgba(71,198,200,0.16); font-weight:700; }
 .var-table { font-size:0.74rem; }
@@ -748,7 +751,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
         <div class="var-stats" id="varStats"></div>
         <div class="row" style="margin-top:0.45rem;">
           <label>Start from a generated lineup<select id="varBase" style="min-width:170px;"></select></label>
-          <button id="varLoad" class="secondary" type="button">Load it</button>
+          <button id="varLoad" class="secondary" type="button">Load top build</button>
           <button id="varClear" class="secondary" type="button">Clear</button>
           <button id="varRandom" class="secondary" type="button">Random fill</button>
         </div>
@@ -4643,9 +4646,43 @@ function copyLineupsText() {
   else done();
 }
 
+function topLineupIndex() {
+  let best = -1;
+  lineups.forEach((lu, i) => {
+    if (best < 0 || lu.proj > lineups[best].proj) best = i;
+  });
+  return best;
+}
 function populateVarBase() {
   const sel = document.getElementById("varBase");
-  sel.innerHTML = lineups.map((lu, i) => `<option value="${i}">Lineup ${i + 1} (${lu.proj.toFixed(1)} FP)</option>`).join("");
+  const top = topLineupIndex();
+  const order = lineups.map((lu, i) => i).sort((a, b) => lineups[b].proj - lineups[a].proj || a - b);
+  sel.innerHTML = order.map((i) => `<option value="${i}">${i === top ? "Top · " : ""}Lineup ${i + 1} (${lineups[i].proj.toFixed(1)} FP)</option>`).join("");
+  if (top >= 0) sel.value = String(top);
+}
+function loadHandFromLineup(base, note) {
+  if (!base) {
+    document.getElementById("varStatus").textContent = "Run the optimizer first, then load a lineup into the builder.";
+    return;
+  }
+  handRoster = {};
+  handSwap = new Set();
+  handPivots = {};
+  pivotSlot = "";
+  handKeys().forEach((k) => { if (base.slots[k]) handRoster[k] = base.slots[k]; });
+  renderHand();
+  document.getElementById("varStatus").textContent = note;
+}
+function pivotTone(cur, p) {
+  const dProj = p.proj - cur.proj;
+  const dSal = p.salary - cur.salary;
+  if (Math.abs(dProj) <= 2.5 && Math.abs(dSal) <= 800) return "good";
+  if (dProj >= 1.5 && dSal <= 800) return "good";
+  if (dSal <= -500 && dProj >= -1.5) return "good";
+  if (dProj <= -4) return "bad";
+  if (dSal >= 1500 && dProj < 1) return "bad";
+  if (dProj < -1 && dSal > 400) return "bad";
+  return "";
 }
 
 function renderVariations() {
@@ -4873,9 +4910,18 @@ function renderHand() {
     opts.sort((a, b) => pivotSlot === "UTIL" || pivotSlot.startsWith("U")
       ? Math.abs(a.salary - cur.salary) - Math.abs(b.salary - cur.salary)
       : b.proj - a.proj);
-    const shown = opts.slice(0, 36);
+    const shown = opts.slice().sort((a, b) => {
+      const rank = (p) => pivotTone(cur, p) === "good" ? 0 : pivotTone(cur, p) === "bad" ? 2 : 1;
+      return rank(a) - rank(b) || b.proj - a.proj;
+    }).slice(0, 36);
     box.style.display = "block";
-    box.innerHTML = `<div class="note" style="grid-column:1/-1;padding:0.15rem 0.35rem 0.35rem;">Who can ${esc(cur.name)} become? Check the names. With the toggle on, this spot only swaps to those names.</div>` + shown.map((p) => `<label><input type="checkbox" class="pivot-cb" data-id="${esc(p.id)}" ${set.has(p.id) ? "checked" : ""}><span>${esc(p.name)} <span class="meta">${esc(rosterPos(p))} · ${money(p.salary)} · ${p.proj.toFixed(1)}</span></span></label>`).join("");
+    box.innerHTML = `<div class="note" style="grid-column:1/-1;padding:0.15rem 0.35rem 0.35rem;">Who can ${esc(cur.name)} become? Green is a similar or better price and projection. Red gives up points or costs more for less.</div>` + shown.map((p) => {
+      const tone = pivotTone(cur, p);
+      const dProj = p.proj - cur.proj;
+      const dSal = p.salary - cur.salary;
+      const delta = `${dProj >= 0 ? "+" : ""}${dProj.toFixed(1)} FP · ${dSal >= 0 ? "+" : "−"}$${Math.abs(dSal).toLocaleString()}`;
+      return `<label class="${tone}"><input type="checkbox" class="pivot-cb" data-id="${esc(p.id)}" ${set.has(p.id) ? "checked" : ""}><span>${esc(p.name)} <span class="meta">${esc(rosterPos(p))} · ${money(p.salary)} · ${p.proj.toFixed(1)} · ${delta}</span></span></label>`;
+    }).join("");
     if (summary) summary.textContent = filled.map((k) => {
       const names = [...(handPivots[k] || [])].map((id) => (pool.find((p) => p.id === id) || {}).name).filter(Boolean);
       return names.length ? `${handRoster[k].name} → ${names.join(", ")}` : "";
@@ -5180,18 +5226,19 @@ document.getElementById("varClear").onclick = () => {
   renderHand();
 };
 document.getElementById("varLoad").onclick = () => {
-  const base = lineups[parseInt(document.getElementById("varBase").value, 10) || 0];
-  if (!base) {
+  const top = topLineupIndex();
+  const sel = document.getElementById("varBase");
+  if (top < 0) {
     document.getElementById("varStatus").textContent = "Run the optimizer first, then load a lineup into the builder.";
     return;
   }
-  handRoster = {};
-  handSwap = new Set();
-  handPivots = {};
-  pivotSlot = "";
-  handKeys().forEach((k) => { if (base.slots[k]) handRoster[k] = base.slots[k]; });
-  renderHand();
-  document.getElementById("varStatus").textContent = "Loaded. Check Swap on the spots you want changed, then set pivots.";
+  sel.value = String(top);
+  const base = lineups[top];
+  loadHandFromLineup(base, `Loaded the top build, lineup ${top + 1}, ${base.proj.toFixed(1)} FP. Check Swap on the spots you want changed.`);
+};
+document.getElementById("varBase").onchange = () => {
+  const base = lineups[parseInt(document.getElementById("varBase").value, 10)];
+  if (base) loadHandFromLineup(base, `Loaded lineup ${parseInt(document.getElementById("varBase").value, 10) + 1}, ${base.proj.toFixed(1)} FP.`);
 };
 document.getElementById("varSort").onchange = renderHand;
 document.getElementById("pivotOnly").onchange = renderHand;

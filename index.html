@@ -284,7 +284,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 .exp-pill { display:flex; align-items:center; gap:0.35rem; font-size:0.72rem; font-weight:700; color:#fbbf24; margin:0.35rem 0 0.15rem; }
 .exp-pill i { width:8px; height:8px; border-radius:50%; background:#fbbf24; display:inline-block; }
 .lu-label { font-size:0.66rem; letter-spacing:0.07em; text-transform:uppercase; font-weight:700; color:var(--muted); margin:0.6rem 0 0.15rem; }
-.lu-row { display:grid; grid-template-columns:2.1rem 1fr auto auto; gap:0.35rem; align-items:center; padding:0.28rem 0.15rem; border-bottom:1px solid var(--border); font-size:0.8rem; }
+.lu-row { display:grid; grid-template-columns:2.1rem 1fr auto auto auto; gap:0.35rem; align-items:center; padding:0.28rem 0.15rem; border-bottom:1px solid var(--border); font-size:0.8rem; }
 .lu-row.out { opacity:0.8; }
 .lu-pos { font-weight:800; color:var(--aqua); font-size:0.72rem; }
 .lu-min { color:var(--muted); font-size:0.72rem; font-variant-numeric:tabular-nums; }
@@ -693,6 +693,12 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
         <select id="dvpMode">
           <option value="avg">Average</option>
           <option value="min">Per minute</option>
+        </select>
+      </label>
+      <label>Style
+        <select id="dvpStyle">
+          <option value="numbers">Numbers</option>
+          <option value="heat">Heat</option>
         </select>
       </label>
       <label class="check"><input type="checkbox" id="dvpSlate"> This slate only</label>
@@ -1990,10 +1996,10 @@ async function loadStarters() {
       const r = await fetch(cacheBust(url));
       if (!r.ok) continue;
       const parsed = Papa.parse(await r.text(), { header: true, skipEmptyLines: true });
-      if (useStarterRows(parsed.data, url.includes("github") ? "RotoWire" : "RotoWire")) return;
+      if (useStarterRows(parsed.data, "expected")) return;
     } catch (e) {}
   }
-  useStarterRows(STARTERS_FALLBACK, "RotoWire");
+  useStarterRows(STARTERS_FALLBACK, "expected");
 }
 function money(n) { return "$" + Number(n || 0).toLocaleString(); }
 function esc(s) {
@@ -3015,11 +3021,11 @@ function teamBoard(players) {
   const row = (pos, p, extra) => {
     const streak = streakOf(p.name);
     const streakTag = streak && streak.label !== "Even" ? `<span class="tag ${streak.cls}" data-tip="Last 3 games ${streak.l3.toFixed(1)} DK vs log average ${streak.avg.toFixed(1)}.">${streak.label}</span>` : "";
-    return `<div class="lu-row ${extra || ""}"><span class="lu-pos">${esc(pos)}</span><span>${nameBtn(p.name)} <span class="cs-sub">(${money(p.salary)})</span> ${injuryTag(p.injury)} ${streakTag}</span><span class="lu-min">${p.minutes > 0 ? p.minutes.toFixed(0) + " min" : ""}</span><span class="lu-min">${p.proj > 0 ? p.proj.toFixed(1) : ""}</span></div>`;
+    return `<div class="lu-row ${extra || ""}"><span class="lu-pos">${esc(pos)}</span><span>${nameBtn(p.name)} <span class="cs-sub">(${money(p.salary)})</span> ${injuryTag(p.injury)} ${streakTag}</span><span class="lu-min" data-tip="Projected minutes">${p.minutes > 0 ? p.minutes.toFixed(0) + " min" : ""}</span><span class="lu-min" data-tip="Projected fantasy points">${p.proj > 0 ? p.proj.toFixed(1) : ""}</span><span class="lu-min" data-tip="Value. Projected points per $1,000 of salary.">${p.proj > 0 && p.salary > 0 ? valueOf(p).toFixed(1) + "x" : ""}</span></div>`;
   };
   const startRows = order.map((pos) => {
     const s = starters.find((x) => x.pos === pos);
-    return s ? row(s.pos, s.p) : `<div class="lu-row"><span class="lu-pos">${pos}</span><span class="lu-empty">—</span><span></span><span></span></div>`;
+    return s ? row(s.pos, s.p) : `<div class="lu-row"><span class="lu-pos">${pos}</span><span class="lu-empty">—</span><span></span><span></span><span></span></div>`;
   }).join("");
   const mayRows = mayShown.map((p) => row(posToken(p), p, "out")).join("") || `<div class="lu-empty">None</div>`;
   const benchRows = bench.map((p) => row(posToken(p), p)).join("") || `<div class="lu-empty">No other players with a roster spot.</div>`;
@@ -3379,7 +3385,7 @@ function renderGamePreview() {
     <div class="gp-match">
       <div>
         <h3>${esc(g.label)}</h3>
-        <p class="note" style="margin:0;">${g.start ? esc(g.start) + " · " : ""}${ou ? "O/U " + ou.toFixed(1) : "No total"}${fav ? " · " + esc(fav.team) + " " + sprText(fav) : ""}. ${teams.some((tm) => (projectedStarters.get(canonTeam(tm)) || []).length >= 5) ? "Projected five is the RotoWire expected lineup" + (startersSource ? " (" + esc(startersSource) + ")" : "") + "." : "No projected five loaded, so spots fall back to the starter tag."}</p>
+        <p class="note" style="margin:0;">${g.start ? esc(g.start) + " · " : ""}${ou ? "O/U " + ou.toFixed(1) : "No total"}${fav ? " · " + esc(fav.team) + " " + sprText(fav) : ""}. ${teams.some((tm) => (projectedStarters.get(canonTeam(tm)) || []).length >= 5) ? "Projected starting five." : "No projected five loaded, so spots fall back to the starter tag."}</p>
       </div>
     </div>
     <div class="gp-callouts">
@@ -3786,14 +3792,26 @@ function renderDvp() {
     const d = new Date(t);
     return `${d.getUTCMonth() + 1}/${d.getUTCDate()}`;
   };
+  const heat = (document.getElementById("dvpStyle") || {}).value === "heat";
   const viewName = mode === "min" ? "per minute" : "per game";
   const sample = dvpWindowId() === "l10" ? "last 10 games" : "this season";
   const splitNote = ["G", "F", "GF", "CF"].includes(dvpPos)
     ? dvpPosLabel(dvpPos) + " The total is bigger because it is two spots."
     : "Each row is one primary position.";
   note.textContent = shown.length
-    ? `${dvpPos} allowed, ${viewName}, ${sample}. ${splitNote} Rank 1 allows the most fantasy points${slateOnly ? ". This table is only the teams on the slate" : ""}. ${pack.source === "sheet" ? "Loaded from the GitHub sheet." : "The sheet is not on GitHub yet, so this season is added up in the browser."}`
+    ? `${dvpPos} allowed, ${viewName}, ${sample}${heat ? ", heat view" : ""}. ${splitNote} Rank 1 allows the most fantasy points${heat ? ". Green allows the most of that stat. Red allows the least. Turnovers and fouls are flipped." : ""}${slateOnly ? ". This table is only the teams on the slate" : ""}. ${pack.source === "sheet" ? "Loaded from the GitHub sheet." : "The sheet is not on GitHub yet, so this season is added up in the browser."}`
     : (dvpWindowId() === "l10" && pack.source !== "sheet" ? "Last 10 needs the DVP sheet on GitHub." : "No games at this spot yet.");
+  const invert = new Set(["tov", "pf"]);
+  const rankByCol = new Map();
+  if (heat) {
+    DVP_COLS.forEach((c) => {
+      if (c.key === "team" || c.key === "rank") return;
+      const scored = rows.map((r) => ({ team: r.team, n: dvpValue(r, c.key, mode) })).sort((a, b) => b.n - a.n);
+      const map = new Map();
+      scored.forEach((item, i) => map.set(item.team, invert.has(c.key) ? scored.length - i : i + 1));
+      rankByCol.set(c.key, map);
+    });
+  }
   const digits = (key) => {
     if (key === "gp" || key === "rank") return 0;
     if (mode === "min" && !["min", "fg", "fg3", "ft"].includes(key)) return 2;
@@ -3810,7 +3828,13 @@ function renderDvp() {
       }
       const n = dvpValue(r, c.key, mode);
       const text = n.toFixed(digits(c.key));
-      return `<td>${text}</td>`;
+      if (!heat) return `<td>${text}</td>`;
+      const colRank = (rankByCol.get(c.key) || new Map()).get(r.team) || 0;
+      const of = rows.length || 30;
+      const cut = Math.max(1, Math.round(of / 3));
+      const cls = colRank && colRank <= cut ? "soft" : colRank >= of - cut + 1 ? "tough" : "mid";
+      const tip = colRank ? `Rank ${colRank} of ${of} for ${c.label}. Green allows the most. Red allows the least.` : "";
+      return `<td><span class="dvp-pill ${cls}" data-tip="${esc(tip)}">${text}</span></td>`;
     }).join("");
     return `<tr>${cells}</tr>`;
   }).join("");
@@ -5220,6 +5244,7 @@ function refreshDvp() {
   if (gameTab && gameTab.style.display !== "none") renderGamePreview();
 }
 document.getElementById("dvpMode").onchange = renderDvp;
+document.getElementById("dvpStyle").onchange = renderDvp;
 document.getElementById("dvpWindow").onchange = refreshDvp;
 document.getElementById("dvpSlate").onchange = renderDvp;
 document.getElementById("slateSelect").onchange = (e) => loadSlate(e.target.value);

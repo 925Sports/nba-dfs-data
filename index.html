@@ -1132,7 +1132,7 @@ function beamFill(cands, pre, settings, groups, stackTeams) {
     return sum;
   };
   let beam = [{ roster: { ...pre }, proj: Object.values(pre).reduce((s, p) => s + (p.proj || 0), 0), spent: salaryOf(pre) }];
-  const width = isShowdown ? 10 : 12;
+  const width = isShowdown ? 14 : 20;
   for (let si = 0; si < slots.length; si++) {
     const slot = slots[si];
     const remainSlots = slots.slice(si + 1);
@@ -1154,7 +1154,7 @@ function beamFill(cands, pre, settings, groups, stackTeams) {
           const tc2 = { ...tc, [p.team]: (tc[p.team] || 0) + 1 };
           if (minRest(names, remainSlots, tc2) > leftAfter) return false;
         }
-        if (settings.shape === "balanced" && p.use !== "lock" && salaryShapeBlocked(state.roster, p)) return false;
+        if (settings.shape === "balanced" && p.use !== "lock" && (settings._attempt || 0) < 30 && salaryShapeBlocked(state.roster, p)) return false;
         const missing = missingNames(state.roster, groups);
         if (missing.length && remainAfter < missing.length && !missing.includes(p.name) && p.use !== "lock") return false;
         return true;
@@ -2010,7 +2010,7 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
         if (!stackApplies(i, buildCount, pct, si * 3)) return;
         [s.pg, s.m1, s.m2].filter(Boolean).forEach((n) => forced.add(n));
       });
-      const banThin = !settings.isShowdown && settings.shape !== "stars" && settings.shape !== "open" && (lineups.length > 0 || attempt < 26);
+      const banThin = !settings.isShowdown && settings.shape !== "stars" && settings.shape !== "open" && settings.shape !== "balanced" && (lineups.length > 0 || attempt < 18);
       const active = pool.filter((p) => {
         if (p.use === "fade" || p.exp === "fade") return false;
         if (p.use !== "lock" && !(Number(p.maxExp ?? 100) > 0)) return false;
@@ -2113,17 +2113,18 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
         lastReason = "Refusing to fill a spot with a zero-projection player.";
         continue;
       }
-      if (!settings.isShowdown && settings.shape !== "stars" && settings.shape !== "open" && (lineups.length === 0 ? attempt < 28 : attempt < 42)) {
+      if (!settings.isShowdown && settings.shape !== "stars" && settings.shape !== "open" && settings.shape !== "balanced" && (lineups.length === 0 ? attempt < 20 : attempt < 36)) {
         const awful = players.some((p) => p.use !== "lock" && (p.proj || 0) < 15);
         if (awful) {
           lastReason = "That build still needed a player under 15 projected points.";
           continue;
         }
       }
-      if (lineups.length >= 3) {
+      if (lineups.length >= 6) {
         const best = lineups.reduce((m, lu) => Math.max(m, lu.proj), 0);
         const projNow = players.reduce((s, p) => s + (p.proj || 0), 0);
-        if (projNow < best - 16) {
+        const drop = settings.shape === "open" ? 28 : 22;
+        if (projNow < best - drop) {
           lastReason = "The next lineup would give up too many points just to be different.";
           break;
         }
@@ -5232,20 +5233,18 @@ function runOptimizer() {
     status.textContent = "Only one captain can be locked.";
     return;
   }
-  status.textContent = "Building lineups…";
+  status.textContent = "Pass 1 of 3 · building the base set…";
   lastSim = [];
   simChecked = new Set();
   const simSection = document.getElementById("simSection");
   if (simSection) simSection.style.display = "none";
   document.getElementById("simStatus").textContent = "";
-  setTimeout(() => {
-    const activeStacks = stacks
-      .filter((s) => s.pg && s.m1)
-      .map((s) => ({ pg: s.pg, m1: s.m1, m2: s.m2 && s.m2 !== s.m1 ? s.m2 : "", b1: s.b1 || "", b2: s.b2 || "", pct: s.pct }));
-    const activeGroups = packGroups(groups);
-    const result = generateLineups(usable, settings, activeStacks, activeGroups);
-    lineups = result.lineups;
-    const notes = result.notes.slice();
+  const activeStacks = stacks
+    .filter((s) => s.pg && s.m1)
+    .map((s) => ({ pg: s.pg, m1: s.m1, m2: s.m2 && s.m2 !== s.m1 ? s.m2 : "", b1: s.b1 || "", b2: s.b2 || "", pct: s.pct }));
+  const activeGroups = packGroups(groups);
+  const finish = (finalLineups, notes) => {
+    lineups = finalLineups;
     activeStacks.forEach((s) => {
       const need = [s.pg, s.m1, s.m2, s.b1, s.b2].filter(Boolean);
       const hit = lineups.filter((lu) => need.every((n) => lu.players.some((p) => p.name === n))).length;
@@ -5285,6 +5284,38 @@ function runOptimizer() {
       : " These lineups are missing DraftKings lineup ids. Do not upload them.";
     const tail = notes.length ? " " + notes.join(" ") : "";
     status.textContent = `Generated ${lineups.length} lineups. Avg ${avg.toFixed(1)} FP · ${money(Math.round(avgLeft))} left.${idNote}${tail}`;
+  };
+  setTimeout(() => {
+    const pass1 = generateLineups(usable, settings, activeStacks, activeGroups);
+    const best = pass1.lineups.slice().sort((a, b) => b.proj - a.proj).slice(0, Math.max(3, Math.ceil(settings.num / 3)));
+    status.textContent = `Pass 2 of 3 · improving the best ${best.length} lineups…`;
+    setTimeout(() => {
+      const pass2 = generateLineups(usable, { ...settings, num: settings.num, _seed: best, randomness: Math.min(40, (settings.randomness || 0) + 6) }, activeStacks, activeGroups);
+      const merged = [...pass1.lineups, ...pass2.lineups];
+      const seen = new Set();
+      const unique = [];
+      merged.sort((a, b) => b.proj - a.proj).forEach((lu) => {
+        const key = lu.players.map((p) => p.name).sort().join("|");
+        if (seen.has(key)) return;
+        seen.add(key);
+        unique.push(lu);
+      });
+      const keep = unique.slice(0, settings.num);
+      status.textContent = "Pass 3 of 3 · filling the rest from the improved seeds…";
+      setTimeout(() => {
+        const pass3 = generateLineups(usable, { ...settings, num: settings.num, _seed: keep.slice(0, 4), randomness: Math.min(50, (settings.randomness || 0) + 10) }, activeStacks, activeGroups);
+        const finalMerged = [...keep, ...pass3.lineups];
+        const finalSeen = new Set();
+        const finalUnique = [];
+        finalMerged.sort((a, b) => b.proj - a.proj).forEach((lu) => {
+          const key = lu.players.map((p) => p.name).sort().join("|");
+          if (finalSeen.has(key)) return;
+          finalSeen.add(key);
+          finalUnique.push(lu);
+        });
+        finish(finalUnique.slice(0, settings.num), [...pass1.notes, ...pass2.notes, ...pass3.notes]);
+      }, 40);
+    }, 40);
   }, 30);
 }
 
@@ -6766,8 +6797,8 @@ function runSimulation() {
 }
 
 const PRESETS = {
-  open: { num: 20, rand: 5, maxE: 100, lev: 0, uniq: 1, stack: 0, bb: 0, ceil: 0, minSal: 49600, maxLeft: 400, team: 4, own: "off", split: "any", cpt: 0, tot: "off", note: "Best lineups. Highest total projection that still fits the cap, your locks, your fades, and each player's exposure. No stack, no ownership lean, and no salary shape. Studs and value are allowed when they score more. It spends to within $400. Global max starts at 100%." },
-  balanced: { num: 20, rand: 8, maxE: 60, lev: 0, uniq: 2, stack: 0, bb: 0, ceil: 0, minSal: 49600, maxLeft: 400, team: 4, own: "off", split: "any", cpt: 0, tot: "off", note: "Fair and balanced. At most one player at $9,000 or more and one at $4,500 or less. The other six stay between those prices. It still spends to within $400 and takes the highest projection inside that shape. A lock can force a second stud or a second punt." },
+  open: { num: 20, rand: 6, maxE: 100, lev: 0, uniq: 1, stack: 0, bb: 0, ceil: 0, minSal: 49000, maxLeft: 1000, team: 4, own: "off", split: "any", cpt: 0, tot: "off", note: "Best lineups. Highest total projection that still fits the cap, your locks, your fades, and each player's exposure. No stack, no ownership lean, and no salary shape. Studs and value are allowed when they score more. It spends close to the cap. Global max starts at 100%." },
+  balanced: { num: 20, rand: 10, maxE: 70, lev: 0, uniq: 1, stack: 0, bb: 0, ceil: 0, minSal: 49000, maxLeft: 1000, team: 4, own: "off", split: "any", cpt: 0, tot: "off", note: "Fair and balanced. At most one player at $9,000 or more and one at $4,500 or less. The other six stay between those prices. It still spends close to the cap and takes the highest projection inside that shape. A lock can force a second stud or a second punt." },
   cash: { num: 1, rand: 3, maxE: 100, lev: 0, uniq: 0, stack: 1, bb: 0, ceil: 0, minSal: 49600, maxLeft: 400, team: 3, own: "cash", split: "33", cpt: 1, tot: "off", note: "One cash lineup. Spend to $400 left, play the chalk, and keep a light point-guard teammate. Game total lean is off." },
   chalk: { num: 1, rand: 2, maxE: 100, lev: 0, uniq: 0, stack: 1, bb: 0, ceil: 0, minSal: 49700, maxLeft: 300, team: 3, own: "chalk", split: "33", cpt: 1, tot: "off", note: "Eat the chalk. Ownership lean stays on the popular values. Use this for a single 50/50 or head-to-head." },
   gpp: { num: 20, rand: 15, maxE: 35, lev: 35, uniq: 2, stack: 1, bb: 0, ceil: 18, minSal: 49600, maxLeft: 400, team: 3, own: "gpp", split: "42", cpt: 1, tot: "high", note: "20-max default. One point guard plus a teammate, two to three from a team, a 12–24% ownership lean, and a nudge toward the higher total. It spends to within $400 of the cap." },

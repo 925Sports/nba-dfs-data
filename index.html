@@ -152,6 +152,7 @@ td { padding:0.38rem 0.45rem; border-bottom:1px solid var(--border); vertical-al
 .player-meta { min-width:0; display:flex; flex-direction:column; gap:0.12rem; }
 .player-meta .exp-sel { margin-top:0.15rem; }
 .mincol { font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--text); }
+.min-bump { color:var(--good); font-weight:700; font-size:0.72rem; margin-left:0.2rem; }
 .exposure-filter, .lu-actions { display:flex; flex-wrap:wrap; gap:0.45rem 0.55rem; align-items:flex-end; }
 .lu-actions { margin-top:0.85rem; padding-top:0.75rem; border-top:1px solid var(--border); }
 .lu-actions label.check { padding-bottom:0.2rem; }
@@ -310,7 +311,14 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 .dk-meta { color:#d5deef; font-size:0.82rem; margin-top:0.12rem; }
 .dk-sub { color:#9eb0c8; font-size:0.78rem; margin-top:0.08rem; }
 .dk-salary { font-size:1.15rem; font-weight:800; margin-top:0.2rem; }
-.drawer-x { align-self:flex-start; }
+.drawer-x { align-self:flex-end; }
+.drawer-side { position:relative; display:flex; flex-direction:column; align-items:stretch; gap:0.4rem; flex:none; margin-left:auto; }
+.tag-well { min-width:216px; height:42px; border:1px solid #e6c200; background:rgba(8,12,22,0.35); color:#f8e7a0; font-weight:800; border-radius:6px; padding:0.2rem 0.65rem; }
+.tag-well.edited { background:rgba(230,194,0,0.14); }
+.tag-menu { display:none; position:absolute; top:calc(100% + 0.3rem); right:0; z-index:8; background:var(--card); border:1px solid var(--border); border-radius:8px; min-width:216px; padding:0.3rem; box-shadow:0 12px 28px rgba(0,0,0,0.45); }
+.tag-menu.show { display:flex; flex-direction:column; gap:0.1rem; }
+.tag-menu button { text-align:left; background:transparent; border:none; color:var(--text); border-radius:6px; }
+.tag-menu button.on, .tag-menu button:hover { background:#1f2a44; color:#f8e7a0; }
 .dk-strip { display:grid; grid-template-columns:repeat(5,1fr); background:#121826; border:1px solid var(--border); border-radius:10px; margin-bottom:0.7rem; overflow:hidden; }
 .dk-strip div { text-align:center; padding:0.55rem 0.2rem; border-right:1px solid #2a3350; }
 .dk-strip div:last-child { border-right:none; }
@@ -396,6 +404,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
           <span class="note" id="slateNote" style="flex:1 1 280px;"></span>
           <label class="check"><input type="checkbox" id="includeQ" checked> Include day-to-day</label>
           <label class="check"><input type="checkbox" id="excludeOut" checked> Hide OUT / D / IR</label>
+          <label class="check" title="When someone is out, minutes move to the teammates who have checked in for him. The projection scales with those minutes."><input type="checkbox" id="onOffMinutes" checked> Move minutes when a teammate is out</label>
         </div>
       </div>
     </div>
@@ -506,12 +515,27 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
     <div class="card">
       <div class="card-header" onclick="this.parentElement.classList.toggle('collapsed')">Groups & stacks <span class="chev">▾</span></div>
       <div class="card-body">
-        <div class="note">A stack is forced on the percent of lineups you set, and those players ignore the exposure cap. A group is conditional: use nobody from it, or at least the number you set. It is never “at most.”</div>
+        <div class="note">A stack is used on the percent of lineups you set. A group is a link between names. Together means a lineup can use neither, but it cannot use one without the others. That is the Porter and Randle rule.</div>
         <div class="rule-head"><span>Quick stacks</span></div>
         <div class="sugs" id="stackSug"></div>
         <div class="rule-head"><span>Your stacks</span><button type="button" class="secondary" id="addStack">Add stack</button></div>
         <div id="stackRows"></div>
-        <div class="rule-head"><span>Groups</span><button type="button" class="secondary" id="addGroup">Add group</button></div>
+        <div class="rule-head"><span>Groups</span></div>
+        <div class="rule" id="groupDraft">
+          <label>Player<select id="gPick"></select></label>
+          <button type="button" class="secondary" id="gAddPick">Add</button>
+          <div class="chips" id="gChips"></div>
+          <label>Rule
+            <select id="gMode">
+              <option value="together">Together — if one, then the rest</option>
+              <option value="atleast">At least N, if any are used</option>
+              <option value="force">Every lineup uses all of them</option>
+            </select>
+          </label>
+          <label id="gMinLabel" style="display:none;">At least<input id="gMin" type="number" min="2" max="6" value="2"></label>
+          <label class="check"><input type="checkbox" id="gRb"> Also 1 from the other team</label>
+          <button type="button" class="primary" id="gSave">Add group</button>
+        </div>
         <div id="groupRows"></div>
       </div>
     </div>
@@ -609,7 +633,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 
   <div id="tab-cheatsheet" style="display:none;">
     <div class="card"><div class="card-header">Cheat sheet</div><div class="card-body">
-      <div class="note" id="csBlurb" style="margin-bottom:0.5rem;">Ranked off the lineup projection. Ownership is an estimate until a real ownership number is in the feed. OUT is hidden here. Questionable stays. Lock, core, limit, and fade write back to the builder.</div>
+      <div class="note" id="csBlurb" style="margin-bottom:0.5rem;">Ranked off the lineup projection. Ownership is an estimate until a real ownership number is in the feed. OUT is hidden here. Questionable stays. Open a name and click the tag to change it.</div>
       <div class="tier-row" id="csTiers"></div>
       <div class="row" style="margin-bottom:0.55rem;">
         <label>Search<input type="text" id="csSearch" placeholder="name or team" style="width:140px;"></label>
@@ -646,12 +670,11 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
           <p><strong>Low Exposure</strong> — 4x and playable. Fine as a one-off, not a priority.</p>
           <p><strong>Limit</strong> — the rate looks good, the role does not. Questionable, or a big per-minute number on short minutes. Use him when the salary needs it.</p>
           <p><strong>Fade</strong> — out, or the price does not pay. Also a listed projection that has no minutes average and no game-log points behind it.</p>
-          <p class="note">Two tags on purpose. The first is the role. The second is how often to roster him. Hover either one for the reason on that player.</p>
+          <p class="note">The first tag is the role. The second is how often to roster him. Hover either one for the reason. Open the player and click the gold box to change the tag. That writes back to the builder.</p>
         </div>
       </details>
       <div id="csTeams"></div>
       <div class="cs-wrap"><table id="csTable"><thead><tr>
-        <th></th>
         <th data-sort="rank">Rank</th><th data-sort="name">Name</th><th data-sort="pos">Pos</th><th data-sort="team">Team</th><th>Opp</th>
         <th data-sort="salary">Salary</th><th data-sort="proj">Proj</th><th data-sort="value">Value</th><th data-sort="own">Own est</th>
         <th data-sort="ou">O/U</th><th data-sort="spread">Spr</th><th data-sort="pts">PTS</th><th data-sort="reb">REB</th><th data-sort="ast">AST</th><th data-sort="fd">FD</th>
@@ -813,7 +836,11 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
       <div class="dk-sub" id="drawerSub"></div>
       <div class="dk-salary" id="drawerSalary"></div>
     </div>
-    <button type="button" class="secondary drawer-x" id="drawerClose">Close</button>
+    <div class="drawer-side">
+      <button type="button" class="secondary drawer-x" id="drawerClose">Close</button>
+      <button type="button" class="tag-well" id="drawerTag" title="Sheet tag. Click to change it.">Tag</button>
+      <div class="tag-menu" id="drawerTagMenu"></div>
+    </div>
   </div>
   <div class="drawer-body" id="drawerBody"></div>
 </div>
@@ -858,7 +885,7 @@ const EXP_BANDS = {
   fade:  { min: 0, max: 0, boost: 1, short: "Fade" },
 };
 
-function applyExp(p, exp) {
+function applyExp(p, exp, keepTag) {
   const key = EXP_BANDS[exp] ? exp : "play";
   const band = EXP_BANDS[key];
   p.exp = key;
@@ -866,6 +893,7 @@ function applyExp(p, exp) {
   p.use = key === "lock" ? "lock" : key === "fade" ? "fade" : "play";
   p.minExp = band.min;
   p.maxExp = band.max;
+  if (!keepTag) p.tagOverride = "";
 }
 
 function byScore(a, b) {
@@ -948,14 +976,29 @@ function assignSlots(required, isShowdown) {
   return assignment;
 }
 
+function groupMode(g) {
+  if (g && (g.mode === "together" || g.mode === "force" || g.mode === "atleast")) return g.mode;
+  return "atleast";
+}
+function groupMin(g) {
+  const n = (g.names || []).length;
+  if (groupMode(g) === "together" || groupMode(g) === "force") return n;
+  return Math.min(n, Math.max(2, Number(g.min) || 2));
+}
 function groupsState(roster, groups) {
-  const names = new Set(Object.values(roster).map((p) => p.name));
+  const names = new Set(Object.values(roster).filter(Boolean).map((p) => p.name));
   const problems = [];
-  for (const g of groups) {
+  for (const g of groups || []) {
+    if (!g.names || g.names.length < 2) continue;
     const hit = g.names.filter((n) => names.has(n));
-    if (hit.length === 0) continue;
-    if (hit.length < g.min) problems.push({ g, kind: "count", hit });
-    if (g.runback) {
+    const mode = groupMode(g);
+    const need = groupMin(g);
+    if (mode === "force") {
+      if (hit.length < g.names.length) problems.push({ g, kind: "force", hit });
+    } else if (hit.length > 0 && hit.length < need) {
+      problems.push({ g, kind: "count", hit });
+    }
+    if (g.runback && hit.length) {
       const groupTeams = new Set(
         Object.values(roster)
           .filter((p) => g.names.includes(p.name))
@@ -967,16 +1010,51 @@ function groupsState(roster, groups) {
   }
   return problems;
 }
-
-function groupNudge(p, roster, groups) {
-  const names = new Set(Object.values(roster).map((x) => x.name));
+function missingNames(roster, groups) {
+  const names = new Set(Object.values(roster).filter(Boolean).map((p) => p.name));
+  const need = [];
+  for (const g of groups || []) {
+    if (!g.names || g.names.length < 2) continue;
+    const hit = g.names.filter((n) => names.has(n));
+    const mode = groupMode(g);
+    if (mode === "force") g.names.filter((n) => !names.has(n)).forEach((n) => need.push(n));
+    else if (hit.length > 0 && hit.length < groupMin(g)) g.names.filter((n) => !names.has(n)).forEach((n) => need.push(n));
+  }
+  return [...new Set(need)];
+}
+function groupScore(p, roster, groups) {
+  const names = new Set(Object.values(roster).filter(Boolean).map((x) => x.name));
   let bonus = 0;
-  for (const g of groups) {
-    if (!g.names.includes(p.name)) continue;
+  for (const g of groups || []) {
+    if (!g.names || !g.names.includes(p.name)) continue;
     const hit = g.names.filter((n) => names.has(n)).length;
-    if (hit > 0 && hit < g.min) bonus += 48;
+    const mode = groupMode(g);
+    if (mode === "force" && hit < g.names.length) bonus += 36;
+    else if (hit > 0 && hit < groupMin(g)) bonus += 70;
   }
   return bonus;
+}
+function groupProblemText(p0) {
+  const rest = (p0.g.names || []).filter((n) => !(p0.hit || []).includes(n));
+  if (p0.kind === "runback") return `Group needs an opposing player once ${p0.hit[0]} is used.`;
+  if (p0.kind === "force" || groupMode(p0.g) === "force") return `Every lineup needs ${(p0.g.names || []).join(", ")}.`;
+  if (groupMode(p0.g) === "together") return `If a lineup uses ${p0.hit[0]}, it also needs ${rest.join(", ") || "the rest of the group"}.`;
+  return `Group needs at least ${groupMin(p0.g)} of ${(p0.g.names || []).join(", ")} once anyone from it is used.`;
+}
+function groupSentence(g) {
+  const who = (g.names || []).join(" + ");
+  const mode = groupMode(g);
+  let line = mode === "force"
+    ? `Every lineup uses ${who}.`
+    : mode === "together"
+      ? `If a lineup uses any of ${who}, it uses all of them.`
+      : `If a lineup uses any of ${who}, it uses at least ${groupMin(g)}.`;
+  if (g.runback) line += " Also one player from the other team.";
+  return line;
+}
+
+function groupNudge(p, roster, groups) {
+  return groupScore(p, roster, groups);
 }
 
 function armScores(players, settings, used, num) {
@@ -1053,6 +1131,8 @@ function beamFill(cands, pre, settings, groups, stackTeams) {
           if (minRest(names, remainSlots, tc2) > leftAfter) return false;
         }
         if (settings.shape === "balanced" && p.use !== "lock" && salaryShapeBlocked(state.roster, p)) return false;
+        const missing = missingNames(state.roster, groups);
+        if (missing.length && remainAfter < missing.length && !missing.includes(p.name) && p.use !== "lock") return false;
         return true;
       });
       const ranked = options
@@ -1071,6 +1151,7 @@ function beamFill(cands, pre, settings, groups, stackTeams) {
           if (seen > 0 && p.use !== "lock" && p.exp !== "core" && (p.salary < 6500 || proj < 28)) sc -= Math.min(16, seen * 2.2);
           if (remainAfter === 0) sc -= Math.max(0, 50000 - state.spent - p.salary - 200) / 90;
           if (stackTeams && stackTeams.size && stackTeams.has(p.opp) && !stackTeams.has(p.team)) sc += settings.bringBack ? 6 : 1;
+          sc += groupScore(p, state.roster, groups);
           return { p, sc };
         })
         .sort((a, b) => b.sc - a.sc)
@@ -1098,8 +1179,10 @@ function beamFill(cands, pre, settings, groups, stackTeams) {
   const legal = beam.filter((s) => s.spent <= 50000 && Object.keys(s.roster).length === allSlots.length);
   const inBand = legal.filter((s) => s.spent >= minS);
   const pickFrom = inBand.length ? inBand : legal;
-  pickFrom.sort((a, b) => (b.proj - seenCost(b.roster)) - (a.proj - seenCost(a.roster)) || b.proj - a.proj);
-  return pickFrom.length ? pickFrom[0].roster : null;
+  const finished = pickFrom.filter((s) => !groupsState(s.roster, groups).length);
+  const ranked = finished.length ? finished : pickFrom;
+  ranked.sort((a, b) => (b.proj - seenCost(b.roster)) - (a.proj - seenCost(a.roster)) || b.proj - a.proj);
+  return ranked.length ? ranked[0].roster : null;
 }
 
 function fillRest(cands, pre, settings, groups, stackTeams) {
@@ -1951,7 +2034,12 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
         lastReason = "Locks or stacks do not fit the roster slots.";
         continue;
       }
-      const gUse = relaxGroup ? groups.filter((g) => g.names.some((n) => lockNames.has(n))) : groups;
+      const gUse = groups.filter((g) => {
+        const mode = groupMode(g);
+        if (mode === "together" || mode === "force") return true;
+        if (!relaxGroup) return true;
+        return g.names.some((n) => lockNames.has(n));
+      });
       const relaxMoney = attempt >= 24;
       const runSettings = {
         ...settings,
@@ -1985,11 +2073,7 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
       }
       const problems = groupsState(roster, gUse);
       if (problems.length) {
-        const p0 = problems[0];
-        lastReason =
-          p0.kind === "runback"
-            ? `Group needs an opposing player once ${p0.hit[0]} is used.`
-            : `Group needs at least ${p0.g.min} once anyone from it is used.`;
+        lastReason = groupProblemText(problems[0]);
         continue;
       }
       if (!settings.isShowdown) parkLatest(roster);
@@ -2099,6 +2183,23 @@ const STATS_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main
 const LOG_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/nba_game_log.csv";
 const DVP_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/nba_dvp.csv";
 const STARTERS_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/projected_starters.csv";
+const ONOFF_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/nba_onoff.csv";
+const ODDS_FALLBACK_URLS = [
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRYY3lCP1jiJ3x4cHr87LhcNraa7KGZRKFo1jOa9EoS5VuUEehS2faNZTTM0mhKutJ-t1CDeZF0leXh/pub?gid=485904050&single=true&output=csv",
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRYY3lCP1jiJ3x4cHr87LhcNraa7KGZRKFo1jOa9EoS5VuUEehS2faNZTTM0mhKutJ-t1CDeZF0leXh/pub?gid=281565639&single=true&output=csv",
+];
+const TEAM_FULL = {
+  "Atlanta Hawks": "ATL", "Boston Celtics": "BOS", "Brooklyn Nets": "BKN",
+  "Charlotte Hornets": "CHA", "Chicago Bulls": "CHI", "Cleveland Cavaliers": "CLE",
+  "Dallas Mavericks": "DAL", "Denver Nuggets": "DEN", "Detroit Pistons": "DET",
+  "Golden State Warriors": "GSW", "Houston Rockets": "HOU", "Indiana Pacers": "IND",
+  "Los Angeles Clippers": "LAC", "Los Angeles Lakers": "LAL", "Memphis Grizzlies": "MEM",
+  "Miami Heat": "MIA", "Milwaukee Bucks": "MIL", "Minnesota Timberwolves": "MIN",
+  "New Orleans Pelicans": "NOP", "New York Knicks": "NYK", "Oklahoma City Thunder": "OKC",
+  "Orlando Magic": "ORL", "Philadelphia 76ers": "PHI", "Phoenix Suns": "PHX",
+  "Portland Trail Blazers": "POR", "Sacramento Kings": "SAC", "San Antonio Spurs": "SAS",
+  "Toronto Raptors": "TOR", "Utah Jazz": "UTA", "Washington Wizards": "WAS",
+};
 function cacheBust(url) {
   return url + (url.includes("?") ? "&" : "?") + "t=" + Date.now();
 }
@@ -2120,6 +2221,7 @@ let pool = [];
 let lineups = [];
 let stacks = [];
 let groups = [];
+let groupDraft = [];
 let csSort = { key: "proj", dir: -1 };
 let hideZero = true;
 let showLockedOnly = false;
@@ -2150,6 +2252,8 @@ let dvpSort = { key: "fpts", dir: -1 };
 let dvpCache = null;
 let dvpIndexCache = null;
 let dvpSheet = null;
+let onOffRows = [];
+let onOffByStar = new Map();
 
 function canonTeam(t) {
   const u = String(t || "").toUpperCase();
@@ -2346,7 +2450,7 @@ function trustProjection(p) {
   else if (anchored && p.projMin > 0) p.minutes = p.projMin;
   p.ppm = p.minutes > 0 ? p.proj / p.minutes : 0;
 }
-function playTag(p) {
+function sheetRole(p) {
   const v = valueOf(p);
   const min = p.minutes || 0;
   const ou = Number(p.ou) || 0;
@@ -2373,6 +2477,13 @@ function playTag(p) {
   if (v >= 4.6 && min >= 20) return { role: "Mid Exposure", exp: "Mid Exposure", why: `${v.toFixed(1)}x and ${min.toFixed(0)} minutes. A normal stud price.` };
   if (v >= 4) return { role: "Low Exposure", exp: "Low Exposure", why: `${v.toFixed(1)}x. Playable, not a priority.` };
   return { role: "Fade", exp: "Fade", why: `${v.toFixed(1)}x${min ? " at " + min.toFixed(0) + " minutes" : ""}. The price does not pay.` };
+}
+function playTag(p) {
+  const base = sheetRole(p);
+  if (p && p.tagOverride) {
+    return { role: p.tagOverride, exp: p.tagOverride, why: `You set this tag. The sheet default is ${base.role}. ${base.why}` };
+  }
+  return base;
 }
 function tagPills(p) {
   const t = playTag(p);
@@ -2426,9 +2537,260 @@ function csvField(v) {
   return s;
 }
 
+function indexOnOff(rows) {
+  onOffRows = rows || [];
+  onOffByStar = new Map();
+  onOffRows.forEach((row) => {
+    const key = foldName(row.player);
+    if (!key) return;
+    if (!onOffByStar.has(key)) onOffByStar.set(key, []);
+    onOffByStar.get(key).push(row);
+  });
+}
+function rowsForStar(name) {
+  const key = foldName(name);
+  if (!key) return [];
+  if (onOffByStar.has(key)) return onOffByStar.get(key);
+  for (const [k, list] of onOffByStar) {
+    if (samePlayer(k, key)) return list;
+  }
+  return [];
+}
+async function loadOnOff() {
+  const urls = [ONOFF_URL, "/nba_onoff.csv"];
+  for (const url of urls) {
+    try {
+      const res = await fetch(cacheBust(url));
+      if (!res.ok) continue;
+      const parsed = Papa.parse(await res.text(), { header: true, skipEmptyLines: true });
+      const rows = (parsed.data || []).map((r) => ({
+        team: canonTeam(r.TEAM),
+        player: r.PLAYER || "",
+        teammate: r.TEAMMATE || "",
+        minOn: numOrZero(r.MIN_ON),
+        fpOn: numOrZero(r.FP_ON),
+        minOff: numOrZero(r.MIN_OFF),
+        fpOff: numOrZero(r.FP_OFF),
+        repl: numOrZero(r.REPL_MIN),
+        playGp: numOrZero(r.PLAY_GP),
+        playMin: numOrZero(r.PLAY_MIN),
+        missGp: numOrZero(r.MISS_GP),
+        missMin: numOrZero(r.MISS_MIN),
+      })).filter((r) => r.player && r.teammate);
+      if (rows.length) {
+        indexOnOff(rows);
+        return;
+      }
+    } catch (e) {}
+  }
+  indexOnOff([]);
+}
+function onOffEnabled() {
+  const box = document.getElementById("onOffMinutes");
+  return !box || box.checked;
+}
+function rememberFeed() {
+  allRows.forEach((p) => {
+    if (p._feedReady) return;
+    p.feedProj = p.baseProj || 0;
+    p.feedMinutes = p.minutes || 0;
+    p._feedReady = true;
+  });
+}
+function linkFor(star, mate) {
+  return rowsForStar(star.name).find((r) => samePlayer(r.teammate, mate.name) && r.team === canonTeam(star.team));
+}
+function applyOnOff() {
+  const touched = new Set();
+  allRows.forEach((p) => { if (p.projTouched) touched.add(p.name); });
+  allRows.forEach((p) => {
+    if (touched.has(p.name) || !p._feedReady) return;
+    p.baseProj = p.feedProj || 0;
+    p.minutes = p.feedMinutes || 0;
+    p.proj = scoringProj(p.baseProj, p.pos);
+    p.minBump = 0;
+    p.onOffWhy = "";
+    p.ppm = p.minutes > 0 ? p.proj / p.minutes : 0;
+  });
+  if (!onOffEnabled() || !onOffRows.length) {
+    allRows.forEach((p) => { if (!p.ownFeed && !p._ownTouched && !p.phantom) p.own = estimateOwn(p); });
+    if (pool.length) modelOwnership(pool);
+    return;
+  }
+  const plan = new Map();
+  const teams = new Map();
+  const seen = new Set();
+  allRows.forEach((p) => {
+    if (p.pos === "CPT" || p.pos === "UTIL" || seen.has(p.name)) return;
+    seen.add(p.name);
+    const team = canonTeam(p.team);
+    if (!teams.has(team)) teams.set(team, []);
+    teams.get(team).push(p);
+  });
+  teams.forEach((players) => {
+    const out = players.filter((p) => isOutStatus(p.injury) && (p.feedMinutes || 0) >= 16 && !p.phantom);
+    out.sort((a, b) => (b.feedMinutes || 0) - (a.feedMinutes || 0));
+    const bump = new Map();
+    const notes = new Map();
+    out.forEach((star) => {
+      const weights = [];
+      players.forEach((mate) => {
+        if (mate.name === star.name || isOutStatus(mate.injury) || mate.phantom) return;
+        if ((mate.feedMinutes || 0) < 6) return;
+        if ((mate.feedMinutes || 0) > (star.feedMinutes || 0) + 6) return;
+        const link = linkFor(star, mate);
+        if (!link || link.repl < 2) return;
+        weights.push({ mate, link });
+      });
+      const total = weights.reduce((sum, w) => sum + w.link.repl, 0);
+      if (total < 8) return;
+      weights.forEach(({ mate, link }) => {
+        const share = star.feedMinutes * (link.repl / total);
+        const current = (mate.feedMinutes || 0) + (bump.get(mate.name) || 0);
+        const ceiling = Math.min(38, (mate.feedMinutes || 0) + ((mate.feedMinutes || 0) >= 30 ? 8 : 12));
+        const add = Math.max(0, Math.min(share, ceiling - current));
+        if (add < 0.8) return;
+        bump.set(mate.name, (bump.get(mate.name) || 0) + add);
+        const list = notes.get(mate.name) || [];
+        list.push({ star, add, link });
+        notes.set(mate.name, list);
+      });
+    });
+    bump.forEach((add, name) => {
+      const mate = players.find((p) => p.name === name);
+      if (!mate || touched.has(name)) return;
+      const baseMin = mate.feedMinutes || 0;
+      const newMin = Math.min(38, baseMin + add);
+      const bits = notes.get(name) || [];
+      const main = bits.slice().sort((a, b) => b.add - a.add)[0];
+      let rate = 1;
+      const link = main && main.link;
+      if (link && link.minOn >= 30 && link.minOff >= 18 && link.minOn > 0 && link.minOff > 0) {
+        const on = link.fpOn / link.minOn;
+        const off = link.fpOff / link.minOff;
+        if (on >= 0.35) {
+          const raw = Math.min(1.15, Math.max(0.88, off / on));
+          const trust = Math.min(1, link.minOff / 90) * 0.55;
+          rate = 1 + (raw - 1) * trust;
+        }
+      }
+      const minuteRatio = baseMin >= 8 ? newMin / baseMin : 1;
+      const cap = baseMin >= 30 ? 1.28 : 1.5;
+      const mult = Math.min(cap, Math.max(0.85, minuteRatio * rate));
+      const newBase = (mate.feedProj || 0) > 0 ? mate.feedProj * mult : 0;
+      const who = bits.map((w) => w.star.name);
+      const whoText = who.length === 1
+        ? who[0] + " is out"
+        : who.slice(0, -1).join(", ") + " and " + who[who.length - 1] + " are out";
+      const addText = bits.map((w) => "+" + w.add.toFixed(1) + " min from " + w.star.name).join(", ");
+      let text = whoText + ". " + baseMin.toFixed(0) + " → " + newMin.toFixed(0) + " minutes (" + addText + ").";
+      if (link && Math.abs(rate - 1) >= 0.015) {
+        const on = link.fpOn / link.minOn;
+        const off = link.fpOff / link.minOff;
+        text += " With " + main.star.name + " off the floor, " + off.toFixed(2) + " DK per minute versus " + on.toFixed(2) + " with him (" + Math.round(link.minOff) + " min off, " + Math.round(link.minOn) + " on).";
+      }
+      text += " Projection " + (mate.feedProj || 0).toFixed(1) + " → " + newBase.toFixed(1) + ".";
+      plan.set(name, { minutes: newMin, base: newBase, bump: newMin - baseMin, why: text });
+    });
+  });
+  allRows.forEach((p) => {
+    const hit = plan.get(p.name);
+    if (!hit || touched.has(p.name)) return;
+    p.minutes = hit.minutes;
+    p.baseProj = hit.base;
+    p.proj = scoringProj(hit.base, p.pos);
+    p.minBump = hit.bump;
+    p.onOffWhy = hit.why;
+    p.ppm = p.minutes > 0 ? p.proj / p.minutes : 0;
+  });
+  allRows.forEach((p) => { if (!p.ownFeed && !p._ownTouched && !p.phantom) p.own = estimateOwn(p); });
+  if (pool.length) modelOwnership(pool);
+}
+function onOffCard(p) {
+  const rows = rowsForStar(p.name).filter((r) => r.team === canonTeam(p.team) && (r.repl >= 3 || (r.minOn >= 24 && r.minOff >= 12)));
+  rows.sort((a, b) => b.repl - a.repl || b.minOff - a.minOff);
+  const shown = rows.slice(0, 6);
+  const body = shown.map((r) => {
+    const on = r.minOn >= 8 ? (r.fpOn / r.minOn).toFixed(2) : "—";
+    const off = r.minOff >= 8 ? (r.fpOff / r.minOff).toFixed(2) : "—";
+    return `<tr><td>${nameBtn(r.teammate)}</td><td>${r.repl >= 1 ? r.repl.toFixed(0) : "—"}</td><td>${on}</td><td>${off}</td><td>${Math.round(r.minOn + r.minOff)}</td></tr>`;
+  }).join("");
+  const why = p.onOffWhy ? `<p class="note" style="margin:0 0 0.45rem;">${esc(p.onOffWhy)}</p>` : "";
+  if (!shown.length) {
+    return why + `<p class="note">No on/off sample for this player yet. It fills in as games are played.</p>`;
+  }
+  return why + `
+    <div class="lu-label">On / off court</div>
+    <p class="note" style="margin:0 0 0.35rem;">Who checks in for him, and how that teammate scores with him on the floor versus off it. Points per minute are DraftKings, without the double-double bonus. Minutes on this slate move only when he, or a teammate, is out.</p>
+    <div class="log-wrap"><table>
+      <thead><tr><th>Teammate</th><th>Sub min</th><th>With</th><th>Without</th><th>Min</th></tr></thead>
+      <tbody>${body}</tbody>
+    </table></div>
+  `;
+}
+
+function parseOddsDate(text) {
+  const iso = String(text || "").match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) return new Date(iso[1], iso[2] - 1, iso[3]).getTime();
+  const us = String(text || "").match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if (us) return new Date(us[3], us[1] - 1, us[2]).getTime();
+  return 0;
+}
+let oddsFallbackUsed = false;
+async function loadOddsFallback() {
+  if (!allRows.some((p) => !p.ou && p.team && p.opp)) return;
+  const odds = new Map();
+  for (const url of ODDS_FALLBACK_URLS) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) continue;
+      const parsed = Papa.parse(await res.text(), { header: true, skipEmptyLines: true });
+      let got = 0;
+      parsed.data.forEach((r) => {
+        const bet = String(r.BET || "").trim();
+        if (bet && bet !== "Total" && bet !== "Spread") return;
+        const team = TEAM_FULL[(r.Team || "").trim()];
+        const opp = TEAM_FULL[(r.Opponent || "").trim()];
+        if (!team || !opp) return;
+        const totalCol = parseFloat(r["Average Total Line"]);
+        const sprCol = parseFloat(r["Average Team Spread"]);
+        const key = team + "|" + opp;
+        const when = parseOddsDate(r["Commence Time"]);
+        const list = odds.get(key) || [];
+        const hit = list.find((e) => e.when === when) || { ou: 0, spread: 0, when };
+        if (bet !== "Spread" && isFinite(totalCol) && totalCol > 100) {
+          hit.ou = totalCol;
+          got++;
+        }
+        const spr = isFinite(sprCol) ? sprCol : (bet === "Spread" && isFinite(totalCol) && Math.abs(totalCol) < 50 ? totalCol : NaN);
+        if (isFinite(spr)) hit.spread = spr;
+        if ((hit.ou || hit.spread) && !list.includes(hit)) list.push(hit);
+        if (list.length) odds.set(key, list);
+      });
+      if (got) break;
+    } catch (e) {}
+  }
+  if (!odds.size) return;
+  allRows.forEach((p) => {
+    if (p.ou && p.spread) return;
+    const list = odds.get(p.team + "|" + p.opp);
+    if (!list || !list.length) return;
+    const want = parseOddsDate(p.start);
+    const o = want ? list.slice().sort((a, b) => Math.abs(a.when - want) - Math.abs(b.when - want))[0] : list[0];
+    if (!o) return;
+    if (!p.ou && o.ou) { p.ou = o.ou; oddsFallbackUsed = true; }
+    if (!p.spread && o.spread) {
+      p.spread = o.spread;
+      p.fav = o.spread < 0;
+      oddsFallbackUsed = true;
+    }
+  });
+}
+
 async function loadData() {
   const status = document.getElementById("status");
   loadDvpSheet();
+  const onOffPromise = loadOnOff();
   try {
     const [pRes, sRes] = await Promise.all([fetch(cacheBust(PLAYERS_URL)), fetch(cacheBust(STATS_URL))]);
     if (!pRes.ok) throw new Error("players");
@@ -2545,10 +2907,14 @@ async function loadData() {
       if (!p.ownFeed) p.own = estimateOwn(p);
       if (isOutStatus(p.injury)) applyExp(p, "fade");
     });
+    await loadOddsFallback();
     allRows.forEach((p) => {
       if (!p.ownFeed && !p.phantom) p.own = estimateOwn(p);
     });
     ownFromFeed = allRows.some((p) => p.ownFeed);
+    await onOffPromise;
+    rememberFeed();
+    applyOnOff();
     const withProj = allRows.filter((p) => p.baseProj > 0).length;
     const dropped = [];
     const seenDrop = new Set();
@@ -2559,7 +2925,7 @@ async function loadData() {
     });
     const shown = dropped.slice(0, 6);
     const extra = dropped.length - shown.length;
-    status.textContent = `Loaded ${allRows.length} players · ${withProj} with a projection.` + (shown.length ? ` Left out ${shown.join(", ")}${extra ? " and " + extra + " more" : ""}. The file listed points for them, but there is no minutes average and no game-log points behind it.` : "");
+    status.textContent = `Loaded ${allRows.length} players · ${withProj} with a projection.` + (shown.length ? ` Left out ${shown.join(", ")}${extra ? " and " + extra + " more" : ""}. The file listed points for them, but there is no minutes average and no game-log points behind it.` : "") + (onOffRows.length ? " On/off splits are in." : "") + (oddsFallbackUsed ? " Game odds filled from the odds sheet." : "");
     ensureLogs();
     await loadStarters();
     buildSlatePicker();
@@ -2766,7 +3132,7 @@ function renderPool() {
       <td>${esc(p.pos)}</td>
       <td>${money(p.salary)}</td>
       <td><input type="number" class="proj" data-id="${p.id}" value="${p.proj.toFixed(1)}" step="0.1"></td>
-      <td class="mincol">${mins}</td>
+      <td class="mincol">${mins}${p.minBump >= 1 ? ` <span class="min-bump" data-tip="${esc(p.onOffWhy || "")}">+${Math.round(p.minBump)}</span>` : ""}</td>
       <td class="${valueClass(val)}">${val.toFixed(2)}x</td>
       <td>${p.ou ? Number(p.ou).toFixed(1) : "—"}</td>
       <td>${sprTxt}</td>
@@ -2793,6 +3159,8 @@ function renderPool() {
     if (!p) return;
     p.proj = parseFloat(e.target.value) || 0;
     p.baseProj = p.pos === "CPT" ? p.proj / 1.5 : p.proj;
+    p.projTouched = true;
+    rowsNamed(p.name).forEach((row) => { row.projTouched = true; });
     p.ppm = p.minutes > 0 ? p.proj / p.minutes : 0;
     modelOwnership(pool);
     renderPool();
@@ -2924,16 +3292,29 @@ function renderRules() {
       <button type="button" class="secondary st-x" data-id="${s.id}">Remove</button>
     </div>`).join("");
 
-  if (!groups.length) groupHost.innerHTML = `<div class="note">No groups. A group is not forced. If a lineup uses anyone in it, it must use at least the number you set.</div>`;
+  if (!groups.length) groupHost.innerHTML = `<div class="note">No groups yet. Add Porter and Randle, leave the rule on Together, then Add group. A lineup can use neither. It cannot use one without the other.</div>`;
   else groupHost.innerHTML = groups.map((g) => `
     <div class="rule" data-id="${g.id}">
-      <label>Add<select class="g-add" data-id="${g.id}">${nameOptions(uniqueProjected(), "", "Player")}</select></label>
-      <button type="button" class="secondary g-plus" data-id="${g.id}">Add</button>
-      <div class="chips">${g.names.map((n) => `<span class="chip">${esc(n)} <button type="button" data-id="${g.id}" data-name="${esc(n)}" class="g-chip">×</button></span>`).join("") || '<span class="note">Nobody in this group yet.</span>'}</div>
-      <label>At least<input class="g-min" data-id="${g.id}" type="number" min="2" max="5" value="${g.min}"></label>
-      <label class="check"><input type="checkbox" class="g-rb" data-id="${g.id}" ${g.runback ? "checked" : ""}> Require 1 opposing</label>
+      <div style="flex:1;font-size:0.84rem;">${esc(groupSentence(g))}</div>
       <button type="button" class="secondary g-x" data-id="${g.id}">Remove</button>
     </div>`).join("");
+  const gPick = document.getElementById("gPick");
+  if (gPick) {
+    const cur = gPick.value;
+    gPick.innerHTML = nameOptions(uniqueProjected().filter((p) => !groupDraft.includes(p.name)), cur, "Player");
+  }
+  const gChips = document.getElementById("gChips");
+  if (gChips) {
+    gChips.innerHTML = groupDraft.map((n) => `<span class="chip">${esc(n)} <button type="button" data-name="${esc(n)}" class="g-draft-x">×</button></span>`).join("")
+      || `<span class="note">Add the names that belong together.</span>`;
+    gChips.querySelectorAll(".g-draft-x").forEach((el) => el.onclick = () => {
+      groupDraft = groupDraft.filter((n) => n !== el.dataset.name);
+      renderRules();
+    });
+  }
+  const gMinLabel = document.getElementById("gMinLabel");
+  const gMode = document.getElementById("gMode");
+  if (gMinLabel && gMode) gMinLabel.style.display = gMode.value === "atleast" ? "" : "none";
 
   const ideas = [];
   pgs().slice(0, 8).forEach((pg) => {
@@ -2975,27 +3356,6 @@ function renderRules() {
   stackHost.querySelectorAll(".st-x").forEach((el) => el.onclick = (e) => {
     stacks = stacks.filter((s) => s.id !== +e.target.dataset.id);
     renderRules();
-  });
-  groupHost.querySelectorAll(".g-plus").forEach((el) => el.onclick = (e) => {
-    const g = groups.find((x) => x.id === +e.target.dataset.id);
-    const sel = groupHost.querySelector(`.g-add[data-id="${e.target.dataset.id}"]`);
-    if (!g || !sel || !sel.value || g.names.includes(sel.value)) return;
-    g.names.push(sel.value);
-    renderRules();
-  });
-  groupHost.querySelectorAll(".g-chip").forEach((el) => el.onclick = (e) => {
-    const g = groups.find((x) => x.id === +e.target.dataset.id);
-    if (!g) return;
-    g.names = g.names.filter((n) => n !== e.target.dataset.name);
-    renderRules();
-  });
-  groupHost.querySelectorAll(".g-min").forEach((el) => el.oninput = (e) => {
-    const g = groups.find((x) => x.id === +e.target.dataset.id);
-    if (g) g.min = Math.max(2, parseInt(e.target.value, 10) || 2);
-  });
-  groupHost.querySelectorAll(".g-rb").forEach((el) => el.onchange = (e) => {
-    const g = groups.find((x) => x.id === +e.target.dataset.id);
-    if (g) g.runback = e.target.checked;
   });
   groupHost.querySelectorAll(".g-x").forEach((el) => el.onclick = (e) => {
     groups = groups.filter((g) => g.id !== +e.target.dataset.id);
@@ -3109,8 +3469,8 @@ function renderCheatSheet() {
   const blurb = document.getElementById("csBlurb");
   if (blurb) {
     blurb.textContent = sd
-      ? "Showdown ranks use the utility salary and the base projection. Captain is 1.5× both. OUT is hidden. Lock, core, limit, and fade write back to the builder."
-      : "Ranked off the lineup projection. Ownership is an estimate until a real ownership number is in the feed. OUT is hidden here. Questionable stays. Lock, core, limit, and fade write back to the builder.";
+      ? "Showdown ranks use the utility salary and the base projection. Captain is 1.5× both. OUT is hidden. Open a name and click the tag to change it."
+      : "Ranked off the lineup projection. Ownership is an estimate until a real ownership number is in the feed. OUT is hidden here. Questionable stays. Open a name and click the tag to change it.";
   }
   let rows = sheetRows();
   const allProj = pool.filter((p) => sheetPlayer(p) && p.proj > 0 && !isOutStatus(p.injury));
@@ -3167,7 +3527,6 @@ function renderCheatSheet() {
   host.innerHTML = rows.map((p, i) => {
     const val = valueOf(p);
     return `<tr>
-      <td class="acts">${actButtons(p.name)}</td>
       <td>${i + 1}</td>
       <td>${nameBtn(p.name)} ${injuryTag(p.injury)} ${p.starter === "Yes" ? '<span class="tag s" data-tip="Tagged as a starter in the feed.">S</span>' : ""} ${tagPills(p)}</td>
       <td>${esc(rosterPos(p))}</td><td>${esc(p.team)}</td><td>${esc(p.opp)}</td>
@@ -3177,8 +3536,7 @@ function renderCheatSheet() {
       <td>${numCell(p.ou, 1)}</td><td>${sprText(p)}</td>
       <td>${numCell(p.pts, 1)}</td><td>${numCell(p.reb, 1)}</td><td>${numCell(p.ast, 1)}</td><td>${numCell(p.fd, 1)}</td>
     </tr>`;
-  }).join("") || `<tr><td colspan="16" class="note">No players match. Lower the minimums or switch the view.</td></tr>`;
-  bindActs(host);
+  }).join("") || `<tr><td colspan="15" class="note">No players match. Lower the minimums or switch the view.</td></tr>`;
   bindNames(host);
 }
 
@@ -4202,6 +4560,7 @@ function renderPlayerCard(p) {
   });
   bindNames(body);
   bindActs(body);
+  paintDrawerTag(p);
   body.querySelectorAll(".act").forEach((btn) => {
     btn.onclick = () => {
       applyPlayerAction(btn.dataset.name, btn.dataset.act);
@@ -4218,8 +4577,8 @@ function drawerPane(p, games, loading, mates, opp, exp) {
   if (drawerTab === "news") return newsPane(p);
   const mateRows = mates.map((m) => `<div class="lu-row"><span class="lu-pos">${esc(posToken(m))}</span><span>${nameBtn(m.name)} ${injuryTag(m.injury)}</span><span class="lu-min">${m.minutes > 0 ? m.minutes.toFixed(0) + " min" : ""}</span><span class="lu-min">${m.proj.toFixed(1)}</span></div>`).join("") || `<div class="lu-empty">No other projected teammate.</div>`;
   return `
-    <p class="note">${p.fav ? "Favorite. " : ""}${p.minutes > 0 ? "Minutes are the recent average in the feed, not a confirmed role. " : ""}FPPG is DraftKings scoring from the game log. Exposure on this slate: ${esc(exp || "Play")}.</p>
-    <div class="acts" style="margin:0.35rem 0 0.7rem;">${actButtons(p.name)}</div>
+    <p class="note">${p.fav ? "Favorite. " : ""}${p.minBump >= 1 ? "" : (p.minutes > 0 ? "Minutes are the recent average in the feed, not a confirmed role. " : "")}FPPG is DraftKings scoring from the game log. The gold box is the sheet tag. Click it to change how this player is used.</p>
+    ${onOffCard(p)}
     <div class="lu-label">Teammates</div>
     ${mateRows}
   `;
@@ -4348,10 +4707,66 @@ function matchupPane(p, games, oppPlayers) {
 }
 function closePlayer() {
   document.getElementById("drawerBack")?.classList.remove("show");
+  document.getElementById("drawerTagMenu")?.classList.remove("show");
   const drawer = document.getElementById("playerDrawer");
   if (!drawer) return;
   drawer.classList.remove("open");
   drawer.setAttribute("aria-hidden", "true");
+}
+
+const TAG_MENU = [
+  { role: "Extreme Core", exp: "core" },
+  { role: "Core Play", exp: "high" },
+  { role: "High Exposure", exp: "high" },
+  { role: "Mid Exposure", exp: "mid" },
+  { role: "Low Exposure", exp: "low" },
+  { role: "Limit", exp: "limit" },
+  { role: "Fade", exp: "fade" },
+  { role: "Lock", exp: "lock" },
+];
+function paintDrawerTag(p) {
+  const btn = document.getElementById("drawerTag");
+  const menu = document.getElementById("drawerTagMenu");
+  if (!btn || !p) return;
+  const t = playTag(p);
+  const base = sheetRole(p);
+  btn.textContent = t.role;
+  btn.dataset.name = p.name;
+  btn.title = t.why || "Click to change the tag";
+  btn.classList.toggle("edited", !!p.tagOverride);
+  if (!menu) return;
+  menu.classList.remove("show");
+  menu.innerHTML = TAG_MENU.map((opt) =>
+    `<button type="button" data-role="${esc(opt.role)}" data-exp="${opt.exp}" class="${t.role === opt.role ? "on" : ""}">${esc(opt.role)}${base.role === opt.role ? " · default" : ""}</button>`
+  ).join("") + `<button type="button" data-role="" data-exp="play">Reset to default</button>`;
+}
+function setPlayerTag(name, role, exp) {
+  const rows = rowsNamed(name);
+  if (!rows.length) return;
+  if (!role) {
+    rows.forEach((p) => { p.tagOverride = ""; });
+    const key = sheetExp(primaryRow(name) || rows[0]);
+    rows.forEach((p) => applyExp(p, key));
+  } else if (exp === "lock") {
+    rows.forEach((p) => {
+      if (p.use === "lock") applyExp(p, "play", true);
+      p.tagOverride = role;
+    });
+    const row = primaryRow(name);
+    if (row) applyExp(row, "lock", true);
+    rows.forEach((p) => { p.tagOverride = role; });
+  } else {
+    rows.forEach((p) => {
+      p.tagOverride = role;
+      applyExp(p, exp, true);
+    });
+  }
+  refreshBoards();
+  const next = primaryRow(name);
+  if (next && document.getElementById("playerDrawer").classList.contains("open")) {
+    renderPlayerCard(next);
+    paintDrawerTag(next);
+  }
 }
 
 function stackIdeas() {
@@ -4461,7 +4876,7 @@ function renderStacks() {
   host.querySelectorAll(".use-back").forEach((btn) => btn.onclick = () => {
     const names = (btn.dataset.names || "").split("|").filter(Boolean);
     if (names.length < 2) return;
-    groups.push({ id: idSeq++, names, min: names.length, runback: true });
+    groups.push({ id: idSeq++, names, mode: "together", min: names.length, runback: true });
     renderRules();
     document.querySelector('.tab[data-tab="builder"]').click();
     const msg = `Group added for ${names[0]} and ${names.length - 1} teammate${names.length > 2 ? "s" : ""}. A lineup that uses them must use all of them and one player from the other side.`;
@@ -4533,6 +4948,11 @@ function ouMedianOf(list) {
   return ous.length ? ous[Math.floor(ous.length / 2)] : 0;
 }
 
+function packGroups(list) {
+  return (list || [])
+    .filter((g) => g.names && g.names.length >= 2)
+    .map((g) => ({ names: g.names.slice(), min: groupMin(g), mode: groupMode(g), runback: !!g.runback }));
+}
 function currentSettings() {
   const slate = document.getElementById("slateSelect").value || "";
   const ownBand = document.getElementById("ownBand").value;
@@ -4598,9 +5018,7 @@ function runOptimizer() {
     const activeStacks = stacks
       .filter((s) => s.pg && s.m1)
       .map((s) => ({ pg: s.pg, m1: s.m1, m2: s.m2 && s.m2 !== s.m1 ? s.m2 : "", b1: s.b1 || "", b2: s.b2 || "", pct: s.pct }));
-    const activeGroups = groups
-      .filter((g) => g.names.length >= 2)
-      .map((g) => ({ names: g.names.slice(), min: Math.min(g.min, g.names.length), runback: !!g.runback }));
+    const activeGroups = packGroups(groups);
     const result = generateLineups(usable, settings, activeStacks, activeGroups);
     lineups = result.lineups;
     const notes = result.notes.slice();
@@ -4671,9 +5089,7 @@ function rebuildChecked() {
     const activeStacks = stacks
       .filter((s) => s.pg && s.m1)
       .map((s) => ({ pg: s.pg, m1: s.m1, m2: s.m2 && s.m2 !== s.m1 ? s.m2 : "", b1: s.b1 || "", b2: s.b2 || "", pct: s.pct }));
-    const activeGroups = groups
-      .filter((g) => g.names.length >= 2)
-      .map((g) => ({ names: g.names.slice(), min: Math.min(g.min, g.names.length), runback: !!g.runback }));
+    const activeGroups = packGroups(groups);
     const result = generateLineups(
       usable,
       { ...settings, num: indexes.length, _exposureNum: lineups.length, _seed: kept },
@@ -4890,11 +5306,14 @@ function stackCells(name) {
     met.push(String(lineups.filter((lu) => members.every((n) => lu.players.some((p) => p.name === n))).length));
   });
   groups.forEach((g) => {
-    if (!g.names.includes(name)) return;
-    req.push(`At least ${g.min} of ${g.names.length}`);
+    if (!g.names || !g.names.includes(name)) return;
+    const mode = groupMode(g);
+    req.push(mode === "together" ? "Together" : mode === "force" ? "Every lineup" : `At least ${groupMin(g)}`);
+    const need = groupMin(g);
     met.push(String(lineups.filter((lu) => {
       const c = g.names.filter((n) => lu.players.some((p) => p.name === n)).length;
-      return c === 0 || c >= g.min;
+      if (mode === "force") return c >= g.names.length;
+      return c === 0 || c >= need;
     }).length));
   });
   return { req: req.join("; ") || "—", met: met.join("; ") || "—" };
@@ -5020,6 +5439,7 @@ function setProjByName(name, displayedFp) {
       p.baseProj = displayedFp;
     }
     p.ppm = p.minutes > 0 ? p.proj / p.minutes : 0;
+    p.projTouched = true;
   });
   modelOwnership(pool);
 }
@@ -5518,6 +5938,13 @@ document.getElementById("slateSelect").onchange = (e) => loadSlate(e.target.valu
 document.getElementById("search").oninput = renderPool;
 document.getElementById("includeQ").onchange = renderPool;
 document.getElementById("excludeOut").onchange = renderPool;
+document.getElementById("onOffMinutes").onchange = () => {
+  applyOnOff();
+  refreshBoards();
+  const drawer = document.getElementById("playerDrawer");
+  const name = document.getElementById("drawerTag") && document.getElementById("drawerTag").dataset.name;
+  if (drawer && drawer.classList.contains("open") && name && primaryRow(name)) renderPlayerCard(primaryRow(name));
+};
 document.getElementById("csPos").onchange = renderCheatSheet;
 document.getElementById("csMinProj").oninput = renderCheatSheet;
 document.getElementById("csMinVal").oninput = renderCheatSheet;
@@ -5583,6 +6010,7 @@ document.getElementById("coreValues").onclick = () => {
 };
 function sheetExp(p) {
   const t = playTag(p);
+  if (t.role === "Lock") return "lock";
   if (t.role === "Extreme Core") return "core";
   if (t.role === "Core Play") return "high";
   const map = { "High Exposure": "high", "Mid Exposure": "mid", "Low Exposure": "low", Limit: "limit", Fade: "fade" };
@@ -5594,7 +6022,7 @@ document.getElementById("applyTags").onclick = () => {
   pool.forEach((p) => {
     if (p.exp === "lock" || p.use === "lock") return;
     const exp = sheetExp(p);
-    applyExp(p, exp);
+    applyExp(p, exp, !!p.tagOverride);
     if (p.pos === "CPT" || seen.has(p.name)) return;
     seen.add(p.name);
     counts[exp] = (counts[exp] || 0) + 1;
@@ -5632,7 +6060,7 @@ document.getElementById("saveBuild").onclick = () => {
     shape: activeShape,
     settings: ["numLineups", "minSalary", "minMinutes", "minFp", "maxLeft", "randomness", "maxExposure", "leverage", "minUnique", "maxTeam", "pgStack", "bringBack", "ceiling", "ownBand", "gameStack", "gameMin", "sdSplit", "cptMate", "totalLean", "ouCut"]
       .reduce((o, id) => { o[id] = document.getElementById(id).value; return o; }, {}),
-    players: pool.map((p) => ({ key: playerKey(p), use: p.use, exp: p.exp || "play", weight: p.weight, proj: p.proj, own: p.own, minExp: p.minExp || 0, maxExp: p.maxExp })),
+    players: pool.map((p) => ({ key: playerKey(p), use: p.use, exp: p.exp || "play", weight: p.weight, proj: p.proj, own: p.own, minExp: p.minExp || 0, maxExp: p.maxExp, tagOverride: p.tagOverride || "" })),
     stacks,
     groups,
   };
@@ -5681,10 +6109,12 @@ document.getElementById("loadBuild").onclick = () => {
         if (saved.maxExp !== undefined) p.maxExp = Number(saved.maxExp);
       }
     }
+    p.tagOverride = saved.tagOverride || "";
     p.weight = p.exp;
     if (saved.proj !== undefined) {
       p.proj = Number(saved.proj) || 0;
       p.baseProj = p.pos === "CPT" ? p.proj / 1.5 : p.proj;
+      p.projTouched = true;
     }
     if (saved.own !== undefined) p.own = Number(saved.own) || 0;
   });
@@ -5721,10 +6151,52 @@ document.getElementById("addStack").onclick = () => {
   stacks.push({ id: idSeq++, pg: pg?.name || "", m1: mate?.name || "", m2: "", pct: 40 });
   renderRules();
 };
-document.getElementById("addGroup").onclick = () => {
-  groups.push({ id: idSeq++, names: [], min: 2, runback: false });
+document.getElementById("gAddPick").onclick = () => {
+  const name = document.getElementById("gPick").value;
+  if (!name || groupDraft.includes(name)) return;
+  groupDraft.push(name);
   renderRules();
 };
+document.getElementById("gMode").onchange = () => {
+  const lab = document.getElementById("gMinLabel");
+  if (lab) lab.style.display = document.getElementById("gMode").value === "atleast" ? "" : "none";
+};
+document.getElementById("gSave").onclick = () => {
+  if (groupDraft.length < 2) {
+    flash("Add at least two names. Together means if one is in the lineup, the others are too.");
+    return;
+  }
+  const mode = document.getElementById("gMode").value || "together";
+  const min = Math.max(2, parseInt(document.getElementById("gMin").value, 10) || 2);
+  const g = {
+    id: idSeq++,
+    names: groupDraft.slice(),
+    mode,
+    min: Math.min(min, groupDraft.length),
+    runback: document.getElementById("gRb").checked,
+  };
+  groups.push(g);
+  groupDraft = [];
+  document.getElementById("gRb").checked = false;
+  renderRules();
+  flash(groupSentence(g));
+};
+document.getElementById("drawerTag").onclick = (e) => {
+  e.stopPropagation();
+  document.getElementById("drawerTagMenu").classList.toggle("show");
+};
+document.getElementById("drawerTagMenu").onclick = (e) => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+  e.stopPropagation();
+  setPlayerTag(document.getElementById("drawerTag").dataset.name, btn.dataset.role || "", btn.dataset.exp || "play");
+};
+document.addEventListener("click", (e) => {
+  const menu = document.getElementById("drawerTagMenu");
+  if (!menu || !menu.classList.contains("show")) return;
+  if (e.target.closest("#drawerTag") || e.target.closest("#drawerTagMenu")) return;
+  menu.classList.remove("show");
+});
 document.getElementById("optimizeBtn").onclick = runOptimizer;
 document.getElementById("rerunTop").onclick = runOptimizer;
 document.getElementById("rerunBtn").onclick = runOptimizer;

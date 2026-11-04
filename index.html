@@ -743,6 +743,12 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
         </select>
       </label>
       <label class="check"><input type="checkbox" id="onoffSlate" checked> This slate only</label>
+      <label>View
+        <select id="onoffView">
+          <option value="rates" selected>Rates</option>
+          <option value="detail">Projected box</option>
+        </select>
+      </label>
     </div>
     <div id="onoffStatusNote" class="note" style="margin-bottom:0.45rem;"></div>
     <div class="log-wrap"><table id="onoffTable"></table></div>
@@ -2773,8 +2779,11 @@ function renderOnOff() {
   if (slateBox && !slateBox.dataset.wired) { slateBox.dataset.wired = "1"; slateBox.onchange = renderOnOff; }
   const statusSel = document.getElementById("onoffStatus");
   if (statusSel && !statusSel.dataset.wired) { statusSel.dataset.wired = "1"; statusSel.onchange = renderOnOff; }
+  const viewSel = document.getElementById("onoffView");
+  if (viewSel && !viewSel.dataset.wired) { viewSel.dataset.wired = "1"; viewSel.onchange = renderOnOff; }
   const team = canonTeam(sel?.value || "");
   const mode = statusSel?.value || "out";
+  const view = viewSel?.value || "rates";
   const pairs = onOffPairs(team, mode);
   const note = document.getElementById("onoffStatusNote");
   if (note) {
@@ -2801,9 +2810,20 @@ function renderOnOff() {
     table.innerHTML = `<tbody><tr><td class="note">No on/off sample for this filter yet.</td></tr></tbody>`;
     return;
   }
-  table.innerHTML = `<thead><tr><th>Player off</th><th>Teammate</th><th>Sub min</th><th>With</th><th>Without</th><th>Sample min</th><th>Proj min</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
-    pairs.slice(0, 100).map((r) => `<tr><td>${nameBtn(r.star)} ${injuryTag(r.starStatus)}</td><td>${nameBtn(r.mate)}</td><td>${r.repl.toFixed(0)}</td><td>${r.onRate ? r.onRate.toFixed(2) : "—"}</td><td>${r.offRate.toFixed(2)}</td><td>${Math.round(r.sampleMin)}</td><td>${r.min.toFixed(0)}${r.bump >= 1 ? ` <span class="min-bump">+${r.bump.toFixed(0)}</span>` : ""}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
-    `</tbody>`;
+  if (view === "detail") {
+    table.innerHTML = `<thead><tr><th>Player</th><th>Proj min</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>ONOFF FP</th><th>Δ</th><th>Sample</th></tr></thead><tbody>` +
+      pairs.slice(0, 60).map((r) => {
+        const mate = allRows.find((p) => samePlayer(foldName(p.name), foldName(r.mate)) && canonTeam(p.team) === r.team);
+        const scale = mate && mate.minutes > 0 ? (Math.min(38, r.min + r.bump) / mate.minutes) * (r.rate || 1) : 1;
+        const box = (key) => mate && mate[key] ? (mate[key] * scale).toFixed(1) : "—";
+        return `<tr><td>${nameBtn(r.mate)}</td><td>${r.min.toFixed(0)}${r.bump >= 1 ? ` <span class="min-bump">+${r.bump.toFixed(0)}</span>` : ""}</td><td>${box("pts")}</td><td>${box("reb")}</td><td>${box("ast")}</td><td>${box("stl")}</td><td>${box("blk")}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td><td>${Math.round(r.sampleMin)}</td></tr>`;
+      }).join("") +
+      `</tbody>`;
+  } else {
+    table.innerHTML = `<thead><tr><th>Teammate</th><th>Sub min</th><th>With</th><th>Without</th><th>Sample min</th><th>Proj min</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
+      pairs.slice(0, 100).map((r) => `<tr><td>${nameBtn(r.mate)}</td><td>${r.repl.toFixed(0)}</td><td>${r.onRate ? r.onRate.toFixed(2) : "—"}</td><td>${r.offRate.toFixed(2)}</td><td>${Math.round(r.sampleMin)}</td><td>${r.min.toFixed(0)}${r.bump >= 1 ? ` <span class="min-bump">+${r.bump.toFixed(0)}</span>` : ""}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
+      `</tbody>`;
+  }
   bindNames(table);
 }
 function onOffCard(p) {
@@ -4095,12 +4115,13 @@ function renderGamePreview() {
     return `<div><div class="lu-label">${esc(tm)}</div>${rows}</div>`;
   };
   const injBody = inj.length ? `<div class="gp-dvp-board">${teams.map(injSide).join("")}</div>` : `<div class="lu-empty">No injury note on this game.</div>`;
-  const onoffForGame = onOffPairs("", "both").filter((r) => teams.includes(r.team)).slice(0, 8);
+  const onoffMode = document.getElementById("gpOnOffMode")?.value || "out";
+  const onoffForGame = onOffPairs("", onoffMode).filter((r) => teams.includes(r.team)).slice(0, 6);
   const onoffBody = onoffForGame.length
-    ? `<div class="log-wrap"><table><thead><tr><th>If off</th><th>Benefits</th><th>Sample min</th><th>With</th><th>Without</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
-      onoffForGame.map((r) => `<tr><td>${nameBtn(r.star)} ${injuryTag(r.starStatus)}</td><td>${nameBtn(r.mate)}</td><td>${Math.round(r.sampleMin)}</td><td>${r.onRate ? r.onRate.toFixed(2) : "—"}</td><td>${r.offRate.toFixed(2)}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
+    ? `<div class="log-wrap"><table><thead><tr><th>Teammate</th><th>Proj min</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
+      onoffForGame.map((r) => `<tr><td>${nameBtn(r.mate)}</td><td>${r.min.toFixed(0)}${r.bump >= 1 ? ` <span class="min-bump">+${r.bump.toFixed(0)}</span>` : ""}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
       `</tbody></table></div>`
-    : `<div class="lu-empty">No out or questionable player on this game has an on/off sample yet.</div>`;
+    : `<div class="lu-empty">No ${onoffMode === "q" ? "questionable" : "out"} player on this game has an on/off sample yet.</div>`;
   const ou = g.ou;
   const fav = g.players.find((p) => p.fav);
   const sideMin = isShowdown ? 4 : 2;
@@ -4115,12 +4136,14 @@ function renderGamePreview() {
     ${sec("DVP", dvpBody, false)}
     ${sec("Hot / cold", `<p class="note">Last 3 games against this season's average. All 3 have to be inside the last 3 weeks, so a player who has not played yet this year is left off. Hot is at least 12% and 4 points above. Cold is the same the other way.</p>${streakBody}`, false)}
     ${sec("Injury", `<p class="note">Questionable and out, plus the written note when the feed has one.</p>${injBody}`, false)}
-    ${sec("On / Off", `<p class="note">Who gains the most if an out or questionable teammate is off the floor. Sample min is the total minutes behind the rates. ONOFF FP scales the off-court rate to the teammate's projected minutes.</p>${onoffBody}`, false)}
+    ${sec("On / Off", `<div class="row" style="align-items:center; margin-bottom:0.35rem;"><label>Show <select id="gpOnOffMode"><option value="out" selected>Confirmed out</option><option value="both">Out + Questionable</option></select></label></div><p class="note" style="margin:0 0 0.35rem;">Who gains if a confirmed out (or questionable) teammate is off. Proj min includes the expected bump.</p>${onoffBody}`, false)}
     </div>
     <div class="gp-sides">${sides}</div>
     <div class="gp-actions"><button type="button" class="secondary mini game-focus" data-game="${esc(g.key)}" data-min="${sideMin}">Use ${sideMin} from this game</button></div>
   </div>`;
   bindNames(desk);
+  const gpMode = document.getElementById("gpOnOffMode");
+  if (gpMode) gpMode.onchange = () => renderGamePreview();
   desk.querySelectorAll(".game-focus").forEach((btn) => {
     btn.onclick = () => focusGame(btn.dataset.game, parseInt(btn.dataset.min, 10) || 2);
   });
@@ -4658,6 +4681,7 @@ function renderPlayerCard(p) {
     </div>
     <div class="dk-tabs">
       <button type="button" data-dtab="ov" class="${drawerTab === "ov" ? "on" : ""}">Overview</button>
+      <button type="button" data-dtab="onoff" class="${drawerTab === "onoff" ? "on" : ""}">On/Off</button>
       <button type="button" data-dtab="log" class="${drawerTab === "log" ? "on" : ""}">Game Log</button>
       <button type="button" data-dtab="splits" class="${drawerTab === "splits" ? "on" : ""}">Splits</button>
       <button type="button" data-dtab="mu" class="${drawerTab === "mu" ? "on" : ""}">Matchup</button>
@@ -4685,6 +4709,7 @@ function renderPlayerCard(p) {
 }
 
 function drawerPane(p, games, loading, mates, opp, exp) {
+  if (drawerTab === "onoff") return onOffCard(p);
   if (drawerTab === "log") return gameLogPane(games, loading);
   if (drawerTab === "splits") return splitsPane(p, games, loading);
   if (drawerTab === "mu") return matchupPane(p, games, opp);
@@ -4692,7 +4717,6 @@ function drawerPane(p, games, loading, mates, opp, exp) {
   const mateRows = mates.map((m) => `<div class="lu-row"><span class="lu-pos">${esc(posToken(m))}</span><span>${nameBtn(m.name)} ${injuryTag(m.injury)}</span><span class="lu-min">${m.minutes > 0 ? m.minutes.toFixed(0) + " min" : ""}</span><span class="lu-min">${m.proj.toFixed(1)}</span></div>`).join("") || `<div class="lu-empty">No other projected teammate.</div>`;
   return `
     <p class="note">${p.fav ? "Favorite. " : ""}${p.minBump >= 1 ? "" : (p.minutes > 0 ? "Minutes are the recent average in the feed, not a confirmed role. " : "")}FPPG is DraftKings scoring from the game log. The gold box is the sheet tag. Click it to change how this player is used.</p>
-    ${onOffCard(p)}
     <div class="lu-label">Teammates</div>
     ${mateRows}
   `;

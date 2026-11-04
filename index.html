@@ -2782,7 +2782,7 @@ function shotAverages(name) {
     fg3a: tot.fg3a / per,
     fta: tot.fta / per,
     tov: tot.tov / per,
-    usg: ((tot.fga + 0.44 * tot.fta + tot.tov) / tot.min) * 100,
+    usg: ((tot.fga + 0.44 * tot.fta + tot.tov) / tot.min) * 40,
   };
 }
 function renderOnOff() {
@@ -2858,40 +2858,61 @@ function renderOnOff() {
 }
 function onOffCard(p) {
   if (!logByName) ensureLogs().then(() => { const drawer = document.getElementById("playerDrawer"); if (drawer && drawer.classList.contains("open")) renderPlayerCard(p); });
+  const mode = window.cardOnOffMode || "out";
   const hits = [];
   onOffRows.forEach((r) => {
     if (!samePlayer(foldName(r.teammate), foldName(p.name)) || r.team !== canonTeam(p.team)) return;
     if (r.repl < 2 && r.minOff < 10) return;
     const star = allRows.find((x) => samePlayer(foldName(x.name), foldName(r.player)) && canonTeam(x.team) === canonTeam(p.team));
     if (!star) return;
+    const out = isOutStatus(star.injury);
+    const q = isQStatus(star.injury);
+    if (mode === "out" && !out) return;
+    if (mode === "q" && !q) return;
+    if (mode === "both" && !out && !q) return;
     const onRate = r.minOn >= 8 ? r.fpOn / r.minOn : 0;
     const offRate = r.minOff >= 8 ? r.fpOff / r.minOff : 0;
     if (!offRate) return;
     const rate = onRate && offRate ? Math.max(0.75, Math.min(1.35, offRate / onRate)) : 1;
     const share = Math.min(0.45, r.repl / Math.max(18, star.minutes || 30));
     const bump = Math.round((star.minutes || 30) * share * 10) / 10;
-    const scale = p.minutes > 0 ? (Math.min(38, p.minutes + bump) / p.minutes) * rate : rate;
-    hits.push({ star: star.name, status: star.injury, out: isOutStatus(star.injury), q: isQStatus(star.injury), onRate, offRate, rate, bump, scale, sampleMin: r.minOn + r.minOff });
+    hits.push({ star: star.name, status: star.injury, out, q, onRate, offRate, rate, bump, sampleMin: r.minOn + r.minOff });
   });
   hits.sort((a, b) => (b.out - a.out) || (b.q - a.q) || b.bump - a.bump);
   const why = p.onOffWhy ? `<p class="note" style="margin:0 0 0.45rem;">${esc(p.onOffWhy)}</p>` : "";
-  if (!hits.length) return why + `<p class="note">No on/off sample for this player yet. It fills in as games are played.</p>`;
-  const primary = hits.find((h) => h.out) || hits.find((h) => h.q) || hits[0];
-  const scale = primary.scale || 1;
-  const cell = (key) => p[key] ? (p[key] * scale).toFixed(1) : "—";
+  if (!hits.length) return why + `<div class="row" style="margin-bottom:0.4rem;"><label>Show <select id="cardOnOffMode"><option value="out"${mode === "out" ? " selected" : ""}>Confirmed out</option><option value="q"${mode === "q" ? " selected" : ""}>Questionable</option><option value="both"${mode === "both" ? " selected" : ""}>Out + Questionable</option></select></label></div><p class="note">No sample for this filter yet.</p>`;
+  const totalBump = hits.reduce((s, h) => s + h.bump, 0);
+  const bestRate = hits.reduce((s, h) => Math.max(s, h.rate), 1);
+  const scale = p.minutes > 0 ? (Math.min(38, p.minutes + totalBump) / p.minutes) * bestRate : bestRate;
+  const delta = (base, scaled) => {
+    if (base == null || !isFinite(base)) return "";
+    const d = scaled - base;
+    if (Math.abs(d) < 0.05) return "";
+    return ` <span style="color:${d > 0 ? "var(--good)" : "var(--muted)"}; font-size:0.72rem;">(${d > 0 ? "+" : ""}${d.toFixed(1)})</span>`;
+  };
+  const cell = (key) => {
+    if (!p[key]) return "—";
+    const scaled = p[key] * scale;
+    return scaled.toFixed(1) + delta(p[key], scaled);
+  };
   const shots = shotAverages(p.name);
-  const two = shots ? ((shots.fga - shots.fg3a) * scale).toFixed(1) : "—";
-  const three = shots ? (shots.fg3a * scale).toFixed(1) : "—";
-  const ft = shots ? (shots.fta * scale).toFixed(1) : "—";
-  const usg = shots ? (shots.usg * primary.rate).toFixed(1) : "—";
-  const onoff = p.baseProj > 0 && p.minutes > 0 ? (p.baseProj * scale).toFixed(1) : "—";
+  const twoBase = shots ? shots.fga - shots.fg3a : null;
+  const threeBase = shots ? shots.fg3a : null;
+  const ftBase = shots ? shots.fta : null;
+  const usgBase = shots ? shots.usg : null;
+  const two = twoBase != null ? (twoBase * scale).toFixed(1) + delta(twoBase, twoBase * scale) : "—";
+  const three = threeBase != null ? (threeBase * scale).toFixed(1) + delta(threeBase, threeBase * scale) : "—";
+  const ft = ftBase != null ? (ftBase * scale).toFixed(1) + delta(ftBase, ftBase * scale) : "—";
+  const usg = usgBase != null ? (usgBase * bestRate).toFixed(1) + delta(usgBase, usgBase * bestRate) : "—";
+  const onoff = p.baseProj > 0 && p.minutes > 0 ? (p.baseProj * scale).toFixed(1) + delta(p.baseProj, p.baseProj * scale) : "—";
   const driverRows = hits.slice(0, 5).map((h) => `<tr><td>${nameBtn(h.star)} ${injuryTag(h.status)}</td><td>${h.onRate ? h.onRate.toFixed(2) : "—"}</td><td>${h.offRate.toFixed(2)}</td><td>${Math.round(h.sampleMin)}</td><td>${h.bump >= 1 ? `+${h.bump.toFixed(0)}` : "—"}</td></tr>`).join("");
   return why + `
+    <div class="row" style="margin-bottom:0.4rem;"><label>Show <select id="cardOnOffMode"><option value="out"${mode === "out" ? " selected" : ""}>Confirmed out</option><option value="q"${mode === "q" ? " selected" : ""}>Questionable</option><option value="both"${mode === "both" ? " selected" : ""}>Out + Questionable</option></select></label></div>
     <div class="lu-label">On / off court · ${esc(p.name)}</div>
-    <p class="note" style="margin:0 0 0.35rem;">His projected box if ${esc(primary.star)} is off. Scaled to his projected minutes and the off-court rate. Drivers below are the teammates whose absence moves him.</p>
+    <p class="note" style="margin:0 0 0.35rem;">His projected box with the selected players off. Each number is the scaled value, with the change from his normal average in parentheses.</p>
     <div class="log-wrap"><table>
       <thead><tr><th></th><th>Proj min</th><th>PTS</th><th>REB</th><th>AST</th><th>2PA</th><th>3PA</th><th>FTA</th><th>USG</th><th>ONOFF FP</th></tr></thead>
-      <tbody><tr><td>${nameBtn(p.name)}</td><td>${(p.minutes || 0).toFixed(0)}${primary.bump >= 1 ? ` <span class="min-bump">+${primary.bump.toFixed(0)}</span>` : ""}</td><td>${cell("pts")}</td><td>${cell("reb")}</td><td>${cell("ast")}</td><td>${two}</td><td>${three}</td><td>${ft}</td><td>${usg}</td><td>${onoff}</td></tr></tbody>
+      <tbody><tr><td>${nameBtn(p.name)}</td><td>${(p.minutes || 0).toFixed(0)}${totalBump >= 1 ? ` <span class="min-bump">+${totalBump.toFixed(0)}</span>` : ""}</td><td>${cell("pts")}</td><td>${cell("reb")}</td><td>${cell("ast")}</td><td>${two}</td><td>${three}</td><td>${ft}</td><td>${usg}</td><td>${onoff}</td></tr></tbody>
     </table></div>
     <div class="lu-label" style="margin-top:0.6rem;">Drivers</div>
     <div class="log-wrap"><table>
@@ -4164,13 +4185,22 @@ function renderGamePreview() {
   const onoffRaw = onOffPairs("", onoffMode).filter((r) => teams.includes(r.team));
   const byMate = new Map();
   onoffRaw.forEach((r) => {
-    const prev = byMate.get(r.mate);
-    if (!prev || r.lift > prev.lift) byMate.set(r.mate, r);
+    const key = r.mate;
+    if (!byMate.has(key)) byMate.set(key, { mate: r.mate, team: r.team, stars: [], bump: 0, rate: 1, sampleMin: 0, base: r.base, min: r.min });
+    const row = byMate.get(key);
+    row.stars.push(r.star);
+    row.bump += r.bump;
+    row.rate = Math.max(row.rate, r.rate);
+    row.sampleMin = Math.max(row.sampleMin, r.sampleMin);
   });
-  const onoffForGame = [...byMate.values()].sort((a, b) => b.lift - a.lift).slice(0, 6);
+  const onoffForGame = [...byMate.values()].map((r) => {
+    const newMin = Math.min(38, r.min + r.bump);
+    const onoffProj = r.base * (newMin / r.min) * r.rate;
+    return { ...r, newMin, onoffProj, lift: onoffProj - r.base };
+  }).sort((a, b) => b.lift - a.lift).slice(0, 6);
   const onoffBody = onoffForGame.length
-    ? `<div class="log-wrap"><table><thead><tr><th>Teammate</th><th>If off</th><th>Proj min</th><th>Sample min</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
-      onoffForGame.map((r) => `<tr><td>${nameBtn(r.mate)}</td><td>${nameBtn(r.star)} ${injuryTag(r.starStatus)}</td><td>${r.min.toFixed(0)}${r.bump >= 1 ? ` <span class="min-bump">+${r.bump.toFixed(0)}</span>` : ""}</td><td>${Math.round(r.sampleMin)}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
+    ? `<div class="log-wrap"><table><thead><tr><th>Teammate</th><th>Proj min</th><th>Sample min</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
+      onoffForGame.map((r) => `<tr><td>${nameBtn(r.mate)}</td><td>${r.min.toFixed(0)}${r.bump >= 1 ? ` <span class="min-bump">+${r.bump.toFixed(0)}</span>` : ""}</td><td>${Math.round(r.sampleMin)}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
       `</tbody></table></div>`
     : `<div class="lu-empty">No ${onoffMode === "q" ? "questionable" : onoffMode === "both" ? "out or questionable" : "confirmed out"} player on this game has an on/off sample yet.</div>`;
   const ou = g.ou;
@@ -4187,7 +4217,7 @@ function renderGamePreview() {
     ${sec("DVP", dvpBody, false)}
     ${sec("Hot / cold", `<p class="note">Last 3 games against this season's average. All 3 have to be inside the last 3 weeks, so a player who has not played yet this year is left off. Hot is at least 12% and 4 points above. Cold is the same the other way.</p>${streakBody}`, false)}
     ${sec("Injury", `<p class="note">Questionable and out, plus the written note when the feed has one.</p>${injBody}`, false)}
-    ${sec("On / Off", `<div class="row" style="align-items:center; margin-bottom:0.35rem;"><label>Show <select id="gpOnOffMode"><option value="out"${onoffMode === "out" ? " selected" : ""}>Confirmed out</option><option value="q"${onoffMode === "q" ? " selected" : ""}>Questionable</option><option value="both"${onoffMode === "both" ? " selected" : ""}>Out + Questionable</option></select></label></div><p class="note" style="margin:0 0 0.35rem;">Who gains if a confirmed out (or questionable) teammate is off. One row per teammate. Proj min includes the expected bump. Sample min is the total minutes behind the rates.</p>${onoffBody}`, true)}
+    ${sec("On / Off", `<div class="row" style="align-items:center; margin-bottom:0.35rem;"><label>Show <select id="gpOnOffMode"><option value="out"${onoffMode === "out" ? " selected" : ""}>Confirmed out</option><option value="q"${onoffMode === "q" ? " selected" : ""}>Questionable</option><option value="both"${onoffMode === "both" ? " selected" : ""}>Out + Questionable</option></select></label></div><p class="note" style="margin:0 0 0.35rem;">Combined effect of the selected players being off. One row per teammate. Proj min includes the total expected bump. Sample min is the largest sample behind the rates.</p>${onoffBody}`, true)}
     </div>
     <div class="gp-sides">${sides}</div>
     <div class="gp-actions"><button type="button" class="secondary mini game-focus" data-game="${esc(g.key)}" data-min="${sideMin}">Use ${sideMin} from this game</button></div>
@@ -4744,6 +4774,8 @@ function renderPlayerCard(p) {
     <div id="drawerPane">${drawerPane(p, games, loading, mates, opp, exp)}</div>
   `;
   const body = document.getElementById("drawerBody");
+  const cardMode = body.querySelector("#cardOnOffMode");
+  if (cardMode) cardMode.onchange = () => { window.cardOnOffMode = cardMode.value; renderPlayerCard(p); };
   body.querySelectorAll("[data-dtab]").forEach((btn) => {
     btn.onclick = () => {
       drawerTab = btn.dataset.dtab;

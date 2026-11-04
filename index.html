@@ -2831,16 +2831,16 @@ function onOffCard(p) {
   rows.sort((a, b) => b.repl - a.repl || b.minOff - a.minOff);
   const shown = rows.slice(0, 6);
   const body = shown.map((r) => {
-    const on = r.minOn >= 8 ? (r.fpOn / r.minOn).toFixed(2) : "—";
-    const off = r.minOff >= 8 ? (r.fpOff / r.minOff).toFixed(2) : "—";
     const mate = allRows.find((x) => samePlayer(foldName(x.name), foldName(r.teammate)) && canonTeam(x.team) === canonTeam(p.team));
     const onRate = r.minOn >= 8 ? r.fpOn / r.minOn : 0;
     const offRate = r.minOff >= 8 ? r.fpOff / r.minOff : 0;
     const rate = onRate && offRate ? Math.max(0.75, Math.min(1.35, offRate / onRate)) : 1;
     const share = Math.min(0.45, r.repl / Math.max(18, p.minutes || 30));
     const bump = (p.minutes || 30) * share;
-    const onoff = mate && mate.minutes > 0 && mate.baseProj > 0 ? (mate.baseProj * (Math.min(38, mate.minutes + bump) / mate.minutes) * rate).toFixed(1) : "—";
-    return `<tr><td>${nameBtn(r.teammate)}</td><td>${r.repl >= 1 ? r.repl.toFixed(0) : "—"}</td><td>${on}</td><td>${off}</td><td>${Math.round(r.minOn + r.minOff)}</td><td>${onoff}</td></tr>`;
+    const scale = mate && mate.minutes > 0 ? (Math.min(38, mate.minutes + bump) / mate.minutes) * rate : 1;
+    const cell = (key) => mate && mate[key] ? (mate[key] * scale).toFixed(1) : "—";
+    const onoff = mate && mate.minutes > 0 && mate.baseProj > 0 ? (mate.baseProj * scale).toFixed(1) : "—";
+    return `<tr><td>${nameBtn(r.teammate)}</td><td>${Math.round(r.minOn + r.minOff)}</td><td>${(mate?.minutes || 0).toFixed(0)}${bump >= 1 ? ` <span class="min-bump">+${Math.round(bump)}</span>` : ""}</td><td>${cell("pts")}</td><td>${cell("reb")}</td><td>${cell("ast")}</td><td>${cell("stl")}</td><td>${cell("blk")}</td><td>${onoff}</td></tr>`;
   }).join("");
   const why = p.onOffWhy ? `<p class="note" style="margin:0 0 0.45rem;">${esc(p.onOffWhy)}</p>` : "";
   if (!shown.length) {
@@ -2848,9 +2848,9 @@ function onOffCard(p) {
   }
   return why + `
     <div class="lu-label">On / off court</div>
-    <p class="note" style="margin:0 0 0.35rem;">Who checks in for him, and how that teammate scores with him on the floor versus off it. Points per minute are DraftKings, without the double-double bonus. ONOFF FP scales the off-court rate to the teammate's projected minutes.</p>
+    <p class="note" style="margin:0 0 0.35rem;">Projected box for the teammates who check in for him, scaled to their projected minutes and the off-court rate. Sample min is the total minutes behind the with/without split.</p>
     <div class="log-wrap"><table>
-      <thead><tr><th>Teammate</th><th>Sub min</th><th>With</th><th>Without</th><th>Sample min</th><th>ONOFF FP</th></tr></thead>
+      <thead><tr><th>Teammate</th><th>Sample min</th><th>Proj min</th><th>PTS</th><th>REB</th><th>AST</th><th>STL</th><th>BLK</th><th>ONOFF FP</th></tr></thead>
       <tbody>${body}</tbody>
     </table></div>
   `;
@@ -4115,13 +4115,13 @@ function renderGamePreview() {
     return `<div><div class="lu-label">${esc(tm)}</div>${rows}</div>`;
   };
   const injBody = inj.length ? `<div class="gp-dvp-board">${teams.map(injSide).join("")}</div>` : `<div class="lu-empty">No injury note on this game.</div>`;
-  const onoffMode = document.getElementById("gpOnOffMode")?.value || "out";
+  const onoffMode = window.gpOnOffMode || "out";
   const onoffForGame = onOffPairs("", onoffMode).filter((r) => teams.includes(r.team)).slice(0, 6);
   const onoffBody = onoffForGame.length
-    ? `<div class="log-wrap"><table><thead><tr><th>Teammate</th><th>Proj min</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
-      onoffForGame.map((r) => `<tr><td>${nameBtn(r.mate)}</td><td>${r.min.toFixed(0)}${r.bump >= 1 ? ` <span class="min-bump">+${r.bump.toFixed(0)}</span>` : ""}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
+    ? `<div class="log-wrap"><table><thead><tr><th>Teammate</th><th>Proj min</th><th>Sample min</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
+      onoffForGame.map((r) => `<tr><td>${nameBtn(r.mate)}</td><td>${r.min.toFixed(0)}${r.bump >= 1 ? ` <span class="min-bump">+${r.bump.toFixed(0)}</span>` : ""}</td><td>${Math.round(r.sampleMin)}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
       `</tbody></table></div>`
-    : `<div class="lu-empty">No ${onoffMode === "q" ? "questionable" : "out"} player on this game has an on/off sample yet.</div>`;
+    : `<div class="lu-empty">No ${onoffMode === "q" ? "questionable" : onoffMode === "both" ? "out or questionable" : "confirmed out"} player on this game has an on/off sample yet.</div>`;
   const ou = g.ou;
   const fav = g.players.find((p) => p.fav);
   const sideMin = isShowdown ? 4 : 2;
@@ -4136,14 +4136,14 @@ function renderGamePreview() {
     ${sec("DVP", dvpBody, false)}
     ${sec("Hot / cold", `<p class="note">Last 3 games against this season's average. All 3 have to be inside the last 3 weeks, so a player who has not played yet this year is left off. Hot is at least 12% and 4 points above. Cold is the same the other way.</p>${streakBody}`, false)}
     ${sec("Injury", `<p class="note">Questionable and out, plus the written note when the feed has one.</p>${injBody}`, false)}
-    ${sec("On / Off", `<div class="row" style="align-items:center; margin-bottom:0.35rem;"><label>Show <select id="gpOnOffMode"><option value="out" selected>Confirmed out</option><option value="both">Out + Questionable</option></select></label></div><p class="note" style="margin:0 0 0.35rem;">Who gains if a confirmed out (or questionable) teammate is off. Proj min includes the expected bump.</p>${onoffBody}`, false)}
+    ${sec("On / Off", `<div class="row" style="align-items:center; margin-bottom:0.35rem;"><label>Show <select id="gpOnOffMode"><option value="out"${onoffMode === "out" ? " selected" : ""}>Confirmed out</option><option value="q"${onoffMode === "q" ? " selected" : ""}>Questionable</option><option value="both"${onoffMode === "both" ? " selected" : ""}>Out + Questionable</option></select></label></div><p class="note" style="margin:0 0 0.35rem;">Who gains if a confirmed out (or questionable) teammate is off. Proj min includes the expected bump. Sample min is the total minutes behind the rates.</p>${onoffBody}`, false)}
     </div>
     <div class="gp-sides">${sides}</div>
     <div class="gp-actions"><button type="button" class="secondary mini game-focus" data-game="${esc(g.key)}" data-min="${sideMin}">Use ${sideMin} from this game</button></div>
   </div>`;
   bindNames(desk);
   const gpMode = document.getElementById("gpOnOffMode");
-  if (gpMode) gpMode.onchange = () => renderGamePreview();
+  if (gpMode) gpMode.onchange = () => { window.gpOnOffMode = gpMode.value; renderGamePreview(); };
   desk.querySelectorAll(".game-focus").forEach((btn) => {
     btn.onclick = () => focusGame(btn.dataset.game, parseInt(btn.dataset.min, 10) || 2);
   });

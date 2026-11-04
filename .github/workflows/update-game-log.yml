@@ -17,10 +17,12 @@ jobs:
         run: python fetch_game_log.py
       - name: Build the DVP sheet
         run: python build_dvp.py
+      - name: On/off from play-by-play
+        run: python fetch_pbp.py
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add nba_game_log.csv nba_dvp.csv
-          git diff --staged --quiet || git commit -m "Update NBA game log and DVP $(date -u +%F)"
+          git add nba_game_log.csv nba_dvp.csv nba_onoff.csv nba_pbp_done.csv
+          git diff --staged --quiet || git commit -m "Update NBA game log, DVP, and on/off $(date -u +%F)"
           git push

@@ -9,7 +9,7 @@ DET,SG,Duncan Robinson,RotoWire
 DET,SF,Ausar Thompson,RotoWire
 DET,PF,John Collins,RotoWire
 DET,C,Paul Reed,RotoWire
-ATL,PG,CJ McCollum,RotoWire
+ATL,PG,Kingston Flemings,RotoWire
 ATL,SG,Nickeil Alexander-Walker,RotoWire
 ATL,SF,Dyson Daniels,RotoWire
 ATL,PF,Luguentz Dort,RotoWire
@@ -26,7 +26,7 @@ MIL,PF,Kyle Kuzma,RotoWire
 MIL,C,Myles Turner,RotoWire
 BOS,PG,Derrick White,RotoWire
 BOS,SG,Hugo Gonzalez,RotoWire
-BOS,SF,Baylor Scheierman,RotoWire
+BOS,SF,Sam Hauser,RotoWire
 BOS,PF,Paul George,RotoWire
 BOS,C,Neemias Queta,RotoWire
 CHA,PG,Coby White,RotoWire
@@ -61,16 +61,16 @@ NOP,PF,Zion Williamson,RotoWire
 NOP,C,Karlo Matkovic,RotoWire
 CLE,PG,James Harden,RotoWire
 CLE,SG,Donovan Mitchell,RotoWire
-CLE,SF,Meleek Thomas,RotoWire
+CLE,SF,Tyrese Proctor,RotoWire
 CLE,PF,Evan Mobley,RotoWire
 CLE,C,Jarrett Allen,RotoWire
 OKC,PG,Shai Gilgeous-Alexander,RotoWire
-OKC,SG,Jared McCain,RotoWire
-OKC,SF,Ajay Mitchell,RotoWire
-OKC,PF,Kenrich Williams,RotoWire
+OKC,SG,Ajay Mitchell,RotoWire
+OKC,SF,Kenrich Williams,RotoWire
+OKC,PF,Aday Mara,RotoWire
 OKC,C,Isaiah Hartenstein,RotoWire
 IND,PG,Andrew Nembhard,RotoWire
-IND,SG,Kelly Oubre,RotoWire
+IND,SG,Braden Smith,RotoWire
 IND,SF,Aaron Nesmith,RotoWire
 IND,PF,Pascal Siakam,RotoWire
 IND,C,Ivica Zubac,RotoWire
@@ -93,7 +93,7 @@ TOR,PG,Immanuel Quickley,RotoWire
 TOR,SG,RJ Barrett,RotoWire
 TOR,SF,Ja'Kobe Walter,RotoWire
 TOR,PF,Scottie Barnes,RotoWire
-TOR,C,Jakob Poeltl,RotoWire
+TOR,C,Collin Murray-Boyles,RotoWire
 DEN,PG,Jamal Murray,RotoWire
 DEN,SG,Christian Braun,RotoWire
 DEN,SF,Cameron Johnson,RotoWire
@@ -110,7 +110,7 @@ PHX,SF,Dillon Brooks,RotoWire
 PHX,PF,Miles Bridges,RotoWire
 PHX,C,Khaman Maluach,RotoWire
 DAL,PG,Kyrie Irving,RotoWire
-DAL,SG,Caleb Martin,RotoWire
+DAL,SG,Zaccharie Risacher,RotoWire
 DAL,SF,Cooper Flagg,RotoWire
 DAL,PF,P.J. Washington,RotoWire
 DAL,C,Daniel Gafford,RotoWire
@@ -121,8 +121,8 @@ SAS,PF,Devin Vassell,RotoWire
 SAS,C,Victor Wembanyama,RotoWire
 LAL,PG,Luka Doncic,RotoWire
 LAL,SG,Austin Reaves,RotoWire
-LAL,SF,Ziaire Williams,RotoWire
-LAL,PF,Matisse Thybulle,RotoWire
+LAL,SF,Matisse Thybulle,RotoWire
+LAL,PF,Jake LaRavia,RotoWire
 LAL,C,Walker Kessler,RotoWire
 SAC,PG,Darius Acuff,RotoWire
 SAC,SG,Zach LaVine,RotoWire
@@ -138,4 +138,4 @@ LAC,PG,Darius Garland,RotoWire
 LAC,SG,Kris Dunn,RotoWire
 LAC,SF,Rui Hachimura,RotoWire
 LAC,PF,Derrick Jones,RotoWire
-LAC,C,Isaiah Jackson,RotoWire
+LAC,C,Brook Lopez,RotoWire

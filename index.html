@@ -11,16 +11,18 @@
 :root { --brand:#237374; --aqua:#47C6C8; --bg:#0b1020; --card:#141a2c; --card2:#101628; --text:#e8edf7; --muted:#8b93a7; --border:#2a3350; --accent:#3ee0b4; --good:#00D2AA; --bad:#ef4444; }
 [data-theme="light"] { --bg:#f0fafa; --card:#fff; --card2:#f7fffe; --text:#0C2627; --muted:#5a7a7a; --border:#c5e8e8; --accent:#237374; }
 * { box-sizing:border-box; }
-body { font-family:'Inter',system-ui,sans-serif; background:var(--bg); color:var(--text); margin:0; line-height:1.45; }
-.app-header { background:var(--card); border-bottom:1px solid var(--border); padding:0.85rem 1.25rem; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:100; }
-.app-header h1 { margin:0; font-size:1.2rem; font-weight:700; color:var(--aqua); }
-.app-header p { margin:0.15rem 0 0; color:var(--muted); font-size:0.75rem; }
-.tabs { display:flex; gap:0.35rem; background:var(--card); padding:0.45rem 1.25rem; border-bottom:1px solid var(--border); flex-wrap:wrap; }
-.tab { padding:0.5rem 0.9rem; border-radius:6px; background:transparent; border:none; color:var(--muted); cursor:pointer; font-weight:600; }
+body { font-family:'Inter',system-ui,sans-serif; background:var(--bg); color:var(--text); margin:0; line-height:1.5; font-variant-numeric:tabular-nums; }
+.app-header { background:rgba(20,26,44,0.94); border-bottom:1px solid var(--border); padding:0.75rem 1.25rem; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:100; gap:0.85rem; backdrop-filter:blur(12px); }
+.brand-lock { display:flex; align-items:center; gap:0.75rem; min-width:0; }
+.brand-mark { width:40px; height:40px; border-radius:12px; display:grid; place-items:center; font-weight:800; font-size:0.72rem; letter-spacing:0.04em; color:#06221c; background:linear-gradient(160deg,#7ee7e4,#237374); flex:none; }
+.app-header h1 { margin:0; font-size:1.15rem; font-weight:750; color:var(--text); letter-spacing:-0.02em; }
+.app-header p { margin:0.12rem 0 0; color:var(--muted); font-size:0.74rem; }
+.tabs { display:flex; gap:0.3rem; background:var(--card); padding:0.4rem 1.25rem; border-bottom:1px solid var(--border); flex-wrap:wrap; }
+.tab { padding:0.48rem 0.85rem; border-radius:8px; background:transparent; border:none; color:var(--muted); cursor:pointer; font-weight:600; }
 .tab.active { background:var(--brand); color:#fff; }
 .main { max-width:1280px; margin:0 auto; padding:1rem 1rem 2.5rem; }
-.card { background:var(--card); border:1px solid var(--border); border-radius:10px; margin-bottom:0.85rem; overflow:hidden; }
-.card-header { padding:0.7rem 1rem; font-weight:600; border-bottom:1px solid var(--border); cursor:pointer; display:flex; justify-content:space-between; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:14px; margin-bottom:0.85rem; overflow:hidden; box-shadow:0 1px 0 rgba(255,255,255,0.03), 0 12px 32px rgba(0,0,0,0.16); }
+.card-header { padding:0.75rem 1rem; font-weight:650; border-bottom:1px solid var(--border); cursor:pointer; display:flex; justify-content:space-between; letter-spacing:-0.01em; }
 .card-body { padding:0.9rem 1rem; }
 .card.collapsed .card-body { display:none; }
 .row { display:flex; gap:0.7rem; flex-wrap:wrap; align-items:flex-end; }
@@ -28,8 +30,8 @@ label { font-size:0.72rem; color:var(--muted); display:flex; flex-direction:colu
 label.check { flex-direction:row; align-items:center; gap:0.4rem; padding-bottom:0.45rem; }
 input, select, button { background:var(--card2); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:0.45rem 0.55rem; font-size:0.84rem; }
 button { cursor:pointer; font-weight:600; }
-button.primary { background:var(--accent); color:#06221c; border:none; }
-button.secondary { background:#1f2a44; }
+button.primary { background:var(--accent); color:#06221c; border:none; padding:0.55rem 0.95rem; border-radius:8px; }
+button.secondary { background:#1f2a44; border-radius:8px; }
 button.primary:hover { filter:brightness(1.06); }
 button.secondary:hover { border-color:var(--aqua); }
 button:focus-visible, select:focus-visible, input:focus-visible { outline:2px solid var(--aqua); outline-offset:1px; }
@@ -72,6 +74,27 @@ td { padding:0.38rem 0.45rem; border-bottom:1px solid var(--border); vertical-al
 .val-5 { color:#fbbf24; font-weight:600; } .val-4 { color:#f87171; font-weight:600; }
 #status { font-size:0.8rem; padding:0.45rem 1.25rem; color:var(--muted); }
 .note { font-size:0.75rem; color:var(--muted); }
+.run-popup { position:fixed; inset:0; z-index:2000; background:rgba(6,10,20,0.72); display:flex; align-items:center; justify-content:center; padding:1rem; }
+.run-popup[hidden] { display:none; }
+.run-card { width:min(420px, 100%); background:var(--card); border:1px solid var(--border); border-radius:16px; padding:1.35rem 1.25rem 1.15rem; box-shadow:0 18px 50px rgba(0,0,0,0.45); text-align:center; }
+.run-court { position:relative; height:72px; margin:0 auto 0.7rem; width:220px; }
+.run-ball { position:absolute; left:18px; top:28px; width:22px; height:22px; border-radius:50%; background:radial-gradient(circle at 35% 35%, #fb923c, #c2410c); box-shadow:inset -2px -2px 0 rgba(0,0,0,0.25); animation:run-dribble 1.15s ease-in-out infinite; }
+.run-ball::before, .run-ball::after { content:""; position:absolute; background:#7c2d12; }
+.run-ball::before { left:10px; top:2px; width:2px; height:18px; border-radius:1px; }
+.run-ball::after { left:3px; top:10px; width:16px; height:2px; border-radius:1px; }
+.run-hoop { position:absolute; right:18px; top:16px; width:46px; height:28px; border:3px solid #e8edf7; border-bottom:none; border-radius:6px 6px 0 0; }
+.run-net { position:absolute; right:28px; top:42px; width:26px; height:16px; border-left:2px solid rgba(232,237,247,0.45); border-right:2px solid rgba(232,237,247,0.45); border-bottom:2px solid rgba(232,237,247,0.35); }
+@keyframes run-dribble {
+  0%, 100% { left:18px; top:34px; }
+  45% { left:150px; top:8px; }
+  62% { left:168px; top:22px; }
+}
+.run-title { font-weight:800; font-size:1.05rem; color:var(--aqua); }
+.run-sub { margin:0.35rem 0 0.85rem; color:var(--muted); font-size:0.84rem; min-height:1.2em; }
+.run-bar { height:7px; background:#1c2744; border-radius:99px; overflow:hidden; }
+.run-fill { height:100%; width:0%; background:linear-gradient(90deg, var(--brand), var(--aqua)); transition:width 0.35s ease; }
+.run-foot { margin-top:0.7rem; font-size:0.72rem; color:var(--muted); }
+
 .runbar { display:flex; gap:0.55rem; align-items:center; flex-wrap:wrap; margin:0 0 0.75rem; padding-bottom:0.75rem; border-bottom:1px solid var(--border); }
 .run-note { flex:1 1 240px; }
 #lineupsCard { scroll-margin-top:4.5rem; }
@@ -122,7 +145,7 @@ td { padding:0.38rem 0.45rem; border-bottom:1px solid var(--border); vertical-al
 .hand-top b { letter-spacing:0.04em; }
 .hand-slot { display:grid; grid-template-columns:2.6rem minmax(0,1fr) auto auto auto; gap:0.35rem; align-items:center; padding:0.4rem 0.55rem; border-bottom:1px solid var(--border); font-size:0.8rem; }
 .hand-slot .pos { font-weight:800; color:var(--aqua); font-size:0.72rem; }
-.hand-slot .empty { color:var(--muted); }
+.hand-slot.late { background:rgba(71,198,200,0.07); }
 .hand-add, .hand-x { font-size:0.72rem; padding:0.15rem 0.4rem; }
 .var-pool { max-height:520px; }
 .var-pool-list { max-height:520px; overflow:auto; border:1px solid var(--border); border-radius:10px; background:var(--card2); }
@@ -210,8 +233,12 @@ input[type="number"] { width:74px; }
 .corebar { display:flex; flex-wrap:wrap; gap:0.45rem; align-items:center; font-size:0.75rem; margin:0.2rem 0 0.45rem; }
 .review { display:grid; grid-template-columns:repeat(auto-fit,minmax(128px,1fr)); gap:0.4rem; margin-bottom:0.5rem; }
 .metric { background:var(--card2); border:1px solid var(--border); border-radius:8px; padding:0.4rem 0.55rem; }
-.metric b { display:block; font-size:0.92rem; }
+.metric b { display:block; font-size:1.02rem; letter-spacing:-0.02em; }
 .metric span { font-size:0.66rem; color:var(--muted); }
+#lineupsTable td.lu-proj { font-weight:750; color:var(--aqua); }
+#lineupsTable td.lu-num { color:var(--muted); font-weight:650; }
+[data-theme="light"] .app-header { background:rgba(255,255,255,0.94); }
+[data-theme="light"] .app-header h1 { color:#0C2627; }
 .metric.warn b { color:#fbbf24; }
 .expbar { display:inline-block; width:46px; height:6px; background:#1f2a44; border-radius:99px; margin-right:4px; vertical-align:middle; overflow:hidden; }
 .expbar i { display:block; height:100%; background:var(--aqua); }
@@ -362,10 +389,22 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
     <div style="color:#8b93a7;font-size:0.9rem;">Checking your membership…</div>
   </div>
 </div>
+<div id="runPopup" class="run-popup" hidden>
+  <div class="run-card" role="status" aria-live="polite">
+    <div class="run-court" aria-hidden="true"><div class="run-ball"></div><div class="run-hoop"></div><div class="run-net"></div></div>
+    <div class="run-title" id="runPopupTitle">925 Sports</div>
+    <div class="run-sub" id="runPopupSub">Building lineups…</div>
+    <div class="run-bar"><div class="run-fill" id="runPopupFill"></div></div>
+    <div class="run-foot" id="runPopupFoot">Three passes. The best unique lineups are kept.</div>
+  </div>
+</div>
 <div class="app-header">
-  <div>
-    <h1>NBA DFS Lineup Builder</h1>
-    <p>Classic is 8 spots under $50,000. Showdown is captain plus 5. Captain score is 1.5×. Uploads use the long DraftKings lineup id.</p>
+  <div class="brand-lock">
+    <div class="brand-mark">925</div>
+    <div>
+      <h1>NBA DFS Lineup Builder</h1>
+      <p>Classic is 8 spots under $50,000. Showdown is captain plus 5. Uploads use the long DraftKings lineup id.</p>
+    </div>
   </div>
   <button id="themeBtn" class="secondary" type="button">Dark</button>
 </div>
@@ -676,11 +715,11 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
       </details>
       <div id="csTeams"></div>
       <div class="cs-wrap"><table id="csTable"><thead><tr>
-        <th data-sort="rank">Rank</th><th data-sort="name">Name</th><th data-sort="pos">Pos</th><th data-sort="team">Team</th><th>Opp</th>
-        <th data-sort="salary">Salary</th><th data-sort="proj">Proj</th><th data-sort="value">Value</th><th data-sort="own">Own est</th>
+        <th data-sort="rank">Rank</th><th data-sort="name">Name</th><th data-sort="pos">Pos</th><th data-sort="team">Team</th><th>Opp</th><th data-sort="tip">Tip</th>
+        <th data-sort="salary">Salary</th><th data-sort="proj">Proj</th><th data-sort="min">Min</th><th data-sort="value">Value</th><th data-sort="own">Own est</th>
         <th data-sort="ou">O/U</th><th data-sort="spread">Spr</th><th data-sort="pts">PTS</th><th data-sort="reb">REB</th><th data-sort="ast">AST</th><th data-sort="fd">FD</th>
       </tr></thead><tbody></tbody></table></div>
-      <div class="note" style="margin-top:0.45rem;">5.2x or better is a strong price. 4.6x to 5.2x is a normal stud price on this sport. Under 4.5x needs a reason. FD is a different scoring system. It is context, not the number the lineup uses. PTS / REB / AST are season averages when the feed has them. A blank starter tag is not a bench label, so it is not used to rank.</div>
+      <div class="note" style="margin-top:0.45rem;">5.2x or better is a strong price. 4.6x to 5.2x is a normal stud price on this sport. Under 4.5x needs a reason. Min is projected minutes, with the difference from his average when they are not the same. Tip is the game start. FD is a different scoring system. It is context, not the number the lineup uses. PTS / REB / AST are season averages when the feed has them. A blank starter tag is not a bench label, so it is not used to rank.</div>
     </div></div>
   </div>
   <div id="tab-slate" style="display:none;"><div class="card"><div class="card-header">Slate preview</div><div class="card-body">
@@ -731,7 +770,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
     <div class="log-wrap dvp-wrap"><table id="dvpTable"></table></div>
   </div></div></div>
   <div id="tab-onoff" style="display:none;"><div class="card"><div class="card-header">On / Off court</div><div class="card-body">
-    <div class="note" style="margin-bottom:0.45rem;">Automatic from play-by-play. Starts with who is out, and you can drill into questionable. Sample min is the total minutes behind the with/without rates.</div>
+    <div class="note" style="margin-bottom:0.45rem;">Automatic from play-by-play. ONOFF FP is the off-court points per minute times his projected minutes. Proj min is that projection, and the number beside it is the difference from his average. PTS, REB, AST, and shot attempts are the season average per minute times those same minutes. Usage stays a per-40 rate.</div>
     <div class="row" style="align-items:center; margin-bottom:0.5rem;">
       <label>Team <select id="onoffTeam"><option value="">All teams</option></select></label>
       <label>Show
@@ -792,7 +831,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
     </div>
   </div></div></div>
   <div id="tab-variations" style="display:none;"><div class="card"><div class="card-header">Lineup variations</div><div class="card-body">
-    <div class="note" style="margin-bottom:0.5rem;">Build the base the way you would on DraftKings. Click a player on the left to fill the next open spot. Check Swap on the spots that can change, then give each of those spots its own pivot list. A spot with no list uses the salary tolerance. A name opens the player card.</div>
+    <div class="note" style="margin-bottom:0.5rem;">Load a lineup and G, F, and UTIL are marked for late swap. Build variations ranks the best projection swaps first. The change versus the base shows next to FP. A name opens the player card.</div>
     <div class="var-build">
       <div>
         <div class="subhead">Available players</div>
@@ -1659,15 +1698,48 @@ function rebalancePunts(roster, cands, settings, groups, pinned) {
 }
 
 function parkLatest(roster) {
-  const entries = Object.entries(roster);
-  let best = entries[0];
-  for (const e of entries) if (gameTime(e[1]) > gameTime(best[1])) best = e;
-  if (!best || best[0] === "UTIL") return roster;
-  const util = roster.UTIL;
-  if (util && canPlay(util, best[0], false)) {
-    roster[best[0]] = util;
-    roster.UTIL = best[1];
-  }
+  if (!roster || roster.CPT) return roster;
+  const slots = ["C", "PF", "SF", "PG", "SG", "G", "F", "UTIL"];
+  const players = slots.map((s) => roster[s]);
+  if (players.some((p) => !p)) return roster;
+  const weight = { UTIL: 4, G: 2, F: 1 };
+  const scoreOf = (assign) => slots.reduce((sum, slot) => sum + (weight[slot] || 0) * gameTime(assign[slot]), 0);
+  let best = null;
+  let bestScore = scoreOf(roster);
+  const used = new Set();
+  const cur = {};
+  const search = (i, running) => {
+    if (running < bestScore) {
+      const leftTimes = [];
+      players.forEach((p, n) => { if (!used.has(n)) leftTimes.push(gameTime(p)); });
+      leftTimes.sort((a, b) => b - a);
+      const leftW = slots.slice(i).map((s) => weight[s] || 0).sort((a, b) => b - a);
+      let cap = running;
+      for (let k = 0; k < leftW.length; k++) cap += leftW[k] * (leftTimes[k] || 0);
+      if (cap <= bestScore) return;
+    }
+    if (i === slots.length) {
+      if (running > bestScore) {
+        bestScore = running;
+        best = { ...cur };
+      }
+      return;
+    }
+    const slot = slots[i];
+    const w = weight[slot] || 0;
+    for (let n = 0; n < players.length; n++) {
+      if (used.has(n)) continue;
+      const p = players[n];
+      if (!canPlay(p, slot, false)) continue;
+      used.add(n);
+      cur[slot] = p;
+      search(i + 1, running + w * gameTime(p));
+      used.delete(n);
+    }
+  };
+  search(0, 0);
+  if (!best) return roster;
+  slots.forEach((s) => { roster[s] = best[s]; });
   return roster;
 }
 
@@ -2749,24 +2821,41 @@ function onOffPairs(teamFilter, mode) {
       if (r.team !== canonTeam(star.team)) return;
       if (r.repl < 2 && r.minOff < 10) return;
       const mate = allRows.find((p) => samePlayer(foldName(p.name), foldName(r.teammate)) && canonTeam(p.team) === canonTeam(star.team));
-      if (!mate || !(mate.minutes > 0)) return;
-      const onRate = r.minOn >= 8 ? r.fpOn / r.minOn : 0;
+      if (!mate || !(mate.minutes > 0 || mate.projMin > 0 || mate.minAvg > 0)) return;
       const offRate = r.minOff >= 8 ? r.fpOff / r.minOff : 0;
       if (!offRate) return;
-      const rate = onRate && offRate ? Math.max(0.75, Math.min(1.35, offRate / onRate)) : 1;
-      const share = Math.min(0.45, r.repl / Math.max(18, star.minutes || 30));
-      const bump = Math.round((star.minutes || 30) * share * 10) / 10;
-      const newMin = Math.min(38, mate.minutes + bump);
-      const onoffProj = mate.baseProj * (newMin / mate.minutes) * rate;
+      const onRate = r.minOn >= 8 ? r.fpOn / r.minOn : 0;
+      const shown = shownMinutes(mate);
+      const projMin = shown.proj;
+      const avgMin = shown.avg;
+      const onoffProj = offRate * projMin;
       pairs.push({
         star: star.name, starStatus: star.injury, mate: mate.name, team: canonTeam(star.team),
-        repl: r.repl, onRate, offRate, rate, bump, onoffProj, base: mate.baseProj,
-        lift: onoffProj - mate.baseProj, min: mate.minutes,
+        repl: r.repl, onRate, offRate, onoffProj, base: mate.baseProj || mate.proj || 0,
+        lift: onoffProj - (mate.baseProj || mate.proj || 0), min: projMin, avgMin,
+        minDiff: projMin - avgMin,
         sampleMin: r.minOn + r.minOff, sampleGp: r.playGp || 0,
       });
     });
   }
   return pairs.sort((a, b) => b.lift - a.lift);
+}
+function shownMinutes(p) {
+  if (!p) return { proj: 0, avg: 0 };
+  const avg = p.minAvg || p.feedMinutes || 0;
+  let proj = p.minutes || 0;
+  if (p.projMin > 0 && !(p.minBump >= 0.5)) proj = p.projMin;
+  if (!proj) proj = avg;
+  return { proj, avg: avg || proj };
+}
+function minDiffHtml(projMin, avgMin) {
+  const d = (projMin || 0) - (avgMin || 0);
+  const mark = Math.abs(d) >= 0.5 ? ` <span class="min-bump" style="color:${d > 0 ? "var(--good)" : "var(--muted)"}">${d > 0 ? "+" : ""}${d.toFixed(0)}</span>` : "";
+  return `${(projMin || 0).toFixed(0)}${mark}`;
+}
+function perMinStat(total, avgMin, projMin) {
+  if (total == null || !(avgMin > 0) || !(projMin > 0)) return null;
+  return (total / avgMin) * projMin;
 }
 function shotAverages(name) {
   const games = logsFor(name);
@@ -2837,22 +2926,26 @@ function renderOnOff() {
   }
   if (view === "detail") {
     if (!logByName) ensureLogs().then(() => renderOnOff());
-    table.innerHTML = `<thead><tr><th>Player</th><th>Proj min</th><th>PTS</th><th>REB</th><th>AST</th><th>2PA</th><th>3PA</th><th>FTA</th><th>USG</th><th>ONOFF FP</th><th>Δ</th><th>Sample</th></tr></thead><tbody>` +
+    table.innerHTML = `<thead><tr><th>Player</th><th title="Projected minutes, and how they differ from his average">Proj min</th><th>PTS</th><th>REB</th><th>AST</th><th>2PA</th><th>3PA</th><th>FTA</th><th>USG</th><th>ONOFF FP</th><th>Δ</th><th>Sample</th></tr></thead><tbody>` +
       pairs.slice(0, 60).map((r) => {
         const mate = allRows.find((p) => samePlayer(foldName(p.name), foldName(r.mate)) && canonTeam(p.team) === r.team);
-        const scale = mate && mate.minutes > 0 ? (Math.min(38, r.min + r.bump) / mate.minutes) * (r.rate || 1) : 1;
-        const box = (key) => mate && mate[key] ? (mate[key] * scale).toFixed(1) : "—";
+        const avgMin = r.avgMin || r.min;
+        const mark = (v, raw) => {
+          if (v == null) return "—";
+          if (raw == null || !isFinite(raw)) return v.toFixed(1);
+          const d = v - raw;
+          const extra = Math.abs(d) >= 0.05 ? ` <span style="color:${d > 0 ? "var(--good)" : "var(--muted)"}; font-size:0.72rem;">(${d > 0 ? "+" : ""}${d.toFixed(1)})</span>` : "";
+          return v.toFixed(1) + extra;
+        };
+        const stat = (key) => mark(perMinStat(mate && mate[key], avgMin, r.min), mate && mate[key]);
         const shots = shotAverages(r.mate);
-        const two = shots ? ((shots.fga - shots.fg3a) * scale).toFixed(1) : "—";
-        const three = shots ? (shots.fg3a * scale).toFixed(1) : "—";
-        const ft = shots ? (shots.fta * scale).toFixed(1) : "—";
-        const usg = shots ? (shots.usg * (r.rate || 1)).toFixed(1) : "—";
-        return `<tr><td>${nameBtn(r.mate)}</td><td>${r.min.toFixed(0)}${r.bump >= 1 ? ` <span class="min-bump">+${r.bump.toFixed(0)}</span>` : ""}</td><td>${box("pts")}</td><td>${box("reb")}</td><td>${box("ast")}</td><td>${two}</td><td>${three}</td><td>${ft}</td><td>${usg}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td><td>${Math.round(r.sampleMin)}</td></tr>`;
+        const shot = (perGame) => mark(perMinStat(perGame, avgMin, r.min), perGame);
+        return `<tr><td>${nameBtn(r.mate)}</td><td>${minDiffHtml(r.min, avgMin)}</td><td>${stat("pts")}</td><td>${stat("reb")}</td><td>${stat("ast")}</td><td>${shot(shots ? shots.fga - shots.fg3a : null)}</td><td>${shot(shots ? shots.fg3a : null)}</td><td>${shot(shots ? shots.fta : null)}</td><td>${shots ? shots.usg.toFixed(1) : "—"}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td><td>${Math.round(r.sampleMin)}</td></tr>`;
       }).join("") +
       `</tbody>`;
   } else {
-    table.innerHTML = `<thead><tr><th>Teammate</th><th>Sub min</th><th>With</th><th>Without</th><th>Sample min</th><th>Proj min</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
-      pairs.slice(0, 100).map((r) => `<tr><td>${nameBtn(r.mate)}</td><td>${r.repl.toFixed(0)}</td><td>${r.onRate ? r.onRate.toFixed(2) : "—"}</td><td>${r.offRate.toFixed(2)}</td><td>${Math.round(r.sampleMin)}</td><td>${r.min.toFixed(0)}${r.bump >= 1 ? ` <span class="min-bump">+${r.bump.toFixed(0)}</span>` : ""}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
+    table.innerHTML = `<thead><tr><th>Teammate</th><th>Sub min</th><th>With</th><th>Without</th><th>Sample min</th><th title="Projected minutes, and how they differ from his average">Proj min</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
+      pairs.slice(0, 100).map((r) => `<tr><td>${nameBtn(r.mate)}</td><td>${r.repl.toFixed(0)}</td><td>${r.onRate ? r.onRate.toFixed(2) : "—"}</td><td>${r.offRate.toFixed(2)}</td><td>${Math.round(r.sampleMin)}</td><td>${minDiffHtml(r.min, r.avgMin)}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
       `</tbody>`;
   }
   bindNames(table);
@@ -2874,50 +2967,44 @@ function onOffCard(p) {
     const onRate = r.minOn >= 8 ? r.fpOn / r.minOn : 0;
     const offRate = r.minOff >= 8 ? r.fpOff / r.minOff : 0;
     if (!offRate) return;
-    const rate = onRate && offRate ? Math.max(0.75, Math.min(1.35, offRate / onRate)) : 1;
-    const share = Math.min(0.45, r.repl / Math.max(18, star.minutes || 30));
-    const bump = Math.round((star.minutes || 30) * share * 10) / 10;
-    hits.push({ star: star.name, status: star.injury, out, q, onRate, offRate, rate, bump, sampleMin: r.minOn + r.minOff });
+    hits.push({ star: star.name, status: star.injury, out, q, onRate, offRate, sampleMin: r.minOn + r.minOff });
   });
-  hits.sort((a, b) => (b.out - a.out) || (b.q - a.q) || b.bump - a.bump);
+  hits.sort((a, b) => (b.out - a.out) || (b.q - a.q) || b.offRate - a.offRate);
   const why = p.onOffWhy ? `<p class="note" style="margin:0 0 0.45rem;">${esc(p.onOffWhy)}</p>` : "";
   if (!hits.length) return why + `<div class="row" style="margin-bottom:0.4rem;"><label>Show <select id="cardOnOffMode"><option value="out"${mode === "out" ? " selected" : ""}>Confirmed out</option><option value="q"${mode === "q" ? " selected" : ""}>Questionable</option><option value="both"${mode === "both" ? " selected" : ""}>Out + Questionable</option></select></label></div><p class="note">No sample for this filter yet.</p>`;
-  const totalBump = hits.reduce((s, h) => s + h.bump, 0);
-  const bestRate = hits.reduce((s, h) => Math.max(s, h.rate), 1);
-  const scale = p.minutes > 0 ? (Math.min(38, p.minutes + totalBump) / p.minutes) * bestRate : bestRate;
+  const primary = hits[0];
+  const shown = shownMinutes(p);
+  const projMin = shown.proj;
+  const avgMin = shown.avg;
   const delta = (base, scaled) => {
-    if (base == null || !isFinite(base)) return "";
+    if (base == null || !isFinite(base) || !isFinite(scaled)) return "";
     const d = scaled - base;
     if (Math.abs(d) < 0.05) return "";
     return ` <span style="color:${d > 0 ? "var(--good)" : "var(--muted)"}; font-size:0.72rem;">(${d > 0 ? "+" : ""}${d.toFixed(1)})</span>`;
   };
   const cell = (key) => {
-    if (!p[key]) return "—";
-    const scaled = p[key] * scale;
-    return scaled.toFixed(1) + delta(p[key], scaled);
+    const scaled = perMinStat(p[key], avgMin, projMin);
+    return scaled == null ? "—" : scaled.toFixed(1) + delta(p[key], scaled);
   };
   const shots = shotAverages(p.name);
-  const twoBase = shots ? shots.fga - shots.fg3a : null;
-  const threeBase = shots ? shots.fg3a : null;
-  const ftBase = shots ? shots.fta : null;
-  const usgBase = shots ? shots.usg : null;
-  const two = twoBase != null ? (twoBase * scale).toFixed(1) + delta(twoBase, twoBase * scale) : "—";
-  const three = threeBase != null ? (threeBase * scale).toFixed(1) + delta(threeBase, threeBase * scale) : "—";
-  const ft = ftBase != null ? (ftBase * scale).toFixed(1) + delta(ftBase, ftBase * scale) : "—";
-  const usg = usgBase != null ? (usgBase * bestRate).toFixed(1) + delta(usgBase, usgBase * bestRate) : "—";
-  const onoff = p.baseProj > 0 && p.minutes > 0 ? (p.baseProj * scale).toFixed(1) + delta(p.baseProj, p.baseProj * scale) : "—";
-  const driverRows = hits.slice(0, 5).map((h) => `<tr><td>${nameBtn(h.star)} ${injuryTag(h.status)}</td><td>${h.onRate ? h.onRate.toFixed(2) : "—"}</td><td>${h.offRate.toFixed(2)}</td><td>${Math.round(h.sampleMin)}</td><td>${h.bump >= 1 ? `+${h.bump.toFixed(0)}` : "—"}</td></tr>`).join("");
+  const shot = (perGame) => {
+    const scaled = perMinStat(perGame, avgMin, projMin);
+    return scaled == null ? "—" : scaled.toFixed(1) + delta(perGame, scaled);
+  };
+  const onoff = primary.offRate * projMin;
+  const baseFp = p.baseProj || p.proj || 0;
+  const driverRows = hits.slice(0, 5).map((h) => `<tr><td>${nameBtn(h.star)} ${injuryTag(h.status)}</td><td>${h.onRate ? h.onRate.toFixed(2) : "—"}</td><td>${h.offRate.toFixed(2)}</td><td>${Math.round(h.sampleMin)}</td></tr>`).join("");
   return why + `
     <div class="row" style="margin-bottom:0.4rem;"><label>Show <select id="cardOnOffMode"><option value="out"${mode === "out" ? " selected" : ""}>Confirmed out</option><option value="q"${mode === "q" ? " selected" : ""}>Questionable</option><option value="both"${mode === "both" ? " selected" : ""}>Out + Questionable</option></select></label></div>
     <div class="lu-label">On / off court · ${esc(p.name)}</div>
-    <p class="note" style="margin:0 0 0.35rem;">His projected box with the selected players off. Each number is the scaled value, with the change from his normal average in parentheses.</p>
+    <p class="note" style="margin:0 0 0.35rem;">Each stat is his per-minute average times his projected minutes. The minutes column is that projection, with the difference from his average. ONOFF FP is the off-court points per minute times those minutes.</p>
     <div class="log-wrap"><table>
       <thead><tr><th></th><th>Proj min</th><th>PTS</th><th>REB</th><th>AST</th><th>2PA</th><th>3PA</th><th>FTA</th><th>USG</th><th>ONOFF FP</th></tr></thead>
-      <tbody><tr><td>${nameBtn(p.name)}</td><td>${(p.minutes || 0).toFixed(0)}${totalBump >= 1 ? ` <span class="min-bump">+${totalBump.toFixed(0)}</span>` : ""}</td><td>${cell("pts")}</td><td>${cell("reb")}</td><td>${cell("ast")}</td><td>${two}</td><td>${three}</td><td>${ft}</td><td>${usg}</td><td>${onoff}</td></tr></tbody>
+      <tbody><tr><td>${nameBtn(p.name)}</td><td>${minDiffHtml(projMin, avgMin)}</td><td>${cell("pts")}</td><td>${cell("reb")}</td><td>${cell("ast")}</td><td>${shot(shots ? shots.fga - shots.fg3a : null)}</td><td>${shot(shots ? shots.fg3a : null)}</td><td>${shot(shots ? shots.fta : null)}</td><td>${shots ? shots.usg.toFixed(1) : "—"}</td><td>${onoff.toFixed(1)}${delta(baseFp, onoff)}</td></tr></tbody>
     </table></div>
     <div class="lu-label" style="margin-top:0.6rem;">Drivers</div>
     <div class="log-wrap"><table>
-      <thead><tr><th>If off</th><th>With</th><th>Without</th><th>Sample min</th><th>Min bump</th></tr></thead>
+      <thead><tr><th>If off</th><th>With</th><th>Without</th><th>Sample min</th></tr></thead>
       <tbody>${driverRows}</tbody>
     </table></div>
   `;
@@ -3688,6 +3775,8 @@ function renderCheatSheet() {
     else if (k === "ou") { va = a.ou || 0; vb = b.ou || 0; }
     else if (k === "spread") { va = a.spread || 0; vb = b.spread || 0; }
     else if (k === "pts") { va = a.pts || 0; vb = b.pts || 0; }
+    else if (k === "min") { va = shownMinutes(a).proj; vb = shownMinutes(b).proj; }
+    else if (k === "tip") { va = gameTime(a); vb = gameTime(b); }
     else if (k === "reb") { va = a.reb || 0; vb = b.reb || 0; }
     else if (k === "ast") { va = a.ast || 0; vb = b.ast || 0; }
     else if (k === "fd") { va = a.fd || 0; vb = b.fd || 0; }
@@ -3708,8 +3797,12 @@ function renderCheatSheet() {
     if (teamsHost) {
       teamsHost.innerHTML = blocks.map(([tm, list]) => {
         const env = sideEnv(list);
-        const body = list.slice().sort((a, b) => b.proj - a.proj).map((p) => `<div class="sp-row"><span>${nameBtn(p.name)} ${injuryTag(p.injury)} ${tagPills(p)} <span class="cs-sub">${esc(rosterPos(p))}</span></span><span>${p.proj.toFixed(1)} · ${valueOf(p).toFixed(2)}x · ${money(p.salary)}</span></div>`).join("");
-        return sec(`${esc(tm)} vs ${esc(list[0].opp || "—")}`, `<p class="note">${env.ou ? "O/U " + env.ou.toFixed(1) : "No total"}${env.spr ? " · " + (env.spr > 0 ? "+" : "") + env.spr.toFixed(1) : ""}</p>${body}`, true);
+        const tip = tipTime(list[0].start);
+        const body = list.slice().sort((a, b) => b.proj - a.proj).map((p) => {
+          const mins = shownMinutes(p);
+          return `<div class="sp-row"><span>${nameBtn(p.name)} ${injuryTag(p.injury)} ${tagPills(p)} <span class="cs-sub">${esc(rosterPos(p))}${tipTime(p.start) ? " · " + esc(tipTime(p.start)) : ""}</span></span><span>${mins.proj ? mins.proj.toFixed(0) + " min · " : ""}${p.proj.toFixed(1)} · ${valueOf(p).toFixed(2)}x · ${money(p.salary)}</span></div>`;
+        }).join("");
+        return sec(`${esc(tm)} vs ${esc(list[0].opp || "—")}`, `<p class="note">${tip ? esc(tip) + " · " : ""}${env.ou ? "O/U " + env.ou.toFixed(1) : "No total"}${env.spr ? " · " + (env.spr > 0 ? "+" : "") + env.spr.toFixed(1) : ""}</p>${body}`, true);
       }).join("") || `<div class="note">No teams match.</div>`;
       bindNames(teamsHost);
     }
@@ -3720,17 +3813,18 @@ function renderCheatSheet() {
   if (teamsHost) teamsHost.innerHTML = "";
   host.innerHTML = rows.map((p, i) => {
     const val = valueOf(p);
+    const mins = shownMinutes(p);
     return `<tr>
       <td>${i + 1}</td>
       <td>${nameBtn(p.name)} ${injuryTag(p.injury)} ${p.starter === "Yes" ? '<span class="tag s" data-tip="Tagged as a starter in the feed.">S</span>' : ""} ${tagPills(p)}</td>
-      <td>${esc(rosterPos(p))}</td><td>${esc(p.team)}</td><td>${esc(p.opp)}</td>
-      <td>${money(p.salary)}</td><td>${p.proj.toFixed(1)}</td>
+      <td>${esc(rosterPos(p))}</td><td>${esc(p.team)}</td><td>${esc(p.opp)}</td><td>${esc(tipTime(p.start) || "—")}</td>
+      <td>${money(p.salary)}</td><td>${p.proj.toFixed(1)}</td><td>${mins.proj ? minDiffHtml(mins.proj, mins.avg) : "—"}</td>
       <td class="${valueClass(val)}">${val.toFixed(2)}x</td>
       <td>${Math.round(p.own)}</td>
       <td>${numCell(p.ou, 1)}</td><td>${sprText(p)}</td>
       <td>${numCell(p.pts, 1)}</td><td>${numCell(p.reb, 1)}</td><td>${numCell(p.ast, 1)}</td><td>${numCell(p.fd, 1)}</td>
     </tr>`;
-  }).join("") || `<tr><td colspan="15" class="note">No players match. Lower the minimums or switch the view.</td></tr>`;
+  }).join("") || `<tr><td colspan="17" class="note">No players match. Lower the minimums or switch the view.</td></tr>`;
   bindNames(host);
 }
 
@@ -4186,22 +4280,13 @@ function renderGamePreview() {
   const onoffRaw = onOffPairs("", onoffMode).filter((r) => teams.includes(r.team));
   const byMate = new Map();
   onoffRaw.forEach((r) => {
-    const key = r.mate;
-    if (!byMate.has(key)) byMate.set(key, { mate: r.mate, team: r.team, stars: [], bump: 0, rate: 1, sampleMin: 0, base: r.base, min: r.min });
-    const row = byMate.get(key);
-    row.stars.push(r.star);
-    row.bump += r.bump;
-    row.rate = Math.max(row.rate, r.rate);
-    row.sampleMin = Math.max(row.sampleMin, r.sampleMin);
+    const prev = byMate.get(r.mate);
+    if (!prev || r.offRate > prev.offRate) byMate.set(r.mate, r);
   });
-  const onoffForGame = [...byMate.values()].map((r) => {
-    const newMin = Math.min(38, r.min + r.bump);
-    const onoffProj = r.base * (newMin / r.min) * r.rate;
-    return { ...r, newMin, onoffProj, lift: onoffProj - r.base };
-  }).sort((a, b) => b.lift - a.lift).slice(0, 6);
+  const onoffForGame = [...byMate.values()].sort((a, b) => b.lift - a.lift).slice(0, 6);
   const onoffBody = onoffForGame.length
-    ? `<div class="log-wrap"><table><thead><tr><th>Teammate</th><th>Proj min</th><th>Sample min</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
-      onoffForGame.map((r) => `<tr><td>${nameBtn(r.mate)}</td><td>${r.min.toFixed(0)}${r.bump >= 1 ? ` <span class="min-bump">+${r.bump.toFixed(0)}</span>` : ""}</td><td>${Math.round(r.sampleMin)}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
+    ? `<div class="log-wrap"><table><thead><tr><th>Teammate</th><th title="Projected minutes, and how they differ from his average">Proj min</th><th>Sample min</th><th>ONOFF FP</th><th>Δ</th></tr></thead><tbody>` +
+      onoffForGame.map((r) => `<tr><td>${nameBtn(r.mate)}</td><td>${minDiffHtml(r.min, r.avgMin)}</td><td>${Math.round(r.sampleMin)}</td><td>${r.onoffProj.toFixed(1)}</td><td style="color:${r.lift > 0 ? "var(--good)" : "var(--muted)"}">${r.lift > 0 ? "+" : ""}${r.lift.toFixed(1)}</td></tr>`).join("") +
       `</tbody></table></div>`
     : `<div class="lu-empty">No ${onoffMode === "q" ? "questionable" : onoffMode === "both" ? "out or questionable" : "confirmed out"} player on this game has an on/off sample yet.</div>`;
   const ou = g.ou;
@@ -4218,7 +4303,7 @@ function renderGamePreview() {
     ${sec("DVP", dvpBody, false)}
     ${sec("Hot / cold", `<p class="note">Last 3 games against this season's average. All 3 have to be inside the last 3 weeks, so a player who has not played yet this year is left off. Hot is at least 12% and 4 points above. Cold is the same the other way.</p>${streakBody}`, false)}
     ${sec("Injury", `<p class="note">Questionable and out, plus the written note when the feed has one.</p>${injBody}`, false)}
-    ${sec("On / Off", `<div class="row" style="align-items:center; margin-bottom:0.35rem;"><label>Show <select id="gpOnOffMode"><option value="out"${onoffMode === "out" ? " selected" : ""}>Confirmed out</option><option value="q"${onoffMode === "q" ? " selected" : ""}>Questionable</option><option value="both"${onoffMode === "both" ? " selected" : ""}>Out + Questionable</option></select></label></div><p class="note" style="margin:0 0 0.35rem;">Combined effect of the selected players being off. One row per teammate. Proj min includes the total expected bump. Sample min is the largest sample behind the rates.</p>${onoffBody}`, true)}
+    ${sec("On / Off", `<div class="row" style="align-items:center; margin-bottom:0.35rem;"><label>Show <select id="gpOnOffMode"><option value="out"${onoffMode === "out" ? " selected" : ""}>Confirmed out</option><option value="q"${onoffMode === "q" ? " selected" : ""}>Questionable</option><option value="both"${onoffMode === "both" ? " selected" : ""}>Out + Questionable</option></select></label></div><p class="note" style="margin:0 0 0.35rem;">One row per teammate. ONOFF FP is his off-court points per minute times his projected minutes. Proj min is that projection, and the small number is the difference from his average. Sample min is the minutes behind the off-court rate.</p>${onoffBody}`, true)}
     </div>
     <div class="gp-sides">${sides}</div>
     <div class="gp-actions"><button type="button" class="secondary mini game-focus" data-game="${esc(g.key)}" data-min="${sideMin}">Use ${sideMin} from this game</button></div>
@@ -5209,6 +5294,84 @@ function currentSettings() {
   };
 }
 
+function packBuilt(roster, isShowdown) {
+  const order = slotsFor(isShowdown);
+  const players = order.map((s) => roster[s]);
+  if (players.some((p) => !p)) return null;
+  return {
+    slots: roster,
+    players,
+    salary: salaryOf(roster),
+    proj: players.reduce((s, p) => s + (p.proj || 0), 0),
+    own: players.reduce((s, p) => s + (p.own || 0), 0),
+  };
+}
+function polishSet(list, pool, settings, groups) {
+  const used = new Map();
+  list.forEach((lu) => lu.players.forEach((p) => used.set(p.name, (used.get(p.name) || 0) + 1)));
+  const keys = new Set(list.map((lu) => lu.players.map((p) => p.name).sort().join("|")));
+  let lifted = 0;
+  const out = list.map((lu) => {
+    const oldKey = lu.players.map((p) => p.name).sort().join("|");
+    lu.players.forEach((p) => used.set(p.name, Math.max(0, (used.get(p.name) || 1) - 1)));
+    const pinned = new Set(lu.players.filter((p) => p.use === "lock").map((p) => p.name));
+    const run = { ...settings, used };
+    let roster = improveRoster({ ...lu.slots }, pool, run, groups, pinned);
+    roster = raiseProjection(roster, pool, run, groups, pinned);
+    roster = fitSalary(roster, pool, run, groups, pinned);
+    if (!settings.isShowdown) parkLatest(roster);
+    const next = packBuilt(roster, settings.isShowdown);
+    const restore = () => lu.players.forEach((p) => used.set(p.name, (used.get(p.name) || 0) + 1));
+    if (!next || next.salary > 50000 || next.proj < lu.proj - 0.05 || lineupLegal(next, settings.isShowdown)) {
+      restore();
+      return lu;
+    }
+    const key = next.players.map((p) => p.name).sort().join("|");
+    if (key !== oldKey && keys.has(key)) {
+      restore();
+      return lu;
+    }
+    keys.delete(oldKey);
+    keys.add(key);
+    next.players.forEach((p) => used.set(p.name, (used.get(p.name) || 0) + 1));
+    if (next.proj > lu.proj + 0.2) lifted++;
+    return next;
+  });
+  out.lifted = lifted;
+  return out;
+}
+function showRunPopup(sub, pct, foot) {
+  const box = document.getElementById("runPopup");
+  if (!box) return;
+  box.hidden = false;
+  window._runStarted = Date.now();
+  const title = document.getElementById("runPopupTitle");
+  const subEl = document.getElementById("runPopupSub");
+  const fill = document.getElementById("runPopupFill");
+  const footEl = document.getElementById("runPopupFoot");
+  if (title) title.textContent = "Building lineups";
+  if (subEl) subEl.textContent = sub || "Starting…";
+  if (fill) fill.style.width = (pct || 8) + "%";
+  if (footEl && foot) footEl.textContent = foot;
+}
+function setRunProgress(sub, pct) {
+  const subEl = document.getElementById("runPopupSub");
+  const fill = document.getElementById("runPopupFill");
+  if (subEl) subEl.textContent = sub;
+  if (fill) fill.style.width = pct + "%";
+}
+function hideRunPopup() {
+  const wait = Math.max(0, 900 - (Date.now() - (window._runStarted || 0)));
+  setTimeout(() => {
+    const box = document.getElementById("runPopup");
+    if (box) box.hidden = true;
+    const fill = document.getElementById("runPopupFill");
+    if (fill) fill.style.width = "0%";
+  }, wait);
+}
+function afterPaint(fn) {
+  requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(fn, 40)));
+}
 function runOptimizer() {
   const status = document.getElementById("optStatus");
   if (!pool.length) {
@@ -5234,6 +5397,7 @@ function runOptimizer() {
     return;
   }
   status.textContent = "Pass 1 of 3 · building the base set…";
+  showRunPopup("Pass 1 of 3 · building the base set", 12, "Looking for the highest legal scores first.");
   lastSim = [];
   simChecked = new Set();
   const simSection = document.getElementById("simSection");
@@ -5260,6 +5424,8 @@ function runOptimizer() {
     document.getElementById("runMeta").textContent = lineups.length ? `${lineups.length} lineups` : "";
     if (!lineups.length) {
       status.textContent = notes[0] || "No legal lineup fit these rules.";
+      setRunProgress(notes[0] || "No legal lineup fit these rules.", 100);
+      hideRunPopup();
       return;
     }
     const avg = lineups.reduce((s, lu) => s + lu.proj, 0) / lineups.length;
@@ -5284,12 +5450,15 @@ function runOptimizer() {
       : " These lineups are missing DraftKings lineup ids. Do not upload them.";
     const tail = notes.length ? " " + notes.join(" ") : "";
     status.textContent = `Generated ${lineups.length} lineups. Avg ${avg.toFixed(1)} FP · ${money(Math.round(avgLeft))} left.${idNote}${tail}`;
+    setRunProgress(`Done · ${lineups.length} lineups · ${avg.toFixed(1)} avg FP`, 100);
+    hideRunPopup();
   };
-  setTimeout(() => {
+  afterPaint(() => {
     const pass1 = generateLineups(usable, settings, activeStacks, activeGroups);
     const best = pass1.lineups.slice().sort((a, b) => b.proj - a.proj).slice(0, Math.max(3, Math.ceil(settings.num / 3)));
     status.textContent = `Pass 2 of 3 · improving the best ${best.length} lineups…`;
-    setTimeout(() => {
+    setRunProgress(`Pass 2 of 3 · improving the best ${best.length}`, 42);
+    afterPaint(() => {
       const pass2 = generateLineups(usable, { ...settings, num: settings.num, _seed: best, randomness: Math.min(40, (settings.randomness || 0) + 6) }, activeStacks, activeGroups);
       const merged = [...pass1.lineups, ...pass2.lineups];
       const seen = new Set();
@@ -5302,7 +5471,8 @@ function runOptimizer() {
       });
       const keep = unique.slice(0, settings.num);
       status.textContent = "Pass 3 of 3 · filling the rest from the improved seeds…";
-      setTimeout(() => {
+      setRunProgress(`Pass 3 of 3 · ${keep.length} kept, filling the rest`, 74);
+      afterPaint(() => {
         const pass3 = generateLineups(usable, { ...settings, num: settings.num, _seed: keep.slice(0, 4), randomness: Math.min(50, (settings.randomness || 0) + 10) }, activeStacks, activeGroups);
         const finalMerged = [...keep, ...pass3.lineups];
         const finalSeen = new Set();
@@ -5313,10 +5483,16 @@ function runOptimizer() {
           finalSeen.add(key);
           finalUnique.push(lu);
         });
-        finish(finalUnique.slice(0, settings.num), [...pass1.notes, ...pass2.notes, ...pass3.notes]);
-      }, 40);
-    }, 40);
-  }, 30);
+        setRunProgress("Polishing the weakest spots", 88);
+        afterPaint(() => {
+          const polished = polishSet(finalUnique.slice(0, settings.num), usable, settings, activeGroups);
+          const notes = [...pass1.notes, ...pass2.notes, ...pass3.notes];
+          if (polished.lifted) notes.push(`Polish raised ${polished.lifted} lineup${polished.lifted === 1 ? "" : "s"}.`);
+          finish(polished, notes);
+        });
+      });
+    });
+  });
 }
 
 function rebuildChecked() {
@@ -5340,7 +5516,8 @@ function rebuildChecked() {
   });
   const kept = lineups.filter((_, i) => !lineupChecked.has(i));
   status.textContent = `Rebuilding ${indexes.length} lineup${indexes.length === 1 ? "" : "s"}…`;
-  setTimeout(() => {
+  showRunPopup(`Rebuilding ${indexes.length} checked lineup${indexes.length === 1 ? "" : "s"}`, 30, "Unchecked lineups stay as they are.");
+  afterPaint(() => {
     const activeStacks = stacks
       .filter((s) => s.pg && s.m1)
       .map((s) => ({ pg: s.pg, m1: s.m1, m2: s.m2 && s.m2 !== s.m1 ? s.m2 : "", b1: s.b1 || "", b2: s.b2 || "", pct: s.pct }));
@@ -5376,7 +5553,9 @@ function rebuildChecked() {
     const sample = (lineups.find((lu) => lu.players.some((p) => lineupId(p))) || lineups[0]).players.find((p) => lineupId(p));
     const idNote = sample ? ` Upload name: ${sample.name} (${lineupId(sample)}).` : "";
     status.textContent = `Rebuilt ${replaced} lineup${replaced === 1 ? "" : "s"}. ${held ? held + " stayed because the new build was not better. " : ""}${missed ? missed + " could not be rebuilt, so the original stayed. " : ""}${kept.length} lineup${kept.length === 1 ? "" : "s"} were left untouched.${idNote}`;
-  }, 30);
+    setRunProgress("Rebuild finished", 100);
+    hideRunPopup();
+  });
 }
 
 function sortedLineups() {
@@ -5411,12 +5590,14 @@ function renderLineups() {
   tbody.innerHTML = sortedLineups().map(({ lu, i }) => {
     const cells = slots.map((s) => {
       const p = lu.slots[s];
-      const title = p ? esc(rosterPos(p) + " " + money(p.salary) + " · " + p.proj.toFixed(1) + (p.ou ? " · O/U " + Number(p.ou).toFixed(1) : "")) : "";
-      return `<td class="${p && priceCheck(p) ? "lu-checkprice" : ""}" title="${title}">${p ? `<div>${nameBtn(p.name)}</div><div class="lu-team">${esc(p.team)} · ${money(p.salary)}</div>` : ""}</td>`;
+      const flex = !isShowdown && (s === "G" || s === "F" || s === "UTIL");
+      const tip = p && flex ? tipTime(p.start) : "";
+      const title = p ? esc(rosterPos(p) + " " + money(p.salary) + " · " + p.proj.toFixed(1) + (tip ? " · " + tip : "") + (p.ou ? " · O/U " + Number(p.ou).toFixed(1) : "")) : "";
+      return `<td class="${p && priceCheck(p) ? "lu-checkprice" : ""}" title="${title}">${p ? `<div>${nameBtn(p.name)}</div><div class="lu-team">${esc(p.team)} · ${money(p.salary)}${tip ? " · " + esc(tip) : ""}</div>` : ""}</td>`;
     }).join("");
     const left = 50000 - lu.salary;
     const teams = Object.entries(teamCounts(lu.slots)).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([t, c]) => `${t} ${c}`).join(" · ");
-    return `<tr class="clickable" data-idx="${i}"><td><input type="checkbox" class="lu-check" data-idx="${i}" ${lineupChecked.has(i) ? "checked" : ""}></td><td>${i + 1}</td>${cells}<td>${lu.proj.toFixed(1)}</td><td>${money(lu.salary)}</td><td class="${left > capLeft ? "low-value" : ""}">${money(left)}</td><td title="Total estimated ownership">${Math.round(lu.own)}%</td><td class="lu-teams">${esc(teams)}</td></tr>`;
+    return `<tr class="clickable" data-idx="${i}"><td><input type="checkbox" class="lu-check" data-idx="${i}" ${lineupChecked.has(i) ? "checked" : ""}></td><td class="lu-num">${i + 1}</td>${cells}<td class="lu-proj">${lu.proj.toFixed(1)}</td><td>${money(lu.salary)}</td><td class="lu-left ${left > capLeft ? "low-value" : ""}">${money(left)}</td><td title="Total estimated ownership">${Math.round(lu.own)}%</td><td class="lu-teams">${esc(teams)}</td></tr>`;
   }).join("");
   bindNames(tbody);
   const allBox = document.getElementById("luSelectAll");
@@ -5872,6 +6053,13 @@ function loadHandFromLineup(base, note) {
   handPivots = {};
   pivotSlot = "";
   handKeys().forEach((k) => { if (base.slots[k]) handRoster[k] = base.slots[k]; });
+  if (!base.slots.CPT) parkLatest(handRoster);
+  const keys = handKeys();
+  if (keys[0] === "CPT") {
+    keys.filter((k) => k !== "CPT" && handRoster[k]).sort((a, b) => gameTime(handRoster[b]) - gameTime(handRoster[a])).slice(0, 2).forEach((k) => handSwap.add(k));
+  } else {
+    ["G", "F", "UTIL"].forEach((k) => { if (handRoster[k]) handSwap.add(k); });
+  }
   renderHand();
   document.getElementById("varStatus").textContent = note;
 }
@@ -5907,7 +6095,6 @@ function renderVariations() {
   const count = Math.max(1, Math.min(80, parseInt(document.getElementById("varCount").value, 10) || 12));
   const strict = document.getElementById("varRules").value !== "cap";
   const settings = currentSettings();
-  const baseNames = new Set(filled.map((p) => p.name));
   const baseBySlot = {};
   keys.forEach((k) => { baseBySlot[k] = handRoster[k]; });
   const tol = Math.max(0, parseInt(document.getElementById("varTol").value, 10) || 2000);
@@ -6061,9 +6248,11 @@ function renderHand() {
   slots.innerHTML = keys.map((k) => {
     const p = handRoster[k];
     const pivots = (handPivots[k] || new Set()).size;
-    return `<div class="hand-slot">
+    const tip = p ? tipTime(p.start) : "";
+    const late = p && !isShowdown && (k === "G" || k === "F" || k === "UTIL");
+    return `<div class="hand-slot${late ? " late" : ""}">
       <span class="pos">${slotLabel(k)}</span>
-      <span>${p ? `${nameBtn(p.name)} <span class="cs-sub">${esc(rosterPos(p))} · ${esc(p.team)} vs ${esc(p.opp)}</span>` : `<span class="empty">Empty</span>`}</span>
+      <span>${p ? `${nameBtn(p.name)} <span class="cs-sub">${esc(rosterPos(p))} · ${esc(p.team)} vs ${esc(p.opp)}${tip ? " · " + esc(tip) : ""}</span>` : `<span class="empty">Empty</span>`}</span>
       <span>${p ? p.proj.toFixed(1) : ""}</span>
       <span>${p ? money(p.salary) : ""}</span>
       <span>${p ? `<label class="check" data-tip="This spot is allowed to change. The rest of the lineup stays."><input type="checkbox" class="hand-swap" data-slot="${k}" ${handSwap.has(k) ? "checked" : ""}> Swap</label>${pivots ? ` <span class="cs-sub">${pivots} pivots</span>` : ""} <button type="button" class="secondary hand-x" data-slot="${k}">×</button>` : ""}</span>

@@ -1546,46 +1546,49 @@ DAL,Zaccharie Risacher,Marcus Sasser,98.16,67.25,39.02,24.75,1.48,8,139.0,0,0.0
 DAL,Zaccharie Risacher,Tobi Lawal,1.29,3.25,9.38,10.5,0.93,5,11.0,0,0.0
 DAL,Zaccharie Risacher,Jett Howard,0.0,0.0,9.38,7.0,0.0,4,10.0,0,0.0
 DAL,Zaccharie Risacher,Sergio de Larrea,25.3,24.75,18.42,13.25,0.0,4,47.0,0,0.0
-DEN,Aaron Gordon,Trevon Brazile,41.07,49.25,114.86,87.5,56.66,7,155.0,0,0.0
-DEN,Aaron Gordon,Bryce Hopkins,32.93,18.25,60.36,36.75,26.35,5,94.0,0,0.0
-DEN,Aaron Gordon,DeMar DeRozan,70.02,54.0,80.31,59.5,22.17,6,151.0,0,0.0
-DEN,Aaron Gordon,Nikola Jokic,151.96,245.0,101.04,138.5,11.45,7,251.0,0,0.0
-DEN,Aaron Gordon,Cameron Johnson,72.38,56.25,35.89,22.0,4.07,4,109.0,0,0.0
+DEN,Aaron Gordon,Trevon Brazile,44.09,52.0,126.28,96.25,56.66,8,169.0,0,0.0
+DEN,Aaron Gordon,DeMar DeRozan,70.94,54.0,101.28,79.25,43.14,7,173.0,0,0.0
+DEN,Aaron Gordon,Bryce Hopkins,35.83,22.5,60.36,36.75,26.35,6,97.0,0,0.0
+DEN,Aaron Gordon,Nikola Jokic,178.46,277.0,110.84,157.75,11.45,8,287.0,0,0.0
+DEN,Aaron Gordon,Cameron Johnson,90.05,71.5,47.06,33.75,4.07,5,138.0,0,0.0
 DEN,Aaron Gordon,Alpha Diallo,14.79,5.0,16.8,7.75,3.83,3,32.0,0,0.0
-DEN,Aaron Gordon,Christian Braun,171.52,128.5,74.35,64.75,1.68,7,245.0,0,0.0
+DEN,Aaron Gordon,Christian Braun,198.55,143.0,75.83,64.75,1.68,8,274.0,0,0.0
 DEN,Aaron Gordon,Cam Whitmore,6.97,6.5,7.88,7.0,0.0,2,15.0,0,0.0
 DEN,Aaron Gordon,DaRon Holmes II,0.0,0.0,9.02,10.5,0.0,3,10.0,0,0.0
-DEN,Aaron Gordon,Jamal Murray,180.98,220.25,76.5,97.25,0.0,7,258.0,0,0.0
-DEN,Aaron Gordon,Marvin Bagley III,53.73,40.5,31.78,42.25,0.0,7,87.0,0,0.0
+DEN,Aaron Gordon,Jamal Murray,207.36,247.75,84.05,105.75,0.0,8,292.0,0,0.0
+DEN,Aaron Gordon,Marvin Bagley III,54.26,42.5,42.95,54.0,0.0,8,99.0,0,0.0
 DEN,Aaron Gordon,Ryan Nembhard,0.63,0.0,9.02,13.25,0.0,3,10.0,0,0.0
-DEN,Aaron Gordon,Tyus Jones,25.87,9.0,51.35,41.75,0.0,7,77.0,0,0.0
+DEN,Aaron Gordon,Spencer Jones,3.18,6.0,17.99,18.0,0.0,1,21.0,0,0.0
+DEN,Aaron Gordon,Tyus Jones,25.87,10.25,64.66,57.0,0.0,8,90.0,0,0.0
 DEN,Aaron Gordon,Zeke Nnaji,0.0,0.0,7.3,8.75,0.0,2,8.0,0,0.0
-DEN,Alpha Diallo,Nikola Jokic,14.03,13.25,88.28,144.75,6.18,1,35.0,0,0.0
-DEN,Alpha Diallo,Trevon Brazile,12.97,14.75,47.69,39.25,4.07,1,18.0,0,0.0
-DEN,Alpha Diallo,Christian Braun,10.14,5.75,87.74,59.25,2.53,1,33.0,0,0.0
-DEN,Alpha Diallo,Tyus Jones,12.02,3.5,24.95,22.75,2.43,1,10.0,0,0.0
-DEN,Alpha Diallo,DeMar DeRozan,16.35,16.0,31.96,7.5,0.35,1,28.0,0,0.0
-DEN,Alpha Diallo,Aaron Gordon,14.79,19.25,69.0,59.5,0.0,1,29.0,0,0.0
-DEN,Alpha Diallo,Bryce Hopkins,5.47,2.0,23.6,27.25,0.0,1,2.0,0,0.0
-DEN,Alpha Diallo,Cameron Johnson,0.0,2.0,74.54,46.5,0.0,1,11.0,0,0.0
+DEN,Alpha Diallo,Nikola Jokic,14.03,13.25,124.58,196.0,6.18,1,35.0,1,36.0
+DEN,Alpha Diallo,Trevon Brazile,12.97,14.75,62.13,50.75,4.07,1,18.0,1,14.0
+DEN,Alpha Diallo,Christian Braun,10.14,5.75,116.25,73.75,2.53,1,33.0,1,29.0
+DEN,Alpha Diallo,Tyus Jones,12.02,3.5,38.25,39.25,2.43,1,10.0,1,13.0
+DEN,Alpha Diallo,DeMar DeRozan,16.35,16.0,53.85,27.25,0.35,1,28.0,1,22.0
+DEN,Alpha Diallo,Aaron Gordon,14.79,19.25,96.03,77.75,0.0,1,29.0,1,27.0
+DEN,Alpha Diallo,Bryce Hopkins,5.47,2.0,26.5,31.5,0.0,1,2.0,1,3.0
+DEN,Alpha Diallo,Cameron Johnson,0.0,2.0,103.38,73.5,0.0,1,11.0,1,29.0
 DEN,Alpha Diallo,DaRon Holmes II,5.47,7.0,0.0,0.0,0.0,1,2.0,0,0.0
-DEN,Alpha Diallo,Jamal Murray,13.8,6.5,89.55,103.0,0.0,1,37.0,0,0.0
-DEN,Alpha Diallo,Marvin Bagley III,12.09,4.75,24.14,29.0,0.0,1,11.0,0,0.0
+DEN,Alpha Diallo,Jamal Murray,13.8,6.5,123.48,139.0,0.0,1,37.0,1,34.0
+DEN,Alpha Diallo,Marvin Bagley III,12.09,4.75,35.84,42.75,0.0,1,11.0,1,12.0
 DEN,Alpha Diallo,Ryan Nembhard,5.47,7.75,0.63,0.0,0.0,1,2.0,0,0.0
+DEN,Alpha Diallo,Spencer Jones,0.0,0.0,21.17,24.0,0.0,0,0.0,1,21.0
 DEN,Alpha Diallo,Zeke Nnaji,3.75,2.0,0.0,0.0,0.0,0,0.0,0,0.0
-DEN,Bryce Hopkins,Christian Braun,44.24,17.75,201.64,175.5,28.6,4,138.0,2,74.0
-DEN,Bryce Hopkins,DeMar DeRozan,28.98,31.5,121.35,82.0,16.87,3,79.0,2,44.0
-DEN,Bryce Hopkins,Nikola Jokic,57.51,83.0,195.5,300.5,12.78,4,143.0,2,73.0
+DEN,Bryce Hopkins,Christian Braun,47.14,19.75,227.26,188.0,28.6,4,138.0,2,74.0
+DEN,Bryce Hopkins,DeMar DeRozan,28.98,31.5,143.24,101.75,16.87,3,79.0,2,44.0
+DEN,Bryce Hopkins,Nikola Jokic,60.41,84.5,228.9,350.25,12.78,4,143.0,2,73.0
 DEN,Bryce Hopkins,Cam Whitmore,3.55,5.0,11.3,8.5,6.38,2,15.0,0,0.0
-DEN,Bryce Hopkins,Tyus Jones,29.13,34.75,48.08,16.0,4.02,4,48.0,2,19.0
-DEN,Bryce Hopkins,Jamal Murray,56.63,76.25,200.86,241.25,0.34,4,145.0,2,76.0
-DEN,Bryce Hopkins,Aaron Gordon,32.93,17.25,172.79,164.5,0.0,4,118.0,2,59.0
+DEN,Bryce Hopkins,Cameron Johnson,13.78,11.75,123.32,93.5,6.18,1,30.0,2,68.0
+DEN,Bryce Hopkins,Tyus Jones,29.13,34.75,61.38,32.5,4.02,4,48.0,2,19.0
+DEN,Bryce Hopkins,Jamal Murray,59.53,79.5,231.9,274.0,0.34,4,145.0,2,76.0
+DEN,Bryce Hopkins,Aaron Gordon,35.83,21.0,196.92,179.0,0.0,4,118.0,2,59.0
 DEN,Bryce Hopkins,Alpha Diallo,5.47,-0.5,26.12,13.25,0.0,1,4.0,1,6.0
-DEN,Bryce Hopkins,Cameron Johnson,13.78,11.75,94.49,66.5,0.0,1,30.0,2,68.0
 DEN,Bryce Hopkins,DaRon Holmes II,9.02,10.5,0.0,0.0,0.0,2,8.0,0,0.0
-DEN,Bryce Hopkins,Marvin Bagley III,28.49,32.0,57.02,50.75,0.0,4,53.0,2,23.0
+DEN,Bryce Hopkins,Marvin Bagley III,28.49,32.0,68.72,64.5,0.0,4,53.0,2,23.0
 DEN,Bryce Hopkins,Ryan Nembhard,9.65,13.25,0.0,0.0,0.0,2,8.0,0,0.0
-DEN,Bryce Hopkins,Trevon Brazile,46.48,20.75,109.45,116.0,0.0,4,100.0,2,37.0
+DEN,Bryce Hopkins,Spencer Jones,0.0,0.0,21.17,24.0,0.0,0,0.0,0,0.0
+DEN,Bryce Hopkins,Trevon Brazile,46.48,20.75,123.89,127.5,0.0,4,100.0,2,37.0
 DEN,Bryce Hopkins,Zeke Nnaji,7.3,8.75,0.0,0.0,0.0,2,8.0,0,0.0
 DEN,Cam Whitmore,Jamal Murray,7.17,11.75,109.92,134.75,12.0,1,43.0,1,38.0
 DEN,Cam Whitmore,Christian Braun,6.49,6.75,104.02,76.25,3.03,1,40.0,1,36.0
@@ -1599,102 +1602,120 @@ DEN,Cam Whitmore,Ryan Nembhard,3.55,5.5,0.0,0.0,0.0,0,0.0,0,0.0
 DEN,Cam Whitmore,Trevon Brazile,4.38,2.75,71.77,64.25,0.0,1,28.0,1,32.0
 DEN,Cam Whitmore,Tyus Jones,3.98,0.0,25.3,21.5,0.0,1,10.0,1,11.0
 DEN,Cam Whitmore,Zeke Nnaji,3.55,6.75,0.0,0.0,0.0,0,0.0,0,0.0
-DEN,Cameron Johnson,Trevon Brazile,35.89,24.25,43.89,45.5,17.16,4,78.0,0,0.0
-DEN,Cameron Johnson,DeMar DeRozan,18.77,11.75,53.81,27.0,12.64,3,72.0,0,0.0
-DEN,Cameron Johnson,Christian Braun,75.71,83.0,59.65,27.25,7.24,4,135.0,0,0.0
-DEN,Cameron Johnson,Jamal Murray,85.43,109.75,54.95,61.25,5.42,4,141.0,0,0.0
-DEN,Cameron Johnson,Tyus Jones,22.84,22.75,25.1,6.5,2.48,4,47.0,0,0.0
-DEN,Cameron Johnson,Aaron Gordon,72.38,60.75,40.79,45.0,0.0,4,113.0,0,0.0
+DEN,Cameron Johnson,Trevon Brazile,37.51,25.75,56.71,55.5,29.98,5,92.0,0,0.0
+DEN,Cameron Johnson,DeMar DeRozan,29.94,23.25,64.53,35.25,12.64,4,94.0,0,0.0
+DEN,Cameron Johnson,Jamal Murray,105.27,131.0,69.05,76.0,10.85,5,175.0,0,0.0
+DEN,Cameron Johnson,Christian Braun,93.38,95.5,70.5,29.25,7.24,5,164.0,0,0.0
+DEN,Cameron Johnson,Tyus Jones,31.19,36.75,30.05,9.0,2.48,5,60.0,0,0.0
+DEN,Cameron Johnson,Aaron Gordon,90.05,70.75,50.16,53.25,0.92,5,140.0,0,0.0
 DEN,Cameron Johnson,Alpha Diallo,0.0,0.0,31.59,12.75,0.0,3,32.0,0,0.0
-DEN,Cameron Johnson,Bryce Hopkins,13.78,13.75,15.29,15.5,0.0,2,30.0,0,0.0
+DEN,Cameron Johnson,Bryce Hopkins,13.78,13.75,18.19,19.75,0.0,3,33.0,0,0.0
 DEN,Cameron Johnson,DaRon Holmes II,0.0,0.0,5.47,7.0,0.0,2,6.0,0,0.0
-DEN,Cameron Johnson,Marvin Bagley III,23.65,25.0,23.25,17.0,0.0,4,48.0,0,0.0
-DEN,Cameron Johnson,Nikola Jokic,84.62,145.0,55.0,58.25,0.0,4,138.0,0,0.0
+DEN,Cameron Johnson,Marvin Bagley III,34.82,36.75,23.79,19.0,0.0,5,60.0,0,0.0
+DEN,Cameron Johnson,Nikola Jokic,102.29,164.25,73.63,90.25,0.0,5,174.0,0,0.0
 DEN,Cameron Johnson,Ryan Nembhard,0.0,0.0,6.1,7.75,0.0,2,6.0,0,0.0
+DEN,Cameron Johnson,Spencer Jones,10.2,11.25,10.97,12.75,0.0,1,21.0,0,0.0
 DEN,Cameron Johnson,Zeke Nnaji,0.0,0.0,3.75,2.0,0.0,1,4.0,0,0.0
-DEN,Christian Braun,Trevon Brazile,96.91,99.0,59.01,37.75,17.77,7,155.0,0,0.0
-DEN,Christian Braun,Tyus Jones,20.06,6.5,57.16,44.25,14.68,7,77.0,0,0.0
-DEN,Christian Braun,Bryce Hopkins,44.24,26.0,49.05,29.0,11.25,5,94.0,0,0.0
-DEN,Christian Braun,Aaron Gordon,171.52,152.75,34.19,29.0,10.42,7,206.0,0,0.0
-DEN,Christian Braun,Cameron Johnson,75.71,55.25,32.55,23.0,9.03,4,109.0,0,0.0
+DEN,Christian Braun,Trevon Brazile,101.41,107.75,68.95,40.5,17.77,8,169.0,0,0.0
+DEN,Christian Braun,Cameron Johnson,93.38,70.5,43.72,34.75,14.75,5,138.0,0,0.0
+DEN,Christian Braun,Tyus Jones,20.06,7.75,70.47,59.5,14.68,8,90.0,0,0.0
+DEN,Christian Braun,Spencer Jones,3.3,6.0,17.87,18.0,13.77,1,21.0,0,0.0
+DEN,Christian Braun,Bryce Hopkins,47.14,30.25,49.05,29.0,11.25,6,97.0,0,0.0
+DEN,Christian Braun,Aaron Gordon,198.55,171.0,34.19,29.0,10.42,8,233.0,0,0.0
 DEN,Christian Braun,Alpha Diallo,10.14,3.0,21.45,9.75,8.81,3,32.0,0,0.0
-DEN,Christian Braun,Marvin Bagley III,29.66,28.5,55.85,54.25,6.58,7,87.0,0,0.0
-DEN,Christian Braun,DeMar DeRozan,80.7,56.25,69.63,57.25,3.76,6,151.0,0,0.0
+DEN,Christian Braun,Marvin Bagley III,30.2,30.5,67.02,66.0,6.58,8,99.0,0,0.0
+DEN,Christian Braun,DeMar DeRozan,83.1,57.75,89.12,75.5,3.76,7,173.0,0,0.0
 DEN,Christian Braun,Zeke Nnaji,0.0,0.0,7.3,8.75,3.75,2,8.0,0,0.0
 DEN,Christian Braun,Ryan Nembhard,0.63,0.0,9.02,13.25,3.55,3,10.0,0,0.0
 DEN,Christian Braun,Cam Whitmore,6.49,5.25,8.36,8.25,2.23,2,15.0,0,0.0
 DEN,Christian Braun,DaRon Holmes II,0.0,0.0,9.02,10.5,0.0,3,10.0,0,0.0
-DEN,Christian Braun,Jamal Murray,226.41,285.0,31.07,32.5,0.0,7,258.0,0,0.0
-DEN,Christian Braun,Nikola Jokic,221.02,341.5,31.99,42.0,0.0,7,251.0,0,0.0
-DEN,DaRon Holmes II,Aaron Gordon,0.0,0.0,205.71,181.75,0.0,0,0.0,4,127.0
+DEN,Christian Braun,Jamal Murray,254.16,312.5,37.25,41.0,0.0,8,292.0,0,0.0
+DEN,Christian Braun,Nikola Jokic,249.0,376.75,40.31,58.0,0.0,8,287.0,0,0.0
+DEN,DaRon Holmes II,Aaron Gordon,0.0,0.0,232.74,200.0,0.0,0,0.0,5,154.0
 DEN,DaRon Holmes II,Alpha Diallo,5.47,-0.5,26.12,13.25,0.0,0,0.0,1,6.0
-DEN,DaRon Holmes II,Bryce Hopkins,9.02,3.25,84.27,51.75,0.0,0,0.0,2,33.0
+DEN,DaRon Holmes II,Bryce Hopkins,9.02,3.25,87.17,56.0,0.0,0,0.0,3,36.0
 DEN,DaRon Holmes II,Cam Whitmore,3.55,5.0,11.3,8.5,0.0,0,0.0,1,11.0
-DEN,DaRon Holmes II,Cameron Johnson,0.0,0.0,108.28,78.25,0.0,0,0.0,2,68.0
-DEN,DaRon Holmes II,Christian Braun,0.0,0.0,245.87,193.25,0.0,0,0.0,4,150.0
-DEN,DaRon Holmes II,DeMar DeRozan,0.0,0.0,150.33,113.5,0.0,0,0.0,4,94.0
-DEN,DaRon Holmes II,Jamal Murray,0.0,0.0,257.48,317.5,0.0,0,0.0,4,157.0
-DEN,DaRon Holmes II,Marvin Bagley III,0.0,0.0,85.52,82.75,0.0,0,0.0,4,51.0
-DEN,DaRon Holmes II,Nikola Jokic,0.0,0.0,253.0,383.5,0.0,0,0.0,4,151.0
+DEN,DaRon Holmes II,Cameron Johnson,0.0,0.0,137.12,105.25,0.0,0,0.0,3,97.0
+DEN,DaRon Holmes II,Christian Braun,0.0,0.0,274.38,207.75,0.0,0,0.0,5,179.0
+DEN,DaRon Holmes II,DeMar DeRozan,0.0,0.0,172.22,133.25,0.0,0,0.0,5,116.0
+DEN,DaRon Holmes II,Jamal Murray,0.0,0.0,291.42,353.5,0.0,0,0.0,5,191.0
+DEN,DaRon Holmes II,Marvin Bagley III,0.0,0.0,97.22,96.5,0.0,0,0.0,5,63.0
+DEN,DaRon Holmes II,Nikola Jokic,0.0,0.0,289.3,434.75,0.0,0,0.0,5,187.0
 DEN,DaRon Holmes II,Ryan Nembhard,9.02,13.25,0.63,0.0,0.0,0,0.0,0,0.0
-DEN,DaRon Holmes II,Trevon Brazile,1.72,1.25,154.22,135.5,0.0,0,0.0,4,97.0
-DEN,DaRon Holmes II,Tyus Jones,0.0,0.0,77.22,50.75,0.0,0,0.0,4,40.0
+DEN,DaRon Holmes II,Spencer Jones,0.0,0.0,21.17,24.0,0.0,0,0.0,1,21.0
+DEN,DaRon Holmes II,Trevon Brazile,1.72,1.25,168.66,147.0,0.0,0,0.0,5,111.0
+DEN,DaRon Holmes II,Tyus Jones,0.0,0.0,90.53,67.25,0.0,0,0.0,5,53.0
 DEN,DaRon Holmes II,Zeke Nnaji,7.3,8.75,0.0,0.0,0.0,0,0.0,0,0.0
-DEN,DeMar DeRozan,Aaron Gordon,70.02,60.5,135.7,121.25,23.12,6,181.0,1,25.0
-DEN,DeMar DeRozan,Christian Braun,80.7,66.75,165.18,126.5,20.6,6,217.0,1,28.0
-DEN,DeMar DeRozan,Cameron Johnson,18.77,11.25,89.5,67.0,12.5,3,79.0,1,30.0
-DEN,DeMar DeRozan,Nikola Jokic,90.81,108.5,162.19,275.0,4.37,6,221.0,1,30.0
-DEN,DeMar DeRozan,Trevon Brazile,73.72,66.75,82.21,70.0,3.58,6,132.0,1,23.0
-DEN,DeMar DeRozan,Bryce Hopkins,28.98,11.25,64.31,43.75,3.03,4,66.0,1,28.0
+DEN,DeMar DeRozan,Aaron Gordon,70.94,61.75,161.82,138.25,36.65,7,208.0,1,25.0
+DEN,DeMar DeRozan,Christian Braun,83.1,66.75,191.3,141.0,20.6,7,246.0,1,28.0
+DEN,DeMar DeRozan,Cameron Johnson,29.94,23.0,107.17,82.25,18.13,4,108.0,1,30.0
+DEN,DeMar DeRozan,Nikola Jokic,101.53,129.0,187.77,305.75,4.37,7,257.0,1,30.0
+DEN,DeMar DeRozan,Trevon Brazile,85.14,75.5,85.23,72.75,3.58,7,146.0,1,23.0
+DEN,DeMar DeRozan,Bryce Hopkins,28.98,11.25,67.21,48.0,3.03,5,69.0,1,28.0
 DEN,DeMar DeRozan,DaRon Holmes II,0.0,0.0,9.02,10.5,1.72,2,6.0,1,4.0
 DEN,DeMar DeRozan,Alpha Diallo,16.35,10.25,15.24,2.5,0.06,2,28.0,1,4.0
 DEN,DeMar DeRozan,Cam Whitmore,4.92,3.25,9.93,10.25,0.0,2,15.0,0,0.0
-DEN,DeMar DeRozan,Jamal Murray,91.85,104.5,165.64,213.0,0.0,6,230.0,1,28.0
-DEN,DeMar DeRozan,Marvin Bagley III,66.05,63.5,19.47,19.25,0.0,6,73.0,1,14.0
+DEN,DeMar DeRozan,Jamal Murray,100.32,113.0,191.11,240.5,0.0,7,264.0,1,28.0
+DEN,DeMar DeRozan,Marvin Bagley III,77.22,75.25,20.0,21.25,0.0,7,85.0,1,14.0
 DEN,DeMar DeRozan,Ryan Nembhard,0.0,0.0,9.65,13.25,0.0,2,6.0,1,4.0
-DEN,DeMar DeRozan,Tyus Jones,59.15,32.0,18.07,18.75,0.0,6,59.0,1,18.0
+DEN,DeMar DeRozan,Spencer Jones,17.99,18.0,3.18,6.0,0.0,1,21.0,0,0.0
+DEN,DeMar DeRozan,Tyus Jones,72.45,47.25,18.07,20.0,0.0,7,72.0,1,18.0
 DEN,DeMar DeRozan,Zeke Nnaji,0.0,0.0,7.3,8.75,0.0,1,4.0,1,4.0
-DEN,Jamal Murray,Tyus Jones,3.79,0.0,73.43,50.75,35.18,7,77.0,0,0.0
-DEN,Jamal Murray,Marvin Bagley III,41.98,37.75,43.54,45.0,9.7,7,87.0,0,0.0
-DEN,Jamal Murray,Cameron Johnson,85.43,61.25,22.84,17.0,9.02,4,109.0,0,0.0
-DEN,Jamal Murray,DeMar DeRozan,91.85,73.0,58.48,40.5,8.47,6,151.0,0,0.0
+DEN,Jamal Murray,Tyus Jones,3.79,1.25,86.74,66.0,42.77,8,90.0,0,0.0
+DEN,Jamal Murray,Marvin Bagley III,45.33,39.75,51.89,56.75,9.7,8,99.0,0,0.0
+DEN,Jamal Murray,Cameron Johnson,105.27,77.75,31.84,27.5,9.02,5,138.0,0,0.0
+DEN,Jamal Murray,DeMar DeRozan,100.32,77.25,71.9,56.0,8.47,7,173.0,0,0.0
 DEN,Jamal Murray,Ryan Nembhard,0.0,0.0,9.65,13.25,6.1,3,10.0,0,0.0
-DEN,Jamal Murray,Aaron Gordon,180.98,156.5,24.73,25.25,4.02,7,206.0,0,0.0
+DEN,Jamal Murray,Aaron Gordon,207.36,174.75,25.38,25.25,4.02,8,233.0,0,0.0
 DEN,Jamal Murray,Cam Whitmore,7.17,5.25,7.68,8.25,3.55,2,15.0,0,0.0
-DEN,Jamal Murray,Christian Braun,226.41,179.0,19.47,14.25,3.1,7,245.0,0,0.0
-DEN,Jamal Murray,Bryce Hopkins,56.63,31.75,36.66,23.25,2.5,5,94.0,0,0.0
-DEN,Jamal Murray,Trevon Brazile,104.96,88.5,50.98,48.25,0.05,7,155.0,0,0.0
+DEN,Jamal Murray,Christian Braun,254.16,192.25,20.23,15.5,3.1,8,274.0,0,0.0
+DEN,Jamal Murray,Bryce Hopkins,59.53,36.0,36.66,23.25,2.5,6,97.0,0,0.0
+DEN,Jamal Murray,Spencer Jones,8.72,16.0,12.45,8.0,0.65,1,21.0,0,0.0
+DEN,Jamal Murray,Trevon Brazile,112.71,97.25,57.67,51.0,0.05,8,169.0,0,0.0
 DEN,Jamal Murray,Alpha Diallo,13.8,7.75,17.78,5.0,0.0,3,32.0,0,0.0
 DEN,Jamal Murray,DaRon Holmes II,0.0,0.0,9.02,10.5,0.0,3,10.0,0,0.0
-DEN,Jamal Murray,Nikola Jokic,216.94,324.5,36.07,59.0,0.0,7,251.0,0,0.0
+DEN,Jamal Murray,Nikola Jokic,247.53,366.5,41.79,68.25,0.0,8,287.0,0,0.0
 DEN,Jamal Murray,Zeke Nnaji,0.0,0.0,7.3,8.75,0.0,2,8.0,0,0.0
-DEN,Marvin Bagley III,Nikola Jokic,6.55,15.25,246.45,368.25,96.53,7,251.0,0,0.0
-DEN,Marvin Bagley III,Christian Braun,29.66,15.25,216.22,178.0,41.79,7,245.0,0,0.0
-DEN,Marvin Bagley III,Bryce Hopkins,28.49,16.75,64.79,38.25,7.13,5,94.0,0,0.0
+DEN,Julian Strawther,Aaron Gordon,0.0,0.0,27.03,18.25,0.0,0,0.0,1,27.0
+DEN,Julian Strawther,Bryce Hopkins,0.0,0.0,2.9,4.25,0.0,0,0.0,1,3.0
+DEN,Julian Strawther,Cameron Johnson,0.0,0.0,28.83,27.0,0.0,0,0.0,1,29.0
+DEN,Julian Strawther,Christian Braun,0.0,0.0,28.52,14.5,0.0,0,0.0,1,29.0
+DEN,Julian Strawther,DeMar DeRozan,0.0,0.0,21.89,19.75,0.0,0,0.0,1,22.0
+DEN,Julian Strawther,Jamal Murray,0.0,0.0,33.93,36.0,0.0,0,0.0,1,34.0
+DEN,Julian Strawther,Marvin Bagley III,0.0,0.0,11.7,13.75,0.0,0,0.0,1,12.0
+DEN,Julian Strawther,Nikola Jokic,0.0,0.0,36.3,51.25,0.0,0,0.0,1,36.0
+DEN,Julian Strawther,Spencer Jones,0.0,0.0,21.17,24.0,0.0,0,0.0,1,21.0
+DEN,Julian Strawther,Trevon Brazile,0.0,0.0,14.44,11.5,0.0,0,0.0,1,14.0
+DEN,Julian Strawther,Tyus Jones,0.0,0.0,13.3,16.5,0.0,0,0.0,1,13.0
+DEN,Marvin Bagley III,Nikola Jokic,6.55,15.25,282.75,419.5,114.28,8,287.0,0,0.0
+DEN,Marvin Bagley III,Christian Braun,30.2,15.25,244.2,192.5,48.34,8,274.0,0,0.0
+DEN,Marvin Bagley III,Bryce Hopkins,28.49,16.75,67.69,42.5,7.13,6,97.0,0,0.0
 DEN,Marvin Bagley III,DaRon Holmes II,0.0,0.0,9.02,10.5,3.75,3,10.0,0,0.0
-DEN,Marvin Bagley III,Trevon Brazile,30.85,27.5,125.09,109.25,3.17,7,155.0,0,0.0
-DEN,Marvin Bagley III,Aaron Gordon,53.73,60.25,151.98,121.5,0.0,7,206.0,0,0.0
+DEN,Marvin Bagley III,Trevon Brazile,32.47,29.0,137.91,119.25,3.17,8,169.0,0,0.0
+DEN,Marvin Bagley III,Aaron Gordon,54.26,60.25,178.48,139.75,0.0,8,233.0,0,0.0
 DEN,Marvin Bagley III,Alpha Diallo,12.09,5.5,19.5,7.25,0.0,3,32.0,0,0.0
 DEN,Marvin Bagley III,Cam Whitmore,2.58,1.25,12.27,12.25,0.0,2,15.0,0,0.0
-DEN,Marvin Bagley III,Cameron Johnson,23.65,15.5,84.62,62.75,0.0,4,109.0,0,0.0
-DEN,Marvin Bagley III,DeMar DeRozan,66.05,42.5,84.28,71.0,0.0,6,151.0,0,0.0
-DEN,Marvin Bagley III,Jamal Murray,41.98,47.25,215.51,270.25,0.0,7,258.0,0,0.0
+DEN,Marvin Bagley III,Cameron Johnson,34.82,27.25,102.29,78.0,0.0,5,138.0,0,0.0
+DEN,Marvin Bagley III,DeMar DeRozan,77.22,54.0,95.0,79.25,0.0,7,173.0,0,0.0
+DEN,Marvin Bagley III,Jamal Murray,45.33,53.75,246.09,299.75,0.0,8,292.0,0,0.0
 DEN,Marvin Bagley III,Ryan Nembhard,0.63,0.0,9.02,13.25,0.0,3,10.0,0,0.0
-DEN,Marvin Bagley III,Tyus Jones,45.79,33.75,31.42,17.0,0.0,7,77.0,0,0.0
+DEN,Marvin Bagley III,Spencer Jones,10.09,11.25,11.08,12.75,0.0,1,21.0,0,0.0
+DEN,Marvin Bagley III,Tyus Jones,54.14,47.75,36.38,19.5,0.0,8,90.0,0,0.0
 DEN,Marvin Bagley III,Zeke Nnaji,0.0,0.0,7.3,8.75,0.0,2,8.0,0,0.0
-DEN,Nikola Jokic,Marvin Bagley III,6.55,10.75,78.96,72.0,34.45,7,87.0,0,0.0
-DEN,Nikola Jokic,Jamal Murray,216.94,273.0,40.54,44.5,13.62,7,258.0,0,0.0
-DEN,Nikola Jokic,Aaron Gordon,151.96,121.5,53.75,60.25,8.2,7,206.0,0,0.0
-DEN,Nikola Jokic,DeMar DeRozan,90.81,72.5,59.52,41.0,6.87,6,151.0,0,0.0
-DEN,Nikola Jokic,Tyus Jones,36.51,20.5,40.7,30.25,5.32,7,77.0,0,0.0
-DEN,Nikola Jokic,Trevon Brazile,123.35,108.0,32.59,28.75,4.58,7,155.0,0,0.0
+DEN,Nikola Jokic,Marvin Bagley III,6.55,10.75,90.66,85.75,40.7,8,99.0,0,0.0
+DEN,Nikola Jokic,Jamal Murray,247.53,302.5,43.89,51.0,13.62,8,292.0,0,0.0
+DEN,Nikola Jokic,Aaron Gordon,178.46,139.75,54.28,60.25,8.2,8,233.0,0,0.0
+DEN,Nikola Jokic,DeMar DeRozan,101.53,80.75,70.69,52.5,6.87,7,173.0,0,0.0
+DEN,Nikola Jokic,Cameron Johnson,102.29,78.0,34.82,27.25,5.45,5,138.0,0,0.0
+DEN,Nikola Jokic,Tyus Jones,41.46,23.0,49.05,44.25,5.32,8,90.0,0,0.0
+DEN,Nikola Jokic,Trevon Brazile,136.17,118.0,34.21,30.25,4.58,8,169.0,0,0.0
 DEN,Nikola Jokic,DaRon Holmes II,0.0,0.0,9.02,10.5,3.55,3,10.0,0,0.0
 DEN,Nikola Jokic,Alpha Diallo,14.03,7.75,17.55,5.0,1.72,3,32.0,0,0.0
-DEN,Nikola Jokic,Bryce Hopkins,57.51,36.25,35.78,18.75,0.0,5,94.0,0,0.0
+DEN,Nikola Jokic,Bryce Hopkins,60.41,40.5,35.78,18.75,0.0,6,97.0,0,0.0
 DEN,Nikola Jokic,Cam Whitmore,8.72,7.25,6.13,6.25,0.0,2,15.0,0,0.0
-DEN,Nikola Jokic,Cameron Johnson,84.62,62.75,23.65,15.5,0.0,4,109.0,0,0.0
-DEN,Nikola Jokic,Christian Braun,221.02,179.5,24.85,13.75,0.0,7,245.0,0,0.0
+DEN,Nikola Jokic,Christian Braun,249.0,194.0,25.39,13.75,0.0,8,274.0,0,0.0
 DEN,Nikola Jokic,Ryan Nembhard,0.0,0.0,9.65,13.25,0.0,3,10.0,0,0.0
+DEN,Nikola Jokic,Spencer Jones,11.08,12.75,10.09,11.25,0.0,1,21.0,0,0.0
 DEN,Nikola Jokic,Zeke Nnaji,0.0,0.0,7.3,8.75,0.0,2,8.0,0,0.0
 DEN,Ryan Nembhard,Aaron Gordon,0.63,0.0,175.97,162.75,0.0,0,0.0,3,97.0
 DEN,Ryan Nembhard,Alpha Diallo,5.47,-0.5,20.53,12.0,0.0,0,0.0,0,0.0
@@ -1710,48 +1731,61 @@ DEN,Ryan Nembhard,Nikola Jokic,0.0,0.0,215.89,324.25,0.0,0,0.0,3,115.0
 DEN,Ryan Nembhard,Trevon Brazile,1.72,1.25,135.34,118.25,0.0,0,0.0,3,79.0
 DEN,Ryan Nembhard,Tyus Jones,0.0,0.0,67.69,47.25,0.0,0,0.0,3,32.0
 DEN,Ryan Nembhard,Zeke Nnaji,7.3,8.75,0.0,0.0,0.0,0,0.0,0,0.0
-DEN,Trevon Brazile,Aaron Gordon,41.07,44.75,164.64,137.0,73.69,7,206.0,0,0.0
-DEN,Trevon Brazile,Cameron Johnson,35.89,22.0,72.38,56.25,14.53,4,109.0,0,0.0
-DEN,Trevon Brazile,Marvin Bagley III,30.85,39.25,54.67,43.5,14.48,7,87.0,0,0.0
-DEN,Trevon Brazile,Tyus Jones,49.72,40.25,27.5,10.5,7.93,7,77.0,0,0.0
-DEN,Trevon Brazile,Bryce Hopkins,46.48,32.25,46.8,22.75,7.5,5,94.0,0,0.0
-DEN,Trevon Brazile,Jamal Murray,104.96,132.0,152.52,185.5,7.38,7,258.0,0,0.0
+DEN,Spencer Jones,Nikola Jokic,11.08,16.0,25.22,35.25,5.9,1,36.0,0,0.0
+DEN,Spencer Jones,Bryce Hopkins,0.0,0.0,2.9,4.25,2.9,1,3.0,0,0.0
+DEN,Spencer Jones,Tyus Jones,11.69,15.0,1.62,1.5,1.62,1,13.0,0,0.0
+DEN,Spencer Jones,Aaron Gordon,3.18,0.0,23.85,18.25,0.0,1,27.0,0,0.0
+DEN,Spencer Jones,Cameron Johnson,10.2,8.25,18.64,18.75,0.0,1,29.0,0,0.0
+DEN,Spencer Jones,Christian Braun,3.3,1.25,25.22,13.25,0.0,1,29.0,0,0.0
+DEN,Spencer Jones,DeMar DeRozan,17.99,16.25,3.9,3.5,0.0,1,22.0,0,0.0
+DEN,Spencer Jones,Jamal Murray,8.72,15.0,25.22,21.0,0.0,1,34.0,0,0.0
+DEN,Spencer Jones,Marvin Bagley III,10.09,11.75,1.62,2.0,0.0,1,12.0,0,0.0
+DEN,Spencer Jones,Trevon Brazile,8.44,1.25,6.0,10.25,0.0,1,14.0,0,0.0
+DEN,Trevon Brazile,Aaron Gordon,44.09,48.0,188.66,152.0,73.69,8,233.0,0,0.0
+DEN,Trevon Brazile,Marvin Bagley III,32.47,41.25,64.75,55.25,19.93,8,99.0,0,0.0
+DEN,Trevon Brazile,Cameron Johnson,37.51,25.5,99.6,79.75,14.53,5,138.0,0,0.0
+DEN,Trevon Brazile,Tyus Jones,56.29,43.0,34.23,24.25,7.93,8,90.0,0,0.0
+DEN,Trevon Brazile,Bryce Hopkins,46.48,32.25,49.7,27.0,7.5,6,97.0,0,0.0
+DEN,Trevon Brazile,Jamal Murray,112.71,137.0,178.71,216.5,7.38,8,292.0,0,0.0
+DEN,Trevon Brazile,Spencer Jones,8.44,6.75,12.73,17.25,6.63,1,21.0,0,0.0
 DEN,Trevon Brazile,Zeke Nnaji,0.0,0.0,7.3,8.75,3.55,2,8.0,0,0.0
-DEN,Trevon Brazile,Christian Braun,96.91,76.5,148.96,116.75,3.33,7,245.0,0,0.0
+DEN,Trevon Brazile,Christian Braun,101.41,76.5,172.98,131.25,3.33,8,274.0,0,0.0
 DEN,Trevon Brazile,Alpha Diallo,12.97,8.25,18.62,4.5,0.0,3,32.0,0,0.0
 DEN,Trevon Brazile,Cam Whitmore,4.38,2.0,10.47,11.5,0.0,2,15.0,0,0.0
 DEN,Trevon Brazile,DaRon Holmes II,1.72,6.25,7.3,4.25,0.0,3,10.0,0,0.0
-DEN,Trevon Brazile,DeMar DeRozan,73.72,56.0,76.61,57.5,0.0,6,151.0,0,0.0
-DEN,Trevon Brazile,Nikola Jokic,123.35,181.25,129.65,202.25,0.0,7,251.0,0,0.0
+DEN,Trevon Brazile,DeMar DeRozan,85.14,66.25,87.08,67.0,0.0,7,173.0,0,0.0
+DEN,Trevon Brazile,Nikola Jokic,136.17,210.5,153.13,224.25,0.0,8,287.0,0,0.0
 DEN,Trevon Brazile,Ryan Nembhard,1.72,8.25,7.93,5.0,0.0,3,10.0,0,0.0
-DEN,Tyus Jones,Jamal Murray,3.79,5.25,253.69,312.25,104.05,7,258.0,0,0.0
-DEN,Tyus Jones,Aaron Gordon,25.87,27.25,179.84,154.5,21.86,7,206.0,0,0.0
-DEN,Tyus Jones,Cameron Johnson,22.84,17.0,85.43,61.25,10.73,4,109.0,0,0.0
-DEN,Tyus Jones,Marvin Bagley III,45.79,51.0,39.71,31.75,7.83,7,87.0,0,0.0
-DEN,Tyus Jones,Bryce Hopkins,29.13,20.0,64.15,35.0,4.27,5,94.0,0,0.0
-DEN,Tyus Jones,Christian Braun,20.06,14.25,225.82,179.0,0.4,7,245.0,0,0.0
-DEN,Tyus Jones,Nikola Jokic,36.51,59.0,216.49,324.5,0.34,7,251.0,0,0.0
+DEN,Tyus Jones,Jamal Murray,3.79,5.25,287.62,348.25,112.77,8,292.0,0,0.0
+DEN,Tyus Jones,Aaron Gordon,25.87,27.25,206.87,172.75,21.86,8,233.0,0,0.0
+DEN,Tyus Jones,Christian Braun,20.06,14.25,254.33,193.5,14.05,8,274.0,0,0.0
+DEN,Tyus Jones,Cameron Johnson,31.19,27.5,105.92,77.75,10.73,5,138.0,0,0.0
+DEN,Tyus Jones,Marvin Bagley III,54.14,62.75,43.06,33.75,7.83,8,99.0,0,0.0
+DEN,Tyus Jones,Bryce Hopkins,29.13,20.0,67.05,39.25,4.27,6,97.0,0,0.0
+DEN,Tyus Jones,Nikola Jokic,41.46,68.25,247.84,366.5,0.34,8,287.0,0,0.0
 DEN,Tyus Jones,Alpha Diallo,12.02,5.5,19.56,7.25,0.0,3,32.0,0,0.0
 DEN,Tyus Jones,Cam Whitmore,3.98,3.25,10.87,10.25,0.0,2,15.0,0,0.0
 DEN,Tyus Jones,DaRon Holmes II,0.0,0.0,9.02,10.5,0.0,3,10.0,0,0.0
-DEN,Tyus Jones,DeMar DeRozan,59.15,40.5,91.18,73.0,0.0,6,151.0,0,0.0
+DEN,Tyus Jones,DeMar DeRozan,72.45,56.0,99.76,77.25,0.0,7,173.0,0,0.0
 DEN,Tyus Jones,Ryan Nembhard,0.0,0.0,9.65,13.25,0.0,3,10.0,0,0.0
-DEN,Tyus Jones,Trevon Brazile,49.72,43.0,106.22,93.75,0.0,7,155.0,0,0.0
+DEN,Tyus Jones,Spencer Jones,11.69,8.0,9.48,16.0,0.0,1,21.0,0,0.0
+DEN,Tyus Jones,Trevon Brazile,56.29,45.75,114.08,102.5,0.0,8,169.0,0,0.0
 DEN,Tyus Jones,Zeke Nnaji,0.0,0.0,7.3,8.75,0.0,2,8.0,0,0.0
-DEN,Zeke Nnaji,Aaron Gordon,0.0,0.0,205.71,181.75,0.0,0,0.0,5,156.0
+DEN,Zeke Nnaji,Aaron Gordon,0.0,0.0,232.74,200.0,0.0,0,0.0,6,183.0
 DEN,Zeke Nnaji,Alpha Diallo,3.75,-0.5,27.84,13.25,0.0,0,0.0,2,28.0
-DEN,Zeke Nnaji,Bryce Hopkins,7.3,2.0,85.99,53.0,0.0,0,0.0,3,35.0
+DEN,Zeke Nnaji,Bryce Hopkins,7.3,2.0,88.89,57.25,0.0,0,0.0,4,38.0
 DEN,Zeke Nnaji,Cam Whitmore,3.55,5.0,11.3,8.5,0.0,0,0.0,1,11.0
-DEN,Zeke Nnaji,Cameron Johnson,0.0,0.0,108.28,78.25,0.0,0,0.0,3,79.0
-DEN,Zeke Nnaji,Christian Braun,0.0,0.0,245.87,193.25,0.0,0,0.0,5,183.0
+DEN,Zeke Nnaji,Cameron Johnson,0.0,0.0,137.12,105.25,0.0,0,0.0,4,108.0
+DEN,Zeke Nnaji,Christian Braun,0.0,0.0,274.38,207.75,0.0,0,0.0,6,212.0
 DEN,Zeke Nnaji,DaRon Holmes II,7.3,4.25,1.72,6.25,0.0,0,0.0,1,2.0
-DEN,Zeke Nnaji,DeMar DeRozan,0.0,0.0,150.33,113.5,0.0,0,0.0,5,122.0
-DEN,Zeke Nnaji,Jamal Murray,0.0,0.0,257.48,317.5,0.0,0,0.0,5,194.0
-DEN,Zeke Nnaji,Marvin Bagley III,0.0,0.0,85.52,82.75,0.0,0,0.0,5,62.0
-DEN,Zeke Nnaji,Nikola Jokic,0.0,0.0,253.0,383.5,0.0,0,0.0,5,186.0
+DEN,Zeke Nnaji,DeMar DeRozan,0.0,0.0,172.22,133.25,0.0,0,0.0,6,144.0
+DEN,Zeke Nnaji,Jamal Murray,0.0,0.0,291.42,353.5,0.0,0,0.0,6,228.0
+DEN,Zeke Nnaji,Marvin Bagley III,0.0,0.0,97.22,96.5,0.0,0,0.0,6,74.0
+DEN,Zeke Nnaji,Nikola Jokic,0.0,0.0,289.3,434.75,0.0,0,0.0,6,222.0
 DEN,Zeke Nnaji,Ryan Nembhard,7.3,5.0,2.35,8.25,0.0,0,0.0,1,2.0
-DEN,Zeke Nnaji,Trevon Brazile,0.0,0.0,155.93,136.75,0.0,0,0.0,5,115.0
-DEN,Zeke Nnaji,Tyus Jones,0.0,0.0,77.22,50.75,0.0,0,0.0,5,50.0
+DEN,Zeke Nnaji,Spencer Jones,0.0,0.0,21.17,24.0,0.0,0,0.0,1,21.0
+DEN,Zeke Nnaji,Trevon Brazile,0.0,0.0,170.37,148.25,0.0,0,0.0,6,129.0
+DEN,Zeke Nnaji,Tyus Jones,0.0,0.0,90.53,67.25,0.0,0,0.0,6,63.0
 DET,Ausar Thompson,Ronald Holland II,6.04,3.5,96.52,98.0,56.05,7,103.0,0,0.0
 DET,Ausar Thompson,Javonte Green,40.23,32.75,86.54,60.75,26.78,7,126.0,0,0.0
 DET,Ausar Thompson,Kevin Huerter,54.18,45.75,83.25,58.25,18.67,7,137.0,0,0.0
@@ -2431,33 +2465,35 @@ HOU,Tari Eason,Bogdan Bogdanovic,41.83,27.5,59.77,53.75,0.0,7,88.0,0,0.0
 HOU,Tari Eason,Bruce Thornton,2.8,-0.5,15.75,16.25,0.0,5,16.0,0,0.0
 HOU,Tari Eason,Jae'Sean Tate,1.29,0.0,14.55,9.25,0.0,5,14.0,0,0.0
 HOU,Tari Eason,Oscar Tshiebwe,28.48,28.0,10.12,11.0,0.0,5,38.0,0,0.0
-IND,Aaron Nesmith,Obi Toppin,32.51,38.25,76.21,78.25,22.3,5,109.0,0,0.0
-IND,Aaron Nesmith,Jarace Walker,48.27,41.75,147.09,124.5,17.5,7,152.0,1,45.0
+IND,Aaron Nesmith,Jarace Walker,50.89,43.75,164.54,145.25,25.23,8,172.0,1,45.0
+IND,Aaron Nesmith,Obi Toppin,44.76,44.25,86.19,94.5,22.3,6,131.0,0,0.0
+IND,Aaron Nesmith,Kelly Oubre Jr.,69.49,45.0,80.81,67.75,18.55,7,151.0,0,0.0
 IND,Aaron Nesmith,Kobe Brown,6.19,2.0,75.33,54.5,17.37,4,43.0,1,38.0
-IND,Aaron Nesmith,Kelly Oubre Jr.,62.72,41.75,71.98,63.75,16.3,6,135.0,0,0.0
-IND,Aaron Nesmith,Quenton Jackson,51.21,32.5,129.37,149.25,15.76,7,146.0,1,35.0
-IND,Aaron Nesmith,Jalen Slawson,26.48,19.25,95.48,81.0,11.21,7,81.0,1,41.0
-IND,Aaron Nesmith,Braden Smith,23.59,25.25,60.0,51.5,7.65,4,42.0,1,42.0
-IND,Aaron Nesmith,Jay Huff,63.8,54.75,90.12,76.5,4.95,7,115.0,1,40.0
+IND,Aaron Nesmith,Quenton Jackson,51.21,32.5,146.04,160.75,15.76,8,163.0,1,35.0
+IND,Aaron Nesmith,Braden Smith,31.06,30.25,64.17,51.5,11.82,5,54.0,1,42.0
+IND,Aaron Nesmith,Jalen Slawson,36.4,26.75,97.76,83.75,11.21,8,93.0,1,41.0
+IND,Aaron Nesmith,Jay Huff,69.3,57.25,94.92,77.75,4.95,8,125.0,1,40.0
+IND,Aaron Nesmith,Ivica Zubac,46.55,45.0,21.94,26.0,4.59,4,69.0,0,0.0
 IND,Aaron Nesmith,Tyrese Haliburton,41.83,57.75,56.75,80.25,3.67,3,98.0,0,0.0
-IND,Aaron Nesmith,Pascal Siakam,135.16,176.5,84.63,79.25,2.1,7,221.0,0,0.0
-IND,Aaron Nesmith,Ivica Zubac,33.2,26.0,16.28,13.5,1.92,3,50.0,0,0.0
-IND,Aaron Nesmith,Andrew Nembhard,98.68,73.0,101.28,127.75,0.0,6,200.0,0,0.0
-IND,Aaron Nesmith,Larry Nance Jr.,51.37,38.25,71.71,48.25,0.0,7,123.0,0,0.0
+IND,Aaron Nesmith,Pascal Siakam,150.48,190.5,100.93,99.25,2.1,8,253.0,0,0.0
+IND,Aaron Nesmith,Andrew Nembhard,119.08,90.25,112.13,133.75,0.0,7,231.0,0,0.0
+IND,Aaron Nesmith,Larry Nance Jr.,59.69,51.0,76.64,56.5,0.0,8,136.0,0,0.0
+IND,Aaron Nesmith,T.J. McConnell,6.77,11.5,2.25,0.0,0.0,1,9.0,0,0.0
+IND,Andrew Nembhard,Quenton Jackson,73.35,74.0,139.44,137.75,27.88,8,152.0,2,62.0
 IND,Andrew Nembhard,Tyrese Haliburton,53.67,86.75,78.44,96.25,20.3,3,97.0,1,35.0
-IND,Andrew Nembhard,Quenton Jackson,66.66,71.25,129.46,129.0,20.15,7,135.0,2,62.0
-IND,Andrew Nembhard,Aaron Nesmith,98.68,74.5,70.07,70.0,14.1,6,147.0,1,21.0
-IND,Andrew Nembhard,Obi Toppin,74.45,81.75,58.96,66.0,6.47,5,111.0,1,23.0
+IND,Andrew Nembhard,Aaron Nesmith,119.08,90.25,76.84,70.0,14.1,7,174.0,1,21.0
+IND,Andrew Nembhard,Obi Toppin,79.93,84.5,75.71,85.5,11.55,6,133.0,1,23.0
+IND,Andrew Nembhard,Jay Huff,68.7,69.0,95.53,66.0,7.49,7,102.0,2,63.0
 IND,Andrew Nembhard,Ben Sheppard,5.14,0.0,7.03,4.75,6.05,1,12.0,0,0.0
-IND,Andrew Nembhard,Jay Huff,66.33,67.75,87.6,63.5,4.82,6,92.0,2,63.0
-IND,Andrew Nembhard,Larry Nance Jr.,58.77,40.75,69.55,45.75,4.55,7,109.0,1,19.0
-IND,Andrew Nembhard,Kelly Oubre Jr.,105.47,85.75,56.96,34.25,4.18,6,140.0,1,23.0
-IND,Andrew Nembhard,Jalen Slawson,49.14,38.75,72.82,61.5,4.12,6,78.0,2,44.0
-IND,Andrew Nembhard,Braden Smith,19.02,17.75,64.57,59.0,3.07,4,42.0,1,42.0
-IND,Andrew Nembhard,Jarace Walker,70.56,59.25,143.32,121.0,2.7,7,142.0,2,74.0
-IND,Andrew Nembhard,Ivica Zubac,65.57,58.0,17.55,19.75,0.0,4,84.0,0,0.0
+IND,Andrew Nembhard,Larry Nance Jr.,71.64,61.75,69.93,45.75,4.55,8,122.0,1,19.0
+IND,Andrew Nembhard,Kelly Oubre Jr.,106.6,85.75,71.43,41.5,4.18,7,156.0,1,23.0
+IND,Andrew Nembhard,Jalen Slawson,59.06,46.25,75.1,64.25,4.12,7,90.0,2,44.0
+IND,Andrew Nembhard,Braden Smith,30.65,22.75,64.57,59.0,3.07,5,54.0,1,42.0
+IND,Andrew Nembhard,Jarace Walker,82.9,69.0,151.05,134.0,2.7,8,162.0,2,74.0
+IND,Andrew Nembhard,Ivica Zubac,81.59,86.75,20.53,22.5,0.0,5,103.0,0,0.0
 IND,Andrew Nembhard,Kobe Brown,26.35,12.5,55.16,44.0,0.0,4,43.0,1,38.0
-IND,Andrew Nembhard,Pascal Siakam,174.72,218.0,80.35,80.75,0.0,7,219.0,1,37.0
+IND,Andrew Nembhard,Pascal Siakam,200.89,242.0,85.8,90.75,0.0,8,251.0,1,37.0
+IND,Andrew Nembhard,T.J. McConnell,0.0,0.0,9.02,11.5,0.0,1,9.0,0,0.0
 IND,Ben Sheppard,Kelly Oubre Jr.,0.98,0.0,26.75,14.5,3.28,1,28.0,0,0.0
 IND,Ben Sheppard,Jarace Walker,11.19,10.0,7.33,4.0,2.25,1,19.0,0,0.0
 IND,Ben Sheppard,Quenton Jackson,0.0,0.0,15.53,18.5,1.27,1,16.0,0,0.0
@@ -2467,89 +2503,95 @@ IND,Ben Sheppard,Larry Nance Jr.,0.98,0.0,4.25,0.0,0.0,1,5.0,0,0.0
 IND,Ben Sheppard,Obi Toppin,12.17,14.0,12.53,17.25,0.0,1,25.0,0,0.0
 IND,Ben Sheppard,Pascal Siakam,5.14,6.5,30.15,36.5,0.0,1,35.0,0,0.0
 IND,Ben Sheppard,Tyrese Haliburton,7.03,8.5,26.5,36.5,0.0,1,34.0,0,0.0
-IND,Braden Smith,Andrew Nembhard,19.02,13.25,119.0,137.25,20.07,2,68.0,0,0.0
-IND,Braden Smith,Quenton Jackson,43.02,71.25,102.77,81.5,12.93,3,81.0,1,27.0
+IND,Braden Smith,Andrew Nembhard,30.65,17.75,138.62,156.0,20.07,3,99.0,0,0.0
+IND,Braden Smith,Quenton Jackson,43.02,71.25,119.44,93.0,16.03,4,98.0,1,27.0
+IND,Braden Smith,Jalen Slawson,47.16,47.5,62.89,38.75,9.65,4,77.0,1,3.0
 IND,Braden Smith,Kobe Brown,40.72,30.5,39.5,26.0,3.68,3,65.0,0,0.0
-IND,Braden Smith,Kelly Oubre Jr.,2.73,5.0,92.66,70.0,3.59,1,22.0,1,23.0
-IND,Braden Smith,Aaron Nesmith,23.59,21.75,105.68,90.0,3.45,2,51.0,1,21.0
-IND,Braden Smith,Jay Huff,44.8,41.0,83.01,59.75,2.22,3,73.0,1,23.0
-IND,Braden Smith,Jalen Slawson,47.16,47.5,50.69,28.5,0.98,3,65.0,1,3.0
-IND,Braden Smith,Ivica Zubac,12.28,4.75,6.5,2.75,0.0,1,19.0,0,0.0
-IND,Braden Smith,Jarace Walker,61.03,51.25,98.23,94.5,0.0,3,90.0,1,29.0
-IND,Braden Smith,Larry Nance Jr.,8.21,15.0,91.79,54.5,0.0,2,32.0,1,19.0
-IND,Braden Smith,Obi Toppin,0.38,0.0,63.41,66.25,0.0,1,19.0,1,23.0
-IND,Braden Smith,Pascal Siakam,31.38,25.0,133.81,158.75,0.0,2,59.0,1,37.0
+IND,Braden Smith,Kelly Oubre Jr.,2.73,5.0,108.26,77.25,3.59,2,38.0,1,23.0
+IND,Braden Smith,Aaron Nesmith,31.06,25.75,125.38,101.75,3.45,3,78.0,1,21.0
+IND,Braden Smith,Jay Huff,47.17,42.25,90.94,62.25,2.22,4,83.0,1,23.0
+IND,Braden Smith,Ivica Zubac,21.01,16.0,16.77,23.0,0.0,2,38.0,0,0.0
+IND,Braden Smith,Jarace Walker,65.2,57.75,114.14,110.75,0.0,4,110.0,1,29.0
+IND,Braden Smith,Larry Nance Jr.,8.74,15.0,104.51,75.5,0.0,3,45.0,1,19.0
+IND,Braden Smith,Obi Toppin,0.38,0.0,85.64,88.5,0.0,2,41.0,1,23.0
+IND,Braden Smith,Pascal Siakam,43.01,39.25,153.8,178.5,0.0,3,91.0,1,37.0
+IND,Braden Smith,T.J. McConnell,0.0,0.0,9.02,11.5,0.0,1,9.0,0,0.0
 IND,Braden Smith,Tyrese Haliburton,0.0,0.0,34.98,48.5,0.0,0,0.0,1,35.0
-IND,Ivica Zubac,Quenton Jackson,13.63,16.5,182.49,183.75,13.45,3,55.0,5,124.0
-IND,Ivica Zubac,Larry Nance Jr.,0.0,0.0,128.32,86.5,11.2,3,20.0,4,86.0
-IND,Ivica Zubac,Andrew Nembhard,65.57,46.0,168.06,189.75,9.13,3,104.0,3,100.0
-IND,Ivica Zubac,Pascal Siakam,58.0,62.5,197.07,236.25,7.9,3,94.0,4,136.0
-IND,Ivica Zubac,Jalen Slawson,4.42,2.75,117.55,97.5,7.06,2,22.0,5,92.0
-IND,Ivica Zubac,Jay Huff,0.0,0.0,153.92,131.25,5.17,2,19.0,5,115.0
-IND,Ivica Zubac,Aaron Nesmith,33.2,23.0,135.55,121.5,0.0,2,50.0,4,99.0
+IND,Ivica Zubac,Larry Nance Jr.,0.0,0.0,141.57,107.5,19.53,4,33.0,4,86.0
+IND,Ivica Zubac,Quenton Jackson,18.02,18.5,194.77,193.25,13.45,4,72.0,5,124.0
+IND,Ivica Zubac,Jay Huff,0.0,0.0,164.22,135.0,10.9,3,29.0,5,115.0
+IND,Ivica Zubac,Andrew Nembhard,81.59,52.5,183.29,206.5,9.13,4,135.0,3,100.0
+IND,Ivica Zubac,Pascal Siakam,74.02,73.25,212.67,259.5,7.9,4,126.0,4,136.0
+IND,Ivica Zubac,Jalen Slawson,6.02,6.25,128.15,104.25,7.06,3,34.0,5,92.0
+IND,Ivica Zubac,Aaron Nesmith,46.55,27.0,149.37,133.25,0.0,3,77.0,4,99.0
 IND,Ivica Zubac,Ben Sheppard,6.05,4.75,6.12,0.0,0.0,1,12.0,0,0.0
-IND,Ivica Zubac,Braden Smith,12.28,11.25,71.31,65.5,0.0,1,24.0,4,60.0
-IND,Ivica Zubac,Jarace Walker,23.53,12.0,190.36,168.25,0.0,3,53.0,5,144.0
-IND,Ivica Zubac,Kelly Oubre Jr.,33.54,20.25,128.89,99.75,0.0,2,48.0,4,95.0
+IND,Ivica Zubac,Braden Smith,21.01,16.25,74.21,65.5,0.0,2,36.0,4,60.0
+IND,Ivica Zubac,Jarace Walker,26.34,17.25,207.62,185.75,0.0,4,73.0,5,144.0
+IND,Ivica Zubac,Kelly Oubre Jr.,37.66,22.25,140.37,105.0,0.0,3,64.0,4,95.0
 IND,Ivica Zubac,Kobe Brown,1.83,0.0,79.68,56.5,0.0,2,8.0,3,73.0
-IND,Ivica Zubac,Obi Toppin,27.97,29.75,105.45,118.0,0.0,3,69.0,2,45.0
+IND,Ivica Zubac,Obi Toppin,33.97,37.0,121.68,133.0,0.0,4,91.0,2,45.0
+IND,Ivica Zubac,T.J. McConnell,2.98,4.25,6.03,7.25,0.0,1,9.0,0,0.0
 IND,Ivica Zubac,Tyrese Haliburton,52.45,69.5,79.66,113.5,0.0,2,66.0,1,35.0
-IND,Jalen Slawson,Jay Huff,40.2,36.75,113.71,94.5,20.0,6,118.0,0,0.0
-IND,Jalen Slawson,Pascal Siakam,24.52,27.75,230.56,271.0,14.01,5,154.0,1,35.0
-IND,Jalen Slawson,Larry Nance Jr.,34.58,24.25,93.72,62.25,12.55,5,90.0,1,5.0
-IND,Jalen Slawson,Aaron Nesmith,26.48,33.75,142.28,110.75,10.58,5,117.0,0,0.0
-IND,Jalen Slawson,Obi Toppin,25.93,22.5,107.48,125.25,7.76,3,67.0,1,25.0
+IND,Jalen Slawson,Jay Huff,42.1,36.75,122.11,98.25,20.0,7,128.0,0,0.0
+IND,Jalen Slawson,Pascal Siakam,29.35,31.0,257.35,301.75,14.01,6,186.0,1,35.0
+IND,Jalen Slawson,Larry Nance Jr.,43.28,37.0,98.27,70.5,12.55,6,103.0,1,5.0
+IND,Jalen Slawson,Obi Toppin,30.68,31.5,124.96,138.5,10.78,4,89.0,1,25.0
+IND,Jalen Slawson,Aaron Nesmith,36.4,45.5,159.53,114.75,10.58,6,144.0,0,0.0
+IND,Jalen Slawson,Kelly Oubre Jr.,26.82,28.75,151.21,98.5,6.39,6,128.0,1,28.0
 IND,Jalen Slawson,Kobe Brown,45.44,37.75,36.07,18.75,5.47,4,74.0,0,0.0
-IND,Jalen Slawson,Jarace Walker,75.78,58.75,138.11,121.5,5.27,6,151.0,1,19.0
-IND,Jalen Slawson,Braden Smith,47.16,41.75,36.43,35.0,4.95,4,60.0,0,0.0
-IND,Jalen Slawson,Andrew Nembhard,49.14,47.25,184.48,188.5,4.75,5,162.0,1,34.0
+IND,Jalen Slawson,Jarace Walker,80.68,58.75,153.28,144.25,5.27,7,171.0,1,19.0
+IND,Jalen Slawson,Braden Smith,47.16,41.75,48.06,40.0,4.95,5,72.0,0,0.0
+IND,Jalen Slawson,Andrew Nembhard,59.06,58.0,205.82,201.0,4.75,6,193.0,1,34.0
 IND,Jalen Slawson,Tyrese Haliburton,10.18,17.25,121.93,165.75,4.26,2,63.0,1,34.0
-IND,Jalen Slawson,Kelly Oubre Jr.,26.82,28.75,135.61,91.25,0.94,5,112.0,1,28.0
 IND,Jalen Slawson,Ben Sheppard,0.0,0.0,12.17,4.75,0.0,0,0.0,1,12.0
-IND,Jalen Slawson,Ivica Zubac,4.42,6.75,78.7,71.0,0.0,2,31.0,1,34.0
-IND,Jalen Slawson,Quenton Jackson,77.17,85.0,118.94,115.25,0.0,6,132.0,1,16.0
-IND,Jarace Walker,Andrew Nembhard,70.56,66.25,163.06,169.5,32.46,7,234.0,0,0.0
-IND,Jarace Walker,Kelly Oubre Jr.,39.26,34.0,123.17,86.0,23.37,7,163.0,0,0.0
-IND,Jarace Walker,Aaron Nesmith,48.27,52.0,120.47,92.5,14.97,7,168.0,0,0.0
-IND,Jarace Walker,Quenton Jackson,118.2,137.25,77.91,63.0,14.68,9,197.0,0,0.0
+IND,Jalen Slawson,Ivica Zubac,6.02,14.75,96.11,94.5,0.0,3,50.0,1,34.0
+IND,Jalen Slawson,Quenton Jackson,79.45,87.0,133.33,124.75,0.0,7,149.0,1,16.0
+IND,Jalen Slawson,T.J. McConnell,0.0,0.0,9.02,11.5,0.0,1,9.0,0,0.0
+IND,Jarace Walker,Andrew Nembhard,82.9,73.75,181.98,185.25,32.46,8,265.0,0,0.0
+IND,Jarace Walker,Kelly Oubre Jr.,44.71,36.0,133.32,91.25,23.37,8,179.0,0,0.0
+IND,Jarace Walker,Aaron Nesmith,50.89,54.0,145.02,106.25,14.97,8,195.0,0,0.0
+IND,Jarace Walker,Quenton Jackson,131.49,147.5,81.29,64.25,14.68,10,214.0,0,0.0
+IND,Jarace Walker,Pascal Siakam,101.09,120.25,185.6,212.5,13.88,9,288.0,0,0.0
 IND,Jarace Walker,Tyrese Haliburton,52.34,73.75,79.77,109.25,12.85,4,132.0,0,0.0
-IND,Jarace Walker,Pascal Siakam,85.92,100.25,169.15,198.5,9.95,8,256.0,0,0.0
-IND,Jarace Walker,Jay Huff,78.09,54.0,75.83,77.25,7.72,8,155.0,0,0.0
-IND,Jarace Walker,Obi Toppin,67.69,83.5,65.73,64.25,4.13,6,134.0,0,0.0
+IND,Jarace Walker,Obi Toppin,75.42,95.75,80.23,74.25,8.06,7,156.0,0,0.0
+IND,Jarace Walker,Jay Huff,82.36,55.25,81.86,79.75,7.72,9,165.0,0,0.0
+IND,Jarace Walker,Braden Smith,65.2,45.0,30.02,36.75,6.06,6,96.0,0,0.0
 IND,Jarace Walker,Kobe Brown,53.33,45.5,28.18,11.0,3.38,5,81.0,0,0.0
-IND,Jarace Walker,Jalen Slawson,75.78,51.0,46.19,49.25,3.31,8,122.0,0,0.0
-IND,Jarace Walker,Braden Smith,61.03,45.0,22.55,31.75,2.73,5,84.0,0,0.0
+IND,Jarace Walker,Jalen Slawson,80.68,57.75,53.49,52.75,3.31,9,134.0,0,0.0
 IND,Jarace Walker,Ben Sheppard,11.19,4.75,0.98,0.0,0.0,1,12.0,0,0.0
-IND,Jarace Walker,Ivica Zubac,23.53,24.0,59.58,53.75,0.0,4,84.0,0,0.0
-IND,Jarace Walker,Larry Nance Jr.,70.36,55.75,57.96,30.75,0.0,8,128.0,0,0.0
-IND,Jay Huff,Larry Nance Jr.,3.19,-0.5,125.13,87.0,65.13,6,122.0,1,5.0
-IND,Jay Huff,Pascal Siakam,92.15,119.75,162.93,179.0,14.09,6,192.0,1,35.0
-IND,Jay Huff,Obi Toppin,19.7,25.25,113.71,122.5,13.6,4,84.0,1,25.0
-IND,Jay Huff,Braden Smith,44.8,45.25,38.78,31.5,8.52,5,84.0,0,0.0
-IND,Jay Huff,Jalen Slawson,40.2,33.75,81.75,66.5,8.52,7,106.0,0,0.0
-IND,Jay Huff,Aaron Nesmith,63.8,45.0,104.96,99.5,7.57,6,148.0,0,0.0
-IND,Jay Huff,Quenton Jackson,57.88,59.5,138.24,140.75,7.5,7,164.0,1,16.0
-IND,Jay Huff,Jarace Walker,78.09,65.5,135.8,114.75,5.49,7,180.0,1,19.0
+IND,Jarace Walker,Ivica Zubac,26.34,31.25,75.78,78.0,0.0,5,103.0,0,0.0
+IND,Jarace Walker,Larry Nance Jr.,77.91,64.0,63.66,43.5,0.0,9,141.0,0,0.0
+IND,Jarace Walker,T.J. McConnell,0.0,0.0,9.02,11.5,0.0,1,9.0,0,0.0
+IND,Jay Huff,Larry Nance Jr.,3.19,-0.5,138.38,108.0,66.51,7,135.0,1,5.0
+IND,Jay Huff,Pascal Siakam,94.52,123.25,192.18,209.5,19.54,7,224.0,1,35.0
+IND,Jay Huff,Obi Toppin,27.63,34.0,128.01,136.0,13.6,5,106.0,1,25.0
+IND,Jay Huff,Braden Smith,47.17,45.25,48.05,36.5,8.52,6,96.0,0,0.0
+IND,Jay Huff,Jalen Slawson,42.1,35.25,92.05,75.25,8.52,8,118.0,0,0.0
+IND,Jay Huff,Aaron Nesmith,69.3,45.0,126.63,115.25,7.57,7,175.0,0,0.0
+IND,Jay Huff,Quenton Jackson,60.31,62.75,152.48,149.0,7.5,8,181.0,1,16.0
+IND,Jay Huff,Andrew Nembhard,68.7,72.0,196.19,187.0,5.83,6,199.0,1,34.0
+IND,Jay Huff,Jarace Walker,82.36,70.0,151.6,133.0,5.49,8,200.0,1,19.0
 IND,Jay Huff,Kobe Brown,50.14,31.75,31.36,24.75,3.55,4,80.0,0,0.0
+IND,Jay Huff,Ivica Zubac,0.0,0.0,102.11,109.25,2.53,3,45.0,1,34.0
 IND,Jay Huff,Tyrese Haliburton,40.56,52.25,91.55,130.75,0.37,2,66.0,1,34.0
-IND,Jay Huff,Andrew Nembhard,66.33,70.5,167.3,165.25,0.0,5,168.0,1,34.0
 IND,Jay Huff,Ben Sheppard,0.0,0.0,12.17,4.75,0.0,0,0.0,1,12.0
-IND,Jay Huff,Ivica Zubac,0.0,0.0,83.11,77.75,0.0,2,26.0,1,34.0
-IND,Jay Huff,Kelly Oubre Jr.,58.81,48.75,103.61,71.25,0.0,5,115.0,1,28.0
-IND,Kelly Oubre Jr.,Jarace Walker,39.26,43.75,174.64,136.5,43.7,7,154.0,2,62.0
-IND,Kelly Oubre Jr.,Quenton Jackson,33.78,32.75,162.33,167.5,22.36,7,140.0,2,57.0
-IND,Kelly Oubre Jr.,Pascal Siakam,122.5,132.5,132.57,166.25,14.61,7,226.0,1,30.0
-IND,Kelly Oubre Jr.,Jalen Slawson,26.82,18.0,95.14,82.25,11.17,6,75.0,2,47.0
-IND,Kelly Oubre Jr.,Obi Toppin,47.4,56.0,86.02,91.75,10.3,5,115.0,1,19.0
-IND,Kelly Oubre Jr.,Larry Nance Jr.,49.32,22.25,79.0,64.25,6.9,7,114.0,1,14.0
-IND,Kelly Oubre Jr.,Aaron Nesmith,62.72,49.0,106.04,95.5,4.78,6,138.0,1,30.0
+IND,Jay Huff,Kelly Oubre Jr.,64.84,52.0,113.18,75.25,0.0,6,131.0,1,28.0
+IND,Jay Huff,T.J. McConnell,6.03,7.25,2.98,4.25,0.0,1,9.0,0,0.0
+IND,Kelly Oubre Jr.,Jarace Walker,44.71,56.75,189.26,146.25,53.42,8,174.0,2,62.0
+IND,Kelly Oubre Jr.,Quenton Jackson,42.61,39.5,170.17,172.25,22.36,8,157.0,2,57.0
+IND,Kelly Oubre Jr.,Pascal Siakam,129.08,142.5,157.61,190.25,14.61,8,258.0,1,30.0
+IND,Kelly Oubre Jr.,Jalen Slawson,26.82,18.0,107.34,92.5,11.17,7,87.0,2,47.0
+IND,Kelly Oubre Jr.,Obi Toppin,61.87,68.0,93.79,102.0,10.3,6,137.0,1,19.0
+IND,Kelly Oubre Jr.,Larry Nance Jr.,49.32,22.25,92.25,85.25,6.9,8,127.0,1,14.0
+IND,Kelly Oubre Jr.,Andrew Nembhard,106.6,122.75,158.29,136.25,6.55,7,227.0,1,38.0
+IND,Kelly Oubre Jr.,Aaron Nesmith,69.49,49.0,126.44,111.25,4.78,7,165.0,1,30.0
 IND,Kelly Oubre Jr.,Tyrese Haliburton,59.74,71.75,72.37,111.25,4.0,4,132.0,0,0.0
-IND,Kelly Oubre Jr.,Jay Huff,58.81,45.5,95.1,85.75,0.75,6,101.0,2,54.0
-IND,Kelly Oubre Jr.,Andrew Nembhard,105.47,122.75,128.17,113.0,0.0,6,196.0,1,38.0
+IND,Kelly Oubre Jr.,Jay Huff,64.84,48.0,99.37,87.0,0.75,7,111.0,2,54.0
 IND,Kelly Oubre Jr.,Ben Sheppard,0.98,0.0,11.19,4.75,0.0,1,12.0,0,0.0
-IND,Kelly Oubre Jr.,Braden Smith,2.73,1.5,80.86,75.25,0.0,3,18.0,2,66.0
-IND,Kelly Oubre Jr.,Ivica Zubac,33.54,32.75,49.58,45.0,0.0,3,65.0,1,19.0
+IND,Kelly Oubre Jr.,Braden Smith,2.73,1.5,92.49,80.25,0.0,4,30.0,2,66.0
+IND,Kelly Oubre Jr.,Ivica Zubac,37.66,38.0,64.47,71.25,0.0,4,84.0,1,19.0
 IND,Kelly Oubre Jr.,Kobe Brown,6.64,4.0,74.88,52.5,0.0,3,36.0,2,45.0
+IND,Kelly Oubre Jr.,T.J. McConnell,9.02,11.5,0.0,0.0,0.0,1,9.0,0,0.0
 IND,Kobe Brown,Aaron Nesmith,6.19,-0.5,143.15,127.75,9.95,2,51.0,2,48.0
 IND,Kobe Brown,Braden Smith,40.72,39.25,42.87,37.5,4.82,3,55.0,1,5.0
 IND,Kobe Brown,Andrew Nembhard,26.35,46.5,177.66,167.0,4.4,2,65.0,2,69.0
@@ -2564,62 +2606,78 @@ IND,Kobe Brown,Kelly Oubre Jr.,6.64,2.75,136.09,97.75,0.0,2,42.0,3,81.0
 IND,Kobe Brown,Larry Nance Jr.,15.57,10.25,90.96,59.25,0.0,2,44.0,3,47.0
 IND,Kobe Brown,Obi Toppin,5.52,3.5,108.2,116.25,0.0,0,0.0,3,70.0
 IND,Kobe Brown,Tyrese Haliburton,0.0,0.0,100.68,134.0,0.0,0,0.0,2,69.0
-IND,Larry Nance Jr.,Jay Huff,3.19,1.5,110.63,92.75,28.99,6,110.0,0,0.0
-IND,Larry Nance Jr.,Ivica Zubac,0.0,0.0,83.11,77.75,22.35,2,26.0,0,0.0
-IND,Larry Nance Jr.,Pascal Siakam,61.01,57.75,194.05,241.0,10.95,6,192.0,0,0.0
-IND,Larry Nance Jr.,Braden Smith,8.21,7.0,33.16,24.25,7.25,4,42.0,0,0.0
-IND,Larry Nance Jr.,Obi Toppin,51.93,56.5,81.5,91.25,6.52,4,84.0,0,0.0
-IND,Larry Nance Jr.,Quenton Jackson,83.06,80.5,78.56,76.5,5.88,6,129.0,0,0.0
-IND,Larry Nance Jr.,Aaron Nesmith,51.37,54.25,117.39,90.25,4.0,6,148.0,0,0.0
-IND,Larry Nance Jr.,Jalen Slawson,34.58,21.25,46.73,41.75,2.13,6,65.0,0,0.0
-IND,Larry Nance Jr.,Kelly Oubre Jr.,49.32,35.75,113.11,84.25,0.88,5,115.0,0,0.0
-IND,Larry Nance Jr.,Andrew Nembhard,58.77,68.25,174.86,167.5,0.0,5,168.0,0,0.0
+IND,Larry Nance Jr.,Jay Huff,3.19,1.5,120.93,96.5,30.89,7,120.0,0,0.0
+IND,Larry Nance Jr.,Ivica Zubac,0.0,0.0,102.11,109.25,30.3,3,45.0,0,0.0
+IND,Larry Nance Jr.,Pascal Siakam,68.79,67.5,217.89,265.25,10.95,7,224.0,0,0.0
+IND,Larry Nance Jr.,Braden Smith,8.74,7.0,44.26,29.25,7.25,5,54.0,0,0.0
+IND,Larry Nance Jr.,Obi Toppin,54.78,58.0,100.88,112.0,6.52,5,106.0,0,0.0
+IND,Larry Nance Jr.,Quenton Jackson,87.46,81.25,90.83,87.25,5.88,7,146.0,0,0.0
+IND,Larry Nance Jr.,Kelly Oubre Jr.,49.32,35.75,128.71,91.5,4.81,6,131.0,0,0.0
+IND,Larry Nance Jr.,Aaron Nesmith,59.69,66.0,136.24,94.25,4.0,7,175.0,0,0.0
+IND,Larry Nance Jr.,Jalen Slawson,43.28,26.5,50.23,46.75,2.13,7,77.0,0,0.0
+IND,Larry Nance Jr.,Andrew Nembhard,71.64,83.5,193.25,175.5,0.0,6,199.0,0,0.0
 IND,Larry Nance Jr.,Ben Sheppard,0.98,0.0,11.19,4.75,0.0,0,0.0,0,0.0
-IND,Larry Nance Jr.,Jarace Walker,70.36,69.5,98.85,78.5,0.0,6,135.0,0,0.0
+IND,Larry Nance Jr.,Jarace Walker,77.91,71.5,111.37,99.25,0.0,7,155.0,0,0.0
 IND,Larry Nance Jr.,Kobe Brown,15.57,12.5,28.1,16.5,0.0,3,42.0,0,0.0
+IND,Larry Nance Jr.,T.J. McConnell,0.0,0.0,9.02,11.5,0.0,1,9.0,0,0.0
 IND,Larry Nance Jr.,Tyrese Haliburton,24.9,35.25,107.21,147.75,0.0,2,66.0,0,0.0
-IND,Obi Toppin,Pascal Siakam,41.59,64.5,213.48,234.25,31.78,6,191.0,2,65.0
-IND,Obi Toppin,Aaron Nesmith,32.51,37.0,136.24,107.5,14.29,5,117.0,2,51.0
-IND,Obi Toppin,Jay Huff,19.7,15.0,134.21,116.25,13.8,5,79.0,3,76.0
-IND,Obi Toppin,Andrew Nembhard,74.45,85.25,159.17,150.5,10.9,5,169.0,2,65.0
-IND,Obi Toppin,Ivica Zubac,27.97,24.5,55.15,53.25,7.43,4,84.0,0,0.0
+IND,Obi Toppin,Pascal Siakam,50.06,74.5,236.63,258.25,44.05,7,223.0,2,65.0
+IND,Obi Toppin,Aaron Nesmith,44.76,38.5,151.16,121.75,17.82,6,144.0,2,51.0
+IND,Obi Toppin,Jay Huff,27.63,17.5,136.58,117.5,13.8,6,89.0,3,76.0
+IND,Obi Toppin,Andrew Nembhard,79.93,88.75,184.94,170.25,10.9,6,200.0,2,65.0
+IND,Obi Toppin,Quenton Jackson,82.82,76.0,129.97,135.75,10.59,7,131.0,3,83.0
+IND,Obi Toppin,Ivica Zubac,33.97,28.25,68.16,81.0,7.43,5,103.0,0,0.0
 IND,Obi Toppin,Tyrese Haliburton,53.59,68.75,78.52,114.25,7.4,4,132.0,0,0.0
-IND,Obi Toppin,Jarace Walker,67.69,53.5,146.21,126.75,5.46,6,123.0,3,93.0
-IND,Obi Toppin,Quenton Jackson,72.84,67.25,123.28,133.0,4.76,6,114.0,3,83.0
-IND,Obi Toppin,Kelly Oubre Jr.,47.4,34.25,115.03,85.75,3.53,5,121.0,2,42.0
-IND,Obi Toppin,Larry Nance Jr.,51.93,28.0,76.39,58.5,2.42,6,84.0,2,44.0
-IND,Obi Toppin,Jalen Slawson,25.93,32.5,96.03,67.75,0.92,5,45.0,3,77.0
+IND,Obi Toppin,Jarace Walker,75.42,66.5,158.55,136.5,5.46,7,143.0,3,93.0
+IND,Obi Toppin,Kelly Oubre Jr.,61.87,41.5,116.16,85.75,3.53,6,137.0,2,42.0
+IND,Obi Toppin,Larry Nance Jr.,54.78,35.0,86.79,72.5,2.42,7,97.0,2,44.0
+IND,Obi Toppin,Jalen Slawson,30.68,35.25,103.48,75.25,0.92,6,57.0,3,77.0
 IND,Obi Toppin,Ben Sheppard,12.17,4.75,0.0,0.0,0.0,1,12.0,0,0.0
-IND,Obi Toppin,Braden Smith,0.38,0.0,83.2,76.75,0.0,2,29.0,3,55.0
+IND,Obi Toppin,Braden Smith,0.38,0.0,94.83,81.75,0.0,3,41.0,3,55.0
 IND,Obi Toppin,Kobe Brown,5.52,1.25,76.0,55.25,0.0,2,8.0,3,73.0
-IND,Pascal Siakam,Obi Toppin,41.59,47.75,91.82,100.0,25.97,6,134.0,0,0.0
-IND,Pascal Siakam,Jarace Walker,85.92,70.5,127.97,109.75,22.71,8,171.0,1,45.0
-IND,Pascal Siakam,Larry Nance Jr.,61.01,49.75,67.29,36.75,13.92,8,128.0,0,0.0
-IND,Pascal Siakam,Quenton Jackson,74.37,54.25,121.75,146.0,13.53,8,162.0,1,35.0
-IND,Pascal Siakam,Jalen Slawson,24.52,12.0,97.44,88.25,12.8,7,81.0,1,41.0
+IND,Obi Toppin,T.J. McConnell,9.02,11.5,0.0,0.0,0.0,1,9.0,0,0.0
+IND,Pascal Siakam,Obi Toppin,50.06,53.75,105.59,116.25,30.72,7,156.0,0,0.0
+IND,Pascal Siakam,Jarace Walker,101.09,91.25,132.87,111.75,22.71,9,191.0,1,45.0
+IND,Pascal Siakam,Jalen Slawson,29.35,15.5,104.81,95.0,15.42,8,93.0,1,41.0
+IND,Pascal Siakam,Larry Nance Jr.,68.79,63.75,72.76,43.75,13.92,9,141.0,0,0.0
+IND,Pascal Siakam,Quenton Jackson,86.51,62.5,126.28,149.25,13.53,9,179.0,1,35.0
+IND,Pascal Siakam,T.J. McConnell,0.0,0.0,9.02,11.5,9.02,1,9.0,0,0.0
 IND,Pascal Siakam,Kobe Brown,19.6,11.0,61.92,45.5,5.91,4,43.0,1,38.0
-IND,Pascal Siakam,Ivica Zubac,58.0,54.5,25.12,23.25,5.35,4,84.0,0,0.0
-IND,Pascal Siakam,Aaron Nesmith,135.16,108.25,33.59,36.25,4.4,7,168.0,0,0.0
-IND,Pascal Siakam,Jay Huff,92.15,82.5,61.77,48.75,4.28,7,115.0,1,40.0
-IND,Pascal Siakam,Kelly Oubre Jr.,122.5,85.25,39.92,34.75,4.22,7,163.0,0,0.0
-IND,Pascal Siakam,Braden Smith,31.38,26.75,52.2,50.0,0.31,4,42.0,1,42.0
-IND,Pascal Siakam,Andrew Nembhard,174.72,174.5,58.91,61.25,0.0,7,234.0,0,0.0
+IND,Pascal Siakam,Ivica Zubac,74.02,83.25,28.1,26.0,5.35,5,103.0,0,0.0
+IND,Pascal Siakam,Aaron Nesmith,150.48,120.5,45.44,39.75,4.4,8,195.0,0,0.0
+IND,Pascal Siakam,Jay Huff,94.52,83.75,69.7,51.25,4.28,8,125.0,1,40.0
+IND,Pascal Siakam,Kelly Oubre Jr.,129.08,87.25,48.94,40.0,4.22,8,179.0,0,0.0
+IND,Pascal Siakam,Braden Smith,43.01,31.75,52.2,50.0,0.31,5,54.0,1,42.0
+IND,Pascal Siakam,Andrew Nembhard,200.89,196.25,63.99,62.75,0.0,8,265.0,0,0.0
 IND,Pascal Siakam,Ben Sheppard,5.14,0.0,7.03,4.75,0.0,1,12.0,0,0.0
 IND,Pascal Siakam,Tyrese Haliburton,94.22,144.0,37.89,39.0,0.0,4,132.0,0,0.0
-IND,Quenton Jackson,Kelly Oubre Jr.,33.78,15.75,128.65,104.25,39.26,7,163.0,0,0.0
-IND,Quenton Jackson,Andrew Nembhard,66.66,86.0,166.97,149.75,26.57,7,234.0,0,0.0
-IND,Quenton Jackson,Aaron Nesmith,51.21,49.5,117.55,95.0,21.61,7,168.0,0,0.0
-IND,Quenton Jackson,Pascal Siakam,74.37,75.5,180.7,223.25,14.3,8,256.0,0,0.0
-IND,Quenton Jackson,Jarace Walker,118.2,106.5,95.68,73.75,13.88,9,216.0,0,0.0
+IND,Quenton Jackson,Kelly Oubre Jr.,42.61,19.75,135.42,107.5,39.26,8,179.0,0,0.0
+IND,Quenton Jackson,Aaron Nesmith,51.21,49.5,144.72,110.75,38.09,8,195.0,0,0.0
+IND,Quenton Jackson,Andrew Nembhard,73.35,90.5,191.53,168.5,26.57,8,265.0,0,0.0
+IND,Quenton Jackson,Pascal Siakam,86.51,92.0,200.18,240.75,14.3,9,288.0,0,0.0
+IND,Quenton Jackson,Jarace Walker,131.49,120.75,102.46,82.25,13.88,10,236.0,0,0.0
 IND,Quenton Jackson,Kobe Brown,54.72,38.5,26.8,18.0,9.07,5,81.0,0,0.0
-IND,Quenton Jackson,Jalen Slawson,77.17,64.75,44.79,35.5,6.64,8,122.0,0,0.0
-IND,Quenton Jackson,Ivica Zubac,13.63,10.0,69.48,67.75,4.95,4,84.0,0,0.0
+IND,Quenton Jackson,Jalen Slawson,79.45,67.5,54.71,43.0,6.64,9,134.0,0,0.0
+IND,Quenton Jackson,Ivica Zubac,18.02,21.25,84.1,88.0,4.95,5,103.0,0,0.0
 IND,Quenton Jackson,Tyrese Haliburton,37.92,46.5,94.19,136.5,4.05,4,132.0,0,0.0
-IND,Quenton Jackson,Obi Toppin,72.84,71.5,60.58,76.25,2.47,6,134.0,0,0.0
-IND,Quenton Jackson,Braden Smith,43.02,46.25,40.57,30.5,1.47,5,84.0,0,0.0
+IND,Quenton Jackson,Larry Nance Jr.,87.46,59.0,54.11,48.5,3.53,9,141.0,0,0.0
+IND,Quenton Jackson,Obi Toppin,82.82,87.75,72.83,82.25,2.47,7,156.0,0,0.0
+IND,Quenton Jackson,Braden Smith,43.02,46.25,52.2,35.5,1.47,6,96.0,0,0.0
 IND,Quenton Jackson,Ben Sheppard,0.0,0.0,12.17,4.75,0.98,1,12.0,0,0.0
-IND,Quenton Jackson,Jay Huff,57.88,45.25,96.03,86.0,0.24,8,155.0,0,0.0
-IND,Quenton Jackson,Larry Nance Jr.,83.06,50.75,45.26,35.75,0.0,8,128.0,0,0.0
+IND,Quenton Jackson,Jay Huff,60.31,45.25,103.9,89.75,0.24,9,165.0,0,0.0
+IND,Quenton Jackson,T.J. McConnell,2.25,0.0,6.77,11.5,0.0,1,9.0,0,0.0
+IND,T.J. McConnell,Andrew Nembhard,0.0,0.0,31.25,23.25,14.73,1,31.0,0,0.0
+IND,T.J. McConnell,Pascal Siakam,0.0,0.0,31.62,34.0,5.83,1,32.0,0,0.0
+IND,T.J. McConnell,Aaron Nesmith,6.77,0.0,20.4,15.75,0.0,1,27.0,0,0.0
+IND,T.J. McConnell,Braden Smith,0.0,0.0,11.63,5.0,0.0,1,12.0,0,0.0
+IND,T.J. McConnell,Ivica Zubac,2.98,2.75,16.02,28.75,0.0,1,19.0,0,0.0
+IND,T.J. McConnell,Jalen Slawson,0.0,0.0,12.2,10.25,0.0,1,12.0,0,0.0
+IND,T.J. McConnell,Jarace Walker,0.0,2.0,20.07,20.75,0.0,1,20.0,0,0.0
+IND,T.J. McConnell,Jay Huff,6.03,2.5,4.27,1.25,0.0,1,10.0,0,0.0
+IND,T.J. McConnell,Kelly Oubre Jr.,9.02,5.25,6.58,2.0,0.0,1,16.0,0,0.0
+IND,T.J. McConnell,Larry Nance Jr.,0.0,0.0,13.25,21.0,0.0,1,13.0,0,0.0
+IND,T.J. McConnell,Obi Toppin,9.02,7.25,13.22,15.0,0.0,1,22.0,0,0.0
+IND,T.J. McConnell,Quenton Jackson,2.25,1.25,14.42,10.25,0.0,1,17.0,0,0.0
 IND,Tyrese Haliburton,Andrew Nembhard,53.67,38.0,41.93,47.25,22.75,3,96.0,0,0.0
 IND,Tyrese Haliburton,Pascal Siakam,94.22,109.5,32.17,49.25,9.6,4,127.0,0,0.0
 IND,Tyrese Haliburton,Jalen Slawson,10.18,10.0,17.31,17.0,7.93,3,27.0,0,0.0

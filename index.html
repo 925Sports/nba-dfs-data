@@ -358,6 +358,16 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 .log-wrap table { font-size:0.72rem; }
 .log-wrap th { font-size:0.6rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); }
 .log-wrap td { white-space:nowrap; font-variant-numeric:tabular-nums; }
+.log-wrap tr.log-opp td { background:rgba(71,198,200,0.16); }
+.log-wrap tr.log-opp:hover td { background:rgba(71,198,200,0.28); }
+.log-wrap tr.log-opp td:first-child { box-shadow:inset 3px 0 0 var(--aqua); }
+.fp-heat { display:inline-block; min-width:2.4rem; padding:0.08rem 0.32rem; border-radius:4px; font-weight:800; text-align:center; }
+.fp-7 { background:#3b82f6; color:#fff; }
+.fp-5 { background:#16a34a; color:#fff; }
+.fp-4 { background:#eab308; color:#1a1403; }
+.fp-3 { background:#ef4444; color:#fff; }
+.fp-key { display:inline-flex; gap:0.35rem; align-items:center; margin-left:0.35rem; vertical-align:middle; }
+.fp-key .fp-heat { min-width:0; font-size:0.62rem; font-weight:700; }
 .dvp-wrap { max-height:72vh; }
 .dvp-wrap td.team, .dvp-wrap th.team { position:sticky; left:0; background:var(--card); z-index:1; }
 .dvp-wrap th { cursor:pointer; }
@@ -4882,7 +4892,7 @@ function renderPlayerCard(p) {
 
 function drawerPane(p, games, loading, mates, opp, exp) {
   if (drawerTab === "onoff") return onOffCard(p);
-  if (drawerTab === "log") return gameLogPane(games, loading);
+  if (drawerTab === "log") return gameLogPane(p, games, loading);
   if (drawerTab === "splits") return splitsPane(p, games, loading);
   if (drawerTab === "mu") return matchupPane(p, games, opp);
   if (drawerTab === "news") return newsPane(p);
@@ -4934,16 +4944,29 @@ function newsPane(p) {
     <div class="news-side">${rows}</div>
   `;
 }
-function gameLogPane(games, loading) {
+function fpHeatClass(fpts, salary) {
+  if (!(salary > 0)) return "";
+  const x = fpts / (salary / 1000);
+  if (x >= 7) return "fp-7";
+  if (x >= 5) return "fp-5";
+  if (x >= 4) return "fp-4";
+  return "fp-3";
+}
+function gameLogPane(p, games, loading) {
   if (loading) return `<p class="note">Loading the game log…</p>`;
   if (!games.length) return `<p class="note">No game log for this name${logSpan ? " in " + logSpan : ""}.</p>`;
+  const salary = p && p.salary > 0 ? p.salary : 0;
   const rows = games.map((g) => {
     const wl = g.wl === "W" ? "wl-w" : g.wl === "L" ? "wl-l" : "";
     const pm = g.pm > 0 ? "wl-w" : g.pm < 0 ? "wl-l" : "";
     const short = shortDate(g.date);
-    return `<tr>
+    const vs = p && p.opp && facedOpp(g.match, p.opp);
+    const heat = fpHeatClass(g.fpts, salary);
+    const mult = salary ? g.fpts / (salary / 1000) : 0;
+    const tip = salary ? `${mult.toFixed(1)}x at today's ${money(salary)}` : "";
+    return `<tr class="${vs ? "log-opp" : ""}">
       <td>${esc(short)}</td>
-      <td><b>${g.fpts.toFixed(1)}</b></td>
+      <td>${heat ? `<span class="fp-heat ${heat}" title="${esc(tip)}">${g.fpts.toFixed(1)}</span>` : `<b>${g.fpts.toFixed(1)}</b>`}</td>
       <td>${esc(g.match)}</td>
       <td>${esc(g.score || "—")}</td>
       <td class="${wl}">${esc(g.wl || "—")}</td>
@@ -4964,8 +4987,9 @@ function gameLogPane(games, loading) {
       <td class="${pm}">${g.pm > 0 ? "+" : ""}${Math.round(g.pm)}</td>
     </tr>`;
   }).join("");
+  const vsN = p && p.opp ? games.filter((g) => facedOpp(g.match, p.opp)).length : 0;
   return `
-    <p class="note" style="margin:0 0 0.4rem;">DraftKings scoring. ${games.length} games${logSpan ? " · " + logSpan : ""}. Score is this player's team first. That night's salary is not in the log, so it is not shown. Older rows stay blank until the log is fetched again.</p>
+    <p class="note" style="margin:0 0 0.4rem;">DraftKings scoring. ${games.length} games${logSpan ? " · " + logSpan : ""}.${p && p.opp ? ` ${vsN} against ${esc(p.opp)}, marked in the table.` : ""} FPTS color is that game at today's salary${salary ? " (" + money(salary) + ")" : ""}, because the log does not store that night's price. <span class="fp-key"><span class="fp-heat fp-7">7x</span><span class="fp-heat fp-5">5–6x</span><span class="fp-heat fp-4">4x</span><span class="fp-heat fp-3">under 4x</span></span></p>
     <div class="log-wrap"><table>
       <thead><tr>
         <th>Date</th><th>FPTS</th><th>Matchup</th><th>Score</th><th>W/L</th><th>Min</th><th>Pts</th><th>Reb</th><th>Ast</th><th>Blk</th><th>Stl</th><th>PF</th><th>TO</th><th>FGM-FGA</th><th>FG%</th><th>3PM-3PA</th><th>3P%</th><th>FTM-FTA</th><th>FT%</th><th>+/-</th>

@@ -124,10 +124,14 @@ def empty_stats():
 
 
 def empty_pair():
-    return {
+    base = {
         "MIN_ON": 0.0, "FP_ON": 0.0, "MIN_OFF": 0.0, "FP_OFF": 0.0, "REPL_MIN": 0.0,
         "PLAY_GP": 0, "PLAY_MIN": 0.0, "MISS_GP": 0, "MISS_MIN": 0.0,
     }
+    for key in ("PTS", "REB", "AST", "STL", "BLK", "TOV", "FG3M", "FGA", "FTA"):
+        base[key + "_ON"] = 0.0
+        base[key + "_OFF"] = 0.0
+    return base
 
 
 def games_on(day):
@@ -493,7 +497,12 @@ def add_pairs(totals, pairs):
         for field, value in row.items():
             if field in {"TEAM", "PLAYER", "TEAMMATE"}:
                 continue
-            acc[field] += value
+            if field not in acc:
+                acc[field] = 0.0
+            try:
+                acc[field] += float(value or 0)
+            except (TypeError, ValueError):
+                pass
 
 
 def write_onoff(totals):

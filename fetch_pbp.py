@@ -32,9 +32,13 @@ from pathlib import Path
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 ONOFF = Path("nba_onoff.csv")
 DONE = Path("nba_pbp_done.csv")
+STAT_KEYS = ["pts", "fg3m", "fga", "fta", "reb", "ast", "stl", "blk", "tov"]
 ONOFF_FIELDS = [
     "TEAM", "PLAYER", "TEAMMATE",
     "MIN_ON", "FP_ON", "MIN_OFF", "FP_OFF", "REPL_MIN",
+    "PTS_ON", "PTS_OFF", "REB_ON", "REB_OFF", "AST_ON", "AST_OFF",
+    "STL_ON", "STL_OFF", "BLK_ON", "BLK_OFF", "TOV_ON", "TOV_OFF",
+    "FG3M_ON", "FG3M_OFF", "FGA_ON", "FGA_OFF", "FTA_ON", "FTA_OFF",
     "PLAY_GP", "PLAY_MIN", "MISS_GP", "MISS_MIN",
 ]
 DONE_FIELDS = ["GAME_ID", "DATE", "HOME", "AWAY", "STATUS"]
@@ -115,6 +119,10 @@ def dk_fp(pts, fg3m, reb, ast, stl, blk, tov):
     return pts + 0.5 * fg3m + 1.25 * reb + 1.5 * ast + 2 * stl + 2 * blk - 0.5 * tov
 
 
+def empty_stats():
+    return {k: 0 for k in STAT_KEYS}
+
+
 def empty_pair():
     return {
         "MIN_ON": 0.0, "FP_ON": 0.0, "MIN_OFF": 0.0, "FP_OFF": 0.0, "REPL_MIN": 0.0,
@@ -188,8 +196,8 @@ def team_rows(side):
 def add_stat(bucket, pid, kind, amount):
     if not pid or not amount:
         return
-    row = bucket.setdefault(pid, {"pts": 0, "fg3m": 0, "reb": 0, "ast": 0, "stl": 0, "blk": 0, "tov": 0})
-    row[kind] += amount
+    row = bucket.setdefault(pid, empty_stats())
+    row[kind] = row.get(kind, 0) + amount
 
 
 def play_stats(play):
@@ -205,10 +213,16 @@ def play_stats(play):
         return {}
     out = {}
     score = int(play.get("scoreValue") or 0)
+    is_ft = "free throw" in low
+    is_fg = ("makes" in low or "misses" in low) and not is_ft and "rebound" not in low
     if play.get("scoringPlay") and score:
         add_stat(out, parts[0], "pts", score)
         if score >= 3:
             add_stat(out, parts[0], "fg3m", 1)
+    if is_fg:
+        add_stat(out, parts[0], "fga", 1)
+    if is_ft:
+        add_stat(out, parts[0], "fta", 1)
     if "assist" in low and len(parts) > 1:
         add_stat(out, parts[1], "ast", 1)
     if "rebound" in low and "team rebound" not in low:
@@ -264,7 +278,9 @@ def process_summary(summary, game):
     pair_off = {}
     pair_fp_on = {}
     pair_fp_off = {}
-    counted = {pid: {"pts": 0, "fg3m": 0, "reb": 0, "ast": 0, "stl": 0, "blk": 0, "tov": 0} for pid in by_id}
+    pair_stats_on = {}
+    pair_stats_off = {}
+    counted = {pid: empty_stats() for pid in by_id}
     repl_seconds = {}
     open_repl = []
     last_t = 0.0
@@ -287,9 +303,9 @@ def process_summary(summary, game):
                     else:
                         pair_off[key] = pair_off.get(key, 0.0) + dt
 
-    def credit_fp(pid, delta):
+    def credit_split(pid, stats, fp_delta):
         player = by_id.get(pid)
-        if not player or not delta:
+        if not player:
             return
         team_id = player["team_id"]
         present = lineup.get(team_id) or set()
@@ -298,9 +314,16 @@ def process_summary(summary, game):
                 continue
             key = (other["id"], pid)
             if other["id"] in present:
-                pair_fp_on[key] = pair_fp_on.get(key, 0.0) + delta
+                if fp_delta:
+                    pair_fp_on[key] = pair_fp_on.get(key, 0.0) + fp_delta
+                dest = pair_stats_on.setdefault(key, empty_stats())
             else:
-                pair_fp_off[key] = pair_fp_off.get(key, 0.0) + delta
+                if fp_delta:
+                    pair_fp_off[key] = pair_fp_off.get(key, 0.0) + fp_delta
+                dest = pair_stats_off.setdefault(key, empty_stats())
+            for kind, amount in (stats or {}).items():
+                if amount:
+                    dest[kind] = dest.get(kind, 0) + amount
 
     for play in plays:
         period = int((play.get("period") or {}).get("number") or 0)
@@ -344,8 +367,12 @@ def process_summary(summary, game):
             if dest is None:
                 continue
             for kind, amount in stats.items():
-                dest[kind] += amount
-            credit_fp(pid, dk_fp(stats.get("pts", 0), stats.get("fg3m", 0), stats.get("reb", 0), stats.get("ast", 0), stats.get("stl", 0), stats.get("blk", 0), stats.get("tov", 0)))
+                dest[kind] = dest.get(kind, 0) + amount
+            credit_split(
+                pid,
+                stats,
+                dk_fp(stats.get("pts", 0), stats.get("fg3m", 0), stats.get("reb", 0), stats.get("ast", 0), stats.get("stl", 0), stats.get("blk", 0), stats.get("tov", 0)),
+            )
 
     close_replacements(open_repl, repl_seconds, last_t, lambda row: True)
 
@@ -364,7 +391,7 @@ def process_summary(summary, game):
 
     pairs = []
     seen = set()
-    keys = set(pair_on) | set(pair_off) | set(pair_fp_on) | set(pair_fp_off) | set(repl_seconds)
+    keys = set(pair_on) | set(pair_off) | set(pair_fp_on) | set(pair_fp_off) | set(pair_stats_on) | set(pair_stats_off) | set(repl_seconds)
     for star_id, mate_id in keys:
         star = by_id.get(star_id)
         mate = by_id.get(mate_id)
@@ -385,6 +412,24 @@ def process_summary(summary, game):
             "MIN_OFF": pair_off.get((star_id, mate_id), 0.0) / 60.0,
             "FP_OFF": pair_fp_off.get((star_id, mate_id), 0.0),
             "REPL_MIN": repl_seconds.get((star_id, mate_id), 0.0) / 60.0,
+            "PTS_ON": pair_stats_on.get((star_id, mate_id), {}).get("pts", 0),
+            "PTS_OFF": pair_stats_off.get((star_id, mate_id), {}).get("pts", 0),
+            "REB_ON": pair_stats_on.get((star_id, mate_id), {}).get("reb", 0),
+            "REB_OFF": pair_stats_off.get((star_id, mate_id), {}).get("reb", 0),
+            "AST_ON": pair_stats_on.get((star_id, mate_id), {}).get("ast", 0),
+            "AST_OFF": pair_stats_off.get((star_id, mate_id), {}).get("ast", 0),
+            "STL_ON": pair_stats_on.get((star_id, mate_id), {}).get("stl", 0),
+            "STL_OFF": pair_stats_off.get((star_id, mate_id), {}).get("stl", 0),
+            "BLK_ON": pair_stats_on.get((star_id, mate_id), {}).get("blk", 0),
+            "BLK_OFF": pair_stats_off.get((star_id, mate_id), {}).get("blk", 0),
+            "TOV_ON": pair_stats_on.get((star_id, mate_id), {}).get("tov", 0),
+            "TOV_OFF": pair_stats_off.get((star_id, mate_id), {}).get("tov", 0),
+            "FG3M_ON": pair_stats_on.get((star_id, mate_id), {}).get("fg3m", 0),
+            "FG3M_OFF": pair_stats_off.get((star_id, mate_id), {}).get("fg3m", 0),
+            "FGA_ON": pair_stats_on.get((star_id, mate_id), {}).get("fga", 0),
+            "FGA_OFF": pair_stats_off.get((star_id, mate_id), {}).get("fga", 0),
+            "FTA_ON": pair_stats_on.get((star_id, mate_id), {}).get("fta", 0),
+            "FTA_OFF": pair_stats_off.get((star_id, mate_id), {}).get("fta", 0),
             "PLAY_GP": 1 if star_played and mate_played else 0,
             "PLAY_MIN": mate["min"] if star_played and mate_played else 0.0,
             "MISS_GP": 1 if star_missed and mate_played else 0,

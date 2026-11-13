@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T16:36:48.667047Z",
+  "updated": "2026-11-13T17:52:25.844306Z",
   "slates": [
     {
       "slateId": "1057810",
@@ -50,7 +50,7 @@
       "count": 33
     }
   ],
-  "playerCount": 263,
+  "playerCount": 248,
   "players": {
     "jrue holiday": {
       "info": {
@@ -59,19 +59,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "220"
+        "fdId": "220",
+        "numberFireId": "220",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 20.66,
-        "fpts": 21.8,
-        "pts": 11.0,
-        "reb": 3.2,
-        "ast": 3.9,
-        "stl": 0.8,
+        "min": 26.0,
+        "fpts": 27.6,
+        "pts": 14.3,
+        "reb": 3.8,
+        "ast": 5.0,
+        "stl": 1.0,
         "blk": 0.1,
-        "to": 1.6,
+        "to": 2.1,
         "salary": 4900.0,
-        "value": 4.45
+        "value": 5.63,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "damian lillard": {
@@ -81,19 +89,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "2135"
+        "fdId": "2135",
+        "numberFireId": "2135",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 22.36,
-        "fpts": 22.5,
-        "pts": 12.5,
-        "reb": 3.0,
-        "ast": 3.2,
-        "stl": 0.8,
+        "min": 31.5,
+        "fpts": 32.3,
+        "pts": 18.2,
+        "reb": 4.1,
+        "ast": 4.6,
+        "stl": 1.2,
         "blk": 0.2,
-        "to": 1.4,
+        "to": 1.9,
         "salary": 6900.0,
-        "value": 3.26
+        "value": 4.68,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "zach lavine": {
@@ -103,41 +119,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "2260"
+        "fdId": "2260",
+        "numberFireId": "2260",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 23.29,
-        "fpts": 20.6,
-        "pts": 14.3,
-        "reb": 2.0,
-        "ast": 1.9,
-        "stl": 0.7,
-        "blk": 0.2,
-        "to": 1.6,
+        "min": 33.0,
+        "fpts": 28.3,
+        "pts": 19.4,
+        "reb": 2.9,
+        "ast": 2.7,
+        "stl": 0.9,
+        "blk": 0.3,
+        "to": 2.2,
         "salary": 6000.0,
-        "value": 3.43
-      }
-    },
-    "ben simmons": {
-      "info": {
-        "player": "Ben Simmons",
-        "position": "PG",
-        "team": "SAC",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "2415"
-      },
-      "stats": {
-        "min": 5.46,
-        "fpts": 5.3,
-        "pts": 1.5,
-        "reb": 1.1,
-        "ast": 1.4,
-        "stl": 0.2,
-        "blk": 0.1,
-        "to": 0.5,
-        "salary": 3500.0,
-        "value": 1.51
+        "value": 4.72,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "domantas sabonis": {
@@ -147,19 +149,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "2425"
+        "fdId": "2425",
+        "numberFireId": "2425",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 25.58,
-        "fpts": 29.0,
-        "pts": 11.6,
-        "reb": 9.0,
-        "ast": 3.8,
-        "stl": 0.8,
-        "blk": 0.2,
-        "to": 2.1,
+        "min": 33.5,
+        "fpts": 38.1,
+        "pts": 14.9,
+        "reb": 12.2,
+        "ast": 4.9,
+        "stl": 1.0,
+        "blk": 0.3,
+        "to": 2.7,
         "salary": 8200.0,
-        "value": 3.54
+        "value": 4.65,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "malik monk": {
@@ -169,19 +179,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "2522"
+        "fdId": "2522",
+        "numberFireId": "2522",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 13.99,
-        "fpts": 13.2,
-        "pts": 7.7,
-        "reb": 1.2,
-        "ast": 2.1,
+        "min": 12.82,
+        "fpts": 11.7,
+        "pts": 6.7,
+        "reb": 1.1,
+        "ast": 1.8,
         "stl": 0.4,
         "blk": 0.2,
-        "to": 0.9,
+        "to": 0.8,
         "salary": 3900.0,
-        "value": 3.38
+        "value": 3.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "robert williams": {
@@ -191,41 +209,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "2665"
+        "fdId": "2665",
+        "numberFireId": "2665",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 12.58,
-        "fpts": 15.8,
-        "pts": 4.8,
-        "reb": 5.0,
-        "ast": 0.7,
-        "stl": 0.4,
-        "blk": 1.1,
-        "to": 0.6,
+        "min": 15.5,
+        "fpts": 19.0,
+        "pts": 6.2,
+        "reb": 5.9,
+        "ast": 0.9,
+        "stl": 0.5,
+        "blk": 1.2,
+        "to": 0.7,
         "salary": 4100.0,
-        "value": 3.85
-      }
-    },
-    "ja morant": {
-      "info": {
-        "player": "Ja Morant",
-        "position": "PG",
-        "team": "POR",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "2751"
-      },
-      "stats": {
-        "min": 20.05,
-        "fpts": 22.9,
-        "pts": 11.7,
-        "reb": 2.2,
-        "ast": 4.9,
-        "stl": 0.8,
-        "blk": 0.2,
-        "to": 1.8,
-        "salary": 3500.0,
-        "value": 6.54
+        "value": 4.63,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "de'andre hunter": {
@@ -235,19 +239,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "2753"
+        "fdId": "2753",
+        "numberFireId": "2753",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 23.74,
-        "fpts": 19.4,
-        "pts": 11.8,
-        "reb": 3.5,
-        "ast": 1.8,
-        "stl": 0.6,
-        "blk": 0.1,
-        "to": 1.4,
+        "min": 33.0,
+        "fpts": 26.7,
+        "pts": 15.6,
+        "reb": 5.1,
+        "ast": 2.4,
+        "stl": 0.9,
+        "blk": 0.2,
+        "to": 1.9,
         "salary": 4300.0,
-        "value": 4.51
+        "value": 6.21,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "deni avdija": {
@@ -257,19 +269,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "2873"
+        "fdId": "2873",
+        "numberFireId": "2873",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 24.76,
-        "fpts": 30.3,
-        "pts": 16.8,
-        "reb": 5.0,
-        "ast": 4.6,
-        "stl": 0.6,
-        "blk": 0.4,
-        "to": 2.4,
+        "min": 32.5,
+        "fpts": 40.6,
+        "pts": 22.9,
+        "reb": 6.4,
+        "ast": 6.2,
+        "stl": 0.8,
+        "blk": 0.5,
+        "to": 3.2,
         "salary": 8800.0,
-        "value": 3.44
+        "value": 4.61,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "precious achiuwa": {
@@ -279,41 +299,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "2884"
+        "fdId": "2884",
+        "numberFireId": "2884",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 19.73,
-        "fpts": 19.2,
-        "pts": 7.9,
-        "reb": 5.1,
-        "ast": 1.2,
-        "stl": 0.8,
-        "blk": 0.6,
-        "to": 0.8,
+        "min": 18.07,
+        "fpts": 17.4,
+        "pts": 7.1,
+        "reb": 4.8,
+        "ast": 1.1,
+        "stl": 0.7,
+        "blk": 0.5,
+        "to": 0.7,
         "salary": 4700.0,
-        "value": 4.09
-      }
-    },
-    "vit krejci": {
-      "info": {
-        "player": "Vit Krejci",
-        "position": "SG",
-        "team": "POR",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "3024"
-      },
-      "stats": {
-        "min": 8.53,
-        "fpts": 6.5,
-        "pts": 3.5,
-        "reb": 0.9,
-        "ast": 0.7,
-        "stl": 0.3,
-        "blk": 0.1,
-        "to": 0.3,
-        "salary": 3500.0,
-        "value": 1.86
+        "value": 3.7,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "micah potter": {
@@ -323,19 +329,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3078"
+        "fdId": "3078",
+        "numberFireId": "3078",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 9.66,
-        "fpts": 9.6,
-        "pts": 4.7,
-        "reb": 2.4,
-        "ast": 0.7,
-        "stl": 0.3,
-        "blk": 0.2,
-        "to": 0.5,
+        "min": 7.43,
+        "fpts": 7.1,
+        "pts": 3.7,
+        "reb": 1.8,
+        "ast": 0.5,
+        "stl": 0.2,
+        "blk": 0.1,
+        "to": 0.4,
         "salary": 3500.0,
-        "value": 2.74
+        "value": 2.03,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "keegan murray": {
@@ -345,41 +359,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3099"
+        "fdId": "3099",
+        "numberFireId": "3099",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 20.88,
-        "fpts": 17.7,
-        "pts": 8.3,
-        "reb": 3.4,
-        "ast": 1.1,
-        "stl": 0.7,
-        "blk": 0.8,
-        "to": 0.8,
-        "salary": 4500.0,
-        "value": 3.93
-      }
-    },
-    "shaedon sharpe": {
-      "info": {
-        "player": "Shaedon Sharpe",
-        "position": "SG",
-        "team": "POR",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "3102"
-      },
-      "stats": {
-        "min": 17.76,
-        "fpts": 18.0,
-        "pts": 11.4,
-        "reb": 2.6,
-        "ast": 1.5,
+        "min": 24.0,
+        "fpts": 20.3,
+        "pts": 9.2,
+        "reb": 4.0,
+        "ast": 1.2,
         "stl": 0.8,
-        "blk": 0.1,
-        "to": 1.5,
-        "salary": 3500.0,
-        "value": 5.14
+        "blk": 1.0,
+        "to": 0.9,
+        "salary": 4500.0,
+        "value": 4.51,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jeremy sochan": {
@@ -389,19 +389,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3104"
+        "fdId": "3104",
+        "numberFireId": "3104",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 7.06,
-        "fpts": 5.9,
-        "pts": 2.5,
-        "reb": 1.6,
-        "ast": 0.6,
+        "min": 5.44,
+        "fpts": 4.7,
+        "pts": 2.0,
+        "reb": 1.2,
+        "ast": 0.4,
         "stl": 0.2,
         "blk": 0.1,
-        "to": 0.3,
+        "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "scoot henderson": {
@@ -411,19 +419,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3191"
+        "fdId": "3191",
+        "numberFireId": "3191",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 17.94,
-        "fpts": 16.5,
-        "pts": 9.3,
-        "reb": 2.0,
-        "ast": 2.4,
-        "stl": 0.7,
+        "min": 20.0,
+        "fpts": 18.6,
+        "pts": 10.7,
+        "reb": 2.1,
+        "ast": 2.7,
+        "stl": 0.8,
         "blk": 0.2,
-        "to": 1.5,
+        "to": 1.7,
         "salary": 4000.0,
-        "value": 4.13
+        "value": 4.65,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "sidy cissoko": {
@@ -433,19 +449,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3229"
+        "fdId": "3229",
+        "numberFireId": "3229",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 13.81,
-        "fpts": 9.0,
-        "pts": 4.0,
-        "reb": 1.7,
-        "ast": 1.0,
-        "stl": 0.5,
-        "blk": 0.2,
-        "to": 0.6,
+        "min": 28.5,
+        "fpts": 19.2,
+        "pts": 8.6,
+        "reb": 3.4,
+        "ast": 2.2,
+        "stl": 1.0,
+        "blk": 0.5,
+        "to": 1.3,
         "salary": 3800.0,
-        "value": 2.37
+        "value": 5.05,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "toumani camara": {
@@ -455,19 +479,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3236"
+        "fdId": "3236",
+        "numberFireId": "3236",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 22.32,
-        "fpts": 17.6,
-        "pts": 9.2,
-        "reb": 3.3,
-        "ast": 1.5,
-        "stl": 0.8,
-        "blk": 0.3,
-        "to": 1.1,
+        "min": 30.0,
+        "fpts": 24.2,
+        "pts": 12.8,
+        "reb": 4.4,
+        "ast": 2.1,
+        "stl": 1.1,
+        "blk": 0.4,
+        "to": 1.5,
         "salary": 4600.0,
-        "value": 3.83
+        "value": 5.26,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "donovan clingan": {
@@ -477,19 +509,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3294"
+        "fdId": "3294",
+        "numberFireId": "3294",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 19.23,
-        "fpts": 24.3,
-        "pts": 8.4,
-        "reb": 8.0,
-        "ast": 1.4,
-        "stl": 0.4,
-        "blk": 1.3,
-        "to": 0.9,
+        "min": 29.5,
+        "fpts": 37.1,
+        "pts": 13.4,
+        "reb": 11.8,
+        "ast": 2.2,
+        "stl": 0.7,
+        "blk": 1.8,
+        "to": 1.3,
         "salary": 6800.0,
-        "value": 3.57
+        "value": 5.46,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jonathan mogbo": {
@@ -499,19 +539,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3329"
+        "fdId": "3329",
+        "numberFireId": "3329",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 10.3,
-        "fpts": 9.0,
-        "pts": 3.2,
-        "reb": 2.4,
-        "ast": 0.9,
-        "stl": 0.4,
+        "min": 9.43,
+        "fpts": 8.2,
+        "pts": 2.9,
+        "reb": 2.3,
+        "ast": 0.8,
+        "stl": 0.3,
         "blk": 0.3,
         "to": 0.5,
         "salary": 3600.0,
-        "value": 2.5
+        "value": 2.28,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "branden carlson": {
@@ -521,19 +569,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3362"
+        "fdId": "3362",
+        "numberFireId": "3362",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 9.45,
-        "fpts": 10.0,
-        "pts": 4.5,
-        "reb": 2.4,
-        "ast": 0.6,
+        "min": 7.27,
+        "fpts": 8.1,
+        "pts": 3.6,
+        "reb": 1.9,
+        "ast": 0.5,
         "stl": 0.2,
-        "blk": 0.5,
-        "to": 0.4,
+        "blk": 0.4,
+        "to": 0.3,
         "salary": 3500.0,
-        "value": 2.86
+        "value": 2.31,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "nique clifford": {
@@ -543,41 +599,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3417"
+        "fdId": "3417",
+        "numberFireId": "3417",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 8.91,
-        "fpts": 6.7,
-        "pts": 3.1,
-        "reb": 1.3,
-        "ast": 0.9,
+        "min": 8.16,
+        "fpts": 6.0,
+        "pts": 2.7,
+        "reb": 1.2,
+        "ast": 0.8,
         "stl": 0.3,
         "blk": 0.1,
         "to": 0.5,
         "salary": 3700.0,
-        "value": 1.81
-      }
-    },
-    "maxime raynaud": {
-      "info": {
-        "player": "Maxime Raynaud",
-        "position": "C",
-        "team": "SAC",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "3418"
-      },
-      "stats": {
-        "min": 24.65,
-        "fpts": 22.9,
-        "pts": 10.9,
-        "reb": 6.5,
-        "ast": 1.4,
-        "stl": 0.6,
-        "blk": 0.5,
-        "to": 1.2,
-        "salary": 3800.0,
-        "value": 6.03
+        "value": 1.62,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "yang hansen": {
@@ -587,41 +629,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3419"
+        "fdId": "3419",
+        "numberFireId": "3419",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 4.59,
-        "fpts": 4.1,
-        "pts": 1.8,
-        "reb": 1.1,
+        "min": 3.54,
+        "fpts": 3.1,
+        "pts": 1.4,
+        "reb": 0.8,
         "ast": 0.3,
         "stl": 0.1,
-        "blk": 0.2,
-        "to": 0.4,
-        "salary": 3500.0,
-        "value": 1.17
-      }
-    },
-    "chris youngblood": {
-      "info": {
-        "player": "Chris Youngblood",
-        "position": "SG",
-        "team": "POR",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "3443"
-      },
-      "stats": {
-        "min": 5.58,
-        "fpts": 4.8,
-        "pts": 2.5,
-        "reb": 0.8,
-        "ast": 0.4,
-        "stl": 0.2,
         "blk": 0.1,
-        "to": 0.2,
-        "salary": 3600.0,
-        "value": 1.33
+        "to": 0.3,
+        "salary": 3500.0,
+        "value": 0.89,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "dylan cardwell": {
@@ -631,19 +659,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3446"
+        "fdId": "3446",
+        "numberFireId": "3446",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 14.9,
-        "fpts": 16.0,
-        "pts": 4.4,
-        "reb": 5.1,
-        "ast": 1.1,
+        "min": 13.65,
+        "fpts": 14.9,
+        "pts": 4.0,
+        "reb": 4.8,
+        "ast": 1.0,
         "stl": 0.5,
-        "blk": 1.0,
-        "to": 0.7,
+        "blk": 0.9,
+        "to": 0.6,
         "salary": 4500.0,
-        "value": 3.56
+        "value": 3.31,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jayson kent": {
@@ -653,19 +689,27 @@
         "team": "POR",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3484"
+        "fdId": "3484",
+        "numberFireId": "3484",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 3.66,
-        "fpts": 3.0,
-        "pts": 1.6,
-        "reb": 0.6,
+        "min": 2.82,
+        "fpts": 2.7,
+        "pts": 1.3,
+        "reb": 0.5,
         "ast": 0.2,
         "stl": 0.1,
         "blk": 0.1,
-        "to": 0.2,
+        "to": 0.1,
         "salary": 3500.0,
-        "value": 0.86
+        "value": 0.77,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "alex karaban": {
@@ -675,19 +719,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3500"
+        "fdId": "3500",
+        "numberFireId": "3500",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 7.38,
-        "fpts": 5.7,
-        "pts": 3.1,
+        "min": 6.76,
+        "fpts": 5.2,
+        "pts": 2.7,
         "reb": 1.0,
-        "ast": 0.6,
+        "ast": 0.5,
         "stl": 0.2,
         "blk": 0.1,
         "to": 0.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "darius acuff jr.": {
@@ -697,19 +749,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3520"
+        "fdId": "3520",
+        "numberFireId": "3520",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 28.51,
-        "fpts": 29.6,
-        "pts": 16.6,
-        "reb": 2.9,
-        "ast": 5.5,
-        "stl": 1.0,
+        "min": 36.0,
+        "fpts": 36.1,
+        "pts": 20.0,
+        "reb": 3.8,
+        "ast": 6.8,
+        "stl": 1.2,
         "blk": 0.2,
-        "to": 2.3,
+        "to": 2.9,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "emanuel sharp": {
@@ -719,19 +779,27 @@
         "team": "SAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3534"
+        "fdId": "3534",
+        "numberFireId": "3534",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 12.68,
-        "fpts": 9.2,
-        "pts": 5.1,
+        "min": 11.61,
+        "fpts": 8.5,
+        "pts": 4.5,
         "reb": 1.1,
-        "ast": 1.0,
+        "ast": 0.9,
         "stl": 0.4,
         "blk": 0.2,
         "to": 0.5,
         "salary": 3700.0,
-        "value": 2.49
+        "value": 2.3,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "brook lopez": {
@@ -740,8 +808,13 @@
         "position": "C",
         "team": "LAC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "246"
+        "slateId": "1057810",
+        "fdId": "246",
+        "numberFireId": "246",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 26.0,
@@ -752,52 +825,11 @@
         "stl": 0.7,
         "blk": 1.4,
         "to": 1.2,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "bradley beal": {
-      "info": {
-        "player": "Bradley Beal",
-        "position": "SG",
-        "team": "LAC",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "2136"
-      },
-      "stats": {
-        "min": 12.41,
-        "fpts": 9.7,
-        "pts": 5.6,
-        "reb": 1.2,
-        "ast": 1.3,
-        "stl": 0.4,
-        "blk": 0.1,
-        "to": 0.8,
-        "salary": 3900.0,
-        "value": 2.49
-      }
-    },
-    "brandon ingram": {
-      "info": {
-        "player": "Brandon Ingram",
-        "position": "SF",
-        "team": "LAC",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "2416"
-      },
-      "stats": {
-        "min": 20.28,
-        "fpts": 21.6,
-        "pts": 12.5,
-        "reb": 3.6,
-        "ast": 2.4,
-        "stl": 0.5,
-        "blk": 0.4,
-        "to": 1.5,
-        "salary": 5500.0,
-        "value": 3.93
+        "salary": 5000.0,
+        "value": 5.04,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kris dunn": {
@@ -806,8 +838,13 @@
         "position": "PG",
         "team": "LAC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "2419"
+        "slateId": "1057810",
+        "fdId": "2419",
+        "numberFireId": "2419",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 27.0,
@@ -818,8 +855,11 @@
         "stl": 1.6,
         "blk": 0.2,
         "to": 1.5,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 5200.0,
+        "value": 4.31,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "derrick jones jr.": {
@@ -828,8 +868,13 @@
         "position": "SF",
         "team": "LAC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "2497"
+        "slateId": "1057810",
+        "fdId": "2497",
+        "numberFireId": "2497",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.0,
@@ -840,8 +885,11 @@
         "stl": 1.0,
         "blk": 1.1,
         "to": 1.1,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 4900.0,
+        "value": 5.16,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "isaiah hartenstein": {
@@ -850,8 +898,13 @@
         "position": "C",
         "team": "OKC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "2554"
+        "slateId": "1057810",
+        "fdId": "2554",
+        "numberFireId": "2554",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 26.0,
@@ -862,8 +915,11 @@
         "stl": 1.0,
         "blk": 0.7,
         "to": 1.7,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 6200.0,
+        "value": 4.65,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "alex caruso": {
@@ -872,8 +928,13 @@
         "position": "SF",
         "team": "OKC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "2580"
+        "slateId": "1057810",
+        "fdId": "2580",
+        "numberFireId": "2580",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 23.0,
@@ -884,8 +945,11 @@
         "stl": 1.3,
         "blk": 0.4,
         "to": 1.1,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 4300.0,
+        "value": 4.79,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "shai gilgeous-alexander": {
@@ -894,8 +958,13 @@
         "position": "PG",
         "team": "OKC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "2656"
+        "slateId": "1057810",
+        "fdId": "2656",
+        "numberFireId": "2656",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 34.0,
@@ -906,8 +975,11 @@
         "stl": 1.4,
         "blk": 0.8,
         "to": 2.2,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 10500.0,
+        "value": 4.51,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kenrich williams": {
@@ -916,8 +988,13 @@
         "position": "SF",
         "team": "OKC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "2702"
+        "slateId": "1057810",
+        "fdId": "2702",
+        "numberFireId": "2702",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 25.0,
@@ -928,8 +1005,11 @@
         "stl": 0.8,
         "blk": 0.2,
         "to": 1.3,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 3800.0,
+        "value": 5.84,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "darius garland": {
@@ -938,8 +1018,13 @@
         "position": "PG",
         "team": "LAC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "2754"
+        "slateId": "1057810",
+        "fdId": "2754",
+        "numberFireId": "2754",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 34.0,
@@ -950,8 +1035,11 @@
         "stl": 1.1,
         "blk": 0.2,
         "to": 3.6,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 7300.0,
+        "value": 5.05,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "rui hachimura": {
@@ -960,8 +1048,13 @@
         "position": "SF",
         "team": "LAC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "2758"
+        "slateId": "1057810",
+        "fdId": "2758",
+        "numberFireId": "2758",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 31.0,
@@ -972,8 +1065,11 @@
         "stl": 0.7,
         "blk": 0.4,
         "to": 0.9,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 5800.0,
+        "value": 3.93,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "max strus": {
@@ -982,8 +1078,13 @@
         "position": "SG",
         "team": "LAC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "2842"
+        "slateId": "1057810",
+        "fdId": "2842",
+        "numberFireId": "2842",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 21.0,
@@ -994,8 +1095,11 @@
         "stl": 0.6,
         "blk": 0.1,
         "to": 0.9,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 4200.0,
+        "value": 4.88,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "isaiah jackson": {
@@ -1005,107 +1109,27 @@
         "team": "LAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "2982"
+        "fdId": "2982",
+        "numberFireId": "2982",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 12.29,
-        "fpts": 13.6,
-        "pts": 4.9,
-        "reb": 4.0,
-        "ast": 0.9,
-        "stl": 0.5,
-        "blk": 0.6,
-        "to": 0.8,
-        "salary": 4300.0,
-        "value": 3.16
-      }
-    },
-    "chet holmgren": {
-      "info": {
-        "player": "Chet Holmgren",
-        "position": "PF",
-        "team": "OKC",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "3097"
-      },
-      "stats": {
-        "min": 21.46,
-        "fpts": 25.0,
-        "pts": 11.5,
-        "reb": 6.3,
-        "ast": 1.1,
-        "stl": 0.5,
-        "blk": 1.3,
-        "to": 1.1,
-        "salary": 3500.0,
-        "value": 7.14
-      }
-    },
-    "jalen williams": {
-      "info": {
-        "player": "Jalen Williams",
-        "position": "SF",
-        "team": "OKC",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "3107"
-      },
-      "stats": {
-        "min": 22.19,
-        "fpts": 22.5,
-        "pts": 11.5,
-        "reb": 3.5,
-        "ast": 3.4,
-        "stl": 0.8,
-        "blk": 0.2,
-        "to": 1.3,
-        "salary": 3500.0,
-        "value": 6.43
-      }
-    },
-    "jaylin williams": {
-      "info": {
-        "player": "Jaylin Williams",
-        "position": "C",
-        "team": "OKC",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "3129"
-      },
-      "stats": {
-        "min": 14.57,
-        "fpts": 14.0,
-        "pts": 5.4,
-        "reb": 3.9,
-        "ast": 1.5,
-        "stl": 0.4,
-        "blk": 0.4,
-        "to": 0.7,
-        "salary": 4000.0,
-        "value": 3.5
-      }
-    },
-    "cason wallace": {
-      "info": {
-        "player": "Cason Wallace",
-        "position": "SG",
-        "team": "OKC",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "3198"
-      },
-      "stats": {
-        "min": 14.49,
-        "fpts": 11.5,
-        "pts": 4.9,
-        "reb": 1.6,
-        "ast": 1.3,
-        "stl": 0.9,
-        "blk": 0.2,
+        "min": 9.0,
+        "fpts": 10.3,
+        "pts": 3.9,
+        "reb": 3.1,
+        "ast": 0.6,
+        "stl": 0.3,
+        "blk": 0.5,
         "to": 0.6,
-        "salary": 3500.0,
-        "value": 3.29
+        "salary": 4300.0,
+        "value": 2.4,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "gradey dick": {
@@ -1115,19 +1139,27 @@
         "team": "LAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3201"
+        "fdId": "3201",
+        "numberFireId": "3201",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 7.97,
-        "fpts": 6.5,
-        "pts": 3.5,
-        "reb": 1.2,
-        "ast": 0.5,
-        "stl": 0.3,
-        "blk": 0.1,
-        "to": 0.4,
+        "min": 5.84,
+        "fpts": 4.6,
+        "pts": 2.6,
+        "reb": 1.0,
+        "ast": 0.3,
+        "stl": 0.2,
+        "blk": 0.0,
+        "to": 0.3,
         "salary": 4000.0,
-        "value": 1.63
+        "value": 1.15,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jalen pickett": {
@@ -1137,63 +1169,27 @@
         "team": "LAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3219"
+        "fdId": "3219",
+        "numberFireId": "3219",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 6.36,
-        "fpts": 5.2,
-        "pts": 2.3,
-        "reb": 0.9,
-        "ast": 1.0,
-        "stl": 0.2,
+        "min": 4.66,
+        "fpts": 3.7,
+        "pts": 1.7,
+        "reb": 0.7,
+        "ast": 0.7,
+        "stl": 0.1,
         "blk": 0.0,
-        "to": 0.3,
+        "to": 0.2,
         "salary": 3500.0,
-        "value": 1.49
-      }
-    },
-    "jordan miller": {
-      "info": {
-        "player": "Jordan Miller",
-        "position": "SF",
-        "team": "LAC",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "3232"
-      },
-      "stats": {
-        "min": 16.23,
-        "fpts": 14.5,
-        "pts": 7.3,
-        "reb": 2.4,
-        "ast": 1.8,
-        "stl": 0.6,
-        "blk": 0.2,
-        "to": 0.8,
-        "salary": 3500.0,
-        "value": 4.14
-      }
-    },
-    "nikola topic": {
-      "info": {
-        "player": "Nikola Topic",
-        "position": "PG",
-        "team": "OKC",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "3299"
-      },
-      "stats": {
-        "min": 16.57,
-        "fpts": 14.5,
-        "pts": 6.7,
-        "reb": 2.0,
-        "ast": 3.3,
-        "stl": 0.6,
-        "blk": 0.1,
-        "to": 1.6,
-        "salary": 3500.0,
-        "value": 4.14
+        "value": 1.06,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jared mccain": {
@@ -1202,8 +1198,13 @@
         "position": "SG",
         "team": "OKC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "3303"
+        "slateId": "1057810",
+        "fdId": "3303",
+        "numberFireId": "3303",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 29.0,
@@ -1214,8 +1215,11 @@
         "stl": 0.9,
         "blk": 0.1,
         "to": 1.5,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 4600.0,
+        "value": 4.91,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "cam christie": {
@@ -1225,19 +1229,27 @@
         "team": "LAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3320"
+        "fdId": "3320",
+        "numberFireId": "3320",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 3.82,
-        "fpts": 2.7,
-        "pts": 1.4,
-        "reb": 0.6,
-        "ast": 0.3,
+        "min": 2.8,
+        "fpts": 2.1,
+        "pts": 1.1,
+        "reb": 0.5,
+        "ast": 0.2,
         "stl": 0.1,
         "blk": 0.0,
         "to": 0.2,
         "salary": 3500.0,
-        "value": 0.77
+        "value": 0.6,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "ajay mitchell": {
@@ -1246,8 +1258,13 @@
         "position": "SG",
         "team": "OKC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "3337"
+        "slateId": "1057810",
+        "fdId": "3337",
+        "numberFireId": "3337",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.0,
@@ -1258,8 +1275,11 @@
         "stl": 1.3,
         "blk": 0.4,
         "to": 1.6,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 6500.0,
+        "value": 4.48,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "yuki kawamura": {
@@ -1269,19 +1289,27 @@
         "team": "LAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3341"
+        "fdId": "3341",
+        "numberFireId": "3341",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 7.62,
-        "fpts": 7.5,
-        "pts": 3.1,
-        "reb": 1.2,
-        "ast": 1.7,
-        "stl": 0.3,
+        "min": 5.58,
+        "fpts": 5.4,
+        "pts": 2.3,
+        "reb": 0.9,
+        "ast": 1.2,
+        "stl": 0.2,
         "blk": 0.0,
-        "to": 0.5,
+        "to": 0.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kobe sanders": {
@@ -1290,8 +1318,13 @@
         "position": "SG",
         "team": "LAC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "3437"
+        "slateId": "1057810",
+        "fdId": "3437",
+        "numberFireId": "3437",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 18.0,
@@ -1302,30 +1335,11 @@
         "stl": 0.7,
         "blk": 0.1,
         "to": 1.1,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "yanic konan niederhauser": {
-      "info": {
-        "player": "Yanic Konan Niederhauser",
-        "position": "C",
-        "team": "LAC",
-        "opp": "",
-        "slateId": "1057810",
-        "fdId": "3438"
-      },
-      "stats": {
-        "min": 9.44,
-        "fpts": 10.0,
-        "pts": 4.1,
-        "reb": 2.9,
-        "ast": 0.4,
-        "stl": 0.2,
-        "blk": 0.6,
-        "to": 0.6,
         "salary": 3800.0,
-        "value": 2.63
+        "value": 3.61,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "brooks barnhizer": {
@@ -1334,8 +1348,13 @@
         "position": "SG",
         "team": "OKC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "3441"
+        "slateId": "1057810",
+        "fdId": "3441",
+        "numberFireId": "3441",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 26.0,
@@ -1346,8 +1365,11 @@
         "stl": 0.8,
         "blk": 0.3,
         "to": 1.0,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 3500.0,
+        "value": 5.37,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "keaton wagler": {
@@ -1356,8 +1378,13 @@
         "position": "",
         "team": "LAC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "3505"
+        "slateId": "1057810",
+        "fdId": "3505",
+        "numberFireId": "3505",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 19.0,
@@ -1369,7 +1396,10 @@
         "blk": 0.2,
         "to": 1.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "bennett stirtz": {
@@ -1378,8 +1408,13 @@
         "position": "",
         "team": "OKC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "3509"
+        "slateId": "1057810",
+        "fdId": "3509",
+        "numberFireId": "3509",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 21.0,
@@ -1391,7 +1426,10 @@
         "blk": 0.1,
         "to": 1.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "aday mara": {
@@ -1400,8 +1438,13 @@
         "position": "",
         "team": "OKC",
         "opp": "",
-        "slateId": "1057622",
-        "fdId": "3522"
+        "slateId": "1057810",
+        "fdId": "3522",
+        "numberFireId": "3522",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 26.0,
@@ -1413,7 +1456,10 @@
         "blk": 1.9,
         "to": 1.9,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "nick martinelli": {
@@ -1423,19 +1469,27 @@
         "team": "LAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3528"
+        "fdId": "3528",
+        "numberFireId": "3528",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 3.21,
-        "fpts": 3.1,
-        "pts": 1.6,
-        "reb": 0.8,
-        "ast": 0.3,
+        "min": 2.35,
+        "fpts": 2.4,
+        "pts": 1.2,
+        "reb": 0.6,
+        "ast": 0.2,
         "stl": 0.1,
         "blk": 0.0,
-        "to": 0.2,
+        "to": 0.1,
         "salary": 3500.0,
-        "value": 0.89
+        "value": 0.69,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "baba miller": {
@@ -1445,19 +1499,27 @@
         "team": "LAC",
         "opp": "",
         "slateId": "1057810",
-        "fdId": "3536"
+        "fdId": "3536",
+        "numberFireId": "3536",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 5.15,
-        "fpts": 5.2,
-        "pts": 2.2,
-        "reb": 1.1,
-        "ast": 0.5,
-        "stl": 0.2,
-        "blk": 0.2,
-        "to": 0.3,
+        "min": 3.77,
+        "fpts": 3.5,
+        "pts": 1.6,
+        "reb": 0.9,
+        "ast": 0.3,
+        "stl": 0.1,
+        "blk": 0.1,
+        "to": 0.2,
         "salary": 3900.0,
-        "value": 1.33
+        "value": 0.9,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "james harden": {
@@ -1467,7 +1529,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "78"
+        "fdId": "78",
+        "numberFireId": "78",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 32.5,
@@ -1479,7 +1546,10 @@
         "blk": 0.4,
         "to": 3.0,
         "salary": 7000.0,
-        "value": 5.26
+        "value": 5.26,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "klay thompson": {
@@ -1489,7 +1559,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "200"
+        "fdId": "200",
+        "numberFireId": "200",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 29.0,
@@ -1501,7 +1576,10 @@
         "blk": 0.5,
         "to": 1.2,
         "salary": 4300.0,
-        "value": 5.77
+        "value": 5.77,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "giannis antetokounmpo": {
@@ -1511,7 +1589,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2166"
+        "fdId": "2166",
+        "numberFireId": "2166",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 34.5,
@@ -1523,7 +1606,10 @@
         "blk": 1.0,
         "to": 3.3,
         "salary": 11700.0,
-        "value": 4.55
+        "value": 4.55,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "tim hardaway jr.": {
@@ -1533,7 +1619,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2175"
+        "fdId": "2175",
+        "numberFireId": "2175",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.41,
@@ -1545,7 +1636,10 @@
         "blk": 0.0,
         "to": 0.2,
         "salary": 3600.0,
-        "value": 1.28
+        "value": 1.28,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "andrew wiggins": {
@@ -1555,7 +1649,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2249"
+        "fdId": "2249",
+        "numberFireId": "2249",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 24.0,
@@ -1567,7 +1666,10 @@
         "blk": 0.9,
         "to": 1.2,
         "salary": 3900.0,
-        "value": 5.87
+        "value": 5.87,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "mario hezonja": {
@@ -1577,7 +1679,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2330"
+        "fdId": "2330",
+        "numberFireId": "2330",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 18.5,
@@ -1589,7 +1696,10 @@
         "blk": 0.2,
         "to": 0.9,
         "salary": 4100.0,
-        "value": 4.27
+        "value": 4.27,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "bobby portis": {
@@ -1599,7 +1709,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2347"
+        "fdId": "2347",
+        "numberFireId": "2347",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 8.1,
@@ -1611,7 +1726,10 @@
         "blk": 0.1,
         "to": 0.3,
         "salary": 4100.0,
-        "value": 2.02
+        "value": 2.02,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "donovan mitchell": {
@@ -1621,7 +1739,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2524"
+        "fdId": "2524",
+        "numberFireId": "2524",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 34.0,
@@ -1633,7 +1756,10 @@
         "blk": 0.3,
         "to": 2.7,
         "salary": 8200.0,
-        "value": 4.89
+        "value": 4.89,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "bam adebayo": {
@@ -1643,7 +1769,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2525"
+        "fdId": "2525",
+        "numberFireId": "2525",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 34.5,
@@ -1655,7 +1786,10 @@
         "blk": 0.8,
         "to": 1.8,
         "salary": 8100.0,
-        "value": 5.21
+        "value": 5.21,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jarrett allen": {
@@ -1665,7 +1799,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2533"
+        "fdId": "2533",
+        "numberFireId": "2533",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.0,
@@ -1677,7 +1816,10 @@
         "blk": 1.2,
         "to": 1.4,
         "salary": 5800.0,
-        "value": 5.72
+        "value": 5.72,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "thomas bryant": {
@@ -1687,7 +1829,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2553"
+        "fdId": "2553",
+        "numberFireId": "2553",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 4.31,
@@ -1699,7 +1846,10 @@
         "blk": 0.2,
         "to": 0.2,
         "salary": 3700.0,
-        "value": 1.22
+        "value": 1.22,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "davion mitchell": {
@@ -1709,7 +1859,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2971"
+        "fdId": "2971",
+        "numberFireId": "2971",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 37.0,
@@ -1721,7 +1876,10 @@
         "blk": 0.3,
         "to": 2.0,
         "salary": 6200.0,
-        "value": 5.26
+        "value": 5.26,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "nikola jovic": {
@@ -1731,7 +1889,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3122"
+        "fdId": "3122",
+        "numberFireId": "3122",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 4.17,
@@ -1743,7 +1906,10 @@
         "blk": 0.1,
         "to": 0.3,
         "salary": 3600.0,
-        "value": 1.03
+        "value": 1.03,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "peyton watson": {
@@ -1753,7 +1919,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3125"
+        "fdId": "3125",
+        "numberFireId": "3125",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 29.5,
@@ -1765,7 +1936,10 @@
         "blk": 1.3,
         "to": 1.7,
         "salary": 5700.0,
-        "value": 4.65
+        "value": 4.65,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "khalifa diop": {
@@ -1775,7 +1949,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3134"
+        "fdId": "3134",
+        "numberFireId": "3134",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 2.22,
@@ -1787,7 +1966,10 @@
         "blk": 0.1,
         "to": 0.1,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "simone fontecchio": {
@@ -1797,7 +1979,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3153"
+        "fdId": "3153",
+        "numberFireId": "3153",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.22,
@@ -1809,7 +1996,10 @@
         "blk": 0.0,
         "to": 0.1,
         "salary": 3500.0,
-        "value": 0.83
+        "value": 0.83,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "dru smith": {
@@ -1819,7 +2009,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3159"
+        "fdId": "3159",
+        "numberFireId": "3159",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.88,
@@ -1831,7 +2026,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 3600.0,
-        "value": 1.08
+        "value": 1.08,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "craig porter jr.": {
@@ -1841,7 +2039,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3250"
+        "fdId": "3250",
+        "numberFireId": "3250",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.85,
@@ -1853,7 +2056,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 3600.0,
-        "value": 1.03
+        "value": 1.03,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jaylon tyson": {
@@ -1863,7 +2069,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3307"
+        "fdId": "3307",
+        "numberFireId": "3307",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 28.5,
@@ -1875,7 +2086,10 @@
         "blk": 0.5,
         "to": 1.5,
         "salary": 3900.0,
-        "value": 6.46
+        "value": 6.46,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "pelle larsson": {
@@ -1885,7 +2099,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3318"
+        "fdId": "3318",
+        "numberFireId": "3318",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.0,
@@ -1897,7 +2116,10 @@
         "blk": 0.3,
         "to": 1.6,
         "salary": 4400.0,
-        "value": 5.64
+        "value": 5.64,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "riley minix": {
@@ -1907,7 +2129,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3354"
+        "fdId": "3354",
+        "numberFireId": "3354",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 2.61,
@@ -1919,7 +2146,10 @@
         "blk": 0.1,
         "to": 0.1,
         "salary": 3600.0,
-        "value": 0.69
+        "value": 0.69,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "keshad johnson": {
@@ -1929,7 +2159,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3364"
+        "fdId": "3364",
+        "numberFireId": "3364",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.41,
@@ -1941,7 +2176,10 @@
         "blk": 0.2,
         "to": 0.3,
         "salary": 3500.0,
-        "value": 1.46
+        "value": 1.46,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "tyrese proctor": {
@@ -1951,7 +2189,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3407"
+        "fdId": "3407",
+        "numberFireId": "3407",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 19.0,
@@ -1963,7 +2206,10 @@
         "blk": 0.0,
         "to": 1.2,
         "salary": 3800.0,
-        "value": 4.34
+        "value": 4.34,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "myron gardner": {
@@ -1973,7 +2219,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3433"
+        "fdId": "3433",
+        "numberFireId": "3433",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 1.48,
@@ -1985,7 +2236,10 @@
         "blk": 0.0,
         "to": 0.1,
         "salary": 3500.0,
-        "value": 0.46
+        "value": 0.46,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "vladislav goldin": {
@@ -1995,7 +2249,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3434"
+        "fdId": "3434",
+        "numberFireId": "3434",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 0.97,
@@ -2007,7 +2266,10 @@
         "blk": 0.1,
         "to": 0.1,
         "salary": 3500.0,
-        "value": 0.31
+        "value": 0.31,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "tristan enaruna": {
@@ -2017,7 +2279,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3465"
+        "fdId": "3465",
+        "numberFireId": "3465",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.73,
@@ -2029,7 +2296,10 @@
         "blk": 0.0,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kadary richmond": {
@@ -2039,7 +2309,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3469"
+        "fdId": "3469",
+        "numberFireId": "3469",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 7.29,
@@ -2051,7 +2326,10 @@
         "blk": 0.1,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "bez mbeng": {
@@ -2061,7 +2339,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3482"
+        "fdId": "3482",
+        "numberFireId": "3482",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 14.01,
@@ -2073,7 +2356,10 @@
         "blk": 0.2,
         "to": 0.7,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "ryan conwell": {
@@ -2083,7 +2369,12 @@
         "team": "MIA",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3508"
+        "fdId": "3508",
+        "numberFireId": "3508",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.36,
@@ -2095,7 +2386,10 @@
         "blk": 0.0,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "meleek thomas": {
@@ -2105,7 +2399,12 @@
         "team": "CLE",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3546"
+        "fdId": "3546",
+        "numberFireId": "3546",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 24.0,
@@ -2117,7 +2416,10 @@
         "blk": 0.3,
         "to": 1.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "deandre jordan": {
@@ -2127,7 +2429,12 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "186"
+        "fdId": "186",
+        "numberFireId": "186",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.32,
@@ -2139,7 +2446,10 @@
         "blk": 0.3,
         "to": 0.3,
         "salary": 3600.0,
-        "value": 1.92
+        "value": 1.92,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jerami grant": {
@@ -2149,7 +2459,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2284"
+        "fdId": "2284",
+        "numberFireId": "2284",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 25.0,
@@ -2161,7 +2476,10 @@
         "blk": 0.6,
         "to": 1.8,
         "salary": 4200.0,
-        "value": 5.52
+        "value": 5.52,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "dejounte murray": {
@@ -2171,19 +2489,27 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2443"
+        "fdId": "2443",
+        "numberFireId": "2443",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.0,
-        "fpts": 33.8,
-        "pts": 15.5,
+        "fpts": 33.9,
+        "pts": 15.6,
         "reb": 5.3,
         "ast": 6.0,
         "stl": 1.5,
         "blk": 0.4,
         "to": 2.8,
         "salary": 6600.0,
-        "value": 5.12
+        "value": 5.14,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "zion williamson": {
@@ -2193,19 +2519,27 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2750"
+        "fdId": "2750",
+        "numberFireId": "2750",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 33.0,
-        "fpts": 36.4,
-        "pts": 20.7,
+        "fpts": 36.5,
+        "pts": 20.8,
         "reb": 6.1,
         "ast": 3.4,
         "stl": 1.2,
         "blk": 0.6,
         "to": 2.1,
         "salary": 7400.0,
-        "value": 4.92
+        "value": 4.93,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "ty jerome": {
@@ -2215,19 +2549,27 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2773"
+        "fdId": "2773",
+        "numberFireId": "2773",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 32.5,
-        "fpts": 41.9,
-        "pts": 23.4,
+        "fpts": 42.0,
+        "pts": 23.5,
         "reb": 4.0,
         "ast": 7.2,
         "stl": 1.4,
         "blk": 0.4,
         "to": 2.5,
         "salary": 7600.0,
-        "value": 5.51
+        "value": 5.53,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jordan poole": {
@@ -2237,7 +2579,12 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2777"
+        "fdId": "2777",
+        "numberFireId": "2777",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.83,
@@ -2249,7 +2596,10 @@
         "blk": 0.1,
         "to": 0.5,
         "salary": 3800.0,
-        "value": 1.63
+        "value": 1.63,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "isaiah stewart": {
@@ -2259,7 +2609,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2880"
+        "fdId": "2880",
+        "numberFireId": "2880",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 24.0,
@@ -2271,7 +2626,10 @@
         "blk": 1.6,
         "to": 1.3,
         "salary": 4000.0,
-        "value": 5.97
+        "value": 5.97,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "saddiq bey": {
@@ -2281,19 +2639,27 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2883"
+        "fdId": "2883",
+        "numberFireId": "2883",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 27.0,
-        "fpts": 25.4,
-        "pts": 14.7,
+        "fpts": 25.5,
+        "pts": 14.8,
         "reb": 4.7,
         "ast": 2.2,
         "stl": 0.8,
         "blk": 0.1,
         "to": 0.9,
         "salary": 5400.0,
-        "value": 4.7
+        "value": 4.72,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "herbert jones": {
@@ -2303,19 +2669,27 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2992"
+        "fdId": "2992",
+        "numberFireId": "2992",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 27.0,
-        "fpts": 20.3,
-        "pts": 8.7,
+        "fpts": 20.4,
+        "pts": 8.8,
         "reb": 3.3,
         "ast": 2.5,
         "stl": 1.3,
         "blk": 0.4,
         "to": 1.2,
         "salary": 3800.0,
-        "value": 5.34
+        "value": 5.37,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "trey murphy iii": {
@@ -2325,19 +2699,27 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3015"
+        "fdId": "3015",
+        "numberFireId": "3015",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 12.97,
-        "fpts": 13.1,
-        "pts": 7.4,
+        "fpts": 13.2,
+        "pts": 7.5,
         "reb": 2.0,
         "ast": 1.4,
         "stl": 0.5,
         "blk": 0.1,
         "to": 0.6,
         "salary": 6000.0,
-        "value": 2.18
+        "value": 2.2,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "bennedict mathurin": {
@@ -2347,7 +2729,12 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3101"
+        "fdId": "3101",
+        "numberFireId": "3101",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.75,
@@ -2359,7 +2746,10 @@
         "blk": 0.1,
         "to": 0.5,
         "salary": 3700.0,
-        "value": 1.68
+        "value": 1.68,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "bryce mcgowens": {
@@ -2369,7 +2759,12 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3135"
+        "fdId": "3135",
+        "numberFireId": "3135",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.32,
@@ -2381,7 +2776,10 @@
         "blk": 0.1,
         "to": 0.1,
         "salary": 3700.0,
-        "value": 1.14
+        "value": 1.14,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "taylor hendricks": {
@@ -2391,7 +2789,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3197"
+        "fdId": "3197",
+        "numberFireId": "3197",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 4.35,
@@ -2403,7 +2806,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 3600.0,
-        "value": 1.06
+        "value": 1.06,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jordan hawkins": {
@@ -2413,7 +2819,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3202"
+        "fdId": "3202",
+        "numberFireId": "3202",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.74,
@@ -2425,7 +2836,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 3600.0,
-        "value": 0.83
+        "value": 0.83,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kris murray": {
@@ -2435,7 +2849,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3210"
+        "fdId": "3210",
+        "numberFireId": "3210",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.59,
@@ -2447,7 +2866,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 3500.0,
-        "value": 1.11
+        "value": 1.11,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "olivier-maxence prosper": {
@@ -2457,19 +2879,27 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3211"
+        "fdId": "3211",
+        "numberFireId": "3211",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 4.31,
-        "fpts": 4.3,
-        "pts": 2.1,
+        "fpts": 4.4,
+        "pts": 2.2,
         "reb": 0.9,
         "ast": 0.3,
         "stl": 0.2,
         "blk": 0.1,
         "to": 0.2,
         "salary": 3500.0,
-        "value": 1.23
+        "value": 1.26,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "gregory jackson": {
@@ -2479,19 +2909,27 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3230"
+        "fdId": "3230",
+        "numberFireId": "3230",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.24,
-        "fpts": 5.1,
-        "pts": 2.7,
+        "fpts": 5.2,
+        "pts": 2.8,
         "reb": 1.1,
         "ast": 0.4,
         "stl": 0.1,
         "blk": 0.2,
         "to": 0.4,
         "salary": 3700.0,
-        "value": 1.38
+        "value": 1.41,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "yves missi": {
@@ -2501,7 +2939,12 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3308"
+        "fdId": "3308",
+        "numberFireId": "3308",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 8.67,
@@ -2513,7 +2956,10 @@
         "blk": 0.7,
         "to": 0.4,
         "salary": 4500.0,
-        "value": 2.0
+        "value": 2.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "aj johnson": {
@@ -2523,7 +2969,12 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3310"
+        "fdId": "3310",
+        "numberFireId": "3310",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 4.64,
@@ -2535,7 +2986,10 @@
         "blk": 0.0,
         "to": 0.3,
         "salary": 3500.0,
-        "value": 0.91
+        "value": 0.91,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "karlo matkovic": {
@@ -2545,19 +2999,27 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3324"
+        "fdId": "3324",
+        "numberFireId": "3324",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 20.0,
-        "fpts": 19.7,
-        "pts": 7.9,
+        "fpts": 19.8,
+        "pts": 8.0,
         "reb": 4.9,
         "ast": 1.1,
         "stl": 0.6,
         "blk": 1.1,
         "to": 0.8,
         "salary": 4400.0,
-        "value": 4.48
+        "value": 4.5,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jaylen wells": {
@@ -2567,19 +3029,27 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3336"
+        "fdId": "3336",
+        "numberFireId": "3336",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.0,
-        "fpts": 23.8,
-        "pts": 13.6,
+        "fpts": 23.9,
+        "pts": 13.7,
         "reb": 3.9,
         "ast": 1.9,
         "stl": 1.1,
         "blk": 0.2,
         "to": 1.2,
         "salary": 4100.0,
-        "value": 5.8
+        "value": 5.83,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "cam spencer": {
@@ -2589,19 +3059,27 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3360"
+        "fdId": "3360",
+        "numberFireId": "3360",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 19.0,
-        "fpts": 19.2,
-        "pts": 8.7,
+        "fpts": 19.3,
+        "pts": 8.8,
         "reb": 2.2,
         "ast": 4.6,
         "stl": 0.6,
         "blk": 0.1,
         "to": 1.1,
         "salary": 4200.0,
-        "value": 4.57
+        "value": 4.6,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jeremiah fears": {
@@ -2611,19 +3089,27 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3427"
+        "fdId": "3427",
+        "numberFireId": "3427",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 31.5,
-        "fpts": 31.3,
-        "pts": 16.3,
+        "fpts": 31.4,
+        "pts": 16.4,
         "reb": 4.5,
         "ast": 4.3,
         "stl": 1.4,
         "blk": 0.5,
         "to": 2.5,
         "salary": 6000.0,
-        "value": 5.22
+        "value": 5.23,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "derik queen": {
@@ -2633,19 +3119,27 @@
         "team": "NO",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3428"
+        "fdId": "3428",
+        "numberFireId": "3428",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 20.0,
-        "fpts": 22.7,
-        "pts": 9.0,
+        "fpts": 22.8,
+        "pts": 9.1,
         "reb": 5.7,
         "ast": 2.8,
         "stl": 0.8,
         "blk": 0.7,
         "to": 1.8,
         "salary": 5600.0,
-        "value": 4.05
+        "value": 4.07,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "micah peavy": {
@@ -2655,7 +3149,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3429"
+        "fdId": "3429",
+        "numberFireId": "3429",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.69,
@@ -2667,7 +3166,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "cedric coward": {
@@ -2677,7 +3179,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3435"
+        "fdId": "3435",
+        "numberFireId": "3435",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.0,
@@ -2689,7 +3196,10 @@
         "blk": 0.5,
         "to": 1.9,
         "salary": 5900.0,
-        "value": 5.2
+        "value": 5.2,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "javon small": {
@@ -2699,7 +3209,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3448"
+        "fdId": "3448",
+        "numberFireId": "3448",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 7.61,
@@ -2711,7 +3226,10 @@
         "blk": 0.1,
         "to": 0.5,
         "salary": 3800.0,
-        "value": 2.03
+        "value": 2.03,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jahmai mashack": {
@@ -2721,7 +3239,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3459"
+        "fdId": "3459",
+        "numberFireId": "3459",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.83,
@@ -2733,7 +3256,10 @@
         "blk": 0.1,
         "to": 0.5,
         "salary": 3500.0,
-        "value": 1.4
+        "value": 1.4,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "karim lopez": {
@@ -2743,7 +3269,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3507"
+        "fdId": "3507",
+        "numberFireId": "3507",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 1.12,
@@ -2755,7 +3286,10 @@
         "blk": 0.0,
         "to": 0.1,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "cameron boozer": {
@@ -2765,7 +3299,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3524"
+        "fdId": "3524",
+        "numberFireId": "3524",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 33.0,
@@ -2777,7 +3316,10 @@
         "blk": 0.8,
         "to": 2.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "carson cooper": {
@@ -2787,7 +3329,12 @@
         "team": "MEM",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3548"
+        "fdId": "3548",
+        "numberFireId": "3548",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 1.03,
@@ -2799,7 +3346,10 @@
         "blk": 0.0,
         "to": 0.1,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "c.j. mccollum": {
@@ -2809,7 +3359,12 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2161"
+        "fdId": "2161",
+        "numberFireId": "2161",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 26.8,
@@ -2821,7 +3376,10 @@
         "blk": 0.4,
         "to": 1.6,
         "salary": 5500.0,
-        "value": 5.15
+        "value": 5.15,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "norman powell": {
@@ -2831,19 +3389,27 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2371"
+        "fdId": "2371",
+        "numberFireId": "2371",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 29.0,
-        "fpts": 30.9,
-        "pts": 21.0,
+        "fpts": 30.8,
+        "pts": 20.9,
         "reb": 3.3,
         "ast": 2.4,
         "stl": 1.2,
         "blk": 0.2,
         "to": 1.9,
         "salary": 5600.0,
-        "value": 5.52
+        "value": 5.5,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "dorian finney-smith": {
@@ -2853,7 +3419,12 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2485"
+        "fdId": "2485",
+        "numberFireId": "2485",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.02,
@@ -2865,7 +3436,10 @@
         "blk": 0.0,
         "to": 0.1,
         "salary": 3500.0,
-        "value": 0.57
+        "value": 0.57,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "zach collins": {
@@ -2875,7 +3449,12 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2521"
+        "fdId": "2521",
+        "numberFireId": "2521",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.64,
@@ -2887,7 +3466,10 @@
         "blk": 0.2,
         "to": 0.4,
         "salary": 3500.0,
-        "value": 2.06
+        "value": 2.06,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "nickeil alexander-walker": {
@@ -2897,19 +3479,27 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2766"
+        "fdId": "2766",
+        "numberFireId": "2766",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 33.0,
-        "fpts": 35.2,
-        "pts": 22.1,
+        "fpts": 35.3,
+        "pts": 22.2,
         "reb": 3.6,
         "ast": 3.4,
         "stl": 1.3,
         "blk": 0.6,
         "to": 2.0,
         "salary": 7000.0,
-        "value": 5.03
+        "value": 5.04,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "nicolas claxton": {
@@ -2919,7 +3509,12 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2780"
+        "fdId": "2780",
+        "numberFireId": "2780",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 13.12,
@@ -2931,7 +3526,10 @@
         "blk": 0.5,
         "to": 0.7,
         "salary": 4800.0,
-        "value": 2.83
+        "value": 2.83,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "luguentz dort": {
@@ -2941,7 +3539,12 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2843"
+        "fdId": "2843",
+        "numberFireId": "2843",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 8.33,
@@ -2953,7 +3556,10 @@
         "blk": 0.1,
         "to": 0.3,
         "salary": 3900.0,
-        "value": 1.54
+        "value": 1.54,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "patrick williams": {
@@ -2963,7 +3569,12 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2868"
+        "fdId": "2868",
+        "numberFireId": "2868",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 26.5,
@@ -2975,7 +3586,10 @@
         "blk": 0.4,
         "to": 1.4,
         "salary": 3800.0,
-        "value": 5.24
+        "value": 5.24,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "isaac okoro": {
@@ -2985,19 +3599,27 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2869"
+        "fdId": "2869",
+        "numberFireId": "2869",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 27.0,
-        "fpts": 18.5,
-        "pts": 9.9,
+        "fpts": 18.4,
+        "pts": 9.8,
         "reb": 2.8,
         "ast": 1.6,
         "stl": 0.8,
         "blk": 0.4,
         "to": 0.8,
         "salary": 3700.0,
-        "value": 5.0
+        "value": 4.97,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "onyeka okongwu": {
@@ -3007,19 +3629,27 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2870"
+        "fdId": "2870",
+        "numberFireId": "2870",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.0,
-        "fpts": 33.6,
-        "pts": 15.3,
+        "fpts": 33.7,
+        "pts": 15.4,
         "reb": 7.8,
         "ast": 2.8,
         "stl": 1.0,
         "blk": 1.1,
         "to": 1.6,
         "salary": 6800.0,
-        "value": 4.94
+        "value": 4.96,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jalen smith": {
@@ -3029,19 +3659,27 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2874"
+        "fdId": "2874",
+        "numberFireId": "2874",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.0,
-        "fpts": 33.8,
-        "pts": 15.4,
+        "fpts": 33.7,
+        "pts": 15.3,
         "reb": 9.7,
         "ast": 1.9,
         "stl": 0.7,
         "blk": 1.1,
         "to": 1.5,
         "salary": 5300.0,
-        "value": 6.38
+        "value": 6.36,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "tre jones": {
@@ -3051,7 +3689,12 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2904"
+        "fdId": "2904",
+        "numberFireId": "2904",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 11.29,
@@ -3063,7 +3706,10 @@
         "blk": 0.1,
         "to": 0.6,
         "salary": 4300.0,
-        "value": 2.81
+        "value": 2.81,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "josh giddey": {
@@ -3073,7 +3719,12 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2968"
+        "fdId": "2968",
+        "numberFireId": "2968",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.0,
@@ -3085,7 +3736,10 @@
         "blk": 0.4,
         "to": 3.2,
         "salary": 6300.0,
-        "value": 6.0
+        "value": 6.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "corey kispert": {
@@ -3095,7 +3749,12 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2976"
+        "fdId": "2976",
+        "numberFireId": "2976",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.51,
@@ -3107,7 +3766,10 @@
         "blk": 0.0,
         "to": 0.1,
         "salary": 3600.0,
-        "value": 0.86
+        "value": 0.86,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jalen johnson": {
@@ -3117,19 +3779,27 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "2980"
+        "fdId": "2980",
+        "numberFireId": "2980",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 35.0,
-        "fpts": 47.4,
-        "pts": 22.2,
+        "fpts": 47.5,
+        "pts": 22.3,
         "reb": 10.2,
         "ast": 7.3,
         "stl": 1.2,
         "blk": 0.5,
         "to": 3.1,
         "salary": 9100.0,
-        "value": 5.21
+        "value": 5.22,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "aaron wiggins": {
@@ -3139,7 +3809,12 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3009"
+        "fdId": "3009",
+        "numberFireId": "3009",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 25.0,
@@ -3151,7 +3826,10 @@
         "blk": 0.5,
         "to": 1.3,
         "salary": 5500.0,
-        "value": 4.09
+        "value": 4.09,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jock landale": {
@@ -3161,7 +3839,12 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3020"
+        "fdId": "3020",
+        "numberFireId": "3020",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 4.73,
@@ -3173,7 +3856,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 3800.0,
-        "value": 1.29
+        "value": 1.29,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "dyson daniels": {
@@ -3183,7 +3869,12 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3103"
+        "fdId": "3103",
+        "numberFireId": "3103",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 31.0,
@@ -3195,7 +3886,10 @@
         "blk": 0.4,
         "to": 1.6,
         "salary": 7500.0,
-        "value": 4.23
+        "value": 4.23,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "leonard miller": {
@@ -3205,7 +3899,12 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3220"
+        "fdId": "3220",
+        "numberFireId": "3220",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 10.59,
@@ -3217,7 +3916,10 @@
         "blk": 0.2,
         "to": 0.5,
         "salary": 3700.0,
-        "value": 2.7
+        "value": 2.7,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jalen wilson": {
@@ -3227,7 +3929,12 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3235"
+        "fdId": "3235",
+        "numberFireId": "3235",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 8.0,
@@ -3239,7 +3946,10 @@
         "blk": 0.0,
         "to": 0.4,
         "salary": 3500.0,
-        "value": 1.69
+        "value": 1.69,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "rob dillingham": {
@@ -3249,7 +3959,12 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3295"
+        "fdId": "3295",
+        "numberFireId": "3295",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 14.35,
@@ -3261,7 +3976,10 @@
         "blk": 0.1,
         "to": 1.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "matas buzelis": {
@@ -3271,19 +3989,27 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3298"
+        "fdId": "3298",
+        "numberFireId": "3298",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 31.0,
-        "fpts": 32.4,
-        "pts": 17.5,
+        "fpts": 32.3,
+        "pts": 17.4,
         "reb": 6.1,
         "ast": 2.2,
         "stl": 0.8,
         "blk": 1.4,
         "to": 2.3,
         "salary": 5100.0,
-        "value": 6.35
+        "value": 6.33,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "rayj dennis": {
@@ -3293,7 +4019,12 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3368"
+        "fdId": "3368",
+        "numberFireId": "3368",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 2.95,
@@ -3305,7 +4036,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 3500.0,
-        "value": 0.86
+        "value": 0.86,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kingston flemings": {
@@ -3315,7 +4049,12 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3495"
+        "fdId": "3495",
+        "numberFireId": "3495",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 25.0,
@@ -3327,7 +4066,10 @@
         "blk": 0.3,
         "to": 1.9,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "dailyn swain": {
@@ -3337,7 +4079,12 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3499"
+        "fdId": "3499",
+        "numberFireId": "3499",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.23,
@@ -3349,7 +4096,10 @@
         "blk": 0.1,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "zuby ejiofor": {
@@ -3359,7 +4109,12 @@
         "team": "ATL",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3514"
+        "fdId": "3514",
+        "numberFireId": "3514",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.65,
@@ -3371,7 +4126,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "tobe awaka": {
@@ -3381,7 +4139,12 @@
         "team": "CHI",
         "opp": "",
         "slateId": "1057800",
-        "fdId": "3530"
+        "fdId": "3530",
+        "numberFireId": "3530",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.27,
@@ -3393,7 +4156,10 @@
         "blk": 0.2,
         "to": 0.3,
         "salary": 3600.0,
-        "value": 1.56
+        "value": 1.56,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "al horford": {
@@ -3403,7 +4169,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "385"
+        "fdId": "385",
+        "numberFireId": "385",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 22.0,
@@ -3415,7 +4186,10 @@
         "blk": 1.0,
         "to": 1.0,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "draymond green": {
@@ -3425,7 +4199,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "2114"
+        "fdId": "2114",
+        "numberFireId": "2114",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.0,
@@ -3437,7 +4216,10 @@
         "blk": 0.6,
         "to": 2.7,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "harrison barnes": {
@@ -3447,7 +4229,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "2134"
+        "fdId": "2134",
+        "numberFireId": "2134",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.82,
@@ -3459,7 +4246,10 @@
         "blk": 0.0,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "georges niang": {
@@ -3469,7 +4259,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "2464"
+        "fdId": "2464",
+        "numberFireId": "2464",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 11.9,
@@ -3481,7 +4276,10 @@
         "blk": 0.2,
         "to": 0.6,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "gary payton ii": {
@@ -3491,7 +4289,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "2508"
+        "fdId": "2508",
+        "numberFireId": "2508",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 22.0,
@@ -3503,7 +4306,10 @@
         "blk": 0.3,
         "to": 1.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "de'aaron fox": {
@@ -3513,7 +4319,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "2516"
+        "fdId": "2516",
+        "numberFireId": "2516",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.5,
@@ -3525,7 +4336,10 @@
         "blk": 0.3,
         "to": 2.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "luke kornet": {
@@ -3535,7 +4349,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "2622"
+        "fdId": "2622",
+        "numberFireId": "2622",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 7.16,
@@ -3547,7 +4366,10 @@
         "blk": 0.3,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "de'anthony melton": {
@@ -3557,7 +4379,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "2682"
+        "fdId": "2682",
+        "numberFireId": "2682",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 29.0,
@@ -3569,7 +4396,10 @@
         "blk": 0.5,
         "to": 2.1,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "keldon johnson": {
@@ -3579,7 +4409,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "2778"
+        "fdId": "2778",
+        "numberFireId": "2778",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 26.5,
@@ -3591,7 +4426,10 @@
         "blk": 0.2,
         "to": 1.0,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jordan mclaughlin": {
@@ -3601,7 +4439,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "2828"
+        "fdId": "2828",
+        "numberFireId": "2828",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 2.86,
@@ -3613,7 +4456,10 @@
         "blk": 0.0,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "devin vassell": {
@@ -3623,7 +4469,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "2875"
+        "fdId": "2875",
+        "numberFireId": "2875",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 29.0,
@@ -3635,7 +4486,10 @@
         "blk": 0.3,
         "to": 1.0,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "charles bassey": {
@@ -3645,7 +4499,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3007"
+        "fdId": "3007",
+        "numberFireId": "3007",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 8.29,
@@ -3657,7 +4516,10 @@
         "blk": 0.5,
         "to": 0.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "dalen terry": {
@@ -3667,7 +4529,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3113"
+        "fdId": "3113",
+        "numberFireId": "3113",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.39,
@@ -3679,7 +4546,10 @@
         "blk": 0.1,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "gui santos": {
@@ -3689,7 +4559,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3149"
+        "fdId": "3149",
+        "numberFireId": "3149",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 12.16,
@@ -3701,7 +4576,10 @@
         "blk": 0.2,
         "to": 0.8,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "julian champagnie": {
@@ -3711,7 +4589,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3173"
+        "fdId": "3173",
+        "numberFireId": "3173",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 28.0,
@@ -3723,7 +4606,10 @@
         "blk": 0.5,
         "to": 0.9,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "victor wembanyama": {
@@ -3733,7 +4619,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3189"
+        "fdId": "3189",
+        "numberFireId": "3189",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 33.0,
@@ -3745,7 +4636,10 @@
         "blk": 3.5,
         "to": 2.6,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "brandin podziemski": {
@@ -3755,7 +4649,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3206"
+        "fdId": "3206",
+        "numberFireId": "3206",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 36.0,
@@ -3767,7 +4666,10 @@
         "blk": 0.2,
         "to": 1.9,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "stephon castle": {
@@ -3777,7 +4679,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3291"
+        "fdId": "3291",
+        "numberFireId": "3291",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 34.0,
@@ -3789,7 +4696,10 @@
         "blk": 0.3,
         "to": 3.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "malevy leons": {
@@ -3799,7 +4709,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3350"
+        "fdId": "3350",
+        "numberFireId": "3350",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 4.88,
@@ -3811,7 +4726,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "dylan harper": {
@@ -3821,7 +4739,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3414"
+        "fdId": "3414",
+        "numberFireId": "3414",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 33.0,
@@ -3833,7 +4756,10 @@
         "blk": 0.4,
         "to": 2.0,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "carter bryant": {
@@ -3843,7 +4769,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3415"
+        "fdId": "3415",
+        "numberFireId": "3415",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.7,
@@ -3855,7 +4786,10 @@
         "blk": 0.2,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "will richard": {
@@ -3865,7 +4799,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3444"
+        "fdId": "3444",
+        "numberFireId": "3444",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 18.0,
@@ -3877,7 +4816,10 @@
         "blk": 0.1,
         "to": 0.7,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "lj cryer": {
@@ -3887,7 +4829,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3464"
+        "fdId": "3464",
+        "numberFireId": "3464",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 4.37,
@@ -3899,7 +4846,10 @@
         "blk": 0.0,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "tarris reed jr.": {
@@ -3909,7 +4859,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3502"
+        "fdId": "3502",
+        "numberFireId": "3502",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 2.45,
@@ -3921,7 +4876,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "yaxel lendeborg": {
@@ -3931,7 +4889,12 @@
         "team": "GS",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3504"
+        "fdId": "3504",
+        "numberFireId": "3504",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 35.0,
@@ -3943,7 +4906,10 @@
         "blk": 0.5,
         "to": 2.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "ja'kobi gillespie": {
@@ -3953,7 +4919,12 @@
         "team": "SA",
         "opp": "",
         "slateId": "1057610",
-        "fdId": "3525"
+        "fdId": "3525",
+        "numberFireId": "3525",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 1.01,
@@ -3965,7 +4936,10 @@
         "blk": 0.0,
         "to": 0.1,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "james johnson": {
@@ -3975,7 +4949,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "213"
+        "fdId": "213",
+        "numberFireId": "213",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.57,
@@ -3987,7 +4966,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "andre drummond": {
@@ -3997,7 +4979,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2130"
+        "fdId": "2130",
+        "numberFireId": "2130",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 14.0,
@@ -4009,7 +4996,10 @@
         "blk": 0.7,
         "to": 0.7,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jordan clarkson": {
@@ -4019,7 +5009,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2289"
+        "fdId": "2289",
+        "numberFireId": "2289",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.59,
@@ -4031,7 +5026,10 @@
         "blk": 0.1,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "karl-anthony towns": {
@@ -4041,7 +5039,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2326"
+        "fdId": "2326",
+        "numberFireId": "2326",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 32.0,
@@ -4053,7 +5056,10 @@
         "blk": 0.7,
         "to": 2.6,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kelly oubre": {
@@ -4063,7 +5069,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2340"
+        "fdId": "2340",
+        "numberFireId": "2340",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.5,
@@ -4075,7 +5086,10 @@
         "blk": 0.5,
         "to": 1.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "larry nance jr.": {
@@ -4085,7 +5099,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2352"
+        "fdId": "2352",
+        "numberFireId": "2352",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 8.51,
@@ -4097,7 +5116,10 @@
         "blk": 0.1,
         "to": 0.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "t.j. mcconnell": {
@@ -4107,7 +5129,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2390"
+        "fdId": "2390",
+        "numberFireId": "2390",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 8.52,
@@ -4119,7 +5146,10 @@
         "blk": 0.1,
         "to": 0.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "pascal siakam": {
@@ -4129,7 +5159,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2441"
+        "fdId": "2441",
+        "numberFireId": "2441",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 32.5,
@@ -4141,7 +5176,10 @@
         "blk": 0.4,
         "to": 2.1,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "ivica zubac": {
@@ -4151,7 +5189,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2446"
+        "fdId": "2446",
+        "numberFireId": "2446",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 30.5,
@@ -4163,7 +5206,10 @@
         "blk": 0.9,
         "to": 1.8,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "og anunoby": {
@@ -4173,7 +5219,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2534"
+        "fdId": "2534",
+        "numberFireId": "2534",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 33.0,
@@ -4185,7 +5236,10 @@
         "blk": 0.8,
         "to": 1.8,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "josh hart": {
@@ -4195,7 +5249,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2541"
+        "fdId": "2541",
+        "numberFireId": "2541",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 29.0,
@@ -4207,7 +5266,10 @@
         "blk": 0.3,
         "to": 1.8,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "mikal bridges": {
@@ -4217,7 +5279,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2642"
+        "fdId": "2642",
+        "numberFireId": "2642",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 22.0,
@@ -4229,7 +5296,10 @@
         "blk": 0.6,
         "to": 0.7,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "landry shamet": {
@@ -4239,7 +5309,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2652"
+        "fdId": "2652",
+        "numberFireId": "2652",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 25.5,
@@ -4251,7 +5326,10 @@
         "blk": 0.2,
         "to": 0.9,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jalen brunson": {
@@ -4261,7 +5339,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2670"
+        "fdId": "2670",
+        "numberFireId": "2670",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 34.5,
@@ -4273,7 +5356,10 @@
         "blk": 0.2,
         "to": 2.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "obi toppin": {
@@ -4283,7 +5369,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2872"
+        "fdId": "2872",
+        "numberFireId": "2872",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 18.0,
@@ -4295,7 +5386,10 @@
         "blk": 0.2,
         "to": 1.0,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "aaron nesmith": {
@@ -4305,7 +5399,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2878"
+        "fdId": "2878",
+        "numberFireId": "2878",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 13.08,
@@ -4317,7 +5416,10 @@
         "blk": 0.2,
         "to": 0.6,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "miles mcbride": {
@@ -4327,7 +5429,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "2993"
+        "fdId": "2993",
+        "numberFireId": "2993",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 18.0,
@@ -4339,7 +5446,10 @@
         "blk": 0.2,
         "to": 0.7,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jose alvarado": {
@@ -4349,7 +5459,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "3037"
+        "fdId": "3037",
+        "numberFireId": "3037",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 7.96,
@@ -4361,7 +5476,10 @@
         "blk": 0.1,
         "to": 0.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jay huff": {
@@ -4371,7 +5489,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "3040"
+        "fdId": "3040",
+        "numberFireId": "3040",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 10.34,
@@ -4383,7 +5506,10 @@
         "blk": 0.9,
         "to": 0.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "andrew nembhard": {
@@ -4393,7 +5519,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "3126"
+        "fdId": "3126",
+        "numberFireId": "3126",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 33.5,
@@ -4405,7 +5536,10 @@
         "blk": 0.2,
         "to": 2.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "quenton jackson": {
@@ -4415,7 +5549,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "3178"
+        "fdId": "3178",
+        "numberFireId": "3178",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 11.66,
@@ -4427,7 +5566,10 @@
         "blk": 0.1,
         "to": 0.8,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jarace walker": {
@@ -4437,7 +5579,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "3196"
+        "fdId": "3196",
+        "numberFireId": "3196",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 12.5,
@@ -4449,7 +5596,10 @@
         "blk": 0.2,
         "to": 0.8,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kobe brown": {
@@ -4459,7 +5609,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "3217"
+        "fdId": "3217",
+        "numberFireId": "3217",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 9.16,
@@ -4471,7 +5626,10 @@
         "blk": 0.1,
         "to": 0.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jalen slawson": {
@@ -4481,7 +5639,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "3238"
+        "fdId": "3238",
+        "numberFireId": "3238",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 8.91,
@@ -4493,7 +5656,10 @@
         "blk": 0.4,
         "to": 0.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "pacome dadiet": {
@@ -4503,7 +5669,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "3312"
+        "fdId": "3312",
+        "numberFireId": "3312",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 4.41,
@@ -4515,7 +5686,10 @@
         "blk": 0.0,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "tyler kolek": {
@@ -4525,7 +5699,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "3325"
+        "fdId": "3325",
+        "numberFireId": "3325",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.93,
@@ -4537,7 +5716,10 @@
         "blk": 0.0,
         "to": 0.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "mohamed diawara": {
@@ -4547,7 +5729,12 @@
         "team": "NY",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "3456"
+        "fdId": "3456",
+        "numberFireId": "3456",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 7.11,
@@ -4559,7 +5746,10 @@
         "blk": 0.1,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "braden smith": {
@@ -4569,7 +5759,12 @@
         "team": "IND",
         "opp": "",
         "slateId": "1057607",
-        "fdId": "3543"
+        "fdId": "3543",
+        "numberFireId": "3543",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 8.73,
@@ -4581,7 +5776,10 @@
         "blk": 0.2,
         "to": 0.6,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "nikola vucevic": {
@@ -4591,7 +5789,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "226"
+        "fdId": "226",
+        "numberFireId": "226",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 7.22,
@@ -4603,7 +5806,10 @@
         "blk": 0.2,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "myles turner": {
@@ -4613,7 +5819,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2336"
+        "fdId": "2336",
+        "numberFireId": "2336",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 25.0,
@@ -4625,7 +5836,10 @@
         "blk": 1.6,
         "to": 1.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "caris levert": {
@@ -4635,7 +5849,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2434"
+        "fdId": "2434",
+        "numberFireId": "2434",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.2,
@@ -4647,7 +5866,10 @@
         "blk": 0.2,
         "to": 0.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kyle kuzma": {
@@ -4657,7 +5879,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2538"
+        "fdId": "2538",
+        "numberFireId": "2538",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 28.0,
@@ -4669,7 +5896,10 @@
         "blk": 0.4,
         "to": 1.8,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "wendell carter jr.": {
@@ -4679,7 +5909,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2643"
+        "fdId": "2643",
+        "numberFireId": "2643",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 33.5,
@@ -4691,7 +5926,10 @@
         "blk": 0.7,
         "to": 1.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jevon carter": {
@@ -4701,7 +5939,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2669"
+        "fdId": "2669",
+        "numberFireId": "2669",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 10.88,
@@ -4713,7 +5956,10 @@
         "blk": 0.1,
         "to": 0.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "gary trent jr.": {
@@ -4723,7 +5969,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2673"
+        "fdId": "2673",
+        "numberFireId": "2673",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.27,
@@ -4735,7 +5986,10 @@
         "blk": 0.0,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "tyler herro": {
@@ -4745,7 +5999,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2762"
+        "fdId": "2762",
+        "numberFireId": "2762",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 34.0,
@@ -4757,7 +6016,10 @@
         "blk": 0.4,
         "to": 2.1,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "goga bitadze": {
@@ -4767,7 +6029,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2767"
+        "fdId": "2767",
+        "numberFireId": "2767",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.68,
@@ -4779,7 +6046,10 @@
         "blk": 0.4,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kevin porter jr.": {
@@ -4789,7 +6059,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2779"
+        "fdId": "2779",
+        "numberFireId": "2779",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 11.12,
@@ -4801,7 +6076,10 @@
         "blk": 0.2,
         "to": 0.9,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "desmond bane": {
@@ -4811,7 +6089,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2930"
+        "fdId": "2930",
+        "numberFireId": "2930",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 34.5,
@@ -4823,7 +6106,10 @@
         "blk": 0.5,
         "to": 2.0,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jalen suggs": {
@@ -4833,7 +6119,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2967"
+        "fdId": "2967",
+        "numberFireId": "2967",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 27.0,
@@ -4845,7 +6136,10 @@
         "blk": 0.7,
         "to": 2.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "franz wagner": {
@@ -4855,7 +6149,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2970"
+        "fdId": "2970",
+        "numberFireId": "2970",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 38.0,
@@ -4867,7 +6166,10 @@
         "blk": 0.4,
         "to": 2.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jericho sims": {
@@ -4877,7 +6179,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3012"
+        "fdId": "3012",
+        "numberFireId": "3012",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.59,
@@ -4889,7 +6196,10 @@
         "blk": 0.1,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "ousmane dieng": {
@@ -4899,7 +6209,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3106"
+        "fdId": "3106",
+        "numberFireId": "3106",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.15,
@@ -4911,7 +6226,10 @@
         "blk": 0.1,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "ryan rollins": {
@@ -4921,7 +6239,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3139"
+        "fdId": "3139",
+        "numberFireId": "3139",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 8.8,
@@ -4933,7 +6256,10 @@
         "blk": 0.1,
         "to": 0.7,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "a.j. green": {
@@ -4943,7 +6269,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3157"
+        "fdId": "3157",
+        "numberFireId": "3157",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 8.11,
@@ -4955,7 +6286,10 @@
         "blk": 0.0,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jamal cain": {
@@ -4965,7 +6299,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3168"
+        "fdId": "3168",
+        "numberFireId": "3168",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 10.93,
@@ -4977,7 +6316,10 @@
         "blk": 0.1,
         "to": 0.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "anthony black": {
@@ -4987,7 +6329,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3194"
+        "fdId": "3194",
+        "numberFireId": "3194",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 34.0,
@@ -4999,7 +6346,10 @@
         "blk": 0.8,
         "to": 2.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jaime jaquez jr.": {
@@ -5009,7 +6359,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3205"
+        "fdId": "3205",
+        "numberFireId": "3205",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 9.93,
@@ -5021,7 +6376,10 @@
         "blk": 0.1,
         "to": 0.7,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "colin castleton": {
@@ -5031,7 +6389,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3253"
+        "fdId": "3253",
+        "numberFireId": "3253",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.16,
@@ -5043,7 +6406,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "pete nance": {
@@ -5053,7 +6419,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3271"
+        "fdId": "3271",
+        "numberFireId": "3271",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 9.05,
@@ -5065,7 +6436,10 @@
         "blk": 0.2,
         "to": 0.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kel'el ware": {
@@ -5075,7 +6449,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3302"
+        "fdId": "3302",
+        "numberFireId": "3302",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.73,
@@ -5087,7 +6466,10 @@
         "blk": 0.3,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "tristan da silva": {
@@ -5097,7 +6479,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3305"
+        "fdId": "3305",
+        "numberFireId": "3305",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 17.27,
@@ -5109,7 +6496,10 @@
         "blk": 0.2,
         "to": 0.7,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jase richardson": {
@@ -5119,7 +6509,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3425"
+        "fdId": "3425",
+        "numberFireId": "3425",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 12.07,
@@ -5131,7 +6526,10 @@
         "blk": 0.1,
         "to": 0.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kasparas jakucionis": {
@@ -5141,7 +6539,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3432"
+        "fdId": "3432",
+        "numberFireId": "3432",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 6.83,
@@ -5153,7 +6556,10 @@
         "blk": 0.1,
         "to": 0.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kam jones": {
@@ -5163,7 +6569,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3439"
+        "fdId": "3439",
+        "numberFireId": "3439",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 7.18,
@@ -5175,7 +6586,10 @@
         "blk": 0.0,
         "to": 0.4,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "cormac ryan": {
@@ -5185,7 +6599,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3486"
+        "fdId": "3486",
+        "numberFireId": "3486",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 10.68,
@@ -5197,7 +6616,10 @@
         "blk": 0.1,
         "to": 0.6,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "alex morales": {
@@ -5207,7 +6629,12 @@
         "team": "ORL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3487"
+        "fdId": "3487",
+        "numberFireId": "3487",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 4.8,
@@ -5219,7 +6646,10 @@
         "blk": 0.0,
         "to": 0.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "brayden burries": {
@@ -5229,7 +6659,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3521"
+        "fdId": "3521",
+        "numberFireId": "3521",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 27.0,
@@ -5241,7 +6676,10 @@
         "blk": 0.2,
         "to": 1.6,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "nate ament": {
@@ -5251,7 +6689,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3523"
+        "fdId": "3523",
+        "numberFireId": "3523",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 23.5,
@@ -5263,7 +6706,10 @@
         "blk": 0.4,
         "to": 1.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "bogoljub markovic": {
@@ -5273,7 +6719,12 @@
         "team": "MIL",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3547"
+        "fdId": "3547",
+        "numberFireId": "3547",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 1.86,
@@ -5285,7 +6736,10 @@
         "blk": 0.1,
         "to": 0.1,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kevin durant": {
@@ -5295,7 +6749,12 @@
         "team": "HOU",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "77"
+        "fdId": "77",
+        "numberFireId": "77",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 36.0,
@@ -5307,7 +6766,10 @@
         "blk": 1.0,
         "to": 2.9,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "fred vanvleet": {
@@ -5317,7 +6779,12 @@
         "team": "HOU",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2494"
+        "fdId": "2494",
+        "numberFireId": "2494",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 29.0,
@@ -5329,7 +6796,10 @@
         "blk": 0.2,
         "to": 1.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "bogdan bogdanovic": {
@@ -5339,7 +6809,12 @@
         "team": "HOU",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2573"
+        "fdId": "2573",
+        "numberFireId": "2573",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 12.01,
@@ -5351,7 +6826,10 @@
         "blk": 0.1,
         "to": 0.6,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "mohamed bamba": {
@@ -5361,7 +6839,12 @@
         "team": "UTAH",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2647"
+        "fdId": "2647",
+        "numberFireId": "2647",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 17.5,
@@ -5373,7 +6856,10 @@
         "blk": 1.0,
         "to": 0.8,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "josh okogie": {
@@ -5382,20 +6868,28 @@
         "position": "SF",
         "team": "UTAH",
         "opp": "",
-        "slateId": "1057590",
-        "fdId": "2661"
+        "slateId": "1057582",
+        "fdId": "2661",
+        "numberFireId": "2661",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 9.37,
-        "fpts": 5.9,
-        "pts": 2.4,
-        "reb": 1.4,
+        "min": 9.46,
+        "fpts": 6.2,
+        "pts": 2.5,
+        "reb": 1.5,
         "ast": 0.5,
         "stl": 0.4,
         "blk": 0.1,
         "to": 0.4,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 3600.0,
+        "value": 1.72,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "sviatoslav mykhailiuk": {
@@ -5404,11 +6898,16 @@
         "position": "PG",
         "team": "UTAH",
         "opp": "",
-        "slateId": "1057590",
-        "fdId": "2683"
+        "slateId": "1057582",
+        "fdId": "2683",
+        "numberFireId": "2683",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 8.2,
+        "min": 8.28,
         "fpts": 5.5,
         "pts": 3.1,
         "reb": 1.0,
@@ -5416,8 +6915,11 @@
         "stl": 0.2,
         "blk": 0.0,
         "to": 0.3,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 3600.0,
+        "value": 1.53,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jaxson hayes": {
@@ -5427,7 +6929,12 @@
         "team": "UTAH",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2757"
+        "fdId": "2757",
+        "numberFireId": "2757",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 24.0,
@@ -5439,7 +6946,10 @@
         "blk": 1.1,
         "to": 0.8,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "josh green": {
@@ -5449,7 +6959,12 @@
         "team": "UTAH",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2882"
+        "fdId": "2882",
+        "numberFireId": "2882",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 27.0,
@@ -5461,7 +6976,10 @@
         "blk": 0.2,
         "to": 1.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jae'sean tate": {
@@ -5471,7 +6989,12 @@
         "team": "HOU",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2925"
+        "fdId": "2925",
+        "numberFireId": "2925",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 5.7,
@@ -5483,7 +7006,10 @@
         "blk": 0.1,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "alperen sengun": {
@@ -5493,7 +7019,12 @@
         "team": "HOU",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "2977"
+        "fdId": "2977",
+        "numberFireId": "2977",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 35.0,
@@ -5505,7 +7036,10 @@
         "blk": 1.2,
         "to": 3.0,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "jabari smith": {
@@ -5515,7 +7049,12 @@
         "team": "HOU",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3098"
+        "fdId": "3098",
+        "numberFireId": "3098",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 36.0,
@@ -5527,7 +7066,10 @@
         "blk": 1.0,
         "to": 1.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "tari eason": {
@@ -5537,7 +7079,12 @@
         "team": "HOU",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3112"
+        "fdId": "3112",
+        "numberFireId": "3112",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 22.0,
@@ -5549,7 +7096,10 @@
         "blk": 0.5,
         "to": 1.1,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "amen thompson": {
@@ -5559,7 +7109,12 @@
         "team": "HOU",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3192"
+        "fdId": "3192",
+        "numberFireId": "3192",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 35.0,
@@ -5571,7 +7126,10 @@
         "blk": 0.6,
         "to": 2.1,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "keyonte george": {
@@ -5581,7 +7139,12 @@
         "team": "UTAH",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3203"
+        "fdId": "3203",
+        "numberFireId": "3203",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 35.0,
@@ -5593,7 +7156,10 @@
         "blk": 0.3,
         "to": 3.3,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "brice sensabaugh": {
@@ -5602,20 +7168,28 @@
         "position": "SF",
         "team": "UTAH",
         "opp": "",
-        "slateId": "1057590",
-        "fdId": "3215"
+        "slateId": "1057582",
+        "fdId": "3215",
+        "numberFireId": "3215",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 8.34,
-        "fpts": 7.5,
-        "pts": 4.6,
-        "reb": 1.2,
-        "ast": 0.6,
+        "min": 8.41,
+        "fpts": 7.9,
+        "pts": 4.7,
+        "reb": 1.3,
+        "ast": 0.7,
         "stl": 0.3,
         "blk": 0.1,
         "to": 0.6,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 4100.0,
+        "value": 1.93,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "reed sheppard": {
@@ -5625,7 +7199,12 @@
         "team": "HOU",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3290"
+        "fdId": "3290",
+        "numberFireId": "3290",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 22.0,
@@ -5637,7 +7216,10 @@
         "blk": 0.5,
         "to": 1.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "isaiah collier": {
@@ -5647,7 +7229,12 @@
         "team": "UTAH",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3316"
+        "fdId": "3316",
+        "numberFireId": "3316",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 18.0,
@@ -5659,7 +7246,10 @@
         "blk": 0.2,
         "to": 1.8,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "kyle filipowski": {
@@ -5668,20 +7258,28 @@
         "position": "C",
         "team": "UTAH",
         "opp": "",
-        "slateId": "1057590",
-        "fdId": "3330"
+        "slateId": "1057582",
+        "fdId": "3330",
+        "numberFireId": "3330",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 6.97,
-        "fpts": 7.7,
-        "pts": 3.0,
-        "reb": 2.2,
+        "min": 7.03,
+        "fpts": 7.9,
+        "pts": 3.1,
+        "reb": 2.3,
         "ast": 0.7,
         "stl": 0.3,
         "blk": 0.2,
         "to": 0.5,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 3700.0,
+        "value": 2.14,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "trey alexander": {
@@ -5690,11 +7288,16 @@
         "position": "SG",
         "team": "UTAH",
         "opp": "",
-        "slateId": "1057590",
-        "fdId": "3339"
+        "slateId": "1057582",
+        "fdId": "3339",
+        "numberFireId": "3339",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 7.44,
+        "min": 7.51,
         "fpts": 6.0,
         "pts": 3.1,
         "reb": 0.9,
@@ -5702,8 +7305,11 @@
         "stl": 0.3,
         "blk": 0.1,
         "to": 0.4,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 3500.0,
+        "value": 1.71,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "harrison ingram": {
@@ -5712,11 +7318,16 @@
         "position": "SF",
         "team": "UTAH",
         "opp": "",
-        "slateId": "1057590",
-        "fdId": "3355"
+        "slateId": "1057582",
+        "fdId": "3355",
+        "numberFireId": "3355",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 1.96,
+        "min": 1.98,
         "fpts": 1.5,
         "pts": 0.8,
         "reb": 0.3,
@@ -5724,8 +7335,11 @@
         "stl": 0.1,
         "blk": 0.0,
         "to": 0.1,
-        "salary": 0.0,
-        "value": 0.0
+        "salary": 3500.0,
+        "value": 0.43,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "ace bailey": {
@@ -5735,7 +7349,12 @@
         "team": "UTAH",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3412"
+        "fdId": "3412",
+        "numberFireId": "3412",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 33.5,
@@ -5747,7 +7366,10 @@
         "blk": 0.9,
         "to": 1.9,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "blake hinson": {
@@ -5756,11 +7378,16 @@
         "position": "",
         "team": "UTAH",
         "opp": "",
-        "slateId": "1057590",
-        "fdId": "3470"
+        "slateId": "1057582",
+        "fdId": "3470",
+        "numberFireId": "3470",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
-        "min": 10.72,
+        "min": 10.83,
         "fpts": 9.5,
         "pts": 5.7,
         "reb": 1.6,
@@ -5769,7 +7396,10 @@
         "blk": 0.1,
         "to": 0.5,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "sean pedulla": {
@@ -5779,7 +7409,12 @@
         "team": "HOU",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3481"
+        "fdId": "3481",
+        "numberFireId": "3481",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.98,
@@ -5791,7 +7426,10 @@
         "blk": 0.0,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "darryn peterson": {
@@ -5801,7 +7439,12 @@
         "team": "UTAH",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3518"
+        "fdId": "3518",
+        "numberFireId": "3518",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 32.0,
@@ -5813,7 +7456,10 @@
         "blk": 0.6,
         "to": 1.6,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     },
     "bruce thornton": {
@@ -5823,7 +7469,12 @@
         "team": "HOU",
         "opp": "",
         "slateId": "1057590",
-        "fdId": "3527"
+        "fdId": "3527",
+        "numberFireId": "3527",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
       },
       "stats": {
         "min": 3.31,
@@ -5835,7 +7486,10 @@
         "blk": 0.0,
         "to": 0.2,
         "salary": 0.0,
-        "value": 0.0
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
       }
     }
   }

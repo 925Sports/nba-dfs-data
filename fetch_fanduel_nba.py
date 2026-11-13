@@ -42,7 +42,7 @@ def find_candidate_ids():
         candidates = set(re.findall(r'\b(10\d{5,6})\b', r.text))
         sorted_cands = sorted(candidates, reverse=True)
         print(f"Found {len(sorted_cands)} candidate IDs")
-        return sorted_cands[:10]
+        return sorted_cands[:12]
     except Exception as e:
         print(f"Scrape error: {e}")
         return []
@@ -68,71 +68,71 @@ def test_slate(slate_id):
         print(f"  Error testing {slate_id}: {e}")
         return []
 
-def find_best_slate():
+def collect_all_slates():
     candidates = find_candidate_ids()
-    best_id = None
-    best_projs = []
-    best_count = 0
+    all_players = {}
+    kept_slates = []
 
     for sid in candidates:
         projs = test_slate(sid)
         count = len(projs)
         print(f"  {sid}: {count} players")
-        # Prefer larger slates (main slate is usually 100+)
-        if count > best_count and count >= 20:
-            best_count = count
-            best_id = sid
-            best_projs = projs
-        if best_count >= 120:
-            break
-
-    return best_id, best_projs
-
-def normalize(projections):
-    result = {}
-    for p in projections:
-        if not p.get("player") or not p["player"].get("name"):
+        if count < 15:
             continue
-        player = p["player"]["name"].strip()
-        pos = (p["player"].get("position") or "").split("/")[0].upper()
-        team = (p.get("team") or {}).get("abbreviation", "").upper()
-        minutes = float(p.get("minutes") or 0)
-        fpts = float(p.get("fantasy") or 0)
-        if not player or minutes <= 0 or minutes > 48:
-            continue
-        stats = {
-            "min": round(minutes, 2),
-            "fpts": round(fpts, 2),
-            "pts": round(float(p.get("points") or 0), 2),
-            "reb": round(float(p.get("rebounds") or 0), 2),
-            "ast": round(float(p.get("assists") or 0), 2),
-            "stl": round(float(p.get("steals") or 0), 2),
-            "blk": round(float(p.get("blocks") or 0), 2),
-            "to": round(float(p.get("turnovers") or 0), 2)
-        }
-        key = player.lower()
-        result[key] = {
-            "info": {"player": player, "position": pos, "team": team, "opp": ""},
-            "stats": stats
-        }
-    return result
+
+        kept_slates.append({"slateId": sid, "count": count})
+        for p in projs:
+            if not p.get("player") or not p["player"].get("name"):
+                continue
+            player = p["player"]["name"].strip()
+            pos = (p["player"].get("position") or "").split("/")[0].upper()
+            team = (p.get("team") or {}).get("abbreviation", "").upper()
+            minutes = float(p.get("minutes") or 0)
+            fpts = float(p.get("fantasy") or 0)
+            if not player or minutes <= 0 or minutes > 48:
+                continue
+
+            stats = {
+                "min": round(minutes, 2),
+                "fpts": round(fpts, 2),
+                "pts": round(float(p.get("points") or 0), 2),
+                "reb": round(float(p.get("rebounds") or 0), 2),
+                "ast": round(float(p.get("assists") or 0), 2),
+                "stl": round(float(p.get("steals") or 0), 2),
+                "blk": round(float(p.get("blocks") or 0), 2),
+                "to": round(float(p.get("turnovers") or 0), 2)
+            }
+            key = player.lower()
+            # Keep the entry with higher minutes if the player appears in multiple slates
+            if key not in all_players or stats["min"] > all_players[key]["stats"]["min"]:
+                all_players[key] = {
+                    "info": {
+                        "player": player,
+                        "position": pos,
+                        "team": team,
+                        "opp": "",
+                        "slateId": sid
+                    },
+                    "stats": stats
+                }
+
+    return all_players, kept_slates
 
 def main():
-    slate_id, projections = find_best_slate()
-    if not slate_id or not projections:
-        print("No usable slate found")
+    players, kept_slates = collect_all_slates()
+    if not players:
+        print("No usable slates found")
         return
 
-    players = normalize(projections)
     output = {
         "updated": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-        "slateId": slate_id,
+        "slates": kept_slates,
         "playerCount": len(players),
         "players": players
     }
     with open("fanduel_nba_projections.json", "w") as f:
         json.dump(output, f, indent=2)
-    print(f"Wrote {len(players)} NBA players (slate {slate_id})")
+    print(f"Wrote {len(players)} NBA players from {len(kept_slates)} slates")
 
 if __name__ == "__main__":
     main()

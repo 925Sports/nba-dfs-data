@@ -17,7 +17,9 @@ QUERY = """
 query GetProjections($input: ProjectionsInput!) {
   getProjections(input: $input) {
     ... on NbaPlayer {
+      id
       player { 
+        id
         name 
         position 
         numberFireId
@@ -25,14 +27,7 @@ query GetProjections($input: ProjectionsInput!) {
       team { abbreviation }
       minutes
       fantasy
-      points
-      rebounds
-      assists
-      steals
-      blocks
-      turnovers
       salary
-      value
     }
   }
 }
@@ -81,6 +76,10 @@ def test_slate(slate_id):
         r = requests.post(GRAPHQL_URL, json=payload, headers=HEADERS, timeout=20)
         data = r.json()
         projs = data.get("data", {}).get("getProjections") or []
+        if projs:
+            print("\n=== FULL RAW PLAYER OBJECT ===")
+            print(json.dumps(projs[0], indent=2))
+            print("=== END RAW OBJECT ===\n")
         return projs
     except Exception as e:
         print(f"  Error testing {slate_id}: {e}")
@@ -90,7 +89,6 @@ def collect_all_slates():
     candidates = find_candidate_ids()
     all_players = {}
     kept_slates = []
-    dumped = False
 
     for sid in candidates:
         projs = test_slate(sid)
@@ -98,13 +96,6 @@ def collect_all_slates():
         print(f"  {sid}: {count} players")
         if count < 15:
             continue
-
-        # Dump the full structure of the first player from the first good slate
-        if not dumped and projs:
-            print("\n=== FULL RAW PLAYER OBJECT ===")
-            print(json.dumps(projs[0], indent=2))
-            print("=== END RAW OBJECT ===\n")
-            dumped = True
 
         kept_slates.append({"slateId": sid, "count": count})
         for p in projs:
@@ -118,19 +109,18 @@ def collect_all_slates():
             if not player or minutes <= 0 or minutes > 48:
                 continue
 
-            fd_id = p.get("player", {}).get("numberFireId") or ""
+            # Capture any ID we can find
+            fd_id = (
+                p.get("id") or
+                p.get("player", {}).get("id") or
+                p.get("player", {}).get("numberFireId") or
+                ""
+            )
 
             stats = {
                 "min": round(minutes, 2),
                 "fpts": round(fpts, 2),
-                "pts": round(float(p.get("points") or 0), 2),
-                "reb": round(float(p.get("rebounds") or 0), 2),
-                "ast": round(float(p.get("assists") or 0), 2),
-                "stl": round(float(p.get("steals") or 0), 2),
-                "blk": round(float(p.get("blocks") or 0), 2),
-                "to": round(float(p.get("turnovers") or 0), 2),
-                "salary": clean_number(p.get("salary")),
-                "value": round(clean_number(p.get("value")), 2)
+                "salary": clean_number(p.get("salary"))
             }
             key = player.lower()
             if key not in all_players or stats["min"] > all_players[key]["stats"]["min"]:

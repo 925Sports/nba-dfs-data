@@ -1,7 +1,7 @@
 import requests
 import json
 import re
-from datetime import datetime
+from datetime import datetime, timezone
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -33,19 +33,16 @@ query GetProjections($input: ProjectionsInput!) {
 """
 
 def find_candidate_ids():
-    """Scrape the page for possible slate IDs"""
     try:
         r = requests.get(
             "https://www.fanduel.com/research/nba/fantasy/dfs-projections",
             headers={"User-Agent": HEADERS["User-Agent"]},
             timeout=15
         )
-        # Find 7-8 digit numbers that look like slateIds
         candidates = set(re.findall(r'\b(10\d{5,6})\b', r.text))
-        # Prefer higher numbers (more recent)
         sorted_cands = sorted(candidates, reverse=True)
         print(f"Found {len(sorted_cands)} candidate IDs")
-        return sorted_cands[:8]  # test the top 8
+        return sorted_cands[:8]
     except Exception as e:
         print(f"Scrape error: {e}")
         return []
@@ -86,7 +83,7 @@ def find_best_slate():
             best_count = count
             best_id = sid
             best_projs = projs
-        if best_count >= 100:  # good enough, stop early
+        if best_count >= 100:
             break
 
     return best_id, best_projs
@@ -128,7 +125,7 @@ def main():
 
     players = normalize(projections)
     output = {
-        "updated": datetime.now(datetime.UTC).isoformat().replace("+00:00", "Z"),
+        "updated": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "slateId": slate_id,
         "players": players
     }

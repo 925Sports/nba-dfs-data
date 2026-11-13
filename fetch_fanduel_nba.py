@@ -34,6 +34,17 @@ query GetProjections($input: ProjectionsInput!) {
 }
 """
 
+def clean_salary(val):
+    if not val:
+        return 0.0
+    if isinstance(val, (int, float)):
+        return float(val)
+    cleaned = str(val).replace("$", "").replace(",", "").strip()
+    try:
+        return float(cleaned) if cleaned else 0.0
+    except ValueError:
+        return 0.0
+
 def find_candidate_ids():
     try:
         r = requests.get(
@@ -65,10 +76,7 @@ def test_slate(slate_id):
     try:
         r = requests.post(GRAPHQL_URL, json=payload, headers=HEADERS, timeout=20)
         data = r.json()
-        projs = data.get("data", {}).get("getProjections") or []
-        if not projs and data.get("errors"):
-            print(f"  Errors for {slate_id}: {data['errors']}")
-        return projs
+        return data.get("data", {}).get("getProjections") or []
     except Exception as e:
         print(f"  Error testing {slate_id}: {e}")
         return []
@@ -106,7 +114,7 @@ def collect_all_slates():
                 "stl": round(float(p.get("steals") or 0), 2),
                 "blk": round(float(p.get("blocks") or 0), 2),
                 "to": round(float(p.get("turnovers") or 0), 2),
-                "salary": float(p.get("salary") or 0),
+                "salary": clean_salary(p.get("salary")),
                 "value": round(float(p.get("value") or 0), 2)
             }
             key = player.lower()

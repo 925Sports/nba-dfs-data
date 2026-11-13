@@ -72,6 +72,14 @@ td { padding:0.38rem 0.45rem; border-bottom:1px solid var(--border); vertical-al
 .high-value { color:var(--good); font-weight:700; } .low-value { color:var(--bad); font-weight:600; }
 .val-7 { color:#38bdf8; font-weight:700; } .val-6 { color:#4ade80; font-weight:700; }
 .val-5 { color:#fbbf24; font-weight:600; } .val-4 { color:#f87171; font-weight:600; }
+#csTable th[data-sort], #salaryGapTable th[data-sort] { cursor:pointer; }
+#csTable th[data-sort]:hover, #salaryGapTable th[data-sort]:hover { color:#fff; }
+#csTable td.heat, #salaryGapTable td.heat { font-weight:800; }
+#csTable td.heat-hi, #salaryGapTable td.heat-hi { background:#1d4ed8; color:#fff; }
+#csTable td.heat-good, #salaryGapTable td.heat-good { background:#15803d; color:#fff; }
+#csTable td.heat-mid, #salaryGapTable td.heat-mid { background:#a16207; color:#fff; }
+#csTable td.heat-ok, #salaryGapTable td.heat-ok { background:#9a3412; color:#fff; }
+#csTable td.heat-low, #salaryGapTable td.heat-low { background:#991b1b; color:#fff; }
 #status { font-size:0.8rem; padding:0.45rem 1.25rem; color:var(--muted); }
 .note { font-size:0.75rem; color:var(--muted); }
 .run-popup { position:fixed; inset:0; z-index:2000; background:rgba(6,10,20,0.72); display:flex; align-items:center; justify-content:center; padding:1rem; }
@@ -456,7 +464,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
               <option value="fd">FanDuel</option>
             </select>
           </label>
-          <label>FanDuel player list
+          <label id="fdCsvWrap" style="display:none;">FanDuel player list
             <input type="file" id="fdCsvUpload" accept=".csv,text/csv">
           </label>
           <span class="note" id="siteNote" style="flex:1 1 260px;">DraftKings salaries. FanDuel salaries load beside them for the gap view.</span>
@@ -738,11 +746,11 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
       <div id="salaryGaps"></div>
       <div id="csTeams"></div>
       <div class="cs-wrap"><table id="csTable"><thead><tr>
-        <th data-sort="rank">Rank</th><th data-sort="name">Name</th><th data-sort="pos">Pos</th><th data-sort="team">Team</th><th>Opp</th><th data-sort="tip">Tip</th>
-        <th data-sort="salary">Salary</th><th data-sort="dkSal">DK $</th><th data-sort="fdSal">FD $</th><th data-sort="gap">Gap</th><th data-sort="proj">Proj</th><th data-sort="min">Min</th><th data-sort="value">Value</th><th data-sort="own">Own est</th>
+        <th data-sort="rank">Rank</th><th data-sort="name">Name</th><th data-sort="pos">Pos</th><th data-sort="team">Team</th><th data-sort="opp">Opp</th><th data-sort="tip">Tip</th>
+        <th data-sort="salary">Salary</th><th data-sort="dkSal">DK $</th><th data-sort="fdSal">FD $</th><th data-sort="gap">Gap</th><th data-sort="proj">Proj</th><th data-sort="min">Min</th><th data-sort="dkVal">DK val</th><th data-sort="fdVal">FD val</th><th data-sort="own">Own est</th>
         <th data-sort="ou">O/U</th><th data-sort="spread">Spr</th><th data-sort="pts">PTS</th><th data-sort="reb">REB</th><th data-sort="ast">AST</th><th data-sort="fd">FD pts</th>
       </tr></thead><tbody></tbody></table></div>
-      <div class="note" style="margin-top:0.45rem;">5.2x or better is a strong price. 4.6x to 5.2x is a normal stud price on this sport. Under 4.5x needs a reason. Min is projected minutes, with the difference from his average when they are not the same. Tip is the game start. FD pts is FanDuel scoring from the feed, not the lineup projection. DK $ and FD $ are salaries. Gap is FanDuel minus DraftKings. The lineup still uses the DraftKings projection. PTS / REB / AST are season averages when the feed has them. A blank starter tag is not a bench label, so it is not used to rank.</div>
+      <div class="note" style="margin-top:0.45rem;">Click a column header to sort. DK val and FD val both use the DraftKings projection, divided by that site's salary. Green and blue are the better prices. Gap is FanDuel salary minus DraftKings salary: green means FanDuel is cheaper, red means FanDuel costs more. FD pts is FanDuel scoring from the feed, not the lineup projection.</div>
     </div></div>
   </div>
   <div id="tab-slate" style="display:none;"><div class="card"><div class="card-header">Slate preview</div><div class="card-body">
@@ -2521,6 +2529,25 @@ function esc(s) {
   });
 }
 function valueOf(p) { return p.salary > 0 ? p.proj / (p.salary / 1000) : 0; }
+function sheetProj(p) { return p && p.baseProj > 0 ? p.baseProj : ((p && p.proj) || 0); }
+function rateValue(proj, salary) { return salary > 0 ? proj / (salary / 1000) : 0; }
+function dkValue(p) { return rateValue(sheetProj(p), p && p.dkSalary); }
+function fdValue(p) { return rateValue(sheetProj(p), p && p.fdSalary); }
+function valueHeat(v) {
+  if (!(v > 0)) return "";
+  if (v >= 7) return "heat heat-hi";
+  if (v >= 5.2) return "heat heat-good";
+  if (v >= 4.6) return "heat heat-mid";
+  if (v >= 4) return "heat heat-ok";
+  return "heat heat-low";
+}
+function gapStyle(g, maxAbs) {
+  if (g == null || !(maxAbs > 0)) return "";
+  const t = Math.min(1, Math.abs(g) / maxAbs);
+  const alpha = (0.18 + t * 0.72).toFixed(2);
+  const color = g < 0 ? `rgba(22,163,74,${alpha})` : g > 0 ? `rgba(220,38,38,${alpha})` : "";
+  return color ? ` style="background:${color};color:#fff;font-weight:800;"` : "";
+}
 function priceCheck(p) {
   if (!p || p.proj <= 0 || !(p.salary > 0)) return false;
   const v = valueOf(p);
@@ -3481,6 +3508,8 @@ function paintSiteChrome() {
   const head = document.querySelector(".app-header p");
   const runNote = document.querySelector(".run-note");
   const upload = document.getElementById("uploadNote");
+  const csvWrap = document.getElementById("fdCsvWrap");
+  if (csvWrap) csvWrap.style.display = siteIsFd() ? "" : "none";
   if (siteIsFd()) {
     if (btn) btn.textContent = "FD upload CSV";
     if (head) head.textContent = "FanDuel classic is 9 spots under $60,000. Showdown is MVP, STAR, PRO, and 3 UTIL. Projections are the DraftKings numbers. Upload the FanDuel player list for export ids.";
@@ -3505,6 +3534,7 @@ function applySite() {
   paintSiteChrome();
   buildSlatePicker();
 }
+let gapSort = { key: "gap", dir: -1 };
 function renderSalaryGaps() {
   const host = document.getElementById("salaryGaps");
   if (!host) return;
@@ -3517,20 +3547,40 @@ function renderSalaryGaps() {
     seen.add(p.name);
     rows.push(p);
   });
-  rows.sort((a, b) => Math.abs(gapValue(b)) - Math.abs(gapValue(a)));
-  const top = rows.filter((p) => Math.abs(gapValue(p)) >= 300).slice(0, 20);
-  const shown = top.length ? top : rows.slice(0, 12);
-  if (!shown.length) {
+  const maxAbs = rows.reduce((m, p) => Math.max(m, Math.abs(gapValue(p) || 0)), 0);
+  rows.sort((a, b) => {
+    const k = gapSort.key;
+    let va; let vb;
+    if (k === "name") { va = a.name; vb = b.name; }
+    else if (k === "team") { va = a.team; vb = b.team; }
+    else if (k === "proj") { va = sheetProj(a); vb = sheetProj(b); }
+    else if (k === "dkSal") { va = a.dkSalary || 0; vb = b.dkSalary || 0; }
+    else if (k === "fdSal") { va = a.fdSalary || 0; vb = b.fdSalary || 0; }
+    else if (k === "dkVal") { va = dkValue(a); vb = dkValue(b); }
+    else if (k === "fdVal") { va = fdValue(a); vb = fdValue(b); }
+    else { va = gapValue(a) || 0; vb = gapValue(b) || 0; }
+    return (va < vb ? -1 : va > vb ? 1 : 0) * gapSort.dir;
+  });
+  const mark = (key, label) => `${label}${gapSort.key === key ? (gapSort.dir < 0 ? " ▼" : " ▲") : ""}`;
+  if (!rows.length) {
     host.innerHTML = `<div class="note">No FanDuel salary match on this slate yet.</div>`;
     return;
   }
-  host.innerHTML = `<div class="subhead">Biggest salary gaps</div><div class="note" style="margin-bottom:0.35rem;">FanDuel salary minus DraftKings salary. A plus means FanDuel is more expensive. The projection is the DraftKings projection either way.</div><div class="pool-wrap"><table><thead><tr><th>Player</th><th>Team</th><th>Proj</th><th>DK $</th><th>FD $</th><th>Gap</th><th>Higher</th></tr></thead><tbody>${
-    shown.map((p) => {
+  host.innerHTML = `<div class="subhead">Salary gaps</div><div class="note" style="margin-bottom:0.35rem;">Same DraftKings projection on both salaries. Click a header to sort. Green gap means FanDuel is cheaper.</div><div class="pool-wrap"><table id="salaryGapTable"><thead><tr><th data-sort="name">${mark("name", "Player")}</th><th data-sort="team">${mark("team", "Team")}</th><th data-sort="proj">${mark("proj", "Proj")}</th><th data-sort="dkSal">${mark("dkSal", "DK $")}</th><th data-sort="fdSal">${mark("fdSal", "FD $")}</th><th data-sort="dkVal">${mark("dkVal", "DK val")}</th><th data-sort="fdVal">${mark("fdVal", "FD val")}</th><th data-sort="gap">${mark("gap", "Gap")}</th></tr></thead><tbody>${
+    rows.map((p) => {
       const g = gapValue(p);
-      return `<tr><td>${nameBtn(p.name)}</td><td>${esc(p.team)}</td><td>${(p.baseProj || p.proj).toFixed(1)}</td><td>${money(p.dkSalary)}</td><td>${money(p.fdSalary)}</td><td><b>${signedMoney(g)}</b></td><td>${g > 0 ? "FD" : g < 0 ? "DK" : "Even"}</td></tr>`;
+      const dv = dkValue(p);
+      const fv = fdValue(p);
+      return `<tr><td>${nameBtn(p.name)}</td><td>${esc(p.team)}</td><td>${sheetProj(p).toFixed(1)}</td><td>${money(p.dkSalary)}</td><td>${money(p.fdSalary)}</td><td class="${valueHeat(dv)}">${dv ? dv.toFixed(2) + "x" : "—"}</td><td class="${valueHeat(fv)}">${fv ? fv.toFixed(2) + "x" : "—"}</td><td class="heat"${gapStyle(g, maxAbs)}>${signedMoney(g)}</td></tr>`;
     }).join("")
   }</tbody></table></div>`;
   bindNames(host);
+  host.querySelectorAll("#salaryGapTable th[data-sort]").forEach((th) => th.onclick = () => {
+    const k = th.dataset.sort;
+    if (gapSort.key === k) gapSort.dir *= -1;
+    else gapSort = { key: k, dir: k === "name" || k === "team" ? 1 : -1 };
+    renderSalaryGaps();
+  });
 }
 function parseFdCsv(text) {
   const grid = Papa.parse(text, { skipEmptyLines: false }).data || [];
@@ -4081,7 +4131,7 @@ function sheetRows() {
     if (hideOut && isOutStatus(p.injury)) return false;
     if (p.proj <= 0 && !(mode === "fade" && p.phantom)) return false;
     if (p.proj < minProj) return false;
-    if (valueOf(p) < minVal && mode !== "fade") return false;
+    if (valueOf(p) < minVal && dkValue(p) < minVal && fdValue(p) < minVal && mode !== "fade") return false;
     const real = rosterPos(p);
     if (pos !== "ALL" && !isEligible(real, pos) && real !== pos) return false;
     if (mode === "studs" && p.salary < 8000) return false;
@@ -4138,10 +4188,17 @@ function renderCheatSheet() {
     if (k === "name") { va = a.name; vb = b.name; }
     else if (k === "pos") { va = a.pos; vb = b.pos; }
     else if (k === "team") { va = a.team; vb = b.team; }
+    else if (k === "opp") { va = a.opp || ""; vb = b.opp || ""; }
     else if (k === "salary") { va = a.salary; vb = b.salary; }
     else if (k === "dkSal") { va = a.dkSalary || 0; vb = b.dkSalary || 0; }
     else if (k === "fdSal") { va = a.fdSalary || 0; vb = b.fdSalary || 0; }
-    else if (k === "gap") { va = gapValue(a) == null ? -999999 : Math.abs(gapValue(a)); vb = gapValue(b) == null ? -999999 : Math.abs(gapValue(b)); }
+    else if (k === "gap") {
+      va = gapValue(a); vb = gapValue(b);
+      if (va == null) va = csSort.dir < 0 ? -1e12 : 1e12;
+      if (vb == null) vb = csSort.dir < 0 ? -1e12 : 1e12;
+    }
+    else if (k === "dkVal") { va = dkValue(a); vb = dkValue(b); }
+    else if (k === "fdVal") { va = fdValue(a); vb = fdValue(b); }
     else if (k === "value") { va = valueOf(a); vb = valueOf(b); }
     else if (k === "own") { va = a.own; vb = b.own; }
     else if (k === "ou") { va = a.ou || 0; vb = b.ou || 0; }
@@ -4172,35 +4229,52 @@ function renderCheatSheet() {
         const tip = tipTime(list[0].start);
         const body = list.slice().sort((a, b) => b.proj - a.proj).map((p) => {
           const mins = shownMinutes(p);
-          return `<div class="sp-row"><span>${nameBtn(p.name)} ${injuryTag(p.injury)} ${tagPills(p)} <span class="cs-sub">${esc(rosterPos(p))}${tipTime(p.start) ? " · " + esc(tipTime(p.start)) : ""}</span></span><span>${mins.proj ? mins.proj.toFixed(0) + " min · " : ""}${p.proj.toFixed(1)} · ${valueOf(p).toFixed(2)}x · DK ${p.dkSalary ? money(p.dkSalary) : "—"} · FD ${p.fdSalary ? money(p.fdSalary) : "—"}</span></div>`;
+          return `<div class="sp-row"><span>${nameBtn(p.name)} ${injuryTag(p.injury)} ${tagPills(p)} <span class="cs-sub">${esc(rosterPos(p))}${tipTime(p.start) ? " · " + esc(tipTime(p.start)) : ""}</span></span><span>${mins.proj ? mins.proj.toFixed(0) + " min · " : ""}${sheetProj(p).toFixed(1)} · DK ${dkValue(p) ? dkValue(p).toFixed(2) + "x" : "—"} · FD ${fdValue(p) ? fdValue(p).toFixed(2) + "x" : "—"}</span></div>`;
         }).join("");
         return sec(`${esc(tm)} vs ${esc(list[0].opp || "—")}`, `<p class="note">${tip ? esc(tip) + " · " : ""}${env.ou ? "O/U " + env.ou.toFixed(1) : "No total"}${env.spr ? " · " + (env.spr > 0 ? "+" : "") + env.spr.toFixed(1) : ""}</p>${body}`, true);
       }).join("") || `<div class="note">No teams match.</div>`;
       bindNames(teamsHost);
     }
     host.innerHTML = "";
+    renderSalaryGaps();
+    paintCsHeaders();
     return;
   }
   if (wrap) wrap.style.display = "";
   if (teamsHost) teamsHost.innerHTML = "";
   renderSalaryGaps();
+  const gapMax = rows.reduce((m, p) => {
+    const g = gapValue(p);
+    return g == null ? m : Math.max(m, Math.abs(g));
+  }, 0);
   host.innerHTML = rows.map((p, i) => {
-    const val = valueOf(p);
+    const dv = dkValue(p);
+    const fv = fdValue(p);
+    const g = gapValue(p);
     const mins = shownMinutes(p);
     return `<tr>
       <td>${i + 1}</td>
       <td>${nameBtn(p.name)} ${injuryTag(p.injury)} ${p.starter === "Yes" ? '<span class="tag s" data-tip="Tagged as a starter in the feed.">S</span>' : ""} ${tagPills(p)}</td>
       <td>${esc(rosterPos(p))}</td><td>${esc(p.team)}</td><td>${esc(p.opp)}</td><td>${esc(tipTime(p.start) || "—")}</td>
-      <td>${money(p.salary)}</td><td>${p.dkSalary ? money(p.dkSalary) : "—"}</td><td>${p.fdSalary ? money(p.fdSalary) : "—"}</td><td>${gapText(p)}</td><td>${p.proj.toFixed(1)}</td><td>${mins.proj ? minDiffHtml(mins.proj, mins.avg) : "—"}</td>
-      <td class="${valueClass(val)}">${val.toFixed(2)}x</td>
+      <td>${money(p.salary)}</td><td>${p.dkSalary ? money(p.dkSalary) : "—"}</td><td>${p.fdSalary ? money(p.fdSalary) : "—"}</td><td class="heat"${gapStyle(g, gapMax)}>${gapText(p)}</td><td>${sheetProj(p).toFixed(1)}</td><td>${mins.proj ? minDiffHtml(mins.proj, mins.avg) : "—"}</td>
+      <td class="${valueHeat(dv)}">${dv ? dv.toFixed(2) + "x" : "—"}</td>
+      <td class="${valueHeat(fv)}">${fv ? fv.toFixed(2) + "x" : "—"}</td>
       <td>${Math.round(p.own)}</td>
       <td>${numCell(p.ou, 1)}</td><td>${sprText(p)}</td>
       <td>${numCell(p.pts, 1)}</td><td>${numCell(p.reb, 1)}</td><td>${numCell(p.ast, 1)}</td><td>${numCell(p.fd, 1)}</td>
     </tr>`;
-  }).join("") || `<tr><td colspan="17" class="note">No players match. Lower the minimums or switch the view.</td></tr>`;
+  }).join("") || `<tr><td colspan="21" class="note">No players match. Lower the minimums or switch the view.</td></tr>`;
   bindNames(host);
+  paintCsHeaders();
 }
 
+function paintCsHeaders() {
+  document.querySelectorAll("#csTable th[data-sort]").forEach((th) => {
+    const k = th.dataset.sort;
+    if (!th.dataset.label) th.dataset.label = th.textContent.replace(/ [▲▼]$/, "");
+    th.textContent = th.dataset.label + (csSort.key === k ? (csSort.dir < 0 ? " ▼" : " ▲") : "");
+  });
+}
 function nameBtn(name) {
   return `<button type="button" class="nm" data-player="${esc(name)}">${esc(name)}</button>`;
 }

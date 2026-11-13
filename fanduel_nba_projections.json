@@ -1,464 +1,44 @@
 {
-  "updated": "2026-11-13T04:00:17.726271Z",
-  "slateId": "1057290",
-  "playerCount": 116,
+  "updated": "2026-11-13T04:06:01.654214Z",
+  "slates": [
+    {
+      "slateId": "1057456",
+      "count": 71
+    },
+    {
+      "slateId": "1057356",
+      "count": 37
+    },
+    {
+      "slateId": "1057350",
+      "count": 31
+    },
+    {
+      "slateId": "1057290",
+      "count": 135
+    },
+    {
+      "slateId": "1057287",
+      "count": 37
+    },
+    {
+      "slateId": "1057286",
+      "count": 71
+    },
+    {
+      "slateId": "1057283",
+      "count": 136
+    }
+  ],
+  "playerCount": 117,
   "players": {
-    "kentavious caldwell-pope": {
-      "info": {
-        "player": "Kentavious Caldwell-Pope",
-        "position": "SG",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 20.0,
-        "fpts": 15.0,
-        "pts": 6.8,
-        "reb": 2.3,
-        "ast": 2.5,
-        "stl": 0.7,
-        "blk": 0.2,
-        "to": 1.0
-      }
-    },
-    "joel embiid": {
-      "info": {
-        "player": "Joel Embiid",
-        "position": "C",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 32.0,
-        "fpts": 40.3,
-        "pts": 20.9,
-        "reb": 8.4,
-        "ast": 4.2,
-        "stl": 0.6,
-        "blk": 1.3,
-        "to": 2.7
-      }
-    },
-    "kyle anderson": {
-      "info": {
-        "player": "Kyle Anderson",
-        "position": "PF",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 6.89,
-        "fpts": 6.3,
-        "pts": 2.3,
-        "reb": 1.2,
-        "ast": 1.0,
-        "stl": 0.3,
-        "blk": 0.2,
-        "to": 0.4
-      }
-    },
-    "jaylen brown": {
-      "info": {
-        "player": "Jaylen Brown",
-        "position": "SF",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 35.0,
-        "fpts": 40.8,
-        "pts": 23.4,
-        "reb": 7.1,
-        "ast": 5.3,
-        "stl": 1.0,
-        "blk": 0.4,
-        "to": 3.3
-      }
-    },
-    "jakob poeltl": {
-      "info": {
-        "player": "Jakob Poeltl",
-        "position": "C",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 30.0,
-        "fpts": 31.5,
-        "pts": 12.8,
-        "reb": 8.9,
-        "ast": 2.5,
-        "stl": 1.0,
-        "blk": 1.0,
-        "to": 1.7
-      }
-    },
-    "anfernee simons": {
-      "info": {
-        "player": "Anfernee Simons",
-        "position": "SG",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 22.0,
-        "fpts": 17.6,
-        "pts": 10.6,
-        "reb": 2.2,
-        "ast": 2.2,
-        "stl": 0.5,
-        "blk": 0.2,
-        "to": 1.0
-      }
-    },
-    "rj barrett": {
-      "info": {
-        "player": "RJ Barrett",
-        "position": "SG",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 36.0,
-        "fpts": 38.8,
-        "pts": 22.6,
-        "reb": 6.6,
-        "ast": 4.2,
-        "stl": 0.9,
-        "blk": 0.5,
-        "to": 2.2
-      }
-    },
-    "dean wade": {
-      "info": {
-        "player": "Dean Wade",
-        "position": "PF",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 27.0,
-        "fpts": 19.8,
-        "pts": 6.7,
-        "reb": 5.1,
-        "ast": 2.0,
-        "stl": 0.9,
-        "blk": 0.6,
-        "to": 0.5
-      }
-    },
-    "tyrese maxey": {
-      "info": {
-        "player": "Tyrese Maxey",
-        "position": "PG",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 36.0,
-        "fpts": 42.2,
-        "pts": 22.7,
-        "reb": 4.1,
-        "ast": 6.4,
-        "stl": 1.6,
-        "blk": 0.8,
-        "to": 2.2
-      }
-    },
-    "immanuel quickley": {
-      "info": {
-        "player": "Immanuel Quickley",
-        "position": "PG",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 33.0,
-        "fpts": 35.1,
-        "pts": 17.6,
-        "reb": 4.4,
-        "ast": 6.5,
-        "stl": 1.3,
-        "blk": 0.1,
-        "to": 1.7
-      }
-    },
-    "jabari walker": {
-      "info": {
-        "player": "Jabari Walker",
-        "position": "PF",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 3.6,
-        "fpts": 3.1,
-        "pts": 1.2,
-        "reb": 0.9,
-        "ast": 0.2,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.1
-      }
-    },
-    "dominick barlow": {
-      "info": {
-        "player": "Dominick Barlow",
-        "position": "PF",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 9.21,
-        "fpts": 7.2,
-        "pts": 2.7,
-        "reb": 1.9,
-        "ast": 0.5,
-        "stl": 0.3,
-        "blk": 0.3,
-        "to": 0.3
-      }
-    },
-    "andre jackson jr.": {
-      "info": {
-        "player": "Andre Jackson Jr.",
-        "position": "",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 9.8,
-        "fpts": 8.1,
-        "pts": 3.6,
-        "reb": 1.7,
-        "ast": 1.1,
-        "stl": 0.4,
-        "blk": 0.1,
-        "to": 0.7
-      }
-    },
-    "rayan rupert": {
-      "info": {
-        "player": "Rayan Rupert",
-        "position": "SG",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 11.98,
-        "fpts": 8.8,
-        "pts": 3.6,
-        "reb": 2.2,
-        "ast": 0.9,
-        "stl": 0.5,
-        "blk": 0.1,
-        "to": 0.6
-      }
-    },
-    "ja'kobe walter": {
-      "info": {
-        "player": "Ja'Kobe Walter",
-        "position": "SG",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 31.0,
-        "fpts": 25.1,
-        "pts": 12.5,
-        "reb": 4.2,
-        "ast": 2.1,
-        "stl": 1.4,
-        "blk": 0.4,
-        "to": 1.0
-      }
-    },
-    "jamal shead": {
-      "info": {
-        "player": "Jamal Shead",
-        "position": "PG",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 28.0,
-        "fpts": 25.1,
-        "pts": 9.1,
-        "reb": 2.3,
-        "ast": 7.1,
-        "stl": 1.2,
-        "blk": 0.3,
-        "to": 1.9
-      }
-    },
-    "jamison battle": {
-      "info": {
-        "player": "Jamison Battle",
-        "position": "SF",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 24.0,
-        "fpts": 18.5,
-        "pts": 10.4,
-        "reb": 4.0,
-        "ast": 1.3,
-        "stl": 0.6,
-        "blk": 0.2,
-        "to": 1.1
-      }
-    },
-    "justin edwards": {
-      "info": {
-        "player": "Justin Edwards",
-        "position": "SF",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 3.67,
-        "fpts": 2.7,
-        "pts": 1.3,
-        "reb": 0.4,
-        "ast": 0.3,
-        "stl": 0.2,
-        "blk": 0.0,
-        "to": 0.1
-      }
-    },
-    "collin murray-boyles": {
-      "info": {
-        "player": "Collin Murray-Boyles",
-        "position": "PF",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 28.0,
-        "fpts": 28.4,
-        "pts": 11.4,
-        "reb": 6.7,
-        "ast": 2.4,
-        "stl": 1.0,
-        "blk": 1.3,
-        "to": 1.5
-      }
-    },
-    "vj edgecombe": {
-      "info": {
-        "player": "VJ Edgecombe",
-        "position": "SG",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 33.0,
-        "fpts": 29.3,
-        "pts": 12.9,
-        "reb": 5.6,
-        "ast": 4.1,
-        "stl": 1.2,
-        "blk": 0.5,
-        "to": 1.6
-      }
-    },
-    "caleb love": {
-      "info": {
-        "player": "Caleb Love",
-        "position": "SG",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 3.75,
-        "fpts": 2.9,
-        "pts": 1.6,
-        "reb": 0.4,
-        "ast": 0.5,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.2
-      }
-    },
-    "alijah martin": {
-      "info": {
-        "player": "Alijah Martin",
-        "position": "SG",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 4.12,
-        "fpts": 3.4,
-        "pts": 1.8,
-        "reb": 0.6,
-        "ast": 0.4,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.3
-      }
-    },
-    "allen graves": {
-      "info": {
-        "player": "Allen Graves",
-        "position": "",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 6.8,
-        "fpts": 6.8,
-        "pts": 2.9,
-        "reb": 1.6,
-        "ast": 0.5,
-        "stl": 0.2,
-        "blk": 0.3,
-        "to": 0.3
-      }
-    },
-    "labaron philon jr.": {
-      "info": {
-        "player": "Labaron Philon Jr.",
-        "position": "",
-        "team": "PHI",
-        "opp": ""
-      },
-      "stats": {
-        "min": 2.78,
-        "fpts": 2.3,
-        "pts": 1.1,
-        "reb": 0.4,
-        "ast": 0.4,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.2
-      }
-    },
-    "jaden bradley": {
-      "info": {
-        "player": "Jaden Bradley",
-        "position": "PG",
-        "team": "TOR",
-        "opp": ""
-      },
-      "stats": {
-        "min": 2.4,
-        "fpts": 2.4,
-        "pts": 1.2,
-        "reb": 0.4,
-        "ast": 0.4,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.2
-      }
-    },
     "devin booker": {
       "info": {
         "player": "Devin Booker",
         "position": "PG",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 34.0,
@@ -476,7 +56,8 @@
         "player": "Pat Connaughton",
         "position": "",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057290"
       },
       "stats": {
         "min": 2.4,
@@ -494,7 +75,8 @@
         "player": "Buddy Hield",
         "position": "",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057290"
       },
       "stats": {
         "min": 6.03,
@@ -512,7 +94,8 @@
         "player": "Luke Kennard",
         "position": "SG",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 16.0,
@@ -530,7 +113,8 @@
         "player": "Dillon Brooks",
         "position": "SF",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 31.0,
@@ -548,7 +132,8 @@
         "player": "Royce O'Neale",
         "position": "PF",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 23.0,
@@ -566,7 +151,8 @@
         "player": "Grayson Allen",
         "position": "SG",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 30.0,
@@ -584,7 +170,8 @@
         "player": "Miles Bridges",
         "position": "PF",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 31.0,
@@ -602,7 +189,8 @@
         "player": "Haywood Highsmith",
         "position": "",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 2.65,
@@ -620,7 +208,8 @@
         "player": "Coby White",
         "position": "PG",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 22.0,
@@ -638,7 +227,8 @@
         "player": "Grant Williams",
         "position": "C",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057290"
       },
       "stats": {
         "min": 9.74,
@@ -656,7 +246,8 @@
         "player": "Naz Reid",
         "position": "PF",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 33.0,
@@ -674,7 +265,8 @@
         "player": "Jalen Green",
         "position": "SG",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 29.0,
@@ -692,7 +284,8 @@
         "player": "Jordan Goodwin",
         "position": "SG",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 17.5,
@@ -710,14 +303,15 @@
         "player": "Moussa Diabate",
         "position": "C",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 27.0,
-        "fpts": 25.8,
-        "pts": 8.4,
+        "fpts": 25.9,
+        "pts": 8.3,
         "reb": 8.5,
-        "ast": 2.0,
+        "ast": 2.1,
         "stl": 0.9,
         "blk": 0.9,
         "to": 1.2
@@ -728,7 +322,8 @@
         "player": "Jamaree Bouyea",
         "position": "PG",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 2.42,
@@ -746,7 +341,8 @@
         "player": "Collin Gillespie",
         "position": "PG",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 21.5,
@@ -764,7 +360,8 @@
         "player": "Pat Spencer",
         "position": "PG",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 4.14,
@@ -782,7 +379,8 @@
         "player": "Tidjane Salaun",
         "position": "PF",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 15.5,
@@ -800,7 +398,8 @@
         "player": "Ryan Dunn",
         "position": "SF",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 2.94,
@@ -818,7 +417,8 @@
         "player": "Oso Ighodaro",
         "position": "C",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 22.0,
@@ -836,7 +436,8 @@
         "player": "PJ Hall",
         "position": "C",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057290"
       },
       "stats": {
         "min": 5.17,
@@ -854,7 +455,8 @@
         "player": "Liam McNeeley",
         "position": "SF",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057290"
       },
       "stats": {
         "min": 3.69,
@@ -872,7 +474,8 @@
         "player": "Sion James",
         "position": "SG",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 27.0,
@@ -890,15 +493,16 @@
         "player": "Ryan Kalkbrenner",
         "position": "C",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
-        "min": 19.0,
-        "fpts": 17.7,
-        "pts": 6.7,
-        "reb": 4.8,
+        "min": 20.0,
+        "fpts": 18.6,
+        "pts": 7.1,
+        "reb": 5.0,
         "ast": 0.9,
-        "stl": 0.4,
+        "stl": 0.5,
         "blk": 1.2,
         "to": 0.9
       }
@@ -908,7 +512,8 @@
         "player": "Khaman Maluach",
         "position": "C",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 17.0,
@@ -926,7 +531,8 @@
         "player": "Rasheer Fleming",
         "position": "PF",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 3.18,
@@ -944,7 +550,8 @@
         "player": "Ryan Nembhard",
         "position": "",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057290"
       },
       "stats": {
         "min": 8.56,
@@ -962,7 +569,8 @@
         "player": "Koby Brea",
         "position": "",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 2.2,
@@ -980,7 +588,8 @@
         "player": "CJ Huntley",
         "position": "",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 2.52,
@@ -998,7 +607,8 @@
         "player": "Hannes Steinbach",
         "position": "",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057290"
       },
       "stats": {
         "min": 3.41,
@@ -1016,7 +626,8 @@
         "player": "Christian Anderson Jr.",
         "position": "",
         "team": "CHA",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057290"
       },
       "stats": {
         "min": 4.51,
@@ -1034,7 +645,8 @@
         "player": "Koa Peat",
         "position": "",
         "team": "PHX",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 0.94,
@@ -1047,516 +659,13 @@
         "to": 0.0
       }
     },
-    "khris middleton": {
-      "info": {
-        "player": "Khris Middleton",
-        "position": "SF",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 2.73,
-        "fpts": 2.0,
-        "pts": 1.0,
-        "reb": 0.4,
-        "ast": 0.3,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.2
-      }
-    },
-    "anthony davis": {
-      "info": {
-        "player": "Anthony Davis",
-        "position": "PF",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 34.0,
-        "fpts": 40.0,
-        "pts": 17.3,
-        "reb": 10.9,
-        "ast": 2.6,
-        "stl": 1.2,
-        "blk": 1.4,
-        "to": 2.1
-      }
-    },
-    "gary harris": {
-      "info": {
-        "player": "Gary Harris",
-        "position": "",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 4.14,
-        "fpts": 2.6,
-        "pts": 1.2,
-        "reb": 0.4,
-        "ast": 0.3,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.1
-      }
-    },
-    "taurean prince": {
-      "info": {
-        "player": "Taurean Prince",
-        "position": "SF",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 7.07,
-        "fpts": 5.7,
-        "pts": 3.1,
-        "reb": 1.0,
-        "ast": 0.5,
-        "stl": 0.2,
-        "blk": 0.1,
-        "to": 0.3
-      }
-    },
-    "john collins": {
-      "info": {
-        "player": "John Collins",
-        "position": "PF",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 26.0,
-        "fpts": 23.6,
-        "pts": 12.6,
-        "reb": 5.5,
-        "ast": 1.0,
-        "stl": 0.7,
-        "blk": 0.7,
-        "to": 1.3
-      }
-    },
-    "trae young": {
-      "info": {
-        "player": "Trae Young",
-        "position": "PG",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 34.5,
-        "fpts": 36.4,
-        "pts": 17.8,
-        "reb": 3.1,
-        "ast": 9.0,
-        "stl": 1.2,
-        "blk": 0.2,
-        "to": 2.8
-      }
-    },
-    "kevin huerter": {
-      "info": {
-        "player": "Kevin Huerter",
-        "position": "SG",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 20.0,
-        "fpts": 18.5,
-        "pts": 9.1,
-        "reb": 3.1,
-        "ast": 2.2,
-        "stl": 0.7,
-        "blk": 0.4,
-        "to": 0.9
-      }
-    },
-    "duncan robinson": {
-      "info": {
-        "player": "Duncan Robinson",
-        "position": "SG",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 33.0,
-        "fpts": 26.0,
-        "pts": 16.0,
-        "reb": 3.4,
-        "ast": 2.4,
-        "stl": 0.8,
-        "blk": 0.3,
-        "to": 1.0
-      }
-    },
-    "javonte green": {
-      "info": {
-        "player": "Javonte Green",
-        "position": "SG",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 6.27,
-        "fpts": 5.2,
-        "pts": 2.6,
-        "reb": 1.0,
-        "ast": 0.3,
-        "stl": 0.3,
-        "blk": 0.1,
-        "to": 0.2
-      }
-    },
-    "paul reed": {
-      "info": {
-        "player": "Paul Reed",
-        "position": "C",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 22.0,
-        "fpts": 27.9,
-        "pts": 11.4,
-        "reb": 6.8,
-        "ast": 1.9,
-        "stl": 1.0,
-        "blk": 1.3,
-        "to": 1.4
-      }
-    },
-    "cade cunningham": {
-      "info": {
-        "player": "Cade Cunningham",
-        "position": "PG",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 34.5,
-        "fpts": 48.0,
-        "pts": 23.8,
-        "reb": 5.8,
-        "ast": 9.3,
-        "stl": 1.4,
-        "blk": 0.9,
-        "to": 3.6
-      }
-    },
-    "tre mann": {
-      "info": {
-        "player": "Tre Mann",
-        "position": "PG",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 0.6,
-        "fpts": 0.5,
-        "pts": 0.2,
-        "reb": 0.1,
-        "ast": 0.1,
-        "stl": 0.0,
-        "blk": 0.0,
-        "to": 0.0
-      }
-    },
-    "ausar thompson": {
-      "info": {
-        "player": "Ausar Thompson",
-        "position": "SF",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 29.5,
-        "fpts": 31.3,
-        "pts": 11.2,
-        "reb": 6.7,
-        "ast": 3.6,
-        "stl": 1.8,
-        "blk": 1.0,
-        "to": 1.7
-      }
-    },
-    "bilal coulibaly": {
-      "info": {
-        "player": "Bilal Coulibaly",
-        "position": "SF",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 24.0,
-        "fpts": 21.1,
-        "pts": 9.0,
-        "reb": 3.8,
-        "ast": 2.0,
-        "stl": 1.1,
-        "blk": 0.8,
-        "to": 1.2
-      }
-    },
-    "alexandre sarr": {
-      "info": {
-        "player": "Alexandre Sarr",
-        "position": "C",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 25.0,
-        "fpts": 28.5,
-        "pts": 11.8,
-        "reb": 6.5,
-        "ast": 2.3,
-        "stl": 0.8,
-        "blk": 1.5,
-        "to": 1.5
-      }
-    },
-    "ron holland ii": {
-      "info": {
-        "player": "Ron Holland II",
-        "position": "SF",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 15.0,
-        "fpts": 13.6,
-        "pts": 6.3,
-        "reb": 3.1,
-        "ast": 1.0,
-        "stl": 0.7,
-        "blk": 0.3,
-        "to": 0.9
-      }
-    },
-    "carlton carrington": {
-      "info": {
-        "player": "Carlton Carrington",
-        "position": "PG",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 15.0,
-        "fpts": 11.1,
-        "pts": 5.3,
-        "reb": 1.7,
-        "ast": 2.3,
-        "stl": 0.4,
-        "blk": 0.1,
-        "to": 1.2
-      }
-    },
-    "kyshawn george": {
-      "info": {
-        "player": "Kyshawn George",
-        "position": "SG",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 33.5,
-        "fpts": 31.8,
-        "pts": 14.9,
-        "reb": 5.5,
-        "ast": 4.7,
-        "stl": 1.1,
-        "blk": 0.9,
-        "to": 2.8
-      }
-    },
-    "daniss jenkins": {
-      "info": {
-        "player": "Daniss Jenkins",
-        "position": "PG",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 28.0,
-        "fpts": 27.0,
-        "pts": 13.1,
-        "reb": 3.3,
-        "ast": 5.2,
-        "stl": 1.1,
-        "blk": 0.3,
-        "to": 2.1
-      }
-    },
-    "isaac jones": {
-      "info": {
-        "player": "Isaac Jones",
-        "position": "PF",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 1.51,
-        "fpts": 1.3,
-        "pts": 0.6,
-        "reb": 0.3,
-        "ast": 0.1,
-        "stl": 0.0,
-        "blk": 0.1,
-        "to": 0.1
-      }
-    },
-    "elijah harkless": {
-      "info": {
-        "player": "Elijah Harkless",
-        "position": "SG",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 8.27,
-        "fpts": 6.9,
-        "pts": 3.4,
-        "reb": 0.9,
-        "ast": 1.1,
-        "stl": 0.3,
-        "blk": 0.1,
-        "to": 0.4
-      }
-    },
-    "tolu smith": {
-      "info": {
-        "player": "Tolu Smith",
-        "position": "PF",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 1.71,
-        "fpts": 1.6,
-        "pts": 0.7,
-        "reb": 0.5,
-        "ast": 0.1,
-        "stl": 0.0,
-        "blk": 0.1,
-        "to": 0.1
-      }
-    },
-    "tre johnson": {
-      "info": {
-        "player": "Tre Johnson",
-        "position": "SG",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 26.0,
-        "fpts": 19.5,
-        "pts": 11.5,
-        "reb": 3.0,
-        "ast": 2.0,
-        "stl": 0.7,
-        "blk": 0.3,
-        "to": 1.6
-      }
-    },
-    "will riley": {
-      "info": {
-        "player": "Will Riley",
-        "position": "SF",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 2.41,
-        "fpts": 1.9,
-        "pts": 1.0,
-        "reb": 0.3,
-        "ast": 0.2,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.1
-      }
-    },
-    "chaz lanier": {
-      "info": {
-        "player": "Chaz Lanier",
-        "position": "SG",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 1.79,
-        "fpts": 1.3,
-        "pts": 0.8,
-        "reb": 0.1,
-        "ast": 0.1,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.1
-      }
-    },
-    "juju reese": {
-      "info": {
-        "player": "Juju Reese",
-        "position": "",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 4.71,
-        "fpts": 4.4,
-        "pts": 1.7,
-        "reb": 1.4,
-        "ast": 0.3,
-        "stl": 0.2,
-        "blk": 0.1,
-        "to": 0.3
-      }
-    },
-    "ebuka okorie": {
-      "info": {
-        "player": "Ebuka Okorie",
-        "position": "",
-        "team": "DET",
-        "opp": ""
-      },
-      "stats": {
-        "min": 1.25,
-        "fpts": 0.9,
-        "pts": 0.6,
-        "reb": 0.1,
-        "ast": 0.2,
-        "stl": 0.0,
-        "blk": 0.0,
-        "to": 0.1
-      }
-    },
-    "aj dybantsa": {
-      "info": {
-        "player": "AJ Dybantsa",
-        "position": "",
-        "team": "WSH",
-        "opp": ""
-      },
-      "stats": {
-        "min": 34.0,
-        "fpts": 27.1,
-        "pts": 14.4,
-        "reb": 5.4,
-        "ast": 2.3,
-        "stl": 1.2,
-        "blk": 0.3,
-        "to": 1.7
-      }
-    },
     "kyrie irving": {
       "info": {
         "player": "Kyrie Irving",
         "position": "PG",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 33.5,
@@ -1574,7 +683,8 @@
         "player": "Rudy Gobert",
         "position": "C",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 29.5,
@@ -1592,7 +702,8 @@
         "player": "PJ Washington",
         "position": "PF",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 31.5,
@@ -1610,7 +721,8 @@
         "player": "Daniel Gafford",
         "position": "C",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 21.5,
@@ -1628,7 +740,8 @@
         "player": "Caleb Martin",
         "position": "SG",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 18.0,
@@ -1646,7 +759,8 @@
         "player": "Jaden McDaniels",
         "position": "PF",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 35.0,
@@ -1664,7 +778,8 @@
         "player": "LaMelo Ball",
         "position": "PG",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 32.0,
@@ -1682,7 +797,8 @@
         "player": "Naji Marshall",
         "position": "SF",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 23.5,
@@ -1700,7 +816,8 @@
         "player": "Jonathan Kuminga",
         "position": "SF",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 31.5,
@@ -1718,7 +835,8 @@
         "player": "Nah'Shon Hyland",
         "position": "PG",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 3.93,
@@ -1736,7 +854,8 @@
         "player": "Santi Aldama",
         "position": "PF",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 19.0,
@@ -1754,7 +873,8 @@
         "player": "Ayo Dosunmu",
         "position": "SG",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 35.0,
@@ -1772,7 +892,8 @@
         "player": "Max Christie",
         "position": "SG",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 6.74,
@@ -1790,7 +911,8 @@
         "player": "Jett Howard",
         "position": "SF",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 2.43,
@@ -1808,7 +930,8 @@
         "player": "Marcus Sasser",
         "position": "PG",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 4.97,
@@ -1826,7 +949,8 @@
         "player": "Jaylen Clark",
         "position": "SG",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 3.83,
@@ -1844,7 +968,8 @@
         "player": "Zaccharie Risacher",
         "position": "SF",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 7.7,
@@ -1862,7 +987,8 @@
         "player": "Cody Williams",
         "position": "SF",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 3.7,
@@ -1880,7 +1006,8 @@
         "player": "Terrence Shannon Jr.",
         "position": "SF",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 20.0,
@@ -1898,7 +1025,8 @@
         "player": "Zyon Pullin",
         "position": "SG",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 1.91,
@@ -1916,7 +1044,8 @@
         "player": "Drew Timme",
         "position": "PF",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 2.32,
@@ -1934,7 +1063,8 @@
         "player": "Cooper Flagg",
         "position": "SF",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 36.0,
@@ -1952,7 +1082,8 @@
         "player": "Walter Clayton Jr.",
         "position": "PG",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 5.48,
@@ -1970,7 +1101,8 @@
         "player": "Moussa Cisse",
         "position": "C",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 3.01,
@@ -1988,7 +1120,8 @@
         "player": "Joan Beringer",
         "position": "C",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 16.5,
@@ -2006,7 +1139,8 @@
         "player": "Rocco Zikarsky",
         "position": "C",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 2.25,
@@ -2024,7 +1158,8 @@
         "player": "Norchad Omier",
         "position": "",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 0.94,
@@ -2042,7 +1177,8 @@
         "player": "John Poulakidas",
         "position": "",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 7.68,
@@ -2060,7 +1196,8 @@
         "player": "Morez Johnson Jr.",
         "position": "",
         "team": "DAL",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 19.0,
@@ -2078,7 +1215,8 @@
         "player": "Isaiah Evans",
         "position": "SG",
         "team": "MIN",
-        "opp": ""
+        "opp": "",
+        "slateId": "1057456"
       },
       "stats": {
         "min": 0.62,
@@ -2089,6 +1227,1032 @@
         "stl": 0.0,
         "blk": 0.0,
         "to": 0.0
+      }
+    },
+    "kentavious caldwell-pope": {
+      "info": {
+        "player": "Kentavious Caldwell-Pope",
+        "position": "SG",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 20.0,
+        "fpts": 15.0,
+        "pts": 6.8,
+        "reb": 2.3,
+        "ast": 2.5,
+        "stl": 0.7,
+        "blk": 0.2,
+        "to": 1.0
+      }
+    },
+    "joel embiid": {
+      "info": {
+        "player": "Joel Embiid",
+        "position": "C",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 32.0,
+        "fpts": 40.3,
+        "pts": 20.9,
+        "reb": 8.4,
+        "ast": 4.2,
+        "stl": 0.6,
+        "blk": 1.3,
+        "to": 2.7
+      }
+    },
+    "kyle anderson": {
+      "info": {
+        "player": "Kyle Anderson",
+        "position": "PF",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 6.89,
+        "fpts": 6.3,
+        "pts": 2.3,
+        "reb": 1.2,
+        "ast": 1.0,
+        "stl": 0.3,
+        "blk": 0.2,
+        "to": 0.4
+      }
+    },
+    "jaylen brown": {
+      "info": {
+        "player": "Jaylen Brown",
+        "position": "SF",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 35.0,
+        "fpts": 40.8,
+        "pts": 23.4,
+        "reb": 7.1,
+        "ast": 5.3,
+        "stl": 1.0,
+        "blk": 0.4,
+        "to": 3.3
+      }
+    },
+    "jakob poeltl": {
+      "info": {
+        "player": "Jakob Poeltl",
+        "position": "C",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 30.0,
+        "fpts": 31.5,
+        "pts": 12.8,
+        "reb": 8.9,
+        "ast": 2.5,
+        "stl": 1.0,
+        "blk": 1.0,
+        "to": 1.7
+      }
+    },
+    "anfernee simons": {
+      "info": {
+        "player": "Anfernee Simons",
+        "position": "SG",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 22.0,
+        "fpts": 17.6,
+        "pts": 10.6,
+        "reb": 2.2,
+        "ast": 2.2,
+        "stl": 0.5,
+        "blk": 0.2,
+        "to": 1.0
+      }
+    },
+    "rj barrett": {
+      "info": {
+        "player": "RJ Barrett",
+        "position": "SG",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 36.0,
+        "fpts": 38.8,
+        "pts": 22.6,
+        "reb": 6.6,
+        "ast": 4.2,
+        "stl": 0.9,
+        "blk": 0.5,
+        "to": 2.2
+      }
+    },
+    "dean wade": {
+      "info": {
+        "player": "Dean Wade",
+        "position": "PF",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 27.0,
+        "fpts": 19.8,
+        "pts": 6.7,
+        "reb": 5.1,
+        "ast": 2.0,
+        "stl": 0.9,
+        "blk": 0.6,
+        "to": 0.5
+      }
+    },
+    "tyrese maxey": {
+      "info": {
+        "player": "Tyrese Maxey",
+        "position": "PG",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 36.0,
+        "fpts": 42.2,
+        "pts": 22.7,
+        "reb": 4.1,
+        "ast": 6.4,
+        "stl": 1.6,
+        "blk": 0.8,
+        "to": 2.2
+      }
+    },
+    "immanuel quickley": {
+      "info": {
+        "player": "Immanuel Quickley",
+        "position": "PG",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 33.0,
+        "fpts": 35.1,
+        "pts": 17.6,
+        "reb": 4.4,
+        "ast": 6.5,
+        "stl": 1.3,
+        "blk": 0.1,
+        "to": 1.7
+      }
+    },
+    "jabari walker": {
+      "info": {
+        "player": "Jabari Walker",
+        "position": "C",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 3.6,
+        "fpts": 3.1,
+        "pts": 1.2,
+        "reb": 0.9,
+        "ast": 0.2,
+        "stl": 0.1,
+        "blk": 0.1,
+        "to": 0.1
+      }
+    },
+    "dominick barlow": {
+      "info": {
+        "player": "Dominick Barlow",
+        "position": "PF",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 9.21,
+        "fpts": 7.2,
+        "pts": 2.7,
+        "reb": 1.9,
+        "ast": 0.5,
+        "stl": 0.3,
+        "blk": 0.3,
+        "to": 0.3
+      }
+    },
+    "andre jackson jr.": {
+      "info": {
+        "player": "Andre Jackson Jr.",
+        "position": "",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 9.8,
+        "fpts": 8.1,
+        "pts": 3.6,
+        "reb": 1.7,
+        "ast": 1.1,
+        "stl": 0.4,
+        "blk": 0.1,
+        "to": 0.7
+      }
+    },
+    "rayan rupert": {
+      "info": {
+        "player": "Rayan Rupert",
+        "position": "SG",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 11.98,
+        "fpts": 8.8,
+        "pts": 3.6,
+        "reb": 2.2,
+        "ast": 0.9,
+        "stl": 0.5,
+        "blk": 0.1,
+        "to": 0.6
+      }
+    },
+    "ja'kobe walter": {
+      "info": {
+        "player": "Ja'Kobe Walter",
+        "position": "SG",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 31.0,
+        "fpts": 25.1,
+        "pts": 12.5,
+        "reb": 4.2,
+        "ast": 2.1,
+        "stl": 1.4,
+        "blk": 0.4,
+        "to": 1.0
+      }
+    },
+    "jamal shead": {
+      "info": {
+        "player": "Jamal Shead",
+        "position": "PG",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 28.0,
+        "fpts": 25.1,
+        "pts": 9.1,
+        "reb": 2.3,
+        "ast": 7.1,
+        "stl": 1.2,
+        "blk": 0.3,
+        "to": 1.9
+      }
+    },
+    "jamison battle": {
+      "info": {
+        "player": "Jamison Battle",
+        "position": "SF",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 24.0,
+        "fpts": 18.5,
+        "pts": 10.4,
+        "reb": 4.0,
+        "ast": 1.3,
+        "stl": 0.6,
+        "blk": 0.2,
+        "to": 1.1
+      }
+    },
+    "justin edwards": {
+      "info": {
+        "player": "Justin Edwards",
+        "position": "SF",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 3.67,
+        "fpts": 2.7,
+        "pts": 1.3,
+        "reb": 0.4,
+        "ast": 0.3,
+        "stl": 0.2,
+        "blk": 0.0,
+        "to": 0.1
+      }
+    },
+    "collin murray-boyles": {
+      "info": {
+        "player": "Collin Murray-Boyles",
+        "position": "PF",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 28.0,
+        "fpts": 28.4,
+        "pts": 11.4,
+        "reb": 6.7,
+        "ast": 2.4,
+        "stl": 1.0,
+        "blk": 1.3,
+        "to": 1.5
+      }
+    },
+    "vj edgecombe": {
+      "info": {
+        "player": "VJ Edgecombe",
+        "position": "SG",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 33.0,
+        "fpts": 29.3,
+        "pts": 12.9,
+        "reb": 5.6,
+        "ast": 4.1,
+        "stl": 1.2,
+        "blk": 0.5,
+        "to": 1.6
+      }
+    },
+    "caleb love": {
+      "info": {
+        "player": "Caleb Love",
+        "position": "SG",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 3.75,
+        "fpts": 2.9,
+        "pts": 1.6,
+        "reb": 0.4,
+        "ast": 0.5,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.2
+      }
+    },
+    "alijah martin": {
+      "info": {
+        "player": "Alijah Martin",
+        "position": "SG",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 4.12,
+        "fpts": 3.4,
+        "pts": 1.8,
+        "reb": 0.6,
+        "ast": 0.4,
+        "stl": 0.1,
+        "blk": 0.1,
+        "to": 0.3
+      }
+    },
+    "allen graves": {
+      "info": {
+        "player": "Allen Graves",
+        "position": "",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 6.8,
+        "fpts": 6.8,
+        "pts": 2.9,
+        "reb": 1.6,
+        "ast": 0.5,
+        "stl": 0.2,
+        "blk": 0.3,
+        "to": 0.3
+      }
+    },
+    "labaron philon jr.": {
+      "info": {
+        "player": "Labaron Philon Jr.",
+        "position": "",
+        "team": "PHI",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 2.78,
+        "fpts": 2.3,
+        "pts": 1.1,
+        "reb": 0.4,
+        "ast": 0.4,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.2
+      }
+    },
+    "jaden bradley": {
+      "info": {
+        "player": "Jaden Bradley",
+        "position": "PG",
+        "team": "TOR",
+        "opp": "",
+        "slateId": "1057350"
+      },
+      "stats": {
+        "min": 2.4,
+        "fpts": 2.4,
+        "pts": 1.2,
+        "reb": 0.4,
+        "ast": 0.4,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.2
+      }
+    },
+    "khris middleton": {
+      "info": {
+        "player": "Khris Middleton",
+        "position": "SF",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 2.73,
+        "fpts": 2.0,
+        "pts": 1.0,
+        "reb": 0.4,
+        "ast": 0.3,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.2
+      }
+    },
+    "anthony davis": {
+      "info": {
+        "player": "Anthony Davis",
+        "position": "PF",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 34.0,
+        "fpts": 40.0,
+        "pts": 17.3,
+        "reb": 10.9,
+        "ast": 2.6,
+        "stl": 1.2,
+        "blk": 1.4,
+        "to": 2.1
+      }
+    },
+    "gary harris": {
+      "info": {
+        "player": "Gary Harris",
+        "position": "",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 4.14,
+        "fpts": 2.6,
+        "pts": 1.2,
+        "reb": 0.4,
+        "ast": 0.3,
+        "stl": 0.1,
+        "blk": 0.1,
+        "to": 0.1
+      }
+    },
+    "taurean prince": {
+      "info": {
+        "player": "Taurean Prince",
+        "position": "SF",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 7.07,
+        "fpts": 5.7,
+        "pts": 3.1,
+        "reb": 1.0,
+        "ast": 0.5,
+        "stl": 0.2,
+        "blk": 0.1,
+        "to": 0.3
+      }
+    },
+    "john collins": {
+      "info": {
+        "player": "John Collins",
+        "position": "PF",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 26.0,
+        "fpts": 23.6,
+        "pts": 12.6,
+        "reb": 5.5,
+        "ast": 1.0,
+        "stl": 0.7,
+        "blk": 0.7,
+        "to": 1.3
+      }
+    },
+    "trae young": {
+      "info": {
+        "player": "Trae Young",
+        "position": "PG",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 34.5,
+        "fpts": 36.4,
+        "pts": 17.8,
+        "reb": 3.1,
+        "ast": 9.0,
+        "stl": 1.2,
+        "blk": 0.2,
+        "to": 2.8
+      }
+    },
+    "kevin huerter": {
+      "info": {
+        "player": "Kevin Huerter",
+        "position": "SG",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 20.0,
+        "fpts": 18.5,
+        "pts": 9.1,
+        "reb": 3.1,
+        "ast": 2.2,
+        "stl": 0.7,
+        "blk": 0.4,
+        "to": 0.9
+      }
+    },
+    "duncan robinson": {
+      "info": {
+        "player": "Duncan Robinson",
+        "position": "SG",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 33.0,
+        "fpts": 26.0,
+        "pts": 16.0,
+        "reb": 3.4,
+        "ast": 2.4,
+        "stl": 0.8,
+        "blk": 0.3,
+        "to": 1.0
+      }
+    },
+    "javonte green": {
+      "info": {
+        "player": "Javonte Green",
+        "position": "SG",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 6.27,
+        "fpts": 5.2,
+        "pts": 2.6,
+        "reb": 1.0,
+        "ast": 0.3,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.2
+      }
+    },
+    "paul reed": {
+      "info": {
+        "player": "Paul Reed",
+        "position": "C",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 22.0,
+        "fpts": 27.9,
+        "pts": 11.4,
+        "reb": 6.8,
+        "ast": 1.9,
+        "stl": 1.0,
+        "blk": 1.3,
+        "to": 1.4
+      }
+    },
+    "cade cunningham": {
+      "info": {
+        "player": "Cade Cunningham",
+        "position": "PG",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 34.5,
+        "fpts": 48.0,
+        "pts": 23.8,
+        "reb": 5.8,
+        "ast": 9.3,
+        "stl": 1.4,
+        "blk": 0.9,
+        "to": 3.6
+      }
+    },
+    "tre mann": {
+      "info": {
+        "player": "Tre Mann",
+        "position": "PG",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 0.6,
+        "fpts": 0.5,
+        "pts": 0.2,
+        "reb": 0.1,
+        "ast": 0.1,
+        "stl": 0.0,
+        "blk": 0.0,
+        "to": 0.0
+      }
+    },
+    "ausar thompson": {
+      "info": {
+        "player": "Ausar Thompson",
+        "position": "SF",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 29.5,
+        "fpts": 31.3,
+        "pts": 11.2,
+        "reb": 6.7,
+        "ast": 3.6,
+        "stl": 1.8,
+        "blk": 1.0,
+        "to": 1.7
+      }
+    },
+    "bilal coulibaly": {
+      "info": {
+        "player": "Bilal Coulibaly",
+        "position": "SF",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 24.0,
+        "fpts": 21.1,
+        "pts": 9.0,
+        "reb": 3.8,
+        "ast": 2.0,
+        "stl": 1.1,
+        "blk": 0.8,
+        "to": 1.2
+      }
+    },
+    "alexandre sarr": {
+      "info": {
+        "player": "Alexandre Sarr",
+        "position": "C",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 25.0,
+        "fpts": 28.5,
+        "pts": 11.8,
+        "reb": 6.5,
+        "ast": 2.3,
+        "stl": 0.8,
+        "blk": 1.5,
+        "to": 1.5
+      }
+    },
+    "ron holland ii": {
+      "info": {
+        "player": "Ron Holland II",
+        "position": "SF",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 15.0,
+        "fpts": 13.6,
+        "pts": 6.3,
+        "reb": 3.1,
+        "ast": 1.0,
+        "stl": 0.7,
+        "blk": 0.3,
+        "to": 0.9
+      }
+    },
+    "carlton carrington": {
+      "info": {
+        "player": "Carlton Carrington",
+        "position": "PG",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 15.0,
+        "fpts": 11.1,
+        "pts": 5.3,
+        "reb": 1.7,
+        "ast": 2.3,
+        "stl": 0.4,
+        "blk": 0.1,
+        "to": 1.2
+      }
+    },
+    "kyshawn george": {
+      "info": {
+        "player": "Kyshawn George",
+        "position": "SG",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 33.5,
+        "fpts": 31.8,
+        "pts": 14.9,
+        "reb": 5.5,
+        "ast": 4.7,
+        "stl": 1.1,
+        "blk": 0.9,
+        "to": 2.8
+      }
+    },
+    "daniss jenkins": {
+      "info": {
+        "player": "Daniss Jenkins",
+        "position": "PG",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 28.0,
+        "fpts": 27.0,
+        "pts": 13.1,
+        "reb": 3.3,
+        "ast": 5.2,
+        "stl": 1.1,
+        "blk": 0.3,
+        "to": 2.1
+      }
+    },
+    "isaac jones": {
+      "info": {
+        "player": "Isaac Jones",
+        "position": "PF",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 1.51,
+        "fpts": 1.3,
+        "pts": 0.6,
+        "reb": 0.3,
+        "ast": 0.1,
+        "stl": 0.0,
+        "blk": 0.1,
+        "to": 0.1
+      }
+    },
+    "elijah harkless": {
+      "info": {
+        "player": "Elijah Harkless",
+        "position": "SG",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 8.27,
+        "fpts": 6.9,
+        "pts": 3.4,
+        "reb": 0.9,
+        "ast": 1.1,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.4
+      }
+    },
+    "tolu smith": {
+      "info": {
+        "player": "Tolu Smith",
+        "position": "PF",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 1.71,
+        "fpts": 1.6,
+        "pts": 0.7,
+        "reb": 0.5,
+        "ast": 0.1,
+        "stl": 0.0,
+        "blk": 0.1,
+        "to": 0.1
+      }
+    },
+    "tre johnson": {
+      "info": {
+        "player": "Tre Johnson",
+        "position": "SG",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 26.0,
+        "fpts": 19.5,
+        "pts": 11.5,
+        "reb": 3.0,
+        "ast": 2.0,
+        "stl": 0.7,
+        "blk": 0.3,
+        "to": 1.6
+      }
+    },
+    "will riley": {
+      "info": {
+        "player": "Will Riley",
+        "position": "SF",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 2.41,
+        "fpts": 1.9,
+        "pts": 1.0,
+        "reb": 0.3,
+        "ast": 0.2,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.1
+      }
+    },
+    "chaz lanier": {
+      "info": {
+        "player": "Chaz Lanier",
+        "position": "SG",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 1.79,
+        "fpts": 1.3,
+        "pts": 0.8,
+        "reb": 0.1,
+        "ast": 0.1,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.1
+      }
+    },
+    "juju reese": {
+      "info": {
+        "player": "Juju Reese",
+        "position": "",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 4.71,
+        "fpts": 4.4,
+        "pts": 1.7,
+        "reb": 1.4,
+        "ast": 0.3,
+        "stl": 0.2,
+        "blk": 0.1,
+        "to": 0.3
+      }
+    },
+    "ebuka okorie": {
+      "info": {
+        "player": "Ebuka Okorie",
+        "position": "",
+        "team": "DET",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 1.25,
+        "fpts": 0.9,
+        "pts": 0.6,
+        "reb": 0.1,
+        "ast": 0.2,
+        "stl": 0.0,
+        "blk": 0.0,
+        "to": 0.1
+      }
+    },
+    "aj dybantsa": {
+      "info": {
+        "player": "AJ Dybantsa",
+        "position": "",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057290"
+      },
+      "stats": {
+        "min": 34.0,
+        "fpts": 27.1,
+        "pts": 14.4,
+        "reb": 5.4,
+        "ast": 2.3,
+        "stl": 1.2,
+        "blk": 0.3,
+        "to": 1.7
+      }
+    },
+    "deandre ayton": {
+      "info": {
+        "player": "Deandre Ayton",
+        "position": "C",
+        "team": "WSH",
+        "opp": "",
+        "slateId": "1057283"
+      },
+      "stats": {
+        "min": 3.55,
+        "fpts": 3.1,
+        "pts": 1.3,
+        "reb": 1.0,
+        "ast": 0.1,
+        "stl": 0.1,
+        "blk": 0.1,
+        "to": 0.2
       }
     }
   }

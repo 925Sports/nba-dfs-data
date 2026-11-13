@@ -17,11 +17,10 @@ QUERY = """
 query GetProjections($input: ProjectionsInput!) {
   getProjections(input: $input) {
     ... on NbaPlayer {
-      id
       player { 
-        id
         name 
         position 
+        numberFireId
       }
       team { abbreviation }
       minutes
@@ -82,11 +81,8 @@ def test_slate(slate_id):
         r = requests.post(GRAPHQL_URL, json=payload, headers=HEADERS, timeout=20)
         data = r.json()
         projs = data.get("data", {}).get("getProjections") or []
-        if projs:
-            # Log the first player so we can see which ID fields exist
-            print(f"  Sample keys for {slate_id}: {list(projs[0].keys())}")
-            if projs[0].get("player"):
-                print(f"  Player keys: {list(projs[0]['player'].keys())}")
+        if projs and projs[0].get("player"):
+            print(f"  Player keys: {list(projs[0]['player'].keys())}")
         return projs
     except Exception as e:
         print(f"  Error testing {slate_id}: {e}")
@@ -116,14 +112,7 @@ def collect_all_slates():
             if not player or minutes <= 0 or minutes > 48:
                 continue
 
-            # Try several possible ID locations
-            fd_id = (
-                p.get("id") or
-                p.get("player", {}).get("id") or
-                p.get("siteId") or
-                p.get("playerId") or
-                ""
-            )
+            fd_id = p.get("player", {}).get("numberFireId") or ""
 
             stats = {
                 "min": round(minutes, 2),

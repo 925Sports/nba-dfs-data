@@ -16,7 +16,6 @@ GRAPHQL_URL = "https://fdresearch-api.fanduel.com/graphql"
 QUERY = """
 query GetProjections($input: ProjectionsInput!) {
   getProjections(input: $input) {
-    __typename
     ... on NbaPlayer {
       player { 
         name 
@@ -81,12 +80,7 @@ def test_slate(slate_id):
     try:
         r = requests.post(GRAPHQL_URL, json=payload, headers=HEADERS, timeout=20)
         data = r.json()
-        projs = data.get("data", {}).get("getProjections") or []
-        if projs:
-            print("\n=== FULL RAW PLAYER OBJECT ===")
-            print(json.dumps(projs[0], indent=2))
-            print("=== END RAW OBJECT ===\n")
-        return projs
+        return data.get("data", {}).get("getProjections") or []
     except Exception as e:
         print(f"  Error testing {slate_id}: {e}")
         return []

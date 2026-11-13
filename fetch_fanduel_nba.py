@@ -1,6 +1,6 @@
 import requests
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -31,14 +31,16 @@ query GetProjections($input: ProjectionsInput!) {
 }
 """
 
-def fetch_nba():
+def fetch_for_date(date_str):
+    """date_str format: YYYY-MM-DD"""
     payload = {
         "operationName": "GetProjections",
         "variables": {
             "input": {
                 "type": "DAILY",
                 "position": "NBA_PLAYER",
-                "sport": "NBA"
+                "sport": "NBA",
+                "date": date_str
             }
         },
         "query": QUERY
@@ -48,7 +50,7 @@ def fetch_nba():
     data = r.json()
     return data.get("data", {}).get("getProjections", [])
 
-def normalize(projections):
+def normalize(projections, date_label):
     result = {}
     for p in projections:
         if not p.get("player") or not p["player"].get("name"):
@@ -70,26 +72,44 @@ def normalize(projections):
             "blk": round(float(p.get("blocks") or 0), 2),
             "to": round(float(p.get("turnovers") or 0), 2)
         }
-        key = player.lower()
+        key = f"{player.lower()}_{date_label}"
         result[key] = {
-            "info": {"player": player, "position": pos, "team": team, "opp": ""},
+            "info": {
+                "player": player,
+                "position": pos,
+                "team": team,
+                "opp": "",
+                "date": date_label
+            },
             "stats": stats
         }
     return result
 
 def main():
-    try:
-        projections = fetch_nba()
-        players = normalize(projections)
-        output = {
-            "updated": datetime.utcnow().isoformat() + "Z",
-            "players": players
-        }
-        with open("fanduel_nba_projections.json", "w") as f:
-            json.dump(output, f, indent=2)
-        print(f"Wrote {len(players)} NBA players")
-    except Exception as e:
-        print(f"Error: {e}")
+    today = datetime.utcnow().date()
+    tomorrow = today + timedelta(days=1)
+
+    all_players = {}
+
+    for label, dt in [("today", today), ("tomorrow", tomorrow)]:
+        date_str = dt.isoformat()
+        try:
+            projections = fetch_for_date(date_str)
+            parsed = normalize(projections, label)
+            all_players.update(parsed)
+            print(f"{label} ({date_str}): {len(parsed)} players")
+        except Exception as e:
+            print(f"Error on {label}: {e}")
+
+    output = {
+        "updated": datetime.utcnow().isoformat() + "Z",
+        "players": all_players
+    }
+
+    with open("fanduel_nba_projections.json", "w") as f:
+        json.dump(output, f, indent=2)
+
+    print(f"Wrote {len(all_players)} total player-entries")
 
 if __name__ == "__main__":
     main()

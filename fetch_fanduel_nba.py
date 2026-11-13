@@ -33,6 +33,15 @@ query GetProjections($input: ProjectionsInput!) {
       turnovers
       salary
       value
+      injuryStatus
+      injuryDetails
+      homeOrAway
+      startTime
+      gameDate
+      projectedOwnership
+      ownership
+      ceiling
+      floor
     }
   }
 }
@@ -109,7 +118,14 @@ def collect_all_slates():
             if not player or minutes <= 0 or minutes > 48:
                 continue
 
-            fd_id = p.get("player", {}).get("numberFireId") or ""
+            numberfire_id = p.get("player", {}).get("numberFireId") or ""
+            injury = p.get("injuryStatus") or ""
+            injury_details = p.get("injuryDetails") or ""
+            home_away = p.get("homeOrAway") or ""
+            start_time = p.get("startTime") or p.get("gameDate") or ""
+            ownership = clean_number(p.get("projectedOwnership") or p.get("ownership"))
+            ceiling = clean_number(p.get("ceiling"))
+            floor = clean_number(p.get("floor"))
 
             stats = {
                 "min": round(minutes, 2),
@@ -121,7 +137,10 @@ def collect_all_slates():
                 "blk": round(float(p.get("blocks") or 0), 2),
                 "to": round(float(p.get("turnovers") or 0), 2),
                 "salary": clean_number(p.get("salary")),
-                "value": round(clean_number(p.get("value")), 2)
+                "value": round(clean_number(p.get("value")), 2),
+                "ceiling": round(ceiling, 2),
+                "floor": round(floor, 2),
+                "ownership": round(ownership, 2)
             }
             key = player.lower()
             if key not in all_players or stats["min"] > all_players[key]["stats"]["min"]:
@@ -132,7 +151,12 @@ def collect_all_slates():
                         "team": team,
                         "opp": "",
                         "slateId": sid,
-                        "fdId": str(fd_id) if fd_id else ""
+                        "fdId": str(numberfire_id) if numberfire_id else "",
+                        "numberFireId": str(numberfire_id) if numberfire_id else "",
+                        "injury": injury,
+                        "injuryDetails": injury_details,
+                        "homeAway": home_away,
+                        "startTime": start_time
                     },
                     "stats": stats
                 }

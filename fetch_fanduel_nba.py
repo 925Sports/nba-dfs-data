@@ -81,8 +81,6 @@ def test_slate(slate_id):
         r = requests.post(GRAPHQL_URL, json=payload, headers=HEADERS, timeout=20)
         data = r.json()
         projs = data.get("data", {}).get("getProjections") or []
-        if projs and projs[0].get("player"):
-            print(f"  Player keys: {list(projs[0]['player'].keys())}")
         return projs
     except Exception as e:
         print(f"  Error testing {slate_id}: {e}")
@@ -92,6 +90,7 @@ def collect_all_slates():
     candidates = find_candidate_ids()
     all_players = {}
     kept_slates = []
+    dumped = False
 
     for sid in candidates:
         projs = test_slate(sid)
@@ -99,6 +98,13 @@ def collect_all_slates():
         print(f"  {sid}: {count} players")
         if count < 15:
             continue
+
+        # Dump the full structure of the first player from the first good slate
+        if not dumped and projs:
+            print("\n=== FULL RAW PLAYER OBJECT ===")
+            print(json.dumps(projs[0], indent=2))
+            print("=== END RAW OBJECT ===\n")
+            dumped = True
 
         kept_slates.append({"slateId": sid, "count": count})
         for p in projs:

@@ -1,6 +1,6 @@
 import requests
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -31,26 +31,27 @@ query GetProjections($input: ProjectionsInput!) {
 }
 """
 
-def fetch_for_date(date_str):
-    """date_str format: YYYY-MM-DD"""
+def fetch_nba():
     payload = {
         "operationName": "GetProjections",
         "variables": {
             "input": {
                 "type": "DAILY",
                 "position": "NBA_PLAYER",
-                "sport": "NBA",
-                "date": date_str
+                "sport": "NBA"
             }
         },
         "query": QUERY
     }
     r = requests.post(GRAPHQL_URL, json=payload, headers=HEADERS, timeout=25)
+    print("Status:", r.status_code)
+    print("Response (first 1500 chars):")
+    print(r.text[:1500])
     r.raise_for_status()
     data = r.json()
     return data.get("data", {}).get("getProjections", [])
 
-def normalize(projections, date_label):
+def normalize(projections):
     result = {}
     for p in projections:
         if not p.get("player") or not p["player"].get("name"):
@@ -72,44 +73,26 @@ def normalize(projections, date_label):
             "blk": round(float(p.get("blocks") or 0), 2),
             "to": round(float(p.get("turnovers") or 0), 2)
         }
-        key = f"{player.lower()}_{date_label}"
+        key = player.lower()
         result[key] = {
-            "info": {
-                "player": player,
-                "position": pos,
-                "team": team,
-                "opp": "",
-                "date": date_label
-            },
+            "info": {"player": player, "position": pos, "team": team, "opp": ""},
             "stats": stats
         }
     return result
 
 def main():
-    today = datetime.utcnow().date()
-    tomorrow = today + timedelta(days=1)
-
-    all_players = {}
-
-    for label, dt in [("today", today), ("tomorrow", tomorrow)]:
-        date_str = dt.isoformat()
-        try:
-            projections = fetch_for_date(date_str)
-            parsed = normalize(projections, label)
-            all_players.update(parsed)
-            print(f"{label} ({date_str}): {len(parsed)} players")
-        except Exception as e:
-            print(f"Error on {label}: {e}")
-
-    output = {
-        "updated": datetime.utcnow().isoformat() + "Z",
-        "players": all_players
-    }
-
-    with open("fanduel_nba_projections.json", "w") as f:
-        json.dump(output, f, indent=2)
-
-    print(f"Wrote {len(all_players)} total player-entries")
+    try:
+        projections = fetch_nba()
+        players = normalize(projections)
+        output = {
+            "updated": datetime.utcnow().isoformat() + "Z",
+            "players": players
+        }
+        with open("fanduel_nba_projections.json", "w") as f:
+            json.dump(output, f, indent=2)
+        print(f"Wrote {len(players)} NBA players")
+    except Exception as e:
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     main()

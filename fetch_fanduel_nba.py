@@ -42,7 +42,7 @@ def find_candidate_ids():
         candidates = set(re.findall(r'\b(10\d{5,6})\b', r.text))
         sorted_cands = sorted(candidates, reverse=True)
         print(f"Found {len(sorted_cands)} candidate IDs")
-        return sorted_cands[:8]
+        return sorted_cands[:10]
     except Exception as e:
         print(f"Scrape error: {e}")
         return []
@@ -63,8 +63,7 @@ def test_slate(slate_id):
     try:
         r = requests.post(GRAPHQL_URL, json=payload, headers=HEADERS, timeout=20)
         data = r.json()
-        projs = data.get("data", {}).get("getProjections") or []
-        return projs
+        return data.get("data", {}).get("getProjections") or []
     except Exception as e:
         print(f"  Error testing {slate_id}: {e}")
         return []
@@ -79,11 +78,12 @@ def find_best_slate():
         projs = test_slate(sid)
         count = len(projs)
         print(f"  {sid}: {count} players")
-        if count > best_count:
+        # Prefer larger slates (main slate is usually 100+)
+        if count > best_count and count >= 20:
             best_count = count
             best_id = sid
             best_projs = projs
-        if best_count >= 100:
+        if best_count >= 120:
             break
 
     return best_id, best_projs
@@ -119,14 +119,15 @@ def normalize(projections):
 
 def main():
     slate_id, projections = find_best_slate()
-    if not slate_id:
-        print("No working slate found")
+    if not slate_id or not projections:
+        print("No usable slate found")
         return
 
     players = normalize(projections)
     output = {
         "updated": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "slateId": slate_id,
+        "playerCount": len(players),
         "players": players
     }
     with open("fanduel_nba_projections.json", "w") as f:

@@ -16,10 +16,9 @@ GRAPHQL_URL = "https://fdresearch-api.fanduel.com/graphql"
 QUERY = """
 query GetProjections($input: ProjectionsInput!) {
   getProjections(input: $input) {
+    __typename
     ... on NbaPlayer {
-      id
       player { 
-        id
         name 
         position 
         numberFireId
@@ -27,7 +26,14 @@ query GetProjections($input: ProjectionsInput!) {
       team { abbreviation }
       minutes
       fantasy
+      points
+      rebounds
+      assists
+      steals
+      blocks
+      turnovers
       salary
+      value
     }
   }
 }
@@ -109,18 +115,19 @@ def collect_all_slates():
             if not player or minutes <= 0 or minutes > 48:
                 continue
 
-            # Capture any ID we can find
-            fd_id = (
-                p.get("id") or
-                p.get("player", {}).get("id") or
-                p.get("player", {}).get("numberFireId") or
-                ""
-            )
+            fd_id = p.get("player", {}).get("numberFireId") or ""
 
             stats = {
                 "min": round(minutes, 2),
                 "fpts": round(fpts, 2),
-                "salary": clean_number(p.get("salary"))
+                "pts": round(float(p.get("points") or 0), 2),
+                "reb": round(float(p.get("rebounds") or 0), 2),
+                "ast": round(float(p.get("assists") or 0), 2),
+                "stl": round(float(p.get("steals") or 0), 2),
+                "blk": round(float(p.get("blocks") or 0), 2),
+                "to": round(float(p.get("turnovers") or 0), 2),
+                "salary": clean_number(p.get("salary")),
+                "value": round(clean_number(p.get("value")), 2)
             }
             key = player.lower()
             if key not in all_players or stats["min"] > all_players[key]["stats"]["min"]:

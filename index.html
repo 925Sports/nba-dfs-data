@@ -449,6 +449,18 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
       <div class="card-header" onclick="this.parentElement.classList.toggle('collapsed')">Slate <span class="chev">▾</span></div>
       <div class="card-body">
         <div id="slateChoices" class="slate-choices"></div>
+        <div class="row" style="margin-bottom:0.55rem;">
+          <label>Site
+            <select id="siteSelect" aria-label="Site">
+              <option value="dk" selected>DraftKings</option>
+              <option value="fd">FanDuel</option>
+            </select>
+          </label>
+          <label>FanDuel player list
+            <input type="file" id="fdCsvUpload" accept=".csv,text/csv">
+          </label>
+          <span class="note" id="siteNote" style="flex:1 1 260px;">DraftKings salaries. FanDuel salaries load beside them for the gap view.</span>
+        </div>
         <div class="row">
           <label>Slate<select id="slateSelect" aria-label="Slate"></select></label>
           <span class="note" id="slateNote" style="flex:1 1 280px;"></span>
@@ -664,7 +676,7 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
           <label class="check"><input type="checkbox" id="simCorr" checked> Correlated</label>
           <label class="check"><input type="checkbox" id="simContest" checked> Contest sim</label>
         </div>
-        <p class="note">Check the lineups you want replaced, then Rebuild checked. The unchecked lineups stay. A valid upload name looks like Victor Wembanyama (44461988). A 5 or 6 digit number is the photo id and DraftKings will reject the file.</p>
+        <p class="note" id="uploadNote">Check the lineups you want replaced, then Rebuild checked. The unchecked lineups stay. A valid upload name looks like Victor Wembanyama (44461988). A 5 or 6 digit number is the photo id and DraftKings will reject the file.</p>
         <div id="simStatus" class="note" style="margin-top:0.35rem;"></div>
         <div id="simSection" style="display:none;">
           <div class="subhead">Simulation results</div>
@@ -723,13 +735,14 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
           <p class="note">The first tag is the role. The second is how often to roster him. Hover either one for the reason. Open the player and click the gold box to change the tag. That writes back to the builder.</p>
         </div>
       </details>
+      <div id="salaryGaps"></div>
       <div id="csTeams"></div>
       <div class="cs-wrap"><table id="csTable"><thead><tr>
         <th data-sort="rank">Rank</th><th data-sort="name">Name</th><th data-sort="pos">Pos</th><th data-sort="team">Team</th><th>Opp</th><th data-sort="tip">Tip</th>
-        <th data-sort="salary">Salary</th><th data-sort="proj">Proj</th><th data-sort="min">Min</th><th data-sort="value">Value</th><th data-sort="own">Own est</th>
-        <th data-sort="ou">O/U</th><th data-sort="spread">Spr</th><th data-sort="pts">PTS</th><th data-sort="reb">REB</th><th data-sort="ast">AST</th><th data-sort="fd">FD</th>
+        <th data-sort="salary">Salary</th><th data-sort="dkSal">DK $</th><th data-sort="fdSal">FD $</th><th data-sort="gap">Gap</th><th data-sort="proj">Proj</th><th data-sort="min">Min</th><th data-sort="value">Value</th><th data-sort="own">Own est</th>
+        <th data-sort="ou">O/U</th><th data-sort="spread">Spr</th><th data-sort="pts">PTS</th><th data-sort="reb">REB</th><th data-sort="ast">AST</th><th data-sort="fd">FD pts</th>
       </tr></thead><tbody></tbody></table></div>
-      <div class="note" style="margin-top:0.45rem;">5.2x or better is a strong price. 4.6x to 5.2x is a normal stud price on this sport. Under 4.5x needs a reason. Min is projected minutes, with the difference from his average when they are not the same. Tip is the game start. FD is a different scoring system. It is context, not the number the lineup uses. PTS / REB / AST are season averages when the feed has them. A blank starter tag is not a bench label, so it is not used to rank.</div>
+      <div class="note" style="margin-top:0.45rem;">5.2x or better is a strong price. 4.6x to 5.2x is a normal stud price on this sport. Under 4.5x needs a reason. Min is projected minutes, with the difference from his average when they are not the same. Tip is the game start. FD pts is FanDuel scoring from the feed, not the lineup projection. DK $ and FD $ are salaries. Gap is FanDuel minus DraftKings. The lineup still uses the DraftKings projection. PTS / REB / AST are season averages when the feed has them. A blank starter tag is not a bench label, so it is not used to rank.</div>
     </div></div>
   </div>
   <div id="tab-slate" style="display:none;"><div class="card"><div class="card-header">Slate preview</div><div class="card-body">
@@ -919,7 +932,34 @@ tr.swapped-row td.swap { color:var(--aqua); font-weight:600; }
 </div>
 <script>
 
-/** Pure NBA DK lineup builder. One player per slot. */
+/** Pure NBA DK lineup builder. One player per slot. FanDuel uses the same projections with FanDuel salaries. */
+
+const FANDUEL_URL = "https://raw.githubusercontent.com/925Sports/nba-dfs-data/main/fanduel_nba_projections.json";
+let currentSite = "dk";
+let sourceRows = [];
+let fdByName = new Map();
+let fdCsv = null;
+
+function siteIsFd() { return currentSite === "fd"; }
+function salaryCap() { return siteIsFd() ? 60000 : 50000; }
+function captainKey() { return siteIsFd() ? "MVP" : "CPT"; }
+function captainPlayer(roster) {
+  if (!roster) return null;
+  return roster[captainKey()] || roster.MVP || roster.CPT || null;
+}
+function signedMoney(n) {
+  const v = Math.round(Number(n) || 0);
+  return (v > 0 ? "+" : v < 0 ? "−" : "") + "$" + Math.abs(v).toLocaleString();
+}
+function gapValue(p) {
+  if (!p || !(p.dkSalary > 0) || !(p.fdSalary > 0)) return null;
+  return p.fdSalary - p.dkSalary;
+}
+function gapText(p) {
+  const g = gapValue(p);
+  return g == null ? "—" : signedMoney(g);
+}
+
 
 function posTokens(pos) {
   return String(pos || "")
@@ -936,7 +976,31 @@ function isEligible(pos, slot) {
   return t.has(slot);
 }
 
+function fdSlotOk(pos, slot) {
+  const t = new Set(posTokens(pos));
+  if (slot === "U1" || slot === "U2" || slot === "UTIL") return true;
+  const guard = t.has("PG") || t.has("SG") || t.has("G");
+  const forward = t.has("SF") || t.has("PF") || t.has("F");
+  const center = t.has("C");
+  if (slot === "GF") return guard || forward;
+  if (slot === "FC") return forward || center;
+  if (slot === "PG") return t.has("PG");
+  if (slot === "SG") return t.has("SG");
+  if (slot === "SF") return t.has("SF");
+  if (slot === "PF") return t.has("PF");
+  if (slot === "C") return t.has("C");
+  return false;
+}
 function canPlay(p, slot, isShowdown) {
+  if (siteIsFd()) {
+    if (isShowdown) {
+      if (slot === "MVP") return p.pos === "MVP";
+      if (slot === "STAR") return p.pos === "STAR";
+      if (slot === "PRO") return p.pos === "PRO";
+      return p.pos === "UTIL";
+    }
+    return fdSlotOk(p.pos, slot);
+  }
   if (isShowdown) {
     if (slot === "CPT") return p.pos === "CPT";
     return p.pos === "UTIL";
@@ -946,6 +1010,8 @@ function canPlay(p, slot, isShowdown) {
 
 const CLASSIC = ["C", "PF", "SF", "PG", "SG", "G", "F", "UTIL"];
 const SHOWDOWN = ["CPT", "U1", "U2", "U3", "U4", "U5"];
+const FD_CLASSIC = ["C", "PF", "SF", "PG", "SG", "FC", "GF", "U1", "U2"];
+const FD_SHOWDOWN = ["MVP", "STAR", "PRO", "U1", "U2", "U3"];
 
 const EXP_BANDS = {
   play:  { min: 0, max: 100, boost: 1, short: "" },
@@ -977,11 +1043,12 @@ function byScore(a, b) {
 }
 
 function slotsFor(isShowdown) {
+  if (siteIsFd()) return isShowdown ? FD_SHOWDOWN : FD_CLASSIC;
   return isShowdown ? SHOWDOWN : CLASSIC;
 }
 
 function slotPref(slot) {
-  const order = ["C", "PF", "SF", "PG", "SG", "CPT", "G", "F", "UTIL", "U1", "U2", "U3", "U4", "U5"];
+  const order = ["C", "PF", "SF", "PG", "SG", "FC", "GF", "CPT", "MVP", "STAR", "PRO", "G", "F", "UTIL", "U1", "U2", "U3", "U4", "U5"];
   const i = order.indexOf(slot);
   return i === -1 ? 50 : i;
 }
@@ -1194,7 +1261,7 @@ function beamFill(cands, pre, settings, groups, stackTeams) {
         if (usedNames.has(p.name)) return false;
         if (!canPlay(p, slot, isShowdown)) return false;
         if ((tc[p.team] || 0) >= teamCap && p.use !== "lock") return false;
-        const leftAfter = 50000 - state.spent - p.salary;
+        const leftAfter = salaryCap() - state.spent - p.salary;
         if (leftAfter < 0) return false;
         if ((p.proj || 0) <= 0 && p.use !== "lock") return false;
         if (remainAfter > 0 && leftAfter < remainAfter * 9000) {
@@ -1214,7 +1281,7 @@ function beamFill(cands, pre, settings, groups, stackTeams) {
           const proj = p.proj || 0;
           if (proj < 18 && p.use !== "lock" && settings.shape !== "stars" && settings.shape !== "open") sc -= (18 - proj) * 0.9;
           if (settings.shape === "balanced" && p.use !== "lock" && remainAfter > 0) {
-            const leftAfter = 50000 - state.spent - p.salary;
+            const leftAfter = salaryCap() - state.spent - p.salary;
             const room = leftAfter / remainAfter;
             if (p.salary >= 5200 && p.salary <= 8600) sc += 2;
             if (room < 5000) sc -= (5000 - room) / 250;
@@ -1222,7 +1289,7 @@ function beamFill(cands, pre, settings, groups, stackTeams) {
           }
           const seen = settings.used ? (settings.used.get(p.name) || 0) : 0;
           if (seen > 0 && p.use !== "lock" && p.exp !== "core" && (p.salary < 6500 || proj < 28)) sc -= Math.min(16, seen * 2.2);
-          if (remainAfter === 0) sc -= Math.max(0, 50000 - state.spent - p.salary - 200) / 90;
+          if (remainAfter === 0) sc -= Math.max(0, salaryCap() - state.spent - p.salary - 200) / 90;
           if (stackTeams && stackTeams.size && stackTeams.has(p.opp) && !stackTeams.has(p.team)) sc += settings.bringBack ? 6 : 1;
           sc += groupScore(p, state.roster, groups);
           return { p, sc };
@@ -1249,7 +1316,7 @@ function beamFill(cands, pre, settings, groups, stackTeams) {
     if (!seen || p.use === "lock" || p.exp === "core") return sum;
     return sum + seen * ((p.salary < 7000 || (p.proj || 0) < 30) ? 1.8 : 0.4);
   }, 0);
-  const legal = beam.filter((s) => s.spent <= 50000 && Object.keys(s.roster).length === allSlots.length);
+  const legal = beam.filter((s) => s.spent <= salaryCap() && Object.keys(s.roster).length === allSlots.length);
   const inBand = legal.filter((s) => s.spent >= minS);
   const pickFrom = inBand.length ? inBand : legal;
   const finished = pickFrom.filter((s) => !groupsState(s.roster, groups).length);
@@ -1277,7 +1344,7 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
       if (usedNames.has(p.name)) return false;
       if (!canPlay(p, slot, isShowdown)) return false;
       if ((tc[p.team] || 0) >= teamCap && p.use !== "lock") return false;
-      if (p.salary > 50000 - spent) return false;
+      if (p.salary > salaryCap() - spent) return false;
       if (settings._limitHard && lowTotal(p) && p.use !== "lock") {
         const lowCount = filled.filter((x) => lowTotal(x)).length;
         if (lowCount >= 2) return false;
@@ -1316,7 +1383,7 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
     }
 
     const floorEach = isShowdown ? 3800 : 3200;
-    const maxThis = 50000 - spent - remainAfter * floorEach;
+    const maxThis = salaryCap() - spent - remainAfter * floorEach;
     const underMax = options.filter((p) => p.salary <= maxThis);
     if (underMax.length) options = underMax;
 
@@ -1327,7 +1394,7 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
 
     if (remainAfter === 0) {
       const lo = Math.max(0, minSalary - spent);
-      const hi = 50000 - spent;
+      const hi = salaryCap() - spent;
       const capLeft = Number(settings.maxLeft) || 400;
       const tight = Math.max(lo, hi - capLeft);
       let band = options.filter((p) => p.salary >= tight && p.salary <= hi);
@@ -1343,7 +1410,7 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
           if (usedNames.has(p.name)) return false;
           if (!canPlay(p, nextSlot, isShowdown)) return false;
           if ((tc[p.team] || 0) >= teamCap && p.use !== "lock") return false;
-          if (p.salary > 50000 - spent) return false;
+          if (p.salary > salaryCap() - spent) return false;
           if (p.proj <= 0 && p.use !== "lock") return false;
           return true;
         });
@@ -1358,7 +1425,7 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
       }
     }
 
-    const fair = (50000 - spent) / (remainAfter + 1);
+    const fair = (salaryCap() - spent) / (remainAfter + 1);
     const scored = options
       .map((p) => {
         let score = p.score || p.proj || 0;
@@ -1370,9 +1437,9 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
           const repeat = p.salary < 6500 || proj < 28 ? 2.6 : 0.55;
           score -= Math.min(18, seen * repeat);
         }
-        if (remainAfter === 0) score -= Math.max(0, (50000 - spent - p.salary) - 150) / 80;
+        if (remainAfter === 0) score -= Math.max(0, (salaryCap() - spent - p.salary) - 150) / 80;
         if (!isShowdown && settings.shape !== "stars" && remainAfter > 0 && p.use !== "lock") {
-          const leftAfter = 50000 - spent - p.salary;
+          const leftAfter = salaryCap() - spent - p.salary;
           const room = leftAfter / remainAfter;
           if (room < 4800) score -= Math.max(1, remainAfter - Math.floor(Math.max(0, leftAfter) / 4800)) * 16;
           else if (p.salary > fair * 1.7 && remainAfter >= 2) score -= (p.salary - fair * 1.7) / 500;
@@ -1383,9 +1450,10 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
           const have = filled.filter((x) => (x.game || "") === settings.gameStack).length;
           if (have < settings.gameMin && (p.game || "") === settings.gameStack) score += 14;
         }
-        if (isShowdown && settings.cptMate && roster.CPT) {
-          const mates = Object.values(roster).filter((x) => x !== roster.CPT && x.team === roster.CPT.team).length;
-          if (mates < 1 && p.team === roster.CPT.team) score += settings.cptMate >= 2 ? 16 : 8;
+        if (isShowdown && settings.cptMate && captainPlayer(roster)) {
+          const cpt = captainPlayer(roster);
+          const mates = Object.values(roster).filter((x) => x !== cpt && x.team === cpt.team).length;
+          if (mates < 1 && p.team === cpt.team) score += settings.cptMate >= 2 ? 16 : 8;
         }
         if (isShowdown && settings.shape === "sd_smash" && fav && p.team === fav) score += 5;
         const band = ownBandRange(settings.ownBand);
@@ -1411,7 +1479,7 @@ function fillRest(cands, pre, settings, groups, stackTeams) {
 }
 
 function bestClosingPair(optsA, optsB, spent, settings, roster) {
-  const left = 50000 - spent;
+  const left = salaryCap() - spent;
   const maxLeft = Number(settings.maxLeft) || 400;
   const minPair = Math.max(0, (settings.minSalary || 0) - spent);
   const aList = optsA.slice().sort((x, y) => (y.score || y.proj) - (x.score || x.proj)).slice(0, 16);
@@ -1451,7 +1519,7 @@ function swapPool(roster, slot, cands, settings) {
     if (names.has(p.name)) return false;
     if (!canPlay(p, slot, isShowdown)) return false;
     if (p.proj <= 0 && p.use !== "lock") return false;
-    if (spentOthers + p.salary > 50000) return false;
+    if (spentOthers + p.salary > salaryCap()) return false;
     if ((tc[p.team] || 0) >= settings.teamCap && p.team !== cur.team) return false;
     return true;
   });
@@ -1462,7 +1530,7 @@ function fitSalary(roster, cands, settings, groups, pinned) {
   const slots = Object.keys(roster);
   for (let pass = 0; pass < 14; pass++) {
     const sal = salaryOf(roster);
-    if (sal >= minS && sal <= 50000) return roster;
+    if (sal >= minS && sal <= salaryCap()) return roster;
     let best = null;
     for (const slot of slots) {
       if (roster[slot].use === "lock") continue;
@@ -1471,7 +1539,7 @@ function fitSalary(roster, cands, settings, groups, pinned) {
       for (const p of swapPool(roster, slot, cands, settings)) {
         const newSal = spentOthers + p.salary;
         const curDist = sal >= minS ? 0 : minS - sal;
-        const dist = newSal >= minS ? Math.max(0, newSal - 50000) : minS - newSal;
+        const dist = newSal >= minS ? Math.max(0, newSal - salaryCap()) : minS - newSal;
         if (dist > curDist) continue;
         if (dist === curDist && p.proj <= roster[slot].proj + 0.2) continue;
         if (roster[slot].proj - p.proj > 18) continue;
@@ -1490,7 +1558,7 @@ function fitSalary(roster, cands, settings, groups, pinned) {
 
 function improveRoster(roster, cands, settings, groups, pinned) {
   const maxLeft = Number(settings.maxLeft) || 400;
-  const floor = Math.max(Number(settings.minSalary) || 0, maxLeft > 0 ? 50000 - maxLeft : 0);
+  const floor = Math.max(Number(settings.minSalary) || 0, maxLeft > 0 ? salaryCap() - maxLeft : 0);
   const slots = Object.keys(roster);
   const locked = (slot) => {
     const cur = roster[slot];
@@ -1499,7 +1567,7 @@ function improveRoster(roster, cands, settings, groups, pinned) {
   const roomFor = (p) => !settings.used || !overExp(p, settings.used, settings.num, settings.globalMax, false);
   function legal(trial) {
     const sal = salaryOf(trial);
-    if (sal > 50000) return false;
+    if (sal > salaryCap()) return false;
     const names = Object.values(trial).map((p) => p.name);
     if (new Set(names).size !== names.length) return false;
     const before = teamCounts(roster);
@@ -1512,7 +1580,7 @@ function improveRoster(roster, cands, settings, groups, pinned) {
   }
   for (let pass = 0; pass < 10; pass++) {
     const sal = salaryOf(roster);
-    const left = 50000 - sal;
+    const left = salaryCap() - sal;
     let best = null;
     const consider = (rank, apply) => {
       if (!best || rank > best.rank) best = { rank, apply };
@@ -1534,7 +1602,7 @@ function improveRoster(roster, cands, settings, groups, pinned) {
         if (gain < 0.15 && !(left > 250 && extra >= 100 && gain >= -0.2)) continue;
         const trial = { ...roster, [slot]: p };
         if (!legal(trial)) continue;
-        const newLeft = 50000 - newSal;
+        const newLeft = salaryCap() - newSal;
         const rank = gain * 140 - Math.max(0, newLeft - maxLeft) * 0.45 + (gain >= 0 && extra > 0 ? Math.min(extra, left) * 0.003 : 0);
         consider(rank, () => ({ ...roster, [slot]: p }));
       }
@@ -1560,7 +1628,7 @@ function improveRoster(roster, cands, settings, groups, pinned) {
               if (sal >= floor && newSal < floor) continue;
               const trial = { ...roster, [open[i]]: pa, [open[j]]: pb };
               if (!legal(trial)) continue;
-              const newLeft = 50000 - newSal;
+              const newLeft = salaryCap() - newSal;
               const rank = gain * 140 - Math.max(0, newLeft - maxLeft) * 0.45;
               consider(rank, () => ({ ...roster, [open[i]]: pa, [open[j]]: pb }));
             }
@@ -1584,7 +1652,7 @@ function raiseProjection(roster, cands, settings, groups, pinned) {
   const minS = Number(settings.minSalary) || 0;
   const legal = (trial) => {
     const sal = salaryOf(trial);
-    if (sal > 50000 || sal < minS) return false;
+    if (sal > salaryCap() || sal < minS) return false;
     const names = Object.values(trial).map((p) => p.name);
     if (new Set(names).size !== names.length) return false;
     const before = teamCounts(roster);
@@ -1610,7 +1678,7 @@ function raiseProjection(roster, cands, settings, groups, pinned) {
   };
   const slots = Object.keys(roster);
   for (let pass = 0; pass < 8; pass++) {
-    const left = 50000 - salaryOf(roster);
+    const left = salaryCap() - salaryOf(roster);
     let best = null;
     const consider = (gain, trial) => {
       if (gain < 1) return;
@@ -1665,7 +1733,7 @@ function rebalancePunts(roster, cands, settings, groups, pinned) {
   const roomFor = (p) => !settings.used || !overExp(p, settings.used, settings.num, settings.globalMax, false);
   const legal = (trial) => {
     const sal = salaryOf(trial);
-    if (sal > 50000 || sal < (Number(settings.minSalary) || 0)) return false;
+    if (sal > salaryCap() || sal < (Number(settings.minSalary) || 0)) return false;
     const names = Object.values(trial).map((p) => p.name);
     if (new Set(names).size !== names.length) return false;
     const before = teamCounts(roster);
@@ -1691,7 +1759,7 @@ function rebalancePunts(roster, cands, settings, groups, pinned) {
           for (const pb of down) {
             if (pa.name === pb.name || pa.name === roster[d].name) continue;
             const extra = pa.salary + pb.salary - roster[w].salary - roster[d].salary;
-            if (salaryOf(roster) + extra > 50000) continue;
+            if (salaryOf(roster) + extra > salaryCap()) continue;
             const gain = pa.proj + pb.proj - roster[w].proj - roster[d].proj;
             if (gain < 2) continue;
             const trial = { ...roster, [w]: pa, [d]: pb };
@@ -1708,6 +1776,7 @@ function rebalancePunts(roster, cands, settings, groups, pinned) {
 }
 
 function parkLatest(roster) {
+  if (siteIsFd()) return roster;
   if (!roster || roster.CPT) return roster;
   const slots = ["C", "PF", "SF", "PG", "SG", "G", "F", "UTIL"];
   const players = slots.map((s) => roster[s]);
@@ -2036,9 +2105,10 @@ function constructionIssue(roster, settings) {
     }
   }
   if (settings.isShowdown && settings.cptMate >= 2) {
-    const cpt = roster.CPT;
-    const mate = cpt && Object.entries(roster).some(([s, p]) => s !== "CPT" && p.team === cpt.team);
-    if (!mate) return "Captain needs one teammate.";
+    const key = captainKey();
+    const cpt = roster[key];
+    const mate = cpt && Object.entries(roster).some(([s, p]) => s !== key && p.team === cpt.team);
+    if (!mate) return (siteIsFd() ? "MVP" : "Captain") + " needs one teammate.";
   }
   return "";
 }
@@ -2046,7 +2116,7 @@ function constructionIssue(roster, settings) {
 function generateLineups(pool, settings, stacks = [], groups = []) {
   const maxLeft = Number(settings.maxLeft) || 0;
   if (maxLeft > 0) {
-    settings = { ...settings, minSalary: Math.max(Number(settings.minSalary) || 0, 50000 - maxLeft) };
+    settings = { ...settings, minSalary: Math.max(Number(settings.minSalary) || 0, salaryCap() - maxLeft) };
   }
   const buildCount = settings.num;
   const expNum = settings._exposureNum || buildCount;
@@ -2131,7 +2201,7 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
       }
       const stackTeams = new Set(extra.map((p) => p.team));
       const required = resolveRequired(locks, extra, settings.isShowdown, active);
-      if (required.reduce((s, p) => s + p.salary, 0) > 50000) {
+      if (required.reduce((s, p) => s + p.salary, 0) > salaryCap()) {
         lastReason = "Locks and stacks already cost more than $50,000.";
         break;
       }
@@ -2169,7 +2239,7 @@ function generateLineups(pool, settings, stacks = [], groups = []) {
       roster = rebalancePunts(roster, active, runSettings, gUse, pinned);
       roster = raiseProjection(roster, active, runSettings, gUse, pinned);
       const sal = salaryOf(roster);
-      if (sal > 50000) {
+      if (sal > salaryCap()) {
         lastReason = "Lineup went over $50,000.";
         continue;
       }
@@ -2279,7 +2349,7 @@ function lineupLegal(lu, isShowdown) {
     if (p.proj <= 0 && p.use !== "lock") return "zero " + p.name;
     if (!(p.salary > 0)) return "bad salary " + p.name;
   }
-  if (sal > 50000) return "salary " + sal;
+  if (sal > salaryCap()) return "salary " + sal;
   if (Math.round(sal) !== Math.round(lu.salary)) return "salary mismatch";
   return "";
 }
@@ -3219,10 +3289,299 @@ async function loadData() {
     status.textContent = `Loaded ${allRows.length} players · ${withProj} with a projection.` + (shown.length ? ` Left out ${shown.join(", ")}${extra ? " and " + extra + " more" : ""}. The file listed points for them, but there is no minutes average and no game-log points behind it.` : "") + (onOffRows.length ? " On/off splits are in." : "") + (oddsFallbackUsed ? " Game odds filled from the odds sheet." : "");
     ensureLogs();
     await loadStarters();
-    buildSlatePicker();
+    allRows.forEach((p) => {
+      p.dkSalary = p.salary;
+      p.fdSalary = 0;
+      p.fdExportId = "";
+    });
+    sourceRows = allRows.map((p) => ({ ...p }));
+    await loadFanDuel();
+    applySite();
   } catch (e) {
     status.textContent = "Unable to load the player pool. Refresh and try again.";
   }
+}
+
+function fdRecordFor(name) {
+  const key = foldName(name);
+  if (fdByName.has(key)) return fdByName.get(key);
+  for (const rec of fdByName.values()) {
+    if (rec.name && samePlayer(rec.name, name)) return rec;
+  }
+  return null;
+}
+function indexFanDuel(json) {
+  const players = (json && json.players) || {};
+  Object.values(players).forEach((entry) => {
+    const info = entry.info || {};
+    const stats = entry.stats || {};
+    const name = String(info.player || "").trim();
+    const salary = Math.round(Number(stats.salary) || 0);
+    if (!name || salary <= 0) return;
+    const key = foldName(name);
+    if (fdByName.has(key) && fdByName.get(key).fromCsv) return;
+    fdByName.set(key, {
+      name,
+      salary,
+      pos: info.position || "",
+      team: canonTeam(info.team || ""),
+      exportId: "",
+      fromCsv: false,
+    });
+  });
+}
+function stampResearchSalaries(rows) {
+  (rows || []).forEach((p) => {
+    if (!p.dkSalary) p.dkSalary = p.salary;
+    const rec = fdRecordFor(p.name);
+    if (!rec) return;
+    if (!(p.fdFromCsv)) p.fdSalary = rec.salary;
+    if (rec.exportId) p.fdExportId = rec.exportId;
+  });
+}
+async function loadFanDuel() {
+  try {
+    const res = await fetch(cacheBust(FANDUEL_URL));
+    if (!res.ok) return;
+    indexFanDuel(await res.json());
+    stampResearchSalaries(sourceRows);
+    stampResearchSalaries(allRows);
+  } catch (e) {}
+}
+function dkSourceFor(name) {
+  const classic = sourceRows.filter((p) => p.pos !== "CPT" && p.pos !== "UTIL" && !specialPos(p.pos) && samePlayer(p.name, name));
+  const withProj = classic.filter((p) => p.baseProj > 0);
+  return withProj[0] || classic[0] || sourceRows.find((p) => samePlayer(p.name, name) && p.baseProj > 0) || null;
+}
+function withFdPrice(src, salary, exportId, pos) {
+  const row = { ...src };
+  row.dkSalary = src.dkSalary || src.salary;
+  row.fdSalary = salary;
+  row.salary = salary;
+  row.fdExportId = exportId || "";
+  row.baseProj = src.baseProj || (src.pos === "CPT" ? (src.proj || 0) / 1.5 : src.proj || 0);
+  row.proj = row.baseProj;
+  row.ppm = row.minutes > 0 ? row.proj / row.minutes : 0;
+  if (pos) row.pos = pos;
+  return row;
+}
+function showdownCopies(base) {
+  return [
+    ["MVP", 2],
+    ["STAR", 1.5],
+    ["PRO", 1.2],
+    ["UTIL", 1],
+  ].map(([pos, mult]) => ({
+    ...base,
+    id: String(base.id) + "|" + pos,
+    pos,
+    proj: Math.round((base.baseProj || 0) * mult * 10) / 10,
+    salary: base.fdSalary,
+  }));
+}
+function buildFanDuelRows() {
+  if (fdCsv && fdCsv.players.length) {
+    const slate = fdCsv.showdown ? "Showdown FanDuel" : "FanDuel Classic";
+    const out = [];
+    fdCsv.players.forEach((raw) => {
+      const src = dkSourceFor(raw.name);
+      const team = canonTeam(raw.team || (src && src.team) || "");
+      const opp = canonTeam(raw.opp || (src && src.opp) || "");
+      const base = src ? withFdPrice(src, raw.salary, raw.id, fdCsv.showdown ? "UTIL" : (raw.pos || src.pos)) : {
+        id: raw.id,
+        name: raw.name,
+        pos: fdCsv.showdown ? "UTIL" : (raw.pos || ""),
+        team,
+        opp,
+        slate,
+        salary: raw.salary,
+        dkSalary: 0,
+        fdSalary: raw.salary,
+        fdExportId: raw.id,
+        proj: 0,
+        baseProj: 0,
+        minutes: 0,
+        ppm: 0,
+        start: "",
+        image: "",
+        dkId: "",
+        injury: raw.injury === "O" ? "OUT" : (raw.injury || ""),
+        starter: "",
+        game: raw.game || "",
+        ou: 0,
+        spread: 0,
+        fav: false,
+        fd: 0,
+        dk: 0,
+        pts: 0,
+        reb: 0,
+        ast: 0,
+        stl: 0,
+        blk: 0,
+        tov: 0,
+        phantom: false,
+        own: 0,
+        use: raw.injury === "O" ? "fade" : "play",
+        exp: raw.injury === "O" ? "fade" : "play",
+        weight: raw.injury === "O" ? "fade" : "play",
+        minExp: 0,
+        maxExp: raw.injury === "O" ? 0 : 100,
+      };
+      base.team = team || base.team;
+      base.opp = opp || base.opp;
+      base.slate = slate;
+      base.fdExportId = raw.id;
+      base.fdSalary = raw.salary;
+      base.salary = raw.salary;
+      if (raw.injury === "O") base.injury = base.injury || "OUT";
+      if (raw.game) base.game = raw.game;
+      if (fdCsv.showdown) showdownCopies(base).forEach((row) => out.push(row));
+      else out.push(base);
+    });
+    return out;
+  }
+  const out = [];
+  const seenShow = new Set();
+  sourceRows.forEach((p) => {
+    const rec = fdRecordFor(p.name);
+    if (!rec || !(rec.salary > 0)) return;
+    const showdown = String(p.slate || "").startsWith("Showdown");
+    if (showdown) {
+      if (p.pos !== "UTIL") return;
+      const key = p.slate + "|" + foldName(p.name);
+      if (seenShow.has(key)) return;
+      seenShow.add(key);
+      const base = withFdPrice(p, rec.salary, rec.exportId || "", "UTIL");
+      base.slate = p.slate;
+      showdownCopies(base).forEach((row) => out.push(row));
+      return;
+    }
+    if (p.pos === "CPT" || p.pos === "UTIL") return;
+    const row = withFdPrice(p, rec.salary, rec.exportId || "", p.pos);
+    row.slate = p.slate;
+    out.push(row);
+  });
+  return out;
+}
+function fdStatusText() {
+  if (fdCsv && fdCsv.players.length) {
+    let matched = 0;
+    fdCsv.players.forEach((p) => {
+      const src = dkSourceFor(p.name);
+      if (src && src.baseProj > 0) matched += 1;
+    });
+    return `FanDuel CSV loaded: ${fdCsv.players.length} players, ${matched} with a DraftKings projection. Export ids are ready.`;
+  }
+  const matched = sourceRows.filter((p) => p.pos !== "CPT" && p.pos !== "UTIL" && fdRecordFor(p.name)).length;
+  return `FanDuel research salaries matched ${matched} DraftKings players. Upload the FanDuel player-list CSV before downloading lineups.`;
+}
+function paintSiteChrome() {
+  const note = document.getElementById("siteNote");
+  const btn = document.getElementById("downloadBtn");
+  const head = document.querySelector(".app-header p");
+  const runNote = document.querySelector(".run-note");
+  const upload = document.getElementById("uploadNote");
+  if (siteIsFd()) {
+    if (btn) btn.textContent = "FD upload CSV";
+    if (head) head.textContent = "FanDuel classic is 9 spots under $60,000. Showdown is MVP, STAR, PRO, and 3 UTIL. Projections are the DraftKings numbers. Upload the FanDuel player list for export ids.";
+    if (runNote) runNote.textContent = "FanDuel file is ID:Name. Classic columns are PG, SG, SF, PF, C, G/F, F/C, UTIL, UTIL. Showdown is MVP, STAR, PRO, then three UTIL.";
+    if (upload) upload.textContent = "Upload the FanDuel player-list CSV so each name has an id like 136655-188414. The download uses ID:Name. A NumberFire id will be rejected.";
+    if (note) note.textContent = fdStatusText();
+  } else {
+    if (btn) btn.textContent = "DK upload CSV";
+    if (head) head.textContent = "Classic is 8 spots under $50,000. Showdown is captain plus 5. Uploads use the long DraftKings lineup id.";
+    if (runNote) runNote.textContent = "DraftKings file is Name (ID). Classic columns are PG, SG, SF, PF, C, G, F, UTIL. Showdown is CPT, then five UTIL. Pre-lock. Late-swap if the starting lineup changes.";
+    if (upload) upload.textContent = "Check the lineups you want replaced, then Rebuild checked. The unchecked lineups stay. A valid upload name looks like Victor Wembanyama (44461988). A 5 or 6 digit number is the photo id and DraftKings will reject the file.";
+    if (note) note.textContent = fdByName.size ? `DraftKings salaries. ${fdByName.size} FanDuel salaries are matched for the gap view.` : "DraftKings salaries. FanDuel salaries load beside them for the gap view.";
+  }
+}
+function applySite() {
+  if (!sourceRows.length) {
+    paintSiteChrome();
+    return;
+  }
+  if (siteIsFd()) allRows = buildFanDuelRows();
+  else allRows = sourceRows.map((p) => ({ ...p, salary: p.dkSalary || p.salary }));
+  paintSiteChrome();
+  buildSlatePicker();
+}
+function renderSalaryGaps() {
+  const host = document.getElementById("salaryGaps");
+  if (!host) return;
+  const seen = new Set();
+  const rows = [];
+  pool.forEach((p) => {
+    if (specialPos(p.pos) || p.pos === "UTIL") return;
+    if (seen.has(p.name)) return;
+    if (gapValue(p) == null) return;
+    seen.add(p.name);
+    rows.push(p);
+  });
+  rows.sort((a, b) => Math.abs(gapValue(b)) - Math.abs(gapValue(a)));
+  const top = rows.filter((p) => Math.abs(gapValue(p)) >= 300).slice(0, 20);
+  const shown = top.length ? top : rows.slice(0, 12);
+  if (!shown.length) {
+    host.innerHTML = `<div class="note">No FanDuel salary match on this slate yet.</div>`;
+    return;
+  }
+  host.innerHTML = `<div class="subhead">Biggest salary gaps</div><div class="note" style="margin-bottom:0.35rem;">FanDuel salary minus DraftKings salary. A plus means FanDuel is more expensive. The projection is the DraftKings projection either way.</div><div class="pool-wrap"><table><thead><tr><th>Player</th><th>Team</th><th>Proj</th><th>DK $</th><th>FD $</th><th>Gap</th><th>Higher</th></tr></thead><tbody>${
+    shown.map((p) => {
+      const g = gapValue(p);
+      return `<tr><td>${nameBtn(p.name)}</td><td>${esc(p.team)}</td><td>${(p.baseProj || p.proj).toFixed(1)}</td><td>${money(p.dkSalary)}</td><td>${money(p.fdSalary)}</td><td><b>${signedMoney(g)}</b></td><td>${g > 0 ? "FD" : g < 0 ? "DK" : "Even"}</td></tr>`;
+    }).join("")
+  }</tbody></table></div>`;
+  bindNames(host);
+}
+function parseFdCsv(text) {
+  const grid = Papa.parse(text, { skipEmptyLines: false }).data || [];
+  let headerIdx = -1;
+  for (let i = 0; i < Math.min(grid.length, 40); i++) {
+    const cells = (grid[i] || []).map((c) => String(c || "").trim().toLowerCase());
+    if (cells.includes("id") && cells.some((c) => c.includes("player") || c === "nickname" || c === "last name")) {
+      headerIdx = i;
+      break;
+    }
+  }
+  if (headerIdx < 0) return null;
+  const header = (grid[headerIdx] || []).map((c) => String(c || "").trim().toLowerCase());
+  const at = (name) => header.findIndex((h) => h === name);
+  const idI = at("id");
+  const nickI = at("nickname");
+  const firstI = at("first name");
+  const lastI = at("last name");
+  const posI = at("position");
+  const salI = at("salary");
+  const teamI = at("team");
+  const oppI = at("opponent");
+  const gameI = at("game");
+  const injI = at("injury indicator");
+  if (idI < 0) return null;
+  const players = [];
+  for (let i = headerIdx + 1; i < grid.length; i++) {
+    const row = grid[i] || [];
+    const id = String(row[idI] || "").trim();
+    if (!/^\d+-\d+$/.test(id)) continue;
+    const nick = nickI >= 0 ? String(row[nickI] || "").trim() : "";
+    const built = `${firstI >= 0 ? row[firstI] || "" : ""} ${lastI >= 0 ? row[lastI] || "" : ""}`.trim();
+    const name = nick || built;
+    if (!name) continue;
+    const gameRaw = gameI >= 0 ? String(row[gameI] || "").trim() : "";
+    const game = gameRaw.includes("@")
+      ? gameRaw.split("@").map((side) => canonTeam(side.trim())).join(" @ ")
+      : gameRaw;
+    players.push({
+      id,
+      name,
+      pos: posI >= 0 ? String(row[posI] || "").trim() : "",
+      salary: salI >= 0 ? (parseInt(String(row[salI] || "").replace(/[^\d]/g, ""), 10) || 0) : 0,
+      team: teamI >= 0 ? canonTeam(row[teamI]) : "",
+      opp: oppI >= 0 ? canonTeam(row[oppI]) : "",
+      injury: injI >= 0 ? String(row[injI] || "").trim().toUpperCase() : "",
+      game,
+    });
+  }
+  const lineupHeader = (grid[0] || []).map((c) => String(c || "").trim().toUpperCase());
+  return { showdown: lineupHeader.includes("MVP"), players };
 }
 
 function slateGames(role) {
@@ -3324,9 +3683,9 @@ function loadSlate(role) {
     const showdown = String(role).startsWith("Showdown");
     const early = games.find(([, t]) => /03:00\s*PM/i.test(t) || /3:00\s*PM/i.test(t));
     note.textContent = showdown
-      ? `Showdown is one game only${games[0] ? `: ${games[0][0]}${games[0][1] ? " (" + games[0][1] + " ET)" : ""}` : ""}. Upload into that showdown contest, not the classic.`
+      ? `Showdown is one game only${games[0] ? `: ${games[0][0]}${games[0][1] ? " (" + games[0][1] + " ET)" : ""}` : ""}. Upload into that ${siteIsFd() ? "FanDuel" : "DraftKings"} showdown contest, not the classic.`
       : games.length > 2
-        ? `Main slate, ${games.length} games${early ? ", including " + early[0] + " at 3:00 PM ET" : ""}. ${games.map(([g, t]) => `${g}${t ? " (" + t + " ET)" : ""}`).join(", ")}. Upload only into the DraftKings classic contest that lists all of these games.`
+        ? `Main slate, ${games.length} games${early ? ", including " + early[0] + " at 3:00 PM ET" : ""}. ${games.map(([g, t]) => `${g}${t ? " (" + t + " ET)" : ""}`).join(", ")}. Upload only into the ${siteIsFd() ? "FanDuel" : "DraftKings"} classic contest that lists these games.`
         : `Night slate, ${games.length} games. The early game is not on this slate. ${games.map(([g, t]) => `${g}${t ? " (" + t + " ET)" : ""}`).join(", ")}.`;
   }
   tuneTeamCap(role);
@@ -3449,7 +3808,7 @@ function renderPool() {
     const p = pool.find((x) => x.id === e.target.dataset.id);
     if (!p) return;
     p.proj = parseFloat(e.target.value) || 0;
-    p.baseProj = p.pos === "CPT" ? p.proj / 1.5 : p.proj;
+    p.baseProj = p.pos === "CPT" || p.pos === "STAR" ? p.proj / 1.5 : p.pos === "MVP" ? p.proj / 2 : p.pos === "PRO" ? p.proj / 1.2 : p.proj;
     p.projTouched = true;
     rowsNamed(p.name).forEach((row) => { row.projTouched = true; });
     p.ppm = p.minutes > 0 ? p.proj / p.minutes : 0;
@@ -3780,6 +4139,9 @@ function renderCheatSheet() {
     else if (k === "pos") { va = a.pos; vb = b.pos; }
     else if (k === "team") { va = a.team; vb = b.team; }
     else if (k === "salary") { va = a.salary; vb = b.salary; }
+    else if (k === "dkSal") { va = a.dkSalary || 0; vb = b.dkSalary || 0; }
+    else if (k === "fdSal") { va = a.fdSalary || 0; vb = b.fdSalary || 0; }
+    else if (k === "gap") { va = gapValue(a) == null ? -999999 : Math.abs(gapValue(a)); vb = gapValue(b) == null ? -999999 : Math.abs(gapValue(b)); }
     else if (k === "value") { va = valueOf(a); vb = valueOf(b); }
     else if (k === "own") { va = a.own; vb = b.own; }
     else if (k === "ou") { va = a.ou || 0; vb = b.ou || 0; }
@@ -3810,7 +4172,7 @@ function renderCheatSheet() {
         const tip = tipTime(list[0].start);
         const body = list.slice().sort((a, b) => b.proj - a.proj).map((p) => {
           const mins = shownMinutes(p);
-          return `<div class="sp-row"><span>${nameBtn(p.name)} ${injuryTag(p.injury)} ${tagPills(p)} <span class="cs-sub">${esc(rosterPos(p))}${tipTime(p.start) ? " · " + esc(tipTime(p.start)) : ""}</span></span><span>${mins.proj ? mins.proj.toFixed(0) + " min · " : ""}${p.proj.toFixed(1)} · ${valueOf(p).toFixed(2)}x · ${money(p.salary)}</span></div>`;
+          return `<div class="sp-row"><span>${nameBtn(p.name)} ${injuryTag(p.injury)} ${tagPills(p)} <span class="cs-sub">${esc(rosterPos(p))}${tipTime(p.start) ? " · " + esc(tipTime(p.start)) : ""}</span></span><span>${mins.proj ? mins.proj.toFixed(0) + " min · " : ""}${p.proj.toFixed(1)} · ${valueOf(p).toFixed(2)}x · DK ${p.dkSalary ? money(p.dkSalary) : "—"} · FD ${p.fdSalary ? money(p.fdSalary) : "—"}</span></div>`;
         }).join("");
         return sec(`${esc(tm)} vs ${esc(list[0].opp || "—")}`, `<p class="note">${tip ? esc(tip) + " · " : ""}${env.ou ? "O/U " + env.ou.toFixed(1) : "No total"}${env.spr ? " · " + (env.spr > 0 ? "+" : "") + env.spr.toFixed(1) : ""}</p>${body}`, true);
       }).join("") || `<div class="note">No teams match.</div>`;
@@ -3821,6 +4183,7 @@ function renderCheatSheet() {
   }
   if (wrap) wrap.style.display = "";
   if (teamsHost) teamsHost.innerHTML = "";
+  renderSalaryGaps();
   host.innerHTML = rows.map((p, i) => {
     const val = valueOf(p);
     const mins = shownMinutes(p);
@@ -3828,7 +4191,7 @@ function renderCheatSheet() {
       <td>${i + 1}</td>
       <td>${nameBtn(p.name)} ${injuryTag(p.injury)} ${p.starter === "Yes" ? '<span class="tag s" data-tip="Tagged as a starter in the feed.">S</span>' : ""} ${tagPills(p)}</td>
       <td>${esc(rosterPos(p))}</td><td>${esc(p.team)}</td><td>${esc(p.opp)}</td><td>${esc(tipTime(p.start) || "—")}</td>
-      <td>${money(p.salary)}</td><td>${p.proj.toFixed(1)}</td><td>${mins.proj ? minDiffHtml(mins.proj, mins.avg) : "—"}</td>
+      <td>${money(p.salary)}</td><td>${p.dkSalary ? money(p.dkSalary) : "—"}</td><td>${p.fdSalary ? money(p.fdSalary) : "—"}</td><td>${gapText(p)}</td><td>${p.proj.toFixed(1)}</td><td>${mins.proj ? minDiffHtml(mins.proj, mins.avg) : "—"}</td>
       <td class="${valueClass(val)}">${val.toFixed(2)}x</td>
       <td>${Math.round(p.own)}</td>
       <td>${numCell(p.ou, 1)}</td><td>${sprText(p)}</td>
@@ -3850,13 +4213,16 @@ function bindNames(root) {
     };
   });
 }
+function specialPos(pos) {
+  return pos === "CPT" || pos === "UTIL" || pos === "MVP" || pos === "STAR" || pos === "PRO";
+}
 function primaryPos(p) {
-  if (p.pos && p.pos !== "CPT" && p.pos !== "UTIL") return p.pos;
-  const src = allRows.find((x) => x.name === p.name && x.pos && x.pos !== "CPT" && x.pos !== "UTIL");
+  if (p.pos && !specialPos(p.pos)) return p.pos;
+  const src = allRows.find((x) => x.name === p.name && x.pos && !specialPos(x.pos));
   return src ? src.pos : (p.pos || "");
 }
 function rosterPos(p) {
-  if (p.pos && p.pos !== "CPT" && p.pos !== "UTIL") return p.pos;
+  if (p.pos && !specialPos(p.pos)) return p.pos;
   return primaryPos(p);
 }
 function sheetPlayer(p) {
@@ -5114,7 +5480,7 @@ function stackIdeas() {
     const fp = group.reduce((s, m) => s + (m.baseProj || m.proj), 0);
     const sal = group.reduce((s, m) => s + m.salary, 0);
     const spotsLeft = (isShowdown ? 6 : 8) - group.length;
-    const left = 50000 - sal;
+    const left = salaryCap() - sal;
     const per = spotsLeft > 0 ? left / spotsLeft : 0;
     if (per < 3400 || sal > 42000 || sal < 14000) return;
     const opp = (backs && backs[0]) || uniqueProjected().filter((p) => p.team === pg.opp && roleOk(p))[0] || null;
@@ -5304,7 +5670,11 @@ function currentSettings() {
     pgStack: parseInt(document.getElementById("pgStack").value, 10) || 0,
     bringBack: parseInt(document.getElementById("bringBack").value, 10) || 0,
     ceiling: parseFloat(document.getElementById("ceiling").value) || 0,
-    teamCap: Math.max(2, parseInt(document.getElementById("maxTeam").value, 10) || 3),
+    teamCap: (() => {
+      const n = Math.max(2, parseInt(document.getElementById("maxTeam").value, 10) || 3);
+      const sd = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
+      return siteIsFd() && !sd ? Math.min(4, n) : n;
+    })(),
     gameStack: document.getElementById("gameStack").value || "",
     gameMin: Math.max(0, Math.min(5, parseInt(document.getElementById("gameMin").value, 10) || 0)),
     sdSplit: document.getElementById("sdSplit").value || "any",
@@ -5346,7 +5716,7 @@ function polishSet(list, pool, settings, groups) {
     if (!settings.isShowdown) parkLatest(roster);
     const next = packBuilt(roster, settings.isShowdown);
     const restore = () => lu.players.forEach((p) => used.set(p.name, (used.get(p.name) || 0) + 1));
-    if (!next || next.salary > 50000 || next.proj < lu.proj - 0.05 || lineupLegal(next, settings.isShowdown)) {
+    if (!next || next.salary > salaryCap() || next.proj < lu.proj - 0.05 || lineupLegal(next, settings.isShowdown)) {
       restore();
       return lu;
     }
@@ -5467,7 +5837,7 @@ function runOptimizer() {
     if (floor) notes.push(floor);
     const priced = priceCheckNote();
     if (priced) notes.push(priced);
-    const avgLeft = 50000 - avgSal;
+    const avgLeft = salaryCap() - avgSal;
     const sample = lineups[0].players.find((p) => lineupId(p));
     const idNote = sample
       ? ` File will upload as ${sample.name} (${lineupId(sample)}). A shorter number is the photo id and DraftKings will reject it.`
@@ -5559,8 +5929,8 @@ function rebuildChecked() {
       const idx = indexes[n];
       if (idx == null) return;
       const old = lineups[idx];
-      const oldLeft = 50000 - old.salary;
-      const newLeft = 50000 - lu.salary;
+      const oldLeft = salaryCap() - old.salary;
+      const newLeft = salaryCap() - lu.salary;
       const improves = lu.proj > old.proj + 0.25 || (lu.proj >= old.proj - 0.8 && newLeft + 150 < oldLeft);
       if (improves) {
         next[idx] = lu;
@@ -5589,7 +5959,7 @@ function sortedLineups() {
     let va;
     let vb;
     if (k === "salary") { va = a.lu.salary; vb = b.lu.salary; }
-    else if (k === "left") { va = 50000 - a.lu.salary; vb = 50000 - b.lu.salary; }
+    else if (k === "left") { va = salaryCap() - a.lu.salary; vb = salaryCap() - b.lu.salary; }
     else if (k === "own") { va = a.lu.own; vb = b.lu.own; }
     else if (k === "num") { va = a.i; vb = b.i; }
     else { va = a.lu.proj; vb = b.lu.proj; }
@@ -5600,26 +5970,26 @@ function sortedLineups() {
 
 function renderLineups() {
   const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
-  const slots = isShowdown ? ["CPT", "U1", "U2", "U3", "U4", "U5"] : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
-  const labels = isShowdown ? ["CPT", "UTIL", "UTIL", "UTIL", "UTIL", "UTIL"] : slots;
+  const slots = slotsFor(isShowdown);
+  const labels = slots.map(slotLabel);
   const mark = (key) => luSort.key === key ? (luSort.dir < 0 ? " ▼" : " ▲") : "";
   document.getElementById("lineupsHead").innerHTML = `<th><input type="checkbox" id="luSelectAll" title="Select all lineups"></th><th data-lsort="num">#${mark("num")}</th>` + labels.map((s) => `<th>${s}</th>`).join("") + `<th data-lsort="proj">Proj${mark("proj")}</th><th data-lsort="salary">Salary${mark("salary")}</th><th data-lsort="left">Left${mark("left")}</th><th data-lsort="own" title="Sum of each player's estimated ownership, not the average.">Own${mark("own")}</th><th>Teams</th>`;
   const capLeft = parseInt(document.getElementById("maxLeft").value, 10) || 400;
   const tbody = document.querySelector("#lineupsTable tbody");
   if (!lineups.length) {
-    tbody.innerHTML = `<tr><td colspan="12" class="note">Run the optimizer. Downloads stay on this card.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="20" class="note">Run the optimizer. Downloads stay on this card.</td></tr>`;
     renderReview();
     return;
   }
   tbody.innerHTML = sortedLineups().map(({ lu, i }) => {
     const cells = slots.map((s) => {
       const p = lu.slots[s];
-      const flex = !isShowdown && (s === "G" || s === "F" || s === "UTIL");
+      const flex = !isShowdown && (s === "G" || s === "F" || s === "UTIL" || s === "GF" || s === "FC" || /^U\d+$/.test(s));
       const tip = p && flex ? tipTime(p.start) : "";
       const title = p ? esc(rosterPos(p) + " " + money(p.salary) + " · " + p.proj.toFixed(1) + (tip ? " · " + tip : "") + (p.ou ? " · O/U " + Number(p.ou).toFixed(1) : "")) : "";
       return `<td class="${p && priceCheck(p) ? "lu-checkprice" : ""}" title="${title}">${p ? `<div>${nameBtn(p.name)}</div><div class="lu-team">${esc(p.team)} · ${money(p.salary)}${tip ? " · " + esc(tip) : ""}</div>` : ""}</td>`;
     }).join("");
-    const left = 50000 - lu.salary;
+    const left = salaryCap() - lu.salary;
     const teams = Object.entries(teamCounts(lu.slots)).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([t, c]) => `${t} ${c}`).join(" · ");
     return `<tr class="clickable" data-idx="${i}"><td><input type="checkbox" class="lu-check" data-idx="${i}" ${lineupChecked.has(i) ? "checked" : ""}></td><td class="lu-num">${i + 1}</td>${cells}<td class="lu-proj">${lu.proj.toFixed(1)}</td><td>${money(lu.salary)}</td><td class="lu-left ${left > capLeft ? "low-value" : ""}">${money(left)}</td><td title="Total estimated ownership">${Math.round(lu.own)}%</td><td class="lu-teams">${esc(teams)}</td></tr>`;
   }).join("");
@@ -5671,7 +6041,7 @@ function checkedLineups() {
 
 function correlated(lu, isShowdown) {
   if (isShowdown) {
-    const cpt = lu.slots.CPT;
+    const cpt = captainPlayer(lu.slots);
     return !!(cpt && lu.players.some((p) => p !== cpt && p.team === cpt.team));
   }
   return lu.players.some((p) => isEligible(p.pos, "PG") && lu.players.some((m) => m.name !== p.name && m.team === p.team));
@@ -5690,8 +6060,8 @@ function renderReview() {
   const n = lineups.length;
   const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
   const avgProj = lineups.reduce((s, lu) => s + lu.proj, 0) / n;
-  const avgLeft = lineups.reduce((s, lu) => s + (50000 - lu.salary), 0) / n;
-  const spots = isShowdown ? 6 : 8;
+  const avgLeft = lineups.reduce((s, lu) => s + (salaryCap() - lu.salary), 0) / n;
+  const spots = slotsFor(isShowdown).length;
   const avgOwn = lineups.reduce((s, lu) => s + lu.own, 0) / n;
   const corr = lineups.filter((lu) => correlated(lu, isShowdown)).length / n;
   const sigs = lineups.map((lu) => lu.players.map((p) => p.name).sort().join("|"));
@@ -5732,8 +6102,10 @@ function renderReview() {
   if (uniqN) cards.push(metric(avgNew.toFixed(1), "Avg new players", settings.minUnique > 0 && avgNew + 0.05 < settings.minUnique));
   if (shapeOn) cards.push(metric(`${shaped}/${n}`, "Rule held", shaped < n));
   const formatBad = lineups.filter((lu) => lineupLegal(lu, isShowdown)).length;
-  const idBad = lineups.some((lu) => lu.players.some((p) => !(p.id || p.dkId || dkIdFromImage(p.image))));
-  cards.push(metric(formatBad || idBad ? "No" : "Yes", "DK upload", !!(formatBad || idBad)));
+  const idBad = siteIsFd()
+    ? lineups.some((lu) => lu.players.some((p) => !p.fdExportId))
+    : lineups.some((lu) => lu.players.some((p) => !(p.id || p.dkId || dkIdFromImage(p.image))));
+  cards.push(metric(formatBad || idBad ? "No" : "Yes", siteIsFd() ? "FD upload" : "DK upload", !!(formatBad || idBad)));
   host.innerHTML = cards.join("");
   renderExposure();
 }
@@ -5987,51 +6359,64 @@ function renderTeamExposure() {
     : "";
 }
 
+function exportCell(p) {
+  if (!p) return "";
+  if (siteIsFd()) {
+    const id = String(p.fdExportId || "").trim();
+    return id ? `${id}:${p.name}` : "";
+  }
+  return dkName(p);
+}
 function downloadCsv(list) {
   const rows = Array.isArray(list) ? list : lineups;
   const status = document.getElementById("optStatus");
   if (!rows.length) return;
   const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
-  const headers = isShowdown ? ["CPT", "UTIL", "UTIL", "UTIL", "UTIL", "UTIL"] : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
-  const keys = isShowdown ? ["CPT", "U1", "U2", "U3", "U4", "U5"] : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
+  const keys = slotsFor(isShowdown);
+  const headers = keys.map(slotLabel);
   const missing = [];
   rows.forEach((lu) => {
     keys.forEach((k) => {
       const p = lu.slots[k];
-      if (!p || !lineupId(p)) missing.push(p ? p.name : k);
+      if (!p || !exportCell(p)) missing.push(p ? p.name : k);
     });
   });
   if (missing.length) {
-    status.textContent = `Not downloaded. ${[...new Set(missing)].slice(0, 5).join(", ")} ${missing.length === 1 ? "has" : "have"} no DraftKings lineup id. Refresh this page and run it again. Do not upload a file whose numbers are 5 or 6 digits.`;
+    status.textContent = siteIsFd()
+      ? `Not downloaded. ${[...new Set(missing)].slice(0, 5).join(", ")} ${missing.length === 1 ? "has" : "have"} no FanDuel export id. Upload the FanDuel player-list CSV first. NumberFire ids are not accepted.`
+      : `Not downloaded. ${[...new Set(missing)].slice(0, 5).join(", ")} ${missing.length === 1 ? "has" : "have"} no DraftKings lineup id. Refresh this page and run it again. Do not upload a file whose numbers are 5 or 6 digits.`;
     return;
   }
   const lines = [headers.map(csvField).join(",")];
   rows.forEach((lu) => {
-    lines.push(keys.map((k) => csvField(dkName(lu.slots[k]))).join(","));
+    lines.push(keys.map((k) => csvField(exportCell(lu.slots[k]))).join(","));
   });
-  const sample = dkName(rows[0].slots[keys[0]]);
+  const sample = exportCell(rows[0].slots[keys[0]]);
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([lines.join("\r\n") + "\r\n"], { type: "text/csv" }));
-  a.download = isShowdown ? "nba_showdown_lineups.csv" : `nba_classic_${slateGames(document.getElementById("slateSelect").value).length || "slate"}game_lineups.csv`;
+  const site = siteIsFd() ? "fanduel" : "draftkings";
+  a.download = isShowdown ? `${site}_showdown_lineups.csv` : `${site}_classic_lineups.csv`;
   a.click();
   const games = slateGames(document.getElementById("slateSelect").value);
   const first = games[0] ? clockOf(games[0][1]) : "";
-  status.textContent = `Downloaded. First cell is ${sample}. Use the DraftKings contest whose first tip is ${first || "this slate"} and whose games are ${games.map(([g]) => g).join(", ")}.`;
+  status.textContent = siteIsFd()
+    ? `Downloaded. First cell is ${sample}. Upload that file into the FanDuel contest for this slate${first ? " (" + first + ")" : ""}.`
+    : `Downloaded. First cell is ${sample}. Use the DraftKings contest whose first tip is ${first || "this slate"} and whose games are ${games.map(([g]) => g).join(", ")}.`;
 }
 
 function downloadDetail(list) {
   const rows = Array.isArray(list) ? list : lineups;
   if (!rows.length) return;
   const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
-  const keys = isShowdown ? ["CPT", "U1", "U2", "U3", "U4", "U5"] : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
-  const headers = ["Lineup", "Proj", "Salary", "Left", "TotalOwn"].concat(keys);
+  const keys = slotsFor(isShowdown);
+  const headers = ["Lineup", "Proj", "Salary", "Left", "TotalOwn"].concat(keys.map(slotLabel));
   const body = [headers, ...rows.map((lu, i) => [
     i + 1,
     lu.proj.toFixed(1),
     lu.salary,
-    50000 - lu.salary,
+    salaryCap() - lu.salary,
     Math.round(lu.own),
-    ...keys.map((k) => (lu.slots[k] ? `${dkName(lu.slots[k])} ${lu.slots[k].proj.toFixed(1)}` : "")),
+    ...keys.map((k) => (lu.slots[k] ? `${exportCell(lu.slots[k])} ${lu.slots[k].proj.toFixed(1)}` : "")),
   ])];
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([Papa.unparse(body)], { type: "text/csv" }));
@@ -6042,8 +6427,8 @@ function downloadDetail(list) {
 function copyLineupsText() {
   if (!lineups.length) return;
   const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
-  const keys = isShowdown ? ["CPT", "U1", "U2", "U3", "U4", "U5"] : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
-  const labels = isShowdown ? ["CPT", "UTIL", "UTIL", "UTIL", "UTIL", "UTIL"] : keys;
+  const keys = slotsFor(isShowdown);
+  const labels = keys.map(slotLabel);
   const text = lineups.map((lu, i) => {
     const slots = keys.map((k, idx) => `${labels[idx]} ${lu.slots[k] ? lu.slots[k].name : ""}`).join(" | ");
     return `#${i + 1}  ${lu.proj.toFixed(1)} FP  ${money(lu.salary)}\n${slots}`;
@@ -6077,10 +6462,12 @@ function loadHandFromLineup(base, note) {
   handPivots = {};
   pivotSlot = "";
   handKeys().forEach((k) => { if (base.slots[k]) handRoster[k] = base.slots[k]; });
-  if (!base.slots.CPT) parkLatest(handRoster);
+  if (!base.slots.CPT && !siteIsFd()) parkLatest(handRoster);
   const keys = handKeys();
-  if (keys[0] === "CPT") {
-    keys.filter((k) => k !== "CPT" && handRoster[k]).sort((a, b) => gameTime(handRoster[b]) - gameTime(handRoster[a])).slice(0, 2).forEach((k) => handSwap.add(k));
+  if (keys[0] === "CPT" || keys[0] === "MVP") {
+    keys.filter((k) => k !== keys[0] && handRoster[k]).sort((a, b) => gameTime(handRoster[b]) - gameTime(handRoster[a])).slice(0, 2).forEach((k) => handSwap.add(k));
+  } else if (siteIsFd()) {
+    ["GF", "FC", "U1", "U2"].forEach((k) => { if (handRoster[k]) handSwap.add(k); });
   } else {
     ["G", "F", "UTIL"].forEach((k) => { if (handRoster[k]) handSwap.add(k); });
   }
@@ -6153,7 +6540,7 @@ function renderVariations() {
     if (new Set(players.map((p) => p.name)).size !== players.length) { rejected.same += 1; continue; }
     if (!players.some((p) => !baseNames.has(p.name))) { rejected.same += 1; continue; }
     const salary = players.reduce((sum, p) => sum + p.salary, 0);
-    if (salary > 50000) { rejected.cap += 1; continue; }
+    if (salary > salaryCap()) { rejected.cap += 1; continue; }
     if (strict && salary < settings.minSalary) { rejected.floor += 1; continue; }
     if (strict && Object.values(teamCounts(roster)).some((n) => n > settings.teamCap)) { rejected.team += 1; continue; }
     const legalWhy = lineupLegal({ slots: roster, players, salary }, isShowdown);
@@ -6172,7 +6559,7 @@ function renderVariations() {
       const was = lu.from[k];
       return `<td class="${swap ? "swapped" : ""}">${p ? nameBtn(p.name) : "—"}${swap && was ? `<div class="cs-sub">was ${esc(was.name)}</div>` : ""}</td>`;
     }).join("");
-    return `<tr><td>${i + 1}</td>${cells}<td>${money(lu.salary)}</td><td><b>${lu.proj.toFixed(1)}</b></td><td>${Math.round(lu.own)}%</td><td>${money(50000 - lu.salary)}</td></tr>`;
+    return `<tr><td>${i + 1}</td>${cells}<td>${money(lu.salary)}</td><td><b>${lu.proj.toFixed(1)}</b></td><td>${Math.round(lu.own)}%</td><td>${money(salaryCap() - lu.salary)}</td></tr>`;
   }).join("");
   document.getElementById("varList").innerHTML = vars.length
     ? `<div class="lab-wrap"><table class="var-table"><thead><tr><th>#</th>${head}<th>Salary</th><th>FP</th><th>Own</th><th>Left</th></tr></thead><tbody>${body}</tbody></table></div>`
@@ -6185,9 +6572,7 @@ function renderVariations() {
 }
 
 function handKeys() {
-  return (document.getElementById("slateSelect").value || "").startsWith("Showdown")
-    ? SHOWDOWN
-    : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
+  return slotsFor((document.getElementById("slateSelect").value || "").startsWith("Showdown"));
 }
 function varCandidates(isShowdown) {
   const seen = new Set();
@@ -6202,7 +6587,10 @@ function varCandidates(isShowdown) {
   });
 }
 function slotLabel(k) {
-  return /^U\d+$/.test(k) ? "UTIL" : k;
+  if (k === "GF") return "G/F";
+  if (k === "FC") return "F/C";
+  if (/^U\d+$/.test(k)) return "UTIL";
+  return k;
 }
 function bestHandSlot(p, keys, isShowdown) {
   const open = keys.filter((k) => !handRoster[k] && canPlay(p, k, isShowdown));
@@ -6220,7 +6608,7 @@ function addToHand(p, keys, isShowdown) {
   const names = new Set(Object.values(handRoster).filter(Boolean).map((x) => x.name));
   if (names.has(p.name)) return;
   const salary = Object.values(handRoster).reduce((s, x) => s + (x ? x.salary : 0), 0);
-  if (p.salary > 50000 - salary) {
+  if (p.salary > salaryCap() - salary) {
     document.getElementById("varStatus").textContent = `${p.name} is over the remaining salary.`;
     return;
   }
@@ -6241,7 +6629,7 @@ function randomFillHand() {
     const names = new Set(Object.values(handRoster).filter(Boolean).map((p) => p.name));
     const salary = Object.values(handRoster).reduce((s, p) => s + (p ? p.salary : 0), 0);
     const open = keys.filter((x) => !handRoster[x]).length;
-    const room = 50000 - salary;
+    const room = salaryCap() - salary;
     const budget = open > 1 ? room - 3200 * (open - 1) : room;
     const cands = varCandidates(isShowdown).filter((p) => !names.has(p.name) && canPlay(p, k, isShowdown) && p.salary <= room && p.salary <= Math.max(budget, 3500));
     cands.sort((a, b) => b.proj - a.proj);
@@ -6260,7 +6648,7 @@ function renderHand() {
   const salary = Object.values(handRoster).reduce((s, p) => s + (p ? p.salary : 0), 0);
   const proj = Object.values(handRoster).reduce((s, p) => s + (p ? p.proj : 0), 0);
   const open = keys.filter((k) => !handRoster[k]).length;
-  const left = 50000 - salary;
+  const left = salaryCap() - salary;
   const badge = document.getElementById("varCountBadge");
   if (badge) badge.textContent = `${keys.length - open}/${keys.length}`;
   const leftEl = document.getElementById("varLeft");
@@ -6839,25 +7227,10 @@ function buildField(fieldSize, isShowdown) {
     }
     return candidates[candidates.length - 1];
   }
-  const slots = isShowdown
-    ? [
-      { key: "CPT", list: eligible.filter((p) => p.pos === "CPT") },
-      { key: "U1", list: eligible.filter((p) => p.pos === "UTIL") },
-      { key: "U2", list: eligible.filter((p) => p.pos === "UTIL") },
-      { key: "U3", list: eligible.filter((p) => p.pos === "UTIL") },
-      { key: "U4", list: eligible.filter((p) => p.pos === "UTIL") },
-      { key: "U5", list: eligible.filter((p) => p.pos === "UTIL") },
-    ]
-    : [
-      { key: "PG", list: classic.filter((p) => isEligible(p.pos, "PG")) },
-      { key: "SG", list: classic.filter((p) => isEligible(p.pos, "SG")) },
-      { key: "SF", list: classic.filter((p) => isEligible(p.pos, "SF")) },
-      { key: "PF", list: classic.filter((p) => isEligible(p.pos, "PF")) },
-      { key: "C", list: classic.filter((p) => isEligible(p.pos, "C")) },
-      { key: "G", list: classic.filter((p) => isEligible(p.pos, "G")) },
-      { key: "F", list: classic.filter((p) => isEligible(p.pos, "F")) },
-      { key: "UTIL", list: classic },
-    ];
+  const slots = slotsFor(isShowdown).map((key) => ({
+    key,
+    list: eligible.filter((p) => canPlay(p, key, isShowdown)),
+  }));
   let guard = 0;
   while (field.length < fieldSize && guard < fieldSize * 8) {
     guard += 1;
@@ -6876,13 +7249,13 @@ function buildField(fieldSize, isShowdown) {
       proj += pl.proj;
       own += pl.own || 0;
     }
-    if (!ok || salary > 50000) continue;
+    if (!ok || salary > salaryCap()) continue;
     field.push({ slots: roster, players: Object.values(roster), salary, proj, own });
   }
   return field;
 }
 function lineupBrief(lu, isShowdown) {
-  const keys = isShowdown ? ["CPT", "U1", "U2", "U3", "U4", "U5"] : ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
+  const keys = slotsFor(isShowdown);
   return keys.map((k) => (lu.slots[k] ? lu.slots[k].name.split(" ").slice(-1)[0] : "")).filter(Boolean).join(", ");
 }
 function renderSimTable() {
@@ -7079,6 +7452,54 @@ document.getElementById("themeBtn").onclick = () => {
   document.getElementById("themeBtn").textContent = next === "dark" ? "Dark" : "Light";
 };
 
+document.getElementById("siteSelect").onchange = () => {
+  const next = document.getElementById("siteSelect").value === "fd" ? "fd" : "dk";
+  if (next === currentSite) return;
+  const from = salaryCap();
+  currentSite = next;
+  const to = salaryCap();
+  const minEl = document.getElementById("minSalary");
+  const minV = parseInt(minEl.value, 10) || 0;
+  if (minV) minEl.value = String(Math.max(0, minV + (to - from)));
+  lineups = [];
+  applySite();
+};
+document.getElementById("fdCsvUpload").addEventListener("change", (e) => {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    const parsed = parseFdCsv(String(reader.result || ""));
+    const note = document.getElementById("siteNote");
+    if (!parsed || !parsed.players.length) {
+      if (note) note.textContent = "That file did not look like a FanDuel player list. Use the CSV FanDuel gives you for the contest.";
+      return;
+    }
+    fdCsv = parsed;
+    parsed.players.forEach((p) => {
+      const key = foldName(p.name);
+      const prev = fdByName.get(key) || {};
+      fdByName.set(key, {
+        name: p.name,
+        salary: p.salary || prev.salary || 0,
+        pos: p.pos || prev.pos || "",
+        team: p.team || prev.team || "",
+        exportId: p.id,
+        fromCsv: true,
+      });
+    });
+    if (currentSite !== "fd") {
+      currentSite = "fd";
+      document.getElementById("siteSelect").value = "fd";
+      const minEl = document.getElementById("minSalary");
+      const minV = parseInt(minEl.value, 10) || 0;
+      if (minV && minV < 55000) minEl.value = String(minV + 10000);
+    }
+    lineups = [];
+    applySite();
+  };
+  reader.readAsText(file);
+});
 loadData();
 
 </script>

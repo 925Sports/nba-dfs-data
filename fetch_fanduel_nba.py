@@ -29,13 +29,6 @@ query GetProjections($input: ProjectionsInput!) {
       turnovers
       salary
       value
-      threePointersMade
-      fieldGoalsMade
-      fieldGoalsAttempted
-      freeThrowsMade
-      freeThrowsAttempted
-      doubleDouble
-      tripleDouble
     }
   }
 }
@@ -72,7 +65,10 @@ def test_slate(slate_id):
     try:
         r = requests.post(GRAPHQL_URL, json=payload, headers=HEADERS, timeout=20)
         data = r.json()
-        return data.get("data", {}).get("getProjections") or []
+        projs = data.get("data", {}).get("getProjections") or []
+        if not projs and data.get("errors"):
+            print(f"  Errors for {slate_id}: {data['errors']}")
+        return projs
     except Exception as e:
         print(f"  Error testing {slate_id}: {e}")
         return []
@@ -111,14 +107,7 @@ def collect_all_slates():
                 "blk": round(float(p.get("blocks") or 0), 2),
                 "to": round(float(p.get("turnovers") or 0), 2),
                 "salary": float(p.get("salary") or 0),
-                "value": round(float(p.get("value") or 0), 2),
-                "fgm": round(float(p.get("fieldGoalsMade") or 0), 2),
-                "fga": round(float(p.get("fieldGoalsAttempted") or 0), 2),
-                "ftm": round(float(p.get("freeThrowsMade") or 0), 2),
-                "fta": round(float(p.get("freeThrowsAttempted") or 0), 2),
-                "tpm": round(float(p.get("threePointersMade") or 0), 2),
-                "dd": round(float(p.get("doubleDouble") or 0), 2),
-                "td": round(float(p.get("tripleDouble") or 0), 2)
+                "value": round(float(p.get("value") or 0), 2)
             }
             key = player.lower()
             if key not in all_players or stats["min"] > all_players[key]["stats"]["min"]:

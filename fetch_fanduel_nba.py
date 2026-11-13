@@ -34,8 +34,8 @@ query GetProjections($input: ProjectionsInput!) {
 }
 """
 
-def clean_salary(val):
-    if not val:
+def clean_number(val):
+    if val is None or val == "" or str(val).upper() == "N/A":
         return 0.0
     if isinstance(val, (int, float)):
         return float(val)
@@ -114,8 +114,8 @@ def collect_all_slates():
                 "stl": round(float(p.get("steals") or 0), 2),
                 "blk": round(float(p.get("blocks") or 0), 2),
                 "to": round(float(p.get("turnovers") or 0), 2),
-                "salary": clean_salary(p.get("salary")),
-                "value": round(float(p.get("value") or 0), 2)
+                "salary": clean_number(p.get("salary")),
+                "value": round(clean_number(p.get("value")), 2)
             }
             key = player.lower()
             if key not in all_players or stats["min"] > all_players[key]["stats"]["min"]:

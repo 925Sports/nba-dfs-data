@@ -27,6 +27,15 @@ query GetProjections($input: ProjectionsInput!) {
       steals
       blocks
       turnovers
+      salary
+      value
+      threePointersMade
+      fieldGoalsMade
+      fieldGoalsAttempted
+      freeThrowsMade
+      freeThrowsAttempted
+      doubleDouble
+      tripleDouble
     }
   }
 }
@@ -100,10 +109,18 @@ def collect_all_slates():
                 "ast": round(float(p.get("assists") or 0), 2),
                 "stl": round(float(p.get("steals") or 0), 2),
                 "blk": round(float(p.get("blocks") or 0), 2),
-                "to": round(float(p.get("turnovers") or 0), 2)
+                "to": round(float(p.get("turnovers") or 0), 2),
+                "salary": float(p.get("salary") or 0),
+                "value": round(float(p.get("value") or 0), 2),
+                "fgm": round(float(p.get("fieldGoalsMade") or 0), 2),
+                "fga": round(float(p.get("fieldGoalsAttempted") or 0), 2),
+                "ftm": round(float(p.get("freeThrowsMade") or 0), 2),
+                "fta": round(float(p.get("freeThrowsAttempted") or 0), 2),
+                "tpm": round(float(p.get("threePointersMade") or 0), 2),
+                "dd": round(float(p.get("doubleDouble") or 0), 2),
+                "td": round(float(p.get("tripleDouble") or 0), 2)
             }
             key = player.lower()
-            # Keep the entry with higher minutes if the player appears in multiple slates
             if key not in all_players or stats["min"] > all_players[key]["stats"]["min"]:
                 all_players[key] = {
                     "info": {

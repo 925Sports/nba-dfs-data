@@ -13,6 +13,7 @@ HEADERS = {
 
 GRAPHQL_URL = "https://fdresearch-api.fanduel.com/graphql"
 
+# Working query (do not add fields here or it breaks)
 QUERY = """
 query GetProjections($input: ProjectionsInput!) {
   getProjections(input: $input) {
@@ -33,15 +34,6 @@ query GetProjections($input: ProjectionsInput!) {
       turnovers
       salary
       value
-      injuryStatus
-      injuryDetails
-      homeOrAway
-      startTime
-      gameDate
-      projectedOwnership
-      ownership
-      ceiling
-      floor
     }
   }
 }
@@ -119,7 +111,9 @@ def collect_all_slates():
                 continue
 
             numberfire_id = p.get("player", {}).get("numberFireId") or ""
-            injury = p.get("injuryStatus") or ""
+
+            # Pull any extra fields that may already be in the response
+            injury = p.get("injuryStatus") or p.get("injury") or ""
             injury_details = p.get("injuryDetails") or ""
             home_away = p.get("homeOrAway") or ""
             start_time = p.get("startTime") or p.get("gameDate") or ""

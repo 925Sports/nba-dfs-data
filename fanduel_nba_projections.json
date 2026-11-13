@@ -1,532 +1,540 @@
 {
-  "updated": "2026-11-13T05:11:41.550299Z",
+  "updated": "2026-11-13T08:18:17.295194Z",
   "slates": [
     {
-      "slateId": "1057456",
-      "count": 71
+      "slateId": "1057622",
+      "count": 33
     },
     {
-      "slateId": "1057356",
-      "count": 37
+      "slateId": "1057610",
+      "count": 33
     },
     {
-      "slateId": "1057350",
+      "slateId": "1057607",
       "count": 31
     },
     {
-      "slateId": "1057290",
-      "count": 136
+      "slateId": "1057590",
+      "count": 227
     },
     {
-      "slateId": "1057287",
-      "count": 37
+      "slateId": "1057585",
+      "count": 227
     },
     {
-      "slateId": "1057286",
-      "count": 70
+      "slateId": "1057582",
+      "count": 227
     },
     {
-      "slateId": "1057283",
-      "count": 136
+      "slateId": "1057549",
+      "count": 31
+    },
+    {
+      "slateId": "1057540",
+      "count": 33
+    },
+    {
+      "slateId": "1057530",
+      "count": 33
     }
   ],
-  "playerCount": 117,
+  "playerCount": 260,
   "players": {
-    "devin booker": {
+    "brook lopez": {
       "info": {
-        "player": "Devin Booker",
-        "position": "PG",
-        "team": "PHX",
+        "player": "Brook Lopez",
+        "position": "C",
+        "team": "LAC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "2338"
+        "slateId": "1057622",
+        "fdId": "246"
       },
       "stats": {
-        "min": 34.0,
-        "fpts": 37.5,
-        "pts": 22.1,
-        "reb": 4.0,
-        "ast": 6.5,
-        "stl": 0.9,
-        "blk": 0.3,
-        "to": 2.8,
-        "salary": 7700.0,
-        "value": 4.87
-      }
-    },
-    "pat connaughton": {
-      "info": {
-        "player": "Pat Connaughton",
-        "position": "",
-        "team": "CHA",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2366"
-      },
-      "stats": {
-        "min": 2.34,
-        "fpts": 2.0,
-        "pts": 1.0,
-        "reb": 0.4,
-        "ast": 0.2,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.1,
+        "min": 15.57,
+        "fpts": 14.6,
+        "pts": 6.6,
+        "reb": 3.0,
+        "ast": 1.0,
+        "stl": 0.4,
+        "blk": 0.8,
+        "to": 0.7,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "buddy hield": {
+    "bradley beal": {
       "info": {
-        "player": "Buddy Hield",
-        "position": "",
-        "team": "CHA",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2420"
-      },
-      "stats": {
-        "min": 5.89,
-        "fpts": 5.2,
-        "pts": 2.8,
-        "reb": 0.8,
-        "ast": 0.6,
-        "stl": 0.2,
-        "blk": 0.1,
-        "to": 0.4,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "luke kennard": {
-      "info": {
-        "player": "Luke Kennard",
+        "player": "Bradley Beal",
         "position": "SG",
-        "team": "PHX",
+        "team": "LAC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "2523"
+        "slateId": "1057622",
+        "fdId": "2136"
       },
       "stats": {
-        "min": 16.0,
-        "fpts": 12.0,
-        "pts": 5.9,
-        "reb": 1.8,
-        "ast": 1.8,
-        "stl": 0.5,
+        "min": 12.41,
+        "fpts": 9.7,
+        "pts": 5.6,
+        "reb": 1.2,
+        "ast": 1.3,
+        "stl": 0.4,
         "blk": 0.1,
-        "to": 0.6,
-        "salary": 3800.0,
-        "value": 3.16
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "dillon brooks": {
+    "brandon ingram": {
       "info": {
-        "player": "Dillon Brooks",
+        "player": "Brandon Ingram",
         "position": "SF",
-        "team": "PHX",
+        "team": "LAC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "2556"
+        "slateId": "1057622",
+        "fdId": "2416"
       },
       "stats": {
-        "min": 31.0,
-        "fpts": 27.3,
-        "pts": 17.4,
-        "reb": 3.9,
-        "ast": 2.2,
-        "stl": 1.0,
+        "min": 20.28,
+        "fpts": 21.5,
+        "pts": 12.4,
+        "reb": 3.6,
+        "ast": 2.4,
+        "stl": 0.5,
+        "blk": 0.4,
+        "to": 1.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kris dunn": {
+      "info": {
+        "player": "Kris Dunn",
+        "position": "PG",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "2419"
+      },
+      "stats": {
+        "min": 18.47,
+        "fpts": 15.1,
+        "pts": 5.3,
+        "reb": 2.4,
+        "ast": 2.7,
+        "stl": 1.1,
         "blk": 0.2,
-        "to": 1.7,
-        "salary": 4700.0,
-        "value": 5.81
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "royce o'neale": {
+    "derrick jones jr.": {
       "info": {
-        "player": "Royce O'Neale",
-        "position": "PF",
-        "team": "CHA",
+        "player": "Derrick Jones Jr.",
+        "position": "SF",
+        "team": "LAC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "2585"
+        "slateId": "1057622",
+        "fdId": "2497"
       },
       "stats": {
-        "min": 23.0,
-        "fpts": 18.3,
-        "pts": 8.5,
-        "reb": 3.7,
-        "ast": 2.1,
-        "stl": 0.8,
-        "blk": 0.3,
-        "to": 1.1,
-        "salary": 3900.0,
-        "value": 4.69
+        "min": 18.12,
+        "fpts": 14.9,
+        "pts": 7.0,
+        "reb": 2.7,
+        "ast": 1.1,
+        "stl": 0.6,
+        "blk": 0.6,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "grayson allen": {
+    "isaiah hartenstein": {
       "info": {
-        "player": "Grayson Allen",
-        "position": "SG",
-        "team": "CHA",
+        "player": "Isaiah Hartenstein",
+        "position": "C",
+        "team": "OKC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "2638"
+        "slateId": "1057622",
+        "fdId": "2554"
       },
       "stats": {
-        "min": 30.0,
-        "fpts": 29.4,
-        "pts": 17.2,
-        "reb": 3.1,
-        "ast": 3.9,
-        "stl": 1.2,
-        "blk": 0.3,
-        "to": 1.9,
-        "salary": 5500.0,
-        "value": 5.35
-      }
-    },
-    "miles bridges": {
-      "info": {
-        "player": "Miles Bridges",
-        "position": "PF",
-        "team": "PHX",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2640"
-      },
-      "stats": {
-        "min": 31.0,
-        "fpts": 29.5,
-        "pts": 14.9,
-        "reb": 6.0,
-        "ast": 3.4,
+        "min": 18.62,
+        "fpts": 20.5,
+        "pts": 6.5,
+        "reb": 6.9,
+        "ast": 2.2,
         "stl": 0.7,
         "blk": 0.5,
-        "to": 1.3,
-        "salary": 6600.0,
-        "value": 4.47
-      }
-    },
-    "haywood highsmith": {
-      "info": {
-        "player": "Haywood Highsmith",
-        "position": "",
-        "team": "PHX",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2723"
-      },
-      "stats": {
-        "min": 2.65,
-        "fpts": 2.1,
-        "pts": 1.1,
-        "reb": 0.4,
-        "ast": 0.2,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.1,
+        "to": 1.2,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "coby white": {
+    "alex caruso": {
       "info": {
-        "player": "Coby White",
-        "position": "PG",
-        "team": "CHA",
+        "player": "Alex Caruso",
+        "position": "SF",
+        "team": "OKC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "2756"
+        "slateId": "1057622",
+        "fdId": "2580"
       },
       "stats": {
-        "min": 22.0,
-        "fpts": 23.2,
-        "pts": 14.5,
-        "reb": 2.8,
-        "ast": 3.6,
-        "stl": 0.6,
-        "blk": 0.1,
-        "to": 2.2,
-        "salary": 5000.0,
-        "value": 4.64
-      }
-    },
-    "grant williams": {
-      "info": {
-        "player": "Grant Williams",
-        "position": "C",
-        "team": "CHA",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2771"
-      },
-      "stats": {
-        "min": 9.51,
-        "fpts": 8.0,
-        "pts": 3.7,
-        "reb": 1.9,
-        "ast": 0.8,
-        "stl": 0.2,
+        "min": 13.41,
+        "fpts": 11.9,
+        "pts": 5.0,
+        "reb": 2.0,
+        "ast": 1.4,
+        "stl": 0.8,
         "blk": 0.2,
-        "to": 0.4,
-        "salary": 3700.0,
-        "value": 2.16
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "naz reid": {
+    "shai gilgeous-alexander": {
       "info": {
-        "player": "Naz Reid",
-        "position": "PF",
-        "team": "CHA",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2844"
-      },
-      "stats": {
-        "min": 33.0,
-        "fpts": 35.4,
-        "pts": 17.4,
-        "reb": 7.8,
-        "ast": 2.8,
-        "stl": 1.1,
-        "blk": 1.1,
-        "to": 2.2,
-        "salary": 7300.0,
-        "value": 4.85
-      }
-    },
-    "jalen green": {
-      "info": {
-        "player": "Jalen Green",
-        "position": "SG",
-        "team": "PHX",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2964"
-      },
-      "stats": {
-        "min": 29.0,
-        "fpts": 28.2,
-        "pts": 15.6,
-        "reb": 4.1,
-        "ast": 3.6,
-        "stl": 1.1,
-        "blk": 0.4,
-        "to": 2.2,
-        "salary": 4800.0,
-        "value": 5.88
-      }
-    },
-    "jordan goodwin": {
-      "info": {
-        "player": "Jordan Goodwin",
-        "position": "SG",
-        "team": "PHX",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3070"
-      },
-      "stats": {
-        "min": 17.5,
-        "fpts": 16.9,
-        "pts": 6.4,
-        "reb": 3.7,
-        "ast": 2.0,
-        "stl": 1.1,
-        "blk": 0.2,
-        "to": 0.8,
-        "salary": 4200.0,
-        "value": 4.02
-      }
-    },
-    "moussa diabate": {
-      "info": {
-        "player": "Moussa Diabate",
-        "position": "C",
-        "team": "CHA",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3138"
-      },
-      "stats": {
-        "min": 27.0,
-        "fpts": 25.9,
-        "pts": 8.3,
-        "reb": 8.5,
-        "ast": 2.1,
-        "stl": 0.9,
-        "blk": 0.9,
-        "to": 1.2,
-        "salary": 5100.0,
-        "value": 5.08
-      }
-    },
-    "jamaree bouyea": {
-      "info": {
-        "player": "Jamaree Bouyea",
+        "player": "Shai Gilgeous-Alexander",
         "position": "PG",
-        "team": "PHX",
+        "team": "OKC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3177"
+        "slateId": "1057622",
+        "fdId": "2656"
       },
       "stats": {
-        "min": 2.42,
-        "fpts": 2.4,
-        "pts": 0.9,
-        "reb": 0.3,
-        "ast": 0.4,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.1,
-        "salary": 3500.0,
-        "value": 0.69
-      }
-    },
-    "collin gillespie": {
-      "info": {
-        "player": "Collin Gillespie",
-        "position": "PG",
-        "team": "PHX",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3247"
-      },
-      "stats": {
-        "min": 21.5,
-        "fpts": 20.7,
-        "pts": 8.8,
-        "reb": 3.0,
-        "ast": 3.9,
+        "min": 25.41,
+        "fpts": 34.7,
+        "pts": 21.3,
+        "reb": 3.1,
+        "ast": 4.3,
         "stl": 1.0,
-        "blk": 0.2,
-        "to": 1.2,
-        "salary": 4000.0,
-        "value": 5.17
+        "blk": 0.6,
+        "to": 1.6,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "pat spencer": {
+    "kenrich williams": {
       "info": {
-        "player": "Pat Spencer",
+        "player": "Kenrich Williams",
+        "position": "SF",
+        "team": "OKC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "2702"
+      },
+      "stats": {
+        "min": 16.1,
+        "fpts": 14.0,
+        "pts": 7.0,
+        "reb": 3.5,
+        "ast": 1.2,
+        "stl": 0.5,
+        "blk": 0.1,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "darius garland": {
+      "info": {
+        "player": "Darius Garland",
         "position": "PG",
-        "team": "PHX",
+        "team": "LAC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3279"
+        "slateId": "1057622",
+        "fdId": "2754"
       },
       "stats": {
-        "min": 4.14,
-        "fpts": 3.9,
-        "pts": 1.5,
-        "reb": 0.6,
-        "ast": 0.9,
-        "stl": 0.2,
-        "blk": 0.0,
-        "to": 0.3,
-        "salary": 3500.0,
-        "value": 1.11
+        "min": 20.97,
+        "fpts": 22.7,
+        "pts": 12.8,
+        "reb": 1.8,
+        "ast": 5.0,
+        "stl": 0.7,
+        "blk": 0.1,
+        "to": 2.2,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "tidjane salaun": {
+    "rui hachimura": {
       "info": {
-        "player": "Tidjane Salaun",
-        "position": "PF",
-        "team": "CHA",
+        "player": "Rui Hachimura",
+        "position": "SF",
+        "team": "LAC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3293"
+        "slateId": "1057622",
+        "fdId": "2758"
       },
       "stats": {
-        "min": 15.5,
-        "fpts": 13.3,
-        "pts": 6.2,
-        "reb": 3.9,
+        "min": 18.94,
+        "fpts": 13.6,
+        "pts": 7.9,
+        "reb": 2.6,
         "ast": 0.7,
         "stl": 0.5,
         "blk": 0.2,
-        "to": 0.7,
-        "salary": 4000.0,
-        "value": 3.33
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "ryan dunn": {
+    "max strus": {
       "info": {
-        "player": "Ryan Dunn",
+        "player": "Max Strus",
+        "position": "SG",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "2842"
+      },
+      "stats": {
+        "min": 14.4,
+        "fpts": 13.9,
+        "pts": 7.0,
+        "reb": 3.1,
+        "ast": 1.7,
+        "stl": 0.4,
+        "blk": 0.0,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "isaiah jackson": {
+      "info": {
+        "player": "Isaiah Jackson",
+        "position": "PF",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "2982"
+      },
+      "stats": {
+        "min": 12.29,
+        "fpts": 13.6,
+        "pts": 4.9,
+        "reb": 4.0,
+        "ast": 0.9,
+        "stl": 0.5,
+        "blk": 0.6,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "chet holmgren": {
+      "info": {
+        "player": "Chet Holmgren",
+        "position": "PF",
+        "team": "OKC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3097"
+      },
+      "stats": {
+        "min": 21.46,
+        "fpts": 25.1,
+        "pts": 11.6,
+        "reb": 6.3,
+        "ast": 1.1,
+        "stl": 0.5,
+        "blk": 1.3,
+        "to": 1.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jalen williams": {
+      "info": {
+        "player": "Jalen Williams",
         "position": "SF",
-        "team": "PHX",
+        "team": "OKC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3315"
+        "slateId": "1057622",
+        "fdId": "3107"
       },
       "stats": {
-        "min": 2.94,
-        "fpts": 2.4,
-        "pts": 0.9,
-        "reb": 0.6,
-        "ast": 0.2,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.1,
-        "salary": 3900.0,
-        "value": 0.62
-      }
-    },
-    "oso ighodaro": {
-      "info": {
-        "player": "Oso Ighodaro",
-        "position": "C",
-        "team": "PHX",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3327"
-      },
-      "stats": {
-        "min": 22.0,
-        "fpts": 19.4,
-        "pts": 5.9,
-        "reb": 5.1,
-        "ast": 2.5,
+        "min": 22.19,
+        "fpts": 22.5,
+        "pts": 11.5,
+        "reb": 3.5,
+        "ast": 3.4,
         "stl": 0.8,
-        "blk": 0.8,
-        "to": 1.2,
-        "salary": 4000.0,
-        "value": 4.85
-      }
-    },
-    "pj hall": {
-      "info": {
-        "player": "PJ Hall",
-        "position": "C",
-        "team": "CHA",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3358"
-      },
-      "stats": {
-        "min": 5.06,
-        "fpts": 5.2,
-        "pts": 2.2,
-        "reb": 1.6,
-        "ast": 0.3,
-        "stl": 0.1,
         "blk": 0.2,
-        "to": 0.3,
-        "salary": 3500.0,
-        "value": 1.49
+        "to": 1.3,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "liam mcneeley": {
+    "jaylin williams": {
       "info": {
-        "player": "Liam McNeeley",
-        "position": "SF",
-        "team": "CHA",
+        "player": "Jaylin Williams",
+        "position": "C",
+        "team": "OKC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3402"
+        "slateId": "1057622",
+        "fdId": "3129"
       },
       "stats": {
-        "min": 3.6,
+        "min": 14.57,
+        "fpts": 14.1,
+        "pts": 5.5,
+        "reb": 3.9,
+        "ast": 1.5,
+        "stl": 0.4,
+        "blk": 0.4,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "cason wallace": {
+      "info": {
+        "player": "Cason Wallace",
+        "position": "SG",
+        "team": "OKC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3198"
+      },
+      "stats": {
+        "min": 14.49,
+        "fpts": 11.5,
+        "pts": 4.9,
+        "reb": 1.6,
+        "ast": 1.3,
+        "stl": 0.9,
+        "blk": 0.2,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "gradey dick": {
+      "info": {
+        "player": "Gradey Dick",
+        "position": "SG",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3201"
+      },
+      "stats": {
+        "min": 7.97,
+        "fpts": 6.5,
+        "pts": 3.5,
+        "reb": 1.2,
+        "ast": 0.5,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jalen pickett": {
+      "info": {
+        "player": "Jalen Pickett",
+        "position": "SG",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3219"
+      },
+      "stats": {
+        "min": 6.36,
+        "fpts": 5.2,
+        "pts": 2.3,
+        "reb": 0.9,
+        "ast": 1.0,
+        "stl": 0.2,
+        "blk": 0.0,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jordan miller": {
+      "info": {
+        "player": "Jordan Miller",
+        "position": "SF",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3232"
+      },
+      "stats": {
+        "min": 16.23,
+        "fpts": 14.4,
+        "pts": 7.2,
+        "reb": 2.4,
+        "ast": 1.8,
+        "stl": 0.6,
+        "blk": 0.2,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "nikola topic": {
+      "info": {
+        "player": "Nikola Topic",
+        "position": "PG",
+        "team": "OKC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3299"
+      },
+      "stats": {
+        "min": 16.57,
+        "fpts": 14.5,
+        "pts": 6.7,
+        "reb": 2.0,
+        "ast": 3.3,
+        "stl": 0.6,
+        "blk": 0.1,
+        "to": 1.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jared mccain": {
+      "info": {
+        "player": "Jared McCain",
+        "position": "SG",
+        "team": "OKC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3303"
+      },
+      "stats": {
+        "min": 18.58,
+        "fpts": 14.5,
+        "pts": 8.8,
+        "reb": 2.2,
+        "ast": 1.3,
+        "stl": 0.6,
+        "blk": 0.1,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "cam christie": {
+      "info": {
+        "player": "Cam Christie",
+        "position": "SG",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3320"
+      },
+      "stats": {
+        "min": 3.82,
         "fpts": 2.7,
         "pts": 1.4,
         "reb": 0.6,
@@ -534,133 +542,947 @@
         "stl": 0.1,
         "blk": 0.0,
         "to": 0.2,
-        "salary": 3700.0,
-        "value": 0.73
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "sion james": {
+    "ajay mitchell": {
       "info": {
-        "player": "Sion James",
+        "player": "Ajay Mitchell",
         "position": "SG",
-        "team": "CHA",
+        "team": "OKC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3403"
+        "slateId": "1057622",
+        "fdId": "3337"
       },
       "stats": {
-        "min": 27.0,
-        "fpts": 17.8,
-        "pts": 7.2,
-        "reb": 4.0,
+        "min": 21.52,
+        "fpts": 20.5,
+        "pts": 10.9,
+        "reb": 2.7,
         "ast": 2.6,
-        "stl": 0.8,
-        "blk": 0.2,
+        "stl": 0.9,
+        "blk": 0.3,
         "to": 1.1,
-        "salary": 4100.0,
-        "value": 4.34
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "ryan kalkbrenner": {
+    "yuki kawamura": {
       "info": {
-        "player": "Ryan Kalkbrenner",
-        "position": "C",
-        "team": "CHA",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3405"
-      },
-      "stats": {
-        "min": 20.0,
-        "fpts": 18.6,
-        "pts": 7.1,
-        "reb": 5.0,
-        "ast": 0.9,
-        "stl": 0.5,
-        "blk": 1.2,
-        "to": 0.9,
-        "salary": 4900.0,
-        "value": 3.8
-      }
-    },
-    "khaman maluach": {
-      "info": {
-        "player": "Khaman Maluach",
-        "position": "C",
-        "team": "PHX",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3420"
-      },
-      "stats": {
-        "min": 17.0,
-        "fpts": 17.3,
-        "pts": 5.8,
-        "reb": 5.4,
-        "ast": 0.6,
-        "stl": 0.4,
-        "blk": 1.3,
-        "to": 1.0,
-        "salary": 4300.0,
-        "value": 4.02
-      }
-    },
-    "rasheer fleming": {
-      "info": {
-        "player": "Rasheer Fleming",
-        "position": "PF",
-        "team": "PHX",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3421"
-      },
-      "stats": {
-        "min": 3.18,
-        "fpts": 2.6,
-        "pts": 1.1,
-        "reb": 0.7,
-        "ast": 0.1,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.1,
-        "salary": 3500.0,
-        "value": 0.74
-      }
-    },
-    "ryan nembhard": {
-      "info": {
-        "player": "Ryan Nembhard",
+        "player": "Yuki Kawamura",
         "position": "",
-        "team": "CHA",
+        "team": "LAC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3447"
+        "slateId": "1057622",
+        "fdId": "3341"
       },
       "stats": {
-        "min": 8.36,
+        "min": 7.62,
         "fpts": 7.5,
         "pts": 3.1,
-        "reb": 0.9,
-        "ast": 2.2,
-        "stl": 0.2,
+        "reb": 1.2,
+        "ast": 1.7,
+        "stl": 0.3,
         "blk": 0.0,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kobe sanders": {
+      "info": {
+        "player": "Kobe Sanders",
+        "position": "SG",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3437"
+      },
+      "stats": {
+        "min": 14.99,
+        "fpts": 11.5,
+        "pts": 5.9,
+        "reb": 1.9,
+        "ast": 1.4,
+        "stl": 0.6,
+        "blk": 0.1,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "yanic konan niederhauser": {
+      "info": {
+        "player": "Yanic Konan Niederhauser",
+        "position": "C",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3438"
+      },
+      "stats": {
+        "min": 9.44,
+        "fpts": 10.0,
+        "pts": 4.1,
+        "reb": 2.9,
+        "ast": 0.4,
+        "stl": 0.2,
+        "blk": 0.6,
         "to": 0.6,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "koby brea": {
+    "brooks barnhizer": {
       "info": {
-        "player": "Koby Brea",
-        "position": "",
-        "team": "PHX",
+        "player": "Brooks Barnhizer",
+        "position": "SG",
+        "team": "OKC",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3457"
+        "slateId": "1057622",
+        "fdId": "3441"
       },
       "stats": {
-        "min": 2.2,
-        "fpts": 1.9,
-        "pts": 1.0,
+        "min": 6.78,
+        "fpts": 4.9,
+        "pts": 2.1,
+        "reb": 1.3,
+        "ast": 0.4,
+        "stl": 0.2,
+        "blk": 0.1,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "keaton wagler": {
+      "info": {
+        "player": "Keaton Wagler",
+        "position": "",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3505"
+      },
+      "stats": {
+        "min": 13.76,
+        "fpts": 13.2,
+        "pts": 6.7,
+        "reb": 2.3,
+        "ast": 1.9,
+        "stl": 0.4,
+        "blk": 0.2,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "bennett stirtz": {
+      "info": {
+        "player": "Bennett Stirtz",
+        "position": "",
+        "team": "OKC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3509"
+      },
+      "stats": {
+        "min": 14.2,
+        "fpts": 11.1,
+        "pts": 6.6,
+        "reb": 1.2,
+        "ast": 1.4,
+        "stl": 0.5,
+        "blk": 0.1,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "aday mara": {
+      "info": {
+        "player": "Aday Mara",
+        "position": "",
+        "team": "OKC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3522"
+      },
+      "stats": {
+        "min": 16.09,
+        "fpts": 16.9,
+        "pts": 6.5,
+        "reb": 4.7,
+        "ast": 1.0,
+        "stl": 0.4,
+        "blk": 1.1,
+        "to": 1.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "nick martinelli": {
+      "info": {
+        "player": "Nick Martinelli",
+        "position": "SF",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3528"
+      },
+      "stats": {
+        "min": 3.21,
+        "fpts": 3.1,
+        "pts": 1.6,
+        "reb": 0.8,
+        "ast": 0.3,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "baba miller": {
+      "info": {
+        "player": "Baba Miller",
+        "position": "SF",
+        "team": "LAC",
+        "opp": "",
+        "slateId": "1057622",
+        "fdId": "3536"
+      },
+      "stats": {
+        "min": 5.15,
+        "fpts": 5.1,
+        "pts": 2.1,
+        "reb": 1.1,
+        "ast": 0.5,
+        "stl": 0.2,
+        "blk": 0.2,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "stephen curry": {
+      "info": {
+        "player": "Stephen Curry",
+        "position": "PG",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "195"
+      },
+      "stats": {
+        "min": 18.43,
+        "fpts": 21.2,
+        "pts": 13.2,
+        "reb": 2.3,
+        "ast": 2.9,
+        "stl": 0.6,
+        "blk": 0.2,
+        "to": 1.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tobias harris": {
+      "info": {
+        "player": "Tobias Harris",
+        "position": "PF",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "269"
+      },
+      "stats": {
+        "min": 19.81,
+        "fpts": 18.0,
+        "pts": 9.1,
+        "reb": 3.5,
+        "ast": 1.7,
+        "stl": 0.7,
+        "blk": 0.3,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jimmy butler": {
+      "info": {
+        "player": "Jimmy Butler",
+        "position": "SF",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "325"
+      },
+      "stats": {
+        "min": 17.98,
+        "fpts": 18.5,
+        "pts": 9.1,
+        "reb": 3.1,
+        "ast": 2.8,
+        "stl": 0.7,
+        "blk": 0.1,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "al horford": {
+      "info": {
+        "player": "Al Horford",
+        "position": "C",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "385"
+      },
+      "stats": {
+        "min": 12.41,
+        "fpts": 12.0,
+        "pts": 4.2,
+        "reb": 2.9,
+        "ast": 1.4,
+        "stl": 0.3,
+        "blk": 0.6,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "draymond green": {
+      "info": {
+        "player": "Draymond Green",
+        "position": "C",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2114"
+      },
+      "stats": {
+        "min": 16.56,
+        "fpts": 14.8,
+        "pts": 4.5,
+        "reb": 3.3,
+        "ast": 3.4,
+        "stl": 0.5,
+        "blk": 0.4,
+        "to": 1.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "harrison barnes": {
+      "info": {
+        "player": "Harrison Barnes",
+        "position": "SF",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2134"
+      },
+      "stats": {
+        "min": 12.33,
+        "fpts": 8.5,
+        "pts": 4.8,
+        "reb": 1.3,
+        "ast": 0.9,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kristaps porzingis": {
+      "info": {
+        "player": "Kristaps Porzingis",
+        "position": "PF",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2329"
+      },
+      "stats": {
+        "min": 15.64,
+        "fpts": 17.9,
+        "pts": 8.5,
+        "reb": 3.6,
+        "ast": 1.7,
+        "stl": 0.4,
+        "blk": 0.7,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "georges niang": {
+      "info": {
+        "player": "Georges Niang",
+        "position": "PF",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2464"
+      },
+      "stats": {
+        "min": 12.82,
+        "fpts": 10.0,
+        "pts": 4.5,
+        "reb": 2.4,
+        "ast": 1.0,
+        "stl": 0.4,
+        "blk": 0.2,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "gary payton ii": {
+      "info": {
+        "player": "Gary Payton II",
+        "position": "SG",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2508"
+      },
+      "stats": {
+        "min": 9.41,
+        "fpts": 9.0,
+        "pts": 3.7,
+        "reb": 2.1,
+        "ast": 1.0,
+        "stl": 0.5,
+        "blk": 0.1,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "de'aaron fox": {
+      "info": {
+        "player": "De'Aaron Fox",
+        "position": "PG",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2516"
+      },
+      "stats": {
+        "min": 25.19,
+        "fpts": 25.9,
+        "pts": 13.6,
+        "reb": 3.0,
+        "ast": 4.7,
+        "stl": 1.0,
+        "blk": 0.2,
+        "to": 2.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "luke kornet": {
+      "info": {
+        "player": "Luke Kornet",
+        "position": "C",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2622"
+      },
+      "stats": {
+        "min": 12.94,
+        "fpts": 12.0,
+        "pts": 3.8,
+        "reb": 3.6,
+        "ast": 1.0,
+        "stl": 0.3,
+        "blk": 0.6,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "de'anthony melton": {
+      "info": {
+        "player": "De'Anthony Melton",
+        "position": "PG",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2682"
+      },
+      "stats": {
+        "min": 14.98,
+        "fpts": 13.8,
+        "pts": 6.6,
+        "reb": 2.2,
+        "ast": 1.8,
+        "stl": 0.8,
+        "blk": 0.2,
+        "to": 1.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "keldon johnson": {
+      "info": {
+        "player": "Keldon Johnson",
+        "position": "SF",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2778"
+      },
+      "stats": {
+        "min": 18.88,
+        "fpts": 17.2,
+        "pts": 9.5,
+        "reb": 4.2,
+        "ast": 1.1,
+        "stl": 0.5,
+        "blk": 0.1,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jordan mclaughlin": {
+      "info": {
+        "player": "Jordan McLaughlin",
+        "position": "PG",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2828"
+      },
+      "stats": {
+        "min": 5.16,
+        "fpts": 4.1,
+        "pts": 1.9,
+        "reb": 0.5,
+        "ast": 0.7,
+        "stl": 0.3,
+        "blk": 0.0,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "devin vassell": {
+      "info": {
+        "player": "Devin Vassell",
+        "position": "SF",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2875"
+      },
+      "stats": {
+        "min": 26.02,
+        "fpts": 20.7,
+        "pts": 11.2,
+        "reb": 3.3,
+        "ast": 2.1,
+        "stl": 0.8,
+        "blk": 0.3,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "moses moody": {
+      "info": {
+        "player": "Moses Moody",
+        "position": "SG",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "2975"
+      },
+      "stats": {
+        "min": 18.79,
+        "fpts": 15.1,
+        "pts": 7.7,
+        "reb": 2.4,
+        "ast": 1.3,
+        "stl": 0.7,
+        "blk": 0.4,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "charles bassey": {
+      "info": {
+        "player": "Charles Bassey",
+        "position": "C",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3007"
+      },
+      "stats": {
+        "min": 8.93,
+        "fpts": 10.1,
+        "pts": 3.7,
+        "reb": 3.2,
+        "ast": 0.6,
+        "stl": 0.2,
+        "blk": 0.5,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "brandon williams": {
+      "info": {
+        "player": "Brandon Williams",
+        "position": "PG",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3069"
+      },
+      "stats": {
+        "min": 12.1,
+        "fpts": 12.1,
+        "pts": 5.8,
+        "reb": 1.6,
+        "ast": 2.2,
+        "stl": 0.5,
+        "blk": 0.2,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "dalen terry": {
+      "info": {
+        "player": "Dalen Terry",
+        "position": "",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3113"
+      },
+      "stats": {
+        "min": 6.88,
+        "fpts": 5.9,
+        "pts": 2.2,
+        "reb": 1.1,
+        "ast": 0.8,
+        "stl": 0.3,
+        "blk": 0.2,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "gui santos": {
+      "info": {
+        "player": "Gui Santos",
+        "position": "SF",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3149"
+      },
+      "stats": {
+        "min": 13.1,
+        "fpts": 11.5,
+        "pts": 4.9,
+        "reb": 2.5,
+        "ast": 1.5,
+        "stl": 0.5,
+        "blk": 0.2,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "julian champagnie": {
+      "info": {
+        "player": "Julian Champagnie",
+        "position": "SF",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3173"
+      },
+      "stats": {
+        "min": 20.85,
+        "fpts": 17.1,
+        "pts": 8.2,
+        "reb": 4.1,
+        "ast": 1.1,
+        "stl": 0.6,
+        "blk": 0.4,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "victor wembanyama": {
+      "info": {
+        "player": "Victor Wembanyama",
+        "position": "C",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3189"
+      },
+      "stats": {
+        "min": 25.31,
+        "fpts": 43.4,
+        "pts": 19.5,
+        "reb": 9.5,
+        "ast": 2.5,
+        "stl": 0.9,
+        "blk": 2.7,
+        "to": 2.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "brandin podziemski": {
+      "info": {
+        "player": "Brandin Podziemski",
+        "position": "SG",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3206"
+      },
+      "stats": {
+        "min": 20.29,
+        "fpts": 18.1,
+        "pts": 8.4,
+        "reb": 3.5,
+        "ast": 2.8,
+        "stl": 0.7,
+        "blk": 0.1,
+        "to": 1.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "stephon castle": {
+      "info": {
+        "player": "Stephon Castle",
+        "position": "SG",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3291"
+      },
+      "stats": {
+        "min": 24.8,
+        "fpts": 27.0,
+        "pts": 12.6,
+        "reb": 4.3,
+        "ast": 5.5,
+        "stl": 1.0,
+        "blk": 0.2,
+        "to": 2.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "malevy leons": {
+      "info": {
+        "player": "Malevy Leons",
+        "position": "PF",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3350"
+      },
+      "stats": {
+        "min": 5.26,
+        "fpts": 4.2,
+        "pts": 1.6,
+        "reb": 1.1,
+        "ast": 0.4,
+        "stl": 0.2,
+        "blk": 0.1,
+        "to": 0.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "dylan harper": {
+      "info": {
+        "player": "Dylan Harper",
+        "position": "SG",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3414"
+      },
+      "stats": {
+        "min": 26.16,
+        "fpts": 25.3,
+        "pts": 12.7,
+        "reb": 3.9,
+        "ast": 4.0,
+        "stl": 0.9,
+        "blk": 0.3,
+        "to": 1.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "carter bryant": {
+      "info": {
+        "player": "Carter Bryant",
+        "position": "SF",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3415"
+      },
+      "stats": {
+        "min": 10.29,
+        "fpts": 8.1,
+        "pts": 3.7,
+        "reb": 2.1,
+        "ast": 0.6,
+        "stl": 0.2,
+        "blk": 0.3,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "will richard": {
+      "info": {
+        "player": "Will Richard",
+        "position": "SG",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3444"
+      },
+      "stats": {
+        "min": 12.07,
+        "fpts": 8.2,
+        "pts": 3.5,
+        "reb": 1.5,
+        "ast": 0.9,
+        "stl": 0.6,
+        "blk": 0.1,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "lj cryer": {
+      "info": {
+        "player": "LJ Cryer",
+        "position": "PG",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3464"
+      },
+      "stats": {
+        "min": 4.71,
+        "fpts": 3.5,
+        "pts": 2.1,
+        "reb": 0.5,
+        "ast": 0.5,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tarris reed jr.": {
+      "info": {
+        "player": "Tarris Reed Jr.",
+        "position": "",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3502"
+      },
+      "stats": {
+        "min": 4.42,
+        "fpts": 5.0,
+        "pts": 2.0,
+        "reb": 1.6,
+        "ast": 0.3,
+        "stl": 0.1,
+        "blk": 0.2,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "yaxel lendeborg": {
+      "info": {
+        "player": "Yaxel Lendeborg",
+        "position": "",
+        "team": "GS",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3504"
+      },
+      "stats": {
+        "min": 19.62,
+        "fpts": 18.7,
+        "pts": 9.3,
+        "reb": 4.0,
+        "ast": 2.2,
+        "stl": 0.6,
+        "blk": 0.3,
+        "to": 1.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jayden quaintance": {
+      "info": {
+        "player": "Jayden Quaintance",
+        "position": "",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3512"
+      },
+      "stats": {
+        "min": 6.01,
+        "fpts": 5.7,
+        "pts": 2.5,
+        "reb": 1.4,
+        "ast": 0.4,
+        "stl": 0.2,
+        "blk": 0.2,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "ja'kobi gillespie": {
+      "info": {
+        "player": "Ja'Kobi Gillespie",
+        "position": "",
+        "team": "SA",
+        "opp": "",
+        "slateId": "1057610",
+        "fdId": "3525"
+      },
+      "stats": {
+        "min": 1.83,
+        "fpts": 1.7,
+        "pts": 0.8,
         "reb": 0.2,
         "ast": 0.3,
         "stl": 0.1,
@@ -670,702 +1492,2528 @@
         "value": 0.0
       }
     },
-    "cj huntley": {
+    "james johnson": {
       "info": {
-        "player": "CJ Huntley",
+        "player": "James Johnson",
         "position": "",
-        "team": "PHX",
+        "team": "IND",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3488"
+        "slateId": "1057607",
+        "fdId": "213"
       },
       "stats": {
-        "min": 2.52,
-        "fpts": 2.0,
-        "pts": 1.0,
-        "reb": 0.4,
-        "ast": 0.2,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.1,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "hannes steinbach": {
-      "info": {
-        "player": "Hannes Steinbach",
-        "position": "",
-        "team": "CHA",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3498"
-      },
-      "stats": {
-        "min": 3.33,
-        "fpts": 3.1,
-        "pts": 1.4,
+        "min": 4.38,
+        "fpts": 4.0,
+        "pts": 2.0,
         "reb": 0.8,
-        "ast": 0.2,
+        "ast": 0.5,
         "stl": 0.1,
         "blk": 0.1,
-        "to": 0.2,
+        "to": 0.3,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "christian anderson jr.": {
+    "andre drummond": {
       "info": {
-        "player": "Christian Anderson Jr.",
-        "position": "",
-        "team": "CHA",
+        "player": "Andre Drummond",
+        "position": "C",
+        "team": "NY",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3510"
+        "slateId": "1057607",
+        "fdId": "2130"
       },
       "stats": {
-        "min": 4.4,
-        "fpts": 4.1,
-        "pts": 1.8,
-        "reb": 0.6,
+        "min": 12.78,
+        "fpts": 15.0,
+        "pts": 4.4,
+        "reb": 5.8,
+        "ast": 0.8,
+        "stl": 0.4,
+        "blk": 0.6,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jordan clarkson": {
+      "info": {
+        "player": "Jordan Clarkson",
+        "position": "SG",
+        "team": "NY",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2289"
+      },
+      "stats": {
+        "min": 10.8,
+        "fpts": 8.4,
+        "pts": 5.2,
+        "reb": 1.2,
+        "ast": 0.8,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "karl-anthony towns": {
+      "info": {
+        "player": "Karl-Anthony Towns",
+        "position": "C",
+        "team": "NY",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2326"
+      },
+      "stats": {
+        "min": 27.85,
+        "fpts": 36.1,
+        "pts": 17.0,
+        "reb": 11.1,
+        "ast": 2.6,
+        "stl": 0.8,
+        "blk": 0.6,
+        "to": 2.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kelly oubre": {
+      "info": {
+        "player": "Kelly Oubre",
+        "position": "SF",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2340"
+      },
+      "stats": {
+        "min": 14.33,
+        "fpts": 11.2,
+        "pts": 6.0,
+        "reb": 2.2,
         "ast": 0.7,
+        "stl": 0.5,
+        "blk": 0.2,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "larry nance jr.": {
+      "info": {
+        "player": "Larry Nance Jr.",
+        "position": "C",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2352"
+      },
+      "stats": {
+        "min": 10.44,
+        "fpts": 8.0,
+        "pts": 3.2,
+        "reb": 2.2,
+        "ast": 0.6,
+        "stl": 0.4,
+        "blk": 0.2,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "t.j. mcconnell": {
+      "info": {
+        "player": "T.J. McConnell",
+        "position": "PG",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2390"
+      },
+      "stats": {
+        "min": 10.45,
+        "fpts": 11.4,
+        "pts": 4.8,
+        "reb": 1.3,
+        "ast": 2.6,
+        "stl": 0.5,
+        "blk": 0.1,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "pascal siakam": {
+      "info": {
+        "player": "Pascal Siakam",
+        "position": "PF",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2441"
+      },
+      "stats": {
+        "min": 18.97,
+        "fpts": 20.5,
+        "pts": 11.9,
+        "reb": 3.8,
+        "ast": 1.9,
+        "stl": 0.6,
+        "blk": 0.2,
+        "to": 1.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "ivica zubac": {
+      "info": {
+        "player": "Ivica Zubac",
+        "position": "C",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2446"
+      },
+      "stats": {
+        "min": 13.15,
+        "fpts": 13.0,
+        "pts": 5.3,
+        "reb": 4.5,
+        "ast": 0.9,
         "stl": 0.2,
+        "blk": 0.4,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "og anunoby": {
+      "info": {
+        "player": "OG Anunoby",
+        "position": "PF",
+        "team": "NY",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2534"
+      },
+      "stats": {
+        "min": 28.98,
+        "fpts": 26.7,
+        "pts": 14.0,
+        "reb": 4.8,
+        "ast": 1.9,
+        "stl": 1.2,
+        "blk": 0.7,
+        "to": 1.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "josh hart": {
+      "info": {
+        "player": "Josh Hart",
+        "position": "SF",
+        "team": "NY",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2541"
+      },
+      "stats": {
+        "min": 27.94,
+        "fpts": 27.6,
+        "pts": 10.6,
+        "reb": 6.8,
+        "ast": 4.2,
+        "stl": 1.1,
+        "blk": 0.3,
+        "to": 1.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "mikal bridges": {
+      "info": {
+        "player": "Mikal Bridges",
+        "position": "SF",
+        "team": "NY",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2642"
+      },
+      "stats": {
+        "min": 21.47,
+        "fpts": 18.9,
+        "pts": 8.8,
+        "reb": 2.6,
+        "ast": 2.3,
+        "stl": 0.8,
+        "blk": 0.6,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "landry shamet": {
+      "info": {
+        "player": "Landry Shamet",
+        "position": "SG",
+        "team": "NY",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2652"
+      },
+      "stats": {
+        "min": 22.55,
+        "fpts": 15.4,
+        "pts": 9.1,
+        "reb": 1.9,
+        "ast": 1.6,
+        "stl": 0.6,
+        "blk": 0.2,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jalen brunson": {
+      "info": {
+        "player": "Jalen Brunson",
+        "position": "PG",
+        "team": "NY",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2670"
+      },
+      "stats": {
+        "min": 30.34,
+        "fpts": 34.0,
+        "pts": 21.1,
+        "reb": 2.9,
+        "ast": 5.6,
+        "stl": 0.8,
+        "blk": 0.2,
+        "to": 2.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "obi toppin": {
+      "info": {
+        "player": "Obi Toppin",
+        "position": "PF",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2872"
+      },
+      "stats": {
+        "min": 12.51,
+        "fpts": 12.8,
+        "pts": 6.9,
+        "reb": 3.0,
+        "ast": 1.2,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tyrese haliburton": {
+      "info": {
+        "player": "Tyrese Haliburton",
+        "position": "PG",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2876"
+      },
+      "stats": {
+        "min": 19.87,
+        "fpts": 21.3,
+        "pts": 10.0,
+        "reb": 2.6,
+        "ast": 4.1,
+        "stl": 0.7,
+        "blk": 0.4,
+        "to": 1.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "aaron nesmith": {
+      "info": {
+        "player": "Aaron Nesmith",
+        "position": "SF",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2878"
+      },
+      "stats": {
+        "min": 16.05,
+        "fpts": 12.5,
+        "pts": 7.2,
+        "reb": 2.1,
+        "ast": 1.0,
+        "stl": 0.4,
+        "blk": 0.3,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "miles mcbride": {
+      "info": {
+        "player": "Miles McBride",
+        "position": "PG",
+        "team": "NY",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "2993"
+      },
+      "stats": {
+        "min": 15.68,
+        "fpts": 12.9,
+        "pts": 6.9,
+        "reb": 1.6,
+        "ast": 1.5,
+        "stl": 0.6,
+        "blk": 0.2,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jose alvarado": {
+      "info": {
+        "player": "Jose Alvarado",
+        "position": "PG",
+        "team": "NY",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "3037"
+      },
+      "stats": {
+        "min": 13.03,
+        "fpts": 11.5,
+        "pts": 4.9,
+        "reb": 1.7,
+        "ast": 2.2,
+        "stl": 0.6,
+        "blk": 0.1,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jay huff": {
+      "info": {
+        "player": "Jay Huff",
+        "position": "C",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "3040"
+      },
+      "stats": {
+        "min": 12.69,
+        "fpts": 13.2,
+        "pts": 5.5,
+        "reb": 2.4,
+        "ast": 0.8,
+        "stl": 0.3,
+        "blk": 1.1,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "andrew nembhard": {
+      "info": {
+        "player": "Andrew Nembhard",
+        "position": "SG",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "3126"
+      },
+      "stats": {
+        "min": 20.09,
+        "fpts": 19.2,
+        "pts": 10.1,
+        "reb": 1.8,
+        "ast": 4.2,
+        "stl": 0.6,
+        "blk": 0.1,
+        "to": 1.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "quenton jackson": {
+      "info": {
+        "player": "Quenton Jackson",
+        "position": "SG",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "3178"
+      },
+      "stats": {
+        "min": 14.31,
+        "fpts": 12.8,
+        "pts": 6.5,
+        "reb": 1.9,
+        "ast": 1.9,
+        "stl": 0.6,
+        "blk": 0.1,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jarace walker": {
+      "info": {
+        "player": "Jarace Walker",
+        "position": "PF",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "3196"
+      },
+      "stats": {
+        "min": 15.34,
+        "fpts": 13.2,
+        "pts": 6.4,
+        "reb": 3.1,
+        "ast": 1.3,
+        "stl": 0.5,
+        "blk": 0.2,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "ben sheppard": {
+      "info": {
+        "player": "Ben Sheppard",
+        "position": "SG",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "3213"
+      },
+      "stats": {
+        "min": 11.57,
+        "fpts": 7.8,
+        "pts": 3.9,
+        "reb": 1.5,
+        "ast": 0.9,
+        "stl": 0.3,
         "blk": 0.1,
         "to": 0.4,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "koa peat": {
+    "kobe brown": {
       "info": {
-        "player": "Koa Peat",
-        "position": "",
-        "team": "PHX",
+        "player": "Kobe Brown",
+        "position": "SF",
+        "team": "IND",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3516"
+        "slateId": "1057607",
+        "fdId": "3217"
       },
       "stats": {
-        "min": 0.94,
-        "fpts": 0.9,
-        "pts": 0.4,
-        "reb": 0.3,
-        "ast": 0.1,
-        "stl": 0.0,
-        "blk": 0.0,
-        "to": 0.0,
+        "min": 11.24,
+        "fpts": 8.4,
+        "pts": 4.1,
+        "reb": 2.1,
+        "ast": 0.8,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.6,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "kyrie irving": {
+    "jalen slawson": {
       "info": {
-        "player": "Kyrie Irving",
-        "position": "PG",
-        "team": "DAL",
+        "player": "Jalen Slawson",
+        "position": "SF",
+        "team": "IND",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "314"
+        "slateId": "1057607",
+        "fdId": "3238"
       },
       "stats": {
-        "min": 33.5,
-        "fpts": 35.7,
-        "pts": 20.2,
-        "reb": 4.1,
-        "ast": 5.4,
-        "stl": 1.1,
+        "min": 10.93,
+        "fpts": 9.9,
+        "pts": 3.6,
+        "reb": 2.0,
+        "ast": 1.0,
+        "stl": 0.5,
         "blk": 0.5,
-        "to": 2.3,
-        "salary": 7500.0,
-        "value": 4.76
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "rudy gobert": {
+    "pacome dadiet": {
       "info": {
-        "player": "Rudy Gobert",
-        "position": "C",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2178"
-      },
-      "stats": {
-        "min": 29.5,
-        "fpts": 31.6,
-        "pts": 10.5,
-        "reb": 11.1,
-        "ast": 1.7,
-        "stl": 0.8,
-        "blk": 1.4,
-        "to": 1.4,
-        "salary": 5800.0,
-        "value": 5.45
-      }
-    },
-    "pj washington": {
-      "info": {
-        "player": "PJ Washington",
-        "position": "PF",
-        "team": "DAL",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2761"
-      },
-      "stats": {
-        "min": 31.5,
-        "fpts": 28.4,
-        "pts": 13.2,
-        "reb": 7.1,
-        "ast": 1.8,
-        "stl": 0.9,
-        "blk": 1.0,
-        "to": 1.7,
-        "salary": 6100.0,
-        "value": 4.66
-      }
-    },
-    "daniel gafford": {
-      "info": {
-        "player": "Daniel Gafford",
-        "position": "C",
-        "team": "DAL",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2785"
-      },
-      "stats": {
-        "min": 21.5,
-        "fpts": 22.6,
-        "pts": 8.4,
-        "reb": 6.5,
-        "ast": 1.2,
-        "stl": 0.7,
-        "blk": 1.2,
-        "to": 1.1,
-        "salary": 4500.0,
-        "value": 5.02
-      }
-    },
-    "caleb martin": {
-      "info": {
-        "player": "Caleb Martin",
+        "player": "Pacome Dadiet",
         "position": "SG",
-        "team": "DAL",
+        "team": "NY",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "2818"
+        "slateId": "1057607",
+        "fdId": "3312"
       },
       "stats": {
-        "min": 18.0,
-        "fpts": 13.9,
-        "pts": 5.3,
-        "reb": 2.9,
-        "ast": 1.8,
-        "stl": 0.8,
-        "blk": 0.3,
-        "to": 0.9,
-        "salary": 3600.0,
-        "value": 3.86
-      }
-    },
-    "jaden mcdaniels": {
-      "info": {
-        "player": "Jaden McDaniels",
-        "position": "PF",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2892"
-      },
-      "stats": {
-        "min": 35.0,
-        "fpts": 33.3,
-        "pts": 17.4,
-        "reb": 5.2,
-        "ast": 3.2,
-        "stl": 1.2,
-        "blk": 1.1,
-        "to": 2.0,
-        "salary": 6500.0,
-        "value": 5.12
-      }
-    },
-    "lamelo ball": {
-      "info": {
-        "player": "LaMelo Ball",
-        "position": "PG",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2922"
-      },
-      "stats": {
-        "min": 32.0,
-        "fpts": 46.0,
-        "pts": 25.0,
-        "reb": 5.5,
-        "ast": 8.4,
-        "stl": 1.5,
-        "blk": 0.2,
-        "to": 3.3,
-        "salary": 7800.0,
-        "value": 5.9
-      }
-    },
-    "naji marshall": {
-      "info": {
-        "player": "Naji Marshall",
-        "position": "SF",
-        "team": "DAL",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2944"
-      },
-      "stats": {
-        "min": 23.5,
-        "fpts": 21.2,
-        "pts": 10.9,
-        "reb": 3.7,
-        "ast": 2.8,
-        "stl": 0.9,
-        "blk": 0.1,
-        "to": 1.3,
-        "salary": 4400.0,
-        "value": 4.82
-      }
-    },
-    "jonathan kuminga": {
-      "info": {
-        "player": "Jonathan Kuminga",
-        "position": "SF",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2969"
-      },
-      "stats": {
-        "min": 31.5,
-        "fpts": 32.5,
-        "pts": 16.4,
-        "reb": 7.2,
-        "ast": 3.2,
-        "stl": 1.0,
-        "blk": 0.6,
-        "to": 2.1,
-        "salary": 5700.0,
-        "value": 5.7
-      }
-    },
-    "nah'shon hyland": {
-      "info": {
-        "player": "Nah'Shon Hyland",
-        "position": "PG",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "2985"
-      },
-      "stats": {
-        "min": 3.93,
-        "fpts": 4.6,
-        "pts": 2.3,
-        "reb": 0.5,
+        "min": 7.22,
+        "fpts": 6.1,
+        "pts": 3.0,
+        "reb": 1.2,
         "ast": 0.7,
         "stl": 0.2,
         "blk": 0.1,
-        "to": 0.2,
-        "salary": 3900.0,
-        "value": 1.18
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "santi aldama": {
+    "johnny furphy": {
       "info": {
-        "player": "Santi Aldama",
-        "position": "PF",
-        "team": "DAL",
+        "player": "Johnny Furphy",
+        "position": "SG",
+        "team": "IND",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "2988"
+        "slateId": "1057607",
+        "fdId": "3321"
       },
       "stats": {
-        "min": 19.0,
-        "fpts": 19.5,
-        "pts": 8.7,
-        "reb": 4.5,
-        "ast": 2.0,
+        "min": 12.97,
+        "fpts": 9.7,
+        "pts": 4.1,
+        "reb": 2.9,
+        "ast": 0.8,
+        "stl": 0.4,
+        "blk": 0.1,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tyler kolek": {
+      "info": {
+        "player": "Tyler Kolek",
+        "position": "PG",
+        "team": "NY",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "3325"
+      },
+      "stats": {
+        "min": 9.71,
+        "fpts": 9.3,
+        "pts": 3.7,
+        "reb": 1.4,
+        "ast": 2.3,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "mohamed diawara": {
+      "info": {
+        "player": "Mohamed Diawara",
+        "position": "PF",
+        "team": "NY",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "3456"
+      },
+      "stats": {
+        "min": 11.65,
+        "fpts": 9.4,
+        "pts": 4.6,
+        "reb": 1.9,
+        "ast": 1.0,
+        "stl": 0.3,
+        "blk": 0.2,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "braden smith": {
+      "info": {
+        "player": "Braden Smith",
+        "position": "",
+        "team": "IND",
+        "opp": "",
+        "slateId": "1057607",
+        "fdId": "3543"
+      },
+      "stats": {
+        "min": 10.71,
+        "fpts": 9.2,
+        "pts": 4.4,
+        "reb": 1.0,
+        "ast": 1.7,
+        "stl": 0.4,
+        "blk": 0.2,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "nikola vucevic": {
+      "info": {
+        "player": "Nikola Vucevic",
+        "position": "C",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "226"
+      },
+      "stats": {
+        "min": 8.84,
+        "fpts": 9.9,
+        "pts": 4.5,
+        "reb": 2.6,
+        "ast": 1.0,
+        "stl": 0.2,
+        "blk": 0.2,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "myles turner": {
+      "info": {
+        "player": "Myles Turner",
+        "position": "C",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2336"
+      },
+      "stats": {
+        "min": 16.44,
+        "fpts": 16.6,
+        "pts": 7.1,
+        "reb": 3.6,
+        "ast": 1.0,
+        "stl": 0.4,
+        "blk": 1.1,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "caris levert": {
+      "info": {
+        "player": "Caris LeVert",
+        "position": "SF",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2434"
+      },
+      "stats": {
+        "min": 10.3,
+        "fpts": 9.3,
+        "pts": 4.0,
+        "reb": 1.1,
+        "ast": 1.5,
+        "stl": 0.4,
+        "blk": 0.4,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jonathan isaac": {
+      "info": {
+        "player": "Jonathan Isaac",
+        "position": "PF",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2517"
+      },
+      "stats": {
+        "min": 6.05,
+        "fpts": 5.4,
+        "pts": 1.9,
+        "reb": 1.5,
+        "ast": 0.3,
+        "stl": 0.2,
+        "blk": 0.3,
+        "to": 0.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kyle kuzma": {
+      "info": {
+        "player": "Kyle Kuzma",
+        "position": "SF",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2538"
+      },
+      "stats": {
+        "min": 14.67,
+        "fpts": 13.4,
+        "pts": 6.7,
+        "reb": 2.9,
+        "ast": 1.6,
+        "stl": 0.4,
+        "blk": 0.2,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "wendell carter jr.": {
+      "info": {
+        "player": "Wendell Carter Jr.",
+        "position": "C",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2643"
+      },
+      "stats": {
+        "min": 23.43,
+        "fpts": 20.9,
+        "pts": 9.3,
+        "reb": 5.9,
+        "ast": 1.5,
         "stl": 0.6,
         "blk": 0.5,
-        "to": 0.9,
-        "salary": 3900.0,
-        "value": 5.0
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "ayo dosunmu": {
+    "jevon carter": {
       "info": {
-        "player": "Ayo Dosunmu",
-        "position": "SG",
-        "team": "MIN",
+        "player": "Jevon Carter",
+        "position": "PG",
+        "team": "ORL",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "2995"
+        "slateId": "1057590",
+        "fdId": "2669"
       },
       "stats": {
-        "min": 35.0,
-        "fpts": 36.5,
-        "pts": 20.1,
-        "reb": 4.8,
-        "ast": 5.0,
-        "stl": 1.3,
+        "min": 13.32,
+        "fpts": 11.1,
+        "pts": 5.7,
+        "reb": 1.4,
+        "ast": 1.5,
+        "stl": 0.6,
+        "blk": 0.1,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "gary trent jr.": {
+      "info": {
+        "player": "Gary Trent Jr.",
+        "position": "SG",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2673"
+      },
+      "stats": {
+        "min": 8.76,
+        "fpts": 5.4,
+        "pts": 3.6,
+        "reb": 0.5,
+        "ast": 0.6,
+        "stl": 0.2,
+        "blk": 0.0,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tyler herro": {
+      "info": {
+        "player": "Tyler Herro",
+        "position": "SG",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2762"
+      },
+      "stats": {
+        "min": 17.99,
+        "fpts": 19.3,
+        "pts": 11.2,
+        "reb": 2.9,
+        "ast": 2.4,
+        "stl": 0.5,
+        "blk": 0.2,
+        "to": 1.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "goga bitadze": {
+      "info": {
+        "player": "Goga Bitadze",
+        "position": "C",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2767"
+      },
+      "stats": {
+        "min": 8.18,
+        "fpts": 9.4,
+        "pts": 3.1,
+        "reb": 2.7,
+        "ast": 0.7,
+        "stl": 0.3,
+        "blk": 0.5,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kevin porter jr.": {
+      "info": {
+        "player": "Kevin Porter Jr.",
+        "position": "",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2779"
+      },
+      "stats": {
+        "min": 18.48,
+        "fpts": 21.2,
+        "pts": 9.1,
+        "reb": 3.0,
+        "ast": 4.1,
+        "stl": 1.0,
+        "blk": 0.3,
+        "to": 1.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "desmond bane": {
+      "info": {
+        "player": "Desmond Bane",
+        "position": "SG",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2930"
+      },
+      "stats": {
+        "min": 24.84,
+        "fpts": 24.6,
+        "pts": 14.4,
+        "reb": 3.0,
+        "ast": 3.0,
+        "stl": 0.8,
+        "blk": 0.4,
+        "to": 1.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jalen suggs": {
+      "info": {
+        "player": "Jalen Suggs",
+        "position": "PG",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2967"
+      },
+      "stats": {
+        "min": 23.23,
+        "fpts": 26.0,
+        "pts": 11.4,
+        "reb": 3.2,
+        "ast": 4.6,
+        "stl": 1.4,
+        "blk": 0.6,
+        "to": 2.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "franz wagner": {
+      "info": {
+        "player": "Franz Wagner",
+        "position": "SF",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2970"
+      },
+      "stats": {
+        "min": 24.8,
+        "fpts": 26.4,
+        "pts": 15.0,
+        "reb": 4.3,
+        "ast": 3.2,
+        "stl": 0.8,
+        "blk": 0.2,
+        "to": 1.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jericho sims": {
+      "info": {
+        "player": "Jericho Sims",
+        "position": "C",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3012"
+      },
+      "stats": {
+        "min": 9.3,
+        "fpts": 7.2,
+        "pts": 2.4,
+        "reb": 2.7,
+        "ast": 0.8,
+        "stl": 0.2,
+        "blk": 0.1,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "paolo banchero": {
+      "info": {
+        "player": "Paolo Banchero",
+        "position": "PF",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3096"
+      },
+      "stats": {
+        "min": 24.29,
+        "fpts": 27.7,
+        "pts": 14.6,
+        "reb": 5.8,
+        "ast": 3.6,
+        "stl": 0.5,
         "blk": 0.4,
         "to": 2.0,
-        "salary": 6800.0,
-        "value": 5.37
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "max christie": {
+    "ousmane dieng": {
       "info": {
-        "player": "Max Christie",
-        "position": "SG",
-        "team": "DAL",
+        "player": "Ousmane Dieng",
+        "position": "SF",
+        "team": "MIL",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3130"
+        "slateId": "1057590",
+        "fdId": "3106"
       },
       "stats": {
-        "min": 6.74,
-        "fpts": 5.0,
-        "pts": 2.7,
-        "reb": 0.8,
+        "min": 8.57,
+        "fpts": 7.1,
+        "pts": 3.3,
+        "reb": 1.5,
+        "ast": 1.1,
+        "stl": 0.2,
+        "blk": 0.1,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "ryan rollins": {
+      "info": {
+        "player": "Ryan Rollins",
+        "position": "PG",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3139"
+      },
+      "stats": {
+        "min": 14.63,
+        "fpts": 15.4,
+        "pts": 7.5,
+        "reb": 2.2,
+        "ast": 2.7,
+        "stl": 0.6,
+        "blk": 0.2,
+        "to": 1.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "a.j. green": {
+      "info": {
+        "player": "A.J. Green",
+        "position": "SG",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3157"
+      },
+      "stats": {
+        "min": 13.49,
+        "fpts": 9.1,
+        "pts": 5.2,
+        "reb": 1.4,
+        "ast": 1.0,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jamal cain": {
+      "info": {
+        "player": "Jamal Cain",
+        "position": "SF",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3168"
+      },
+      "stats": {
+        "min": 13.38,
+        "fpts": 10.4,
+        "pts": 5.9,
+        "reb": 2.0,
+        "ast": 0.8,
+        "stl": 0.4,
+        "blk": 0.1,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "anthony black": {
+      "info": {
+        "player": "Anthony Black",
+        "position": "PG",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3194"
+      },
+      "stats": {
+        "min": 18.53,
+        "fpts": 18.1,
+        "pts": 9.2,
+        "reb": 2.4,
+        "ast": 2.4,
+        "stl": 0.8,
+        "blk": 0.4,
+        "to": 1.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jaime jaquez jr.": {
+      "info": {
+        "player": "Jaime Jaquez Jr.",
+        "position": "SF",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3205"
+      },
+      "stats": {
+        "min": 16.5,
+        "fpts": 16.7,
+        "pts": 8.3,
+        "reb": 3.1,
+        "ast": 2.7,
+        "stl": 0.4,
+        "blk": 0.2,
+        "to": 1.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "colin castleton": {
+      "info": {
+        "player": "Colin Castleton",
+        "position": "C",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3253"
+      },
+      "stats": {
+        "min": 3.87,
+        "fpts": 4.4,
+        "pts": 1.8,
+        "reb": 1.2,
+        "ast": 0.3,
+        "stl": 0.1,
+        "blk": 0.2,
+        "to": 0.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "pete nance": {
+      "info": {
+        "player": "Pete Nance",
+        "position": "PF",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3271"
+      },
+      "stats": {
+        "min": 15.04,
+        "fpts": 12.2,
+        "pts": 5.6,
+        "reb": 2.9,
+        "ast": 1.1,
+        "stl": 0.4,
+        "blk": 0.3,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kel'el ware": {
+      "info": {
+        "player": "Kel'el Ware",
+        "position": "C",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3302"
+      },
+      "stats": {
+        "min": 11.18,
+        "fpts": 14.1,
+        "pts": 5.4,
+        "reb": 4.7,
+        "ast": 0.4,
+        "stl": 0.4,
+        "blk": 0.6,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tristan da silva": {
+      "info": {
+        "player": "Tristan Da Silva",
+        "position": "SF",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3305"
+      },
+      "stats": {
+        "min": 21.14,
+        "fpts": 17.1,
+        "pts": 9.0,
+        "reb": 3.2,
+        "ast": 1.4,
+        "stl": 0.7,
+        "blk": 0.3,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jase richardson": {
+      "info": {
+        "player": "Jase Richardson",
+        "position": "PG",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3425"
+      },
+      "stats": {
+        "min": 14.77,
+        "fpts": 11.4,
+        "pts": 6.0,
+        "reb": 1.6,
+        "ast": 1.5,
+        "stl": 0.5,
+        "blk": 0.1,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "noah penda": {
+      "info": {
+        "player": "Noah Penda",
+        "position": "SF",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3426"
+      },
+      "stats": {
+        "min": 5.44,
+        "fpts": 4.7,
+        "pts": 1.9,
+        "reb": 1.2,
         "ast": 0.5,
         "stl": 0.2,
         "blk": 0.1,
         "to": 0.3,
-        "salary": 3600.0,
-        "value": 1.39
-      }
-    },
-    "jett howard": {
-      "info": {
-        "player": "Jett Howard",
-        "position": "SF",
-        "team": "DAL",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3199"
-      },
-      "stats": {
-        "min": 2.43,
-        "fpts": 1.9,
-        "pts": 1.0,
-        "reb": 0.3,
-        "ast": 0.2,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.1,
-        "salary": 3500.0,
-        "value": 0.54
-      }
-    },
-    "marcus sasser": {
-      "info": {
-        "player": "Marcus Sasser",
-        "position": "PG",
-        "team": "DAL",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3212"
-      },
-      "stats": {
-        "min": 4.97,
-        "fpts": 4.0,
-        "pts": 2.1,
-        "reb": 0.5,
-        "ast": 0.7,
-        "stl": 0.2,
-        "blk": 0.0,
-        "to": 0.3,
-        "salary": 3500.0,
-        "value": 1.14
-      }
-    },
-    "jaylen clark": {
-      "info": {
-        "player": "Jaylen Clark",
-        "position": "SG",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3237"
-      },
-      "stats": {
-        "min": 3.83,
-        "fpts": 2.8,
-        "pts": 1.4,
-        "reb": 0.5,
-        "ast": 0.2,
-        "stl": 0.2,
-        "blk": 0.0,
-        "to": 0.1,
-        "salary": 3600.0,
-        "value": 0.78
-      }
-    },
-    "zaccharie risacher": {
-      "info": {
-        "player": "Zaccharie Risacher",
-        "position": "SF",
-        "team": "DAL",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3288"
-      },
-      "stats": {
-        "min": 7.7,
-        "fpts": 6.5,
-        "pts": 3.0,
-        "reb": 1.4,
-        "ast": 0.4,
-        "stl": 0.3,
-        "blk": 0.2,
-        "to": 0.3,
-        "salary": 3900.0,
-        "value": 1.67
-      }
-    },
-    "cody williams": {
-      "info": {
-        "player": "Cody Williams",
-        "position": "SF",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3297"
-      },
-      "stats": {
-        "min": 3.7,
-        "fpts": 2.7,
-        "pts": 1.4,
-        "reb": 0.4,
-        "ast": 0.3,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.2,
-        "salary": 3500.0,
-        "value": 0.77
-      }
-    },
-    "terrence shannon jr.": {
-      "info": {
-        "player": "Terrence Shannon Jr.",
-        "position": "SF",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3314"
-      },
-      "stats": {
-        "min": 20.0,
-        "fpts": 16.9,
-        "pts": 10.3,
-        "reb": 2.3,
-        "ast": 1.8,
-        "stl": 0.6,
-        "blk": 0.1,
-        "to": 1.0,
-        "salary": 4100.0,
-        "value": 4.12
-      }
-    },
-    "zyon pullin": {
-      "info": {
-        "player": "Zyon Pullin",
-        "position": "SG",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3372"
-      },
-      "stats": {
-        "min": 1.91,
-        "fpts": 2.0,
-        "pts": 1.0,
-        "reb": 0.3,
-        "ast": 0.3,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.1,
-        "salary": 3500.0,
-        "value": 0.57
-      }
-    },
-    "drew timme": {
-      "info": {
-        "player": "Drew Timme",
-        "position": "PF",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3387"
-      },
-      "stats": {
-        "min": 2.32,
-        "fpts": 2.0,
-        "pts": 1.0,
-        "reb": 0.4,
-        "ast": 0.2,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.1,
-        "salary": 3500.0,
-        "value": 0.57
-      }
-    },
-    "cooper flagg": {
-      "info": {
-        "player": "Cooper Flagg",
-        "position": "SF",
-        "team": "DAL",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3408"
-      },
-      "stats": {
-        "min": 36.0,
-        "fpts": 40.3,
-        "pts": 20.3,
-        "reb": 6.9,
-        "ast": 5.1,
-        "stl": 1.3,
-        "blk": 0.9,
-        "to": 2.5,
-        "salary": 10300.0,
-        "value": 3.91
-      }
-    },
-    "walter clayton jr.": {
-      "info": {
-        "player": "Walter Clayton Jr.",
-        "position": "PG",
-        "team": "DAL",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3411"
-      },
-      "stats": {
-        "min": 5.48,
-        "fpts": 5.0,
-        "pts": 2.1,
-        "reb": 0.6,
-        "ast": 1.1,
-        "stl": 0.2,
-        "blk": 0.1,
-        "to": 0.4,
-        "salary": 4100.0,
-        "value": 1.22
-      }
-    },
-    "moussa cisse": {
-      "info": {
-        "player": "Moussa Cisse",
-        "position": "C",
-        "team": "DAL",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3445"
-      },
-      "stats": {
-        "min": 3.01,
-        "fpts": 3.3,
-        "pts": 1.0,
-        "reb": 1.2,
-        "ast": 0.1,
-        "stl": 0.1,
-        "blk": 0.2,
-        "to": 0.2,
-        "salary": 3500.0,
-        "value": 0.94
-      }
-    },
-    "joan beringer": {
-      "info": {
-        "player": "Joan Beringer",
-        "position": "C",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3450"
-      },
-      "stats": {
-        "min": 16.5,
-        "fpts": 18.5,
-        "pts": 7.4,
-        "reb": 5.1,
-        "ast": 0.8,
-        "stl": 0.5,
-        "blk": 1.0,
-        "to": 0.7,
-        "salary": 4000.0,
-        "value": 4.63
-      }
-    },
-    "rocco zikarsky": {
-      "info": {
-        "player": "Rocco Zikarsky",
-        "position": "C",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3471"
-      },
-      "stats": {
-        "min": 2.25,
-        "fpts": 2.9,
-        "pts": 1.1,
-        "reb": 0.8,
-        "ast": 0.2,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.1,
-        "salary": 3500.0,
-        "value": 0.83
-      }
-    },
-    "norchad omier": {
-      "info": {
-        "player": "Norchad Omier",
-        "position": "",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3475"
-      },
-      "stats": {
-        "min": 0.94,
-        "fpts": 0.9,
-        "pts": 0.4,
-        "reb": 0.3,
-        "ast": 0.1,
-        "stl": 0.0,
-        "blk": 0.0,
-        "to": 0.0,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "john poulakidas": {
+    "kasparas jakucionis": {
       "info": {
-        "player": "John Poulakidas",
-        "position": "",
-        "team": "DAL",
+        "player": "Kasparas Jakucionis",
+        "position": "SG",
+        "team": "MIL",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3477"
+        "slateId": "1057590",
+        "fdId": "3432"
       },
       "stats": {
-        "min": 7.68,
-        "fpts": 6.5,
+        "min": 11.35,
+        "fpts": 9.8,
+        "pts": 4.3,
+        "reb": 1.7,
+        "ast": 1.8,
+        "stl": 0.4,
+        "blk": 0.1,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kam jones": {
+      "info": {
+        "player": "Kam Jones",
+        "position": "PG",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3439"
+      },
+      "stats": {
+        "min": 11.94,
+        "fpts": 9.5,
+        "pts": 3.8,
+        "reb": 1.3,
+        "ast": 2.4,
+        "stl": 0.4,
+        "blk": 0.0,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "cormac ryan": {
+      "info": {
+        "player": "Cormac Ryan",
+        "position": "SG",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3486"
+      },
+      "stats": {
+        "min": 17.75,
+        "fpts": 15.5,
+        "pts": 9.4,
+        "reb": 2.0,
+        "ast": 1.5,
+        "stl": 0.6,
+        "blk": 0.2,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "alex morales": {
+      "info": {
+        "player": "Alex Morales",
+        "position": "SG",
+        "team": "ORL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3487"
+      },
+      "stats": {
+        "min": 5.88,
+        "fpts": 4.9,
+        "pts": 2.5,
+        "reb": 0.8,
+        "ast": 0.8,
+        "stl": 0.2,
+        "blk": 0.0,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "brayden burries": {
+      "info": {
+        "player": "Brayden Burries",
+        "position": "",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3521"
+      },
+      "stats": {
+        "min": 11.64,
+        "fpts": 11.0,
+        "pts": 5.4,
+        "reb": 2.5,
+        "ast": 1.2,
+        "stl": 0.4,
+        "blk": 0.1,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "nate ament": {
+      "info": {
+        "player": "Nate Ament",
+        "position": "",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3523"
+      },
+      "stats": {
+        "min": 8.88,
+        "fpts": 7.4,
+        "pts": 4.0,
+        "reb": 1.6,
+        "ast": 0.5,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "bogoljub markovic": {
+      "info": {
+        "player": "Bogoljub Markovic",
+        "position": "",
+        "team": "MIL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3547"
+      },
+      "stats": {
+        "min": 3.1,
+        "fpts": 2.8,
+        "pts": 1.3,
+        "reb": 0.7,
+        "ast": 0.2,
+        "stl": 0.1,
+        "blk": 0.1,
+        "to": 0.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kevin durant": {
+      "info": {
+        "player": "Kevin Durant",
+        "position": "SF",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "77"
+      },
+      "stats": {
+        "min": 27.1,
+        "fpts": 31.3,
+        "pts": 19.4,
+        "reb": 4.1,
+        "ast": 3.5,
+        "stl": 0.6,
+        "blk": 0.7,
+        "to": 2.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "steven adams": {
+      "info": {
+        "player": "Steven Adams",
+        "position": "C",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2163"
+      },
+      "stats": {
+        "min": 17.69,
+        "fpts": 17.2,
+        "pts": 5.7,
+        "reb": 6.2,
+        "ast": 1.3,
+        "stl": 0.5,
+        "blk": 0.5,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "marcus smart": {
+      "info": {
+        "player": "Marcus Smart",
+        "position": "PG",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2254"
+      },
+      "stats": {
+        "min": 19.28,
+        "fpts": 15.0,
+        "pts": 7.3,
+        "reb": 1.9,
+        "ast": 2.1,
+        "stl": 0.9,
+        "blk": 0.2,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jusuf nurkic": {
+      "info": {
+        "player": "Jusuf Nurkic",
+        "position": "C",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2263"
+      },
+      "stats": {
+        "min": 18.52,
+        "fpts": 21.6,
+        "pts": 6.5,
+        "reb": 7.0,
+        "ast": 3.1,
+        "stl": 0.8,
+        "blk": 0.4,
+        "to": 1.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "clint capela": {
+      "info": {
+        "player": "Clint Capela",
+        "position": "C",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2272"
+      },
+      "stats": {
+        "min": 12.07,
+        "fpts": 13.4,
         "pts": 3.9,
-        "reb": 0.9,
+        "reb": 4.3,
+        "ast": 0.8,
+        "stl": 0.4,
+        "blk": 0.8,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "fred vanvleet": {
+      "info": {
+        "player": "Fred VanVleet",
+        "position": "PG",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2494"
+      },
+      "stats": {
+        "min": 24.14,
+        "fpts": 24.9,
+        "pts": 11.9,
+        "reb": 2.9,
+        "ast": 4.8,
+        "stl": 1.0,
+        "blk": 0.2,
+        "to": 1.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "lauri markkanen": {
+      "info": {
+        "player": "Lauri Markkanen",
+        "position": "PF",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2518"
+      },
+      "stats": {
+        "min": 20.39,
+        "fpts": 20.8,
+        "pts": 12.1,
+        "reb": 4.1,
+        "ast": 1.3,
+        "stl": 0.6,
+        "blk": 0.3,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "bogdan bogdanovic": {
+      "info": {
+        "player": "Bogdan Bogdanovic",
+        "position": "SF",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2573"
+      },
+      "stats": {
+        "min": 9.08,
+        "fpts": 7.6,
+        "pts": 4.1,
+        "reb": 1.1,
+        "ast": 1.0,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "mohamed bamba": {
+      "info": {
+        "player": "Mohamed Bamba",
+        "position": "C",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2647"
+      },
+      "stats": {
+        "min": 10.56,
+        "fpts": 10.8,
+        "pts": 3.6,
+        "reb": 3.5,
+        "ast": 0.5,
+        "stl": 0.3,
+        "blk": 0.6,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jaren jackson jr.": {
+      "info": {
+        "player": "Jaren Jackson Jr.",
+        "position": "PF",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2654"
+      },
+      "stats": {
+        "min": 17.47,
+        "fpts": 17.4,
+        "pts": 8.9,
+        "reb": 3.3,
+        "ast": 1.1,
+        "stl": 0.6,
+        "blk": 0.8,
+        "to": 1.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "josh okogie": {
+      "info": {
+        "player": "Josh Okogie",
+        "position": "SF",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2661"
+      },
+      "stats": {
+        "min": 12.82,
+        "fpts": 8.0,
+        "pts": 3.1,
+        "reb": 1.9,
+        "ast": 0.7,
+        "stl": 0.5,
+        "blk": 0.2,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "sviatoslav mykhailiuk": {
+      "info": {
+        "player": "Sviatoslav Mykhailiuk",
+        "position": "PG",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2683"
+      },
+      "stats": {
+        "min": 11.21,
+        "fpts": 7.2,
+        "pts": 3.9,
+        "reb": 1.2,
+        "ast": 0.9,
+        "stl": 0.3,
+        "blk": 0.0,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jaxson hayes": {
+      "info": {
+        "player": "Jaxson Hayes",
+        "position": "C",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2757"
+      },
+      "stats": {
+        "min": 15.91,
+        "fpts": 13.4,
+        "pts": 5.2,
+        "reb": 3.6,
+        "ast": 0.8,
+        "stl": 0.4,
+        "blk": 0.7,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "josh green": {
+      "info": {
+        "player": "Josh Green",
+        "position": "SG",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2882"
+      },
+      "stats": {
+        "min": 10.03,
+        "fpts": 6.0,
+        "pts": 2.7,
+        "reb": 1.1,
+        "ast": 0.6,
+        "stl": 0.4,
+        "blk": 0.1,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jae'sean tate": {
+      "info": {
+        "player": "Jae'Sean Tate",
+        "position": "SF",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2925"
+      },
+      "stats": {
+        "min": 4.31,
+        "fpts": 3.1,
+        "pts": 1.6,
+        "reb": 0.8,
+        "ast": 0.3,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "alperen sengun": {
+      "info": {
+        "player": "Alperen Sengun",
+        "position": "C",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2977"
+      },
+      "stats": {
+        "min": 28.31,
+        "fpts": 37.2,
+        "pts": 17.0,
+        "reb": 7.4,
+        "ast": 5.4,
+        "stl": 1.0,
+        "blk": 0.9,
+        "to": 2.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jabari smith": {
+      "info": {
+        "player": "Jabari Smith",
+        "position": "PF",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3098"
+      },
+      "stats": {
+        "min": 28.15,
+        "fpts": 25.3,
+        "pts": 13.5,
+        "reb": 5.4,
+        "ast": 1.6,
+        "stl": 0.6,
+        "blk": 0.7,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tari eason": {
+      "info": {
+        "player": "Tari Eason",
+        "position": "PF",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3112"
+      },
+      "stats": {
+        "min": 20.23,
+        "fpts": 19.3,
+        "pts": 8.7,
+        "reb": 4.7,
+        "ast": 1.2,
+        "stl": 0.9,
+        "blk": 0.5,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "amen thompson": {
+      "info": {
+        "player": "Amen Thompson",
+        "position": "SG",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3192"
+      },
+      "stats": {
+        "min": 26.21,
+        "fpts": 26.9,
+        "pts": 12.6,
+        "reb": 5.1,
+        "ast": 3.7,
+        "stl": 1.0,
+        "blk": 0.4,
+        "to": 1.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "keyonte george": {
+      "info": {
+        "player": "Keyonte George",
+        "position": "PG",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3203"
+      },
+      "stats": {
+        "min": 21.56,
+        "fpts": 21.7,
+        "pts": 12.3,
+        "reb": 2.5,
+        "ast": 3.8,
+        "stl": 0.7,
+        "blk": 0.2,
+        "to": 2.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "brice sensabaugh": {
+      "info": {
+        "player": "Brice Sensabaugh",
+        "position": "SF",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3215"
+      },
+      "stats": {
+        "min": 11.4,
+        "fpts": 9.9,
+        "pts": 5.9,
+        "reb": 1.6,
+        "ast": 0.9,
+        "stl": 0.4,
+        "blk": 0.1,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "reed sheppard": {
+      "info": {
+        "player": "Reed Sheppard",
+        "position": "SG",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3290"
+      },
+      "stats": {
+        "min": 17.9,
+        "fpts": 19.1,
+        "pts": 9.9,
+        "reb": 2.0,
+        "ast": 2.4,
+        "stl": 1.0,
+        "blk": 0.4,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "isaiah collier": {
+      "info": {
+        "player": "Isaiah Collier",
+        "position": "PG",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3316"
+      },
+      "stats": {
+        "min": 10.96,
+        "fpts": 10.6,
+        "pts": 4.1,
+        "reb": 1.2,
+        "ast": 2.9,
+        "stl": 0.5,
+        "blk": 0.1,
+        "to": 1.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kyle filipowski": {
+      "info": {
+        "player": "Kyle Filipowski",
+        "position": "C",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3330"
+      },
+      "stats": {
+        "min": 9.53,
+        "fpts": 9.8,
+        "pts": 3.8,
+        "reb": 2.8,
+        "ast": 1.0,
+        "stl": 0.4,
+        "blk": 0.2,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "trey alexander": {
+      "info": {
+        "player": "Trey Alexander",
+        "position": "SG",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3339"
+      },
+      "stats": {
+        "min": 10.18,
+        "fpts": 8.0,
+        "pts": 3.9,
+        "reb": 1.2,
+        "ast": 0.9,
+        "stl": 0.4,
+        "blk": 0.2,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "harrison ingram": {
+      "info": {
+        "player": "Harrison Ingram",
+        "position": "SF",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3355"
+      },
+      "stats": {
+        "min": 2.68,
+        "fpts": 2.0,
+        "pts": 1.0,
+        "reb": 0.4,
+        "ast": 0.2,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "ace bailey": {
+      "info": {
+        "player": "Ace Bailey",
+        "position": "SF",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3412"
+      },
+      "stats": {
+        "min": 21.44,
+        "fpts": 17.4,
+        "pts": 8.8,
+        "reb": 3.4,
+        "ast": 1.4,
+        "stl": 0.6,
+        "blk": 0.6,
+        "to": 1.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "blake hinson": {
+      "info": {
+        "player": "Blake Hinson",
+        "position": "",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3470"
+      },
+      "stats": {
+        "min": 14.67,
+        "fpts": 12.5,
+        "pts": 7.2,
+        "reb": 2.0,
+        "ast": 1.1,
+        "stl": 0.4,
+        "blk": 0.2,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "sean pedulla": {
+      "info": {
+        "player": "Sean Pedulla",
+        "position": "",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3481"
+      },
+      "stats": {
+        "min": 3.01,
+        "fpts": 2.8,
+        "pts": 1.5,
+        "reb": 0.4,
+        "ast": 0.5,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "darryn peterson": {
+      "info": {
+        "player": "Darryn Peterson",
+        "position": "",
+        "team": "UTAH",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3518"
+      },
+      "stats": {
+        "min": 20.66,
+        "fpts": 16.8,
+        "pts": 7.7,
+        "reb": 2.7,
+        "ast": 2.4,
+        "stl": 0.7,
+        "blk": 0.4,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "bruce thornton": {
+      "info": {
+        "player": "Bruce Thornton",
+        "position": "PG",
+        "team": "HOU",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3527"
+      },
+      "stats": {
+        "min": 2.5,
+        "fpts": 2.4,
+        "pts": 1.3,
+        "reb": 0.3,
+        "ast": 0.4,
+        "stl": 0.1,
+        "blk": 0.0,
+        "to": 0.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "james harden": {
+      "info": {
+        "player": "James Harden",
+        "position": "PG",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "78"
+      },
+      "stats": {
+        "min": 22.78,
+        "fpts": 26.8,
+        "pts": 13.8,
+        "reb": 3.3,
+        "ast": 5.5,
+        "stl": 0.7,
+        "blk": 0.3,
+        "to": 2.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "klay thompson": {
+      "info": {
+        "player": "Klay Thompson",
+        "position": "SG",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "200"
+      },
+      "stats": {
+        "min": 18.74,
+        "fpts": 16.1,
+        "pts": 10.5,
+        "reb": 1.8,
+        "ast": 1.4,
+        "stl": 0.4,
+        "blk": 0.3,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "giannis antetokounmpo": {
+      "info": {
+        "player": "Giannis Antetokounmpo",
+        "position": "PF",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2166"
+      },
+      "stats": {
+        "min": 25.23,
+        "fpts": 40.0,
+        "pts": 20.6,
+        "reb": 8.4,
+        "ast": 4.9,
+        "stl": 0.8,
+        "blk": 0.7,
+        "to": 2.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tim hardaway jr.": {
+      "info": {
+        "player": "Tim Hardaway Jr.",
+        "position": "SG",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2175"
+      },
+      "stats": {
+        "min": 12.65,
+        "fpts": 9.9,
+        "pts": 6.4,
+        "reb": 1.3,
+        "ast": 0.7,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "andrew wiggins": {
+      "info": {
+        "player": "Andrew Wiggins",
+        "position": "SF",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2249"
+      },
+      "stats": {
+        "min": 19.95,
+        "fpts": 19.4,
+        "pts": 9.8,
+        "reb": 3.0,
+        "ast": 1.9,
+        "stl": 0.7,
+        "blk": 0.7,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "mario hezonja": {
+      "info": {
+        "player": "Mario Hezonja",
+        "position": "SF",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2330"
+      },
+      "stats": {
+        "min": 14.23,
+        "fpts": 13.4,
+        "pts": 6.2,
+        "reb": 3.2,
+        "ast": 1.6,
+        "stl": 0.5,
+        "blk": 0.1,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "bobby portis": {
+      "info": {
+        "player": "Bobby Portis",
+        "position": "C",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2347"
+      },
+      "stats": {
+        "min": 15.99,
+        "fpts": 16.9,
+        "pts": 8.6,
+        "reb": 4.5,
+        "ast": 1.2,
+        "stl": 0.4,
+        "blk": 0.2,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "donovan mitchell": {
+      "info": {
+        "player": "Donovan Mitchell",
+        "position": "SG",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2524"
+      },
+      "stats": {
+        "min": 22.49,
+        "fpts": 27.8,
+        "pts": 16.4,
+        "reb": 3.2,
+        "ast": 4.1,
+        "stl": 0.9,
+        "blk": 0.2,
+        "to": 1.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "bam adebayo": {
+      "info": {
+        "player": "Bam Adebayo",
+        "position": "C",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2525"
+      },
+      "stats": {
+        "min": 25.82,
+        "fpts": 32.2,
+        "pts": 15.4,
+        "reb": 7.9,
+        "ast": 2.8,
+        "stl": 0.9,
+        "blk": 0.6,
+        "to": 1.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jarrett allen": {
+      "info": {
+        "player": "Jarrett Allen",
+        "position": "C",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2533"
+      },
+      "stats": {
+        "min": 15.9,
+        "fpts": 17.7,
+        "pts": 7.6,
+        "reb": 5.0,
+        "ast": 1.1,
+        "stl": 0.5,
+        "blk": 0.6,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "thomas bryant": {
+      "info": {
+        "player": "Thomas Bryant",
+        "position": "C",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2553"
+      },
+      "stats": {
+        "min": 9.72,
+        "fpts": 10.1,
+        "pts": 4.7,
+        "reb": 2.7,
+        "ast": 0.5,
+        "stl": 0.2,
+        "blk": 0.4,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "sam merrill": {
+      "info": {
+        "player": "Sam Merrill",
+        "position": "SG",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2921"
+      },
+      "stats": {
+        "min": 17.26,
+        "fpts": 13.9,
+        "pts": 8.0,
+        "reb": 1.8,
+        "ast": 1.7,
+        "stl": 0.5,
+        "blk": 0.1,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "evan mobley": {
+      "info": {
+        "player": "Evan Mobley",
+        "position": "PF",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2965"
+      },
+      "stats": {
+        "min": 21.51,
+        "fpts": 25.6,
+        "pts": 10.9,
+        "reb": 6.1,
+        "ast": 2.6,
+        "stl": 0.5,
+        "blk": 1.1,
+        "to": 1.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "davion mitchell": {
+      "info": {
+        "player": "Davion Mitchell",
+        "position": "PG",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2971"
+      },
+      "stats": {
+        "min": 26.28,
+        "fpts": 23.7,
+        "pts": 9.3,
+        "reb": 2.4,
+        "ast": 6.5,
+        "stl": 0.9,
+        "blk": 0.2,
+        "to": 1.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "nikola jovic": {
+      "info": {
+        "player": "Nikola Jovic",
+        "position": "PF",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3122"
+      },
+      "stats": {
+        "min": 8.22,
+        "fpts": 8.0,
+        "pts": 3.5,
+        "reb": 1.6,
+        "ast": 1.1,
+        "stl": 0.3,
+        "blk": 0.2,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "peyton watson": {
+      "info": {
+        "player": "Peyton Watson",
+        "position": "SF",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3125"
+      },
+      "stats": {
+        "min": 17.95,
+        "fpts": 16.5,
+        "pts": 7.9,
+        "reb": 3.0,
+        "ast": 1.5,
+        "stl": 0.6,
+        "blk": 0.7,
+        "to": 1.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "khalifa diop": {
+      "info": {
+        "player": "Khalifa Diop",
+        "position": "",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3134"
+      },
+      "stats": {
+        "min": 5.0,
+        "fpts": 5.5,
+        "pts": 2.2,
+        "reb": 1.6,
+        "ast": 0.5,
+        "stl": 0.1,
+        "blk": 0.2,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "simone fontecchio": {
+      "info": {
+        "player": "Simone Fontecchio",
+        "position": "PF",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3153"
+      },
+      "stats": {
+        "min": 6.35,
+        "fpts": 6.2,
+        "pts": 3.3,
+        "reb": 1.2,
         "ast": 0.6,
         "stl": 0.2,
         "blk": 0.1,
@@ -1374,1077 +4022,703 @@
         "value": 0.0
       }
     },
-    "morez johnson jr.": {
+    "dru smith": {
       "info": {
-        "player": "Morez Johnson Jr.",
-        "position": "",
-        "team": "DAL",
+        "player": "Dru Smith",
+        "position": "PG",
+        "team": "MIA",
         "opp": "",
-        "slateId": "1057456",
-        "fdId": "3501"
+        "slateId": "1057590",
+        "fdId": "3159"
       },
       "stats": {
-        "min": 19.0,
-        "fpts": 16.1,
-        "pts": 7.6,
-        "reb": 4.1,
-        "ast": 1.5,
+        "min": 7.66,
+        "fpts": 7.6,
+        "pts": 2.8,
+        "reb": 1.2,
+        "ast": 1.3,
         "stl": 0.5,
+        "blk": 0.1,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "craig porter jr.": {
+      "info": {
+        "player": "Craig Porter Jr.",
+        "position": "PG",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3250"
+      },
+      "stats": {
+        "min": 8.68,
+        "fpts": 8.4,
+        "pts": 2.3,
+        "reb": 1.6,
+        "ast": 1.7,
+        "stl": 0.4,
         "blk": 0.3,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jaylon tyson": {
+      "info": {
+        "player": "Jaylon Tyson",
+        "position": "SF",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3307"
+      },
+      "stats": {
+        "min": 14.49,
+        "fpts": 12.9,
+        "pts": 6.6,
+        "reb": 2.7,
+        "ast": 1.4,
+        "stl": 0.4,
+        "blk": 0.2,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "pelle larsson": {
+      "info": {
+        "player": "Pelle Larsson",
+        "position": "SG",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3318"
+      },
+      "stats": {
+        "min": 23.31,
+        "fpts": 19.9,
+        "pts": 9.9,
+        "reb": 3.1,
+        "ast": 3.2,
+        "stl": 0.7,
+        "blk": 0.2,
+        "to": 1.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "riley minix": {
+      "info": {
+        "player": "Riley Minix",
+        "position": "SF",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3354"
+      },
+      "stats": {
+        "min": 5.88,
+        "fpts": 5.3,
+        "pts": 2.5,
+        "reb": 1.2,
+        "ast": 0.5,
+        "stl": 0.2,
+        "blk": 0.1,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "keshad johnson": {
+      "info": {
+        "player": "Keshad Johnson",
+        "position": "SF",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3364"
+      },
+      "stats": {
+        "min": 10.67,
+        "fpts": 9.9,
+        "pts": 4.9,
+        "reb": 2.2,
+        "ast": 0.5,
+        "stl": 0.4,
+        "blk": 0.3,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "nae'qwan tomlin": {
+      "info": {
+        "player": "Nae'Qwan Tomlin",
+        "position": "PF",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3376"
+      },
+      "stats": {
+        "min": 13.31,
+        "fpts": 11.2,
+        "pts": 4.7,
+        "reb": 2.6,
+        "ast": 0.8,
+        "stl": 0.5,
+        "blk": 0.4,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tyrese proctor": {
+      "info": {
+        "player": "Tyrese Proctor",
+        "position": "PG",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3407"
+      },
+      "stats": {
+        "min": 11.28,
+        "fpts": 10.0,
+        "pts": 5.3,
+        "reb": 1.4,
+        "ast": 1.7,
+        "stl": 0.4,
+        "blk": 0.0,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "myron gardner": {
+      "info": {
+        "player": "Myron Gardner",
+        "position": "SF",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3433"
+      },
+      "stats": {
+        "min": 2.92,
+        "fpts": 3.1,
+        "pts": 1.2,
+        "reb": 0.8,
+        "ast": 0.3,
+        "stl": 0.1,
+        "blk": 0.1,
+        "to": 0.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "vladislav goldin": {
+      "info": {
+        "player": "Vladislav Goldin",
+        "position": "C",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3434"
+      },
+      "stats": {
+        "min": 1.92,
+        "fpts": 2.4,
+        "pts": 0.9,
+        "reb": 0.6,
+        "ast": 0.2,
+        "stl": 0.1,
+        "blk": 0.1,
+        "to": 0.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tristan enaruna": {
+      "info": {
+        "player": "Tristan Enaruna",
+        "position": "",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3465"
+      },
+      "stats": {
+        "min": 8.42,
+        "fpts": 7.0,
+        "pts": 3.4,
+        "reb": 1.5,
+        "ast": 0.7,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kadary richmond": {
+      "info": {
+        "player": "Kadary Richmond",
+        "position": "",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3469"
+      },
+      "stats": {
+        "min": 16.46,
+        "fpts": 14.7,
+        "pts": 6.9,
+        "reb": 2.4,
+        "ast": 2.0,
+        "stl": 0.7,
+        "blk": 0.2,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "bez mbeng": {
+      "info": {
+        "player": "Bez Mbeng",
+        "position": "",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3482"
+      },
+      "stats": {
+        "min": 27.65,
+        "fpts": 22.1,
+        "pts": 8.8,
+        "reb": 3.3,
+        "ast": 3.7,
+        "stl": 1.4,
+        "blk": 0.3,
+        "to": 1.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "ryan conwell": {
+      "info": {
+        "player": "Ryan Conwell",
+        "position": "",
+        "team": "MIA",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3508"
+      },
+      "stats": {
+        "min": 6.64,
+        "fpts": 5.9,
+        "pts": 3.0,
+        "reb": 0.9,
+        "ast": 0.8,
+        "stl": 0.2,
+        "blk": 0.1,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "meleek thomas": {
+      "info": {
+        "player": "Meleek Thomas",
+        "position": "",
+        "team": "CLE",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3546"
+      },
+      "stats": {
+        "min": 14.65,
+        "fpts": 12.7,
+        "pts": 7.3,
+        "reb": 1.9,
+        "ast": 1.2,
+        "stl": 0.5,
+        "blk": 0.2,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "deandre jordan": {
+      "info": {
+        "player": "DeAndre Jordan",
+        "position": "C",
+        "team": "NO",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "186"
+      },
+      "stats": {
+        "min": 11.9,
+        "fpts": 12.8,
+        "pts": 4.5,
+        "reb": 4.2,
+        "ast": 0.8,
+        "stl": 0.3,
+        "blk": 0.6,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jerami grant": {
+      "info": {
+        "player": "Jerami Grant",
+        "position": "PF",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2284"
+      },
+      "stats": {
+        "min": 15.98,
+        "fpts": 15.5,
+        "pts": 10.0,
+        "reb": 1.9,
+        "ast": 1.3,
+        "stl": 0.4,
+        "blk": 0.4,
         "to": 1.1,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "isaiah evans": {
+    "dejounte murray": {
       "info": {
-        "player": "Isaiah Evans",
-        "position": "SG",
-        "team": "MIN",
-        "opp": "",
-        "slateId": "1057456",
-        "fdId": "3532"
-      },
-      "stats": {
-        "min": 0.62,
-        "fpts": 0.6,
-        "pts": 0.3,
-        "reb": 0.1,
-        "ast": 0.1,
-        "stl": 0.0,
-        "blk": 0.0,
-        "to": 0.0,
-        "salary": 3500.0,
-        "value": 0.17
-      }
-    },
-    "kentavious caldwell-pope": {
-      "info": {
-        "player": "Kentavious Caldwell-Pope",
-        "position": "SG",
-        "team": "PHI",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "2159"
-      },
-      "stats": {
-        "min": 20.0,
-        "fpts": 15.0,
-        "pts": 6.8,
-        "reb": 2.3,
-        "ast": 2.5,
-        "stl": 0.7,
-        "blk": 0.2,
-        "to": 1.0,
-        "salary": 2400.0,
-        "value": 6.25
-      }
-    },
-    "joel embiid": {
-      "info": {
-        "player": "Joel Embiid",
-        "position": "C",
-        "team": "PHI",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "2251"
-      },
-      "stats": {
-        "min": 32.0,
-        "fpts": 40.3,
-        "pts": 20.9,
-        "reb": 8.4,
-        "ast": 4.2,
-        "stl": 0.6,
-        "blk": 1.3,
-        "to": 2.7,
-        "salary": 12000.0,
-        "value": 3.36
-      }
-    },
-    "kyle anderson": {
-      "info": {
-        "player": "Kyle Anderson",
-        "position": "PF",
-        "team": "TOR",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "2276"
-      },
-      "stats": {
-        "min": 6.89,
-        "fpts": 6.3,
-        "pts": 2.3,
-        "reb": 1.2,
-        "ast": 1.0,
-        "stl": 0.3,
-        "blk": 0.2,
-        "to": 0.4,
-        "salary": 1400.0,
-        "value": 4.5
-      }
-    },
-    "jaylen brown": {
-      "info": {
-        "player": "Jaylen Brown",
-        "position": "SF",
-        "team": "PHI",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "2417"
-      },
-      "stats": {
-        "min": 35.0,
-        "fpts": 40.8,
-        "pts": 23.4,
-        "reb": 7.1,
-        "ast": 5.3,
-        "stl": 1.0,
-        "blk": 0.4,
-        "to": 3.3,
-        "salary": 11800.0,
-        "value": 3.46
-      }
-    },
-    "jakob poeltl": {
-      "info": {
-        "player": "Jakob Poeltl",
-        "position": "C",
-        "team": "TOR",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "2423"
-      },
-      "stats": {
-        "min": 30.0,
-        "fpts": 31.5,
-        "pts": 12.8,
-        "reb": 8.9,
-        "ast": 2.5,
-        "stl": 1.0,
-        "blk": 1.0,
-        "to": 1.7,
-        "salary": 5400.0,
-        "value": 5.83
-      }
-    },
-    "anfernee simons": {
-      "info": {
-        "player": "Anfernee Simons",
-        "position": "SG",
-        "team": "PHI",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "2649"
-      },
-      "stats": {
-        "min": 22.0,
-        "fpts": 17.6,
-        "pts": 10.6,
-        "reb": 2.2,
-        "ast": 2.2,
-        "stl": 0.5,
-        "blk": 0.2,
-        "to": 1.0,
-        "salary": 4000.0,
-        "value": 4.4
-      }
-    },
-    "rj barrett": {
-      "info": {
-        "player": "RJ Barrett",
-        "position": "SG",
-        "team": "TOR",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "2752"
-      },
-      "stats": {
-        "min": 36.0,
-        "fpts": 38.8,
-        "pts": 22.6,
-        "reb": 6.6,
-        "ast": 4.2,
-        "stl": 0.9,
-        "blk": 0.5,
-        "to": 2.2,
-        "salary": 9800.0,
-        "value": 3.96
-      }
-    },
-    "dean wade": {
-      "info": {
-        "player": "Dean Wade",
-        "position": "PF",
-        "team": "PHI",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "2838"
-      },
-      "stats": {
-        "min": 27.0,
-        "fpts": 19.8,
-        "pts": 6.7,
-        "reb": 5.1,
-        "ast": 2.0,
-        "stl": 0.9,
-        "blk": 0.6,
-        "to": 0.5,
-        "salary": 3000.0,
-        "value": 6.6
-      }
-    },
-    "tyrese maxey": {
-      "info": {
-        "player": "Tyrese Maxey",
+        "player": "Dejounte Murray",
         "position": "PG",
-        "team": "PHI",
+        "team": "NO",
         "opp": "",
-        "slateId": "1057350",
-        "fdId": "2885"
+        "slateId": "1057590",
+        "fdId": "2443"
       },
       "stats": {
-        "min": 36.0,
-        "fpts": 42.2,
-        "pts": 22.7,
-        "reb": 4.1,
-        "ast": 6.4,
-        "stl": 1.6,
-        "blk": 0.8,
-        "to": 2.2,
-        "salary": 14000.0,
-        "value": 3.01
-      }
-    },
-    "immanuel quickley": {
-      "info": {
-        "player": "Immanuel Quickley",
-        "position": "PG",
-        "team": "TOR",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "2889"
-      },
-      "stats": {
-        "min": 33.0,
-        "fpts": 35.1,
-        "pts": 17.6,
-        "reb": 4.4,
-        "ast": 6.5,
-        "stl": 1.3,
-        "blk": 0.1,
-        "to": 1.7,
-        "salary": 8000.0,
-        "value": 4.39
-      }
-    },
-    "jabari walker": {
-      "info": {
-        "player": "Jabari Walker",
-        "position": "C",
-        "team": "PHI",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "3151"
-      },
-      "stats": {
-        "min": 3.6,
-        "fpts": 3.1,
-        "pts": 1.2,
-        "reb": 0.9,
-        "ast": 0.2,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.1,
-        "salary": 2000.0,
-        "value": 1.55
-      }
-    },
-    "dominick barlow": {
-      "info": {
-        "player": "Dominick Barlow",
-        "position": "PF",
-        "team": "PHI",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "3165"
-      },
-      "stats": {
-        "min": 9.21,
-        "fpts": 7.2,
-        "pts": 2.7,
-        "reb": 1.9,
-        "ast": 0.5,
-        "stl": 0.3,
+        "min": 24.13,
+        "fpts": 27.3,
+        "pts": 12.6,
+        "reb": 4.3,
+        "ast": 4.9,
+        "stl": 1.2,
         "blk": 0.3,
-        "to": 0.3,
-        "salary": 1000.0,
-        "value": 7.2
+        "to": 2.3,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "andre jackson jr.": {
+    "zion williamson": {
       "info": {
-        "player": "Andre Jackson Jr.",
-        "position": "",
-        "team": "TOR",
+        "player": "Zion Williamson",
+        "position": "PF",
+        "team": "NO",
         "opp": "",
-        "slateId": "1057350",
-        "fdId": "3223"
+        "slateId": "1057590",
+        "fdId": "2750"
       },
       "stats": {
-        "min": 9.8,
-        "fpts": 8.1,
-        "pts": 3.6,
-        "reb": 1.7,
-        "ast": 1.1,
+        "min": 23.69,
+        "fpts": 26.5,
+        "pts": 15.1,
+        "reb": 4.4,
+        "ast": 2.5,
+        "stl": 0.9,
+        "blk": 0.4,
+        "to": 1.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "ty jerome": {
+      "info": {
+        "player": "Ty Jerome",
+        "position": "PG",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2773"
+      },
+      "stats": {
+        "min": 18.5,
+        "fpts": 25.1,
+        "pts": 14.4,
+        "reb": 2.3,
+        "ast": 4.2,
+        "stl": 0.8,
+        "blk": 0.2,
+        "to": 1.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jordan poole": {
+      "info": {
+        "player": "Jordan Poole",
+        "position": "PG",
+        "team": "NO",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2777"
+      },
+      "stats": {
+        "min": 12.87,
+        "fpts": 11.8,
+        "pts": 6.9,
+        "reb": 1.2,
+        "ast": 1.7,
         "stl": 0.4,
+        "blk": 0.2,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "isaiah stewart": {
+      "info": {
+        "player": "Isaiah Stewart",
+        "position": "C",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2880"
+      },
+      "stats": {
+        "min": 11.44,
+        "fpts": 11.5,
+        "pts": 5.4,
+        "reb": 2.6,
+        "ast": 0.6,
+        "stl": 0.2,
+        "blk": 0.7,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "saddiq bey": {
+      "info": {
+        "player": "Saddiq Bey",
+        "position": "SF",
+        "team": "NO",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2883"
+      },
+      "stats": {
+        "min": 20.85,
+        "fpts": 20.0,
+        "pts": 11.4,
+        "reb": 3.6,
+        "ast": 1.7,
+        "stl": 0.7,
         "blk": 0.1,
         "to": 0.7,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "rayan rupert": {
+    "herbert jones": {
       "info": {
-        "player": "Rayan Rupert",
-        "position": "SG",
-        "team": "PHI",
+        "player": "Herbert Jones",
+        "position": "PF",
+        "team": "NO",
         "opp": "",
-        "slateId": "1057350",
-        "fdId": "3245"
+        "slateId": "1057590",
+        "fdId": "2992"
       },
       "stats": {
-        "min": 11.98,
-        "fpts": 8.8,
-        "pts": 3.6,
-        "reb": 2.2,
-        "ast": 0.9,
-        "stl": 0.5,
-        "blk": 0.1,
-        "to": 0.6,
-        "salary": 1000.0,
-        "value": 8.8
-      }
-    },
-    "ja'kobe walter": {
-      "info": {
-        "player": "Ja'Kobe Walter",
-        "position": "SG",
-        "team": "TOR",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "3306"
-      },
-      "stats": {
-        "min": 31.0,
-        "fpts": 25.1,
-        "pts": 12.5,
-        "reb": 4.2,
-        "ast": 2.1,
-        "stl": 1.4,
-        "blk": 0.4,
-        "to": 1.0,
-        "salary": 4800.0,
-        "value": 5.23
-      }
-    },
-    "jamal shead": {
-      "info": {
-        "player": "Jamal Shead",
-        "position": "PG",
-        "team": "TOR",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "3328"
-      },
-      "stats": {
-        "min": 28.0,
-        "fpts": 25.1,
-        "pts": 9.1,
-        "reb": 2.3,
-        "ast": 7.1,
-        "stl": 1.2,
+        "min": 18.94,
+        "fpts": 14.4,
+        "pts": 6.1,
+        "reb": 2.4,
+        "ast": 1.8,
+        "stl": 0.9,
         "blk": 0.3,
-        "to": 1.9,
-        "salary": 6400.0,
-        "value": 3.92
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "jamison battle": {
+    "trey murphy iii": {
       "info": {
-        "player": "Jamison Battle",
-        "position": "SF",
-        "team": "TOR",
+        "player": "Trey Murphy III",
+        "position": "SG",
+        "team": "NO",
         "opp": "",
-        "slateId": "1057350",
-        "fdId": "3334"
+        "slateId": "1057590",
+        "fdId": "3015"
       },
       "stats": {
-        "min": 24.0,
-        "fpts": 18.5,
-        "pts": 10.4,
-        "reb": 4.0,
-        "ast": 1.3,
+        "min": 24.42,
+        "fpts": 24.9,
+        "pts": 14.0,
+        "reb": 3.8,
+        "ast": 2.6,
+        "stl": 1.0,
+        "blk": 0.2,
+        "to": 1.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "bennedict mathurin": {
+      "info": {
+        "player": "Bennedict Mathurin",
+        "position": "SG",
+        "team": "NO",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3101"
+      },
+      "stats": {
+        "min": 12.7,
+        "fpts": 11.8,
+        "pts": 6.9,
+        "reb": 2.2,
+        "ast": 1.1,
+        "stl": 0.4,
+        "blk": 0.1,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "bryce mcgowens": {
+      "info": {
+        "player": "Bryce McGowens",
+        "position": "SG",
+        "team": "NO",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3135"
+      },
+      "stats": {
+        "min": 10.02,
+        "fpts": 7.6,
+        "pts": 3.9,
+        "reb": 1.1,
+        "ast": 0.8,
+        "stl": 0.4,
+        "blk": 0.1,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "scotty pippen jr.": {
+      "info": {
+        "player": "Scotty Pippen Jr.",
+        "position": "PG",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3154"
+      },
+      "stats": {
+        "min": 10.92,
+        "fpts": 11.6,
+        "pts": 5.4,
+        "reb": 1.2,
+        "ast": 2.3,
         "stl": 0.6,
         "blk": 0.2,
         "to": 1.1,
-        "salary": 2800.0,
-        "value": 6.61
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "justin edwards": {
+    "taylor hendricks": {
       "info": {
-        "player": "Justin Edwards",
-        "position": "SF",
-        "team": "PHI",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "3361"
-      },
-      "stats": {
-        "min": 3.67,
-        "fpts": 2.7,
-        "pts": 1.3,
-        "reb": 0.4,
-        "ast": 0.3,
-        "stl": 0.2,
-        "blk": 0.0,
-        "to": 0.1,
-        "salary": 1000.0,
-        "value": 2.7
-      }
-    },
-    "collin murray-boyles": {
-      "info": {
-        "player": "Collin Murray-Boyles",
+        "player": "Taylor Hendricks",
         "position": "PF",
-        "team": "TOR",
+        "team": "MEM",
         "opp": "",
-        "slateId": "1057350",
-        "fdId": "3413"
+        "slateId": "1057590",
+        "fdId": "3197"
       },
       "stats": {
-        "min": 28.0,
-        "fpts": 28.4,
-        "pts": 11.4,
-        "reb": 6.7,
-        "ast": 2.4,
-        "stl": 1.0,
-        "blk": 1.3,
-        "to": 1.5,
-        "salary": 5600.0,
-        "value": 5.07
-      }
-    },
-    "vj edgecombe": {
-      "info": {
-        "player": "VJ Edgecombe",
-        "position": "SG",
-        "team": "PHI",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "3423"
-      },
-      "stats": {
-        "min": 33.0,
-        "fpts": 29.3,
-        "pts": 12.9,
-        "reb": 5.6,
-        "ast": 4.1,
-        "stl": 1.2,
-        "blk": 0.5,
-        "to": 1.6,
-        "salary": 7400.0,
-        "value": 3.96
-      }
-    },
-    "caleb love": {
-      "info": {
-        "player": "Caleb Love",
-        "position": "SG",
-        "team": "PHI",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "3451"
-      },
-      "stats": {
-        "min": 3.75,
-        "fpts": 2.9,
-        "pts": 1.6,
-        "reb": 0.4,
+        "min": 8.62,
+        "fpts": 7.6,
+        "pts": 3.6,
+        "reb": 1.8,
         "ast": 0.5,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.2,
-        "salary": 1000.0,
-        "value": 2.9
+        "stl": 0.3,
+        "blk": 0.2,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
       }
     },
-    "alijah martin": {
+    "jordan hawkins": {
       "info": {
-        "player": "Alijah Martin",
+        "player": "Jordan Hawkins",
         "position": "SG",
-        "team": "TOR",
+        "team": "MEM",
         "opp": "",
-        "slateId": "1057350",
-        "fdId": "3463"
+        "slateId": "1057590",
+        "fdId": "3202"
       },
       "stats": {
-        "min": 4.12,
-        "fpts": 3.4,
-        "pts": 1.8,
-        "reb": 0.6,
-        "ast": 0.4,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.3,
-        "salary": 3400.0,
-        "value": 1.0
-      }
-    },
-    "allen graves": {
-      "info": {
-        "player": "Allen Graves",
-        "position": "",
-        "team": "TOR",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "3511"
-      },
-      "stats": {
-        "min": 6.8,
-        "fpts": 6.8,
-        "pts": 2.9,
-        "reb": 1.6,
-        "ast": 0.5,
-        "stl": 0.2,
-        "blk": 0.3,
-        "to": 0.3,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "labaron philon jr.": {
-      "info": {
-        "player": "Labaron Philon Jr.",
-        "position": "",
-        "team": "PHI",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "3513"
-      },
-      "stats": {
-        "min": 2.78,
-        "fpts": 2.3,
-        "pts": 1.1,
-        "reb": 0.4,
-        "ast": 0.4,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.2,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "jaden bradley": {
-      "info": {
-        "player": "Jaden Bradley",
-        "position": "PG",
-        "team": "TOR",
-        "opp": "",
-        "slateId": "1057350",
-        "fdId": "3535"
-      },
-      "stats": {
-        "min": 2.4,
-        "fpts": 2.4,
-        "pts": 1.2,
-        "reb": 0.4,
-        "ast": 0.4,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.2,
-        "salary": 1000.0,
-        "value": 2.4
-      }
-    },
-    "khris middleton": {
-      "info": {
-        "player": "Khris Middleton",
-        "position": "SF",
-        "team": "WSH",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2081"
-      },
-      "stats": {
-        "min": 2.73,
-        "fpts": 2.0,
-        "pts": 1.0,
-        "reb": 0.4,
-        "ast": 0.3,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.2,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "anthony davis": {
-      "info": {
-        "player": "Anthony Davis",
-        "position": "PF",
-        "team": "WSH",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2137"
-      },
-      "stats": {
-        "min": 34.0,
-        "fpts": 39.5,
-        "pts": 17.1,
-        "reb": 10.8,
-        "ast": 2.6,
-        "stl": 1.2,
-        "blk": 1.3,
-        "to": 2.0,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "gary harris": {
-      "info": {
-        "player": "Gary Harris",
-        "position": "",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2266"
-      },
-      "stats": {
-        "min": 4.14,
-        "fpts": 2.6,
-        "pts": 1.2,
-        "reb": 0.4,
-        "ast": 0.3,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.1,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "taurean prince": {
-      "info": {
-        "player": "Taurean Prince",
-        "position": "SF",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2426"
-      },
-      "stats": {
-        "min": 7.07,
-        "fpts": 5.7,
+        "min": 7.41,
+        "fpts": 5.6,
         "pts": 3.1,
         "reb": 1.0,
         "ast": 0.5,
         "stl": 0.2,
         "blk": 0.1,
-        "to": 0.3,
+        "to": 0.4,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "john collins": {
+    "kris murray": {
       "info": {
-        "player": "John Collins",
-        "position": "PF",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2530"
-      },
-      "stats": {
-        "min": 26.0,
-        "fpts": 23.6,
-        "pts": 12.6,
-        "reb": 5.5,
-        "ast": 1.0,
-        "stl": 0.7,
-        "blk": 0.7,
-        "to": 1.3,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "trae young": {
-      "info": {
-        "player": "Trae Young",
-        "position": "PG",
-        "team": "WSH",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2637"
-      },
-      "stats": {
-        "min": 34.5,
-        "fpts": 36.2,
-        "pts": 17.6,
-        "reb": 3.1,
-        "ast": 9.0,
-        "stl": 1.2,
-        "blk": 0.2,
-        "to": 2.8,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "deandre ayton": {
-      "info": {
-        "player": "Deandre Ayton",
-        "position": "C",
-        "team": "WSH",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2641"
-      },
-      "stats": {
-        "min": 3.55,
-        "fpts": 3.1,
-        "pts": 1.3,
-        "reb": 1.0,
-        "ast": 0.1,
-        "stl": 0.1,
-        "blk": 0.1,
-        "to": 0.2,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "kevin huerter": {
-      "info": {
-        "player": "Kevin Huerter",
-        "position": "SG",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2660"
-      },
-      "stats": {
-        "min": 20.0,
-        "fpts": 18.5,
-        "pts": 9.1,
-        "reb": 3.1,
-        "ast": 2.2,
-        "stl": 0.7,
-        "blk": 0.4,
-        "to": 0.9,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "duncan robinson": {
-      "info": {
-        "player": "Duncan Robinson",
-        "position": "SG",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2710"
-      },
-      "stats": {
-        "min": 33.0,
-        "fpts": 26.0,
-        "pts": 16.0,
-        "reb": 3.4,
-        "ast": 2.4,
-        "stl": 0.8,
-        "blk": 0.3,
-        "to": 1.0,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "javonte green": {
-      "info": {
-        "player": "Javonte Green",
-        "position": "SG",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2809"
-      },
-      "stats": {
-        "min": 6.27,
-        "fpts": 5.2,
-        "pts": 2.6,
-        "reb": 1.0,
-        "ast": 0.3,
-        "stl": 0.3,
-        "blk": 0.1,
-        "to": 0.2,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "paul reed": {
-      "info": {
-        "player": "Paul Reed",
-        "position": "C",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2919"
-      },
-      "stats": {
-        "min": 22.0,
-        "fpts": 27.9,
-        "pts": 11.4,
-        "reb": 6.8,
-        "ast": 1.9,
-        "stl": 1.0,
-        "blk": 1.3,
-        "to": 1.4,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "cade cunningham": {
-      "info": {
-        "player": "Cade Cunningham",
-        "position": "PG",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2963"
-      },
-      "stats": {
-        "min": 34.5,
-        "fpts": 48.0,
-        "pts": 23.8,
-        "reb": 5.8,
-        "ast": 9.3,
-        "stl": 1.4,
-        "blk": 0.9,
-        "to": 3.6,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "tre mann": {
-      "info": {
-        "player": "Tre Mann",
-        "position": "PG",
-        "team": "WSH",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "2978"
-      },
-      "stats": {
-        "min": 0.6,
-        "fpts": 0.5,
-        "pts": 0.2,
-        "reb": 0.1,
-        "ast": 0.1,
-        "stl": 0.0,
-        "blk": 0.0,
-        "to": 0.0,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "ausar thompson": {
-      "info": {
-        "player": "Ausar Thompson",
+        "player": "Kris Murray",
         "position": "SF",
-        "team": "DET",
+        "team": "MEM",
         "opp": "",
-        "slateId": "1057290",
-        "fdId": "3193"
+        "slateId": "1057590",
+        "fdId": "3210"
       },
       "stats": {
-        "min": 29.5,
-        "fpts": 31.3,
-        "pts": 11.2,
-        "reb": 6.7,
-        "ast": 3.6,
-        "stl": 1.8,
-        "blk": 1.0,
-        "to": 1.7,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "bilal coulibaly": {
-      "info": {
-        "player": "Bilal Coulibaly",
-        "position": "SF",
-        "team": "WSH",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "3195"
-      },
-      "stats": {
-        "min": 24.0,
-        "fpts": 20.8,
-        "pts": 8.9,
-        "reb": 3.7,
-        "ast": 2.0,
-        "stl": 1.1,
-        "blk": 0.8,
-        "to": 1.2,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "alexandre sarr": {
-      "info": {
-        "player": "Alexandre Sarr",
-        "position": "C",
-        "team": "WSH",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "3289"
-      },
-      "stats": {
-        "min": 25.0,
-        "fpts": 28.0,
-        "pts": 11.6,
-        "reb": 6.3,
-        "ast": 2.3,
-        "stl": 0.8,
-        "blk": 1.5,
-        "to": 1.5,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "ron holland ii": {
-      "info": {
-        "player": "Ron Holland II",
-        "position": "SF",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "3292"
-      },
-      "stats": {
-        "min": 15.0,
-        "fpts": 13.6,
-        "pts": 6.3,
-        "reb": 3.1,
-        "ast": 1.0,
-        "stl": 0.7,
-        "blk": 0.3,
-        "to": 0.9,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "carlton carrington": {
-      "info": {
-        "player": "Carlton Carrington",
-        "position": "PG",
-        "team": "WSH",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "3301"
-      },
-      "stats": {
-        "min": 15.0,
-        "fpts": 11.1,
-        "pts": 5.3,
-        "reb": 1.7,
-        "ast": 2.3,
+        "min": 11.08,
+        "fpts": 7.7,
+        "pts": 3.1,
+        "reb": 1.8,
+        "ast": 0.7,
         "stl": 0.4,
-        "blk": 0.1,
-        "to": 1.2,
+        "blk": 0.2,
+        "to": 0.4,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "kyshawn george": {
+    "olivier-maxence prosper": {
       "info": {
-        "player": "Kyshawn George",
-        "position": "SG",
-        "team": "WSH",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "3311"
-      },
-      "stats": {
-        "min": 33.5,
-        "fpts": 31.4,
-        "pts": 14.7,
-        "reb": 5.4,
-        "ast": 4.7,
-        "stl": 1.1,
-        "blk": 0.9,
-        "to": 2.8,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "daniss jenkins": {
-      "info": {
-        "player": "Daniss Jenkins",
-        "position": "PG",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "3340"
-      },
-      "stats": {
-        "min": 28.0,
-        "fpts": 27.0,
-        "pts": 13.1,
-        "reb": 3.3,
-        "ast": 5.2,
-        "stl": 1.1,
-        "blk": 0.3,
-        "to": 2.1,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "isaac jones": {
-      "info": {
-        "player": "Isaac Jones",
+        "player": "Olivier-Maxence Prosper",
         "position": "PF",
-        "team": "DET",
+        "team": "MEM",
         "opp": "",
-        "slateId": "1057290",
-        "fdId": "3348"
+        "slateId": "1057590",
+        "fdId": "3211"
       },
       "stats": {
-        "min": 1.51,
-        "fpts": 1.3,
-        "pts": 0.6,
-        "reb": 0.3,
-        "ast": 0.1,
-        "stl": 0.0,
-        "blk": 0.1,
-        "to": 0.1,
-        "salary": 0.0,
-        "value": 0.0
-      }
-    },
-    "elijah harkless": {
-      "info": {
-        "player": "Elijah Harkless",
-        "position": "SG",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1057290",
-        "fdId": "3369"
-      },
-      "stats": {
-        "min": 8.27,
-        "fpts": 6.9,
-        "pts": 3.4,
-        "reb": 0.9,
-        "ast": 1.1,
+        "min": 8.54,
+        "fpts": 8.2,
+        "pts": 4.6,
+        "reb": 1.7,
+        "ast": 0.5,
         "stl": 0.3,
         "blk": 0.1,
         "to": 0.4,
@@ -2452,109 +4726,439 @@
         "value": 0.0
       }
     },
-    "tolu smith": {
+    "gregory jackson": {
       "info": {
-        "player": "Tolu Smith",
+        "player": "Gregory Jackson",
         "position": "PF",
-        "team": "DET",
+        "team": "MEM",
         "opp": "",
-        "slateId": "1057290",
-        "fdId": "3392"
+        "slateId": "1057590",
+        "fdId": "3230"
       },
       "stats": {
-        "min": 1.71,
-        "fpts": 1.6,
-        "pts": 0.7,
-        "reb": 0.5,
-        "ast": 0.1,
-        "stl": 0.0,
+        "min": 10.38,
+        "fpts": 11.0,
+        "pts": 5.9,
+        "reb": 2.1,
+        "ast": 0.8,
+        "stl": 0.3,
+        "blk": 0.4,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "zach edey": {
+      "info": {
+        "player": "Zach Edey",
+        "position": "C",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3296"
+      },
+      "stats": {
+        "min": 13.9,
+        "fpts": 16.9,
+        "pts": 6.5,
+        "reb": 5.5,
+        "ast": 0.8,
+        "stl": 0.3,
+        "blk": 0.9,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "yves missi": {
+      "info": {
+        "player": "Yves Missi",
+        "position": "C",
+        "team": "NO",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3308"
+      },
+      "stats": {
+        "min": 16.33,
+        "fpts": 16.3,
+        "pts": 5.1,
+        "reb": 4.8,
+        "ast": 1.1,
+        "stl": 0.3,
+        "blk": 1.2,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "aj johnson": {
+      "info": {
+        "player": "AJ Johnson",
+        "position": "SG",
+        "team": "NO",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3310"
+      },
+      "stats": {
+        "min": 8.74,
+        "fpts": 6.5,
+        "pts": 3.3,
+        "reb": 1.0,
+        "ast": 0.9,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "karlo matkovic": {
+      "info": {
+        "player": "Karlo Matkovic",
+        "position": "C",
+        "team": "NO",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3324"
+      },
+      "stats": {
+        "min": 14.44,
+        "fpts": 13.9,
+        "pts": 5.8,
+        "reb": 3.5,
+        "ast": 0.8,
+        "stl": 0.4,
+        "blk": 0.7,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jaylen wells": {
+      "info": {
+        "player": "Jaylen Wells",
+        "position": "SF",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3336"
+      },
+      "stats": {
+        "min": 16.59,
+        "fpts": 13.7,
+        "pts": 8.1,
+        "reb": 2.1,
+        "ast": 1.1,
+        "stl": 0.6,
+        "blk": 0.1,
+        "to": 0.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "cam spencer": {
+      "info": {
+        "player": "Cam Spencer",
+        "position": "SG",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3360"
+      },
+      "stats": {
+        "min": 13.46,
+        "fpts": 14.3,
+        "pts": 6.7,
+        "reb": 1.5,
+        "ast": 3.4,
+        "stl": 0.4,
+        "blk": 0.1,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "quinten post": {
+      "info": {
+        "player": "Quinten Post",
+        "position": "PF",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3367"
+      },
+      "stats": {
+        "min": 8.76,
+        "fpts": 8.6,
+        "pts": 4.2,
+        "reb": 2.0,
+        "ast": 0.7,
+        "stl": 0.2,
+        "blk": 0.3,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jeremiah fears": {
+      "info": {
+        "player": "Jeremiah Fears",
+        "position": "PG",
+        "team": "NO",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3427"
+      },
+      "stats": {
+        "min": 22.55,
+        "fpts": 22.4,
+        "pts": 11.8,
+        "reb": 3.2,
+        "ast": 3.1,
+        "stl": 1.0,
+        "blk": 0.3,
+        "to": 1.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "derik queen": {
+      "info": {
+        "player": "Derik Queen",
+        "position": "PF",
+        "team": "NO",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3428"
+      },
+      "stats": {
+        "min": 18.42,
+        "fpts": 21.2,
+        "pts": 8.5,
+        "reb": 5.3,
+        "ast": 2.7,
+        "stl": 0.7,
+        "blk": 0.6,
+        "to": 1.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "micah peavy": {
+      "info": {
+        "player": "Micah Peavy",
+        "position": "",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3429"
+      },
+      "stats": {
+        "min": 13.27,
+        "fpts": 9.8,
+        "pts": 4.4,
+        "reb": 1.8,
+        "ast": 1.0,
+        "stl": 0.6,
+        "blk": 0.1,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "cedric coward": {
+      "info": {
+        "player": "Cedric Coward",
+        "position": "SG",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3435"
+      },
+      "stats": {
+        "min": 17.9,
+        "fpts": 19.0,
+        "pts": 9.6,
+        "reb": 4.2,
+        "ast": 2.1,
+        "stl": 0.5,
+        "blk": 0.3,
+        "to": 1.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "javon small": {
+      "info": {
+        "player": "Javon Small",
+        "position": "PG",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3448"
+      },
+      "stats": {
+        "min": 15.08,
+        "fpts": 16.3,
+        "pts": 7.6,
+        "reb": 2.3,
+        "ast": 3.0,
+        "stl": 0.6,
+        "blk": 0.2,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jahmai mashack": {
+      "info": {
+        "player": "Jahmai Mashack",
+        "position": "SG",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3459"
+      },
+      "stats": {
+        "min": 13.54,
+        "fpts": 10.7,
+        "pts": 4.7,
+        "reb": 1.6,
+        "ast": 1.5,
+        "stl": 0.6,
+        "blk": 0.3,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "karim lopez": {
+      "info": {
+        "player": "Karim Lopez",
+        "position": "",
+        "team": "MEM",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3507"
+      },
+      "stats": {
+        "min": 2.21,
+        "fpts": 2.3,
+        "pts": 1.0,
+        "reb": 0.4,
+        "ast": 0.2,
+        "stl": 0.1,
         "blk": 0.1,
         "to": 0.1,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "tre johnson": {
+    "cameron boozer": {
       "info": {
-        "player": "Tre Johnson",
-        "position": "SG",
-        "team": "WSH",
+        "player": "Cameron Boozer",
+        "position": "",
+        "team": "MEM",
         "opp": "",
-        "slateId": "1057290",
-        "fdId": "3409"
+        "slateId": "1057590",
+        "fdId": "3524"
       },
       "stats": {
-        "min": 26.0,
-        "fpts": 19.4,
-        "pts": 11.4,
-        "reb": 3.0,
-        "ast": 2.0,
-        "stl": 0.7,
-        "blk": 0.3,
-        "to": 1.6,
+        "min": 20.38,
+        "fpts": 23.2,
+        "pts": 10.2,
+        "reb": 5.8,
+        "ast": 3.0,
+        "stl": 0.5,
+        "blk": 0.5,
+        "to": 1.5,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "will riley": {
+    "carson cooper": {
       "info": {
-        "player": "Will Riley",
-        "position": "SF",
-        "team": "WSH",
+        "player": "Carson Cooper",
+        "position": "",
+        "team": "MEM",
         "opp": "",
-        "slateId": "1057290",
-        "fdId": "3410"
+        "slateId": "1057590",
+        "fdId": "3548"
       },
       "stats": {
-        "min": 2.41,
-        "fpts": 1.9,
-        "pts": 1.0,
-        "reb": 0.3,
+        "min": 2.04,
+        "fpts": 2.3,
+        "pts": 0.9,
+        "reb": 0.5,
         "ast": 0.2,
         "stl": 0.1,
-        "blk": 0.0,
+        "blk": 0.1,
         "to": 0.1,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "chaz lanier": {
+    "c.j. mccollum": {
       "info": {
-        "player": "Chaz Lanier",
+        "player": "C.J. McCollum",
         "position": "SG",
-        "team": "DET",
+        "team": "ATL",
         "opp": "",
-        "slateId": "1057290",
-        "fdId": "3440"
+        "slateId": "1057590",
+        "fdId": "2161"
       },
       "stats": {
-        "min": 1.79,
-        "fpts": 1.3,
-        "pts": 0.8,
-        "reb": 0.1,
-        "ast": 0.1,
-        "stl": 0.1,
-        "blk": 0.0,
-        "to": 0.1,
+        "min": 19.77,
+        "fpts": 22.0,
+        "pts": 13.7,
+        "reb": 2.3,
+        "ast": 2.7,
+        "stl": 0.6,
+        "blk": 0.3,
+        "to": 1.2,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "juju reese": {
+    "norman powell": {
       "info": {
-        "player": "Juju Reese",
-        "position": "",
-        "team": "WSH",
+        "player": "Norman Powell",
+        "position": "SG",
+        "team": "CHI",
         "opp": "",
-        "slateId": "1057290",
-        "fdId": "3476"
+        "slateId": "1057590",
+        "fdId": "2371"
       },
       "stats": {
-        "min": 4.71,
-        "fpts": 4.4,
-        "pts": 1.7,
-        "reb": 1.4,
-        "ast": 0.3,
+        "min": 22.43,
+        "fpts": 23.9,
+        "pts": 16.2,
+        "reb": 2.6,
+        "ast": 1.8,
+        "stl": 0.9,
+        "blk": 0.2,
+        "to": 1.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "dorian finney-smith": {
+      "info": {
+        "player": "Dorian Finney-Smith",
+        "position": "SF",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2485"
+      },
+      "stats": {
+        "min": 6.85,
+        "fpts": 4.7,
+        "pts": 2.2,
+        "reb": 1.1,
+        "ast": 0.4,
         "stl": 0.2,
         "blk": 0.1,
         "to": 0.3,
@@ -2562,46 +5166,596 @@
         "value": 0.0
       }
     },
-    "ebuka okorie": {
+    "zach collins": {
       "info": {
-        "player": "Ebuka Okorie",
-        "position": "",
-        "team": "DET",
+        "player": "Zach Collins",
+        "position": "C",
+        "team": "CHI",
         "opp": "",
-        "slateId": "1057290",
-        "fdId": "3503"
+        "slateId": "1057590",
+        "fdId": "2521"
       },
       "stats": {
-        "min": 1.25,
-        "fpts": 0.9,
-        "pts": 0.6,
-        "reb": 0.1,
-        "ast": 0.2,
-        "stl": 0.0,
-        "blk": 0.0,
-        "to": 0.1,
+        "min": 9.4,
+        "fpts": 9.8,
+        "pts": 4.5,
+        "reb": 2.8,
+        "ast": 0.8,
+        "stl": 0.2,
+        "blk": 0.2,
+        "to": 0.5,
         "salary": 0.0,
         "value": 0.0
       }
     },
-    "aj dybantsa": {
+    "nickeil alexander-walker": {
       "info": {
-        "player": "AJ Dybantsa",
-        "position": "",
-        "team": "WSH",
+        "player": "Nickeil Alexander-Walker",
+        "position": "SG",
+        "team": "ATL",
         "opp": "",
-        "slateId": "1057290",
-        "fdId": "3517"
+        "slateId": "1057590",
+        "fdId": "2766"
       },
       "stats": {
-        "min": 34.0,
-        "fpts": 26.9,
-        "pts": 14.3,
-        "reb": 5.3,
-        "ast": 2.3,
-        "stl": 1.2,
+        "min": 22.73,
+        "fpts": 25.2,
+        "pts": 16.1,
+        "reb": 2.4,
+        "ast": 2.5,
+        "stl": 0.9,
+        "blk": 0.4,
+        "to": 1.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "nicolas claxton": {
+      "info": {
+        "player": "Nicolas Claxton",
+        "position": "C",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2780"
+      },
+      "stats": {
+        "min": 18.56,
+        "fpts": 19.4,
+        "pts": 7.6,
+        "reb": 4.6,
+        "ast": 2.4,
+        "stl": 0.5,
+        "blk": 0.7,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "luguentz dort": {
+      "info": {
+        "player": "Luguentz Dort",
+        "position": "SF",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2843"
+      },
+      "stats": {
+        "min": 18.89,
+        "fpts": 14.0,
+        "pts": 7.3,
+        "reb": 2.6,
+        "ast": 1.0,
+        "stl": 0.6,
         "blk": 0.3,
+        "to": 0.6,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "patrick williams": {
+      "info": {
+        "player": "Patrick Williams",
+        "position": "PF",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2868"
+      },
+      "stats": {
+        "min": 21.52,
+        "fpts": 16.4,
+        "pts": 8.1,
+        "reb": 3.1,
+        "ast": 1.6,
+        "stl": 0.7,
+        "blk": 0.4,
+        "to": 1.1,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "isaac okoro": {
+      "info": {
+        "player": "Isaac Okoro",
+        "position": "SF",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2869"
+      },
+      "stats": {
+        "min": 15.49,
+        "fpts": 10.5,
+        "pts": 5.6,
+        "reb": 1.6,
+        "ast": 0.9,
+        "stl": 0.4,
+        "blk": 0.3,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "onyeka okongwu": {
+      "info": {
+        "player": "Onyeka Okongwu",
+        "position": "C",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2870"
+      },
+      "stats": {
+        "min": 21.82,
+        "fpts": 25.2,
+        "pts": 11.8,
+        "reb": 5.7,
+        "ast": 2.2,
+        "stl": 0.7,
+        "blk": 0.8,
+        "to": 1.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jalen smith": {
+      "info": {
+        "player": "Jalen Smith",
+        "position": "C",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2874"
+      },
+      "stats": {
+        "min": 17.24,
+        "fpts": 19.3,
+        "pts": 8.8,
+        "reb": 5.6,
+        "ast": 1.1,
+        "stl": 0.4,
+        "blk": 0.6,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tre jones": {
+      "info": {
+        "player": "Tre Jones",
+        "position": "PG",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2904"
+      },
+      "stats": {
+        "min": 15.97,
+        "fpts": 16.7,
+        "pts": 8.3,
+        "reb": 1.9,
+        "ast": 3.1,
+        "stl": 0.7,
+        "blk": 0.1,
+        "to": 0.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "josh giddey": {
+      "info": {
+        "player": "Josh Giddey",
+        "position": "PG",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2968"
+      },
+      "stats": {
+        "min": 23.07,
+        "fpts": 29.1,
+        "pts": 12.0,
+        "reb": 5.5,
+        "ast": 6.4,
+        "stl": 0.8,
+        "blk": 0.3,
+        "to": 2.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "corey kispert": {
+      "info": {
+        "player": "Corey Kispert",
+        "position": "SF",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2976"
+      },
+      "stats": {
+        "min": 7.96,
+        "fpts": 7.2,
+        "pts": 4.5,
+        "reb": 1.0,
+        "ast": 0.7,
+        "stl": 0.2,
+        "blk": 0.1,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jalen johnson": {
+      "info": {
+        "player": "Jalen Johnson",
+        "position": "PF",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "2980"
+      },
+      "stats": {
+        "min": 23.62,
+        "fpts": 33.3,
+        "pts": 16.0,
+        "reb": 6.9,
+        "ast": 5.3,
+        "stl": 0.8,
+        "blk": 0.3,
+        "to": 2.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "aaron wiggins": {
+      "info": {
+        "player": "Aaron Wiggins",
+        "position": "SF",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3009"
+      },
+      "stats": {
+        "min": 17.74,
+        "fpts": 16.6,
+        "pts": 9.1,
+        "reb": 2.6,
+        "ast": 1.4,
+        "stl": 0.7,
+        "blk": 0.4,
+        "to": 1.0,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jock landale": {
+      "info": {
+        "player": "Jock Landale",
+        "position": "C",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3020"
+      },
+      "stats": {
+        "min": 10.74,
+        "fpts": 11.7,
+        "pts": 5.6,
+        "reb": 2.9,
+        "ast": 0.9,
+        "stl": 0.3,
+        "blk": 0.3,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "dyson daniels": {
+      "info": {
+        "player": "Dyson Daniels",
+        "position": "SF",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3103"
+      },
+      "stats": {
+        "min": 22.12,
+        "fpts": 23.7,
+        "pts": 8.5,
+        "reb": 4.7,
+        "ast": 4.0,
+        "stl": 1.3,
+        "blk": 0.3,
+        "to": 1.2,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "leonard miller": {
+      "info": {
+        "player": "Leonard Miller",
+        "position": "PF",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3220"
+      },
+      "stats": {
+        "min": 14.98,
+        "fpts": 14.2,
+        "pts": 7.2,
+        "reb": 3.6,
+        "ast": 0.9,
+        "stl": 0.4,
+        "blk": 0.3,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "mouhamed gueye": {
+      "info": {
+        "player": "Mouhamed Gueye",
+        "position": "PF",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3226"
+      },
+      "stats": {
+        "min": 9.94,
+        "fpts": 9.6,
+        "pts": 3.6,
+        "reb": 2.5,
+        "ast": 0.6,
+        "stl": 0.4,
+        "blk": 0.4,
+        "to": 0.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "jalen wilson": {
+      "info": {
+        "player": "Jalen Wilson",
+        "position": "PF",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3235"
+      },
+      "stats": {
+        "min": 18.14,
+        "fpts": 14.4,
+        "pts": 8.6,
+        "reb": 2.6,
+        "ast": 1.1,
+        "stl": 0.5,
+        "blk": 0.1,
+        "to": 0.8,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "rob dillingham": {
+      "info": {
+        "player": "Rob Dillingham",
+        "position": "",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3295"
+      },
+      "stats": {
+        "min": 20.31,
+        "fpts": 17.7,
+        "pts": 8.9,
+        "reb": 2.7,
+        "ast": 3.0,
+        "stl": 0.9,
+        "blk": 0.1,
+        "to": 1.9,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "matas buzelis": {
+      "info": {
+        "player": "Matas Buzelis",
+        "position": "SF",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3298"
+      },
+      "stats": {
+        "min": 20.96,
+        "fpts": 21.7,
+        "pts": 11.8,
+        "reb": 4.1,
+        "ast": 1.5,
+        "stl": 0.5,
+        "blk": 0.9,
+        "to": 1.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "rayj dennis": {
+      "info": {
+        "player": "RayJ Dennis",
+        "position": "PG",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3368"
+      },
+      "stats": {
+        "min": 6.7,
+        "fpts": 6.4,
+        "pts": 3.3,
+        "reb": 0.9,
+        "ast": 1.1,
+        "stl": 0.2,
+        "blk": 0.1,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "asa newell": {
+      "info": {
+        "player": "Asa Newell",
+        "position": "PF",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3393"
+      },
+      "stats": {
+        "min": 9.11,
+        "fpts": 9.0,
+        "pts": 4.5,
+        "reb": 1.9,
+        "ast": 0.6,
+        "stl": 0.3,
+        "blk": 0.3,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "kingston flemings": {
+      "info": {
+        "player": "Kingston Flemings",
+        "position": "",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3495"
+      },
+      "stats": {
+        "min": 15.62,
+        "fpts": 16.0,
+        "pts": 7.6,
+        "reb": 2.1,
+        "ast": 3.2,
+        "stl": 0.6,
+        "blk": 0.2,
+        "to": 1.3,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "dailyn swain": {
+      "info": {
+        "player": "Dailyn Swain",
+        "position": "",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3499"
+      },
+      "stats": {
+        "min": 7.39,
+        "fpts": 6.6,
+        "pts": 3.5,
+        "reb": 1.0,
+        "ast": 0.8,
+        "stl": 0.3,
+        "blk": 0.1,
+        "to": 0.5,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "zuby ejiofor": {
+      "info": {
+        "player": "Zuby Ejiofor",
+        "position": "",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3514"
+      },
+      "stats": {
+        "min": 8.27,
+        "fpts": 8.6,
+        "pts": 4.1,
+        "reb": 2.0,
+        "ast": 0.7,
+        "stl": 0.3,
+        "blk": 0.2,
+        "to": 0.4,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "caleb wilson": {
+      "info": {
+        "player": "Caleb Wilson",
+        "position": "",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3519"
+      },
+      "stats": {
+        "min": 25.23,
+        "fpts": 26.4,
+        "pts": 13.5,
+        "reb": 5.3,
+        "ast": 1.9,
+        "stl": 1.0,
+        "blk": 0.8,
         "to": 1.7,
+        "salary": 0.0,
+        "value": 0.0
+      }
+    },
+    "tobe awaka": {
+      "info": {
+        "player": "Tobe Awaka",
+        "position": "PF",
+        "team": "CHI",
+        "opp": "",
+        "slateId": "1057590",
+        "fdId": "3530"
+      },
+      "stats": {
+        "min": 7.46,
+        "fpts": 7.8,
+        "pts": 3.0,
+        "reb": 2.3,
+        "ast": 0.6,
+        "stl": 0.2,
+        "blk": 0.3,
+        "to": 0.4,
         "salary": 0.0,
         "value": 0.0
       }

@@ -5,34 +5,13 @@ from datetime import datetime
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.9",
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "Origin": "https://www.fanduel.com",
+    "Referer": "https://www.fanduel.com/research/nba/fantasy/dfs-projections"
 }
 
 GRAPHQL_URL = "https://fdresearch-api.fanduel.com/graphql"
-
-def get_slate_id():
-    try:
-        url = "https://www.fanduel.com/research/nba/fantasy/dfs-projections"
-        r = requests.get(url, headers=HEADERS, timeout=15)
-        html = r.text
-        # Common patterns for slateId in FanDuel pages
-        patterns = [
-            r'slateId["\']?\s*[:=]\s*["\']?(\d{6,8})',
-            r'"slateId"\s*:\s*"?(\d+)"?',
-            r'slateId=(\d+)',
-            r'fixtureListId["\']?\s*[:=]\s*["\']?(\d+)',
-            r'"id"\s*:\s*"?(\d{7,8})"?.*main',
-        ]
-        for pat in patterns:
-            m = re.search(pat, html, re.I)
-            if m:
-                print(f"Found slateId: {m.group(1)}")
-                return m.group(1)
-    except Exception as e:
-        print(f"Slate scrape error: {e}")
-    print("Using fallback slateId")
-    return "1048244"  # last known; update if needed
 
 QUERY = """
 query GetProjections($input: ProjectionsInput!) {
@@ -53,7 +32,25 @@ query GetProjections($input: ProjectionsInput!) {
 }
 """
 
-def fetch_nba(slate_id):
+def find_candidate_ids():
+    """Scrape the page for possible slate IDs"""
+    try:
+        r = requests.get(
+            "https://www.fanduel.com/research/nba/fantasy/dfs-projections",
+            headers={"User-Agent": HEADERS["User-Agent"]},
+            timeout=15
+        )
+        # Find 7-8 digit numbers that look like slateIds
+        candidates = set(re.findall(r'\b(10\d{5,6})\b', r.text))
+        # Prefer higher numbers (more recent)
+        sorted_cands = sorted(candidates, reverse=True)
+        print(f"Found {len(sorted_cands)} candidate IDs")
+        return sorted_cands[:8]  # test the top 8
+    except Exception as e:
+        print(f"Scrape error: {e}")
+        return []
+
+def test_slate(slate_id):
     payload = {
         "operationName": "GetProjections",
         "variables": {
@@ -66,16 +63,33 @@ def fetch_nba(slate_id):
         },
         "query": QUERY
     }
-    r = requests.post(GRAPHQL_URL, json=payload, headers={
-        "User-Agent": HEADERS["User-Agent"],
-        "Content-Type": "application/json",
-        "Origin": "https://www.fanduel.com",
-        "Referer": "https://www.fanduel.com/research/nba/fantasy/dfs-projections"
-    }, timeout=25)
-    print("Status:", r.status_code)
-    print(r.text[:800])
-    data = r.json()
-    return data.get("data", {}).get("getProjections") or []
+    try:
+        r = requests.post(GRAPHQL_URL, json=payload, headers=HEADERS, timeout=20)
+        data = r.json()
+        projs = data.get("data", {}).get("getProjections") or []
+        return projs
+    except Exception as e:
+        print(f"  Error testing {slate_id}: {e}")
+        return []
+
+def find_best_slate():
+    candidates = find_candidate_ids()
+    best_id = None
+    best_projs = []
+    best_count = 0
+
+    for sid in candidates:
+        projs = test_slate(sid)
+        count = len(projs)
+        print(f"  {sid}: {count} players")
+        if count > best_count:
+            best_count = count
+            best_id = sid
+            best_projs = projs
+        if best_count >= 100:  # good enough, stop early
+            break
+
+    return best_id, best_projs
 
 def normalize(projections):
     result = {}
@@ -107,20 +121,20 @@ def normalize(projections):
     return result
 
 def main():
-    slate_id = get_slate_id()
-    try:
-        projections = fetch_nba(slate_id)
-        players = normalize(projections)
-        output = {
-            "updated": datetime.utcnow().isoformat() + "Z",
-            "slateId": slate_id,
-            "players": players
-        }
-        with open("fanduel_nba_projections.json", "w") as f:
-            json.dump(output, f, indent=2)
-        print(f"Wrote {len(players)} NBA players (slate {slate_id})")
-    except Exception as e:
-        print(f"Error: {e}")
+    slate_id, projections = find_best_slate()
+    if not slate_id:
+        print("No working slate found")
+        return
+
+    players = normalize(projections)
+    output = {
+        "updated": datetime.now(datetime.UTC).isoformat().replace("+00:00", "Z"),
+        "slateId": slate_id,
+        "players": players
+    }
+    with open("fanduel_nba_projections.json", "w") as f:
+        json.dump(output, f, indent=2)
+    print(f"Wrote {len(players)} NBA players (slate {slate_id})")
 
 if __name__ == "__main__":
     main()

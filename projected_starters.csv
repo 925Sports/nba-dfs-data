@@ -11,12 +11,12 @@ IND,PF,Pascal Siakam,RotoWire
 IND,C,Ivica Zubac,RotoWire
 MIL,PG,Brayden Burries,RotoWire
 MIL,SG,Tyler Herro,RotoWire
-MIL,SF,Jaime Jaquez,RotoWire
+MIL,SF,Ousmane Dieng,RotoWire
 MIL,PF,Kyle Kuzma,RotoWire
 MIL,C,Myles Turner,RotoWire
-ORL,PG,Jalen Suggs,RotoWire
-ORL,SG,Anthony Black,RotoWire
-ORL,SF,Desmond Bane,RotoWire
+ORL,PG,Anthony Black,RotoWire
+ORL,SG,Desmond Bane,RotoWire
+ORL,SF,Tristan da Silva,RotoWire
 ORL,PF,Franz Wagner,RotoWire
 ORL,C,Wendell Carter,RotoWire
 MEM,PG,Ty Jerome,RotoWire
@@ -28,7 +28,7 @@ NOP,PG,Jeremiah Fears,RotoWire
 NOP,SG,Herbert Jones,RotoWire
 NOP,SF,Saddiq Bey,RotoWire
 NOP,PF,Zion Williamson,RotoWire
-NOP,C,Karlo Matkovic,RotoWire
+NOP,C,DeAndre Jordan,RotoWire
 ATL,PG,Kingston Flemings,RotoWire
 ATL,SG,Nickeil Alexander-Walker,RotoWire
 ATL,SF,Dyson Daniels,RotoWire
@@ -45,13 +45,13 @@ CLE,SF,Peyton Watson,RotoWire
 CLE,PF,Jaylon Tyson,RotoWire
 CLE,C,Jarrett Allen,RotoWire
 MIA,PG,Davion Mitchell,RotoWire
-MIA,SG,Klay Thompson,RotoWire
-MIA,SF,Andrew Wiggins,RotoWire
+MIA,SG,Tim Hardaway,RotoWire
+MIA,SF,Myron Gardner,RotoWire
 MIA,PF,Giannis Antetokounmpo,RotoWire
 MIA,C,Bam Adebayo,RotoWire
 UTA,PG,Keyonte George,RotoWire
 UTA,SG,Darryn Peterson,RotoWire
-UTA,SF,Josh Green,RotoWire
+UTA,SF,Josh Okogie,RotoWire
 UTA,PF,Ace Bailey,RotoWire
 UTA,C,Jaxson Hayes,RotoWire
 HOU,PG,Fred VanVleet,RotoWire
@@ -60,9 +60,9 @@ HOU,SF,Kevin Durant,RotoWire
 HOU,PF,Jabari Smith,RotoWire
 HOU,C,Alperen Sengun,RotoWire
 GSW,PG,Brandin Podziemski,RotoWire
-GSW,SG,De'Anthony Melton,RotoWire
-GSW,SF,Yaxel Lendeborg,RotoWire
-GSW,PF,Gui Santos,RotoWire
+GSW,SG,Will Richard,RotoWire
+GSW,SF,De'Anthony Melton,RotoWire
+GSW,PF,Yaxel Lendeborg,RotoWire
 GSW,C,Draymond Green,RotoWire
 SAS,PG,De'Aaron Fox,RotoWire
 SAS,SG,Stephon Castle,RotoWire
@@ -81,7 +81,7 @@ SAC,PF,Keegan Murray,RotoWire
 SAC,C,Domantas Sabonis,RotoWire
 OKC,PG,Shai Gilgeous-Alexander,RotoWire
 OKC,SG,Jared McCain,RotoWire
-OKC,SF,Ajay Mitchell,RotoWire
+OKC,SF,Kenrich Williams,RotoWire
 OKC,PF,Aday Mara,RotoWire
 OKC,C,Isaiah Hartenstein,RotoWire
 LAC,PG,Darius Garland,RotoWire

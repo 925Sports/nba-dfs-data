@@ -1,4 +1,216 @@
 Player Name,Position,Team,Opponent,Slate,Slate Type,Salary,Draftable ID,Game,Game Start Time,Player Image
+Shai Gilgeous-Alexander,PG,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,10200,45020505,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33258.png
+Cade Cunningham,PG,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,10000,45020508,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590962.png
+Franz Wagner,SF/PF,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,9700,45020511,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/591008.png
+Jalen Johnson,PF,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,9500,45020515,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/591025.png
+Anthony Davis,PF,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,9200,45020518,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33122.png
+Paolo Banchero,PF,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,8700,45020521,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649544.png
+Scottie Barnes,PG/SF,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,8600,45020524,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590987.png
+Donovan Mitchell,SG,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,8500,45020529,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33398.png
+Tyrese Haliburton,PG,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,8400,45020532,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/488094.png
+Pascal Siakam,PF,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,8200,45020535,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33379.png
+RJ Barrett,SG/SF,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,8100,45020538,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33244.png
+Kawhi Leonard,SF,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,7800,45020543,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33102.png
+Trae Young,PG,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,7700,45020546,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/32850.png
+Josh Giddey,PG,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,7600,45020549,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/590989.png
+James Harden,PG,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,7500,45020552,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33070.png
+Naz Reid,PF/C,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,7500,45020555,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33206.png
+Evan Mobley,PF/C,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,7400,45020559,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590986.png
+Brandon Miller,SF,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,7400,45020563,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/713755.png
+Julius Randle,PF,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,7300,45020566,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33234.png
+Immanuel Quickley,PG,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,7300,45020569,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527232.png
+Zion Williamson,PF,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,7200,45020572,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33223.png
+Jeremiah Fears,PG,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,7100,45020575,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905556.png
+Michael Porter Jr.,SG/SF,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,7100,45020578,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33026.png
+Nickeil Alexander-Walker,PG/SG,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,7000,45020583,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33225.png
+Ausar Thompson,SF/PF,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,7000,45020587,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713758.png
+Andrew Nembhard,PG/SG,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,6900,45020591,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/36394.png
+Trey Murphy III,SG/SF,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,6900,45020595,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/591022.png
+Kon Knueppel,SG,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,6900,45020600,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/905553.png
+Dyson Daniels,PG/SF,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,6800,45020603,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/649551.png
+Jalen Duren,C,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,6800,45020608,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649562.png
+Saddiq Bey,SF/PF,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,6700,45020610,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/527228.png
+Isaiah Hartenstein,C,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,6700,45020614,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33079.png
+Desmond Bane,SG/SF,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,6700,45020616,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527237.png
+Ajay Mitchell,SG/SF,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,6600,45020621,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800653.png
+Caleb Wilson,SF,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,6600,45020626,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993006.png
+Dejounte Murray,PG/SG,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,6600,45020629,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33362.png
+Kyshawn George,SG,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,6500,45020633,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800401.png
+Onyeka Okongwu,C,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,6500,45020636,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/481752.png
+Daniss Jenkins,PG/SG,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,6500,45020638,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800802.png
+Norman Powell,SG/SF,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,6500,45020642,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33377.png
+Chet Holmgren,PF,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,6500,45020647,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649545.png
+Wendell Carter Jr.,C,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,6400,45020650,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32972.png
+Grayson Allen,SG/SF,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,6400,45020652,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33143.png
+Anthony Black,PG/SG,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,6400,45020657,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713759.png
+Jarrett Allen,C,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,6300,45020661,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32914.png
+AJ Dybantsa,SF,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,6300,45020663,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993002.png
+Matas Buzelis,PF,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,6200,45020666,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800380.png
+Collin Murray-Boyles,PF/C,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,6200,45020669,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905558.png
+Jalen Smith,C,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,6100,45020673,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/527222.png
+Jared McCain,PG/SG,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,6000,45020675,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800373.png
+Moussa Diabate,C,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,6000,45020679,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/649586.png
+Tyrese Proctor,PG,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,5900,45020681,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906386.png
+Ivica Zubac,C,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,5900,45020684,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33107.png
+Alexandre Sarr,C,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,5800,45020686,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800353.png
+Jamal Shead,PG/SG,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,5800,45020688,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800661.png
+Ja'Kobe Walter,SG/SF,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,5700,45020692,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800375.png
+CJ McCollum,PG/SG,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,5700,45020697,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33324.png
+Paul Reed,C,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,5700,45020701,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527268.png
+Day'Ron Sharpe,C,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,5600,45020703,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/591034.png
+Aday Mara,PF/C,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,5500,45020705,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993021.png
+Jakob Poeltl,C,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,5500,45020709,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33361.png
+Peyton Watson,SF/PF,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,5500,45020711,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649577.png
+Coby White,PG/SG,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,5500,45020715,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/32975.png
+John Collins,PF/C,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,5400,45020719,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32848.png
+Jalen Suggs,PG,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,5400,45020723,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590988.png
+Aaron Wiggins,SG/SF,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,5300,45020726,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/591059.png
+Duncan Robinson,SG/SF,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,5300,45020731,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33163.png
+Yves Missi,C,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,5300,45020736,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800377.png
+Kevin Huerter,SG/SF,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,5200,45020738,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32851.png
+Tristan da Silva,SF/PF,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,5200,45020743,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800378.png
+Dennis Schroder,PG/SG,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,5200,45020747,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33251.png
+Nic Claxton,C,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,5200,45020751,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/32924.png
+Derik Queen,PF/C,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,5000,45020753,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905562.png
+Nolan Traore,PG/SF,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,5000,45020757,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905568.png
+Alex Caruso,SG/SF,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,4900,45020762,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33126.png
+Egor Demin,PG/SG,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,4900,45020767,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905557.png
+Mario Hezonja,SF/PF,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,4800,45020771,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33327.png
+Quenton Jackson,PG/SG,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,4800,45020775,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/651619.png
+Aaron Nesmith,SG/SF,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,4800,45020779,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/502007.png
+Kenrich Williams,SF/PF,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,4700,45020784,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33221.png
+Meleek Thomas,SG/SF,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,4700,45020788,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993151.png
+Kingston Flemings,PG,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,4700,45020793,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993017.png
+Jordan Poole,PG,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,4600,45020796,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33061.png
+Jaylon Tyson,SG/SF,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,4600,45020799,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800376.png
+Luguentz Dort,SF/PF,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,4500,45020804,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33263.png
+Kelly Oubre Jr.,SG/SF,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,4500,45020808,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33310.png
+Jaylin Williams,PF/C,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,4500,45020813,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649580.png
+Jamison Battle,SF,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,4400,45020817,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803836.png
+Isaac Okoro,SG/SF,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,4400,45020820,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/489504.png
+Javonte Green,PF,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,4400,45020825,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32895.png
+Sion James,SG/SF,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,4400,45020828,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/906339.png
+T.J. McConnell,PG,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,4400,45020833,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33090.png
+Ryan Kalkbrenner,C,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,4300,45020836,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/906340.png
+Mikel Brown Jr.,PG/SG,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,4300,45020838,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993015.png
+Danny Wolf,SF,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,4300,45020842,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905576.png
+Herbert Jones,SF/PF,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,4200,45020845,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/591040.png
+Allen Graves,SF/PF,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,4200,45020849,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993030.png
+Tre Jones,PG/SG,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,4200,45020853,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/527244.png
+Obi Toppin,PF,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,4200,45020857,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527221.png
+Sam Merrill,SG,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,4200,45020860,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527270.png
+Thomas Bryant,C,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,4200,45020863,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32875.png
+Bilal Coulibaly,SF,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,4100,45020865,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/713760.png
+Jock Landale,C,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,4100,45020868,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/36379.png
+Royce O'Neale,SF/PF,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,4000,45020870,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/32840.png
+Moritz Wagner,C,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,4000,45020874,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32880.png
+Tre Johnson,SG/SF,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,4000,45020876,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905555.png
+Craig Porter Jr.,PG,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,4000,45020881,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713845.png
+Bennett Stirtz,PG/SG,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,3900,45020884,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993026.png
+Bennedict Mathurin,SG/SF,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,3900,45020888,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649549.png
+Trayce Jackson-Davis,C,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,3900,45020893,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713808.png
+Isaiah Joe,SG/SF,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,3900,45020895,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527259.png
+Noah Clowney,PF,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,3800,45020900,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713774.png
+Alijah Martin,SG,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,3800,45020903,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906345.png
+Zach Collins,C,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,3800,45020906,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33329.png
+Bryce McGowens,SF,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,3800,45020908,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649583.png
+Karlo Matkovic,C,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,3700,45020911,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649705.png
+Ronald Holland II,PF,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,3700,45020913,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800381.png
+Grant Williams,PF,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,3700,45020916,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/32886.png
+Jarace Walker,SF,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,3600,45020919,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713761.png
+Christian Anderson,PG,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,3600,45020922,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993029.png
+Buddy Hield,SG,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,3600,45020925,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33341.png
+Trendon Watford,PF/C,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,3600,45020928,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/591097.png
+Goga Bitadze,C,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,3500,45020932,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33097.png
+Khris Middleton,PF,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,3500,45020934,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33177.png
+Patrick Williams,SF/PF,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,3500,45020937,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/527216.png
+Jaron Pierre Jr.,SF,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,3500,45020941,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993180.png
+Nique Clifford,SG/SF,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,3400,45020944,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905575.png
+Jay Huff,C,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,3400,45020949,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/591190.png
+Jevon Carter,PG,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,3400,45020951,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33144.png
+Corey Kispert,SF/PF,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,3400,45020954,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/591016.png
+Noah Penda,SF,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,3400,45020958,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906338.png
+Noa Essengue,PF,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,3300,45020961,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905561.png
+Jalen Slawson,SF/PF,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,3300,45020964,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713805.png
+Zuby Ejiofor,C,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,3300,45020968,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993033.png
+Braden Smith,PG,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,3300,45020970,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993153.png
+Chaz Lanier,SG,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,3300,45020973,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906344.png
+Norchad Omier,SF,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,3300,45020976,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/908763.png
+Tobe Awaka,C,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,3300,45020979,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993201.png
+Deandre Ayton,C,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,3200,45020981,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33312.png
+Keon Ellis,SG/SF,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,3200,45020983,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649606.png
+Leonard Miller,SF/PF,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,3200,45020988,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/713785.png
+Jase Richardson,PG/SG,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,3200,45020992,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905573.png
+DeAndre Jordan,C,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,3200,45020996,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/32899.png
+EJ Harkless,PG,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,3200,45020998,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803416.png
+Chaney Johnson,PF,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,3100,45021001,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/907192.png
+Larry Nance Jr.,PF/C,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,3100,45021004,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32984.png
+Jamal Cain,SF/PF,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,3100,45021008,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/651642.png
+Will Riley,SG,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,3100,45021012,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905571.png
+Kyle Anderson,PF,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,3100,45021015,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33137.png
+Jordan Hawkins,SG,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,3100,45021018,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/713767.png
+Dorian Finney-Smith,PF/C,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,3100,45021021,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33001.png
+RayJ Dennis,PG,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,3100,45021025,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/803417.png
+Malachi Smith,PG/SG,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,3100,45021028,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713840.png
+Bub Carrington,PG/SG,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021032,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800372.png
+Tidjane Salaun,PF,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021036,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/800400.png
+Nikola Vucevic,C,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021039,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33266.png
+Josh Minott,PF/C,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021041,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649588.png
+Micah Peavy,SF,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021045,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/906347.png
+Brooks Barnhizer,SF/PF,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021048,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/906349.png
+Tolu Smith,C,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021052,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803776.png
+Jaden Bradley,PG/SG,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021054,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993172.png
+Josh Dix,SG/SF,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021058,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993184.png
+Terance Mann,PG/SF,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021063,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33113.png
+Liam McNeeley,SG/SF,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021068,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/905577.png
+Alex Morales,PG/SG,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021073,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/651618.png
+Kobe Brown,C,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021077,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713782.png
+Tre Mann,PG,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021079,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/591023.png
+Jaylin Sellers,PG,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021082,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/996431.png
+Isaac Jones,PF/C,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021085,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800679.png
+AJ Johnson,PG,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021089,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800411.png
+Julian Reese,PF,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021092,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/909004.png
+Asa Newell,C,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021095,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/905572.png
+Hannes Steinbach,C,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021097,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993025.png
+Drake Powell,SG,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021099,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905570.png
+Ebuka Okorie,PG,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021102,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993028.png
+Anthony Gill,PF/C,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021105,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/529622.png
+Dailyn Swain,SF,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021109,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993027.png
+Justin Champagnie,SF/PF,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021112,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/591152.png
+Colin Castleton,PF/C,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021116,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713824.png
+Nikola Topic,PG,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021120,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/726072.png
+Jalen Williams,SF,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021123,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649561.png
+Cason Wallace,PG,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021126,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/713763.png
+Taurean Prince,PF,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021129,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32907.png
+Felix Okpara,C,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021132,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993169.png
+Malik Dia,PF,NOP,OKC,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021134,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/997241.png
+PJ Hall,C,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021137,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/800670.png
+Joshua Jefferson,PF,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021139,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993038.png
+Ben Saraf,PG,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021142,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905574.png
+Reece Beekman,PG,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021145,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800674.png
+Ben Sheppard,PG/SG,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021148,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713778.png
+Jalen Wilson,SG,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021152,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/713803.png
+Thomas Sorber,C,OKC,NOP,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021155,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905563.png
+Rafael Castro,C,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021157,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993182.png
+Mouhamed Gueye,PF/C,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021159,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/713791.png
+Henri Veesaar,C,ATL,CHA,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021163,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/teams/50/32892.png
+Orlando Robinson,C,CHI,WAS,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021165,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/651644.png
+Tyler Bilodeau,PF,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021167,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993168.png
+Grant Nelson,C,BKN,ORL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021170,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906414.png
+Khalifa Diop,C,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021172,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/teams/50/32908.png
+Ernest Udeh Jr.,C,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021174,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993782.png
+Zack Austin,SF,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021176,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/908865.png
+Nae'Qwan Tomlin,SF/PF,CLE,IND,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021179,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/801402.png
+Ugonna Onyenso,C,DET,TOR,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021183,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993175.png
+Kylan Boswell,PG,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021185,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/994289.png
+Michael Ajayi,SF,CHA,ATL,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021188,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/994331.png
+Tristan Vukcevic,C,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021191,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/713794.png
+Jamir Watkins,SG,WAS,CHI,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021193,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/906350.png
+Izaiyah Nelson,C,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021196,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993176.png
+Jonathan Isaac,PF,ORL,BKN,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021198,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33275.png
+Johnny Furphy,SG,IND,CLE,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021201,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/794875.png
+Kevin McCullar Jr.,SF,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021204,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/799444.png
+Nate Bittle,C,TOR,DET,"Classic 11/20 8:00PM, 6 Games",Classic,3000,45021207,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/teams/50/32957.png
 Victor Wembanyama,C,SAS,LAC,"Classic 11/19 8:00PM, 4 Games",Classic,12000,44997975,LAC @ SAS,11/19/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/713754.png
 Karl-Anthony Towns,PF/C,NYK,MIN,"Classic 11/19 8:00PM, 4 Games",Classic,9600,44997977,NYK @ MIN,11/19/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33194.png
 Anthony Edwards,SG,MIN,NYK,"Classic 11/19 8:00PM, 4 Games",Classic,9400,44997981,NYK @ MIN,11/19/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/509114.png
@@ -208,3 +420,528 @@ Jaden Akins,UTIL,NYK,MIN,Showdown Captain Mode NYK@MIN 11/19 8:00PM,Showdown Cap
 Pacome Dadiet,UTIL,NYK,MIN,Showdown Captain Mode NYK@MIN 11/19 8:00PM,Showdown Captain Mode,1000,44998515,NYK @ MIN,11/19/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800410.png
 Isaiah Evans,UTIL,MIN,NYK,Showdown Captain Mode NYK@MIN 11/19 8:00PM,Showdown Captain Mode,1000,44998516,NYK @ MIN,11/19/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993149.png
 Donte DiVincenzo,UTIL,MIN,NYK,Showdown Captain Mode NYK@MIN 11/19 8:00PM,Showdown Captain Mode,1000,44998519,NYK @ MIN,11/19/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33185.png
+Jalen Johnson,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,15900,45022638,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/591025.png
+Naz Reid,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,13500,45022639,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33206.png
+Brandon Miller,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,13200,45022640,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/713755.png
+Nickeil Alexander-Walker,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,12600,45022641,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33225.png
+Dyson Daniels,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,12000,45022642,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/649551.png
+Kon Knueppel,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,11700,45022668,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/905553.png
+Onyeka Okongwu,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,11400,45022643,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/481752.png
+Grayson Allen,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,11100,45022644,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33143.png
+Jalen Johnson,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,10600,45022602,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/591025.png
+Moussa Diabate,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,10500,45022645,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/649586.png
+CJ McCollum,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,10200,45022669,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33324.png
+Coby White,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,9900,45022646,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/32975.png
+Aaron Wiggins,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,9600,45022647,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/591059.png
+Dennis Schroder,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,9300,45022670,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33251.png
+Naz Reid,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,9000,45022603,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33206.png
+Brandon Miller,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,8800,45022604,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/713755.png
+Kingston Flemings,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,8700,45022648,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993017.png
+Nickeil Alexander-Walker,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,8400,45022605,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33225.png
+Luguentz Dort,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,8100,45022649,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33263.png
+Dyson Daniels,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,8000,45022606,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/649551.png
+Kon Knueppel,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,7800,45022632,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/905553.png
+Onyeka Okongwu,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,7600,45022607,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/481752.png
+Sion James,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,7500,45022650,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/906339.png
+Grayson Allen,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,7400,45022608,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33143.png
+Ryan Kalkbrenner,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,7200,45022651,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/906340.png
+Moussa Diabate,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,7000,45022609,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/649586.png
+CJ McCollum,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,6800,45022633,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33324.png
+Coby White,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,6600,45022610,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/32975.png
+Jock Landale,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,6600,45022652,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/36379.png
+Aaron Wiggins,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,6400,45022611,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/591059.png
+Dennis Schroder,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,6200,45022634,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33251.png
+Royce O'Neale,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,6000,45022653,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/32840.png
+Kingston Flemings,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,5800,45022612,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993017.png
+Luguentz Dort,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,5400,45022613,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33263.png
+Grant Williams,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,5400,45022654,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/32886.png
+Sion James,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,5000,45022614,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/906339.png
+Ryan Kalkbrenner,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,4800,45022615,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/906340.png
+Christian Anderson,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,4800,45022655,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993029.png
+Jock Landale,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,4400,45022616,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/36379.png
+Corey Kispert,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,4200,45022656,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/591016.png
+Royce O'Neale,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,4000,45022617,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/32840.png
+Grant Williams,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,3600,45022618,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/32886.png
+Zuby Ejiofor,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,3600,45022657,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993033.png
+Christian Anderson,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,3200,45022619,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993029.png
+RayJ Dennis,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,3000,45022658,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/803417.png
+Corey Kispert,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,2800,45022620,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/591016.png
+Zuby Ejiofor,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,2400,45022621,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993033.png
+Dorian Finney-Smith,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,2400,45022659,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33001.png
+RayJ Dennis,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,2000,45022622,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/803417.png
+Dorian Finney-Smith,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1600,45022623,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/33001.png
+Jalen Wilson,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1500,45022660,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/713803.png
+Michael Ajayi,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1500,45022661,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/994331.png
+Hannes Steinbach,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1500,45022662,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993025.png
+Rafael Castro,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1500,45022663,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993182.png
+Tidjane Salaun,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1500,45022664,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/800400.png
+PJ Hall,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1500,45022665,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/800670.png
+Liam McNeeley,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1500,45022666,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/905577.png
+Kylan Boswell,CPT,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1500,45022667,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/994289.png
+Asa Newell,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1500,45022671,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/905572.png
+Mouhamed Gueye,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1500,45022672,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/713791.png
+Henri Veesaar,CPT,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1500,45022673,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/teams/50/32892.png
+Jalen Wilson,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1000,45022624,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/713803.png
+Michael Ajayi,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1000,45022625,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/994331.png
+Hannes Steinbach,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1000,45022626,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993025.png
+Rafael Castro,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1000,45022627,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/993182.png
+Tidjane Salaun,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1000,45022628,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/800400.png
+PJ Hall,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1000,45022629,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/800670.png
+Liam McNeeley,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1000,45022630,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/905577.png
+Kylan Boswell,UTIL,CHA,ATL,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1000,45022631,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/994289.png
+Asa Newell,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1000,45022635,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/905572.png
+Mouhamed Gueye,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1000,45022636,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/players/50/713791.png
+Henri Veesaar,UTIL,ATL,CHA,Showdown Captain Mode CHA@ATL 11/20 7:00PM,Showdown Captain Mode,1000,45022637,CHA @ ATL,11/20/2026 07:00PM,https://dkn.gs/sports/images/nba/teams/50/32892.png
+Cade Cunningham,PG,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,10000,45023282,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590962.png
+Franz Wagner,SF/PF,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,9700,45023252,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/591008.png
+Paolo Banchero,PF,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,8700,45023313,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649544.png
+Scottie Barnes,PG/SF,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,8600,45023305,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590987.png
+Donovan Mitchell,SG,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,8500,45023143,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33398.png
+Tyrese Haliburton,PG,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,8400,45023197,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/488094.png
+Pascal Siakam,PF,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,8200,45023130,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33379.png
+RJ Barrett,SG/SF,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,8100,45023192,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33244.png
+Kawhi Leonard,SF,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,7800,45023094,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33102.png
+James Harden,PG,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,7500,45023089,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33070.png
+Evan Mobley,PF/C,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,7400,45023278,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590986.png
+Julius Randle,PF,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,7300,45023113,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33234.png
+Immanuel Quickley,PG,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,7300,45023213,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527232.png
+Michael Porter Jr.,SG/SF,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,7100,45023182,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33026.png
+Ausar Thompson,SF/PF,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,7000,45023378,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713758.png
+Andrew Nembhard,PG/SG,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,6900,45023209,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/36394.png
+Jalen Duren,C,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,6800,45023331,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649562.png
+Desmond Bane,SG/SF,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,6700,45023161,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527237.png
+Daniss Jenkins,PG/SG,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,6500,45023256,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800802.png
+Wendell Carter Jr.,C,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,6400,45023180,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32972.png
+Anthony Black,PG/SG,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,6400,45023342,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713759.png
+Jarrett Allen,C,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,6300,45023174,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32914.png
+Collin Murray-Boyles,PF/C,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,6200,45023387,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905558.png
+Ivica Zubac,C,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,5900,45023154,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33107.png
+Tyrese Proctor,PG,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,5900,45023349,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906386.png
+Jamal Shead,PG/SG,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,5800,45023274,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800661.png
+Paul Reed,C,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,5700,45023187,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527268.png
+Ja'Kobe Walter,SG/SF,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,5700,45023382,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800375.png
+Day'Ron Sharpe,C,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,5600,45023303,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/591034.png
+Jakob Poeltl,C,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,5500,45023128,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33361.png
+Peyton Watson,SF/PF,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,5500,45023320,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649577.png
+John Collins,PF/C,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,5400,45023146,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32848.png
+Jalen Suggs,PG,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,5400,45023300,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590988.png
+Duncan Robinson,SG/SF,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,5300,45023133,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33163.png
+Kevin Huerter,SG/SF,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,5200,45023166,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32851.png
+Tristan da Silva,SF/PF,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,5200,45023293,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800378.png
+Nolan Traore,PG/SF,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,5000,45023415,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905568.png
+Egor Demin,PG/SG,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,4900,45023400,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905557.png
+Mario Hezonja,SF/PF,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,4800,45023116,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33327.png
+Aaron Nesmith,SG/SF,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,4800,45023216,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/502007.png
+Quenton Jackson,PG/SG,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,4800,45023262,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/651619.png
+Meleek Thomas,SG/SF,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,4700,45023426,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993151.png
+Jaylon Tyson,SG/SF,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,4600,45023326,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800376.png
+Kelly Oubre Jr.,SG/SF,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,4500,45023120,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33310.png
+T.J. McConnell,PG,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,4400,45023097,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33090.png
+Javonte Green,PF,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,4400,45023104,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32895.png
+Jamison Battle,SF,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,4400,45023239,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803836.png
+Danny Wolf,SF,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,4300,45023373,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905576.png
+Mikel Brown Jr.,PG/SG,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,4300,45023434,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993015.png
+Thomas Bryant,C,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,4200,45023152,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32875.png
+Sam Merrill,SG,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,4200,45023171,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527270.png
+Obi Toppin,PF,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,4200,45023189,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527221.png
+Allen Graves,SF/PF,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,4200,45023408,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993030.png
+Moritz Wagner,C,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,4000,45023150,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32880.png
+Craig Porter Jr.,PG,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,4000,45023297,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713845.png
+Isaiah Joe,SG/SF,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,3900,45023204,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527259.png
+Trayce Jackson-Davis,C,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,3900,45023260,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713808.png
+Alijah Martin,SG,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,3800,45023285,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906345.png
+Noah Clowney,PF,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,3800,45023339,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713774.png
+Ronald Holland II,PF,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,3700,45023397,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800381.png
+Jarace Walker,SF,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,3600,45023346,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713761.png
+Goga Bitadze,C,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,3500,45023237,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33097.png
+Jevon Carter,PG,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,3400,45023125,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33144.png
+Jay Huff,C,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,3400,45023159,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/591190.png
+Noah Penda,SF,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,3400,45023420,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906338.png
+Jalen Slawson,SF/PF,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,3300,45023221,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713805.png
+Norchad Omier,SF,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,3300,45023271,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/908763.png
+Chaz Lanier,SG,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,3300,45023288,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906344.png
+Braden Smith,PG,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,3300,45023360,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993153.png
+EJ Harkless,PG,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,3200,45023225,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803416.png
+Keon Ellis,SG/SF,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,3200,45023266,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649606.png
+Jase Richardson,PG/SG,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,3200,45023404,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905573.png
+Larry Nance Jr.,PF/C,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,3100,45023100,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32984.png
+Kyle Anderson,PF,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,3100,45023110,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33137.png
+Jamal Cain,SF/PF,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,3100,45023176,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/651642.png
+Malachi Smith,PG/SG,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,3100,45023228,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713840.png
+Chaney Johnson,PF,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,3100,45023391,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/907192.png
+Nikola Vucevic,C,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023092,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33266.png
+Taurean Prince,PF,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023107,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32907.png
+Terance Mann,PG/SF,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023138,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33113.png
+Jonathan Isaac,PF,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023156,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33275.png
+Colin Castleton,PF/C,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023200,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713824.png
+Tolu Smith,C,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023232,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803776.png
+Kevin McCullar Jr.,SF,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023234,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/799444.png
+Alex Morales,PG/SG,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023242,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/651618.png
+Ben Sheppard,PG/SG,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023246,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713778.png
+Kobe Brown,C,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023250,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713782.png
+Grant Nelson,C,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023291,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906414.png
+Zack Austin,SF,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023310,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/908865.png
+Josh Minott,PF/C,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023316,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649588.png
+Nate Bittle,C,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023324,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/teams/50/32957.png
+Khalifa Diop,C,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023333,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/teams/50/32908.png
+Jaden Bradley,PG/SG,TOR,DET,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023335,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993172.png
+Isaac Jones,PF/C,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023352,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800679.png
+Nae'Qwan Tomlin,SF/PF,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023356,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/801402.png
+Tyler Bilodeau,PF,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023363,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993168.png
+Joshua Jefferson,PF,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023366,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993038.png
+Ugonna Onyenso,C,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023369,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993175.png
+Izaiyah Nelson,C,ORL,BKN,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023371,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993176.png
+Ernest Udeh Jr.,C,CLE,IND,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023376,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993782.png
+Johnny Furphy,SG,IND,CLE,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023394,IND @ CLE,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/794875.png
+Drake Powell,SG,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023412,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905570.png
+Ben Saraf,PG,BKN,ORL,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023423,ORL @ BKN,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905574.png
+Ebuka Okorie,PG,DET,TOR,"Classic 11/20 7:30PM, 3 Games",Classic,3000,45023431,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993028.png
+Cade Cunningham,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,16500,45022916,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590962.png
+Scottie Barnes,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,14400,45022917,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590987.png
+RJ Barrett,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,13800,45022918,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33244.png
+Kawhi Leonard,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,13200,45022947,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33102.png
+Immanuel Quickley,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,12300,45022919,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527232.png
+Ausar Thompson,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,12000,45022920,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713758.png
+Jalen Duren,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,11700,45022948,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649562.png
+Daniss Jenkins,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,11100,45022921,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800802.png
+Cade Cunningham,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,11000,45022881,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590962.png
+Collin Murray-Boyles,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,10800,45022922,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905558.png
+Jamal Shead,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,10200,45022923,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800661.png
+Ja'Kobe Walter,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,9900,45022924,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800375.png
+Scottie Barnes,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,9600,45022882,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/590987.png
+Paul Reed,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,9600,45022925,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527268.png
+RJ Barrett,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,9200,45022883,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33244.png
+Jakob Poeltl,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,9000,45022926,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33361.png
+Kawhi Leonard,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,8800,45022912,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33102.png
+Duncan Robinson,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,8700,45022949,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33163.png
+John Collins,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,8400,45022927,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32848.png
+Immanuel Quickley,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,8200,45022884,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527232.png
+Kevin Huerter,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,8100,45022928,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32851.png
+Ausar Thompson,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,8000,45022885,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713758.png
+Jalen Duren,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,7800,45022913,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/649562.png
+Daniss Jenkins,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,7400,45022886,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800802.png
+Collin Murray-Boyles,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,7200,45022887,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/905558.png
+Jamal Shead,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,6800,45022888,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800661.png
+Ja'Kobe Walter,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,6600,45022889,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800375.png
+Javonte Green,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,6600,45022929,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32895.png
+Paul Reed,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,6400,45022890,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527268.png
+Jamison Battle,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,6300,45022930,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803836.png
+Jakob Poeltl,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,6000,45022891,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33361.png
+Allen Graves,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,6000,45022931,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993030.png
+Duncan Robinson,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,5800,45022914,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33163.png
+Isaiah Joe,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,5700,45022932,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527259.png
+John Collins,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,5600,45022892,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32848.png
+Kevin Huerter,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,5400,45022893,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32851.png
+Trayce Jackson-Davis,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,5400,45022933,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713808.png
+Alijah Martin,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,5100,45022934,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906345.png
+Javonte Green,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,4400,45022894,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32895.png
+Jamison Battle,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,4200,45022895,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803836.png
+Ronald Holland II,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,4200,45022935,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800381.png
+Allen Graves,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,4000,45022896,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993030.png
+Isaiah Joe,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,3800,45022897,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/527259.png
+Trayce Jackson-Davis,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,3600,45022898,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713808.png
+Chaz Lanier,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,3600,45022936,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906344.png
+Alijah Martin,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,3400,45022899,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906345.png
+EJ Harkless,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,3000,45022937,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803416.png
+Ronald Holland II,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,2800,45022900,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800381.png
+Chaz Lanier,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,2400,45022901,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/906344.png
+Malachi Smith,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,2400,45022938,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713840.png
+EJ Harkless,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,2000,45022902,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803416.png
+Kyle Anderson,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1800,45022939,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33137.png
+Malachi Smith,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1600,45022903,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/713840.png
+Kevin McCullar Jr.,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1500,45022940,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/799444.png
+Ugonna Onyenso,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1500,45022941,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993175.png
+Ebuka Okorie,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1500,45022942,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993028.png
+Taurean Prince,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1500,45022943,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32907.png
+Tolu Smith,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1500,45022944,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803776.png
+Jaden Bradley,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1500,45022945,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993172.png
+Isaac Jones,CPT,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1500,45022946,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800679.png
+Nate Bittle,CPT,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1500,45022950,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/teams/50/32957.png
+Kyle Anderson,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1200,45022904,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/33137.png
+Kevin McCullar Jr.,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1000,45022905,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/799444.png
+Ugonna Onyenso,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1000,45022906,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993175.png
+Ebuka Okorie,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1000,45022907,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993028.png
+Taurean Prince,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1000,45022908,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/32907.png
+Tolu Smith,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1000,45022909,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/803776.png
+Jaden Bradley,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1000,45022910,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/993172.png
+Isaac Jones,UTIL,DET,TOR,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1000,45022911,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/players/50/800679.png
+Nate Bittle,UTIL,TOR,DET,Showdown Captain Mode TOR@DET 11/20 7:30PM,Showdown Captain Mode,1000,45022915,TOR @ DET,11/20/2026 07:30PM,https://dkn.gs/sports/images/nba/teams/50/32957.png
+Shai Gilgeous-Alexander,PG,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,10200,45023625,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33258.png
+Anthony Davis,PF,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,9200,45023579,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33122.png
+Trae Young,PG,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,7700,45023611,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/32850.png
+Josh Giddey,PG,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,7600,45023697,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/590989.png
+Zion Williamson,PF,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,7200,45023628,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33223.png
+Jeremiah Fears,PG,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,7100,45023802,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905556.png
+Trey Murphy III,SG/SF,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,6900,45023637,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/591022.png
+Isaiah Hartenstein,C,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,6700,45023609,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33079.png
+Saddiq Bey,SF/PF,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,6700,45023642,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/527228.png
+Dejounte Murray,PG/SG,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,6600,45023603,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33362.png
+Ajay Mitchell,SG/SF,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,6600,45023713,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800653.png
+Caleb Wilson,SF,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,6600,45023805,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993006.png
+Norman Powell,SG/SF,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,6500,45023586,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33377.png
+Chet Holmgren,PF,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,6500,45023721,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649545.png
+Kyshawn George,SG,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,6500,45023761,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800401.png
+AJ Dybantsa,SF,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,6300,45023808,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993002.png
+Matas Buzelis,PF,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,6200,45023778,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800380.png
+Jalen Smith,C,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,6100,45023635,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/527222.png
+Jared McCain,PG/SG,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,6000,45023757,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800373.png
+Alexandre Sarr,C,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,5800,45023747,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800353.png
+Aday Mara,PF/C,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,5500,45023771,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993021.png
+Yves Missi,C,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,5300,45023755,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800377.png
+Nic Claxton,C,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,5200,45023620,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/32924.png
+Derik Queen,PF/C,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,5000,45023787,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905562.png
+Alex Caruso,SG/SF,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,4900,45023594,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33126.png
+Kenrich Williams,SF/PF,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,4700,45023599,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33221.png
+Jordan Poole,PG,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,4600,45023622,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33061.png
+Jaylin Williams,PF/C,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,4500,45023674,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649580.png
+Isaac Okoro,SG/SF,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,4400,45023666,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/489504.png
+Herbert Jones,SF/PF,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,4200,45023616,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/591040.png
+Tre Jones,PG/SG,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,4200,45023631,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/527244.png
+Bilal Coulibaly,SF,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,4100,45023752,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/713760.png
+Tre Johnson,SG/SF,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,4000,45023795,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905555.png
+Bennedict Mathurin,SG/SF,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,3900,45023686,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649549.png
+Bennett Stirtz,PG/SG,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,3900,45023791,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993026.png
+Zach Collins,C,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,3800,45023607,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33329.png
+Bryce McGowens,SF,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,3800,45023700,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649583.png
+Karlo Matkovic,C,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,3700,45023724,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649705.png
+Buddy Hield,SG,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,3600,45023591,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33341.png
+Trendon Watford,PF/C,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,3600,45023657,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/591097.png
+Khris Middleton,PF,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,3500,45023576,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33177.png
+Patrick Williams,SF/PF,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,3500,45023646,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/527216.png
+Jaron Pierre Jr.,SF,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,3500,45023694,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993180.png
+Nique Clifford,SG/SF,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,3400,45023681,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905575.png
+Tobe Awaka,C,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,3300,45023737,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993201.png
+Noa Essengue,PF,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,3300,45023775,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905561.png
+DeAndre Jordan,C,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,3200,45023574,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/32899.png
+Deandre Ayton,C,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,3200,45023614,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/33312.png
+Leonard Miller,SF/PF,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,3200,45023728,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/713785.png
+Jordan Hawkins,SG,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,3100,45023710,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/713767.png
+Will Riley,SG,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,3100,45023784,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905571.png
+Anthony Gill,PF/C,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023582,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/529622.png
+Justin Champagnie,SF/PF,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023650,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/591152.png
+Tre Mann,PG,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023654,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/591023.png
+Orlando Robinson,C,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023661,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/651644.png
+Jalen Williams,SF,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023663,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/649561.png
+Reece Beekman,PG,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023671,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800674.png
+Jamir Watkins,SG,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023678,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/906350.png
+Micah Peavy,SF,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023691,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/906347.png
+Julian Reese,PF,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023703,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/909004.png
+Brooks Barnhizer,SF/PF,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023706,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/906349.png
+Jaylin Sellers,PG,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023718,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/996431.png
+Tristan Vukcevic,C,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023726,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/713794.png
+Josh Dix,SG/SF,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023732,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993184.png
+Malik Dia,PF,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023739,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/997241.png
+Cason Wallace,PG,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023742,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/713763.png
+Felix Okpara,C,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023745,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993169.png
+Nikola Topic,PG,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023749,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/726072.png
+Bub Carrington,PG/SG,WAS,CHI,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023764,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800372.png
+Dailyn Swain,SF,CHI,WAS,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023768,WAS @ CHI,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/993027.png
+AJ Johnson,PG,NOP,OKC,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023781,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/800411.png
+Thomas Sorber,C,OKC,NOP,"Classic 11/20 8:00PM, 2 Games",Classic,3000,45023800,NOP @ OKC,11/20/2026 08:00PM,https://dkn.gs/sports/images/nba/players/50/905563.png
+Devin Booker,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,15300,45022986,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33309.png
+Keyonte George,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,14700,45022987,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/713769.png
+Lauri Markkanen,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,13500,45023018,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/32970.png
+Darryn Peterson,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,13200,45022988,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/993003.png
+Ace Bailey,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,12600,45022989,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/905554.png
+Jaren Jackson Jr.,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,12300,45023019,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33142.png
+Miles Bridges,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,12000,45022990,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/32946.png
+Dillon Brooks,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,11400,45022991,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33141.png
+Jalen Green,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,11100,45022992,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/590985.png
+Jusuf Nurkic,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,10500,45022993,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33325.png
+Devin Booker,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,10200,45022951,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33309.png
+Jaxson Hayes,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,9900,45022994,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33224.png
+Keyonte George,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,9800,45022952,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/713769.png
+Mo Bamba,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,9600,45022995,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33279.png
+Lauri Markkanen,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,9000,45022983,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/32970.png
+Collin Gillespie,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,9000,45022996,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/649599.png
+Darryn Peterson,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,8800,45022953,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/993003.png
+Ace Bailey,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,8400,45022954,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/905554.png
+Jaren Jackson Jr.,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,8200,45022984,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33142.png
+Mark Williams,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,8100,45023020,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/649564.png
+Miles Bridges,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,8000,45022955,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/32946.png
+Isaiah Collier,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,7800,45022997,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/800406.png
+Dillon Brooks,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,7600,45022956,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33141.png
+Brice Sensabaugh,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,7500,45022998,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/713780.png
+Jalen Green,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,7400,45022957,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/590985.png
+Oso Ighodaro,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,7200,45022999,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/800656.png
+Jusuf Nurkic,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,7000,45022958,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33325.png
+Jaxson Hayes,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,6600,45022959,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33224.png
+Josh Green,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,6600,45023000,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/527227.png
+Mo Bamba,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,6400,45022960,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33279.png
+Collin Gillespie,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,6000,45022961,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/649599.png
+Jordan Goodwin,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,6000,45023001,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/591847.png
+Mark Williams,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,5400,45022985,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/649564.png
+Kyle Filipowski,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,5400,45023002,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/800651.png
+Isaiah Collier,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,5200,45022962,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/800406.png
+Brice Sensabaugh,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,5000,45022963,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/713780.png
+Oso Ighodaro,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,4800,45022964,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/800656.png
+Svi Mykhailiuk,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,4800,45023003,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33045.png
+Khaman Maluach,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,4500,45023004,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/726621.png
+Josh Green,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,4400,45022965,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/527227.png
+Josh Okogie,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,4200,45023005,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33200.png
+Jordan Goodwin,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,4000,45022966,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/591847.png
+Kyle Filipowski,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,3600,45022967,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/800651.png
+Ryan Dunn,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,3600,45023006,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/800405.png
+Svi Mykhailiuk,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,3200,45022968,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33045.png
+Khaman Maluach,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,3000,45022969,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/726621.png
+Luke Kennard,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,3000,45023007,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33042.png
+Josh Okogie,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,2800,45022970,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33200.png
+Ryan Dunn,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,2400,45022971,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/800405.png
+Tony Bradley,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,2400,45023008,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33399.png
+Luke Kennard,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,2000,45022972,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33042.png
+Tony Bradley,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1600,45022973,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/33399.png
+Drew Timme,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1500,45023009,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/713826.png
+Jonas Aidoo,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1500,45023010,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/939561.png
+Jamaree Bouyea,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1500,45023011,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/649595.png
+Duop Reath,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1500,45023012,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/58790.png
+Koa Peat,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1500,45023013,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/993040.png
+Harrison Ingram,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1500,45023014,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/800663.png
+Kobe Bufkin,CPT,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1500,45023015,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/713768.png
+Rasheer Fleming,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1500,45023016,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/906337.png
+Pat Spencer,CPT,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1500,45023017,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/651622.png
+Drew Timme,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1000,45022974,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/713826.png
+Jonas Aidoo,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1000,45022975,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/939561.png
+Jamaree Bouyea,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1000,45022976,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/649595.png
+Duop Reath,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1000,45022977,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/58790.png
+Koa Peat,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1000,45022978,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/993040.png
+Harrison Ingram,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1000,45022979,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/800663.png
+Kobe Bufkin,UTIL,UTA,PHX,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1000,45022980,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/713768.png
+Rasheer Fleming,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1000,45022981,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/906337.png
+Pat Spencer,UTIL,PHX,UTA,Showdown Captain Mode PHX@UTA 11/20 9:30PM,Showdown Captain Mode,1000,45022982,PHX @ UTA,11/20/2026 09:30PM,https://dkn.gs/sports/images/nba/players/50/651622.png
+Luka Doncic,PG,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,12200,45021209,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33005.png
+Nikola Jokic,C,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,12000,45021212,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33018.png
+Alperen Sengun,PF/C,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,9200,45021214,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/591017.png
+Darius Acuff Jr.,PG/SG,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,9000,45021218,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993016.png
+Domantas Sabonis,C,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,8700,45021222,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33091.png
+Jamal Murray,PG,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,8500,45021224,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33019.png
+Kevin Durant,SF,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,7900,45021227,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/32896.png
+Austin Reaves,PG/SG,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,7700,45021230,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/591721.png
+Walker Kessler,C,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,7500,45021234,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649571.png
+Amen Thompson,PG/SG,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,7200,45021236,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713757.png
+Zach LaVine,SG/SF,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,7000,45021240,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/32963.png
+Jabari Smith Jr.,PF/C,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,6900,45021245,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649546.png
+Fred VanVleet,PG,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,6200,45021249,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33381.png
+Quentin Grimes,SG/SF,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,6000,45021252,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/591030.png
+De'Andre Hunter,SF/PF,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,5700,45021257,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/32855.png
+Christian Braun,SG/SF,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,5600,45021261,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649570.png
+Keegan Murray,PF,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,5500,45021266,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649547.png
+Maxime Raynaud,C,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,5400,45021269,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/906348.png
+Jake LaRavia,SF/PF,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,5300,45021271,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649568.png
+Aaron Gordon,PF/C,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,5200,45021275,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33270.png
+Tari Eason,SF/PF,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,5100,45021279,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649566.png
+Collin Sexton,PG/SG,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,5000,45021283,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/32987.png
+Precious Achiuwa,PF,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,5000,45021287,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/527229.png
+Cameron Johnson,SG/SF,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,4900,45021290,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33316.png
+Reed Sheppard,SG,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,4800,45021295,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/800350.png
+Matisse Thybulle,SF/PF,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,4700,45021298,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33302.png
+Sandro Mamukelashvili,PF/C,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,4600,45021302,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/591058.png
+Ziaire Williams,SG/SF,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,4500,45021306,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/591011.png
+DeMar DeRozan,SG/SF,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,4400,45021311,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33357.png
+Dylan Cardwell,PF/C,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,4300,45021316,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/906415.png
+Marcus Smart,PG/SG,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,4200,45021320,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/32870.png
+Steven Adams,C,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,4100,45021324,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33250.png
+Malik Monk,PG/SG,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,4000,45021326,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/32941.png
+Clint Capela,C,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,3900,45021330,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33076.png
+Leaky Black,SF,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,3800,45021332,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/717406.png
+Oscar Tshiebwe,C,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,3700,45021335,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713860.png
+Emanuel Sharp,PG/SG,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,3600,45021337,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993167.png
+Jarred Vanderbilt,PF/C,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,3500,45021341,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33027.png
+Daeqwon Plowden,SG,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,3400,45021345,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/651656.png
+Bogdan Bogdanovic,SG/SF,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,3300,45021348,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33339.png
+Spencer Jones,SG/SF,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,3300,45021353,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/803826.png
+Trevon Brazile,PF/C,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,3200,45021358,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993150.png
+Alex Karaban,SF/PF,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,3200,45021362,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993039.png
+Marvin Bagley III,C,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,3100,45021366,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33347.png
+Adou Thiero,SF/PF,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,3100,45021368,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/906341.png
+Tyus Jones,PG,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021372,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33138.png
+Isaiah Crawford,SF/PF,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021375,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/800673.png
+Bruce Thornton,PG,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021379,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993148.png
+Jae'Sean Tate,SF/PF,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021382,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/58862.png
+Jaden Hardy,SF,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021386,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649607.png
+Bryce Hopkins,SF,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021389,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993173.png
+Bronny James,PG,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021392,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/800667.png
+Kevon Looney,C,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021395,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33056.png
+Cameron Carr,SG/SF,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021397,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993032.png
+Jonathan Mogbo,PF/C,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021402,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/800650.png
+DaRon Holmes II,C,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021406,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/800379.png
+Alpha Diallo,SF/PF,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021408,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/592434.png
+Carson Cooper,C,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021412,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993192.png
+Ryan Nembhard,PG,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021414,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/906412.png
+Chris Manon,SF,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021417,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/909200.png
+Cam Whitmore,SF,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021420,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713773.png
+Zeke Nnaji,C,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021423,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/527231.png
+Mason Plumlee,C,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021425,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33015.png
+Arthur Kaluma,PF,LAL,SAC,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021427,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/906426.png
+Julian Strawther,SG,DEN,HOU,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021430,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713781.png
+Sean Pedulla,PG,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021433,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/907350.png
+Ben Simmons,PG,SAC,LAL,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021436,SAC @ LAL,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33295.png
+Quadir Copeland,PG,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021439,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993185.png
+Julian Phillips,SF/PF,HOU,DEN,"Classic 11/20 10:00PM, 2 Games",Classic,3000,45021442,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713787.png
+Nikola Jokic,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,19500,45023055,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33018.png
+Alperen Sengun,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,15300,45023056,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/591017.png
+Jamal Murray,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,14400,45023057,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33019.png
+Kevin Durant,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,13500,45023058,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/32896.png
+Nikola Jokic,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,13000,45023021,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33018.png
+Amen Thompson,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,12300,45023059,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713757.png
+Jabari Smith Jr.,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,11700,45023060,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649546.png
+Fred VanVleet,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,10800,45023061,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33381.png
+Alperen Sengun,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,10200,45023022,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/591017.png
+Christian Braun,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,9900,45023062,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649570.png
+Jamal Murray,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,9600,45023023,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33019.png
+Aaron Gordon,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,9300,45023063,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33270.png
+Kevin Durant,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,9000,45023024,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/32896.png
+Tari Eason,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,8400,45023064,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649566.png
+Amen Thompson,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,8200,45023025,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713757.png
+Cameron Johnson,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,8100,45023065,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33316.png
+Jabari Smith Jr.,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,7800,45023026,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649546.png
+Reed Sheppard,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,7500,45023066,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/800350.png
+Fred VanVleet,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,7200,45023027,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33381.png
+DeMar DeRozan,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,7200,45023067,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33357.png
+Christian Braun,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,6600,45023028,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649570.png
+Marcus Smart,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,6600,45023068,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/32870.png
+Aaron Gordon,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,6200,45023029,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33270.png
+Steven Adams,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,6000,45023069,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33250.png
+Tari Eason,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,5600,45023030,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/649566.png
+Cameron Johnson,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,5400,45023031,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33316.png
+Clint Capela,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,5100,45023070,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33076.png
+Reed Sheppard,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,5000,45023032,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/800350.png
+DeMar DeRozan,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,4800,45023033,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33357.png
+Oscar Tshiebwe,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,4800,45023071,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713860.png
+Marcus Smart,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,4400,45023034,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/32870.png
+Bogdan Bogdanovic,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,4200,45023072,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33339.png
+Steven Adams,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,4000,45023035,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33250.png
+Spencer Jones,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,3600,45023073,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/803826.png
+Clint Capela,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,3400,45023036,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33076.png
+Oscar Tshiebwe,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,3200,45023037,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713860.png
+Trevon Brazile,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,3000,45023074,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993150.png
+Bogdan Bogdanovic,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,2800,45023038,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33339.png
+Spencer Jones,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,2400,45023039,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/803826.png
+Marvin Bagley III,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,2400,45023075,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33347.png
+Trevon Brazile,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,2000,45023040,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993150.png
+Marvin Bagley III,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1600,45023041,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33347.png
+Julian Phillips,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023076,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713787.png
+Cam Whitmore,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023077,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713773.png
+Zeke Nnaji,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023078,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/527231.png
+Quadir Copeland,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023079,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993185.png
+Jae'Sean Tate,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023080,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/58862.png
+Bryce Hopkins,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023081,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993173.png
+Isaiah Crawford,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023082,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/800673.png
+Alpha Diallo,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023083,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/592434.png
+DaRon Holmes II,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023084,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/800379.png
+Bruce Thornton,CPT,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023085,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993148.png
+Ryan Nembhard,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023086,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/906412.png
+Tyus Jones,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023087,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33138.png
+Julian Strawther,CPT,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1500,45023088,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713781.png
+Julian Phillips,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023042,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713787.png
+Cam Whitmore,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023043,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713773.png
+Zeke Nnaji,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023044,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/527231.png
+Quadir Copeland,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023045,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993185.png
+Jae'Sean Tate,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023046,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/58862.png
+Bryce Hopkins,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023047,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993173.png
+Isaiah Crawford,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023048,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/800673.png
+Alpha Diallo,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023049,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/592434.png
+DaRon Holmes II,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023050,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/800379.png
+Bruce Thornton,UTIL,HOU,DEN,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023051,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/993148.png
+Ryan Nembhard,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023052,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/906412.png
+Tyus Jones,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023053,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/33138.png
+Julian Strawther,UTIL,DEN,HOU,Showdown Captain Mode HOU@DEN 11/20 10:00PM,Showdown Captain Mode,1000,45023054,HOU @ DEN,11/20/2026 10:00PM,https://dkn.gs/sports/images/nba/players/50/713781.png

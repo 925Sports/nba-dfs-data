@@ -1,8 +1,8 @@
 Team,Position,Player Name,Source
-MIL,PG,Brayden Burries,RotoWire
+MIL,PG,Ryan Rollins,RotoWire
 MIL,SG,Tyler Herro,RotoWire
-MIL,SF,Kyle Kuzma,RotoWire
-MIL,PF,Jericho Sims,RotoWire
+MIL,SF,Jaime Jaquez,RotoWire
+MIL,PF,Kyle Kuzma,RotoWire
 MIL,C,Myles Turner,RotoWire
 PHI,PG,Tyrese Maxey,RotoWire
 PHI,SG,VJ Edgecombe,RotoWire
@@ -15,10 +15,10 @@ POR,SF,Toumani Camara,RotoWire
 POR,PF,Deni Avdija,RotoWire
 POR,C,Donovan Clingan,RotoWire
 NYK,PG,Jalen Brunson,RotoWire
-NYK,SG,Mikal Bridges,RotoWire
-NYK,SF,Landry Shamet,RotoWire
-NYK,PF,Josh Hart,RotoWire
-NYK,C,Karl-Anthony Towns,RotoWire
+NYK,SG,Landry Shamet,RotoWire
+NYK,SF,Josh Hart,RotoWire
+NYK,PF,Mikal Bridges,RotoWire
+NYK,C,Andre Drummond,RotoWire
 LAC,PG,Darius Garland,RotoWire
 LAC,SG,Max Strus,RotoWire
 LAC,SF,Derrick Jones,RotoWire
@@ -27,7 +27,7 @@ LAC,C,Brook Lopez,RotoWire
 DAL,PG,Kyrie Irving,RotoWire
 DAL,SG,Caleb Martin,RotoWire
 DAL,SF,Cooper Flagg,RotoWire
-DAL,PF,P.J. Washington,RotoWire
+DAL,PF,Naji Marshall,RotoWire
 DAL,C,Daniel Gafford,RotoWire
 MEM,PG,Ty Jerome,RotoWire
 MEM,SG,Cedric Coward,RotoWire
@@ -49,9 +49,9 @@ SAS,SG,Stephon Castle,RotoWire
 SAS,SF,Julian Champagnie,RotoWire
 SAS,PF,Devin Vassell,RotoWire
 SAS,C,Victor Wembanyama,RotoWire
-BOS,PG,Derrick White,RotoWire
+BOS,PG,Payton Pritchard,RotoWire
 BOS,SG,Jordan Walsh,RotoWire
-BOS,SF,Jayson Tatum,RotoWire
+BOS,SF,Baylor Scheierman,RotoWire
 BOS,PF,Paul George,RotoWire
 BOS,C,Neemias Queta,RotoWire
 SAC,PG,Darius Acuff,RotoWire

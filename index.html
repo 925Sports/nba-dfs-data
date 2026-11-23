@@ -1019,6 +1019,7 @@ function canPlay(p, slot, isShowdown) {
 }
 
 const CLASSIC = ["C", "PF", "SF", "PG", "SG", "G", "F", "UTIL"];
+const DK_UPLOAD = ["PG", "SG", "SF", "PF", "C", "G", "F", "UTIL"];
 const SHOWDOWN = ["CPT", "U1", "U2", "U3", "U4", "U5"];
 const FD_CLASSIC = ["C", "PF", "SF", "PG", "SG", "FC", "GF", "U1", "U2"];
 const FD_SHOWDOWN = ["MVP", "STAR", "PRO", "U1", "U2", "U3"];
@@ -1055,6 +1056,10 @@ function byScore(a, b) {
 function slotsFor(isShowdown) {
   if (siteIsFd()) return isShowdown ? FD_SHOWDOWN : FD_CLASSIC;
   return isShowdown ? SHOWDOWN : CLASSIC;
+}
+function uploadKeys(isShowdown) {
+  if (siteIsFd()) return slotsFor(isShowdown);
+  return isShowdown ? SHOWDOWN : DK_UPLOAD;
 }
 
 function slotPref(slot) {
@@ -1785,28 +1790,27 @@ function rebalancePunts(roster, cands, settings, groups, pinned) {
   return roster;
 }
 
+function primarySlot(p) {
+  const tokens = posTokens(p && p.pos);
+  return ["PG", "SG", "SF", "PF", "C"].find((s) => tokens.includes(s)) || "";
+}
 function parkLatest(roster) {
   if (siteIsFd()) return roster;
   if (!roster || roster.CPT) return roster;
-  const slots = ["C", "PF", "SF", "PG", "SG", "G", "F", "UTIL"];
+  const slots = DK_UPLOAD;
   const players = slots.map((s) => roster[s]);
   if (players.some((p) => !p)) return roster;
-  const weight = { UTIL: 4, G: 2, F: 1 };
-  const scoreOf = (assign) => slots.reduce((sum, slot) => sum + (weight[slot] || 0) * gameTime(assign[slot]), 0);
+  const times = players.map((p) => gameTime(p));
+  const minT = Math.min(...times);
+  const span = Math.max(1, Math.max(...times) - minT);
+  const timeRank = new Map(players.map((p) => [p, (gameTime(p) - minT) / span]));
   let best = null;
-  let bestScore = scoreOf(roster);
+  let bestScore = -1;
   const used = new Set();
   const cur = {};
   const search = (i, running) => {
-    if (running < bestScore) {
-      const leftTimes = [];
-      players.forEach((p, n) => { if (!used.has(n)) leftTimes.push(gameTime(p)); });
-      leftTimes.sort((a, b) => b - a);
-      const leftW = slots.slice(i).map((s) => weight[s] || 0).sort((a, b) => b - a);
-      let cap = running;
-      for (let k = 0; k < leftW.length; k++) cap += leftW[k] * (leftTimes[k] || 0);
-      if (cap <= bestScore) return;
-    }
+    const left = slots.length - i;
+    if (running + left * 104 <= bestScore) return;
     if (i === slots.length) {
       if (running > bestScore) {
         bestScore = running;
@@ -1815,14 +1819,19 @@ function parkLatest(roster) {
       return;
     }
     const slot = slots[i];
-    const w = weight[slot] || 0;
+    const slotCap = slot === "UTIL" ? 4 : slot === "G" ? 2 : slot === "F" ? 1 : 0;
     for (let n = 0; n < players.length; n++) {
       if (used.has(n)) continue;
       const p = players[n];
       if (!canPlay(p, slot, false)) continue;
+      const primary = primarySlot(p);
+      let add = 0;
+      if (slot === primary) add = 100;
+      else if (primary && ["PG", "SG", "SF", "PF", "C"].includes(slot) && isEligible(p.pos, slot)) add = 40;
+      add += slotCap * (timeRank.get(p) || 0);
       used.add(n);
       cur[slot] = p;
-      search(i + 1, running + w * gameTime(p));
+      search(i + 1, running + add);
       used.delete(n);
     }
   };
@@ -6078,7 +6087,7 @@ function sortedLineups() {
 
 function renderLineups() {
   const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
-  const slots = slotsFor(isShowdown);
+  const slots = uploadKeys(isShowdown);
   const labels = slots.map(slotLabel);
   const mark = (key) => luSort.key === key ? (luSort.dir < 0 ? " ▼" : " ▲") : "";
   document.getElementById("lineupsHead").innerHTML = `<th><input type="checkbox" id="luSelectAll" title="Select all lineups"></th><th data-lsort="num">#${mark("num")}</th>` + labels.map((s) => `<th>${s}</th>`).join("") + `<th data-lsort="proj">Proj${mark("proj")}</th><th data-lsort="salary">Salary${mark("salary")}</th><th data-lsort="left">Left${mark("left")}</th><th data-lsort="own" title="Sum of each player's estimated ownership, not the average.">Own${mark("own")}</th><th>Teams</th>`;
@@ -6480,7 +6489,8 @@ function downloadCsv(list) {
   const status = document.getElementById("optStatus");
   if (!rows.length) return;
   const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
-  const keys = slotsFor(isShowdown);
+  if (!siteIsFd() && !isShowdown) rows.forEach((lu) => { if (lu.slots) parkLatest(lu.slots); });
+  const keys = uploadKeys(isShowdown);
   const headers = keys.map(slotLabel);
   const missing = [];
   rows.forEach((lu) => {
@@ -6499,24 +6509,23 @@ function downloadCsv(list) {
   rows.forEach((lu) => {
     lines.push(keys.map((k) => csvField(exportCell(lu.slots[k]))).join(","));
   });
-  const sample = exportCell(rows[0].slots[keys[0]]);
+  const preview = keys.map((k, i) => `${headers[i]} ${rows[0].slots[k] ? rows[0].slots[k].name : ""}`).join(" · ");
   const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([lines.join("\r\n") + "\r\n"], { type: "text/csv" }));
+  a.href = URL.createObjectURL(new Blob(["\ufeff" + lines.join("\r\n") + "\r\n"], { type: "text/csv;charset=utf-8" }));
   const site = siteIsFd() ? "fanduel" : "draftkings";
   a.download = isShowdown ? `${site}_showdown_lineups.csv` : `${site}_classic_lineups.csv`;
   a.click();
-  const games = slateGames(document.getElementById("slateSelect").value);
-  const first = games[0] ? clockOf(games[0][1]) : "";
+  if (!Array.isArray(list)) renderLineups();
   status.textContent = siteIsFd()
-    ? `Downloaded. First cell is ${sample}. Upload that file into the FanDuel contest for this slate${first ? " (" + first + ")" : ""}.`
-    : `Downloaded. First cell is ${sample}. Use the DraftKings contest whose first tip is ${first || "this slate"} and whose games are ${games.map(([g]) => g).join(", ")}.`;
+    ? `Downloaded. First cell is ${exportCell(rows[0].slots[keys[0]])}. Upload that file into the FanDuel contest for this slate.`
+    : `Downloaded in DraftKings order: ${preview}. Upload this file on DraftKings → Lineups → Upload. Do not upload the Detail CSV.`;
 }
 
 function downloadDetail(list) {
   const rows = Array.isArray(list) ? list : lineups;
   if (!rows.length) return;
   const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
-  const keys = slotsFor(isShowdown);
+  const keys = uploadKeys(isShowdown);
   const headers = ["Lineup", "Proj", "Salary", "Left", "TotalOwn"].concat(keys.map(slotLabel));
   const body = [headers, ...rows.map((lu, i) => [
     i + 1,
@@ -6535,7 +6544,7 @@ function downloadDetail(list) {
 function copyLineupsText() {
   if (!lineups.length) return;
   const isShowdown = (document.getElementById("slateSelect").value || "").startsWith("Showdown");
-  const keys = slotsFor(isShowdown);
+  const keys = uploadKeys(isShowdown);
   const labels = keys.map(slotLabel);
   const text = lineups.map((lu, i) => {
     const slots = keys.map((k, idx) => `${labels[idx]} ${lu.slots[k] ? lu.slots[k].name : ""}`).join(" | ");

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T02:09:21.195464Z",
+  "updated": "2026-11-25T02:24:22.751318Z",
   "slates": [
     {
       "slateId": "1062049",
@@ -34,7 +34,7 @@
       "count": 98
     }
   ],
-  "playerCount": 85,
+  "playerCount": 84,
   "players": {
     "demar derozan": {
       "info": {
@@ -942,7 +942,7 @@
         "position": "PG",
         "team": "BOS",
         "opp": "",
-        "slateId": "1061850",
+        "slateId": "1061848",
         "fdId": "27",
         "numberFireId": "27",
         "injury": "",
@@ -1272,7 +1272,7 @@
         "position": "C",
         "team": "BOS",
         "opp": "",
-        "slateId": "1061850",
+        "slateId": "1061848",
         "fdId": "3006",
         "numberFireId": "3006",
         "injury": "",
@@ -1332,7 +1332,7 @@
         "position": "SG",
         "team": "BOS",
         "opp": "",
-        "slateId": "1061850",
+        "slateId": "1061848",
         "fdId": "3164",
         "numberFireId": "3164",
         "injury": "",
@@ -1392,7 +1392,7 @@
         "position": "SF",
         "team": "BOS",
         "opp": "",
-        "slateId": "1061850",
+        "slateId": "1061848",
         "fdId": "3225",
         "numberFireId": "3225",
         "injury": "",
@@ -1512,7 +1512,7 @@
         "position": "SG",
         "team": "BOS",
         "opp": "",
-        "slateId": "1061850",
+        "slateId": "1061848",
         "fdId": "3317",
         "numberFireId": "3317",
         "injury": "",
@@ -1572,7 +1572,7 @@
         "position": "C",
         "team": "BOS",
         "opp": "",
-        "slateId": "1061850",
+        "slateId": "1061848",
         "fdId": "3396",
         "numberFireId": "3396",
         "injury": "",
@@ -1692,7 +1692,7 @@
         "position": "",
         "team": "BOS",
         "opp": "",
-        "slateId": "1061850",
+        "slateId": "1061848",
         "fdId": "3496",
         "numberFireId": "3496",
         "injury": "",
@@ -1752,7 +1752,7 @@
         "position": "",
         "team": "BOS",
         "opp": "",
-        "slateId": "1061850",
+        "slateId": "1061848",
         "fdId": "3549",
         "numberFireId": "3549",
         "injury": "",
@@ -2202,7 +2202,7 @@
         "position": "SF",
         "team": "DET",
         "opp": "",
-        "slateId": "1061850",
+        "slateId": "1061932",
         "fdId": "3193",
         "numberFireId": "3193",
         "injury": "",
@@ -2211,16 +2211,16 @@
         "startTime": ""
       },
       "stats": {
-        "min": 34.0,
-        "fpts": 34.6,
-        "pts": 11.3,
-        "reb": 7.8,
-        "ast": 4.3,
+        "min": 33.0,
+        "fpts": 35.7,
+        "pts": 12.0,
+        "reb": 7.6,
+        "ast": 4.8,
         "stl": 2.0,
         "blk": 1.2,
-        "to": 2.1,
-        "salary": 0.0,
-        "value": 0.0,
+        "to": 2.2,
+        "salary": 11600.0,
+        "value": 3.08,
         "ceiling": 0.0,
         "floor": 0.0,
         "ownership": 0.0
@@ -2551,36 +2551,6 @@
         "to": 0.3,
         "salary": 1000.0,
         "value": 3.9,
-        "ceiling": 0.0,
-        "floor": 0.0,
-        "ownership": 0.0
-      }
-    },
-    "cade cunningham": {
-      "info": {
-        "player": "Cade Cunningham",
-        "position": "PG",
-        "team": "DET",
-        "opp": "",
-        "slateId": "1061850",
-        "fdId": "2963",
-        "numberFireId": "2963",
-        "injury": "",
-        "injuryDetails": "",
-        "homeAway": "",
-        "startTime": ""
-      },
-      "stats": {
-        "min": 34.95,
-        "fpts": 45.7,
-        "pts": 21.4,
-        "reb": 5.7,
-        "ast": 9.6,
-        "stl": 1.3,
-        "blk": 0.9,
-        "to": 3.5,
-        "salary": 0.0,
-        "value": 0.0,
         "ceiling": 0.0,
         "floor": 0.0,
         "ownership": 0.0

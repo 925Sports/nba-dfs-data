@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T19:54:27.723026Z",
+  "updated": "2026-11-25T20:09:20.738644Z",
   "slates": [
     {
       "slateId": "1062474",
@@ -5968,7 +5968,7 @@
         "position": "PF",
         "team": "PHI",
         "opp": "",
-        "slateId": "1062259",
+        "slateId": "1062188",
         "fdId": "367",
         "numberFireId": "367",
         "injury": "",
@@ -5977,16 +5977,16 @@
         "startTime": ""
       },
       "stats": {
-        "min": 31.5,
-        "fpts": 35.9,
-        "pts": 16.2,
-        "reb": 6.0,
-        "ast": 6.6,
+        "min": 32.5,
+        "fpts": 36.8,
+        "pts": 16.7,
+        "reb": 6.1,
+        "ast": 6.8,
         "stl": 1.1,
         "blk": 0.6,
         "to": 2.5,
-        "salary": 10600.0,
-        "value": 3.39,
+        "salary": 0.0,
+        "value": 0.0,
         "ceiling": 0.0,
         "floor": 0.0,
         "ownership": 0.0

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-28T05:24:16.583020Z",
+  "updated": "2026-11-28T05:39:20.929379Z",
   "slates": [
     {
       "slateId": "1063123",
@@ -7,7 +7,7 @@
     },
     {
       "slateId": "1063114",
-      "count": 69
+      "count": 70
     },
     {
       "slateId": "1062722",
@@ -35,10 +35,10 @@
     },
     {
       "slateId": "1062666",
-      "count": 234
+      "count": 235
     }
   ],
-  "playerCount": 311,
+  "playerCount": 312,
   "players": {
     "julius randle": {
       "info": {
@@ -4168,6 +4168,36 @@
         "min": 4.24,
         "fpts": 4.1,
         "pts": 1.9,
+        "reb": 1.1,
+        "ast": 0.3,
+        "stl": 0.1,
+        "blk": 0.1,
+        "to": 0.2,
+        "salary": 0.0,
+        "value": 0.0,
+        "ceiling": 0.0,
+        "floor": 0.0,
+        "ownership": 0.0
+      }
+    },
+    "zuby ejiofor": {
+      "info": {
+        "player": "Zuby Ejiofor",
+        "position": "",
+        "team": "ATL",
+        "opp": "",
+        "slateId": "1063114",
+        "fdId": "3514",
+        "numberFireId": "3514",
+        "injury": "",
+        "injuryDetails": "",
+        "homeAway": "",
+        "startTime": ""
+      },
+      "stats": {
+        "min": 4.03,
+        "fpts": 3.9,
+        "pts": 1.7,
         "reb": 1.1,
         "ast": 0.3,
         "stl": 0.1,
